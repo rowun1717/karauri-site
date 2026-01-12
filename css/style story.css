@@ -1,0 +1,884 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  font-family: "Kosugi Maru", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  background: linear-gradient(#0e1320, #1a2238);
+  color: #e8ecf1;
+  line-height: 1.9;
+padding-top: 60px;
+}
+
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  padding: 0 2.5rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.2em;
+  color: #f6f8ff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
+
+.menu {
+  flex: 1;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.menu a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+
+  background: rgba(255, 255, 255, 0.08);
+  transition: 0.25s;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.page-home .menu a[data-page="home"],
+.page-about .menu a[data-page="about"],
+.page-works .menu a[data-page="works"],
+.page-links .menu a[data-page="links"] {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.9);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.drop-menu {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(20, 30, 50, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s ease;
+  z-index: 1000;
+}
+
+.drop-menu a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.drop-menu a:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.dropdown:hover .drop-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(4px);
+}
+
+.drop-group {
+  padding: 6px 4px;
+}
+
+.drop-title {
+  display: block;
+  padding: 6px 10px 4px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.55);
+}
+
+.drop-group + .drop-group {
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: 6px;
+  padding-top: 10px;
+}
+
+.page-home .menu a[data-page="home"],
+.page-about .menu a[data-page="about"],
+.page-world .menu a[data-page="world"],
+.page-story .menu a[data-page="story"] {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.9);
+}
+
+
+
+
+.hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.site-title {
+  font-size: 3rem;
+  letter-spacing: 0.15em;
+}
+
+.catch {
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.intro p {
+  text-align: center;
+  white-space: pre-line;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.nav a {
+  color: #e8ecf1;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  border-bottom: 1px solid #e8ecf1;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  padding: 2rem 0;
+}
+
+.sub-hero {
+  padding: 6rem 2rem 3rem;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  letter-spacing: 0.12em;
+}
+
+.page-sub {
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.profile {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.name {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.bio {
+  margin-bottom: 1.5rem;
+  white-space: pre-line;
+}
+
+.likes {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  opacity: 0.85;
+}
+
+.likes li {
+  margin: 0.4rem 0;
+}
+
+.profile-card {
+  margin-top: 4rem;
+  padding: 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  text-align: left;
+}
+
+.profile-card h3 {
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+}
+
+.profile-card dl {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.8rem;
+}
+
+.profile-card div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+.profile-card dt {
+  opacity: 0.6;
+}
+
+.profile-card dd {
+  margin: 0;
+}
+
+.avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.real-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(255,255,255,0.25);
+}
+
+.rowun-avatar {
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.real-avatar {
+  width: 90px;
+  height: 90px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.15);
+}
+
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+  transform: translateX(-120px); /* ←ここで微調整 */
+}
+
+
+.icons a {
+  color: #dcdcdc;          /* 白寄りのグレー */
+  font-size: 22px;
+  transition: 0.2s ease;
+}
+
+.icons a:hover {
+  color: #ffffff;          /* ホバーで白 */
+  transform: translateY(-2px);
+}
+
+ul.icons {
+	list-style: none;
+	margin: 0;padding: 0;
+	margin-bottom: 20px;	/*ブロックの下に空けるスペース*/
+	display: flex;	/*横並びにする*/
+	align-self: center;
+	justify-content: center;
+	gap: 1rem;	/*アイコン同士のマージン的なスペース。２文字分。*/
+}
+
+/*アイコン一個あたり*/
+.icons i {
+	font-size: 30px;	/*Font Awesomeのアイコンサイズ*/
+}
+
+.about-text {
+  max-width: 760px;
+  margin: 80px auto 0;
+  padding: 0 24px;
+  color: #e6e6e6;
+}
+
+.about-text p {
+  line-height: 1.9;
+  margin-bottom: 28px;
+  font-size: 15px;
+  opacity: 0.95;
+}
+
+
+.about-block {
+  margin-bottom: 48px;
+}
+
+.about-block h3 {
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.about-block p {
+  line-height: 1.9;
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #e6e6e6;
+}
+
+.about-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about-list > div {
+  margin-bottom: 56px;
+}
+
+.about-list dt {
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.about-list dt::after {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+  margin-top: 8px;
+}
+
+.about-list dd {
+  margin-left: 0;
+  font-size: 15px;
+  line-height: 2;
+  color: #e0e0e0;
+}
+.statement {
+  line-height: 1.5;
+  color: #e6e6e6;
+}
+
+.key-phrase {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #ffffff;
+}
+
+
+.works-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  color: #e6e6e6;
+}
+
+
+.works-section {
+  margin-bottom: 96px;
+}
+
+.works-section h2 {
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  margin-bottom: 32px;
+}
+
+.work-card {
+  margin-bottom: 40px;
+}
+
+.work-card h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.work-desc {
+  line-height: 1.9;
+  opacity: 0.9;
+}
+
+.work-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.work-item {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  margin-bottom: 80px;
+  align-items: center;
+}
+
+.work-thumb {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.work-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.work-text h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  letter-spacing: 0.08em;
+}
+
+.work-text p {
+  line-height: 1.9;
+  opacity: 0.9;
+}
+
+.work-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.work-link {
+  color: rgba(255,255,255,0.6);
+  transition: 0.3s;
+}
+
+.work-link:hover {
+  color: #ffffff;
+}
+
+.work-image {
+  border-radius: 16px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08),
+              0 10px 30px rgba(0,0,0,0.35);
+}
+
+
+/* セクション共通（あなたのサイトに合わせて調整OK） */
+.works-section{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.section-title{
+  font-size: 32px;
+  letter-spacing: 0.08em;
+  margin: 0 0 18px;
+}
+
+.section-lead{
+  margin-bottom: 28px;
+}
+
+.sub-title{
+  font-size: 18px;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.sub-text{
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.9;
+}
+
+.illustration-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.illustration-card p {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+
+/* グリッド */
+.illust-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* カード */
+.illust-card{
+  background: rgba(255,255,255,0.04); /* うっすら境界 */
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+}
+
+/* 画像リンク */
+.illust-link{
+  display: block;
+  position: relative;
+}
+
+/* サムネ */
+.illust-thumb{
+  width: 100%;
+  height: 180px;         /* ここで高さを揃える */
+  object-fit: cover;     /* トリミングして綺麗に */
+  display: block;
+}
+
+/* ほんのりホバー */
+.illust-link:hover .illust-thumb{
+  transform: scale(1.02);
+  transition: transform 180ms ease;
+}
+
+/* 文章 */
+.illust-body{
+  padding: 14px 16px 16px;
+}
+
+.illust-title{
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.illust-desc{
+  margin: 0 0 12px;
+  line-height: 1.8;
+  opacity: 0.9;
+  font-size: 13px;
+}
+
+/* タグ */
+.illust-tags{
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.illust-tags li{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+  opacity: 0.9;
+}
+
+/* レスポンシブ */
+@media (max-width: 980px){
+  .illust-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px){
+  .illust-grid{ grid-template-columns: 1fr; }
+  .illust-thumb{ height: 210px; }
+}
+
+.illust-card img {
+  width: 100%;
+  height: 240px;        /* 今より少し大きく */
+  object-fit: contain;
+  display: block;
+   border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.story-cover {
+  height: 220px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1b2a4a, #0f1629);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  letter-spacing: .08em;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+
+/* 棚の段 */
+.shelf{
+  position:relative;
+  padding:22px 18px 28px;
+  border-radius:var(--radius);
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow: var(--shadow);
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:14px;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+}
+
+/* 棚板（下の板っぽい線） */
+.shelf::after{
+  content:"";
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:10px;
+  height:10px;
+  border-radius:999px;
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.18),
+      rgba(255,255,255,.05)
+    );
+  filter: blur(.2px);
+  opacity:.35;
+}
+
+.shelf-section {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 32px;
+}
+
+.shelf-label h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.shelf-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.book {
+  display: block;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  color: #cfd8ff;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-preview {
+  position: absolute;
+  inset: 0;
+  padding: 16px;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,20,40,0.85),
+    rgba(10,20,40,0.95)
+  );
+  opacity: 0;
+  transition: opacity .3s ease;
+  display: flex;
+  gap: 12px;
+}
+
+.book:hover .book-preview {
+  opacity: 1;
+}
+
+.book-preview img {
+  width: 64px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.synopsis {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #cfd8ff;
+}
+
+
+.book span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #8fa0ff;
+}
+.tags{
+  margin-top:auto;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+/* 本棚全体 */
+.page-bookshelf .container {
+  padding: 96px 24px 120px;
+}
+
+/* 各棚（Long / Short） */
+.shelf-section {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  margin-bottom: 72px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.shelf-label h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.shelf-label p {
+  margin: 0;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* 本の並び */
+.shelf-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* 本カード */
+.book {
+  position: relative;
+  display: block;
+  padding: 20px 22px 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25) inset;
+  color: inherit;
+  text-decoration: none;
+  transition: transform .3s ease, box-shadow .3s ease;
+  overflow: visible;
+}
+
+.book:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.book-title {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.book-tag {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* プレビュー（表紙＋あらすじ） */
+.book-preview {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.book-preview img {
+  width: 64px;
+  height: auto;          /* 高さを固定しない */
+  max-height: 100px;      /* 上限だけ決める */
+  object-fit: contain;   /* 全体を必ず表示 */
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.synopsis {
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* coming soon */
+.book span {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.book.has-cover {
+  min-height: 100px;
+}
+
+.book.has-cover .book-preview {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.book.has-cover img {
+  width: 80px;
+  height: auto;
+  border-radius: 6px;
+}

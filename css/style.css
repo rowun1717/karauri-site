@@ -1,0 +1,444 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  font-family: "Kosugi Maru", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  background: linear-gradient(#0e1320, #1a2238);
+  color: #e8ecf1;
+  line-height: 1.9;
+padding-top: 60px;
+}
+
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  border-radius: 0 0 16px 16px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.08),
+    rgba(0,0,0,0.2)
+  );
+  backdrop-filter: blur(6px);
+}
+
+
+.nav-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  padding: 0 2.5rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.2em;
+  color: #f6f8ff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.4);
+  white-space: nowrap;
+}
+
+.menu {
+  flex: 1;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.menu a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+
+  background: rgba(255, 255, 255, 0.08);
+  transition: 0.25s;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.page-home .menu a[data-page="home"],
+.page-about .menu a[data-page="about"],
+.page-world .menu a[data-page="world"],
+.page-links .menu a[data-page="story"] {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.9);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.drop-menu {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 180px;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(20, 30, 50, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s ease;
+  z-index: 1000;
+}
+
+.drop-menu a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.drop-menu a:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.dropdown:hover .drop-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(4px);
+}
+
+.drop-group {
+  padding: 6px 4px;
+}
+
+.drop-title {
+  display: block;
+  padding: 6px 10px 4px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.55);
+}
+
+.drop-group + .drop-group {
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: 6px;
+  padding-top: 10px;
+}
+
+
+
+.hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.site-title {
+  font-size: 3rem;
+  letter-spacing: 0.15em;
+}
+
+.catch {
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.intro p {
+  text-align: center;
+  white-space: pre-line;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.nav a {
+  color: #e8ecf1;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  border-bottom: 1px solid #e8ecf1;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  padding: 2rem 0;
+}
+
+.sub-hero {
+  padding: 6rem 2rem 3rem;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  letter-spacing: 0.12em;
+}
+
+.page-sub {
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.profile {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.name {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.bio {
+  margin-bottom: 1.5rem;
+  white-space: pre-line;
+}
+
+.likes {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  opacity: 0.85;
+}
+
+.likes li {
+  margin: 0.4rem 0;
+}
+
+.profile-card {
+  margin-top: 4rem;
+  padding: 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  text-align: left;
+}
+
+.profile-card h3 {
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+}
+
+.profile-card dl {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.8rem;
+}
+
+.profile-card div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+}
+
+.profile-card dt {
+  opacity: 0.6;
+}
+
+.profile-card dd {
+  margin: 0;
+}
+
+.avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.real-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(255,255,255,0.25);
+}
+
+.rowun-avatar {
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.real-avatar {
+  width: 90px;
+  height: 90px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.15);
+}
+
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+  transform: translateX(-120px); /* ←ここで微調整 */
+}
+
+
+.icons a {
+  color: #dcdcdc;          /* 白寄りのグレー */
+  font-size: 22px;
+  transition: 0.2s ease;
+}
+
+.icons a:hover {
+  color: #ffffff;          /* ホバーで白 */
+  transform: translateY(-2px);
+}
+
+ul.icons {
+	list-style: none;
+	margin: 0;padding: 0;
+	margin-bottom: 20px;	/*ブロックの下に空けるスペース*/
+	display: flex;	/*横並びにする*/
+	align-self: center;
+	justify-content: center;
+	gap: 1rem;	/*アイコン同士のマージン的なスペース。２文字分。*/
+}
+
+/*アイコン一個あたり*/
+.icons i {
+	font-size: 30px;	/*Font Awesomeのアイコンサイズ*/
+}
+
+.about-text {
+  max-width: 760px;
+  margin: 80px auto 0;
+  padding: 0 24px;
+  color: #e6e6e6;
+}
+
+.about-text p {
+  line-height: 1.9;
+  margin-bottom: 28px;
+  font-size: 15px;
+  opacity: 0.95;
+}
+
+
+.about-block {
+  margin-bottom: 48px;
+}
+
+.about-block h3 {
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.about-block p {
+  line-height: 1.9;
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #e6e6e6;
+}
+
+.about-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about-list > div {
+  margin-bottom: 56px;
+}
+
+.about-list dt {
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: #ffffff;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.about-list dt::after {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+  margin-top: 8px;
+}
+
+.about-list dd {
+  margin-left: 0;
+  font-size: 15px;
+  line-height: 2;
+  color: #e0e0e0;
+}
+.statement {
+  line-height: 1.5;
+  color: #e6e6e6;
+}
+
+.key-phrase {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #ffffff;
+}
+
+.profile-mail {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.profile-mail .mail-line {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+
+.profile-mail .mail-address {
+  color: #b9d7ff;
+  text-decoration: none;
+}
+
+.profile-mail .mail-address:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .profile-mail .mail-line {
+    white-space: normal;
+  }
+}

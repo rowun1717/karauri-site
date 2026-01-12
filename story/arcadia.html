@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arcadia Requiem</title>
+
+  <link rel="stylesheet" href="../css/style story2.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Google Fonts（Kosugi Maru） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-story story-detail">
+  
+  <header class="top-nav">
+  <div class="nav-inner">
+    <div class="logo">Rowun</div>
+    <nav class="menu">
+      <a href="../index.html" data-page="home">Home</a>
+      <a href="../about.html" data-page="about">About</a>
+      <a href="../world.html" data-page="world">World</a>
+
+      <div class="dropdown">
+        <a href="../story.html" data-page="story" class="drop-trigger">Story</a>
+        <div class="drop-menu">
+            <div class="drop-group">
+            <span class="drop-title">Long Story</span>
+            <a href="../story/arcadia.html">Arcadia Requiem</a>
+            <a href="../story/long.html">All Long Stories</a>
+            </div>
+
+            <div class="drop-group">
+            <span class="drop-title">Short Story</span>
+            <a href="../story/hoshinoiki.html">星の息と光の渦</a>
+            <a href="../story/yuzora.html">夕空に溶ける光</a>
+            <a href="../story/umikimi.html">海底と君の心</a>
+            </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  </header>
+
+  <main class="story-page">
+    <div class="container">
+
+      <!-- 表紙 / タイトル / あらすじ -->
+      <section class="story-header">
+        <img class="cover" src="../images/Arcadia Requiem.png" alt="Arcadia Requiem 表紙" />
+
+        <h1 class="story-title">Arcadia Requiem</h1>
+        <p class="catch">『アルカディアに誓って、運命を殺す。』</p>
+
+        <p class="summary">
+          世界の根源「アルカディア」を宿す少年アルマと、彼を導く存在となる少年キース。<br>
+          運命と選択、光と闇のあいだで揺れるふたりの物語。
+        </p>
+
+        <div class="meta">
+          <span class="tag">#fantasy</span>
+          <span class="tag">#BL</span>
+          <span class="tag">#longstory</span>
+        </div>
+      </section>
+
+      <!-- 目次 -->
+      <nav class="story-toc" aria-label="目次">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#ch1">01. はじまり</a></li>
+          <li><a href="#ch2">02. 出会い</a></li>
+          <li><a href="#ch3">03. 最終章</a></li>
+        </ol>
+      </nav>
+
+      <!-- 本文 -->
+      <section class="story-body">
+        <article id="ch1" class="chapter">
+          <h3><span class="num">01.</span> はじまり</h3>
+          <p>
+            ここに本文。<br>
+            改行は<br>でOKだけど、文章が増えたら段落（p）を分けると読みやすいよ。
+          </p>
+        </article>
+
+        <article id="ch2" class="chapter">
+          <h3><span class="num">02.</span> 出会い</h3>
+          <p>ここに本文。</p>
+        </article>
+
+        <article id="ch3" class="chapter">
+          <h3><span class="num">03.</span> 最終章</h3>
+          <p>ここに本文。</p>
+        </article>
+
+        <div class="to-top">
+          <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">↑ Back to top</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 karasawa uri / All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
