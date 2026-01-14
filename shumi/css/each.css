@@ -1,0 +1,287 @@
+@charset "UTF-8";
+/*－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+メインビジュアル
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－*/
+.sitename {
+  color: #fff;
+  font-size: clamp(3rem, 2.6rem + 2vw, 5rem);
+  letter-spacing: 8px;
+  margin: 20vh;
+  text-align: center;
+}
+
+/* スマホ */
+@media screen and (max-width: 520px) {
+  .sitename {
+    margin: 20vh 40px;
+  }
+}
+/*－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+トピック一覧
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－*/
+.topiclist__item {
+  margin-bottom: 40px;
+  padding: 20px;
+}
+.topiclist__item .grid {
+  gap: 20px;
+  text-decoration: none;
+  align-items: flex-start;
+}
+.topiclist__item .grid img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.topiclist__item .grid p {
+  margin: 0;
+  padding: 10px;
+}
+
+/* タブレット、スマホ */
+@media screen and (max-width: 768px) {
+  .topiclist__item .grid {
+    gap: 10px;
+    grid-template-columns: 1fr;
+  }
+}
+
+/*－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+GALLERY
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－*/
+.gallerylist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.gallerylist__item {
+  width: calc((100% - 80px) / 5);
+  height: auto;
+}
+@media screen and (max-width: 1024px) {
+  .gallerylist__item {
+    width: calc((100% - 60px) / 4);
+  }
+}
+@media screen and (max-width: 767px) {
+  .gallerylist__item {
+    width: calc((100% - 40px) / 3);
+  }
+}
+@media screen and (max-width: 520px) {
+  .gallerylist__item {
+    width: calc((100% - 20px) / 2);
+  }
+}
+.gallerylist__item a {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.gallerylist__item a::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  /*100%=親要素の横幅*/
+}
+.gallerylist__item a img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+COMIC
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－*/
+/*－－－－－－－－－－ 漫画タイトル一覧ページ －－－－－－－－－－*/
+.comiclist__item {
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.comiclist__item .comiclist__img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.comiclist__item .comiclist__img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/* スマホ */
+@media screen and (max-width: 520px) {
+  .comiclist__item {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .comiclist__item .comiclist__img img {
+    position: relative;
+    max-height: 40vh;
+  }
+  .comiclist__item .comiclist__body {
+    padding-top: 0;
+  }
+  .comiclist__item .comiclist__body .comiclist__title {
+    position: static;
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+/*－－－－－－－－－－ 漫画表紙ページ －－－－－－－－－－*/
+/* メイン画像 */
+.comic__mainvisual {
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+/* タイトル */
+/*－－－－－－－－－－ キャラクター紹介 －－－－－－－－－－*/
+/* キャラクター名一覧 */
+.charanamelist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+.charanamelist .charanamelist__item {
+  cursor: pointer;
+}
+
+/* キャラクタープロフィール部分 */
+.charalist--3 {
+  margin-bottom: 40px;
+}
+.charalist--3 .charalist__item {
+  position: relative;
+  height: 100%;
+  display: none;
+}
+.charalist--3 .charalist__item .charalist__img {
+  width: 40%;
+  height: 100%;
+  max-height: 60vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center top;
+  object-position: center top;
+}
+.charalist--3 .charalist__item .charalist__body {
+  width: calc(60% - 20px);
+}
+.charalist--3 .charalist__item .charalist__body > :first-child {
+  margin-top: 0;
+}
+.charalist--3 .charalist__item .charalist__body .charalist__name {
+  font-size: clamp(2rem, 1.422rem + 2.37vw, 3.2rem);
+}
+.charalist--3 .charalist__item.show {
+  display: flex;
+}
+
+/* スマホ */
+@media screen and (max-width: 768px) {
+  .charalist--3 .charalist__item {
+    display: none;
+  }
+  .charalist--3 .charalist__item.flex .charalist__img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+  .charalist--3 .charalist__item.flex .charalist__img img {
+    width: 100%;
+    height: auto;
+  }
+  .charalist--3 .charalist__item.flex .charalist__body {
+    width: 100%;
+  }
+}
+/*－－－－－－－－－－ 連載一覧 －－－－－－－－－－*/
+.cardlist {
+  container-type: inline-size;
+}
+.cardlist a {
+  text-decoration: none;
+}
+.cardlist .cardlist__item {
+  width: calc((100% - 60px) / 4);
+}
+.cardlist .cardlist__item a .cardlist__img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@container (max-width: 800px) {
+  .cardlist .cardlist__item {
+    width: calc((100% - 40px) / 3);
+  }
+}
+@container (max-width: 600px) {
+  .cardlist .cardlist__item {
+    width: calc((100% - 20px) / 2);
+  }
+  .cardlist .cardlist__item a .cardlist__img {
+    height: 140px;
+    width: 100%;
+  }
+}
+/*－－－－－－－－－－ 漫画のページ －－－－－－－－－－*/
+.comicpage__main img {
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.episodelist {
+  margin: 40px 0;
+  padding: 20px 40px;
+}
+
+/* スマホ */
+@media screen and (max-width: 520px) {
+  .episodelist {
+    padding: 20px;
+  }
+}
+/*－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+OFFLINE
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－*/
+.off-list {
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.storelist {
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* タブレット */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .off-list {
+    gap: 20px;
+  }
+}
