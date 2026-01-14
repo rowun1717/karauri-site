@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>夜灯古書店｜夜の扉</title>
+  <meta name="description" content="夜灯古書店。眠れない夜にだけ現れる、静かな古書店。" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ナビ -->
+  <header class="nav">
+    <nav class="nav-inner">
+      <a class="brand" href="index.html">夜灯古書店</a>
+      <div class="nav-links">
+        <a class="here" href="index.html">夜の扉</a>
+        <a href="books.html">書架</a>
+        <a href="about.html">この店について</a>
+        <a href="diary.html">店主の記録</a>
+        <a href="visit.html">辿り着くには</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="stage" role="main">
+    <section class="hero reveal" aria-label="夜の扉">
+      <p class="eyebrow">夜の扉</p>
+
+      <h1 class="title">
+        夜灯<span class="ruby" aria-hidden="true">よあかり</span>古書店
+      </h1>
+
+      <!-- 小さな看板 -->
+      <p class="sign">開店時間：深夜のみ</p>
+
+      <p class="lead">
+        この店は、眠れない夜にだけ現れます。<br />
+        探して来た人ではなく、迷ってしまった人の前に。
+      </p>
+
+      <p class="lead sub">
+        今夜、あなたがここにいるのなら、<br />
+        それはきっと、理由があるのでしょう。
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="books.html">書架へ進む</a>
+        <button class="btn ghost" id="toggleGlow" type="button">灯りを少し落とす</button>
+      </div>
+
+      <div class="hint" aria-hidden="true">
+        <span class="dot"></span>
+        <span>scroll</span>
+      </div>
+    </section>
+
+    <section class="below reveal">
+      <h2 class="belowTitle">夜灯古書店について</h2>
+      <p class="belowText">
+        読まれなかった言葉、途中で閉じられた夢、誰にも渡せなかった手紙。<br />
+        それらは夜になると、ここへ辿り着くのです。
+      </p>
+    </section>
+
+    <footer class="foot reveal">
+      <small>© Yoakari Antiquarian Bookshop</small>
+    </footer>
+  </main>
+
+  <div id="day-closed" class="day-closed">
+    <p>ただいま準備中です。<br>
+        灯りは、夜にともります。</p>
+  </div>
+
+  <script>
+    const now = new Date();
+    const hour = now.getHours();
+
+    // 夜：18時〜翌5時
+    const isNight = (hour >= 18 || hour < 5);
+
+    if(!isNight){
+        document.getElementById("day-closed").classList.add("show");
+    }
+  </script>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+【夜灯り古書店】
+・夜にだけ開店してるんだよね？？なら、昼間は「準備中」でサイトを開けなくしたい
+
+今の“時刻”を JavaScript で取得して
+
+夜の時間帯だけ、いつものページを表示
+
+昼の時間帯は、「準備中」の幕を被せる
+
+
+  <script>
+    const now = new Date();
+//ここで「いまの日時」を取得してる。
+now の中には、
+今日の日付
+今の時刻
+曜日
+全部が入ってる。
+
+    const hour = now.getHours();
+//getHours() は
+「今は何時か」を 0〜23 の数字で返す。
+例えば：
+3時 → 3
+12時 → 12
+19時 → 19
+
+    // 夜：18時〜翌5時
+    const isNight = (hour >= 18 || hour < 5);
+//ここが“夜かどうか”の判定。
+hour >= 18
+→ 18時以降なら夜
+hour < 5
+→ 深夜〜明け方（0〜4時）も夜
+|| は「または」という意味だから、
+18時以降 または 5時未満なら
+夜とみなす
+という条件になる。
+
+    if(!isNight){
+        document.getElementById("day-closed").classList.add("show");
+//これで、
+<div id="day-closed"> に
+show クラスを付ける。
+    }
+//isNight が false（＝昼間）のとき
+!isNight が true になる
+つまり「夜じゃないなら」、
+  </script> 
+
+
+.day-closed{
+  opacity: 0;
+  pointer-events: none;
+}
+.day-closed.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+//夜 → .show が付かない
+→ 店は開いている
+昼 → .show が付く
+→ 準備中の幕が現れる

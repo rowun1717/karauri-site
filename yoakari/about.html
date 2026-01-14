@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>夜灯古書店｜この店について</title>
+  <meta name="description" content="夜灯古書店について。ここが何のために在るのか。" />
+  <link rel="stylesheet" href="css/style1.css" />
+</head>
+
+<body>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ナビ -->
+  <header class="nav">
+    <nav class="nav-inner">
+      <a class="brand" href="index.html">夜灯古書店</a>
+      <div class="nav-links">
+        <a href="index.html">夜の扉</a>
+        <a href="books.html">書架</a>
+        <a class="here" href="about.html">この店について</a>
+        <a href="diary.html">店主の記録</a>
+        <a href="visit.html">辿り着くには</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="stage">
+    <section class="about reveal">
+      <h1 class="aboutTitle">この店について</h1>
+
+      <p class="aboutText">
+        夜灯古書店は、<br />
+        世界から零れ落ちた物語が、ひととき休むための場所です。
+      </p>
+
+      <p class="aboutText">
+        読まれなかった言葉。<br />
+        途中で閉じられた夢。<br />
+        誰にも渡せなかった手紙。
+      </p>
+
+      <p class="aboutText">
+        それらは、夜になると行き場を失い、<br />
+        静かにこの場所へ辿り着くと言われています。
+      </p>
+
+      <p class="aboutText">
+        この店に地図はありません。<br />
+        看板も、営業時間も、正確には存在しません。
+      </p>
+
+      <p class="aboutText">
+        それでも、眠れない夜のどこかで、<br />
+        ふと灯りを見つけた人だけが、<br />
+        この扉に触れることができるのです。
+      </p>
+
+      <p class="aboutText soft">
+        ここで出会う一冊は、<br />
+        あなたのために書かれたものではないかもしれません。<br />
+        けれど、あなたが“今”読むべき物語であることだけは、<br />
+        きっと、間違いないのです。
+      </p>
+    </section>
+
+    <footer class="foot">
+      <small>© Yoakari Antiquarian Bookshop</small>
+    </footer>
+  </main>
+
+  <div id="day-closed" class="day-closed">
+    <p>ただいま準備中です。<br>
+        灯りは、夜にともります。</p>
+  </div>
+
+  <script>
+    const now = new Date();
+    const hour = now.getHours();
+
+    // 夜：18時〜翌5時
+    const isNight = (hour >= 18 || hour < 5);
+
+    if(!isNight){
+        document.getElementById("day-closed").classList.add("show");
+    }
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

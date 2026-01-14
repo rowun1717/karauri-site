@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>夜灯古書店｜書架</title>
+  <meta name="description" content="夜灯古書店 書架。存在しない本たちが眠る場所。" />
+  <link rel="stylesheet" href="css/style2.css" />
+</head>
+
+<body>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ナビ -->
+  <header class="nav">
+    <nav class="nav-inner">
+      <a class="brand" href="index.html">夜灯古書店</a>
+      <div class="nav-links">
+        <a class="here" href="index.html">夜の扉</a>
+        <a href="books.html">書架</a>
+        <a href="about.html">この店について</a>
+        <a href="diary.html">店主の記録</a>
+        <a href="visit.html">辿り着くには</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="stage">
+    <section class="shelf reveal">
+      <h1 class="shelfTitle">書架</h1>
+      <p class="shelfLead">
+        ここに並ぶのは、<br />
+        どこにも刊行されなかった物語たちです。
+      </p>
+
+      <div class="grid">
+        <article class="book" data-title="星を忘れた少年"
+          data-text="少年は、いつから夜空を見上げなくなったのだろう。星はまだそこにあるのに、彼の目には映らなかった。">
+          <h3>星を忘れた少年</h3>
+          <p>夜空を見上げることをやめた少年の話</p>
+        </article>
+
+        <article class="book" data-title="海底で眠る手紙"
+          data-text="海はすべてを飲み込む。言葉も、後悔も、伝えられなかった想いも。">
+          <h3>海底で眠る手紙</h3>
+          <p>届かなかった言葉が沈んだ場所</p>
+        </article>
+
+        <article class="book" data-title="名前を失くした王様"
+          data-text="王は玉座を降りた。誰も彼を呼ばなくなったとき、彼は初めて自由になった。">
+          <h3>名前を失くした王様</h3>
+          <p>王であることをやめた人の物語</p>
+        </article>
+
+        <article class="book" data-title="雨の匂いを集める人"
+          data-text="雨が降るたび、彼は瓶を持って外へ出た。匂いだけが、過去を覚えているから。">
+          <h3>雨の匂いを集める人</h3>
+          <p>記憶を香りで残す男の話</p>
+        </article>
+
+        <article class="book" data-title="名前を呼ばなかった夜"
+          data-text="メッセージを書いて、消す。窓の外を見る。その人の名前を、心の中でだけ呼ぶ。">
+          <h3>名前を呼ばなかった夜</h3>
+          <p>メッセージを書いて、消す。窓の外を見る。その人の名前を、心の中でだけ呼ぶ。</p>
+        </article>
+
+        <article class="book" data-title="名前を呼ばなかった夜"
+          data-text="メッセージを書いて、消す。窓の外を見る。その人の名前を、心の中でだけ呼ぶ。">
+          <h3>名前を呼ばなかった夜</h3>
+          <p>メッセージを書いて、消す。窓の外を見る。その人の名前を、心の中でだけ呼ぶ。</p>
+        </article>
+
+        <article class="book" data-title="名前を呼ばなかった夜"
+          data-text="メッセージを書いて、消す。窓の外を見る。その人の名前を、心の中でだけ呼ぶ。">
+          <h3>名前を呼ばなかった夜</h3>
+          <p>メッセージを書いて、消す。窓の外を見る。その人の名前を、心の中でだけ呼ぶ。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- モーダル（本を開く） -->
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-inner">
+        <button class="close" id="close">閉じる</button>
+        <h2 id="mTitle"></h2>
+        <p id="mText"></p>
+      </div>
+    </div>
+
+    <footer class="foot reveal">
+      <small>© Yoakari Antiquarian Bookshop</small>
+    </footer>
+  </main>
+
+  <div id="day-closed" class="day-closed">
+    <p>ただいま準備中です。<br>
+        灯りは、夜にともります。</p>
+  </div>
+
+  <script>
+    const now = new Date();
+    const hour = now.getHours();
+
+    // 夜：18時〜翌5時
+    const isNight = (hour >= 18 || hour < 5);
+
+    if(!isNight){
+        document.getElementById("day-closed").classList.add("show");
+    }
+  </script>
+  <script src="js/main.js"></script>
+  <script>
+    const books = document.querySelectorAll(".book");
+    const modal = document.getElementById("modal");
+    const mTitle = document.getElementById("mTitle");
+    const mText = document.getElementById("mText");
+    const close = document.getElementById("close");
+
+    books.forEach(b => {
+      b.addEventListener("click", () => {
+        mTitle.textContent = b.dataset.title;
+        mText.textContent = b.dataset.text;
+        modal.classList.add("open");
+      });
+    });
+
+    close.addEventListener("click", () => {
+      modal.classList.remove("open");
+    });
+  </script>
+</body>
+</html>

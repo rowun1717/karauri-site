@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>夜灯古書店｜辿り着くには</title>
+  <meta name="description" content="夜灯古書店 辿り着くには。行き方のない場所。" />
+  <link rel="stylesheet" href="css/style3.css" />
+</head>
+
+<body>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <!-- ナビ -->
+  <header class="nav">
+    <nav class="nav-inner">
+      <a class="brand" href="index.html">夜灯古書店</a>
+      <div class="nav-links">
+        <a href="index.html">夜の扉</a>
+        <a href="books.html">書架</a>
+        <a href="about.html">この店について</a>
+        <a href="diary.html">店主の記録</a>
+        <a class="here" href="visit.html">辿り着くには</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="stage">
+    <section class="visit reveal">
+      <h1 class="visitTitle">辿り着くには</h1>
+
+      <p class="visitText">
+        夜灯古書店に、正しい行き方はありません。
+      </p>
+
+      <p class="visitText">
+        地図も、住所も、標識も存在しないからです。<br />
+        この場所は、探して辿り着くためのものではありません。
+      </p>
+
+      <p class="visitText">
+        ただ、夜が深くなるのを待ってください。<br />
+        眠れずに、時計の音だけを数えているような、<br />
+        そんな夜が訪れたとき。
+      </p>
+
+      <p class="visitText">
+        ふと、どこかで灯りが揺れるのを見つけたなら、<br />
+        それが、この店です。
+      </p>
+
+      <p class="visitText soft">
+        あなたがここにいるのなら、<br />
+        もう、十分に辿り着いています。
+      </p>
+    </section>
+
+    <footer class="foot reveal">
+      <small>© Yoakari Antiquarian Bookshop</small>
+    </footer>
+  </main>
+
+  <div id="day-closed" class="day-closed">
+    <p>ただいま準備中です。<br>
+        灯りは、夜にともります。</p>
+  </div>
+
+  <script>
+    const now = new Date();
+    const hour = now.getHours();
+
+    // 夜：18時〜翌5時
+    const isNight = (hour >= 18 || hour < 5);
+
+    if(!isNight){
+        document.getElementById("day-closed").classList.add("show");
+    }
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
