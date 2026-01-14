@@ -875,3 +875,216 @@ ul.icons {
   height: auto;
   border-radius: 6px;
 }
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 32px 16px 64px;
+  }
+
+  .shelf-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .shelf-label {
+    margin-bottom: 8px;
+  }
+
+  .shelf-items {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .book {
+    width: 100%;
+  }
+
+  .book-preview {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .book-preview img {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+  }
+
+  .story-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .story-header .summary {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .story-body article {
+    padding: 20px;
+  }
+}
+
+/* こだわり/苦戦 2段 */
+.work-points{
+  display:grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.point{
+  padding: 16px 16px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+}
+.point h3{
+  margin: 0 0 8px;
+  font-size: 14px;
+  letter-spacing: .06em;
+  color: var(--text);
+  opacity: .95;
+}
+.point ul{
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+
+  /* ナビの文字が詰まらないように */
+  .menu {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .top-nav {
+    height: auto;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+  }
+
+  .logo {
+    padding: 12px 0;
+  }
+
+  /* プロフィールのSNSアイコンずれ対策 */
+  .icons {
+    transform: none;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  /* works：横並び → 縦並び */
+  .work-item {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .work-thumb img {
+    border-radius: 14px;
+  }
+
+  /* こだわり / 苦戦：2列 → 1列 */
+  .work-points {
+    grid-template-columns: 1fr;
+  }
+
+  /* 全体の余白を少し詰める */
+  .works-container {
+    padding: 48px 16px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .work-text h3 {
+    font-size: 16px;
+  }
+
+  .work-text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* ナビ高さを小さく */
+  .top-nav {
+    height: 56px;
+  }
+
+  body {
+    padding-top: 56px;
+  }
+
+  .logo {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+
+  .menu a {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Hero / タイトル */
+  .site-title {
+    font-size: 2rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  /* Profileカード */
+  .profile-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .profile-card div {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+
+  .profile-card dt {
+    font-size: 0.75rem;
+    opacity: 0.5;
+  }
+
+  .profile-card dd {
+    font-size: 0.9rem;
+  }
+
+  .icons {
+    transform: none;
+    justify-content: flex-start;
+  }
+
+  /* Works / World の左右レイアウトを縦に */
+  .work-item,
+  .shelf-section {
+    grid-template-columns: 1fr;
+  }
+
+  .work-thumb img,
+  .book-preview img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .work-text h3 {
+    font-size: 1rem;
+  }
+
+  .work-text p {
+    font-size: 0.9rem;
+  }
+
+}
