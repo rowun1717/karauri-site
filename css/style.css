@@ -442,3 +442,126 @@ ul.icons {
     white-space: normal;
   }
 }
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 32px 16px 64px;
+  }
+
+  .shelf-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .shelf-label {
+    margin-bottom: 8px;
+  }
+
+  .shelf-items {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .book {
+    width: 100%;
+  }
+
+  .book-preview {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .book-preview img {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+  }
+
+  .story-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .story-header .summary {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .story-body article {
+    padding: 20px;
+  }
+
+ /* ナビ高さを小さく */
+  .top-nav {
+    height: 56px;
+  }
+
+  body {
+    padding-top: 56px;
+  }
+
+  .logo {
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+
+  .menu a {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Hero / タイトル */
+  .site-title {
+    font-size: 2rem;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  /* Profileカード */
+  .profile-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .profile-card div {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+
+  .profile-card dt {
+    font-size: 0.75rem;
+    opacity: 0.5;
+  }
+
+  .profile-card dd {
+    font-size: 0.9rem;
+  }
+
+  .icons {
+    transform: none;
+    justify-content: flex-start;
+  }
+
+  /* Works / World の左右レイアウトを縦に */
+  .work-item,
+  .shelf-section {
+    grid-template-columns: 1fr;
+  }
+
+  .work-thumb img,
+  .book-preview img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .work-text h3 {
+    font-size: 1rem;
+  }
+
+  .work-text p {
+    font-size: 0.9rem;
+  }
+
+}
