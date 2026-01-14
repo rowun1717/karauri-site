@@ -1,0 +1,41 @@
+img {
+  width: 14em;
+  min-height: 100px;
+  border-radius: 5%;
+}
+
+.card-3 {
+  width: 15em;
+  margin: 0 auto;
+  cursor: pointer;
+  border: 0.5px solid #e9eaea00;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.content-img {
+  padding: 0.5em 0.5em;
+  text-align: center;
+  background: #6eabbd;
+}
+
+.content {
+  padding: 0.4em 0;
+  background: #ffffff;
+}
+
+.title,
+.post-day {
+  position: relative;
+  padding: 0 0.3em;
+  margin: 0;
+  font-size: 0.8em;
+  line-height: 1.5;
+}
+
+.post-day {
+  padding: 0 0.3em;
+  font-size: 0.6em;
+  color: #777;
+}
+
