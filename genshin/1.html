@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>あいさつのメッセージを表示</title>
+    <meta name="description" content="テスト用">
+</head>
+<body>
+  <div>
+    <script>// <![CDATA[
+    function digs(num) {
+    return ( num < 10 )?num = "0" + num:num = num
+    }
+    function Watch() {
+    var date = new Date();
+    var nowHour = 23 - digs(date.getHours() );
+    var nowMin = digs(59 - date.getMinutes() );
+    var nowSec = digs(59 - date.getSeconds() );
+    var msg = nowHour + ":" + nowMin + ":" + nowSec;
+    document.getElementById("Watch").innerHTML = msg;
+    }
+    setInterval('Watch()',500);
+    // ]]></script>
+    </div>
+    <div id="Watch">00:00:00</div></body>
+    
+  </div>
+
+</html>
