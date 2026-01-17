@@ -1,0 +1,336 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HINATA LAB. | 生活を矯正しない、日だまりの味方</title>
+  <meta name="description" content="頑張れない日にも、居場所はある。HINATA LAB. は、暮らしを整えるのではなく、暮らしに寄り添うプロダクトをつくるスタートアップです。" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip" href="#main">本文へ</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true">☀️</span>
+        <span class="brand-name">HINATA LAB.</span>
+      </a>
+
+      <nav class="nav" aria-label="主要メニュー">
+        <a href="#about">会社</a>
+        <a href="#product">プロダクト</a>
+        <a href="#values">価値観</a>
+        <a href="#pricing">プラン</a>
+        <a class="btn btn-small" href="#cta">ベータに参加</a>
+      </nav>
+
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="pill">暮らしに寄り添うスタートアップ</p>
+          <h1>頑張れない日にも、<br>居場所はある。</h1>
+          <p class="lead">
+            HINATA LAB. は「生活を最適化する」のではなく、<br class="hide-sm">
+            “今日のあなた”を少しだけ軽くするプロダクトをつくります。
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#cta">ベータに参加する</a>
+            <button class="btn btn-ghost" id="openDemo" type="button">デモを見る</button>
+          </div>
+
+          <div class="hero-note" role="note">
+            <span class="spark" aria-hidden="true">✦</span>
+            <p>
+              <strong id="todayMessage">今日を生きただけで、えらい。</strong><br>
+              <span class="muted">あなたのペースを、こちらが追いかけます。</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="プロダクトのミニ体験">
+          <div class="card-top">
+            <div class="avatar" aria-hidden="true">🌼</div>
+            <div>
+              <p class="card-title">HINATA</p>
+              <p class="card-sub">やさしい生活サポート</p>
+            </div>
+            <button class="toggle" id="toneToggle" type="button" aria-pressed="false" title="言い方を切り替え">
+              やさしさ: ふつう
+            </button>
+          </div>
+
+          <div class="card-body">
+            <p class="bubble" id="bubbleText">おはよう。今日はカーテン開けられたら100点だよ。</p>
+
+            <div class="mini">
+              <p class="mini-label">今日の小さなできた</p>
+              <div class="chips" id="chips">
+                <button class="chip" type="button" data-task="起きた">起きた</button>
+                <button class="chip" type="button" data-task="水を飲んだ">水を飲んだ</button>
+                <button class="chip" type="button" data-task="顔洗えた">顔洗えた</button>
+                <button class="chip" type="button" data-task="外の空気吸えた">外の空気吸えた</button>
+              </div>
+
+              <div class="progress-wrap" aria-label="今日のあたたかさメーター">
+                <div class="progress">
+                  <div class="bar" id="bar" style="width: 20%"></div>
+                </div>
+                <p class="progress-text"><span id="score">20</span>/100 ひだまり</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-bottom">
+            <button class="btn btn-small" id="resetMini" type="button">リセット</button>
+            <a class="link" href="#product">どんな仕組み？ →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bg" aria-hidden="true">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="grain"></div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="trust">
+      <div class="container trust-inner">
+        <p class="muted">“怒らない設計”を支えるチーム</p>
+        <div class="logos" aria-label="実績ロゴ（ダミー）">
+          <span>HINATA Care</span>
+          <span>Soft Routine</span>
+          <span>Warm UX</span>
+          <span>Everyday Lab</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container split">
+        <div>
+          <h2>HINATA LAB. って、どんな会社？</h2>
+          <p class="text">
+            私たちは「できる人」を増やす会社ではありません。<br>
+            できない日にも息ができる場所を、インターネットの中につくります。
+          </p>
+
+          <ul class="list">
+            <li><span aria-hidden="true">✅</span> 連続記録が切れても、責めない</li>
+            <li><span aria-hidden="true">✅</span> 失敗を“改善点”ではなく“天気”として扱う</li>
+            <li><span aria-hidden="true">✅</span> 「また会えたね」を最優先にする</li>
+          </ul>
+        </div>
+
+        <div class="quote">
+          <p class="quote-text">
+            “人は、頑張れないときにこそ、優しさが必要。”
+          </p>
+          <p class="quote-by">HINATA LAB. プロダクト哲学</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product -->
+    <section id="product" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>プロダクト</h2>
+          <p class="muted">暮らしを矯正しない。暮らしに寄り添う。</p>
+        </div>
+
+        <div class="cards">
+          <article class="feature">
+            <h3>やさしい通知</h3>
+            <p>やる気がない日でも受け取れる言葉だけ。焦らせないリズムで届きます。</p>
+            <div class="badge">例: 「今日は休む日だったんだね」</div>
+          </article>
+
+          <article class="feature">
+            <h3>小さな“できた”</h3>
+            <p>水を飲む、カーテンを開ける。小さな達成に、ちゃんと拍手を。</p>
+            <div class="badge">例: 「体が喜んでるよ」</div>
+          </article>
+
+          <article class="feature">
+            <h3>怒らない設計</h3>
+            <p>連続ログインも、連続達成も、プレッシャーにならない形へ。</p>
+            <div class="badge">例: 「また会えたね」</div>
+          </article>
+        </div>
+
+        <div class="demo-block" id="demo">
+          <div class="demo-left">
+            <h3>1分デモ: “ひだまりメッセージ”</h3>
+            <p class="muted">気分を選ぶと、言葉の温度が変わります。</p>
+
+            <div class="mood">
+              <button class="mood-btn" type="button" data-mood="tired">つかれた</button>
+              <button class="mood-btn" type="button" data-mood="anxious">不安</button>
+              <button class="mood-btn" type="button" data-mood="okay">まあまあ</button>
+              <button class="mood-btn" type="button" data-mood="good">元気</button>
+            </div>
+          </div>
+
+          <div class="demo-right" aria-live="polite">
+            <div class="note-card">
+              <p class="note-title">HINATA から</p>
+              <p class="note-msg" id="demoMsg">今のあなたの速度でいいよ。ここにいるだけで、もう十分。</p>
+              <p class="note-foot muted" id="demoFoot">選択: つかれた</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section id="values" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>価値観</h2>
+          <p class="muted">“あたたかいUX”を仕様にします。</p>
+        </div>
+
+        <div class="values">
+          <div class="value">
+            <h3>待つ</h3>
+            <p>急かさない。急いでるのはいつも世界のほう。</p>
+          </div>
+          <div class="value">
+            <h3>ゆるす</h3>
+            <p>記録が途切れても、あなたは途切れてない。</p>
+          </div>
+          <div class="value">
+            <h3>照らす</h3>
+            <p>あなたの背中じゃなく、足元を照らす。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>プラン</h2>
+          <p class="muted">まずは無料で、あたたかさを試せます。</p>
+        </div>
+
+        <div class="pricing">
+          <div class="plan">
+            <h3>Free</h3>
+            <p class="price">¥0<span>/月</span></p>
+            <ul>
+              <li>やさしい通知</li>
+              <li>小さな“できた”記録</li>
+              <li>週1のふりかえり</li>
+            </ul>
+            <a class="btn btn-ghost" href="#cta">無料で始める</a>
+          </div>
+
+          <div class="plan plan-pop">
+            <p class="tag">おすすめ</p>
+            <h3>Hinata+</h3>
+            <p class="price">¥480<span>/月</span></p>
+            <ul>
+              <li>気分に合わせた言葉の温度調整</li>
+              <li>通知の“やさしさ段階”</li>
+              <li>夜の“おつかれさま便”</li>
+            </ul>
+            <a class="btn" href="#cta">ベータに参加</a>
+          </div>
+
+          <div class="plan">
+            <h3>Team</h3>
+            <p class="price">お問い合わせ</p>
+            <ul>
+              <li>福祉/教育向け導入</li>
+              <li>管理者ダッシュボード</li>
+              <li>共同研究/検証</li>
+            </ul>
+            <a class="btn btn-ghost" href="#cta">相談する</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>ベータ参加者を募集しています</h2>
+          <p class="muted">
+            匿名OK。あなたの“今日”に合う言葉を、一緒に育てさせてください。
+          </p>
+        </div>
+
+        <form class="form" id="betaForm">
+          <label>
+            <span>メールアドレス</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+
+          <label>
+            <span>あなたの今（任意）</span>
+            <select name="mood">
+              <option value="tired">つかれた</option>
+              <option value="anxious">不安</option>
+              <option value="okay" selected>まあまあ</option>
+              <option value="good">元気</option>
+            </select>
+          </label>
+
+          <button class="btn" type="submit">参加する</button>
+          <p class="muted tiny" id="formResult" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="muted">© <span id="year"></span> HINATA LAB.</p>
+      <div class="footer-links">
+        <a href="#about">会社</a>
+        <a href="#product">プロダクト</a>
+        <a href="#values">価値観</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-label="デモ動画">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-panel">
+      <div class="modal-head">
+        <p class="modal-title">デモ（ダミー）</p>
+        <button class="icon-btn" id="closeModal" type="button" aria-label="閉じる">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="video-dummy" aria-label="動画の代わりのプレースホルダー">
+          <p>ここに動画やGIFを置けるよ</p>
+          <p class="muted tiny">例: /assets/demo.mp4</p>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-ghost" data-close="true" type="button">閉じる</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

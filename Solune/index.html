@@ -1,0 +1,319 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solune | Hello, New Light.</title>
+  <meta name="description" content="Solune（ソリュヌ）は、昼も夜も寄り添う“新しい光”のデザインスタジオ。日常を明るくするWeb・ビジュアルを制作します。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Noto+Sans+JP:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a class="skip" href="#main">本文へ</a>
+
+  <!-- 背景演出 -->
+  <div class="bg" aria-hidden="true">
+    <canvas id="light" class="bg-layer"></canvas>
+    <div class="clouds bg-layer">
+      <span class="cloud c1"></span>
+      <span class="cloud c2"></span>
+      <span class="cloud c3"></span>
+      <span class="cloud c4"></span>
+    </div>
+    <div class="sparkles bg-layer"></div>
+  </div>
+
+  <header class="header" data-elevate>
+    <div class="wrap header-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Solune</span>
+      </a>
+
+      <nav class="nav" aria-label="主要メニュー">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#works">Works</a>
+        <a href="#process">Process</a>
+        <a class="btn small" href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-drawer" hidden>
+      <div class="wrap drawer-inner">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#works">Works</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="pill">昼も夜も、どんな時間にも寄り添う。</p>
+          <h1 class="hero-title">
+            <span class="kicker">Hello, New Light.</span>
+            <span class="sub">毎日を照らす、新しい光を。</span>
+          </h1>
+          <p class="hero-lead">
+            Solune（ソリュヌ）は、Web・ビジュアル・空間の“明るさ”をデザインするスタジオです。<br>
+            世界中の“今”を、もっと明るく。
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn" href="#contact">相談してみる</a>
+            <a class="link" href="#works">制作例を見る<span aria-hidden="true"> →</span></a>
+          </div>
+
+          <div class="stats" aria-label="特徴">
+            <div class="stat">
+              <div class="stat-num">Light</div>
+              <div class="stat-label">気持ちが上を向く体験設計</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">Air</div>
+              <div class="stat-label">空気まで伝えるビジュアル</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">Care</div>
+              <div class="stat-label">初めてでも安心の進行</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <div class="card-glow"></div>
+          <div class="card">
+            <div class="card-top">
+              <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+              <span class="card-title">Solune Studio</span>
+            </div>
+            <div class="card-body">
+              <div class="mini-line w60"></div>
+              <div class="mini-line w85"></div>
+              <div class="mini-line w50"></div>
+              <div class="mini-block"></div>
+              <div class="mini-row">
+                <div class="mini-chip">Web</div>
+                <div class="mini-chip">Brand</div>
+                <div class="mini-chip">Visual</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <i></i>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="wrap grid2">
+        <div>
+          <h2 class="h2">About Solune</h2>
+          <p class="lead">
+            <b>sol（太陽）</b>と<b>lune（月）</b>を合わせた造語。<br>
+            まぶしい昼の背中押しも、静かな夜の寄り添いも、どちらも肯定するブランドです。
+          </p>
+          <p class="muted">
+            大事にしているのは「わかりやすさ」と「やさしさ」。派手さではなく、
+            触れた人の気持ちが少し軽くなる“光”を設計します。
+          </p>
+
+          <div class="badges">
+            <span class="badge">UI/UX</span>
+            <span class="badge">Web Design</span>
+            <span class="badge">Branding</span>
+            <span class="badge">Motion</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3 class="h3">What we brighten</h3>
+          <ul class="list">
+            <li>個人活動・小さなブランドの「公式サイト」</li>
+            <li>作品やサービスが伝わる「ポートフォリオ」</li>
+            <li>空気が残る「ビジュアル設計（写真/イラスト方向性）」</li>
+            <li>気持ちが迷子にならない「導線と文章の整え」</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2">Services</h2>
+          <p class="muted">“日常を明るくする”ための、デザインと制作。</p>
+        </div>
+
+        <div class="cards">
+          <article class="svc">
+            <h3>Webサイト制作</h3>
+            <p>コーポレート/ポートフォリオ/LP。軽く、速く、見やすく。</p>
+            <ul>
+              <li>情報設計 / デザイン</li>
+              <li>HTML / CSS / JavaScript</li>
+              <li>スマホ最適化</li>
+            </ul>
+          </article>
+
+          <article class="svc">
+            <h3>ブランドの光づくり</h3>
+            <p>ロゴ・カラー・トーンを整え、世界観を統一します。</p>
+            <ul>
+              <li>ロゴ（簡易〜）</li>
+              <li>カラーパレット / 文字組</li>
+              <li>文章トーン設計</li>
+            </ul>
+          </article>
+
+          <article class="svc">
+            <h3>ビジュアル&空間</h3>
+            <p>写真・イラストの方向性、空気感の演出まで。</p>
+            <ul>
+              <li>キービジュアル提案</li>
+              <li>アニメーション演出</li>
+              <li>簡易バナー/OGP</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2">Works</h2>
+          <p class="muted">想いが、かたちになった場所。Soluneが灯してきた光たち。</p>
+        </div>
+
+        <div class="works">
+            <a class="work" href="https://rowun1717.github.io/karauri-site/yoakari/index.html" target="_blank">
+            <div class="thumb t1"></div>
+            <div class="work-meta">
+                <b>夜灯古書店</b>
+                <span>個人創作者向け公式サイト</span>
+            </div>
+            </a>
+
+            <a class="work" href="https://rowun1717.github.io/rowun/" target="_blank">
+            <div class="thumb t2"></div>
+            <div class="work-meta">
+                <b>Rowun Portfolio</b>
+                <span>個人ブランドサイト</span>
+            </div>
+            </a>
+
+            <a class="work" href="#contact">
+            <div class="thumb t3"></div>
+            <div class="work-meta">
+                <b>Your Project</b>
+                <span>ここに、あなたの光を。</span>
+            </div>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section alt">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="h2">Process</h2>
+          <p class="muted">はじめてでも進めやすいように、段階を明るく見える化。</p>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <b>ヒアリング</b>
+            <span>目的・雰囲気・参考サイトを整理</span>
+          </li>
+          <li>
+            <b>設計</b>
+            <span>ページ構成 / 導線 / コピーの下書き</span>
+          </li>
+          <li>
+            <b>デザイン</b>
+            <span>色・タイポ・写真/イラスト方向性</span>
+          </li>
+          <li>
+            <b>制作</b>
+            <span>コーディング（軽量・レスポンシブ）</span>
+          </li>
+          <li>
+            <b>公開</b>
+            <span>最終調整、公開、簡易操作案内</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap grid2">
+        <div>
+          <h2 class="h2">Contact</h2>
+          <p class="lead">
+            いまの“暗さ”も含めて大丈夫。<br>
+            そこから一緒に、光の形を探します。
+          </p>
+          <p class="muted">
+            ここはフォームの見た目サンプルです。実運用はGoogleフォームやFormspree等につなげてね。
+          </p>
+        </div>
+
+        <form class="form" action="https://formspree.io/f/mkoooqrv" method="POST">
+         <label>
+          お名前
+          <input type="text" name="name" placeholder="例）Karakara" />
+         </label>
+
+         <label>
+          メール
+          <input type="email" name="email" placeholder="example@mail.com" />
+        </label>
+
+         <label>
+          ご相談内容
+          <textarea name="message" rows="5" placeholder="どんな光をつくりたい？"></textarea>
+         </label>
+
+         <button class="btn" type="submit">送信</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <div class="brand foot">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Solune</span>
+        </div>
+        <p class="tiny muted">© <span id="year"></span> Solune. Hello, New Light.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
