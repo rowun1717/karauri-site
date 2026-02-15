@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>一般歯科 | ○○歯科クリニック</title>
+  <style>
+    :root {
+      --primary: #3c6479;       /* Atlantis - ヘッダー・メイン */
+      --secondary: #57b0d9;     /* Milky Waves - アクセント */
+      --light-blue: #93c9f2;    /* Clear Sky */
+      --pale-blue: #c7d3f7;     /* Icy Plains */
+      --pale-purple: #eadbf4;   /* Scented Spring */
+      --off-white: #dfe1db;     /* White Bullet */
+      --text-dark: #2d3748;
+      --text-light: #4a5568;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--off-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary), #2f4e60);
+      color: white;
+      padding: 1.5rem 5%;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .nav {
+      margin-top: 1rem;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: var(--light-blue);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--pale-blue) 0%, var(--pale-purple) 100%);
+      padding: 5rem 5% 4rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    h3 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.8rem;
+      box-shadow: 0 6px 20px rgba(60,100,121,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      border: 1px solid var(--pale-blue);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(60,100,121,0.12);
+    }
+
+    .card h4 {
+      color: var(--secondary);
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 1rem 0.5rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(87,176,217,0.3);
+    }
+
+    .btn:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(60,100,121,0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--secondary);
+      color: var(--secondary);
+    }
+
+    .btn-outline:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .feature-item {
+      flex: 1 1 220px;
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.7);
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--light-blue);
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2rem; }
+      header h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>○○歯科クリニック</h1>
+    <nav class="nav">
+      <a href="#">ホーム</a>
+      <a href="#">診療案内</a>
+      <a href="#">院長・スタッフ</a>
+      <a href="#">アクセス</a>
+      <a href="#">WEB予約</a>
+    </nav>
+  </header>
+
+    <section class="hero">
+    <div class="container">
+        <h2>一般歯科</h2>
+        <p>
+        虫歯・歯周病など、日常のお口のトラブルに丁寧に対応します。<br>
+        痛みに配慮し、わかりやすい説明と再発を防ぐ治療を大切にしています。
+        </p>
+        <a href="#reserve" class="btn">WEB予約する</a>
+        <a href="#flow" class="btn btn-outline">予約の流れを見る</a>
+    </div>
+    </section>
+
+  <div class="container">
+
+    <section class="section">
+      <h3>こんな症状はご相談ください</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h4>歯がしみる・痛む</h4>
+          <p>冷たいものや熱いものでしみる、ズキズキする痛みなど</p>
+        </div>
+        <div class="card">
+          <h4>詰め物・被せ物が取れた</h4>
+          <p>以前治療したところが取れてしまった・外れた</p>
+        </div>
+        <div class="card">
+          <h4>歯ぐきが腫れた・血が出る</h4>
+          <p>歯ブラシで血が出る、歯ぐきが赤く腫れている</p>
+        </div>
+        <div class="card">
+          <h4>口臭が気になる</h4>
+          <p>自分では気づきにくい口臭のお悩みもお気軽に</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(to bottom, white, var(--pale-blue)); border-radius:16px; margin:3rem 0; padding:3rem 5%;">
+      <h3>当院が大切にしていること</h3>
+      <div class="features">
+        <div class="feature-item">
+          <h4>痛みに配慮</h4>
+          <p>表面麻酔・電動注射など、できるだけ痛くない工夫をしています。</p>
+        </div>
+        <div class="feature-item">
+          <h4>わかりやすい説明</h4>
+          <p>何をするのか・なぜ必要かを、模型や画像を使って丁寧にご説明します。</p>
+        </div>
+        <div class="feature-item">
+          <h4>再発防止をセット</h4>
+          <p>治療後も定期検診・クリーニングで長く健康なお口を保ちます。</p>
+        </div>
+        <div class="feature-item">
+          <h4>清潔な環境</h4>
+          <p>器具の滅菌・院内感染対策を徹底しています。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section text-center" id="reserve">
+      <h3>今すぐ予約できます</h3>
+      <p style="font-size:1.3rem; margin:1.5rem 0;">24時間WEB予約受付中です。お気軽にご予約ください。</p>
+      <a href="https://your-reservation-link.com" class="btn" style="font-size:1.3rem; padding:1.2rem 3rem;">
+        WEB予約へ進む →
+      </a>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>○○歯科クリニック　｜　 TEL: 000-0000-0000　｜　[住所] 〒000-0000 ○○県○○市...</p>
+    <p style="margin-top:1rem; opacity:0.9;">© 2026 ○○歯科クリニック All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // 簡単なスムーススクロール（予約ボタンなど）
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
