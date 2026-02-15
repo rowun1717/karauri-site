@@ -1,0 +1,107 @@
+body.night {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 20%, #1a2338, #05080f 70%);
+  font-family: "Noto Serif JP", serif;
+  color: #e8ecf5;
+}
+
+.entrance {
+  display: grid;
+  gap: 22px;
+  justify-items: center;
+  overflow: visible;
+}
+
+.signboard {
+  padding: 16px 28px 14px;
+  background: linear-gradient(180deg, #6b4529, #4e331f);
+  border-radius: 6px;
+  text-align: center;
+  box-shadow:
+    0 10px 26px rgba(0,0,0,.6),
+    inset 0 0 0 1px rgba(255,255,255,.12);
+}
+
+.signboard h1 {
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: .25em;
+  color: #f5efe6;
+}
+
+.signboard .time {
+  margin: 6px 0 0;
+  font-size: .8rem;
+  letter-spacing: .2em;
+  color: #e2d7c5;
+}
+
+.wood-door {
+  width: 220px;
+  aspect-ratio: 3 / 5;
+  background: url("images/doa.png") center / cover no-repeat;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+
+.wood-door.disabled {
+  opacity: .35;
+  filter: grayscale(.5);
+  pointer-events: none;
+}
+
+.door-label {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 18px 5px;
+
+  background: linear-gradient(180deg, rgba(0,0,0,.0), rgba(0,0,0,.35));
+  color: #f5efe6;
+  font-size: .8rem;
+  letter-spacing: .25em;
+  border-radius: 4px;
+  box-shadow:
+    0 6px 14px rgba(0,0,0,.5),
+    inset 0 0 0 1px rgba(255,255,255,.12);
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+
+.status {
+  font-size: .85rem;
+  letter-spacing: .12em;
+  color: #aab2c8;
+  min-height: 1.2em;
+}
+
+.curtain {
+  position: fixed;
+  inset: 0;
+  background: #05080f;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s ease;
+}
+
+.curtain.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.wood-door::after {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  border-radius: 40px;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255,255,255,.10), transparent 55%),
+    radial-gradient(circle at 50% 80%, rgba(0,0,0,.55), transparent 60%);
+  filter: blur(24px);
+  z-index: -1;
+}

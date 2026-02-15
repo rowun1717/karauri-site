@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>月影珈琲店 | メニュー看板</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500;700&family=Yomogi&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style2.css">
+
+  <!-- Header offset (sticky/fixed 対策) -->
+  <script>
+    function syncHeaderOffset(){
+      const header = document.querySelector("header.about-header, header, .header, .site-header");
+      if(!header) return;
+
+      const h = Math.ceil(header.getBoundingClientRect().height);
+      document.documentElement.style.setProperty("--header-h", h + "px");
+    }
+
+    window.addEventListener("load", () => {
+      syncHeaderOffset();
+      setTimeout(syncHeaderOffset, 200);
+    });
+    window.addEventListener("resize", syncHeaderOffset);
+  </script>
+</head>
+
+<body class="night">
+
+  <!-- 共通ヘッダー -->
+  <header class="about-header">
+    <a href="index.html" class="about-brand">月影珈琲店</a>
+
+    <nav class="about-nav" aria-label="サイトメニュー">
+      <a href="about.html">扉の向こう</a>
+      <a href="menu.html" class="is-current" aria-current="page">メニュー</a>
+    </nav>
+  </header>
+
+  <main class="stage">
+    <p class="hint">このページは「黒板風ブリキ看板」っぽいメニュー表示です。中身（名前・説明・価格）は自由に差し替えてOK。</p>
+
+    <section class="sign" aria-label="月影珈琲店 メニュー看板">
+      <div class="frame" aria-hidden="true"></div>
+
+      <header class="header">
+        <p class="small">TSUKIKAGE COFFEE</p>
+        <h1>MENU</h1>
+        <p>夜の空気を邪魔しない味だけ、並べています。</p>
+      </header>
+
+      <div class="grid">
+        <!-- DRINK -->
+        <div class="section-title">DRINK</div>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/coffee.png" alt="月影ブレンド">
+          </div>
+          <h3 class="name">月影ブレンド</h3>
+          <p class="desc">深煎り。夜更けの静けさみたいに、少しだけ苦い。</p>
+          <div class="price">¥ 520</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/latte.png" alt="宵闇ラテ">
+          </div>
+          <h3 class="name">宵闇ラテ</h3>
+          <p class="desc">エスプレッソ＋ミルク。甘さ控えめ、余韻は長い。</p>
+          <div class="price">¥ 600</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/mocha.png" alt="星屑カフェモカ">
+          </div>
+          <h3 class="name">星屑カフェモカ</h3>
+          <p class="desc">チョコの香りが星みたいに残る。寒い夜に。</p>
+          <div class="price">¥ 650</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/lemonade.png" alt="夜風レモネード">
+          </div>
+          <h3 class="name">夜風レモネード</h3>
+          <p class="desc">自家製。ほんのりハーブで、後味が涼しい。</p>
+          <div class="price">¥ 580</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/soda.png" alt="星降るソーダ">
+          </div>
+          <h3 class="name">星降るソーダ</h3>
+          <p class="desc">色が変わる夜空。バタフライピー×レモン。</p>
+          <div class="price">¥ 620</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/Affogato.png" alt="月影アフォガート">
+          </div>
+          <h3 class="name">月影アフォガート</h3>
+          <p class="desc">バニラに濃いエスプレッソ。デザート兼ドリンク。</p>
+          <div class="price">¥ 690</div>
+        </article>
+
+        <!-- WARM CUP -->
+        <div class="section-title">WARM CUP</div>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/supu1.png" alt="夜凪スープ">
+          </div>
+          <h3 class="name">夜凪スープ</h3>
+          <p class="desc">玉ねぎと野菜だけ。飲むみたいに食べる。</p>
+          <div class="price">¥ 520</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/supu2.png" alt="月影ポタージュ">
+          </div>
+          <h3 class="name">月影ポタージュ</h3>
+          <p class="desc">コーン or かぼちゃ。温度低めで出す。</p>
+          <div class="price">¥ 560</div>
+        </article>
+
+        <!-- FOOD -->
+        <div class="section-title">FOOD</div>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/kare.png" alt="月影カレー">
+          </div>
+          <h3 class="name">月影カレー</h3>
+          <p class="desc">辛くない。スパイス控えめ。夜用に、量も匂いも静か。</p>
+          <div class="price">¥ 780</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/kare2.png" alt="影のバターチキンカレー">
+          </div>
+          <h3 class="name">影のバターチキンカレー</h3>
+          <p class="desc">ケチャップ薄め、バター控えめ。懐かしいけど、重くない。</p>
+          <div class="price">¥ 820</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/omu.png" alt="白夜オムライス">
+          </div>
+          <h3 class="name">白夜オムライス</h3>
+          <p class="desc">卵ふわっと、ライス少なめ。夜更けでも食べきれる。</p>
+          <div class="price">¥ 860</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/dria.png" alt="星屑ドリア">
+          </div>
+          <h3 class="name">星屑ドリア</h3>
+          <p class="desc">小皿。チーズは軽く、焦がさない。</p>
+          <div class="price">¥ 880</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">
+            <img src="images/crok.png" alt="宵闇クロックムッシュ">
+          </div>
+          <h3 class="name">宵闇クロックムッシュ</h3>
+          <p class="desc">ホワイトソース薄く。噛む音が静か。</p>
+          <div class="price">¥ 760</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">🍞</div>
+          <h3 class="name">月待ちトーストプレート</h3>
+          <p class="desc">トースト＋小さなサラダ＋スープ一口。夜の“ちゃんとしたご飯”。</p>
+          <div class="price">¥ 720</div>
+        </article>
+
+        <!-- DESSERT -->
+        <div class="section-title">DESSERT</div>
+
+        <article class="card">
+          <div class="drink-icon">🍞</div>
+          <h3 class="name">月影トースト</h3>
+          <p class="desc">バターだけ。余計なことをしない。</p>
+          <div class="price">¥ 380</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">🥐</div>
+          <h3 class="name">三日月スコーン</h3>
+          <p class="desc">外さく、中しっとり。はちみつ or クリーム。</p>
+          <div class="price">¥ 450</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">🍮</div>
+          <h3 class="name">月影プリン</h3>
+          <p class="desc">固め。ほろ苦カラメルで、夜が締まる。</p>
+          <div class="price">¥ 520</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">🍰</div>
+          <h3 class="name">夜明け前のチーズケーキ</h3>
+          <p class="desc">レア寄り。最後に、少しだけ酸味。</p>
+          <div class="price">¥ 580</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">🍫</div>
+          <h3 class="name">星空ショコラケーキ</h3>
+          <p class="desc">濃厚。ひと口で、夜が深くなる。</p>
+          <div class="price">¥ 600</div>
+        </article>
+
+        <article class="card">
+          <div class="drink-icon">🍨</div>
+          <h3 class="name">月影パフェ（夜限定）</h3>
+          <p class="desc">コーヒーゼリー＋アイス＋ビタークリーム。</p>
+          <div class="price">¥ 780</div>
+        </article>
+      </div>
+
+      <div class="note">※ 価格・内容はサンプルです。お好みで差し替えてください。</div>
+    </section>
+  </main>
+
+</body>
+</html>
