@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karasawa Archive | About</title>
+  <meta name="description" content="世界観設計と実装で、伝わるWebを作ります。制作の考え方・対応範囲・進め方をまとめました。">
+  <!-- いつものCSSに合わせてパス調整してね -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="page-works"><!-- もしAbout専用の背景があるなら page-about に変えてOK -->
+  <div class="sparkles" aria-hidden="true" id="sparkles"></div>
+
+  <!-- Header -->
+  <header class="header" data-elevate="false">
+    <div class="container header__inner">
+      <a class="brand" href="./index.html" aria-label="ホームへ">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">Karasawa Archive</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="メインナビ">
+        <button class="navToggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <span class="navToggle__line"></span>
+          <span class="navToggle__line"></span>
+          <span class="navToggle__line"></span>
+          <span class="srOnly">メニュー</span>
+        </button>
+
+        <div class="nav" id="navMenu">
+          <a class="nav__link" href="./index.html">Home</a>
+          <a class="nav__link" href="./works.html">Works</a>
+          <a class="nav__link is-active" href="./about.html">About</a>
+          <a class="nav__link" href="./service.html">Service</a>
+          <a class="nav__link" href="./contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT HERO -->
+    <section class="section">
+      <div class="container">
+        <p class="hero__kicker">About</p>
+        <h1 class="hero__title" style="font-size:clamp(34px,4.4vw,46px); letter-spacing:.06em;">
+          世界観を、使いやすさと一緒に形にします。
+        </h1>
+        <p class="hero__lead" style="max-width:70ch;">
+          ふわっとしたイメージや断片的なメモからでもOK。目的（誰に・何を・どうしてほしいか）を整理し、
+          デザインと実装（HTML/CSS/JS）で「伝わる状態」まで落とし込みます。
+        </p>
+
+        <div class="hero__cta" style="justify-content:flex-start;">
+          <a class="btn btn--primary" href="./contact.html">相談する</a>
+          <a class="btn btn--ghost" href="./works.html">制作物を見る</a>
+        </div>
+
+        <div class="hero__chips" style="justify-content:flex-start;">
+          <span class="chip">世界観設計</span>
+          <span class="chip">情報設計</span>
+          <span class="chip">HTML / CSS / JS</span>
+          <span class="chip">小規模〜個人向け</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="section">
+    <div class="container">
+        <div class="section__head">
+        <h2 class="section__title">プロフィール</h2>
+        </div>
+        <p class="section__sub">
+        世界観と実装を行き来する、個人制作者です。
+        </p>
+
+        <div class="grid2">
+        <!-- 左：基本情報 -->
+        <section class="card card--cute">
+            <h3 class="card__title">基本情報</h3>
+            <ul class="list">
+            <li><strong>名前：</strong> Rowun｜Web & World Design<br>
+                ※お取引は本名にて対応いたします。</li>
+            <li><strong>拠点：</strong> 日本</li>
+            <li><strong>対応時間：</strong> 平日 10:00〜18:00（目安）</li>
+            <li><strong>返信目安：</strong> 1〜2日以内</li>
+            </ul>
+        </section>
+
+        <!-- 右：スキル・ツール -->
+        <section class="card">
+            <h3 class="card__title">使用ツール / 技術</h3>
+            <ul class="list">
+            <li>HTML / CSS / JavaScript</li>
+            <li>GitHub / GitHub Pages</li>
+            <li>VS Code</li>
+            <li>Figma（簡易デザイン・構成）</li>
+            <li>Canva（印刷物系）</li>
+            </ul>
+
+            <div class="hero__chips" style="justify-content:flex-start; margin-top:12px;">
+            <span class="chip">レスポンシブ対応</span>
+            <span class="chip">軽量設計</span>
+            <span class="chip">世界観設計</span>
+            </div>
+        </section>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- できること / すきな温度（スクショの雰囲気維持） -->
+    <section class="section" style="padding-top:0;">
+      <div class="container grid2">
+        <section class="card" aria-label="できること">
+          <h2 class="card__title">できること</h2>
+          <ul class="list">
+            <li>ポートフォリオ／小規模サイト制作（HTML/CSS/JS）</li>
+            <li>導線・情報設計（CTA、セクション設計、読み順）</li>
+            <li>世界観デザイン（配色・余白・タイポ・トーン統一）</li>
+            <li>チラシ／メニュー表などの整列・レイアウト設計</li>
+            <li>サイト文章／紹介文／世界観テキストの整え</li>
+          </ul>
+          <p class="muted" style="margin-top:10px;">
+            “見た目だけ”ではなく、目的に届く構造を優先します。
+          </p>
+        </section>
+
+        <section class="card card--cute" aria-label="すきな温度">
+          <h2 class="card__title">すきな温度</h2>
+          <p class="muted">
+            夜の静けさに、<strong>柔らかい薄い赤紫</strong> の体温をひとさじ。<br>
+            うさぎのやわらかさと、「ぐ」の不思議さを、控えめに混ぜるのが得意です。<br>
+            甘さは残しつつ、読みやすさと信頼感は崩さない。そんなバランスを狙います。
+          </p>
+          <div class="hero__chips" style="justify-content:flex-start; margin-top:12px;">
+            <span class="chip">やわらかい</span>
+            <span class="chip">透明感</span>
+            <span class="chip">整う</span>
+            <span class="chip">静かに強い</span>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 進め方（仕事寄りだけど世界観はそのまま） -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">進め方</h2>
+          <a class="textLink" href="./contact.html">相談はこちら →</a>
+        </div>
+        <p class="section__sub">
+          ふわっとした要望を、形にしていく順番。小さめ案件でもこの流れで進めます。
+        </p>
+
+        <div class="grid2">
+          <section class="card">
+            <h3 class="card__title">① ヒアリング / 整理</h3>
+            <ul class="list">
+              <li>目的・ターゲット・載せたい情報の棚卸し</li>
+              <li>参考URLや雰囲気の共有（ざっくりでOK）</li>
+              <li>ページ構成の叩き台を作成</li>
+            </ul>
+            <p class="muted" style="margin-top:10px;">
+              「何を作るか」より先に「どう役に立つか」を揃えます。
+            </p>
+          </section>
+
+          <section class="card">
+            <h3 class="card__title">② デザイン / トーン統一</h3>
+            <ul class="list">
+              <li>配色・余白・文字の温度を決める</li>
+              <li>見出し階層や導線（CTA）の設計</li>
+              <li>素材の扱い（画像の見せ方、カード設計）</li>
+            </ul>
+            <p class="muted" style="margin-top:10px;">
+              世界観は “飾り” ではなく “読みやすさの補助” にします。
+            </p>
+          </section>
+
+          <section class="card">
+            <h3 class="card__title">③ 実装 / 公開</h3>
+            <ul class="list">
+              <li>HTML/CSS/JSで実装（レスポンシブ対応）</li>
+              <li>基本の軽量化（画像サイズ・読み込み）</li>
+              <li>GitHub Pages 等で公開サポート</li>
+            </ul>
+            <p class="muted" style="margin-top:10px;">
+              “あとで直しやすい” 構造を意識します。
+            </p>
+          </section>
+
+          <section class="card">
+            <h3 class="card__title">④ 仕上げ / 微調整</h3>
+            <ul class="list">
+              <li>表示チェック（PC/スマホ）</li>
+              <li>文言・余白・導線の微調整</li>
+              <li>軽い修正の相談（範囲は都度）</li>
+            </ul>
+            <p class="muted" style="margin-top:10px;">
+              触り心地まで整えて、納品します。
+            </p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- 向いてる人 -->
+    <section class="section section--last">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">向いているご相談</h2>
+        </div>
+        <p class="section__sub">
+          小さなサイトでも、“ちゃんと伝わる” ところまで一緒に作りたい人向けです。
+        </p>
+
+        <div class="grid2">
+          <section class="card">
+            <h3 class="card__title">こんな人におすすめ</h3>
+            <ul class="list">
+              <li>個人活動の“名刺になる”サイトがほしい</li>
+              <li>世界観は大事、でも読みやすさも譲れない</li>
+              <li>参考はあるけど、言語化がむずかしい</li>
+              <li>GitHub Pagesで公開したい</li>
+            </ul>
+          </section>
+
+          <section class="card card--cute">
+            <h3 class="card__title">できるだけ早く知りたいこと</h3>
+            <ul class="list">
+              <li>用途（集客 / 作品まとめ / 案内 / 予約 など）</li>
+              <li>ページ数の目安（1P / 複数 / まだ未定）</li>
+              <li>載せたい内容（文章・画像・リンク）</li>
+              <li>雰囲気（かわいい / きれい / 夜っぽい など）</li>
+            </ul>
+            <p class="muted" style="margin-top:10px;">
+              まとまってなくて大丈夫。こちらで整理します。
+            </p>
+          </section>
+        </div>
+
+        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn--primary" href="./contact.html">相談する</a>
+          <a class="btn btn--ghost" href="./service.html">Serviceを見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <small class="footer__copy">© <span id="year"></span> Karasawa Archive</small>
+      <div class="footer__links">
+        <a href="#">TOP</a>
+        <a href="index.html" id="toTop">HOME</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

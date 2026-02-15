@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karasawa Archive</title>
+  <meta name="description" content="ホームページ制作、チラシ・メニュー表、執筆などの制作実績一覧。">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page-works">
+  <div class="sparkles" aria-hidden="true" id="sparkles"></div>
+
+  <header class="header" data-elevate="false">
+    <div class="container header__inner">
+      <a class="brand" href="./">
+        <span class="brand__mark" aria-hidden="true">
+          <span class="ear ear--l"></span>
+          <span class="ear ear--r"></span>
+          <span class="dot"></span>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Karasawa</span>
+          <span class="brand__sub">Archive</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="メインナビ">
+        <div class="nav__menu" id="navMenu">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link is-active" href="works.html">Works</a>
+          <a class="nav__link" href="about.html">About</a>
+          <a class="nav__link" href="service.html">Service</a>
+          <a class="nav__link nav__link--cta" href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Works Hero ===== -->
+    <section class="worksHero">
+      <div class="container worksHero__inner">
+        <div class="worksHero__head">
+          <div>
+            <h1 class="worksHero__title">Works</h1>
+            <p class="worksHero__lead">ホームページ、チラシやメニュー表、執筆したものをまとめています。</p>
+          </div>
+
+          <a class="worksHero__link" href="./works-all.html" aria-label="作品一覧ページ（あとで作る）へ">
+            一覧ページ（あとで作る）
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters" role="tablist" aria-label="カテゴリで絞り込み">
+          <button class="filter is-active" type="button" data-filter="all" role="tab" aria-selected="true">
+            すべて
+          </button>
+          <button class="filter" type="button" data-filter="web" role="tab" aria-selected="false">
+            ホームページ
+          </button>
+          <button class="filter" type="button" data-filter="print" role="tab" aria-selected="false">
+            チラシ / メニュー表
+          </button>
+          <button class="filter" type="button" data-filter="writing" role="tab" aria-selected="false">
+            執筆
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Works Grid ===== -->
+    <section class="section worksSection">
+      <div class="container">
+        <div class="worksGrid" id="worksGrid">
+
+        <!-- ========== WEB（PC + SP 表示） ========== -->
+        <article class="wCard" data-cat="web">
+            <a class="wCard__thumb wCard__thumb--web" href="./works-detail.html" aria-label="Night Archive UI の詳細へ">
+            <div class="device device--pc" aria-hidden="true">
+                <img src="img/site1_pc.png" alt="" loading="lazy">
+            </div>
+            <div class="device device--sp" aria-hidden="true">
+                <img src="img/site1_sp.png" alt="" loading="lazy">
+            </div>
+            <span class="thumbLabel">PC / SP</span>
+            </a>
+
+            <div class="wCard__body">
+            <h2 class="wCard__title">
+                <a href="./works-detail.html">Night Archive UI</a>
+            </h2>
+            <p class="wCard__meta">HTML / CSS / JS</p>
+            <p class="wCard__text">静かな導線と、透明感のある余白設計。</p>
+            <ul class="wTags" aria-label="タグ">
+                <li class="wTag">Web</li>
+                <li class="wTag">UI</li>
+                <li class="wTag">Responsive</li>
+            </ul>
+            </div>
+        </article>
+
+        <article class="wCard" data-cat="web">
+            <a class="wCard__thumb wCard__thumb--web" href="../yoakari/index.html" aria-label="夜灯り古書店の詳細へ">
+            <div class="device device--pc" aria-hidden="true">
+                <img src="img/yoakari2.png" alt="" loading="lazy">
+            </div>
+            <div class="device device--sp" aria-hidden="true">
+                <img src="img/yoakari-sp.png" alt="" loading="lazy">
+            </div>
+            <span class="thumbLabel">PC / SP</span>
+            </a>
+
+            <div class="wCard__body">
+            <h2 class="wCard__title">
+                <a href="../yoakari/index.html">夜灯り古書店サイト</a>
+            </h2>
+            <p class="wCard__meta">Design / Coding</p>
+            <p class="wCard__text">安心感のある配色と、予約導線の最短ルート。</p>
+            <ul class="wTags" aria-label="タグ">
+                <li class="wTag">Web</li>
+                <li class="wTag">CTA</li>
+                <li class="wTag">Form</li>
+            </ul>
+            </div>
+        </article>
+
+        <article class="wCard" data-cat="web">
+            <a class="wCard__thumb wCard__thumb--web" href="./月影珈琲店.html" aria-label="月影珈琲店の詳細へ">
+            <div class="device device--pc" aria-hidden="true">
+                <img src="img/getuei.png" alt="" loading="lazy">
+            </div>
+            <div class="device device--sp" aria-hidden="true">
+                <img src="img/getuei-sp.png" alt="" loading="lazy">
+            </div>
+            <span class="thumbLabel">PC / SP</span>
+            </a>
+
+            <div class="wCard__body">
+            <h2 class="wCard__title">
+                <a href="./月影珈琲店.html">月影珈琲店サイト</a>
+            </h2>
+            <p class="wCard__meta">Design / Coding</p>
+            <p class="wCard__text">安心感のある配色と、予約導線の最短ルート。</p>
+            <ul class="wTags" aria-label="タグ">
+                <li class="wTag">Web</li>
+                <li class="wTag">CTA</li>
+                <li class="wTag">Form</li>
+            </ul>
+            </div>
+        </article>
+
+
+        <article class="wCard" data-cat="web">
+            <a class="wCard__thumb wCard__thumb--web" href="../歯医者/index.html" aria-label="歯医者サイト（デモ）の詳細へ">
+            <div class="device device--pc" aria-hidden="true">
+                <img src="img/dental-pc.png" alt="" loading="lazy">
+            </div>
+            <div class="device device--sp" aria-hidden="true">
+                <img src="img/works-dental-sp.jpg" alt="" loading="lazy">
+            </div>
+            <span class="thumbLabel">PC / SP</span>
+            </a>
+
+            <div class="wCard__body">
+            <h2 class="wCard__title">
+                <a href="./works-detail.html">一般歯科サイト（デモ）</a>
+            </h2>
+            <p class="wCard__meta">Design / Coding</p>
+            <p class="wCard__text">安心感のある配色と、予約導線の最短ルート。</p>
+            <ul class="wTags" aria-label="タグ">
+                <li class="wTag">Web</li>
+                <li class="wTag">CTA</li>
+                <li class="wTag">Form</li>
+            </ul>
+            </div>
+        </article>
+
+                <article class="wCard" data-cat="web">
+            <a class="wCard__thumb wCard__thumb--web" href="../歯医者2/index.html" aria-label="歯医者サイト（デモ）の詳細へ">
+            <div class="device device--pc" aria-hidden="true">
+                <img src="img/dental2-pc.png" alt="" loading="lazy">
+            </div>
+            <div class="device device--sp" aria-hidden="true">
+                <img src="img/works-dental-sp.jpg" alt="" loading="lazy">
+            </div>
+            <span class="thumbLabel">PC / SP</span>
+            </a>
+
+            <div class="wCard__body">
+            <h2 class="wCard__title">
+                <a href="./works-detail.html">一般歯科サイト2（デモ）</a>
+            </h2>
+            <p class="wCard__meta">Design / Coding</p>
+            <p class="wCard__text">安心感のある配色と、予約導線の最短ルート。</p>
+            <ul class="wTags" aria-label="タグ">
+                <li class="wTag">Web</li>
+                <li class="wTag">CTA</li>
+                <li class="wTag">Form</li>
+            </ul>
+            </div>
+        </article>
+
+        <!-- ========== PRINT（チラシ/メニュー表） ========== -->
+        <article class="wCard" data-cat="print">
+
+          <!-- 画像クリック → 拡大表示 -->
+          <a class="wCard__thumb js-zoom"
+            href="./img/DRINK.png"
+            aria-label="月影珈琲店 メニュー表を拡大表示">
+            <img src="./img/DRINK.png"
+                alt="月影珈琲店 メニュー表のサムネイル"
+                loading="lazy">
+          </a>
+
+          <div class="wCard__body">
+            <h2 class="wCard__title">
+              <!-- タイトルクリック → サイトへ -->
+              <a href="../月影珈琲店/index.html">
+                月影珈琲店 メニュー表
+              </a>
+            </h2>
+
+            <p class="wCard__meta">Illustration / Layout</p>
+            <p class="wCard__text">
+              “夜のやさしさ”を残しつつ、読みやすく整列。
+            </p>
+
+            <ul class="wTags" aria-label="タグ">
+              <li class="wTag">Menu</li>
+              <li class="wTag">Layout</li>
+              <li class="wTag">Illustration</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="wCard" data-cat="print">
+            <a class="wCard__thumb" href="../Kitchen Car Fes/index.html" aria-label="イベントチラシの詳細へ">
+            <img src="img/Kitchen Car Fes.png" alt="イベントチラシのサムネイル" loading="lazy">
+            </a>
+            <div class="wCard__body">
+            <h2 class="wCard__title">
+                <a href="../Kitchen Car Fes/index.html">イベント告知チラシ</a>
+            </h2>
+            <p class="wCard__meta">Flyer / Design</p>
+            <p class="wCard__text">視線の流れを設計して、必要情報に最短で。</p>
+            <ul class="wTags" aria-label="タグ">
+                <li class="wTag">Flyer</li>
+                <li class="wTag">Info</li>
+                <li class="wTag">Typography</li>
+            </ul>
+            </div>
+        </article>
+
+        <!-- ========== WRITING（執筆） ========== -->
+        <article class="wCard" data-cat="writing">
+            <a class="wCard__thumb" href="../yoakari/books.html" aria-label="World Fragment の詳細へ">
+            <img src="img/books2.png" alt="World Fragment のサムネイル" loading="lazy">
+            </a>
+            <div class="wCard__body">
+            <h2 class="wCard__title">
+                <a href="../yoakari/books.html">World Fragment</a>
+            </h2>
+            <p class="wCard__meta">Story / World</p>
+            <p class="wCard__text">短い文の粒で、世界の奥行きをつくるページ。</p>
+            <ul class="wTags" aria-label="タグ">
+                <li class="wTag">Writing</li>
+                <li class="wTag">World</li>
+                <li class="wTag">Short</li>
+            </ul>
+            </div>
+        </article>
+
+        <article class="wCard" data-cat="writing">
+            <a class="wCard__thumb" href="../story/yuzora.html" aria-label="短編執筆（サンプル）の詳細へ">
+            <img src="img/640.jpg" alt="短編執筆（サンプル）のサムネイル" loading="lazy">
+            </a>
+            <div class="wCard__body">
+            <h2 class="wCard__title">
+                <a href="../story/yuzora.html">短編執筆（サンプル）</a>
+            </h2>
+            <p class="wCard__meta">Writing</p>
+            <p class="wCard__text">温度のある言葉で、読み手の視線をやさしく誘導。</p>
+            <ul class="wTags" aria-label="タグ">
+                <li class="wTag">Writing</li>
+                <li class="wTag">Tone</li>
+                <li class="wTag">Scene</li>
+            </ul>
+            </div>
+        </article>
+
+        </div>
+
+        <p class="worksEmpty" id="worksEmpty" hidden>
+          そのカテゴリの作品は準備中です🐰
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div class="cta__text">
+            <h2 class="cta__title">依頼前の相談、ふわっとでOK。</h2>
+            <p class="cta__desc">
+              「この内容いける？」や「こんな感じ」からで大丈夫。<br>
+              内容に合わせて、最適な形を提案します。
+            </p>
+          </div>
+          <a class="btn btn--primary" href="./contact.html">お問い合わせ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <small class="footer__copy">© <span id="year"></span> Karasawa Archive</small>
+      <div class="footer__links">
+        <a href="#">TOP</a>
+        <a href="index.html" id="toTop">HOME</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

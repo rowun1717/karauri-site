@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ぐやうさぎ Portfolio | Contact</title>
+  <meta name="description" content="お問い合わせ・簡単見積もりフォーム。ホームページ制作、チラシ/メニュー表、執筆のご相談はこちら。">
+  <link rel="stylesheet" href="style contact.css" />
+</head>
+
+<body class="page-contact">
+  <div class="sparkles" aria-hidden="true" id="sparkles"></div>
+
+  <header class="header" data-elevate="false">
+    <div class="container header__inner">
+      <a class="brand" href="./">
+        <span class="brand__mark" aria-hidden="true">
+          <span class="ear ear--l"></span>
+          <span class="ear ear--r"></span>
+          <span class="dot"></span>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Karasawa Archive</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="メインナビ">
+        <div class="nav__menu" id="navMenu">
+          <a class="nav__link" href="./">Home</a>
+          <a class="nav__link" href="./works.html">Works</a>
+          <a class="nav__link" href="./about.html">About</a>
+          <a class="nav__link" href="./service.html">Service</a>
+          <a class="nav__link nav__link--cta is-active" href="./contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="contactHero">
+      <div class="container contactHero__inner">
+        <div class="contactHero__copy">
+          <h1 class="contactHero__title">お問い合わせ</h1>
+          <p class="contactHero__lead">
+            「この内容いける？」や「こんな感じ」からで大丈夫。<br>
+            内容に合わせて、最適な形を提案します。
+          </p>
+
+          <ul class="contactPoints">
+            <li>返信目安：1〜2日</li>
+            <li>相談だけOK（見積もり無料）</li>
+            <li>実装：HTML / CSS / JS 対応</li>
+          </ul>
+        </div>
+
+        <!-- ふわっと料金の目安（画像に合わせて） -->
+        <aside class="quoteCard" aria-label="目安料金">
+          <h2 class="quoteCard__title">目安料金</h2>
+          <ul class="quoteList">
+            <li>
+              <span class="quoteName">1ページのシンプルなサイト</span>
+              <span class="quotePrice">¥5,000〜¥10,000</span>
+            </li>
+            <li>
+              <span class="quoteName">複数ページの個人サイト</span>
+              <span class="quotePrice">¥15,000〜¥30,000</span>
+            </li>
+            <li>
+              <span class="quoteName">世界観設計からしっかり作るサイト</span>
+              <span class="quotePrice">¥30,000〜</span>
+            </li>
+          </ul>
+          <p class="quoteNote">
+            内容や規模で前後します。<br>
+            予算に合わせた提案もできます。
+          </p>
+        </aside>
+      </div>
+    </section>
+
+<section class="section">
+  <div class="container contactGrid">
+
+    <!-- FORM -->
+    <section class="glassPanel glassPanel--cta" aria-label="お問い合わせ">
+      <h2 class="panelTitle">お問い合わせフォーム</h2>
+      <p class="panelDesc">
+        下記のGoogleフォームよりご連絡ください。<br>
+        24時間以内に返信いたします。
+      </p>
+
+      <div class="formActions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFVMqQYAAaWi8h3kfMM_z5EjqGpGD8qldkTBh-96BEhMoB-g/viewform?usp=header"
+           target="_blank"
+           rel="noopener"
+           class="btn btn--primary">
+          Googleフォームを開く
+        </a>
+      </div>
+
+       <div class="miniNote">
+        <p class="miniNote__title">はじめての方へ</p>
+        <p>
+            ご相談だけでも大丈夫です。<br>
+            内容がまとまっていなくても問題ありません。<br>
+            ふわっとしたイメージから一緒に整理していきます。<br>
+            まずは気軽にご相談ください。
+        </p>
+        </div>
+
+        <ul class="miniFlow">
+        <li>① ご相談</li>
+        <li>② ご提案・お見積もり</li>
+        <li>③ 制作・納品</li>
+        </ul>
+
+        <p class="miniTagline">
+            ちいさなサイトも、大きな世界も。<br>
+            ちゃんと息をするデザインを。
+        </p>
+
+    </section>
+
+    <!-- 簡単見積もり -->
+    <aside class="glassPanel glassPanel--estimate" aria-label="簡単見積もり">
+      <h2 class="panelTitle">簡単見積もり</h2>
+      <p class="panelDesc">選ぶだけで、目安をざっくり出します（最終見積もりではありません）。</p>
+
+      <div class="estimate">
+        <label class="field">
+          <span class="field__label">制作内容</span>
+          <select class="field__input" id="estType">
+            <option value="web">ホームページ</option>
+            <option value="print">チラシ / メニュー表</option>
+            <option value="writing">執筆</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span class="field__label">規模</span>
+          <select class="field__input" id="estScale">
+            <option value="simple">シンプル</option>
+            <option value="multi">複数ページ / ボリューム中</option>
+            <option value="world">世界観設計あり / しっかり</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span class="field__label">追加（任意）</span>
+          <div class="chips">
+            <label class="chipCheck"><input type="checkbox" value="responsive"> レスポンシブ</label>
+            <label class="chipCheck"><input type="checkbox" value="form"> フォーム</label>
+            <label class="chipCheck"><input type="checkbox" value="design"> デザイン込み</label>
+          </div>
+        </label>
+
+        <div class="estimateResult">
+          <p class="estimateLabel">目安</p>
+          <p class="estimatePrice" id="estPrice">¥15,000〜¥30,000</p>
+          <p class="estimateHint" id="estHint">要件に合わせて調整できます。</p>
+          <button class="btn btn--ghost" type="button" id="applyEstimate">この内容をフォームに反映</button>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <small class="footer__copy">© <span id="year"></span> Karasawa Archive</small>
+      <div class="footer__links">
+        <a href="#">TOP</a>
+        <a href="index.html" id="toTop">HOME</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

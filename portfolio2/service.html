@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karasawa Archive | Service</title>
+  <meta name="description" content="対応サービス（Web制作 / チラシ・メニュー表 / 執筆）と制作の流れ、対応範囲について。">
+  <!-- いま使ってるCSSに合わせて読み替えOK：style.css / style contact.css など -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page-service">
+  <div class="sparkles" aria-hidden="true" id="sparkles"></div>
+
+  <!-- ===== Header ===== -->
+  <header class="header" data-elevate="false">
+    <div class="container header__inner">
+      <a class="brand" href="./index.html" aria-label="ホームへ">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">Karasawa Archive</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="メインナビ">
+        <button class="navToggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <span class="navToggle__line"></span>
+          <span class="navToggle__line"></span>
+          <span class="navToggle__line"></span>
+          <span class="srOnly">メニュー</span>
+        </button>
+
+        <div class="nav" id="navMenu">
+          <a class="nav__link" href="./index.html">Home</a>
+          <a class="nav__link" href="./works.html">Works</a>
+          <a class="nav__link" href="./about.html">About</a>
+          <a class="nav__link is-active" href="./service.html">Service</a>
+          <a class="nav__link" href="./contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Service Hero ===== -->
+    <section class="serviceHero section">
+      <div class="container serviceHero__inner">
+        <div class="serviceHero__copy">
+          <p class="serviceHero__kicker">Service</p>
+          <h1 class="serviceHero__title">やることを、きれいに。伝えることを、正確に。</h1>
+          <p class="serviceHero__lead">
+            ふわっとした「こんな感じ」からでもOK。<br>
+            目的（誰に・何を・どうしてほしいか）を整理して、デザインと実装に落とし込みます。
+          </p>
+
+          <div class="serviceHero__cta">
+            <a class="btn btn--primary" href="./contact.html">相談する</a>
+            <a class="btn btn--ghost" href="./works.html">制作物を見る</a>
+          </div>
+
+          <div class="serviceHero__chips" aria-label="対応の特徴">
+            <span class="chip">HTML / CSS / JS</span>
+            <span class="chip">レスポンシブ対応</span>
+            <span class="chip">導線・情報設計</span>
+            <span class="chip">世界観×読みやすさ</span>
+          </div>
+        </div>
+
+        <!-- 右に軽い要約カード（仕事寄りの“安心”） -->
+        <aside class="serviceHero__summary card card--cute" aria-label="概要">
+          <h2 class="card__title">対応のスタンス</h2>
+          <p class="muted">
+            見た目だけでなく、<strong>目的に届く導線</strong>と<br>
+            <strong>更新しやすい構造</strong>を意識して作ります。
+          </p>
+          <ul class="list">
+            <li>要件の整理（必要なら一緒に）</li>
+            <li>構成案 → デザイン → 実装</li>
+            <li>納品後の軽い修正も相談可</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== What I do ===== -->
+    <section class="section">
+      <div class="container">
+        <header class="section__head">
+          <div>
+            <h2 class="section__title">できること</h2>
+            <p class="section__sub">「何を作るか」だけでなく「どう役に立つか」までセットで提案します。</p>
+          </div>
+        </header>
+
+        <div class="serviceGrid cards3" id="serviceGrid">
+          <!-- Web -->
+          <article class="serviceCard work" aria-label="Web制作">
+            <div class="work__thumb" aria-hidden="true">
+              <img src="./img/yoakari2.png" alt="" loading="lazy">
+            </div>
+            <h3 class="work__title">Web制作（個人/小規模）</h3>
+            <p class="work__meta">Design / Coding</p>
+            <p class="work__desc">
+              ポートフォリオ、創作サイト、小規模店舗など。<br>
+              目的に合わせて、構成とCTA（導線）を整えます。
+            </p>
+            <ul class="wTags" aria-label="対応範囲">
+              <li class="wTag">LP</li>
+              <li class="wTag">複数ページ</li>
+              <li class="wTag">Responsive</li>
+              <li class="wTag">フォーム導線</li>
+            </ul>
+          </article>
+
+          <!-- Print -->
+          <article class="serviceCard work" aria-label="チラシ・メニュー表">
+            <div class="work__thumb" aria-hidden="true">
+              <img src="./img/Kitchen Car Fes.png" alt="" loading="lazy">
+            </div>
+            <h3 class="work__title">チラシ / メニュー表</h3>
+            <p class="work__meta">Layout / Illustration</p>
+            <p class="work__desc">
+              情報の優先順位を決めて、読みやすく整列。<br>
+              世界観は残しつつ、必要情報が迷子にならないように。
+            </p>
+            <ul class="wTags" aria-label="対応範囲">
+              <li class="wTag">Flyer</li>
+              <li class="wTag">Menu</li>
+              <li class="wTag">Typography</li>
+              <li class="wTag">Info設計</li>
+            </ul>
+          </article>
+
+          <!-- Writing -->
+          <article class="serviceCard work" aria-label="執筆">
+            <div class="work__thumb" aria-hidden="true">
+              <img src="./img/yuzora.png" alt="" loading="lazy">
+            </div>
+            <h3 class="work__title">執筆（サイト文章/紹介文）</h3>
+            <p class="work__meta">Writing</p>
+            <p class="work__desc">
+              プロフィール、サービス説明、世界観テキストなど。<br>
+              “読む”負担を減らして、伝えたい温度だけ残します。
+            </p>
+            <ul class="wTags" aria-label="対応範囲">
+              <li class="wTag">コピー</li>
+              <li class="wTag">紹介文</li>
+              <li class="wTag">世界観文</li>
+              <li class="wTag">整文</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Process ===== -->
+    <section class="section">
+      <div class="container">
+        <header class="section__head">
+          <div>
+            <h2 class="section__title">制作の流れ</h2>
+            <p class="section__sub">ご相談から納品まで。スピードより「迷わない進行」を大事にします。</p>
+          </div>
+        </header>
+
+        <div class="grid2">
+          <section class="card" aria-label="制作フロー">
+            <h3 class="card__title">基本フロー</h3>
+            <ol class="list">
+              <li><strong>ご相談</strong>：目的・イメージ・期限の共有（ふわっとでOK）</li>
+              <li><strong>ヒアリング</strong>：必要要素の整理（ページ/掲載情報/素材など）</li>
+              <li><strong>ご提案</strong>：構成案・方向性・概算（必要ならラフ）</li>
+              <li><strong>制作</strong>：デザイン → 実装（確認しながら）</li>
+              <li><strong>納品</strong>：データ/公開方法の案内、軽い使い方サポート</li>
+            </ol>
+            <p class="muted">※規模によって前後します。急ぎの案件も相談可。</p>
+          </section>
+
+          <section class="card card--cute" aria-label="準備しておくとスムーズなもの">
+            <h3 class="card__title">あると助かるもの</h3>
+            <ul class="list">
+              <li>参考URL（好きな雰囲気が1〜3個）</li>
+              <li>掲載したい文章・ロゴ・写真（なくてもOK）</li>
+              <li>ターゲット（誰に見てほしいか）</li>
+              <li>ゴール（予約/問い合わせ/閲覧/購入など）</li>
+            </ul>
+            <p class="muted">素材が無い場合は、代替案（仮素材/構成先行）で進められます。</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Scope ===== -->
+    <section class="section section--last">
+      <div class="container">
+        <header class="section__head">
+          <div>
+            <h2 class="section__title">対応範囲</h2>
+            <p class="section__sub">できること/できないことを明確にして、ミスマッチを減らします。</p>
+          </div>
+        </header>
+
+        <div class="grid2">
+          <section class="card" aria-label="対応できること">
+            <h3 class="card__title">対応できること</h3>
+            <ul class="list">
+              <li>静的サイト（HTML/CSS/JS）</li>
+              <li>レスポンシブ・軽いアニメーション</li>
+              <li>GitHub Pages などでの公開サポート</li>
+              <li>Googleフォーム連携・簡易導線の設計</li>
+              <li>既存ページの軽微な改修（導線/文言/見た目）</li>
+            </ul>
+          </section>
+
+          <section class="card card--cute" aria-label="対応外または要相談">
+            <h3 class="card__title">要相談 / 対応外</h3>
+            <ul class="list">
+              <li>大規模なシステム開発（会員/決済/複雑なDB）</li>
+              <li>サーバー保守・常時監視</li>
+              <li>EC決済の本格構築（外部サービス提案は可）</li>
+              <li>ロゴ制作（簡易バナー等は相談可）</li>
+            </ul>
+            <p class="muted">迷ったら「これっていける？」で投げてOKです。</p>
+          </section>
+        </div>
+
+        <!-- CTA -->
+        <section class="card card--cute" style="margin-top:14px" aria-label="お問い合わせへ">
+          <h3 class="card__title">まずは相談だけでも</h3>
+          <p class="muted">
+            依頼前の整理から一緒にできます。<br>
+            方向性と優先順位が決まるだけでも、次の一歩が軽くなります。
+          </p>
+          <div class="hero__cta" style="justify-content:flex-start; margin-top:12px">
+            <a class="btn btn--primary" href="./contact.html">お問い合わせへ</a>
+            <a class="btn btn--ghost" href="./works.html">制作例を見る</a>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <small class="footer__copy">© <span id="year"></span> Karasawa Archive</small>
+      <div class="footer__links">
+        <a href="#">TOP</a>
+        <a href="index.html" id="toTop">HOME</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

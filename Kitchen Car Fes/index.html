@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kitchen Car Fes | 告知</title>
+  <meta name="description" content="キッチンカー20台出店！入場無料・雨天決行。2/28(土) 11:00-17:00 〇〇公園" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="brand">
+        <span class="brand__pill">Kitchen Car Fes</span>
+        <nav class="nav">
+          <a href="#info">開催情報</a>
+          <a href="#foods">フード</a>
+          <a href="#access">アクセス</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="ribbon">会場：<strong>〇〇公園</strong></p>
+
+          <h1 class="title">
+            Kitchen Car<br><span class="title__big">Fes</span>
+          </h1>
+
+          <div class="chips">
+            <div class="chip">
+              <p class="chip__k">日付</p>
+              <p class="chip__v">2.28 <span class="chip__sub">Sat</span></p>
+            </div>
+            <div class="chip">
+              <p class="chip__k">時間</p>
+              <p class="chip__v">11:00 - 17:00</p>
+            </div>
+          </div>
+
+          <div class="cta">
+            <a class="btn" href="#access">アクセスを見る</a>
+            <a class="btn btn--ghost" href="#flyer">チラシ画像</a>
+          </div>
+
+          <ul class="notes" aria-label="注記">
+            <li>入場無料</li>
+            <li>雨天決行</li>
+            <li>キッチンカー20台以上出店！</li>
+          </ul>
+        </div>
+
+        <div class="hero__card" id="flyer">
+          <figure class="flyer">
+            <img src="./img/Kitchen Car Fes.png" alt="Kitchen Car Fes 告知チラシ" loading="lazy">
+            <figcaption>※画像をタップ/クリックで拡大できます</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section class="section" id="info">
+      <div class="wrap">
+        <h2 class="h">開催情報</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>日時</h3>
+            <p><strong>2月28日（土）</strong><br>11:00〜17:00</p>
+          </article>
+          <article class="card">
+            <h3>会場</h3>
+            <p><strong>〇〇公園</strong><br>（住所：〇〇市〇〇町1-2-3）</p>
+          </article>
+          <article class="card">
+            <h3>入場</h3>
+            <p><strong>無料</strong><br>雨天決行</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOODS -->
+    <section class="section" id="foods">
+      <div class="wrap">
+        <h2 class="h">フード</h2>
+        <p class="lead">気になるお店から攻めるもよし、香りで偶然に出会うもよし 🍔🌮</p>
+
+        <div class="foods">
+          <article class="food">
+            <div class="food__icon" aria-hidden="true">🍔</div>
+            <div class="food__body">
+              <h3>BURGER</h3>
+              <p>ジューシーなバーガー！</p>
+            </div>
+          </article>
+
+          <article class="food">
+            <div class="food__icon" aria-hidden="true">🌮</div>
+            <div class="food__body">
+              <h3>TACOS</h3>
+              <p>タコス</p>
+            </div>
+          </article>
+
+          <article class="food">
+            <div class="food__icon" aria-hidden="true">🥞</div>
+            <div class="food__body">
+              <h3>CREPE</h3>
+              <p>クレープ／タピオカ</p>
+            </div>
+          </article>
+
+          <article class="food">
+            <div class="food__icon" aria-hidden="true">🥨</div>
+            <div class="food__body">
+              <h3>CHURROS</h3>
+              <p>チュロス</p>
+            </div>
+          </article>
+
+          <article class="food">
+            <div class="food__icon" aria-hidden="true">🍩</div>
+            <div class="food__body">
+              <h3>DONUT</h3>
+              <p>ドーナツ</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESS -->
+    <section class="section" id="access">
+      <div class="wrap">
+        <h2 class="h">アクセス</h2>
+
+        <div class="access">
+          <div class="card card--big">
+            <h3>〇〇公園</h3>
+            <p class="muted">住所：〇〇市〇〇町1-2-3</p>
+
+            <div class="mini">
+              <div class="mini__item">
+                <span class="mini__k">最寄り</span>
+                <span class="mini__v">〇〇駅 徒歩10分</span>
+              </div>
+              <div class="mini__item">
+                <span class="mini__k">駐車場</span>
+                <span class="mini__v">近隣コインPをご利用ください</span>
+              </div>
+            </div>
+
+            <a class="btn" target="_blank" rel="noreferrer"
+               href="https://www.google.com/maps/search/?api=1&query=%E3%80%87%E3%80%87%E5%85%AC%E5%9C%92">
+              Googleマップで開く
+            </a>
+          </div>
+
+          <div class="card card--big">
+            <h3>注意事項</h3>
+            <ul class="bullets">
+              <li>混雑時は列に沿ってお並びください</li>
+              <li>ゴミは各店舗または指定の回収へ</li>
+              <li>天候や状況により内容が変更になる場合があります</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap footer__grid">
+        <p class="footer__title">Kitchen Car Fes</p>
+        <p class="footer__small">© Kitchen Car Fes. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- 画像拡大用 -->
+    <dialog class="modal" id="modal">
+      <button class="modal__close" id="modalClose" aria-label="閉じる">×</button>
+      <img id="modalImg" alt="" />
+    </dialog>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
