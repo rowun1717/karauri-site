@@ -387,6 +387,7 @@ main {
 .song-card {
   color: white;
   text-decoration: none;
+   margin-top: 20px;
 }
 
 .song-card h2 {
