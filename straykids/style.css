@@ -834,3 +834,35 @@ main {
 .setlist a:hover {
   color: #ff4f8b;
 }
+
+.karaoke-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.karaoke-tag {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .4px;
+}
+
+.karaoke-tag.joysound {
+  background: #ff0000;
+  color: #fff;
+}
+
+.karaoke-tag.dam {
+  background: #2f7cff;
+  color: #fff;
+}
+
+.karaoke-tag.unavailable {
+  background: rgba(255,255,255,.1);
+  color: #aaa;
+  border: 1px solid rgba(255,255,255,.18);
+}
