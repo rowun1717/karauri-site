@@ -479,3 +479,27 @@ hr {
     border-radius:20px;
     background:rgba(255,255,255,0.08);
 }
+
+@media (max-width: 600px) {
+  .lyrics {
+    padding: 0 18px;
+  }
+
+  .kana {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 2px;
+  }
+
+  .korean {
+    font-size: 19px;
+    line-height: 1.45;
+    margin-bottom: 3px;
+  }
+
+  .jp {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+}
