@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search | SKZ Lyric LAB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <button id="menuBtn" class="menu-btn">☰</button>
+
+  <div id="menu" class="menu">
+    <button id="closeBtn" class="close-btn">×</button>
+
+    <div class="menu-title">
+      <img src="images/logo.jfif" class="menu-logo" alt="Stray Kids">
+      <h2>SKZ Lyric LAB</h2>
+      <p>Stray Kids楽曲の歌詞をパート分けして掲載してます</p>
+    </div>
+
+    <ul>
+      <li><a href="index.html">⌂ Home</a></li>
+      <li><a href="search.html">⌕ Search</a></li>
+      <li><a href="members.html">★ Members</a></li>
+      <li><a href="original.html">♪ オリジナル曲</a></li>
+      <li><a href="categories.html"># Categories</a></li>
+      <li><a href="tags.html">◇ Tag</a></li>
+    </ul>
+  </div>
+
+  <main class="archive-page">
+    <h1>Search</h1>
+
+    <div class="search-tools">
+      <select id="searchType">
+        <option value="all">全部</option>
+        <option value="title">曲名</option>
+        <option value="lyrics">歌詞</option>
+        <option value="member">メンバー</option>
+        <option value="album">アルバム</option>
+      </select>
+
+      <input id="searchInput" type="text" placeholder="検索ワードを入力">
+    </div>
+
+    <section id="searchResults" class="song-list">
+      <a
+        href="song/MANIAC.html"
+        class="song-card"
+        data-title="MANIAC"
+        data-album="ODDINARY"
+        data-member="Bang Chan バンチャン ばんちゃん  Changbin チャンビン ちゃんびん HAN ハン はん Felix フィリックス ふぃりっくす  Hyunjin ヒョンジン ひょんじん Lee Know リノ りの  Seungmin スンミン すんみん I.N アイエン あいえん "
+      >
+        <img src="images/MANIAC.jpg" alt="MANIAC">
+
+        <div class="song-info">
+          <div class="tags">
+            <span class="tag">Original Song</span>
+            <span class="tag album">ODDINARY</span>
+          </div>
+
+          <h2>MANIAC</h2>
+          <p class="date">Updated 2026.06.12</p>
+        </div>
+      </a>
+    </section>
+
+        <section id="searchResults" class="song-list">
+      <a
+        href="song/RUN IT.html"
+        class="song-card"
+        data-title="RUN IT"
+        data-album="RUN IT"
+        data-member="Bang Chan バンチャン ばんちゃん  Changbin チャンビン ちゃんびん HAN ハン はん Felix フィリックス ふぃりっくす  Hyunjin ヒョンジン ひょんじん Lee Know リノ りの  Seungmin スンミン すんみん I.N アイエン あいえん "
+      >
+        <img src="images/RUN IT.jpg" alt="RUN IT">
+
+        <div class="song-info">
+          <div class="tags">
+            <span class="tag">Original Song</span>
+            <span class="tag album">RUN IT</span>
+          </div>
+
+          <h2>RUN IT</h2>
+          <p class="date">Updated 2026.06.24</p>
+        </div>
+      </a>
+    </section>
+
+        <section id="searchResults" class="song-list">
+      <a
+        href="song/I Like It.html"
+        class="song-card"
+        data-title="I Like It"
+        data-album="ATE"
+        data-member="Bang Chan バンチャン ばんちゃん  Changbin チャンビン ちゃんびん HAN ハン はん Felix フィリックス ふぃりっくす  Hyunjin ヒョンジン ひょんじん Lee Know リノ りの  Seungmin スンミン すんみん I.N アイエン あいえん "
+      >
+        <img src="images/I Like It.jpg" alt="I Like It">
+
+        <div class="song-info">
+          <div class="tags">
+            <span class="tag">Original Song</span>
+            <span class="tag album">ATE</span>
+          </div>
+
+          <h2>I Like It</h2>
+          <p class="date">Updated 2026.06.29</p>
+        </div>
+      </a>
+    </section>
+
+    <section id="searchResults" class="song-list">
+      <a
+        href="song/back to life.html"
+        class="song-card"
+        data-title="back to life"
+        data-album="back to life"
+        data-member="Bang Chan バンチャン ばんちゃん  Changbin チャンビン ちゃんびん HAN ハン はん Felix フィリックス ふぃりっくす  Hyunjin ヒョンジン ひょんじん Lee Know リノ りの  Seungmin スンミン すんみん I.N アイエン あいえん "
+      >
+        <img src="images/back to life.jpg" alt="back to life">
+
+        <div class="song-info">
+          <div class="tags">
+            <span class="tag">Original Song</span>
+            <span class="tag album">back to life</span>
+          </div>
+
+          <h2>back to life</h2>
+          <p class="date">Updated 2026.06.29</p>
+        </div>
+      </a>
+    </section>
+
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="songs.js"></script>
+
+</body>
+</html>
