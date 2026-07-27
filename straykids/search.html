@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search | SKZ Lyric LAB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <button id="menuBtn" class="menu-btn">☰</button>
+
+  <div id="menu" class="menu">
+    <button id="closeBtn" class="close-btn">×</button>
+
+    <div class="menu-title">
+      <img src="images/logo.jfif" class="menu-logo" alt="Stray Kids">
+      <h2>SKZ Lyric LAB</h2>
+      <p>Stray Kids楽曲の歌詞をパート分けして掲載してます</p>
+    </div>
+
+    <ul>
+      <li><a href="index.html">⌂ Home</a></li>
+      <li><a href="search.html">⌕ Search</a></li>
+      <li><a href="members.html">★ Members</a></li>
+      <li><a href="original.html">♪ オリジナル曲</a></li>
+      <li><a href="categories.html"># Categories</a></li>
+      <li><a href="tags.html">◇ Tag</a></li>
+    </ul>
+  </div>
+
+  <main class="archive-page">
+    <h1>Search</h1>
+
+      <div class="search-controls">
+        <select id="searchCategory">
+          <option value="all">全部</option>
+          <option value="title">曲名</option>
+          <option value="album">アルバム</option>
+          <option value="member">メンバー</option>
+        </select>
+
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="検索ワードを入力"
+        >
+      </div>
+      <section id="searchResults" class="song-list"></section>
+
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="songs.js"></script>
+
+</body>
+</html>
