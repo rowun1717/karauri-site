@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Stray Kidsのカラオケ用セットリスト作成・ライブセットリスト閲覧ページ"
+  >
+
+  <title>
+    Setlist | SKZ Lyric LAB
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/setlist.css"
+  >
+</head>
+
+
+<body class="setlist-page">
+
+  <!-- =====================================
+       起動画面
+  ====================================== -->
+
+  <div
+    id="setlistLoader"
+    class="loading-screen"
+  >
+    <div class="loading-inner">
+
+      <p class="loading-code">
+        SYSTEM / SETLIST-001
+      </p>
+
+      <h1
+        class="loading-logo"
+        data-text="SETLIST"
+      >
+        SETLIST
+      </h1>
+
+      <p
+        id="setlistLoaderMessage"
+        class="loading-message"
+      >
+        PREPARING PERFORMANCE FILE...
+      </p>
+
+      <div class="loading-bar">
+        <span
+          id="setlistLoaderProgress"
+        ></span>
+      </div>
+
+      <p
+        id="setlistLoaderPercent"
+        class="loading-percent"
+      >
+        0%
+      </p>
+
+    </div>
+  </div>
+
+
+  <!-- =====================================
+       背景
+  ====================================== -->
+
+  <div class="background-grid"></div>
+  <div class="scanlines"></div>
+
+  <div
+    id="setlistPointerGlow"
+    class="pointer-glow"
+  ></div>
+
+
+  <!-- =====================================
+       ヘッダー
+  ====================================== -->
+
+  <header class="site-header">
+
+    <a
+      href="index.html"
+      class="header-logo"
+    >
+      <span class="header-logo-main">
+        SKZ
+      </span>
+
+      <span class="header-logo-sub">
+        LYRIC LAB
+      </span>
+    </a>
+
+
+    <nav
+      id="setlistNav"
+      class="global-nav"
+    >
+      <a href="index.html">
+        HOME
+      </a>
+
+      <a href="search.html">
+        SEARCH
+      </a>
+
+      <a href="albums.html">
+        ARCHIVE
+      </a>
+
+      <a
+        href="setlist.html"
+        class="is-current"
+      >
+        SETLIST
+      </a>
+
+      <a href="members.html">
+        MEMBERS
+      </a>
+
+      <a href="about.html">
+        ABOUT
+      </a>
+    </nav>
+
+
+    <button
+      id="setlistMenuButton"
+      class="menu-button"
+      type="button"
+      aria-label="メニューを開く"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </header>
+
+
+  <!-- =====================================
+       メイン
+  ====================================== -->
+
+  <main>
+
+    <!-- ===================================
+         ヒーロー
+    ==================================== -->
+
+    <section class="setlist-hero">
+
+      <div
+        class="setlist-hero-code"
+        aria-hidden="true"
+      >
+        <span>MODE : PERFORMANCE</span>
+        <span>PLAYLIST : CONNECTED</span>
+        <span>STATUS : STANDBY</span>
+      </div>
+
+
+      <div class="setlist-hero-content reveal">
+
+        <p class="section-number">
+          01 / PERFORMANCE SYSTEM
+        </p>
+
+        <p class="setlist-eyebrow">
+          LIVE &amp; KARAOKE PRACTICE
+        </p>
+
+        <h1>
+          Setlist
+          <span>System</span>
+        </h1>
+
+        <p class="setlist-hero-description">
+          カラオケや練習用のオリジナル
+          セットリストを作成したり、
+          登録済みのライブセットリストを
+          公演別に確認できます。
+        </p>
+
+
+        <div class="setlist-hero-status">
+
+          <div>
+            <span>AVAILABLE</span>
+
+            <strong id="availableSongCount">
+              000
+            </strong>
+          </div>
+
+          <div>
+            <span>SELECTED</span>
+
+            <strong id="heroSelectedCount">
+              000
+            </strong>
+          </div>
+
+          <div>
+            <span>LIVE FILES</span>
+
+            <strong id="heroLiveSetlistCount">
+              000
+            </strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 右側ビジュアル -->
+
+      <div class="setlist-hero-visual reveal">
+
+        <div class="setlist-preview-file">
+
+          <div class="setlist-preview-top">
+            <span>SETLIST / SYSTEM</span>
+
+            <span class="online-dot">
+              READY
+            </span>
+          </div>
+
+          <div class="setlist-preview-number">
+
+            <span id="previewCountLabel">
+              SELECTED FILES
+            </span>
+
+            <strong id="previewSelectedCount">
+              00
+            </strong>
+
+          </div>
+
+          <div class="setlist-preview-lines">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+
+          <div class="setlist-preview-bottom">
+            <span id="previewModeText">
+              MODE / MY SETLIST
+            </span>
+
+            <span>STATUS / ONLINE</span>
+          </div>
+
+        </div>
+
+        <div class="setlist-circle circle-one"></div>
+        <div class="setlist-circle circle-two"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================
+         モード切り替え
+    ==================================== -->
+
+    <section class="setlist-mode-section">
+
+      <div class="setlist-mode-heading reveal">
+
+        <div>
+          <p class="section-number">
+            02 / SELECT MODE
+          </p>
+
+          <h2>
+            Setlist Mode
+          </h2>
+        </div>
+
+        <p>
+          作成モードまたは
+          ライブアーカイブを選択してください。
+        </p>
+
+      </div>
+
+
+      <div
+        id="setlistModeButtons"
+        class="setlist-mode-buttons reveal"
+        role="tablist"
+        aria-label="セットリスト表示モード"
+      >
+
+        <button
+          id="mySetlistModeButton"
+          class="
+            setlist-mode-button
+            active
+          "
+          type="button"
+          role="tab"
+          data-setlist-mode="builder"
+          aria-controls="mySetlistMode"
+          aria-selected="true"
+        >
+          <span class="setlist-mode-number">
+            01
+          </span>
+
+          <span class="setlist-mode-name">
+            MY SETLIST
+          </span>
+
+          <span class="setlist-mode-description">
+            カラオケ・練習用の曲順を作成
+          </span>
+
+          <i>→</i>
+        </button>
+
+
+        <button
+          id="liveArchiveModeButton"
+          class="setlist-mode-button"
+          type="button"
+          role="tab"
+          data-setlist-mode="live"
+          aria-controls="liveArchiveMode"
+          aria-selected="false"
+        >
+          <span class="setlist-mode-number">
+            02
+          </span>
+
+          <span class="setlist-mode-name">
+            LIVE ARCHIVE
+          </span>
+
+          <span class="setlist-mode-description">
+            登録済みライブセトリを閲覧
+          </span>
+
+          <i>→</i>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================
+         MY SETLISTモード
+    ==================================== -->
+
+    <div
+      id="mySetlistMode"
+      class="
+        setlist-mode-panel
+        active
+      "
+      data-mode-panel="builder"
+      role="tabpanel"
+      aria-labelledby="mySetlistModeButton"
+    >
+
+      <!-- ===============================
+           セットリスト作成
+      ================================ -->
+
+      <section
+        id="setlistBuilder"
+        class="setlist-builder-section"
+      >
+
+        <div class="setlist-section-heading reveal">
+
+          <div>
+            <p class="section-number">
+              03 / SETLIST EDITOR
+            </p>
+
+            <h2>
+              Build Your Set
+            </h2>
+          </div>
+
+          <div class="setlist-editor-status">
+            <span>EDITOR</span>
+            <strong>ONLINE</strong>
+          </div>
+
+        </div>
+
+
+        <!-- セットリスト名 -->
+
+        <div class="setlist-name-panel reveal">
+
+          <label for="setlistName">
+
+            <span>SETLIST NAME</span>
+
+            <input
+              id="setlistName"
+              type="text"
+              maxlength="40"
+              placeholder="MY SKZ SETLIST"
+              autocomplete="off"
+            >
+
+          </label>
+
+          <div class="setlist-save-status">
+
+            <span>SAVE STATUS</span>
+
+            <strong id="setlistSaveStatus">
+              READY
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- 2カラム編集エリア -->
+
+        <div class="setlist-editor-grid">
+
+
+          <!-- 曲ライブラリ -->
+
+          <section class="setlist-library reveal">
+
+            <div class="setlist-panel-heading">
+
+              <div>
+                <span>01 / SONG DATABASE</span>
+                <h3>Available Songs</h3>
+              </div>
+
+              <strong id="libraryResultCount">
+                00 FILES
+              </strong>
+
+            </div>
+
+
+            <label
+              class="setlist-search-box"
+              for="setlistSongSearch"
+            >
+              <span>⌕</span>
+
+              <input
+                id="setlistSongSearch"
+                type="search"
+                placeholder="SEARCH SONG FILE"
+                autocomplete="off"
+                spellcheck="false"
+              >
+
+              <button
+                id="clearSetlistSearch"
+                type="button"
+                aria-label="検索ワードを削除"
+                hidden
+              >
+                ×
+              </button>
+            </label>
+
+
+            <div
+              id="setlistFilterButtons"
+              class="setlist-filter-buttons"
+            >
+              <button
+                class="
+                  setlist-filter-button
+                  active
+                "
+                type="button"
+                data-filter="all"
+              >
+                ALL
+              </button>
+
+              <button
+                class="setlist-filter-button"
+                type="button"
+                data-filter="joysound"
+              >
+                JOYSOUND
+              </button>
+
+              <button
+                class="setlist-filter-button"
+                type="button"
+                data-filter="dam"
+              >
+                DAM
+              </button>
+
+              <button
+                class="setlist-filter-button"
+                type="button"
+                data-filter="unit"
+              >
+                UNIT
+              </button>
+            </div>
+
+
+            <div
+              id="availableSongList"
+              class="available-song-list"
+            ></div>
+
+
+            <div
+              id="setlistNoSongs"
+              class="setlist-no-songs"
+              hidden
+            >
+              <span>FILE NOT FOUND</span>
+
+              <p>
+                条件に一致する曲がありません。
+              </p>
+            </div>
+
+          </section>
+
+
+          <!-- 選択済みセットリスト -->
+
+          <section class="selected-setlist reveal">
+
+            <div class="setlist-panel-heading">
+
+              <div>
+                <span>
+                  02 / PERFORMANCE ORDER
+                </span>
+
+                <h3>Selected Songs</h3>
+              </div>
+
+              <strong id="selectedSongCount">
+                00 FILES
+              </strong>
+
+            </div>
+
+
+            <div class="selected-setlist-tools">
+
+              <button
+                id="addRandomSong"
+                type="button"
+              >
+                RANDOM ADD
+                <span>＋</span>
+              </button>
+
+              <button
+                id="shuffleSetlist"
+                type="button"
+              >
+                SHUFFLE
+                <span>⤨</span>
+              </button>
+
+              <button
+                id="clearSetlist"
+                type="button"
+              >
+                CLEAR
+                <span>×</span>
+              </button>
+
+            </div>
+
+
+            <div
+              id="selectedSetlist"
+              class="selected-song-list"
+              aria-live="polite"
+            ></div>
+
+
+            <div
+              id="emptySetlist"
+              class="empty-setlist"
+            >
+              <span class="empty-setlist-code">
+                WAITING FOR SONG FILES
+              </span>
+
+              <strong>
+                SETLIST IS EMPTY
+              </strong>
+
+              <p>
+                左側の曲一覧から
+                ADDを押して曲を追加してください。
+              </p>
+            </div>
+
+
+            <div class="setlist-summary">
+
+              <div>
+                <span>TOTAL SONGS</span>
+
+                <strong id="summarySongCount">
+                  00
+                </strong>
+              </div>
+
+              <div>
+                <span>ESTIMATED TIME</span>
+
+                <strong id="setlistDuration">
+                  00:00
+                </strong>
+              </div>
+
+            </div>
+
+
+            <div class="setlist-actions">
+
+              <button
+                id="saveSetlist"
+                class="
+                  lab-button
+                  lab-button-primary
+                "
+                type="button"
+              >
+                SAVE SETLIST
+                <span>↓</span>
+              </button>
+
+              <button
+                id="copySetlist"
+                class="
+                  lab-button
+                  lab-button-secondary
+                "
+                type="button"
+              >
+                COPY TEXT
+                <span>□</span>
+              </button>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===============================
+           練習モード
+      ================================ -->
+
+      <section class="practice-mode-section">
+
+        <div class="practice-mode-heading reveal">
+
+          <p class="section-number">
+            04 / PRACTICE MODE
+          </p>
+
+          <h2>
+            Ready to Practice?
+          </h2>
+
+          <p>
+            作成したセットリストの先頭から、
+            歌詞ページを順番に開いて
+            練習できます。
+          </p>
+
+        </div>
+
+
+        <div class="practice-mode-panel reveal">
+
+          <div class="practice-mode-code">
+            <span>PERFORMANCE MODE</span>
+
+            <span class="online-dot">
+              STANDBY
+            </span>
+          </div>
+
+
+          <div class="practice-mode-main">
+
+            <div>
+              <span class="practice-small-label">
+                FIRST SONG
+              </span>
+
+              <strong id="practiceFirstSong">
+                NO SONG SELECTED
+              </strong>
+
+              <p id="practiceDescription">
+                セットリストへ曲を
+                追加してください。
+              </p>
+            </div>
+
+
+            <button
+              id="startPractice"
+              class="
+                lab-button
+                lab-button-primary
+              "
+              type="button"
+              disabled
+            >
+              START PRACTICE
+              <span>→</span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- ===================================
+         LIVE ARCHIVEモード
+    ==================================== -->
+
+    <div
+      id="liveArchiveMode"
+      class="setlist-mode-panel"
+      data-mode-panel="live"
+      role="tabpanel"
+      aria-labelledby="liveArchiveModeButton"
+      hidden
+    >
+
+      <section
+        id="liveArchive"
+        class="live-archive-section"
+      >
+
+        <div class="live-archive-heading reveal">
+
+          <div>
+            <p class="section-number">
+              03 / LIVE DATABASE
+            </p>
+
+            <h2>
+              Live Archive
+            </h2>
+          </div>
+
+          <div class="live-archive-status">
+            <span>REGISTERED</span>
+
+            <strong id="liveSetlistCount">
+              00 FILES
+            </strong>
+          </div>
+
+        </div>
+
+
+        <p class="live-archive-introduction reveal">
+          公演ごとに登録された
+          Stray Kidsのライブセットリストを
+          閲覧できます。内容は管理者が登録した
+          閲覧専用データです。
+        </p>
+
+
+        <!-- ライブ検索 -->
+
+        <div class="live-search-panel reveal">
+
+          <label
+            class="live-search-box"
+            for="liveSetlistSearch"
+          >
+            <span>⌕</span>
+
+            <input
+              id="liveSetlistSearch"
+              type="search"
+              placeholder="SEARCH TOUR / VENUE / CITY"
+              autocomplete="off"
+              spellcheck="false"
+            >
+
+            <button
+              id="clearLiveSetlistSearch"
+              type="button"
+              aria-label="検索ワードを削除"
+              hidden
+            >
+              ×
+            </button>
+          </label>
+
+
+          <div
+            id="liveSetlistFilterButtons"
+            class="live-setlist-filter-buttons"
+          >
+            <button
+              class="
+                live-filter-button
+                active
+              "
+              type="button"
+              data-live-filter="all"
+            >
+              ALL
+            </button>
+
+            <button
+              class="live-filter-button"
+              type="button"
+              data-live-filter="japan"
+            >
+              JAPAN
+            </button>
+
+            <button
+              class="live-filter-button"
+              type="button"
+              data-live-filter="korea"
+            >
+              KOREA
+            </button>
+
+            <button
+              class="live-filter-button"
+              type="button"
+              data-live-filter="online"
+            >
+              ONLINE
+            </button>
+          </div>
+
+        </div>
+
+
+        <!-- 年代フィルター -->
+
+        <div
+          id="liveYearButtons"
+          class="live-year-buttons reveal"
+        >
+          <button
+            class="live-year-button active"
+            type="button"
+            data-live-year="all"
+          >
+            ALL YEARS
+          </button>
+
+          <button
+            class="live-year-button"
+            type="button"
+            data-live-year="2026"
+          >
+            2026
+          </button>
+
+          <button
+            class="live-year-button"
+            type="button"
+            data-live-year="2025"
+          >
+            2025
+          </button>
+
+          <button
+            class="live-year-button"
+            type="button"
+            data-live-year="2024"
+          >
+            2024
+          </button>
+
+          <button
+            class="live-year-button"
+            type="button"
+            data-live-year="2023"
+          >
+            2023
+          </button>
+        </div>
+
+
+        <!-- JSでライブカードを生成 -->
+
+        <div
+          id="liveSetlistGrid"
+          class="live-setlist-grid"
+          aria-live="polite"
+        ></div>
+
+
+        <!-- 検索結果なし -->
+
+        <div
+          id="liveSetlistNoResults"
+          class="live-setlist-no-results"
+          hidden
+        >
+          <span>
+            LIVE FILE NOT FOUND
+          </span>
+
+          <strong>
+            NO MATCHING SETLIST
+          </strong>
+
+          <p>
+            ツアー名・会場または
+            フィルター条件を変更してください。
+          </p>
+
+          <button
+            id="resetLiveSetlistSearch"
+            class="
+              lab-button
+              lab-button-secondary
+            "
+            type="button"
+          >
+            RESET LIVE SEARCH
+            <span>↺</span>
+          </button>
+        </div>
+
+      </section>
+
+
+      <!-- ===============================
+           選択したライブの詳細
+      ================================ -->
+
+      <section
+        id="liveSetlistViewer"
+        class="live-setlist-viewer"
+        hidden
+      >
+
+        <div class="live-viewer-heading">
+
+          <div>
+            <p class="section-number">
+              04 / LIVE SETLIST FILE
+            </p>
+
+            <h2 id="liveViewerTitle">
+              LIVE TITLE
+            </h2>
+          </div>
+
+          <button
+            id="closeLiveSetlistViewer"
+            type="button"
+            aria-label="ライブセットリストを閉じる"
+          >
+            CLOSE
+            <span>×</span>
+          </button>
+
+        </div>
+
+
+        <div class="live-viewer-meta">
+
+          <div>
+            <span>DATE</span>
+            <strong id="liveViewerDate">----</strong>
+          </div>
+
+          <div>
+            <span>VENUE</span>
+            <strong id="liveViewerVenue">----</strong>
+          </div>
+
+          <div>
+            <span>CITY</span>
+            <strong id="liveViewerCity">----</strong>
+          </div>
+
+          <div>
+            <span>SONGS</span>
+            <strong id="liveViewerSongCount">00</strong>
+          </div>
+
+        </div>
+
+
+        <div class="live-viewer-body">
+
+          <div class="live-viewer-file">
+
+            <div class="live-viewer-file-top">
+              <span id="liveViewerFileId">
+                LIVE-000
+              </span>
+
+              <span class="online-dot">
+                VERIFIED
+              </span>
+            </div>
+
+            <div
+              id="liveViewerSongList"
+              class="live-viewer-song-list"
+            ></div>
+
+            <div class="live-viewer-file-bottom">
+              <span>END OF SETLIST</span>
+              <span>DATA ARCHIVED</span>
+            </div>
+
+          </div>
+
+
+          <aside class="live-viewer-aside">
+
+            <p class="live-viewer-note-label">
+              ARCHIVE NOTE
+            </p>
+
+            <p id="liveViewerNote">
+              公演情報
+            </p>
+
+
+            <div class="live-viewer-actions">
+
+              <button
+                id="copyLiveSetlist"
+                class="
+                  lab-button
+                  lab-button-primary
+                "
+                type="button"
+              >
+                COPY SETLIST
+                <span>□</span>
+              </button>
+
+              <button
+                id="useLiveSetlist"
+                class="
+                  lab-button
+                  lab-button-secondary
+                "
+                type="button"
+              >
+                USE AS MY SET
+                <span>＋</span>
+              </button>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- ===================================
+         使い方
+    ==================================== -->
+
+    <section class="setlist-guide-section">
+
+      <div class="setlist-guide-heading reveal">
+
+        <p class="section-number">
+          05 / SETLIST GUIDE
+        </p>
+
+        <h2>
+          How to Use
+        </h2>
+
+      </div>
+
+
+      <div class="setlist-guide-grid">
+
+        <article class="setlist-guide-card reveal">
+
+          <span>01</span>
+
+          <h3>
+            自分で作る
+          </h3>
+
+          <p>
+            MY SETLISTで好きな曲を追加し、
+            カラオケや練習用の曲順を作れます。
+          </p>
+
+        </article>
+
+
+        <article class="setlist-guide-card reveal">
+
+          <span>02</span>
+
+          <h3>
+            ライブを選ぶ
+          </h3>
+
+          <p>
+            LIVE ARCHIVEから
+            ツアー・会場・年代別に
+            公演を選べます。
+          </p>
+
+        </article>
+
+
+        <article class="setlist-guide-card reveal">
+
+          <span>03</span>
+
+          <h3>
+            セトリを見る
+          </h3>
+
+          <p>
+            本編とアンコールを区別した
+            実際の曲順を確認できます。
+          </p>
+
+        </article>
+
+
+        <article class="setlist-guide-card reveal">
+
+          <span>04</span>
+
+          <h3>
+            練習に使う
+          </h3>
+
+          <p>
+            ライブセトリをMY SETLISTへ移し、
+            先頭から歌詞を確認できます。
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================
+         ページ下部
+    ==================================== -->
+
+    <section class="setlist-closing-section">
+
+      <div
+        class="setlist-closing-code"
+        aria-hidden="true"
+      >
+        PERFORMANCE SYSTEM /
+        SETLIST READY
+      </div>
+
+      <div class="setlist-closing-content reveal">
+
+        <p class="section-number">
+          PERFORMANCE FILE
+        </p>
+
+        <h2>
+          Build it.
+          <span>Play it.</span>
+        </h2>
+
+        <p>
+          自分だけの曲順を作ったり、
+          ライブの記録をたどりながら
+          Stray Kidsの楽曲を楽しもう。
+        </p>
+
+        <div class="setlist-closing-actions">
+
+          <a
+            href="#setlistModeButtons"
+            class="
+              lab-button
+              lab-button-primary
+            "
+          >
+            SELECT MODE
+            <span>↑</span>
+          </a>
+
+          <a
+            href="search.html"
+            class="
+              lab-button
+              lab-button-secondary
+            "
+          >
+            SEARCH SONGS
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================
+       通知
+  ====================================== -->
+
+  <div
+    id="setlistToast"
+    class="setlist-toast"
+    role="status"
+    aria-live="polite"
+  >
+    SETLIST COPIED
+  </div>
+
+
+  <!-- =====================================
+       フッター
+  ====================================== -->
+
+  <footer class="site-footer">
+
+    <div>
+      <strong>
+        SKZ LYRIC LAB
+      </strong>
+
+      <p>
+        Stray Kids unofficial
+        lyrics fan site.
+      </p>
+    </div>
+
+    <div class="footer-status">
+
+      <span class="online-dot">
+        SYSTEM ONLINE
+      </span>
+
+      <span>
+        © SKZ LYRIC LAB
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================
+       ページトップ
+  ====================================== -->
+
+  <button
+    id="setlistPageTop"
+    class="page-top"
+    type="button"
+    aria-label="ページ上部へ戻る"
+  >
+    ↑
+  </button>
+
+
+  <script src="js/setlist.js"></script>
+
+</body>
+</html>
