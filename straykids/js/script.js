@@ -79,7 +79,7 @@ const songs = [
     date: "2026.07.10",
     release: "2026.03.13",
     url: "song/Endless Sun.html",
-    image: "images/song/Endless Sun.jpg",
+    image: "images/song/Endless sun.jpg",
     karaoke: ["JOYSOUND", "DAM"],
     category: "latest",
     members: [
