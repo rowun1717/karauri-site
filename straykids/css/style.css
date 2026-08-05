@@ -2396,88 +2396,172 @@ img {
 }
 
 /* ========================================
-   スマホメニュー最終修正
+   スマホナビゲーション最終修正
 ======================================== */
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
 
-  .menu-button {
-    position: relative;
-    z-index: 2002;
+  body .site-header {
+    position: sticky;
+    top: 0;
 
-    pointer-events: auto;
-    touch-action: manipulation;
+    z-index: 9998;
   }
 
 
-  .global-nav {
-    position: fixed;
+  body .site-header .global-nav {
+    position: fixed !important;
 
-    top: 84px;
-    right: 0;
-    bottom: 0;
+    top: 84px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
 
-    z-index: 2001;
+    z-index: 9999 !important;
 
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
 
-    width: min(390px, 100%);
-    padding: 28px;
+    width: 100% !important;
+    height: calc(100dvh - 84px) !important;
+    min-height: 0 !important;
+    max-height: none !important;
 
-    background: #080506;
+    margin: 0 !important;
+    padding: 24px 28px !important;
 
-    border-left:
+    background: #080506 !important;
+
+    border: 0 !important;
+    border-top:
       1px solid rgba(
         255,
         63,
         131,
-        0.35
-      );
+        0.32
+      ) !important;
 
-    box-shadow:
-      -30px 0 70px
-      rgba(0, 0, 0, 0.85);
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
 
-    overflow-y: auto;
+    visibility: hidden !important;
+    opacity: 0 !important;
 
-    visibility: hidden;
-    opacity: 0;
+    pointer-events: none !important;
 
-    transform: translateX(105%);
+    transform: translateX(100%) !important;
 
     transition:
       transform 0.35s ease,
       opacity 0.25s ease,
-      visibility 0.35s;
+      visibility 0.35s !important;
   }
 
 
-  .global-nav.is-open {
-    visibility: visible;
-    opacity: 1;
+  body .site-header .global-nav.is-open {
+    visibility: visible !important;
+    opacity: 1 !important;
 
-    transform: translateX(0);
+    pointer-events: auto !important;
+
+    transform: translateX(0) !important;
   }
 
 
-  .global-nav a {
-    display: flex;
-    align-items: center;
+  body .site-header .global-nav a {
+    position: static !important;
 
-    min-height: 60px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
 
+    flex: none !important;
+
+    width: 100% !important;
+    min-height: 64px !important;
+
+    margin: 0 !important;
+    padding: 0 8px !important;
+
+    color: rgba(
+      255,
+      255,
+      255,
+      0.82
+    ) !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
     border-bottom:
       1px solid rgba(
         255,
         255,
         255,
-        0.12
-      );
+        0.14
+      ) !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    transform: none !important;
+
+    font-size: 13px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    letter-spacing: 0.14em !important;
+
+    text-indent: 0 !important;
+  }
+
+
+  body .site-header .global-nav a::after {
+    content: "→";
+
+    color: var(
+      --pink,
+      #ff3f83
+    );
+
+    font-size: 14px;
+  }
+
+
+  body .site-header .global-nav a:hover,
+  body .site-header .global-nav a:active {
+    color: #ffffff !important;
+
+    background:
+      rgba(
+        255,
+        63,
+        131,
+        0.08
+      ) !important;
+  }
+
+
+  body .site-header .global-nav a.is-current {
+    color: var(
+      --pink,
+      #ff3f83
+    ) !important;
+  }
+
+
+  body .site-header .menu-button {
+    position: relative;
+
+    z-index: 10000 !important;
+
+    pointer-events: auto !important;
   }
 
 
   body.menu-open {
-    overflow: hidden;
+    overflow: hidden !important;
   }
 }
