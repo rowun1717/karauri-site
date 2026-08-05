@@ -54,60 +54,65 @@
   <div id="pointerGlow" class="pointer-glow"></div>
 
 
-  <!-- ヘッダー -->
-  <header class="site-header">
+<!-- ヘッダー -->
+<header class="site-header">
 
-    <a href="index.html" class="header-logo">
-      <span class="header-logo-main">SKZ</span>
-      <span class="header-logo-sub">LYRIC LAB</span>
+  <a href="index.html" class="header-logo">
+    <span class="header-logo-main">
+      SKZ
+    </span>
+
+    <span class="header-logo-sub">
+      LYRIC LAB
+    </span>
+  </a>
+
+
+  <nav
+    id="globalNav"
+    class="global-nav"
+  >
+    <a href="index.html#latest">
+      LATEST
     </a>
 
-    <nav
-      id="aboutNav"
-      class="global-nav"
-    >
-      <a href="index.html#latest">
-        LATEST
-      </a>
+    <a href="index.html#archive">
+      ARCHIVE
+    </a>
 
-      <a href="index.html#archive">
-        ARCHIVE
-      </a>
+    <a href="index.html#database">
+      DATABASE
+    </a>
 
-      <a href="index.html#database">
-        DATABASE
-      </a>
+    <a href="search.html">
+      SEARCH
+    </a>
 
-      <a href="search.html">
-        SEARCH
-      </a>
+    <a href="members.html">
+      MEMBERS
+    </a>
 
-      <a href="members.html">
-        MEMBERS
-      </a>
+    <a
+      href="about.html">
+      ABOUT
+    </a>
+  </nav>
 
-      <a
-        href="about.html"
-        class="is-current"
-      >
-        ABOUT
-      </a>
-    </nav>
 
-    <button
-      id="menuButton"
-      class="menu-button"
-      type="button"
-      aria-label="メニューを開く"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  <button
+    id="menuButton"
+    class="menu-button"
+    type="button"
+    aria-label="メニューを開く"
+    aria-expanded="false"
+    aria-controls="globalNav"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-  </header>
-
+</header>
 
   <main>
 
@@ -628,7 +633,9 @@
     ↑
   </button>
 
+  <script
+    src="js/script.js?v=20260805-3"
+  ></script>
 
-  <script src="js/script.js"></script>
 </body>
 </html>
