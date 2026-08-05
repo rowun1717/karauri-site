@@ -262,8 +262,8 @@ const albums = [
     title: "SKZ-REPLAY 2026 Pt.1",
     year: "2026",
     image: "images/albums/SKZ-REPLAY1.jpg",
-    url: "",
-    available: false
+    url: "albums/SKZ-REPLAY1.html",
+    available: true
   },
 
   {
