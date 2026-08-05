@@ -2,570 +2,859 @@
 
 
 /* ========================================
-   アルバムデータ
+   曲データ
 ======================================== */
 
-/*
-  release：
-  実際のリリース日。
-  この日付を基準に新しい順へ並べる。
-
-  registeredTracks：
-  現在サイトに登録している曲数。
-
-  totalTracks：
-  アルバム全体の曲数。
-
-  image：
-  実際の画像ファイル名に合わせて変更する。
-*/
-
-const albums = [
+const songs = [
   {
-    title: "THIS & THAT",
-    year: 2026,
-    release: "2026.08.07",
-    type: "Original Album",
-    image:
-      "images/albums/THISTHAT.jpg",
-    url:
-      "albums/THISTHAT.html",
-      available: true,
-    registeredTracks: 0,
-    totalTracks: 8
-  },
-
-  {
-    title: "SKZ-REPLAY 2026 Pt.1",
-    year: 2026,
-    release: "2026.08.01",
-    type: "Original Album",
-    image:
-      "images/albums/SKZ-REPLAY1.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-
-  registeredTracks: 0,
-  totalTracks: 17
+    title: "MANIAC",
+    album: "ODDINARY",
+    type: "Original Song",
+    date: "2026.06.12",
+    release: "2022.03.18",
+    url: "song/MANIAC.html",
+    image: "images/song/MANIAC.jpg",
+    karaoke: ["JOYSOUND", "DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
   },
 
   {
     title: "RUN IT",
-    year: 2026,
+    album: "RUN IT",
+    type: "Original Song",
+    date: "2026.06.24",
     release: "2026.06.24",
-    type: "Original Album",
-    image:
-      "images/albums/RUN IT.jpg",
-    url:
-      "albums/RUN-IT.html",
-      available: true,
-    registeredTracks: 1,
-    totalTracks: 1
-  },
-
-  {
-    title: "Endless Sun",
-    year: 2026,
-    release: "2026.03.13",
-    type: "Original Album",
-    image:
-      "images/albums/Endless Sun.jpg",
-    url:
-      "albums/Endless-Sun.html",
-      available: true,
-    registeredTracks: 1,
-    totalTracks: 1
+    url: "song/RUN IT.html",
+    image: "images/song/RUN IT.jpg",
+    karaoke: ["JOYSOUND"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
   },
 
   {
     title: "STAY",
-    year: 2026,
+    album: "STAY",
+    type: "Original Song",
+    date: "2026.07.09",
     release: "2026.03.25",
-    type: "Original Album",
-    image:
-      "images/albums/STAY.jpg",
-    url:
-      "albums/STAY.html",
-      available: true,
-    registeredTracks: 1,
-    totalTracks: 1
+    url: "song/STAY.html",
+    image: "images/albums/STAY.jpg",
+    karaoke: ["JOYSOUND", "DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
   },
 
   {
-    title: "Do It(Remixes)",
-    year: 2025,
-    release: "2025.11.24",
-    type: "Album",
-    image:
-      "images/albums/Do It(Remixes).jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 1,
-    totalTracks: 6
+    title: "Endless Sun",
+    album: "Endless Sun",
+    type: "Original Song",
+    date: "2026.07.10",
+    release: "2026.03.13",
+    url: "song/Endless Sun.html",
+    image: "images/song/Endless sun.jpg",
+    karaoke: ["JOYSOUND", "DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
   },
+
   {
     title: "Do It",
-    year: 2025,
+    album: "Do It",
+    type: "Original Song",
+    date: "2026.07.10",
     release: "2025.11.21",
-    type: "Album",
-    image:
-      "images/albums/album-Do It.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 3,
-    totalTracks: 5
+    url: "song/Do It.html",
+    image: "images/song/Do It.jpg",
+    karaoke: ["JOYSOUND"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
   },
 
   {
-    title: "KARMA",
-    year: 2025,
-    release: "2025.08.22",
-    type: "Studio Album",
-    image:
-      "images/albums/KARMA.png",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 11
+    title: "DIVINE",
+    album: "Do It",
+    type: "Original Song",
+    date: "2026.07.10",
+    release: "2025.11.21",
+    url: "song/DIVINE.html",
+    image: "images/song/DIVINE.jpg",
+    karaoke: [],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
   },
 
   {
-    title: "Hollow",
-    year: 2025,
-    release: "2025.06.18",
-    type: "Japanese Mini Album",
-    image:
-      "images/albums/Hollow.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 5
+    title: "Holiday",
+    album: "Do It",
+    type: "Original Song",
+    date: "2026.07.10",
+    release: "2025.11.21",
+    url: "song/Holiday.html",
+    image: "images/albums/album-Do It.jpg",
+    karaoke: [],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
   },
 
   {
-    title: "Mixtape : dominATE",
-    year: 2025,
-    release: "2025.03.21",
-    type: "Mixtape",
-    image:
-      "images/albums/Mixtape dominATE.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 5
-  },
-
-  {
-    title: "合 (HOP)",
-    year: 2024,
-    release: "2024.12.13",
-    type: "SKZHOP HIPTAPE",
-    image:
-      "images/albums/合 (HOP).jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 12
-  },
-
-  {
-    title: "GIANT",
-    year: 2024,
-    release: "2024.11.13",
-    type: "Japanese Album",
-    image:
-      "images/albums/GIANT.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 10
-  },
-
-  {
-    title: "ATE",
-    year: 2024,
+    title: "I Like It",
+    album: "ATE",
+    type: "Original Song",
+    date: "2026.06.29",
     release: "2024.07.19",
-    type: "Mini Album",
-    image:
-      "images/albums/ATE.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 2,
-    totalTracks: 8
+    url: "song/I Like It.html",
+    image: "images/song/I Like It.jpg",
+    karaoke: ["JOYSOUND", "DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
   },
 
   {
-    title: "樂-STAR",
-    year: 2023,
-    release: "2023.11.10",
-    type: "Mini Album",
-    image:
-      "images/albums/ROCK-STAR.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 8
+    title: "JJAM",
+    album: "ATE",
+    type: "Original Song",
+    date: "2026.07.26",
+    release: "2024.07.19",
+    url: "song/JJAM.html",
+    image: "images/song/JJAM.jpg",
+    karaoke: ["JOYSOUND", "DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
   },
 
   {
-    title: "★★★★★ (5-STAR)",
-    year: 2023,
-    release: "2023.06.02",
-    type: "Studio Album",
-    image:
-      "images/albums/5-STAR.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 12
+    title: "back to life",
+    album: "back to life",
+    type: "Solo Song",
+    date: "2026.06.29",
+    release: "2026.06.11",
+    url: "song/back to life.html",
+    image: "images/albums/back to life.jpg",
+    karaoke: ["JOYSOUND"],
+    category: "unit",
+    members: [
+      "HAN",
+      "ハン"
+    ]
   },
-
+/* ========================================
   {
-    title: "THE SOUND",
-    year: 2023,
-    release: "2023.02.22",
-    type: "Studio Album",
-    image:
-      "images/albums/THE SOUND.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 10
-  },
-
-  {
-    title: "SKZ-REPLAY",
-    year: 2022,
-    release: "2022.12.21",
-    type: "Studio Album",
-    image:
-      "images/albums/SKZ-REPLAY.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 25
-  },
-
-  {
-    title: "MAXIDENT",
-    year: 2022,
+    title: "CASE 143",
+    album: "MAXIDENT",
+    type: "Original Song",
+    date: "2026.06.12",
     release: "2022.10.07",
-    type: "Mini Album",
-    image:
-      "images/albums/MAXIDENT.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 1,
-    totalTracks: 8
-  },
-
-  {
-    title: "ODDINARY",
-    year: 2022,
-    release: "2022.03.18",
-    type: "Mini Album",
-    image:
-      "images/albums/ODDINARY.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 1,
-    totalTracks: 7
-  },
-
-  {
-    title: "SKZ2021",
-    year: 2021,
-    release: "2021.12.23",
-    type: "Special Album",
-    image:
-      "images/albums/SKZ2021.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 14
-  },
-
-  {
-    title: "Christmas EveL",
-    year: 2021,
-    release: "2021.11.29",
-    type: "Special Album",
-    image:
-      "images/albums/Christmas EveL.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 4
-  },
-
-  {
-    title: "NOEASY",
-    year: 2021,
-    release: "2021.08.23",
-    type: "Studio Album",
-    image:
-      "images/albums/NOEASY.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 14
-  },
-
-  {
-    title: "IN LIFE",
-    year: 2020,
-    release: "2020.09.14",
-    type: "Repackage Album",
-    image:
-      "images/albums/IN LIFE.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 17
-  },
-
-  {
-    title: "GO LIVE",
-    year: 2020,
-    release: "2020.06.17",
-    type: "Studio Album",
-    image:
-      "images/albums/GO LIVE.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 14
-  },
-
-  {
-    title: "Clé : LEVANTER",
-    year: 2019,
-    release: "2019.12.09",
-    type: "Mini Album",
-    image:
-      "images/albums/Cle LEVANTER.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 8
-  },
-
-  {
-    title: "Clé 2 : Yellow Wood",
-    year: 2019,
-    release: "2019.06.19",
-    type: "Special Album",
-    image:
-      "images/albums/Cle 2 Yellow Wood.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 7
-  },
-
-  {
-    title: "Clé 1 : MIROH",
-    year: 2019,
-    release: "2019.03.25",
-    type: "Mini Album",
-    image:
-      "images/albums/Cle 1 MIROH.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 8
-  },
-
-  {
-    title: "I am YOU",
-    year: 2018,
-    release: "2018.10.22",
-    type: "Mini Album",
-    image:
-      "images/albums/I am YOU.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 8
-  },
-
-  {
-    title: "I am WHO",
-    year: 2018,
-    release: "2018.08.06",
-    type: "Mini Album",
-    image:
-      "images/albums/I am WHO.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    totalTracks: 8
-  },
-
-  {
-    title: "I am NOT",
-    year: 2018,
-    release: "2018.03.26",
-    type: "Mini Album",
-    image:
-      "images/albums/I am NOT.jpg",
-     /* ページ未作成 */
-  url: "",
-  available: false,
-    registeredTracks: 0,
-    totalTracks: 7
+    url: "song/CASE143.html",
+    image: "images/song/CASE143.jpg",
+    karaoke: ["JOYSOUND", "DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
   }
+======================================== */
 ];
 
 
 /* ========================================
-   DOM
+   アルバムデータ
 ======================================== */
 
-const albumsLoader =
-  document.getElementById(
-    "albumsLoader"
-  );
+const albums = [
+  {
+    title: "THIS & THAT",
+    year: "2026",
+    image: "images/albums/THISTHAT.jpg",
+    url: "albums/THISTHAT.html",
+    available: true
+  },
 
-const albumsLoaderProgress =
-  document.getElementById(
-    "albumsLoaderProgress"
-  );
+  {
+    title: "SKZ-REPLAY 2026 Pt.1",
+    year: "2026",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+    url: "",
+    available: false
+  },
 
-const albumsLoaderPercent =
-  document.getElementById(
-    "albumsLoaderPercent"
-  );
+  {
+    title: "RUN IT",
+    year: "2026",
+    image: "images/albums/RUN IT.jpg",
+    url: "albums/RUN-IT.html",
+    available: true
+  },
 
-const albumsLoaderMessage =
-  document.getElementById(
-    "albumsLoaderMessage"
-  );
+  {
+    title: "STAY",
+    year: "2026",
+    image: "images/albums/STAY.jpg",
+    url: "albums/STAY.html",
+    available: true
+  },
 
-const albumsMenuButton =
-  document.getElementById(
-    "albumsMenuButton"
-  );
+  {
+    title: "Endless Sun",
+    year: "2026",
+    image: "images/albums/Endless Sun.jpg",
+    url: "albums/Endless-Sun.html",
+    available: true
+  },
 
-const albumsNav =
-  document.getElementById(
-    "albumsNav"
-  );
+  {
+    title: "Do It (Remixes)",
+    year: "2025",
+    image: "images/albums/Do It(Remixes).jpg",
+    url: "",
+    available: false
+  },
 
-const albumsPointerGlow =
-  document.getElementById(
-    "albumsPointerGlow"
-  );
+  {
+    title: "Do It",
+    year: "2025",
+    image: "images/albums/album-Do It.jpg",
+    url: "",
+    available: false
+  },
 
-const albumSearch =
-  document.getElementById(
-    "albumSearch"
-  );
+  {
+    title: "KARMA",
+    year: "2025",
+    image: "images/albums/KARMA.png",
+    url: "",
+    available: false
+  },
 
-const clearAlbumSearch =
-  document.getElementById(
-    "clearAlbumSearch"
-  );
+  {
+    title: "Hollow",
+    year: "2025",
+    image: "images/albums/Hollow.jpg",
+    url: "",
+    available: false
+  },
 
-const albumYearButtons =
+  {
+    title: "Mixtape : dominATE",
+    year: "2025",
+    image: "images/albums/Mixtape dominATE.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "合 (HOP)",
+    year: "2024",
+    image: "images/albums/合 (HOP).jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "GIANT",
+    year: "2024",
+    image: "images/albums/GIANT.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "ATE",
+    year: "2024",
+    image: "images/albums/ATE.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "樂-STAR",
+    year: "2023",
+    image: "images/albums/ROCK-STAR.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "★★★★★ (5-STAR)",
+    year: "2023",
+    image: "images/albums/5-STAR.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "THE SOUND",
+    year: "2023",
+    image: "images/albums/THE SOUND.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "SKZ-REPLAY",
+    year: "2022",
+    image: "images/albums/SKZ-REPLAY.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "MAXIDENT",
+    year: "2022",
+    image: "images/albums/MAXIDENT.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "ODDINARY",
+    year: "2022",
+    image: "images/albums/ODDINARY.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "SKZ2021",
+    year: "2021",
+    image: "images/albums/SKZ2021.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "Christmas EveL",
+    year: "2021",
+    image: "images/albums/Christmas EveL.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "NOEASY",
+    year: "2021",
+    image: "images/albums/NOEASY.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "IN LIFE",
+    year: "2020",
+    image: "images/albums/IN LIFE.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "GO LIVE",
+    year: "2020",
+    image: "images/albums/GO LIVE.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "Clé : LEVANTER",
+    year: "2019",
+    image: "images/albums/Cle LEVANTER.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "Clé 2 : Yellow Wood",
+    year: "2019",
+    image: "images/albums/Cle 2 Yellow Wood.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "Clé 1 : MIROH",
+    year: "2019",
+    image: "images/albums/Cle 1 MIROH.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "I am YOU",
+    year: "2018",
+    image: "images/albums/I am YOU.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "I am WHO",
+    year: "2018",
+    image: "images/albums/I am WHO.jpg",
+    url: "",
+    available: false
+  },
+
+  {
+    title: "I am NOT",
+    year: "2018",
+    image: "images/albums/I am NOT.jpg",
+    url: "",
+    available: false
+  }
+];
+
+/* ========================================
+   DOM取得
+======================================== */
+
+const loadingScreen =
+  document.getElementById("loadingScreen");
+
+const loadingProgress =
+  document.getElementById("loadingProgress");
+
+const loadingPercent =
+  document.getElementById("loadingPercent");
+
+const loadingMessage =
+  document.getElementById("loadingMessage");
+
+const menuButton =
+  document.getElementById("menuButton");
+
+const globalNav =
+  document.getElementById("globalNav");
+
+const songGrid =
+  document.getElementById("songGrid");
+
+const songSearch =
+  document.getElementById("songSearch");
+
+const filterButtons =
   document.querySelectorAll(
-    ".album-year-button"
+    ".filter-button"
   );
 
-const timelineButtons =
-  document.querySelectorAll(
-    "[data-timeline-year]"
-  );
+const resultCount =
+  document.getElementById("resultCount");
 
-const albumGrid =
-  document.getElementById(
-    "albumGrid"
-  );
+const noResults =
+  document.getElementById("noResults");
 
-const albumResultCount =
-  document.getElementById(
-    "albumResultCount"
-  );
+const albumRail =
+  document.getElementById("albumRail");
 
-const albumsHeroCount =
-  document.getElementById(
-    "albumsHeroCount"
-  );
+const pointerGlow =
+  document.getElementById("pointerGlow");
 
-const archiveLatestYear =
-  document.getElementById(
-    "archiveLatestYear"
-  );
-
-const archiveOldestYear =
-  document.getElementById(
-    "archiveOldestYear"
-  );
-
-const activeAlbumKeyword =
-  document.getElementById(
-    "activeAlbumKeyword"
-  );
-
-const activeAlbumYear =
-  document.getElementById(
-    "activeAlbumYear"
-  );
-
-const resetAlbumSearchButton =
-  document.getElementById(
-    "resetAlbumSearch"
-  );
-
-const albumNoResults =
-  document.getElementById(
-    "albumNoResults"
-  );
-
-const albumNoResultsReset =
-  document.getElementById(
-    "albumNoResultsReset"
-  );
-
-const albumsPageTop =
-  document.getElementById(
-    "albumsPageTop"
-  );
+const pageTop =
+  document.getElementById("pageTop");
 
 
 /* ========================================
-   現在の状態
+   起動画面
 ======================================== */
 
-let selectedYear = "all";
+function runLoadingScreen() {
+  if (
+    !loadingScreen ||
+    !loadingProgress ||
+    !loadingPercent ||
+    !loadingMessage
+  ) {
+    return;
+  }
+
+  let progress = 0;
+
+  const messages = [
+    "ACCESSING LYRIC DATABASE...",
+    "LOADING SONG FILES...",
+    "VERIFYING PART DATA...",
+    "ACCESS GRANTED."
+  ];
+
+  const timer =
+    window.setInterval(() => {
+      progress +=
+        Math.floor(
+          Math.random() * 12
+        ) + 4;
+
+      if (progress > 100) {
+        progress = 100;
+      }
+
+      loadingProgress.style.width =
+        `${progress}%`;
+
+      loadingPercent.textContent =
+        `${progress}%`;
+
+      if (progress < 35) {
+        loadingMessage.textContent =
+          messages[0];
+
+      } else if (progress < 65) {
+        loadingMessage.textContent =
+          messages[1];
+
+      } else if (progress < 95) {
+        loadingMessage.textContent =
+          messages[2];
+
+      } else {
+        loadingMessage.textContent =
+          messages[3];
+      }
+
+      if (progress === 100) {
+        window.clearInterval(timer);
+
+        window.setTimeout(() => {
+          loadingScreen.classList.add(
+            "is-hidden"
+          );
+        }, 450);
+      }
+    }, 95);
+}
 
 
 /* ========================================
-   HTMLエスケープ
+   メニュー
+======================================== */
+
+function setupMenu() {
+  const currentMenuButton =
+    document.getElementById(
+      "menuButton"
+    );
+
+  /*
+    globalNavとaboutNavの
+    どちらのIDにも対応
+  */
+  const currentGlobalNav =
+    document.querySelector(
+      "#globalNav, #aboutNav"
+    );
+
+
+  if (
+    !currentMenuButton ||
+    !currentGlobalNav
+  ) {
+    console.error(
+      "メニュー要素が見つかりません",
+      {
+        menuButton:
+          currentMenuButton,
+
+        globalNav:
+          currentGlobalNav
+      }
+    );
+
+    return;
+  }
+
+
+  function closeMenu() {
+    currentGlobalNav.classList.remove(
+      "is-open"
+    );
+
+    currentMenuButton.classList.remove(
+      "is-active"
+    );
+
+    currentMenuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    document.body.classList.remove(
+      "menu-open"
+    );
+  }
+
+
+  function openOrCloseMenu(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const isOpen =
+      currentGlobalNav.classList.toggle(
+        "is-open"
+      );
+
+    currentMenuButton.classList.toggle(
+      "is-active",
+      isOpen
+    );
+
+    currentMenuButton.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
+    document.body.classList.toggle(
+      "menu-open",
+      isOpen
+    );
+  }
+
+
+  currentMenuButton.addEventListener(
+    "click",
+    openOrCloseMenu
+  );
+
+
+  /*
+    スマホのタップにも対応
+  */
+  currentMenuButton.addEventListener(
+    "touchend",
+    (event) => {
+      /*
+        clickも続けて発生する端末では
+        click側だけを使用する
+      */
+      event.stopPropagation();
+    },
+    {
+      passive: true
+    }
+  );
+
+
+  currentGlobalNav
+    .querySelectorAll("a")
+    .forEach((link) => {
+      link.addEventListener(
+        "click",
+        closeMenu
+      );
+    });
+
+
+  document.addEventListener(
+    "click",
+    (event) => {
+      const clickedMenu =
+        currentGlobalNav.contains(
+          event.target
+        );
+
+      const clickedButton =
+        currentMenuButton.contains(
+          event.target
+        );
+
+      if (
+        !clickedMenu &&
+        !clickedButton &&
+        currentGlobalNav.classList.contains(
+          "is-open"
+        )
+      ) {
+        closeMenu();
+      }
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    }
+  );
+}
+
+/* ========================================
+   日付処理
+======================================== */
+
+function dateToNumber(dateText) {
+  return Number(
+    String(dateText ?? "")
+      .replace(/\D/g, "")
+  );
+}
+
+
+/* 曲のリリース日が新しい順 */
+function getSortedSongs() {
+  return [...songs].sort((a, b) => {
+    const releaseDifference =
+      dateToNumber(b.release) -
+      dateToNumber(a.release);
+
+    if (releaseDifference !== 0) {
+      return releaseDifference;
+    }
+
+    const trackA =
+      Number(a.track ?? 999);
+
+    const trackB =
+      Number(b.track ?? 999);
+
+    return trackA - trackB;
+  });
+}
+
+
+/* サイトへの投稿日が新しい順 */
+function getSongsByUpdateDate() {
+  return [...songs].sort((a, b) => {
+    return (
+      dateToNumber(b.date) -
+      dateToNumber(a.date)
+    );
+  });
+}
+
+
+/* ========================================
+   統計表示
+======================================== */
+
+function setTextContent(id, value) {
+  const element =
+    document.getElementById(id);
+
+  if (element) {
+    element.textContent = value;
+  }
+}
+
+
+function updateStatistics() {
+  const songsByUpdateDate =
+    getSongsByUpdateDate();
+
+  const latestDate =
+    songsByUpdateDate[0]?.date ?? "----";
+
+  setTextContent(
+    "heroSongCount",
+    String(songs.length).padStart(3, "0")
+  );
+
+  setTextContent(
+    "totalSongCount",
+    String(songs.length).padStart(2, "0")
+  );
+
+  setTextContent(
+    "totalAlbumCount",
+    String(albums.length).padStart(2, "0")
+  );
+
+  setTextContent(
+    "lastUpdateDate",
+    latestDate
+  );
+}
+
+
+/* ========================================
+   HTML安全化
 ======================================== */
 
 function escapeHtml(value) {
@@ -579,8 +868,122 @@ function escapeHtml(value) {
 
 
 /* ========================================
-   検索用の文字変換
+   タグ生成
 ======================================== */
+
+function createTags(song) {
+  const tags = [
+    `<span class="data-tag">
+      ${escapeHtml(song.type)}
+    </span>`,
+
+    `<span class="data-tag">
+      ${escapeHtml(song.album)}
+    </span>`
+  ];
+
+  const karaoke =
+    Array.isArray(song.karaoke)
+      ? song.karaoke
+      : [];
+
+  karaoke.forEach((service) => {
+    tags.push(
+      `<span class="data-tag karaoke">
+        ${escapeHtml(service)}
+      </span>`
+    );
+  });
+
+  return tags.join("");
+}
+
+
+/* ========================================
+   曲カード
+======================================== */
+
+function renderSongs(songList) {
+  if (!songGrid) {
+    return;
+  }
+
+  songGrid.innerHTML = "";
+
+  /*
+    この関数では並べ替えない。
+    受け取った順番のままカードを作る。
+  */
+
+  if (resultCount) {
+    resultCount.textContent =
+      `${String(songList.length).padStart(
+        2,
+        "0"
+      )} FILES`;
+  }
+
+  if (noResults) {
+    noResults.hidden =
+      songList.length !== 0;
+  }
+
+  songList.forEach((song, index) => {
+    const card =
+      document.createElement("a");
+
+    card.className = "song-card";
+    card.href = song.url;
+
+    card.innerHTML = `
+      <img
+        class="song-image"
+        src="${escapeHtml(song.image)}"
+        alt="${escapeHtml(song.title)}"
+        loading="lazy"
+      >
+
+      <div class="song-content">
+
+        <span class="song-file-number">
+          FILE-${String(index + 1).padStart(
+            3,
+            "0"
+          )}
+        </span>
+
+        <div class="song-tags">
+          ${createTags(song)}
+        </div>
+
+        <h3 class="song-title">
+          ${escapeHtml(song.title)}
+        </h3>
+
+        <p class="song-meta">
+          RELEASED /
+          ${escapeHtml(song.release)}
+        </p>
+
+        <span class="song-open">
+          OPEN FILE
+          <span>→</span>
+        </span>
+
+      </div>
+    `;
+
+    songGrid.appendChild(card);
+  });
+}
+
+
+/* ========================================
+   検索・フィルター
+======================================== */
+
+let activeFilter = "all";
+
 
 function normalizeText(value) {
   return String(value ?? "")
@@ -590,668 +993,579 @@ function normalizeText(value) {
 }
 
 
-/* ========================================
-   日付変換
-======================================== */
+/* 配列をランダムに並べ替える */
+function shuffleSongs(songList) {
+  const shuffled = [...songList];
 
-function parseAlbumDate(value) {
-  const normalized =
-    String(value ?? "")
-      .replaceAll(".", "-")
-      .replaceAll("/", "-");
-
-  const time =
-    new Date(
-      `${normalized}T00:00:00`
-    ).getTime();
-
-  if (Number.isNaN(time)) {
-    return 0;
-  }
-
-  return time;
-}
-
-
-/* ========================================
-   アルバムを最新順にする
-======================================== */
-
-function getSortedAlbums(
-  albumList = albums
-) {
-  return [...albumList]
-    .sort((first, second) => {
-      return (
-        parseAlbumDate(
-          second.release
-        ) -
-        parseAlbumDate(
-          first.release
-        )
+  for (
+    let i = shuffled.length - 1;
+    i > 0;
+    i--
+  ) {
+    const randomIndex =
+      Math.floor(
+        Math.random() * (i + 1)
       );
-    });
+
+    [
+      shuffled[i],
+      shuffled[randomIndex]
+    ] = [
+      shuffled[randomIndex],
+      shuffled[i]
+    ];
+  }
+
+  return shuffled;
 }
 
 
-/* ========================================
-   アルバムカード作成
-======================================== */
-
-function renderAlbums(albumList) {
-  if (!albumGrid) {
-    return;
-  }
-
-  albumGrid.innerHTML = "";
-
-  if (albumResultCount) {
-    albumResultCount.textContent =
-      `${String(albumList.length)
-        .padStart(2, "0")} FILES`;
-  }
-
-  /*
-    ヒーローには全アルバム数を表示
-  */
-  if (albumsHeroCount) {
-    albumsHeroCount.textContent =
-      String(albums.length)
-        .padStart(3, "0");
-  }
-
-  if (albumNoResults) {
-    albumNoResults.hidden =
-      albumList.length !== 0;
-  }
-
-  albumList.forEach(
-    (album, index) => {
-      const card =
-        document.createElement("a");
-
-      card.className =
-        "album-file-card";
-
-      card.href =
-        album.url || "#";
-
-      const registered =
-        Number(
-          album.registeredTracks || 0
-        );
-
-      const total =
-        Number(
-          album.totalTracks || 0
-        );
-
-      card.innerHTML = `
-        <div class="album-cover-wrap">
-
-          <img
-            class="album-cover"
-            src="${escapeHtml(album.image)}"
-            alt="${escapeHtml(album.title)}"
-            loading="lazy"
-          >
-
-          <span class="album-file-number">
-            ARCHIVE-${String(index + 1)
-              .padStart(2, "0")}
-          </span>
-
-          <span class="album-year-badge">
-            ${escapeHtml(album.year)}
-          </span>
-
-        </div>
-
-        <div class="album-card-content">
-
-          <p class="album-card-label">
-            ${escapeHtml(album.type)}
-          </p>
-
-          <h3 class="album-title">
-            ${escapeHtml(album.title)}
-          </h3>
-
-          <p class="album-release">
-            RELEASED /
-            ${escapeHtml(album.release)}
-          </p>
-
-          <div class="album-track-status">
-
-            <span>REGISTERED</span>
-
-            <strong>
-              ${String(registered)
-                .padStart(2, "0")}
-              /
-              ${String(total)
-                .padStart(2, "0")}
-            </strong>
-
-          </div>
-
-          <span class="album-open">
-            OPEN ARCHIVE
-            <span>→</span>
-          </span>
-
-        </div>
-      `;
-
-      albumGrid.appendChild(card);
-    }
-  );
-}
-
-
-/* ========================================
-   検索・年代絞り込み
-======================================== */
-
-function filterAlbums() {
+/* 曲を検索・絞り込み */
+function filterSongs() {
   const keyword =
     normalizeText(
-      albumSearch
-        ? albumSearch.value
-        : ""
+      songSearch?.value ?? ""
     );
 
-  const filtered =
-    getSortedAlbums()
-      .filter((album) => {
-        const searchableText =
-          normalizeText([
-            album.title,
-            album.year,
-            album.release,
-            album.type
-          ].join(" "));
+  /*
+    ALLの基本順は、投稿日ではなく
+    曲のリリース日が新しい順。
+  */
+  let filtered =
+    getSortedSongs().filter((song) => {
+      const members =
+        Array.isArray(song.members)
+          ? song.members
+          : [];
 
-        const matchesKeyword =
-          searchableText.includes(
-            keyword
-          );
+      const karaoke =
+        Array.isArray(song.karaoke)
+          ? song.karaoke
+          : [];
 
-        const matchesYear =
-          selectedYear === "all" ||
-          String(album.year) ===
-            selectedYear;
+      const searchableText =
+        normalizeText([
+          song.title,
+          song.album,
+          song.type,
+          song.category,
+          song.date,
+          song.release,
+          ...members,
+          ...karaoke
+        ].join(" "));
+
+      const matchesKeyword =
+        searchableText.includes(keyword);
+
+      if (!matchesKeyword) {
+        return false;
+      }
+
+      /*
+        ALLとRANDOMは
+        すべての曲が対象。
+      */
+      if (
+        activeFilter === "all" ||
+        activeFilter === "random"
+      ) {
+        return true;
+      }
+
+      /*
+        JOYSOUND対応曲。
+      */
+      if (
+        activeFilter === "joysound"
+      ) {
+        return karaoke.some(
+          (service) => {
+            return (
+              normalizeText(service) ===
+              "joysound"
+            );
+          }
+        );
+      }
+
+      /*
+        DAM対応曲。
+      */
+      if (activeFilter === "dam") {
+        return karaoke.some(
+          (service) => {
+            return (
+              normalizeText(service) ===
+              "dam"
+            );
+          }
+        );
+      }
+
+      /*
+        ユニット・ソロ曲。
+      */
+      if (activeFilter === "unit") {
+        const category =
+          normalizeText(song.category);
+
+        const type =
+          normalizeText(song.type);
 
         return (
-          matchesKeyword &&
-          matchesYear
+          category === "unit" ||
+          type.includes("unit") ||
+          type.includes("solo")
         );
-      });
+      }
 
-  renderAlbums(filtered);
+      return true;
+    });
 
-  updateAlbumStatus(keyword);
+  /*
+    RANDOMを押した場合だけ、
+    リリース日順をシャッフルする。
+  */
+  if (activeFilter === "random") {
+    filtered =
+      shuffleSongs(filtered);
+  }
 
-  updateClearAlbumButton();
-
-  updateYearButtons();
+  renderSongs(filtered);
 }
 
 
-/* ========================================
-   現在の検索状態
-======================================== */
-
-function updateAlbumStatus(keyword) {
-  if (activeAlbumKeyword) {
-    activeAlbumKeyword.textContent =
-      keyword && albumSearch
-        ? `"${albumSearch.value.trim()}"`
-        : "ALL ALBUMS";
-  }
-
-  if (activeAlbumYear) {
-    activeAlbumYear.textContent =
-      selectedYear === "all"
-        ? "ALL YEARS"
-        : selectedYear;
-  }
-}
-
-
-/* ========================================
-   検索欄
-======================================== */
-
-albumSearch?.addEventListener(
+/* 検索欄 */
+songSearch?.addEventListener(
   "input",
-  filterAlbums
+  filterSongs
 );
 
 
-albumSearch?.addEventListener(
-  "keydown",
-  (event) => {
-    if (event.key !== "Escape") {
+/* フィルターボタン */
+filterButtons.forEach((button) => {
+  button.addEventListener(
+    "click",
+    () => {
+      filterButtons.forEach((item) => {
+        item.classList.remove(
+          "active"
+        );
+      });
+
+      button.classList.add(
+        "active"
+      );
+
+      activeFilter =
+        button.dataset.filter ?? "all";
+
+      filterSongs();
+    }
+  );
+});
+
+
+/* ========================================
+   最新曲スライダー
+======================================== */
+
+/*
+  リリース日の新しい曲から
+  最大6曲を表示する。
+*/
+const latestSongs =
+  getSortedSongs().slice(0, 6);
+
+let latestIndex = 0;
+
+const latestCard =
+  document.getElementById(
+    "latestCard"
+  );
+
+const latestImage =
+  document.getElementById(
+    "latestImage"
+  );
+
+const latestTitle =
+  document.getElementById(
+    "latestTitle"
+  );
+
+const latestAlbum =
+  document.getElementById(
+    "latestAlbum"
+  );
+
+const latestDate =
+  document.getElementById(
+    "latestDate"
+  );
+
+const latestTags =
+  document.getElementById(
+    "latestTags"
+  );
+
+const latestLink =
+  document.getElementById(
+    "latestLink"
+  );
+
+const latestCurrent =
+  document.getElementById(
+    "latestCurrent"
+  );
+
+const latestTotal =
+  document.getElementById(
+    "latestTotal"
+  );
+
+const latestFileNumber =
+  document.getElementById(
+    "latestFileNumber"
+  );
+
+const latestPrev =
+  document.getElementById(
+    "latestPrev"
+  );
+
+const latestNext =
+  document.getElementById(
+    "latestNext"
+  );
+
+
+function updateLatestCard() {
+  if (
+    latestSongs.length === 0 ||
+    !latestCard
+  ) {
+    return;
+  }
+
+  const song =
+    latestSongs[latestIndex];
+
+  latestCard.classList.add(
+    "is-switching"
+  );
+
+  window.setTimeout(() => {
+    if (latestImage) {
+      latestImage.src =
+        song.image;
+
+      latestImage.alt =
+        song.title;
+    }
+
+    if (latestTitle) {
+      latestTitle.textContent =
+        song.title;
+    }
+
+    if (latestAlbum) {
+      latestAlbum.textContent =
+        song.album;
+    }
+
+    /*
+      投稿日ではなく
+      曲のリリース日を表示する。
+    */
+    if (latestDate) {
+      latestDate.textContent =
+        song.release;
+    }
+
+    if (latestTags) {
+      latestTags.innerHTML =
+        createTags(song);
+    }
+
+    if (latestLink) {
+      latestLink.href =
+        song.url;
+    }
+
+    if (latestCurrent) {
+      latestCurrent.textContent =
+        String(latestIndex + 1)
+          .padStart(2, "0");
+    }
+
+    if (latestTotal) {
+      latestTotal.textContent =
+        String(latestSongs.length)
+          .padStart(2, "0");
+    }
+
+    if (latestFileNumber) {
+      latestFileNumber.textContent =
+        `FILE NO. ${
+          String(latestIndex + 1)
+            .padStart(3, "0")
+        }`;
+    }
+
+    latestCard.classList.remove(
+      "is-switching"
+    );
+  }, 280);
+}
+
+
+latestPrev?.addEventListener(
+  "click",
+  () => {
+    if (latestSongs.length === 0) {
       return;
     }
 
-    clearAlbumKeyword();
+    latestIndex =
+      (
+        latestIndex -
+        1 +
+        latestSongs.length
+      ) % latestSongs.length;
+
+    updateLatestCard();
   }
 );
 
 
-function clearAlbumKeyword() {
-  if (!albumSearch) {
-    return;
-  }
-
-  albumSearch.value = "";
-
-  filterAlbums();
-
-  albumSearch.focus();
-}
-
-
-clearAlbumSearch?.addEventListener(
+latestNext?.addEventListener(
   "click",
-  clearAlbumKeyword
+  () => {
+    if (latestSongs.length === 0) {
+      return;
+    }
+
+    latestIndex =
+      (
+        latestIndex +
+        1
+      ) % latestSongs.length;
+
+    updateLatestCard();
+  }
 );
 
 
-function updateClearAlbumButton() {
-  if (
-    !clearAlbumSearch ||
-    !albumSearch
-  ) {
+/* ========================================
+   アルバム
+======================================== */
+
+function renderAlbums() {
+  if (!albumRail) {
     return;
   }
 
-  clearAlbumSearch.hidden =
-    albumSearch.value.length === 0;
-}
+  albumRail.innerHTML = "";
+
+  /*
+    albums配列に書いた順番を
+    そのまま最新順として表示する。
+  */
+  albums.forEach((album, index) => {
+
+    /*
+      availableがtrueで、
+      URLも設定されている場合だけ開ける。
+    */
+    const isAvailable =
+      album.available === true &&
+      Boolean(album.url);
 
 
-/* ========================================
-   年代ボタン
-======================================== */
-
-albumYearButtons.forEach(
-  (button) => {
-    button.addEventListener(
-      "click",
-      () => {
-        selectedYear =
-          button.dataset.year ||
-          "all";
-
-        filterAlbums();
-      }
-    );
-  }
-);
+    /*
+      完成済みはリンク、
+      未完成はクリックできないarticleにする。
+    */
+    const card =
+      document.createElement(
+        isAvailable
+          ? "a"
+          : "article"
+      );
 
 
-function updateYearButtons() {
-  albumYearButtons.forEach(
-    (button) => {
-      button.classList.toggle(
-        "active",
-        button.dataset.year ===
-          selectedYear
+    card.className =
+      "album-card";
+
+
+    /*
+      完成済みの場合だけURLを設定。
+    */
+    if (isAvailable) {
+      card.href =
+        album.url;
+
+    } else {
+      card.classList.add(
+        "is-coming-soon"
+      );
+
+      card.setAttribute(
+        "aria-disabled",
+        "true"
       );
     }
-  );
-
-  timelineButtons.forEach(
-    (button) => {
-      button.classList.toggle(
-        "active",
-        button.dataset.timelineYear ===
-          selectedYear
-      );
-    }
-  );
-}
 
 
-/* ========================================
-   タイムライン
-======================================== */
+    card.innerHTML = `
+      <div class="album-image-wrap">
 
-timelineButtons.forEach(
-  (button) => {
-    button.addEventListener(
-      "click",
-      () => {
-        selectedYear =
-          button.dataset.timelineYear ||
-          "all";
+        <span class="album-number">
+          ARCHIVE-${String(
+            index + 1
+          ).padStart(2, "0")}
+        </span>
 
-        filterAlbums();
+        <img
+          src="${escapeHtml(album.image)}"
+          alt="${escapeHtml(album.title)}"
+          loading="lazy"
+        >
 
-        const database =
-          document.getElementById(
-            "albumDatabase"
-          );
+        ${
+          isAvailable
+            ? ""
+            : `
+              <div class="album-coming-overlay">
+                <span>
+                  FILE LOCKED
+                </span>
 
-        if (!database) {
-          return;
+                <strong>
+                  COMING SOON
+                </strong>
+              </div>
+            `
         }
 
-        const headerHeight =
-          document.querySelector(
-            ".site-header"
-          )?.offsetHeight || 72;
-
-        const targetTop =
-          database
-            .getBoundingClientRect()
-            .top +
-          window.scrollY -
-          headerHeight -
-          20;
-
-        window.scrollTo({
-          top: targetTop,
-          behavior: "smooth"
-        });
-      }
-    );
-  }
-);
+      </div>
 
 
-/* ========================================
-   全リセット
-======================================== */
-
-function resetAlbumFilters() {
-  selectedYear = "all";
-
-  if (albumSearch) {
-    albumSearch.value = "";
-  }
-
-  filterAlbums();
-}
+      <h3>
+        ${escapeHtml(album.title)}
+      </h3>
 
 
-resetAlbumSearchButton
-  ?.addEventListener(
-    "click",
-    resetAlbumFilters
-  );
+      <p>
+        ${escapeHtml(album.year)}
+      </p>
 
 
-albumNoResultsReset
-  ?.addEventListener(
-    "click",
-    resetAlbumFilters
-  );
+      <span class="album-card-status">
+        ${
+          isAvailable
+            ? "OPEN ARCHIVE"
+            : "ARCHIVE LOCKED"
+        }
+      </span>
+    `;
 
 
-/* ========================================
-   ヒーローの年代範囲
-======================================== */
-
-function updateArchiveYears() {
-  const years =
-    albums
-      .map((album) => {
-        return Number(album.year);
-      })
-      .filter((year) => {
-        return Number.isFinite(year);
-      });
-
-  if (years.length === 0) {
-    return;
-  }
-
-  const latestYear =
-    Math.max(...years);
-
-  const oldestYear =
-    Math.min(...years);
-
-  if (archiveLatestYear) {
-    archiveLatestYear.textContent =
-      String(latestYear);
-  }
-
-  if (archiveOldestYear) {
-    archiveOldestYear.textContent =
-      String(oldestYear);
-  }
-}
-
-
-/* ========================================
-   URLの検索ワードを読み込む
-======================================== */
-
-function loadAlbumUrlParameters() {
-  const parameters =
-    new URLSearchParams(
-      window.location.search
-    );
-
-  const keyword =
-    parameters.get("keyword");
-
-  const year =
-    parameters.get("year");
-
-  if (
-    keyword &&
-    albumSearch
-  ) {
-    albumSearch.value =
-      keyword;
-  }
-
-  if (
-    year &&
-    (
-      year === "all" ||
-      /^\d{4}$/.test(year)
-    )
-  ) {
-    selectedYear =
-      year;
-  }
-}
-
-
-/* ========================================
-   起動画面
-======================================== */
-
-function runAlbumsLoader() {
-  if (
-    !albumsLoader ||
-    !albumsLoaderProgress ||
-    !albumsLoaderPercent ||
-    !albumsLoaderMessage
-  ) {
-    return;
-  }
-
-  let progress = 0;
-
-  const messages = [
-    "ACCESSING ALBUM DATABASE...",
-    "READING ARCHIVE FILES...",
-    "SORTING RELEASE DATA...",
-    "ALBUM ARCHIVE READY."
-  ];
-
-  const timer =
-    window.setInterval(() => {
-      progress +=
-        Math.floor(
-          Math.random() * 14
-        ) + 6;
-
-      progress =
-        Math.min(
-          progress,
-          100
-        );
-
-      albumsLoaderProgress.style.width =
-        `${progress}%`;
-
-      albumsLoaderPercent.textContent =
-        `${progress}%`;
-
-      if (progress < 34) {
-        albumsLoaderMessage.textContent =
-          messages[0];
-
-      } else if (progress < 65) {
-        albumsLoaderMessage.textContent =
-          messages[1];
-
-      } else if (progress < 94) {
-        albumsLoaderMessage.textContent =
-          messages[2];
-
-      } else {
-        albumsLoaderMessage.textContent =
-          messages[3];
-      }
-
-      if (progress === 100) {
-        window.clearInterval(timer);
-
-        window.setTimeout(() => {
-          albumsLoader.classList.add(
-            "is-hidden"
-          );
-        }, 350);
-      }
-    }, 80);
-}
-
-
-/* ========================================
-   メニュー
-======================================== */
-
-function closeAlbumsMenu() {
-  if (
-    !albumsNav ||
-    !albumsMenuButton
-  ) {
-    return;
-  }
-
-  albumsNav.classList.remove(
-    "is-open"
-  );
-
-  albumsMenuButton.classList.remove(
-    "is-active"
-  );
-
-  albumsMenuButton.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-  albumsMenuButton.setAttribute(
-    "aria-label",
-    "メニューを開く"
-  );
-
-  document.body.classList.remove(
-    "menu-open"
-  );
-}
-
-
-function toggleAlbumsMenu() {
-  if (
-    !albumsNav ||
-    !albumsMenuButton
-  ) {
-    return;
-  }
-
-  const isOpen =
-    albumsNav.classList.toggle(
-      "is-open"
-    );
-
-  albumsMenuButton.classList.toggle(
-    "is-active",
-    isOpen
-  );
-
-  albumsMenuButton.setAttribute(
-    "aria-expanded",
-    String(isOpen)
-  );
-
-  albumsMenuButton.setAttribute(
-    "aria-label",
-    isOpen
-      ? "メニューを閉じる"
-      : "メニューを開く"
-  );
-
-  document.body.classList.toggle(
-    "menu-open",
-    isOpen
-  );
-}
-
-
-albumsMenuButton
-  ?.addEventListener(
-    "click",
-    toggleAlbumsMenu
-  );
-
-
-albumsNav
-  ?.querySelectorAll("a")
-  .forEach((link) => {
-    link.addEventListener(
-      "click",
-      closeAlbumsMenu
+    albumRail.appendChild(
+      card
     );
   });
+}
 
 
-document.addEventListener(
-  "keydown",
-  (event) => {
-    if (event.key === "Escape") {
-      closeAlbumsMenu();
+/* ========================================
+   アルバムスライダー
+======================================== */
+
+const albumPrev =
+  document.getElementById(
+    "albumPrev"
+  );
+
+const albumNext =
+  document.getElementById(
+    "albumNext"
+  );
+
+
+albumPrev?.addEventListener(
+  "click",
+  () => {
+    albumRail?.scrollBy({
+      left: -300,
+      behavior: "smooth"
+    });
+  }
+);
+
+
+albumNext?.addEventListener(
+  "click",
+  () => {
+    albumRail?.scrollBy({
+      left: 300,
+      behavior: "smooth"
+    });
+  }
+);
+
+/* ========================================
+   ランダム曲へ移動するボタン
+======================================== */
+
+const randomSongButton =
+  document.getElementById(
+    "randomSongButton"
+  );
+
+
+randomSongButton?.addEventListener(
+  "click",
+  () => {
+    if (songs.length === 0) {
+      return;
     }
+
+    const randomIndex =
+      Math.floor(
+        Math.random() *
+        songs.length
+      );
+
+    const randomSong =
+      songs[randomIndex];
+
+    window.location.href =
+      randomSong.url;
   }
 );
 
 
 /* ========================================
-   Reveal
+   スクロール表示
 ======================================== */
 
-function activateAlbumsReveal() {
+function activateRevealAnimation() {
   const revealItems =
     document.querySelectorAll(
       ".reveal"
     );
 
+  /*
+    IntersectionObserverが
+    使用できない環境では即表示する。
+  */
   if (
     !(
-      "IntersectionObserver"
-      in window
+      "IntersectionObserver" in
+      window
     )
   ) {
     revealItems.forEach((item) => {
@@ -1284,9 +1598,7 @@ function activateAlbumsReveal() {
         });
       },
       {
-        threshold: 0.1,
-        rootMargin:
-          "0px 0px -40px 0px"
+        threshold: 0.13
       }
     );
 
@@ -1297,20 +1609,20 @@ function activateAlbumsReveal() {
 
 
 /* ========================================
-   マウス発光
+   ポインター発光
 ======================================== */
 
 window.addEventListener(
   "pointermove",
   (event) => {
-    if (!albumsPointerGlow) {
+    if (!pointerGlow) {
       return;
     }
 
-    albumsPointerGlow.style.left =
+    pointerGlow.style.left =
       `${event.clientX}px`;
 
-    albumsPointerGlow.style.top =
+    pointerGlow.style.top =
       `${event.clientY}px`;
   }
 );
@@ -1320,28 +1632,22 @@ window.addEventListener(
    ページトップ
 ======================================== */
 
-function updateAlbumsPageTop() {
-  if (!albumsPageTop) {
-    return;
-  }
-
-  albumsPageTop.classList.toggle(
-    "is-visible",
-    window.scrollY > 700
-  );
-}
-
-
 window.addEventListener(
   "scroll",
-  updateAlbumsPageTop,
-  {
-    passive: true
+  () => {
+    if (!pageTop) {
+      return;
+    }
+
+    pageTop.classList.toggle(
+      "is-visible",
+      window.scrollY > 700
+    );
   }
 );
 
 
-albumsPageTop?.addEventListener(
+pageTop?.addEventListener(
   "click",
   () => {
     window.scrollTo({
@@ -1353,179 +1659,37 @@ albumsPageTop?.addEventListener(
 
 
 /* ========================================
-   画像読み込みエラー
-======================================== */
-
-function activateAlbumImageFallback() {
-  if (!albumGrid) {
-    return;
-  }
-
-  albumGrid.addEventListener(
-    "error",
-    (event) => {
-      const image =
-        event.target;
-
-      if (
-        !(image instanceof HTMLImageElement)
-      ) {
-        return;
-      }
-
-      if (
-        !image.classList.contains(
-          "album-cover"
-        )
-      ) {
-        return;
-      }
-
-      image.classList.add(
-        "image-error"
-      );
-
-      /*
-        同じ画像を読み込み続けないため
-        srcは変更しない。
-      */
-      image.alt =
-        `${image.alt} IMAGE NOT FOUND`;
-    },
-    true
-  );
-}
-
-
-/* ========================================
    初期化
 ======================================== */
 
-function initAlbumsPage() {
-  runAlbumsLoader();
+function init() {
+  runLoadingScreen();
 
-  loadAlbumUrlParameters();
+  setupMenu();
 
-  updateArchiveYears();
-
-  filterAlbums();
-
-  activateAlbumsReveal();
-
-  activateAlbumImageFallback();
-
-  updateAlbumsPageTop();
+  updateStatistics();
+  filterSongs();
+  renderAlbums();
+  updateLatestCard();
+  activateRevealAnimation();
 }
 
-
+/*
+  JSが先に読み込まれても、
+  HTMLの後に読み込まれても動かす
+*/
 if (
   document.readyState ===
   "loading"
 ) {
   document.addEventListener(
     "DOMContentLoaded",
-    initAlbumsPage
-  );
-} else {
-  initAlbumsPage();
-}
-function renderAlbumCards(albumList) {
-  albumGrid.innerHTML = "";
-
-  albumList.forEach((album, index) => {
-    const isAvailable =
-      album.available === true &&
-      Boolean(album.url);
-
-    const card =
-      document.createElement(
-        isAvailable ? "a" : "article"
-      );
-
-    card.className = isAvailable
-      ? "album-file-card"
-      : "album-file-card is-coming-soon";
-
-    if (isAvailable) {
-      card.href = album.url;
-    } else {
-      card.setAttribute(
-        "aria-disabled",
-        "true"
-      );
+    init,
+    {
+      once: true
     }
+  );
 
-    card.innerHTML = `
-      <div class="album-file-image-wrap">
-
-        <span class="album-file-number">
-          ARCHIVE-${String(index + 1).padStart(2, "0")}
-        </span>
-
-        <img
-          class="album-file-image"
-          src="${escapeHtml(album.image)}"
-          alt="${escapeHtml(album.title)}"
-          loading="lazy"
-        >
-
-        <span class="album-file-year">
-          ${escapeHtml(album.year)}
-        </span>
-
-        ${
-          !isAvailable
-            ? `
-              <div class="album-coming-overlay">
-                <span>FILE LOCKED</span>
-                <strong>COMING SOON</strong>
-              </div>
-            `
-            : ""
-        }
-
-      </div>
-
-      <div class="album-file-content">
-
-        <p class="album-file-type">
-          ${escapeHtml(album.type)}
-        </p>
-
-        <h3>
-          ${escapeHtml(album.title)}
-        </h3>
-
-        <p class="album-file-release">
-          RELEASED / ${escapeHtml(album.release)}
-        </p>
-
-        <p class="album-file-count">
-          REGISTERED
-          <strong>
-            ${String(album.registeredTracks).padStart(2, "0")}
-            /
-            ${String(album.totalTracks).padStart(2, "0")}
-          </strong>
-        </p>
-
-        <div class="album-file-open">
-          <span>
-            ${
-              isAvailable
-                ? "OPEN ARCHIVE"
-                : "ARCHIVE LOCKED"
-            }
-          </span>
-
-          <span>
-            ${isAvailable ? "→" : "×"}
-          </span>
-        </div>
-
-      </div>
-    `;
-
-    albumGrid.appendChild(card);
-  });
+} else {
+  init();
 }
