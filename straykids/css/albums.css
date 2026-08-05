@@ -1,845 +1,1784 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Stray Kidsのアルバムと収録楽曲を年代別に確認できる非公式アーカイブ"
-  >
-
-  <title>
-    Albums | SKZ Lyric LAB
-  </title>
-
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
-
-  <link
-    rel="stylesheet"
-    href="css/albums.css"
-  >
-
-  <link
-  rel="stylesheet"
-  href="css/common-header.css?v=20260806-1"
->
-</head>
-
-
-<body class="albums-page">
-
-  <!-- =====================================
-       起動画面
-  ====================================== -->
-
-  <div
-    id="albumsLoader"
-    class="loading-screen"
-  >
-    <div class="loading-inner">
-
-      <p class="loading-code">
-        SYSTEM / ARCHIVE-001
-      </p>
-
-      <h1
-        class="loading-logo"
-        data-text="ARCHIVE"
-      >
-        ARCHIVE
-      </h1>
-
-      <p
-        id="albumsLoaderMessage"
-        class="loading-message"
-      >
-        ACCESSING ALBUM DATABASE...
-      </p>
-
-      <div class="loading-bar">
-        <span
-          id="albumsLoaderProgress"
-        ></span>
-      </div>
-
-      <p
-        id="albumsLoaderPercent"
-        class="loading-percent"
-      >
-        0%
-      </p>
-
-    </div>
-  </div>
-
-
-  <!-- =====================================
-       背景
-  ====================================== -->
-
-  <div class="background-grid"></div>
-  <div class="scanlines"></div>
-
-  <div
-    id="albumsPointerGlow"
-    class="pointer-glow"
-  ></div>
-
-
-  <!-- =====================================
-       ヘッダー
-  ====================================== -->
-
-  <header class="site-header">
-
-    <a
-      href="index.html"
-      class="header-logo"
-    >
-      <span class="header-logo-main">
-        SKZ
-      </span>
-
-      <span class="header-logo-sub">
-        LYRIC LAB
-      </span>
-    </a>
-
-
-    <nav
-      id="albumsNav"
-      class="global-nav"
-    >
-      <a href="index.html#latest">
-        LATEST
-      </a>
-
-      <a
-        href="albums.html"
-        class="is-current"
-      >
-        ARCHIVE
-      </a>
-
-      <a href="index.html#database">
-        DATABASE
-      </a>
-
-      <a href="search.html">
-        SEARCH
-      </a>
+/* ========================================
+   ALBUMS PAGE
+======================================== */
 
-      <a href="members.html">
-        MEMBERS
-      </a>
+.albums-page {
+  --album-pink: #ff3f83;
+  --album-red: #df0045;
+  --album-white: #f7f5f7;
 
-      <a href="about.html">
-        ABOUT
-      </a>
-    </nav>
+  --album-border:
+    rgba(255, 255, 255, 0.15);
 
+  --album-pink-border:
+    rgba(255, 63, 131, 0.43);
 
-    <button
-      id="albumsMenuButton"
-      class="menu-button"
-      type="button"
-      aria-label="メニューを開く"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </header>
-
-
-  <!-- =====================================
-       メイン
-  ====================================== -->
+  min-height: 100vh;
 
-  <main>
-
-    <!-- ===================================
-         ヒーロー
-    ==================================== -->
+  color: var(--album-white);
 
-    <section class="albums-hero">
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(105, 0, 38, 0.28),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 90% 50%,
+      rgba(255, 63, 131, 0.055),
+      transparent 28%
+    ),
+    #050506;
+}
 
-      <div
-        class="albums-hero-code"
-        aria-hidden="true"
-      >
-        <span>DATABASE : CONNECTED</span>
-        <span>ARCHIVE : UNLOCKED</span>
-        <span>STATUS : VERIFIED</span>
-      </div>
 
+/* ========================================
+   ローディング画面
+======================================== */
 
-      <div class="albums-hero-content reveal">
+#albumsLoader {
+  overflow: hidden;
+}
 
-        <p class="section-number">
-          01 / ALBUM DATABASE
-        </p>
+#albumsLoader .loading-inner {
+  width: min(100% - 40px, 650px);
+  margin-inline: auto;
 
-        <p class="albums-eyebrow">
-          STRAY KIDS DISCOGRAPHY FILE
-        </p>
+  text-align: center;
+}
 
-        <h1>
-          Album
-          <span>Archive</span>
-        </h1>
+#albumsLoader .loading-code,
+#albumsLoader .loading-message,
+#albumsLoader .loading-percent {
+  text-align: center;
+}
 
-        <p class="albums-hero-description">
-          Stray Kidsのアルバムを
-          リリース年の新しい順に記録した
-          非公式アーカイブです。
-          アルバムを選ぶと、登録されている
-          収録曲を確認できます。
-        </p>
+#albumsLoader .loading-logo {
+  position: relative;
+  left: -28px;
 
+  width: max-content;
+  max-width: none;
 
-        <div class="albums-hero-status">
+  margin:
+    30px 0 38px 50%;
 
-          <div>
-            <span>ORDER</span>
-            <strong>NEWEST</strong>
-          </div>
+  font-size:
+    clamp(62px, 13vw, 128px);
 
-          <div>
-            <span>ARCHIVES</span>
-            <strong id="albumsHeroCount">
-              000
-            </strong>
-          </div>
+  line-height: 0.84;
+  letter-spacing: -0.075em;
+  white-space: nowrap;
 
-          <div>
-            <span>ACCESS</span>
-            <strong>GRANTED</strong>
-          </div>
+  transform: translateX(-50%);
+}
 
-        </div>
+#albumsLoader .loading-bar {
+  width: min(100%, 500px);
+  margin-inline: auto;
+}
 
-      </div>
 
+/* ========================================
+   メイン
+======================================== */
 
-      <!-- 年代表示 -->
+.albums-page main {
+  width: min(1500px, 100%);
+  margin-inline: auto;
+  padding:
+    110px clamp(22px, 5vw, 76px)
+    0;
+}
 
-      <div class="albums-hero-visual reveal">
 
-        <div class="archive-year-display">
+/* ========================================
+   ヒーロー
+======================================== */
 
-          <span class="archive-year-label">
-            ARCHIVE RANGE
-          </span>
+.albums-hero {
+  position: relative;
 
-          <strong id="archiveLatestYear">
-            2026
-          </strong>
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(350px, 0.72fr);
 
-          <div class="archive-year-line">
-            <span></span>
-            <i></i>
-            <span></span>
-          </div>
+  gap: clamp(55px, 8vw, 130px);
+  align-items: center;
 
-          <strong
-            id="archiveOldestYear"
-            class="archive-oldest-year"
-          >
-            2018
-          </strong>
+  min-height: 650px;
+  padding:
+    clamp(80px, 9vw, 140px) 0;
 
-          <span class="archive-year-status">
-            DATA VERIFIED
-          </span>
+  border-bottom:
+    1px solid var(--album-border);
+}
 
-        </div>
-
-        <div class="archive-circle circle-one"></div>
-        <div class="archive-circle circle-two"></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ===================================
-         アーカイブ検索
-    ==================================== -->
-
-    <section class="album-control-section">
-
-      <div class="album-search-panel reveal">
-
-        <div class="album-search-label">
-
-          <div>
-            <span>ARCHIVE SEARCH</span>
-            <strong>ALBUM TITLE</strong>
-          </div>
-
-          <span class="online-dot">
-            READY
-          </span>
-
-        </div>
-
-
-        <label
-          class="album-search-box"
-          for="albumSearch"
-        >
-          <span class="album-search-icon">
-            ⌕
-          </span>
-
-          <input
-            id="albumSearch"
-            type="search"
-            placeholder="SEARCH ALBUM DATABASE"
-            autocomplete="off"
-            spellcheck="false"
-          >
-
-          <button
-            id="clearAlbumSearch"
-            type="button"
-            aria-label="検索ワードを削除"
-            hidden
-          >
-            ×
-          </button>
-        </label>
-
-      </div>
-
-
-      <!-- 年代フィルター -->
-
-      <div class="album-year-control reveal">
-
-        <div class="album-control-label">
-          <span>FILTER MODE</span>
-          <strong>SELECT YEAR</strong>
-        </div>
-
-        <div
-          id="albumYearButtons"
-          class="album-year-buttons"
-        >
-
-          <button
-            class="album-year-button active"
-            type="button"
-            data-year="all"
-          >
-            ALL
-          </button>
-
-          <button
-            class="album-year-button"
-            type="button"
-            data-year="2026"
-          >
-            2026
-          </button>
-
-          <button
-            class="album-year-button"
-            type="button"
-            data-year="2025"
-          >
-            2025
-          </button>
-
-          <button
-            class="album-year-button"
-            type="button"
-            data-year="2024"
-          >
-            2024
-          </button>
-
-          <button
-            class="album-year-button"
-            type="button"
-            data-year="2023"
-          >
-            2023
-          </button>
-
-          <button
-            class="album-year-button"
-            type="button"
-            data-year="2022"
-          >
-            2022
-          </button>
-
-          <button
-            class="album-year-button"
-            type="button"
-            data-year="2021"
-          >
-            2021
-          </button>
-
-          <button
-            class="album-year-button"
-            type="button"
-            data-year="2020"
-          >
-            2020
-          </button>
+.albums-hero-code {
+  position: absolute;
+  top: 34px;
+  right: 0;
 
-          <button
-            class="album-year-button"
-            type="button"
-            data-year="2019"
-          >
-            2019
-          </button>
+  display: grid;
+  justify-items: end;
+  gap: 8px;
 
-          <button
-            class="album-year-button"
-            type="button"
-            data-year="2018"
-          >
-            2018
-          </button>
+  color: rgba(255, 255, 255, 0.2);
 
-        </div>
-
-      </div>
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
 
-    </section>
-
+.albums-hero-content {
+  position: relative;
+  z-index: 2;
 
-    <!-- ===================================
-         アルバム一覧
-    ==================================== -->
-
-    <section
-      id="albumDatabase"
-      class="album-database-section"
-    >
-
-      <div class="album-section-heading reveal">
-
-        <div>
-          <p class="section-number">
-            02 / ARCHIVE FILES
-          </p>
-
-          <h2>
-            Album Files
-          </h2>
-        </div>
-
+  min-width: 0;
+}
 
-        <div class="album-result-status">
-
-          <span>MATCHED</span>
+.albums-page .section-number {
+  margin: 0 0 10px;
 
-          <strong id="albumResultCount">
-            00 FILES
-          </strong>
+  color: var(--album-pink);
 
-        </div>
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+}
 
-      </div>
+.albums-eyebrow {
+  margin: 0 0 29px;
 
+  color: rgba(255, 255, 255, 0.48);
 
-      <!-- 現在の検索状態 -->
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
 
-      <div class="album-active-info reveal">
+.albums-hero h1 {
+  margin: 0;
 
-        <div>
-          <span>KEYWORD</span>
+  color: #ffffff;
 
-          <strong id="activeAlbumKeyword">
-            ALL ALBUMS
-          </strong>
-        </div>
+  font-size:
+    clamp(70px, 9vw, 140px);
 
-        <div>
-          <span>YEAR</span>
+  font-weight: 900;
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+}
 
-          <strong id="activeAlbumYear">
-            ALL YEARS
-          </strong>
-        </div>
+.albums-hero h1 span {
+  display: block;
 
-        <div>
-          <span>ORDER</span>
+  margin-top: 20px;
 
-          <strong>
-            NEWEST FIRST
-          </strong>
-        </div>
-
-        <button
-          id="resetAlbumSearch"
-          type="button"
-        >
-          RESET ARCHIVE
-          <span>↺</span>
-        </button>
-
-      </div>
-
-
-      <!-- JSでアルバムカードを生成 -->
-
-      <div
-        id="albumGrid"
-        class="album-file-grid"
-        aria-live="polite"
-      ></div>
-
-
-      <!-- 検索結果なし -->
-
-      <div
-        id="albumNoResults"
-        class="album-no-results"
-        hidden
-      >
-
-        <p class="album-no-results-code">
-          ERROR / ARCHIVE NOT FOUND
-        </p>
-
-        <strong>
-          NO MATCHING ALBUMS
-        </strong>
-
-        <p>
-          アルバム名または
-          年代フィルターを変更してください。
-        </p>
-
-        <button
-          id="albumNoResultsReset"
-          class="
-            lab-button
-            lab-button-secondary
-          "
-          type="button"
-        >
-          RESET ARCHIVE
-          <span>↺</span>
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- ===================================
-         年代タイムライン
-    ==================================== -->
-
-    <section class="archive-timeline-section">
-
-      <div class="archive-timeline-heading reveal">
-
-        <p class="section-number">
-          03 / ARCHIVE TIMELINE
-        </p>
-
-        <h2>
-          Release History
-        </h2>
-
-        <p>
-          デビューから現在までの
-          アルバムファイルを年代順に記録しています。
-        </p>
-
-      </div>
-
-
-      <div
-        id="archiveTimeline"
-        class="archive-timeline reveal"
-      >
-
-        <button
-          type="button"
-          data-timeline-year="2018"
-        >
-          <span>2018</span>
-          <i></i>
-        </button>
-
-        <button
-          type="button"
-          data-timeline-year="2019"
-        >
-          <span>2019</span>
-          <i></i>
-        </button>
-
-        <button
-          type="button"
-          data-timeline-year="2020"
-        >
-          <span>2020</span>
-          <i></i>
-        </button>
+  color: transparent;
 
-        <button
-          type="button"
-          data-timeline-year="2021"
-        >
-          <span>2021</span>
-          <i></i>
-        </button>
+  font-size:
+    clamp(45px, 5.5vw, 85px);
 
-        <button
-          type="button"
-          data-timeline-year="2022"
-        >
-          <span>2022</span>
-          <i></i>
-        </button>
+  line-height: 1;
 
-        <button
-          type="button"
-          data-timeline-year="2023"
-        >
-          <span>2023</span>
-          <i></i>
-        </button>
+  -webkit-text-stroke:
+    1px var(--album-pink);
+}
 
-        <button
-          type="button"
-          data-timeline-year="2024"
-        >
-          <span>2024</span>
-          <i></i>
-        </button>
+.albums-hero-description {
+  max-width: 610px;
+  margin: 40px 0 0;
 
-        <button
-          type="button"
-          data-timeline-year="2025"
-        >
-          <span>2025</span>
-          <i></i>
-        </button>
+  color: rgba(255, 255, 255, 0.59);
 
-        <button
-          type="button"
-          data-timeline-year="2026"
-        >
-          <span>2026</span>
-          <i></i>
-        </button>
+  font-size:
+    clamp(14px, 1.3vw, 17px);
 
-      </div>
+  line-height: 2;
+}
 
-    </section>
+.albums-hero-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 37px;
 
+  margin-top: 38px;
+}
 
-    <!-- ===================================
-         使い方
-    ==================================== -->
+.albums-hero-status > div {
+  display: grid;
+  gap: 6px;
+}
 
-    <section class="album-guide-section">
+.albums-hero-status span {
+  color: rgba(255, 255, 255, 0.28);
 
-      <div class="album-guide-heading reveal">
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
 
-        <p class="section-number">
-          04 / ARCHIVE GUIDE
-        </p>
+.albums-hero-status strong {
+  color: #ffffff;
 
-        <h2>
-          How to Access
-        </h2>
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
 
-      </div>
+#albumsHeroCount {
+  color: var(--album-pink);
+}
 
 
-      <div class="album-guide-grid">
+/* ========================================
+   年代表示
+======================================== */
 
-        <article class="album-guide-card reveal">
+.albums-hero-visual {
+  position: relative;
 
-          <span>01</span>
+  display: grid;
+  place-items: center;
 
-          <h3>
-            アルバムを選ぶ
-          </h3>
+  min-height: 440px;
+}
 
-          <p>
-            アルバムカードを選択すると、
-            その作品の情報と登録済みの
-            収録曲を確認できます。
-          </p>
+.archive-year-display {
+  position: relative;
+  z-index: 2;
 
-        </article>
+  display: grid;
+  justify-items: center;
+  align-content: center;
 
+  width:
+    clamp(310px, 35vw, 470px);
 
-        <article class="album-guide-card reveal">
+  aspect-ratio: 1;
 
-          <span>02</span>
+  padding: 50px;
 
-          <h3>
-            年代で絞り込む
-          </h3>
+  border:
+    1px solid var(--album-pink-border);
 
-          <p>
-            年代ボタンを選択すると、
-            その年にリリースされた
-            アルバムだけを表示します。
-          </p>
+  border-radius: 50%;
 
-        </article>
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 63, 131, 0.12),
+      rgba(255, 63, 131, 0.025) 50%,
+      transparent 72%
+    );
 
+  box-shadow:
+    inset 0 0 80px
+      rgba(255, 63, 131, 0.06),
+    0 0 80px
+      rgba(255, 63, 131, 0.045);
+}
 
-        <article class="album-guide-card reveal">
+.archive-year-label,
+.archive-year-status {
+  color: rgba(255, 255, 255, 0.34);
 
-          <span>03</span>
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
 
-          <h3>
-            曲を開く
-          </h3>
+.archive-year-display
+> strong {
+  margin-top: 22px;
 
-          <p>
-            登録済みの収録曲から、
-            歌詞・カナルビ・日本語訳・
-            パート分けページへ移動できます。
-          </p>
+  color: #ffffff;
 
-        </article>
+  font-size:
+    clamp(55px, 7vw, 100px);
 
-      </div>
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.055em;
+}
 
-    </section>
+.archive-year-display
+.archive-oldest-year {
+  margin:
+    18px 0 22px;
 
+  color: transparent;
 
-    <!-- ===================================
-         ページ下部
-    ==================================== -->
+  font-size:
+    clamp(38px, 5vw, 68px);
 
-    <section class="albums-closing-section">
+  -webkit-text-stroke:
+    1px var(--album-pink);
+}
 
-      <div
-        class="albums-closing-code"
-        aria-hidden="true"
-      >
-        ALBUM DATABASE /
-        ARCHIVE CONNECTED
-      </div>
+.archive-year-line {
+  display: grid;
+  grid-template-columns:
+    7px minmax(80px, 160px) 7px;
 
-      <div class="albums-closing-content reveal">
+  gap: 8px;
+  align-items: center;
 
-        <p class="section-number">
-          ARCHIVE ACCESS COMPLETE
-        </p>
+  margin-top: 22px;
+}
 
-        <h2>
-          Trace the
-          <span>discography.</span>
-        </h2>
+.archive-year-line span {
+  width: 7px;
+  height: 7px;
 
-        <p>
-          アルバムをたどりながら、
-          Stray Kidsの楽曲ファイルを
-         年代ごとに確認しよう。
-        </p>
+  border-radius: 50%;
 
+  background: var(--album-pink);
 
-        <div class="albums-closing-actions">
+  box-shadow:
+    0 0 10px var(--album-pink);
+}
 
-          <a
-            href="search.html"
-            class="
-              lab-button
-              lab-button-primary
-            "
-          >
-            SEARCH SONGS
-            <span>→</span>
-          </a>
+.archive-year-line i {
+  width: 100%;
+  height: 1px;
 
-          <a
-            href="about.html"
-            class="
-              lab-button
-              lab-button-secondary
-            "
-          >
-            SYSTEM GUIDE
-            <span>↗</span>
-          </a>
+  background:
+    linear-gradient(
+      90deg,
+      var(--album-pink),
+      rgba(255, 255, 255, 0.22),
+      var(--album-pink)
+    );
+}
 
-        </div>
+.archive-circle {
+  position: absolute;
 
-      </div>
+  border:
+    1px solid rgba(255, 63, 131, 0.14);
 
-    </section>
+  border-radius: 50%;
 
-  </main>
+  pointer-events: none;
+}
 
+.circle-one {
+  width: 110%;
+  aspect-ratio: 1;
 
-  <!-- =====================================
-       フッター
-  ====================================== -->
+  animation:
+    albumOrbit 19s linear infinite;
+}
 
-  <footer class="site-footer">
+.circle-two {
+  width: 80%;
+  aspect-ratio: 1;
 
-    <div>
-      <strong>
-        SKZ LYRIC LAB
-      </strong>
+  border-style: dashed;
 
-      <p>
-        Stray Kids unofficial
-        lyrics fan site.
-      </p>
-    </div>
+  animation:
+    albumOrbit 13s linear
+    infinite reverse;
+}
 
-    <div class="footer-status">
+@keyframes albumOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-      <span class="online-dot">
-        SYSTEM ONLINE
-      </span>
 
-      <span>
-        © SKZ LYRIC LAB
-      </span>
+/* ========================================
+   検索・フィルター
+======================================== */
 
-    </div>
+.album-control-section {
+  display: grid;
+  grid-template-columns:
+    minmax(320px, 0.72fr)
+    minmax(0, 1.28fr);
 
-  </footer>
+  gap: 18px;
 
+  padding:
+    38px 0;
 
-  <!-- =====================================
-       ページトップ
-  ====================================== -->
+  border-bottom:
+    1px solid var(--album-border);
+}
 
-  <button
-    id="albumsPageTop"
-    class="page-top"
-    type="button"
-    aria-label="ページ上部へ戻る"
-  >
-    ↑
-  </button>
+.album-search-panel,
+.album-year-control {
+  padding: 25px;
 
+  border:
+    1px solid var(--album-border);
 
-  <script src="js/albums.js"></script>
+  background:
+    rgba(255, 255, 255, 0.017);
+}
 
-</body>
-</html>
+.album-search-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  margin-bottom: 17px;
+}
+
+.album-search-label > div {
+  display: grid;
+  gap: 6px;
+}
+
+.album-search-label span,
+.album-control-label span {
+  color: var(--album-pink);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+}
+
+.album-search-label strong,
+.album-control-label strong {
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.album-search-box {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.album-search-icon {
+  position: absolute;
+  left: 17px;
+
+  z-index: 2;
+
+  color: var(--album-pink);
+
+  font-size: 19px;
+
+  pointer-events: none;
+}
+
+#albumSearch {
+  width: 100%;
+  height: 59px;
+  padding:
+    0 55px 0 48px;
+
+  color: #ffffff;
+  caret-color: var(--album-pink);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 0;
+  outline: none;
+
+  background:
+    rgba(0, 0, 0, 0.32);
+
+  font: inherit;
+  font-size: 12px;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#albumSearch::placeholder {
+  color: rgba(255, 255, 255, 0.29);
+}
+
+#albumSearch:focus {
+  border-color: var(--album-pink);
+
+  background:
+    rgba(255, 63, 131, 0.04);
+
+  box-shadow:
+    0 0 25px
+      rgba(255, 63, 131, 0.08);
+}
+
+#clearAlbumSearch {
+  position: absolute;
+  right: 8px;
+
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+#clearAlbumSearch:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 63, 131, 0.12);
+
+  transform: rotate(90deg);
+}
+
+#clearAlbumSearch[hidden] {
+  display: none;
+}
+
+.album-year-control {
+  min-width: 0;
+}
+
+.album-control-label {
+  display: grid;
+  gap: 6px;
+
+  margin-bottom: 17px;
+}
+
+.album-year-buttons {
+  display: flex;
+  gap: 7px;
+
+  width: 100%;
+  padding-bottom: 4px;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--album-pink)
+    rgba(255, 255, 255, 0.08);
+}
+
+.album-year-button {
+  flex: 0 0 70px;
+
+  min-height: 59px;
+  padding: 0 10px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.14);
+
+  background:
+    rgba(255, 255, 255, 0.015);
+
+  font: inherit;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.album-year-button:hover {
+  color: #ffffff;
+
+  border-color:
+    rgba(255, 63, 131, 0.65);
+
+  transform: translateY(-2px);
+}
+
+.album-year-button.active {
+  color: #ffffff;
+
+  border-color: var(--album-pink);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--album-pink),
+      var(--album-red)
+    );
+}
+
+
+/* ========================================
+   アルバム一覧セクション
+======================================== */
+
+.album-database-section {
+  padding:
+    clamp(80px, 10vw, 145px) 0 0;
+}
+
+.album-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-bottom: 39px;
+}
+
+.album-section-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(52px, 7vw, 92px);
+
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+}
+
+.album-result-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding-bottom: 7px;
+}
+
+.album-result-status span {
+  color: rgba(255, 255, 255, 0.32);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.album-result-status strong {
+  color: var(--album-pink);
+
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+
+/* ========================================
+   現在の検索条件
+======================================== */
+
+.album-active-info {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(120px, 1fr))
+    auto;
+
+  margin-bottom: 28px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.11);
+
+  background:
+    rgba(255, 255, 255, 0.015);
+}
+
+.album-active-info > div {
+  display: grid;
+  gap: 7px;
+
+  padding: 17px 20px;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.album-active-info > div span {
+  color: rgba(255, 255, 255, 0.28);
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.album-active-info > div strong {
+  color: rgba(255, 255, 255, 0.79);
+
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+#resetAlbumSearch {
+  min-width: 175px;
+  padding: 0 23px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  border: 0;
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+#resetAlbumSearch:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 63, 131, 0.1);
+}
+
+
+/* ========================================
+   アルバムカード一覧
+======================================== */
+
+.album-file-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* ========================================
+   JSで生成するアルバムカード
+======================================== */
+
+.album-file-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 63, 131, 0.052),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.album-file-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 5;
+
+  width: 3px;
+  height: 0;
+
+  background: var(--album-pink);
+
+  transition:
+    height 0.3s ease;
+}
+
+.album-file-card:hover {
+  border-color:
+    rgba(255, 63, 131, 0.68);
+
+  box-shadow:
+    0 22px 65px
+      rgba(0, 0, 0, 0.4),
+    0 0 35px
+      rgba(255, 63, 131, 0.08);
+
+  transform: translateY(-5px);
+}
+
+.album-file-card:hover::before {
+  height: 100%;
+}
+
+.album-cover-wrap,
+.album-image-wrap {
+  position: relative;
+
+  aspect-ratio: 1;
+
+  overflow: hidden;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.12);
+}
+
+.album-cover,
+.album-image-wrap img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    saturate(0.9)
+    contrast(1.03);
+
+  transition:
+    filter 0.25s ease,
+    transform 0.45s ease;
+}
+
+.album-file-card:hover
+.album-cover,
+.album-file-card:hover
+.album-image-wrap img {
+  filter:
+    saturate(1.08)
+    contrast(1.04);
+
+  transform: scale(1.035);
+}
+
+.album-file-number,
+.album-number {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+
+  z-index: 3;
+
+  padding: 7px 10px;
+
+  color: #ffffff;
+
+  background:
+    rgba(0, 0, 0, 0.65);
+
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.album-year-badge {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+
+  z-index: 3;
+
+  padding: 7px 10px;
+
+  color: var(--album-pink);
+
+  border:
+    1px solid var(--album-pink-border);
+
+  background:
+    rgba(0, 0, 0, 0.68);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.album-card-content {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 245px;
+  padding:
+    clamp(23px, 3vw, 35px);
+}
+
+.album-card-label {
+  margin: 0 0 10px;
+
+  color: var(--album-pink);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+}
+
+.album-title,
+.album-file-card h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(25px, 2.6vw, 38px);
+
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.album-release,
+.album-file-card
+.album-meta {
+  margin: 12px 0 0;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 9px;
+  letter-spacing: 0.05em;
+}
+
+.album-track-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 22px;
+
+  color: rgba(255, 255, 255, 0.44);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.album-track-status strong {
+  color: #ffffff;
+}
+
+.album-open {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: auto;
+  padding-top: 18px;
+
+  color: var(--album-pink);
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+}
+
+.album-open span {
+  font-size: 15px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.album-file-card:hover
+.album-open span {
+  transform: translateX(6px);
+}
+
+
+/* ========================================
+   検索結果なし
+======================================== */
+
+.album-no-results {
+  display: grid;
+  justify-items: center;
+
+  padding:
+    clamp(75px, 10vw, 140px)
+    24px;
+
+  text-align: center;
+
+  border:
+    1px solid var(--album-border);
+
+  background:
+    rgba(255, 63, 131, 0.035);
+}
+
+.album-no-results[hidden] {
+  display: none;
+}
+
+.album-no-results-code {
+  margin: 0 0 18px;
+
+  color: var(--album-pink);
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.album-no-results > strong {
+  font-size:
+    clamp(27px, 4vw, 46px);
+}
+
+.album-no-results
+> p:not(
+  .album-no-results-code
+) {
+  max-width: 470px;
+  margin: 20px 0 28px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+
+/* ========================================
+   タイムライン
+======================================== */
+
+.archive-timeline-section {
+  display: grid;
+  grid-template-columns:
+    minmax(250px, 0.55fr)
+    minmax(0, 1.45fr);
+
+  gap: clamp(50px, 8vw, 120px);
+
+  padding:
+    clamp(115px, 14vw, 210px) 0 0;
+}
+
+.archive-timeline-heading h2 {
+  margin: 0;
+
+  font-size:
+    clamp(44px, 6vw, 80px);
+
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.archive-timeline-heading
+> p:last-child {
+  max-width: 520px;
+  margin: 27px 0 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 14px;
+  line-height: 2;
+}
+
+.archive-timeline {
+  display: grid;
+  align-content: center;
+
+  border-top:
+    1px solid var(--album-border);
+}
+
+.archive-timeline button {
+  display: grid;
+  grid-template-columns:
+    70px minmax(0, 1fr);
+
+  gap: 20px;
+  align-items: center;
+
+  min-height: 61px;
+  padding: 0;
+
+  color: rgba(255, 255, 255, 0.47);
+
+  border: 0;
+  border-bottom:
+    1px solid var(--album-border);
+
+  background: transparent;
+
+  font: inherit;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.archive-timeline button span {
+  padding-left: 15px;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.archive-timeline button i {
+  width: 100%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.12),
+      transparent
+    );
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.archive-timeline button:hover,
+.archive-timeline button.active {
+  color: #ffffff;
+
+  background:
+    rgba(255, 63, 131, 0.045);
+}
+
+.archive-timeline button:hover i,
+.archive-timeline button.active i {
+  background:
+    linear-gradient(
+      90deg,
+      var(--album-pink),
+      transparent
+    );
+
+  box-shadow:
+    0 0 11px
+      rgba(255, 63, 131, 0.4);
+}
+
+
+/* ========================================
+   アーカイブガイド
+======================================== */
+
+.album-guide-section {
+  padding:
+    clamp(115px, 14vw, 210px) 0 0;
+}
+
+.album-guide-heading {
+  margin-bottom: 36px;
+}
+
+.album-guide-heading h2 {
+  margin: 0;
+
+  font-size:
+    clamp(45px, 6vw, 80px);
+
+  font-weight: 900;
+  letter-spacing: -0.055em;
+}
+
+.album-guide-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+}
+
+.album-guide-card {
+  min-height: 245px;
+  padding:
+    clamp(25px, 3vw, 39px);
+
+  border:
+    1px solid var(--album-border);
+
+  background:
+    rgba(255, 255, 255, 0.016);
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.album-guide-card:hover {
+  border-color:
+    rgba(255, 63, 131, 0.52);
+
+  background:
+    rgba(255, 63, 131, 0.04);
+
+  transform: translateY(-3px);
+}
+
+.album-guide-card > span {
+  display: block;
+
+  margin-bottom: 45px;
+
+  color: var(--album-pink);
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.album-guide-card h3 {
+  margin: 0 0 14px;
+
+  font-size:
+    clamp(19px, 2vw, 26px);
+}
+
+.album-guide-card p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+
+/* ========================================
+   ページ下部
+======================================== */
+
+.albums-closing-section {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  margin-top:
+    clamp(120px, 15vw, 230px);
+
+  padding:
+    clamp(90px, 12vw, 170px)
+    24px;
+
+  text-align: center;
+
+  border-top:
+    1px solid var(--album-border);
+
+  overflow: hidden;
+}
+
+.albums-closing-code {
+  position: absolute;
+  top: 25px;
+  left: 0;
+
+  color: rgba(255, 255, 255, 0.16);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.albums-closing-content {
+  display: grid;
+  justify-items: center;
+}
+
+.albums-closing-content h2 {
+  max-width: 1000px;
+  margin: 0;
+
+  font-size:
+    clamp(55px, 9vw, 125px);
+
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+}
+
+.albums-closing-content h2 span {
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px var(--album-pink);
+}
+
+.albums-closing-content
+> p:not(.section-number) {
+  max-width: 620px;
+  margin: 30px 0 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 14px;
+  line-height: 2;
+}
+
+.albums-closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 36px;
+}
+
+
+/* ========================================
+   Reveal
+======================================== */
+
+.albums-page .reveal {
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.albums-page .reveal.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   タブレット
+======================================== */
+
+@media (max-width: 1100px) {
+  .albums-hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(290px, 0.65fr);
+  }
+
+  .album-control-section {
+    grid-template-columns: 1fr;
+  }
+
+  .album-file-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .archive-timeline-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ========================================
+   小型タブレット
+======================================== */
+
+@media (max-width: 850px) {
+  .albums-page main {
+    padding-top: 95px;
+  }
+
+  .albums-hero {
+    grid-template-columns: 1fr;
+    gap: 60px;
+
+    min-height: 0;
+  }
+
+  .albums-hero-code {
+    display: none;
+  }
+
+  .albums-hero-visual {
+    min-height: 350px;
+  }
+
+  .archive-year-display {
+    width:
+      min(100%, 390px);
+  }
+
+  .album-active-info {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  #resetAlbumSearch {
+    grid-column: 1 / -1;
+
+    min-height: 55px;
+
+    border-top:
+      1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+
+/* ========================================
+   スマホ
+======================================== */
+
+@media (max-width: 650px) {
+  #albumsLoader .loading-logo {
+    left: -8px;
+
+    font-size:
+      clamp(48px, 16vw, 78px);
+  }
+
+  .albums-page main {
+    padding:
+      82px 14px 0;
+  }
+
+  .albums-hero {
+    padding:
+      58px 0 75px;
+  }
+
+  .albums-hero h1 {
+    font-size:
+      clamp(65px, 20vw, 95px);
+  }
+
+  .albums-hero h1 span {
+    font-size:
+      clamp(38px, 12vw, 55px);
+  }
+
+  .albums-hero-description {
+    margin-top: 30px;
+  }
+
+  .albums-hero-status {
+    gap: 21px;
+  }
+
+  .albums-hero-visual {
+    min-height: 295px;
+  }
+
+  .archive-year-display {
+    width:
+      min(100%, 300px);
+  }
+
+  .album-control-section {
+    padding: 25px 0;
+  }
+
+  .album-search-panel,
+  .album-year-control {
+    padding: 19px 15px;
+  }
+
+  .album-section-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .album-result-status {
+    justify-content: flex-start;
+  }
+
+  .album-active-info {
+    grid-template-columns: 1fr;
+  }
+
+  .album-active-info > div {
+    border-right: 0;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .album-file-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .album-card-content {
+    min-height: 230px;
+    padding: 25px 21px 22px;
+  }
+
+  .album-title,
+  .album-file-card h3 {
+    font-size:
+      clamp(28px, 9vw, 40px);
+  }
+
+  .album-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .album-guide-card {
+    min-height: 0;
+  }
+
+  .album-guide-card > span {
+    margin-bottom: 28px;
+  }
+
+  .albums-closing-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 100%;
+  }
+
+  .albums-closing-actions
+  .lab-button {
+    width: 100%;
+  }
+}
+
+
+/* ========================================
+   動きを減らす設定
+======================================== */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .albums-page *,
+  .albums-page *::before,
+  .albums-page *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}
+
+/* ========================================
+   未完成アルバム
+======================================== */
+
+.album-file-card.is-coming-soon {
+  position: relative;
+
+  cursor: not-allowed;
+  user-select: none;
+
+  opacity: 0.68;
+}
+
+.album-file-card.is-coming-soon:hover {
+  transform: none;
+}
+
+.album-file-card.is-coming-soon
+.album-file-image {
+  filter:
+    grayscale(0.55)
+    brightness(0.48);
+}
+
+.album-coming-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(4, 2, 3, 0.58),
+      rgba(32, 4, 15, 0.88)
+    );
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.album-coming-overlay span {
+  color: var(--pink, #ff3f83);
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+}
+
+.album-coming-overlay strong {
+  font-size: clamp(18px, 2vw, 26px);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.album-file-card.is-coming-soon
+.album-file-open {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.album-file-card.is-coming-soon
+.album-file-open::before {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ========================================
+   アルバム一覧ローディング画面修正
+======================================== */
+
+#albumsLoader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
+
+  overflow: hidden;
+  background: #050505;
+}
+
+#albumsLoader .loading-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: min(500px, calc(100% - 40px));
+  max-width: 100%;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+#albumsLoader .loading-logo {
+  position: relative;
+  inset: auto;
+
+  display: block;
+
+  width: max-content;
+  max-width: 100%;
+
+  margin: 24px auto 30px;
+
+  font-size: clamp(58px, 13vw, 110px);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  text-align: center;
+
+  /* ARCHIVEを途中で改行させない */
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
+
+  transform: none;
+}
+
+/* グリッチ用の重なった文字 */
+#albumsLoader .loading-logo::before,
+#albumsLoader .loading-logo::after {
+  inset: 0;
+
+  width: 100%;
+  max-width: none;
+
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
+
+  text-align: center;
+}
+
+#albumsLoader .loading-code,
+#albumsLoader .loading-message,
+#albumsLoader .loading-percent {
+  width: 100%;
+  text-align: center;
+}
+
+#albumsLoader .loading-bar {
+  width: 100%;
+  max-width: 500px;
+}
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 600px) {
+
+  #albumsLoader .loading-inner {
+    width: calc(100% - 36px);
+  }
+
+  #albumsLoader .loading-logo {
+    /*
+      ARCHIVEは7文字なので、
+      スマホ幅に収まるサイズにする
+    */
+    font-size: clamp(48px, 14vw, 72px);
+    letter-spacing: -0.09em;
+  }
+
+  #albumsLoader .loading-code {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  #albumsLoader .loading-message {
+    margin: 20px 0;
+    font-size: 10px;
+    letter-spacing: 0.13em;
+  }
+}
