@@ -614,72 +614,156 @@ function runLoadingScreen() {
    メニュー
 ======================================== */
 
-function closeMenu() {
-  if (!globalNav || !menuButton) {
+function setupMenu() {
+  const currentMenuButton =
+    document.getElementById(
+      "menuButton"
+    );
+
+  /*
+    globalNavとaboutNavの
+    どちらのIDにも対応
+  */
+  const currentGlobalNav =
+    document.querySelector(
+      "#globalNav, #aboutNav"
+    );
+
+
+  if (
+    !currentMenuButton ||
+    !currentGlobalNav
+  ) {
+    console.error(
+      "メニュー要素が見つかりません",
+      {
+        menuButton:
+          currentMenuButton,
+
+        globalNav:
+          currentGlobalNav
+      }
+    );
+
     return;
   }
 
-  globalNav.classList.remove(
-    "is-open"
-  );
 
-  menuButton.classList.remove(
-    "is-active"
-  );
-
-  menuButton.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-  document.body.classList.remove(
-    "menu-open"
-  );
-}
-
-
-function toggleMenu() {
-  if (!globalNav || !menuButton) {
-    return;
-  }
-
-  const isOpen =
-    globalNav.classList.toggle(
+  function closeMenu() {
+    currentGlobalNav.classList.remove(
       "is-open"
     );
 
-  menuButton.classList.toggle(
-    "is-active",
-    isOpen
+    currentMenuButton.classList.remove(
+      "is-active"
+    );
+
+    currentMenuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    document.body.classList.remove(
+      "menu-open"
+    );
+  }
+
+
+  function openOrCloseMenu(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const isOpen =
+      currentGlobalNav.classList.toggle(
+        "is-open"
+      );
+
+    currentMenuButton.classList.toggle(
+      "is-active",
+      isOpen
+    );
+
+    currentMenuButton.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
+    document.body.classList.toggle(
+      "menu-open",
+      isOpen
+    );
+  }
+
+
+  currentMenuButton.addEventListener(
+    "click",
+    openOrCloseMenu
   );
 
-  menuButton.setAttribute(
-    "aria-expanded",
-    String(isOpen)
+
+  /*
+    スマホのタップにも対応
+  */
+  currentMenuButton.addEventListener(
+    "touchend",
+    (event) => {
+      /*
+        clickも続けて発生する端末では
+        click側だけを使用する
+      */
+      event.stopPropagation();
+    },
+    {
+      passive: true
+    }
   );
 
-  document.body.classList.toggle(
-    "menu-open",
-    isOpen
+
+  currentGlobalNav
+    .querySelectorAll("a")
+    .forEach((link) => {
+      link.addEventListener(
+        "click",
+        closeMenu
+      );
+    });
+
+
+  document.addEventListener(
+    "click",
+    (event) => {
+      const clickedMenu =
+        currentGlobalNav.contains(
+          event.target
+        );
+
+      const clickedButton =
+        currentMenuButton.contains(
+          event.target
+        );
+
+      if (
+        !clickedMenu &&
+        !clickedButton &&
+        currentGlobalNav.classList.contains(
+          "is-open"
+        )
+      ) {
+        closeMenu();
+      }
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    }
   );
 }
-
-
-menuButton?.addEventListener(
-  "click",
-  toggleMenu
-);
-
-
-globalNav
-  ?.querySelectorAll("a")
-  .forEach((link) => {
-    link.addEventListener(
-      "click",
-      closeMenu
-    );
-  });
-
 
 /* ========================================
    日付処理
@@ -1581,23 +1665,31 @@ pageTop?.addEventListener(
 function init() {
   runLoadingScreen();
 
+  setupMenu();
+
   updateStatistics();
-
-  /*
-    ALLの初期表示は
-    投稿日ではなくリリース日の新しい順。
-  */
   filterSongs();
-
   renderAlbums();
-
   updateLatestCard();
-
   activateRevealAnimation();
 }
 
+/*
+  JSが先に読み込まれても、
+  HTMLの後に読み込まれても動かす
+*/
+if (
+  document.readyState ===
+  "loading"
+) {
+  document.addEventListener(
+    "DOMContentLoaded",
+    init,
+    {
+      once: true
+    }
+  );
 
-document.addEventListener(
-  "DOMContentLoaded",
-  init
-);
+} else {
+  init();
+}
