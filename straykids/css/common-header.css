@@ -1007,3 +1007,211 @@ iframe {
       calc(100vw - 32px) !important;
   }
 }
+
+/* ========================================
+   全ページ共通 ローディング画面修正
+======================================== */
+
+.loading-screen,
+.file-loader,
+.search-loader,
+.member-loader,
+.members-loader,
+.album-loader,
+.archive-loader,
+.setlist-loader {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  width: 100% !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+
+  overflow: hidden !important;
+  background: #050505;
+}
+
+
+/* ローディング内容全体 */
+.loading-inner,
+.file-loader-inner,
+.search-loader-inner,
+.member-loader-inner,
+.members-loader-inner,
+.album-loader-inner,
+.archive-loader-inner,
+.setlist-loader-inner {
+  position: relative !important;
+  inset: auto !important;
+
+  display: block !important;
+
+  width: min(500px, calc(100% - 40px)) !important;
+  max-width: 500px !important;
+
+  margin: 0 auto !important;
+
+  text-align: center !important;
+
+  transform: none !important;
+}
+
+
+/* ========================================
+   ローディングの大きな文字
+======================================== */
+
+.loading-logo,
+.file-loader h1,
+.search-loader h1,
+.member-loader h1,
+.members-loader h1,
+.album-loader h1,
+.archive-loader h1,
+.setlist-loader h1 {
+  position: relative !important;
+
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  inset: auto !important;
+
+  display: inline-block !important;
+
+  width: auto !important;
+  max-width: calc(100vw - 40px) !important;
+
+  margin: 24px auto 30px !important;
+
+  font-size: clamp(48px, 11vw, 90px) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.07em !important;
+  text-align: center !important;
+
+  white-space: nowrap !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+
+  transform: none !important;
+}
+
+
+/* グリッチ用に重なっている文字 */
+.loading-logo::before,
+.loading-logo::after,
+.file-loader h1::before,
+.file-loader h1::after,
+.search-loader h1::before,
+.search-loader h1::after,
+.member-loader h1::before,
+.member-loader h1::after,
+.members-loader h1::before,
+.members-loader h1::after,
+.album-loader h1::before,
+.album-loader h1::after,
+.archive-loader h1::before,
+.archive-loader h1::after,
+.setlist-loader h1::before,
+.setlist-loader h1::after {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  white-space: nowrap !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+
+  text-align: center !important;
+}
+
+
+/* バー */
+.loading-bar,
+.file-loader .loader-bar,
+.search-loader .loader-bar,
+.member-loader .loader-bar,
+.members-loader .loader-bar,
+.album-loader .loader-bar,
+.archive-loader .loader-bar,
+.setlist-loader .loader-bar {
+  width: 100% !important;
+  max-width: 500px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+
+/* 説明文字 */
+.loading-code,
+.loading-message,
+.loading-percent,
+.loader-code,
+.file-loader p,
+.search-loader p,
+.member-loader p,
+.members-loader p,
+.album-loader p,
+.archive-loader p,
+.setlist-loader p {
+  max-width: 100% !important;
+  text-align: center !important;
+}
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 600px) {
+
+  .loading-inner,
+  .file-loader-inner,
+  .search-loader-inner,
+  .member-loader-inner,
+  .members-loader-inner,
+  .album-loader-inner,
+  .archive-loader-inner,
+  .setlist-loader-inner {
+    width: calc(100% - 36px) !important;
+  }
+
+  .loading-logo,
+  .file-loader h1,
+  .search-loader h1,
+  .member-loader h1,
+  .members-loader h1,
+  .album-loader h1,
+  .archive-loader h1,
+  .setlist-loader h1 {
+    /*
+      SEARCH・ARCHIVE・MEMBERSなどが
+      画面内へ収まるサイズ
+    */
+    font-size: clamp(44px, 12vw, 64px) !important;
+    letter-spacing: -0.08em !important;
+  }
+
+  .loading-code,
+  .loader-code {
+    font-size: 9px !important;
+    letter-spacing: 0.16em !important;
+  }
+
+  .loading-message,
+  .file-loader p,
+  .search-loader p,
+  .member-loader p,
+  .members-loader p,
+  .album-loader p,
+  .archive-loader p,
+  .setlist-loader p {
+    font-size: 10px;
+  }
+}
