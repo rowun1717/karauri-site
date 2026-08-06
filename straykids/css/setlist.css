@@ -1,0 +1,3390 @@
+/* ========================================
+   SETLIST PAGE
+======================================== */
+
+.setlist-page {
+  --setlist-pink: #ff3f83;
+  --setlist-red: #df0045;
+  --setlist-white: #f7f5f7;
+
+  --setlist-border:
+    rgba(255, 255, 255, 0.15);
+
+  --setlist-pink-border:
+    rgba(255, 63, 131, 0.43);
+
+  min-height: 100vh;
+
+  color: var(--setlist-white);
+
+  background:
+    radial-gradient(
+      circle at 8% 14%,
+      rgba(104, 0, 38, 0.28),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 91% 48%,
+      rgba(255, 63, 131, 0.055),
+      transparent 28%
+    ),
+    #050506;
+}
+
+
+/* ========================================
+   ローディング
+======================================== */
+
+#setlistLoader {
+  overflow: hidden;
+}
+
+#setlistLoader .loading-inner {
+  width: min(100% - 40px, 650px);
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+#setlistLoader .loading-code,
+#setlistLoader .loading-message,
+#setlistLoader .loading-percent {
+  text-align: center;
+}
+
+#setlistLoader .loading-logo {
+  position: relative;
+  left: -26px;
+
+  width: max-content;
+  max-width: none;
+
+  margin:
+    30px 0 38px 50%;
+
+  font-size:
+    clamp(62px, 13vw, 128px);
+
+  line-height: 0.84;
+  letter-spacing: -0.075em;
+  white-space: nowrap;
+
+  transform: translateX(-50%);
+}
+
+#setlistLoader .loading-bar {
+  width: min(100%, 500px);
+  margin-inline: auto;
+}
+
+
+/* ========================================
+   メイン
+======================================== */
+
+.setlist-page main {
+  width: min(1500px, 100%);
+  margin-inline: auto;
+  padding:
+    110px clamp(22px, 5vw, 76px)
+    0;
+}
+
+
+/* ========================================
+   共通
+======================================== */
+
+.setlist-page .section-number {
+  margin: 0 0 10px;
+
+  color: var(--setlist-pink);
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+}
+
+
+/* ========================================
+   ヒーロー
+======================================== */
+
+.setlist-hero {
+  position: relative;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(350px, 0.72fr);
+
+  gap: clamp(55px, 8vw, 130px);
+  align-items: center;
+
+  min-height: 650px;
+  padding:
+    clamp(80px, 9vw, 140px) 0;
+
+  border-bottom:
+    1px solid var(--setlist-border);
+}
+
+.setlist-hero-code {
+  position: absolute;
+  top: 34px;
+  right: 0;
+
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+
+  color: rgba(255, 255, 255, 0.2);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.setlist-hero-content {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+}
+
+.setlist-eyebrow {
+  margin: 0 0 29px;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.setlist-hero h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(70px, 9vw, 140px);
+
+  font-weight: 900;
+  line-height: 0.78;
+  letter-spacing: -0.075em;
+}
+
+.setlist-hero h1 span {
+  display: block;
+
+  margin-top: 20px;
+
+  color: transparent;
+
+  font-size:
+    clamp(45px, 5.5vw, 85px);
+
+  line-height: 1;
+
+  -webkit-text-stroke:
+    1px var(--setlist-pink);
+}
+
+.setlist-hero-description {
+  max-width: 610px;
+  margin: 40px 0 0;
+
+  color: rgba(255, 255, 255, 0.59);
+
+  font-size:
+    clamp(14px, 1.3vw, 17px);
+
+  line-height: 2;
+}
+
+.setlist-hero-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 37px;
+
+  margin-top: 38px;
+}
+
+.setlist-hero-status > div {
+  display: grid;
+  gap: 6px;
+}
+
+.setlist-hero-status span {
+  color: rgba(255, 255, 255, 0.28);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.setlist-hero-status strong {
+  color: #ffffff;
+
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+#heroSelectedCount {
+  color: var(--setlist-pink);
+}
+
+
+/* ========================================
+   ヒーロービジュアル
+======================================== */
+
+.setlist-hero-visual {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  min-height: 440px;
+}
+
+.setlist-preview-file {
+  position: relative;
+  z-index: 2;
+
+  width:
+    clamp(310px, 35vw, 470px);
+
+  padding:
+    clamp(30px, 4vw, 48px);
+
+  border:
+    1px solid var(--setlist-pink-border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 63, 131, 0.1),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 30px 90px
+      rgba(0, 0, 0, 0.42),
+    inset 0 0 70px
+      rgba(255, 63, 131, 0.035);
+}
+
+.setlist-preview-file::before,
+.setlist-preview-file::after {
+  content: "";
+
+  position: absolute;
+
+  width: 25px;
+  height: 25px;
+}
+
+.setlist-preview-file::before {
+  top: -1px;
+  left: -1px;
+
+  border-top:
+    2px solid var(--setlist-pink);
+
+  border-left:
+    2px solid var(--setlist-pink);
+}
+
+.setlist-preview-file::after {
+  right: -1px;
+  bottom: -1px;
+
+  border-right:
+    2px solid var(--setlist-pink);
+
+  border-bottom:
+    2px solid var(--setlist-pink);
+}
+
+.setlist-preview-top,
+.setlist-preview-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+
+  color: rgba(255, 255, 255, 0.32);
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.setlist-preview-number {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+
+  padding:
+    42px 0 35px;
+}
+
+.setlist-preview-number span {
+  color: rgba(255, 255, 255, 0.37);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.setlist-preview-number strong {
+  color: transparent;
+
+  font-size:
+    clamp(100px, 14vw, 190px);
+
+  font-weight: 900;
+  line-height: 0.7;
+  letter-spacing: -0.08em;
+
+  -webkit-text-stroke:
+    2px var(--setlist-pink);
+}
+
+.setlist-preview-lines {
+  display: grid;
+  gap: 9px;
+
+  margin-bottom: 35px;
+}
+
+.setlist-preview-lines i {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--setlist-pink),
+      rgba(255, 255, 255, 0.13),
+      transparent
+    );
+}
+
+.setlist-preview-lines i:nth-child(2) {
+  width: 87%;
+}
+
+.setlist-preview-lines i:nth-child(3) {
+  width: 73%;
+}
+
+.setlist-preview-lines i:nth-child(4) {
+  width: 92%;
+}
+
+.setlist-preview-lines i:nth-child(5) {
+  width: 62%;
+}
+
+.setlist-circle {
+  position: absolute;
+
+  border:
+    1px solid rgba(255, 63, 131, 0.14);
+
+  border-radius: 50%;
+}
+
+.setlist-circle.circle-one {
+  width: 112%;
+  aspect-ratio: 1;
+
+  animation:
+    setlistOrbit 18s linear infinite;
+}
+
+.setlist-circle.circle-two {
+  width: 80%;
+  aspect-ratio: 1;
+
+  border-style: dashed;
+
+  animation:
+    setlistOrbit 13s linear
+    infinite reverse;
+}
+
+@keyframes setlistOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ========================================
+   ビルダー
+======================================== */
+
+.setlist-builder-section {
+  padding:
+    clamp(80px, 10vw, 145px) 0 0;
+
+  scroll-margin-top: 90px;
+}
+
+.setlist-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-bottom: 39px;
+}
+
+.setlist-section-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(52px, 7vw, 92px);
+
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+}
+
+.setlist-editor-status {
+  display: grid;
+  justify-items: end;
+  gap: 7px;
+
+  padding-bottom: 7px;
+}
+
+.setlist-editor-status span {
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.setlist-editor-status strong {
+  color: var(--setlist-pink);
+
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+
+/* ========================================
+   セットリスト名
+======================================== */
+
+.setlist-name-panel {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    180px;
+
+  margin-bottom: 18px;
+
+  border:
+    1px solid var(--setlist-border);
+
+  background:
+    rgba(255, 255, 255, 0.015);
+}
+
+.setlist-name-panel label {
+  display: grid;
+  grid-template-columns:
+    150px minmax(0, 1fr);
+
+  align-items: center;
+
+  padding-left: 22px;
+}
+
+.setlist-name-panel label > span,
+.setlist-save-status > span {
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+#setlistName {
+  width: 100%;
+  height: 65px;
+  padding: 0 20px;
+
+  color: #ffffff;
+  caret-color: var(--setlist-pink);
+
+  border: 0;
+  border-left:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  outline: none;
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+#setlistName::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.setlist-save-status {
+  display: grid;
+  align-content: center;
+  gap: 7px;
+
+  padding: 0 22px;
+
+  border-left:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setlist-save-status strong {
+  color: var(--setlist-pink);
+
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+
+/* ========================================
+   2カラム編集
+======================================== */
+
+.setlist-editor-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+
+  gap: 18px;
+  align-items: start;
+}
+
+.setlist-library,
+.selected-setlist {
+  min-width: 0;
+  padding:
+    clamp(22px, 3vw, 34px);
+
+  border:
+    1px solid var(--setlist-border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 63, 131, 0.038),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+.setlist-panel-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-end;
+
+  margin-bottom: 24px;
+}
+
+.setlist-panel-heading > div {
+  display: grid;
+  gap: 7px;
+}
+
+.setlist-panel-heading span {
+  color: var(--setlist-pink);
+
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.setlist-panel-heading h3 {
+  margin: 0;
+
+  font-size:
+    clamp(25px, 3vw, 39px);
+
+  font-weight: 900;
+  letter-spacing: -0.045em;
+}
+
+.setlist-panel-heading > strong {
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+
+/* ========================================
+   ライブラリ検索
+======================================== */
+
+.setlist-search-box {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 11px;
+}
+
+.setlist-search-box > span {
+  position: absolute;
+  left: 16px;
+
+  z-index: 2;
+
+  color: var(--setlist-pink);
+
+  font-size: 18px;
+}
+
+#setlistSongSearch {
+  width: 100%;
+  height: 57px;
+  padding:
+    0 52px 0 46px;
+
+  color: #ffffff;
+  caret-color: var(--setlist-pink);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 0;
+  outline: none;
+
+  background:
+    rgba(0, 0, 0, 0.31);
+
+  font: inherit;
+  font-size: 11px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#setlistSongSearch::placeholder {
+  color: rgba(255, 255, 255, 0.27);
+}
+
+#setlistSongSearch:focus {
+  border-color: var(--setlist-pink);
+
+  box-shadow:
+    0 0 25px
+      rgba(255, 63, 131, 0.08);
+}
+
+#clearSetlistSearch {
+  position: absolute;
+  right: 8px;
+
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#clearSetlistSearch:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 63, 131, 0.12);
+}
+
+#clearSetlistSearch[hidden] {
+  display: none;
+}
+
+
+/* ========================================
+   ライブラリフィルター
+======================================== */
+
+.setlist-filter-buttons {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(80px, 1fr));
+
+  gap: 7px;
+
+  margin-bottom: 17px;
+}
+
+.setlist-filter-button {
+  min-height: 46px;
+  padding: 0 10px;
+
+  color: rgba(255, 255, 255, 0.54);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.13);
+
+  background:
+    rgba(255, 255, 255, 0.014);
+
+  font: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.setlist-filter-button:hover {
+  color: #ffffff;
+
+  border-color:
+    rgba(255, 63, 131, 0.6);
+}
+
+.setlist-filter-button.active {
+  color: #ffffff;
+
+  border-color: var(--setlist-pink);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--setlist-pink),
+      var(--setlist-red)
+    );
+}
+
+
+/* ========================================
+   JS生成：利用可能な曲
+======================================== */
+
+.available-song-list {
+  display: grid;
+  gap: 9px;
+
+  max-height: 720px;
+  padding-right: 5px;
+
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--setlist-pink)
+    rgba(255, 255, 255, 0.07);
+}
+
+.available-song-item {
+  display: grid;
+  grid-template-columns:
+    76px minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  min-height: 78px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.11);
+
+  background:
+    rgba(255, 255, 255, 0.014);
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.available-song-item:hover {
+  border-color:
+    rgba(255, 63, 131, 0.5);
+
+  background:
+    rgba(255, 63, 131, 0.04);
+}
+
+.available-song-image {
+  width: 76px;
+  height: 100%;
+  min-height: 78px;
+
+  object-fit: cover;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.available-song-info {
+  min-width: 0;
+  padding: 12px 15px;
+}
+
+.available-song-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  margin-bottom: 6px;
+}
+
+.available-song-tags span {
+  color: var(--setlist-pink);
+
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.available-song-info h4 {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.2;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.available-song-info p {
+  margin: 5px 0 0;
+
+  color: rgba(255, 255, 255, 0.32);
+
+  font-size: 7px;
+}
+
+.add-song-button {
+  min-width: 66px;
+  height: 100%;
+  align-self: stretch;
+  padding: 0 13px;
+
+  color: var(--setlist-pink);
+
+  border: 0;
+  border-left:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.add-song-button:hover {
+  color: #ffffff;
+
+  background:
+    var(--setlist-pink);
+}
+
+.add-song-button:disabled {
+  color: rgba(255, 255, 255, 0.22);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  cursor: default;
+}
+
+
+/* ========================================
+   曲が見つからない
+======================================== */
+
+.setlist-no-songs {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+
+  padding: 60px 20px;
+
+  text-align: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setlist-no-songs[hidden] {
+  display: none;
+}
+
+.setlist-no-songs span {
+  color: var(--setlist-pink);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.setlist-no-songs p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   選択済み操作
+======================================== */
+
+.selected-setlist-tools {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 7px;
+
+  margin-bottom: 17px;
+}
+
+.selected-setlist-tools button {
+  min-height: 47px;
+  padding: 0 10px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.13);
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.selected-setlist-tools button:hover {
+  color: #ffffff;
+
+  border-color:
+    rgba(255, 63, 131, 0.62);
+
+  background:
+    rgba(255, 63, 131, 0.09);
+}
+
+
+/* ========================================
+   JS生成：選択済み曲
+======================================== */
+
+.selected-song-list {
+  display: grid;
+  gap: 9px;
+
+  max-height: 640px;
+  padding-right: 5px;
+
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--setlist-pink)
+    rgba(255, 255, 255, 0.07);
+}
+
+.selected-song-item {
+  display: grid;
+  grid-template-columns:
+    38px 67px minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  min-height: 72px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 63, 131, 0.06),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  overflow: hidden;
+}
+
+.selected-song-number {
+  display: grid;
+  place-items: center;
+
+  height: 100%;
+
+  color: var(--setlist-pink);
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.selected-song-image {
+  width: 67px;
+  height: 100%;
+  min-height: 72px;
+
+  object-fit: cover;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.09);
+}
+
+.selected-song-info {
+  min-width: 0;
+  padding: 11px 13px;
+}
+
+.selected-song-info h4 {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selected-song-info p {
+  margin: 5px 0 0;
+
+  color: rgba(255, 255, 255, 0.32);
+
+  font-size: 7px;
+}
+
+.selected-song-controls {
+  display: grid;
+  grid-template-columns:
+    repeat(2, 30px);
+
+  gap: 4px;
+
+  padding: 8px;
+}
+
+.selected-song-controls button {
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  background: transparent;
+
+  font-size: 10px;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.selected-song-controls button:hover {
+  color: #ffffff;
+
+  border-color: var(--setlist-pink);
+
+  background:
+    rgba(255, 63, 131, 0.11);
+}
+
+.selected-song-controls
+.remove-song-button {
+  grid-column: 1 / -1;
+
+  width: 64px;
+
+  color: #ff698f;
+}
+
+
+/* ========================================
+   空のセットリスト
+======================================== */
+
+.empty-setlist {
+  display: grid;
+  justify-items: center;
+
+  min-height: 300px;
+  padding: 65px 25px;
+
+  text-align: center;
+
+  border:
+    1px dashed rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.01);
+}
+
+.empty-setlist[hidden] {
+  display: none;
+}
+
+.empty-setlist-code {
+  margin-bottom: 22px;
+
+  color: var(--setlist-pink);
+
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.empty-setlist strong {
+  font-size:
+    clamp(22px, 3vw, 34px);
+
+  font-weight: 900;
+}
+
+.empty-setlist p {
+  max-width: 340px;
+  margin: 16px 0 0;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   セットリスト集計
+======================================== */
+
+.setlist-summary {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  margin-top: 17px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.11);
+}
+
+.setlist-summary > div {
+  display: grid;
+  gap: 7px;
+
+  padding: 16px 18px;
+}
+
+.setlist-summary > div + div {
+  border-left:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setlist-summary span {
+  color: rgba(255, 255, 255, 0.28);
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.setlist-summary strong {
+  color: #ffffff;
+
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+.setlist-actions {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+
+  margin-top: 12px;
+}
+
+.setlist-actions .lab-button {
+  width: 100%;
+}
+
+
+/* ========================================
+   練習モード
+======================================== */
+
+.practice-mode-section {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 0.62fr)
+    minmax(0, 1.38fr);
+
+  gap: clamp(50px, 8vw, 120px);
+
+  padding:
+    clamp(115px, 14vw, 210px) 0 0;
+}
+
+.practice-mode-heading h2 {
+  margin: 0;
+
+  font-size:
+    clamp(44px, 6vw, 80px);
+
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.practice-mode-heading
+> p:last-child {
+  max-width: 500px;
+  margin: 27px 0 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 14px;
+  line-height: 2;
+}
+
+.practice-mode-panel {
+  align-self: center;
+
+  padding:
+    clamp(26px, 4vw, 48px);
+
+  border:
+    1px solid var(--setlist-pink-border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 63, 131, 0.08),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+.practice-mode-code {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+
+  padding-bottom: 20px;
+
+  color: rgba(255, 255, 255, 0.3);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.practice-mode-main {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  gap: 30px;
+  align-items: end;
+
+  padding-top: 35px;
+}
+
+.practice-mode-main > div {
+  display: grid;
+}
+
+.practice-small-label {
+  margin-bottom: 10px;
+
+  color: var(--setlist-pink);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+}
+
+#practiceFirstSong {
+  color: #ffffff;
+
+  font-size:
+    clamp(25px, 3.5vw, 46px);
+
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+#practiceDescription {
+  margin: 13px 0 0;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 11px;
+}
+
+#startPractice:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+
+/* ========================================
+   ガイド
+======================================== */
+
+.setlist-guide-section {
+  padding:
+    clamp(115px, 14vw, 210px) 0 0;
+}
+
+.setlist-guide-heading {
+  margin-bottom: 36px;
+}
+
+.setlist-guide-heading h2 {
+  margin: 0;
+
+  font-size:
+    clamp(45px, 6vw, 80px);
+
+  font-weight: 900;
+  letter-spacing: -0.055em;
+}
+
+.setlist-guide-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.setlist-guide-card {
+  min-height: 245px;
+  padding:
+    clamp(25px, 3vw, 38px);
+
+  border:
+    1px solid var(--setlist-border);
+
+  background:
+    rgba(255, 255, 255, 0.016);
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.setlist-guide-card:hover {
+  border-color:
+    rgba(255, 63, 131, 0.52);
+
+  background:
+    rgba(255, 63, 131, 0.04);
+
+  transform: translateY(-3px);
+}
+
+.setlist-guide-card > span {
+  display: block;
+
+  margin-bottom: 45px;
+
+  color: var(--setlist-pink);
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.setlist-guide-card h3 {
+  margin: 0 0 14px;
+
+  font-size:
+    clamp(19px, 2vw, 25px);
+}
+
+.setlist-guide-card p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+
+/* ========================================
+   ページ下部
+======================================== */
+
+.setlist-closing-section {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  margin-top:
+    clamp(120px, 15vw, 230px);
+
+  padding:
+    clamp(90px, 12vw, 170px)
+    24px;
+
+  text-align: center;
+
+  border-top:
+    1px solid var(--setlist-border);
+
+  overflow: hidden;
+}
+
+.setlist-closing-code {
+  position: absolute;
+  top: 25px;
+  left: 0;
+
+  color: rgba(255, 255, 255, 0.16);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.setlist-closing-content {
+  display: grid;
+  justify-items: center;
+}
+
+.setlist-closing-content h2 {
+  max-width: 950px;
+  margin: 0;
+
+  font-size:
+    clamp(58px, 9vw, 125px);
+
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+}
+
+.setlist-closing-content h2 span {
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px var(--setlist-pink);
+}
+
+.setlist-closing-content
+> p:not(.section-number) {
+  max-width: 620px;
+  margin: 30px 0 0;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 14px;
+  line-height: 2;
+}
+
+.setlist-closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 36px;
+}
+
+
+/* ========================================
+   コピー通知
+======================================== */
+
+.setlist-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+
+  z-index: 100;
+
+  padding: 15px 22px;
+
+  color: #ffffff;
+
+  border:
+    1px solid var(--setlist-pink);
+
+  background:
+    rgba(15, 6, 10, 0.95);
+
+  box-shadow:
+    0 15px 50px
+      rgba(0, 0, 0, 0.5);
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translate(-50%, 20px);
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+}
+
+.setlist-toast.is-visible {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translate(-50%, 0);
+}
+
+
+/* ========================================
+   Reveal
+======================================== */
+
+.setlist-page .reveal {
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.setlist-page .reveal.is-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   タブレット
+======================================== */
+
+@media (max-width: 1100px) {
+  .setlist-hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(290px, 0.65fr);
+  }
+
+  .setlist-editor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .available-song-list,
+  .selected-song-list {
+    max-height: 600px;
+  }
+
+  .practice-mode-section {
+    grid-template-columns: 1fr;
+  }
+
+  .setlist-guide-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* ========================================
+   小型タブレット
+======================================== */
+
+@media (max-width: 850px) {
+  .setlist-page main {
+    padding-top: 95px;
+  }
+
+  .setlist-hero {
+    grid-template-columns: 1fr;
+    gap: 60px;
+
+    min-height: 0;
+  }
+
+  .setlist-hero-code {
+    display: none;
+  }
+
+  .setlist-hero-visual {
+    min-height: 360px;
+  }
+
+  .setlist-preview-file {
+    width:
+      min(100%, 430px);
+  }
+}
+
+
+/* ========================================
+   スマホ
+======================================== */
+
+@media (max-width: 650px) {
+  #setlistLoader .loading-logo {
+    left: -8px;
+
+    font-size:
+      clamp(50px, 17vw, 80px);
+  }
+
+  .setlist-page main {
+    padding:
+      82px 14px 0;
+  }
+
+  .setlist-hero {
+    padding:
+      58px 0 75px;
+  }
+
+  .setlist-hero h1 {
+    font-size:
+      clamp(65px, 20vw, 95px);
+  }
+
+  .setlist-hero h1 span {
+    font-size:
+      clamp(38px, 12vw, 55px);
+  }
+
+  .setlist-hero-description {
+    margin-top: 30px;
+  }
+
+  .setlist-hero-status {
+    gap: 20px;
+  }
+
+  .setlist-hero-visual {
+    min-height: 300px;
+  }
+
+  .setlist-preview-file {
+    width: 100%;
+  }
+
+  .setlist-section-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .setlist-editor-status {
+    justify-items: start;
+  }
+
+  .setlist-name-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .setlist-name-panel label {
+    grid-template-columns: 1fr;
+
+    padding: 15px 16px 0;
+  }
+
+  #setlistName {
+    margin-top: 12px;
+
+    border-top:
+      1px solid rgba(255, 255, 255, 0.1);
+
+    border-left: 0;
+  }
+
+  .setlist-save-status {
+    min-height: 60px;
+
+    border-top:
+      1px solid rgba(255, 255, 255, 0.1);
+
+    border-left: 0;
+  }
+
+  .setlist-library,
+  .selected-setlist {
+    padding: 22px 14px;
+  }
+
+  .setlist-filter-buttons {
+    display: flex;
+
+    overflow-x: auto;
+  }
+
+  .setlist-filter-button {
+    flex: 0 0 105px;
+  }
+
+  .available-song-item {
+    grid-template-columns:
+      63px minmax(0, 1fr)
+      57px;
+  }
+
+  .available-song-image {
+    width: 63px;
+  }
+
+  .available-song-info {
+    padding:
+      10px 11px;
+  }
+
+  .add-song-button {
+    min-width: 57px;
+    padding: 0 8px;
+  }
+
+  .selected-song-item {
+    grid-template-columns:
+      32px 55px minmax(0, 1fr);
+  }
+
+  .selected-song-image {
+    width: 55px;
+  }
+
+  .selected-song-controls {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: flex-end;
+
+    border-top:
+      1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .selected-song-controls
+  .remove-song-button {
+    width: 30px;
+  }
+
+  .setlist-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-mode-main {
+    grid-template-columns: 1fr;
+  }
+
+  #startPractice {
+    width: 100%;
+  }
+
+  .setlist-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .setlist-guide-card {
+    min-height: 0;
+  }
+
+  .setlist-guide-card > span {
+    margin-bottom: 28px;
+  }
+
+  .setlist-closing-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 100%;
+  }
+
+  .setlist-closing-actions
+  .lab-button {
+    width: 100%;
+  }
+}
+
+
+/* ========================================
+   動きを減らす設定
+======================================== */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .setlist-page *,
+  .setlist-page *::before,
+  .setlist-page *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}
+
+/* ========================================
+   SETLIST MODE
+======================================== */
+
+.setlist-mode-section {
+  padding:
+    clamp(80px, 10vw, 145px) 0 0;
+
+  scroll-margin-top: 90px;
+}
+
+.setlist-mode-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 35px;
+
+  margin-bottom: 36px;
+}
+
+.setlist-mode-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(52px, 7vw, 92px);
+
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+}
+
+.setlist-mode-heading > p {
+  max-width: 390px;
+  margin: 0 0 5px;
+
+  color: rgba(255, 255, 255, 0.46);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+
+/* ========================================
+   モード切り替えボタン
+======================================== */
+
+.setlist-mode-buttons {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.setlist-mode-button {
+  position: relative;
+
+  display: grid;
+  grid-template-columns:
+    44px minmax(0, 1fr)
+    auto;
+
+  grid-template-rows:
+    auto auto;
+
+  gap: 8px 18px;
+  align-items: center;
+
+  min-height: 150px;
+  padding:
+    clamp(26px, 4vw, 45px);
+
+  color: rgba(255, 255, 255, 0.52);
+  text-align: left;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.015);
+
+  font: inherit;
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.setlist-mode-button::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 3px;
+  height: 0;
+
+  background:
+    var(--setlist-pink);
+
+  box-shadow:
+    0 0 20px
+      var(--setlist-pink);
+
+  transition:
+    height 0.3s ease;
+}
+
+.setlist-mode-button::after {
+  content: "";
+
+  position: absolute;
+  right: -90px;
+  bottom: -110px;
+
+  width: 240px;
+  height: 240px;
+
+  opacity: 0;
+
+  border:
+    1px solid rgba(255, 63, 131, 0.22);
+
+  border-radius: 50%;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.4s ease;
+}
+
+.setlist-mode-button:hover {
+  color: #ffffff;
+
+  border-color:
+    rgba(255, 63, 131, 0.55);
+
+  background:
+    rgba(255, 63, 131, 0.045);
+
+  transform: translateY(-3px);
+}
+
+.setlist-mode-button:hover::before,
+.setlist-mode-button.active::before {
+  height: 100%;
+}
+
+.setlist-mode-button:hover::after,
+.setlist-mode-button.active::after {
+  opacity: 1;
+
+  transform: scale(1.08);
+}
+
+.setlist-mode-button.active {
+  color: #ffffff;
+
+  border-color:
+    var(--setlist-pink);
+
+  background:
+    linear-gradient(
+      125deg,
+      rgba(255, 63, 131, 0.15),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 18px 60px
+      rgba(0, 0, 0, 0.35),
+    inset 0 0 60px
+      rgba(255, 63, 131, 0.035);
+}
+
+.setlist-mode-number {
+  grid-row: 1 / 3;
+
+  align-self: stretch;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--setlist-pink);
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.setlist-mode-name {
+  position: relative;
+  z-index: 2;
+
+  align-self: end;
+
+  color: inherit;
+
+  font-size:
+    clamp(22px, 3vw, 38px);
+
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.setlist-mode-description {
+  position: relative;
+  z-index: 2;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.setlist-mode-button > i {
+  position: relative;
+  z-index: 2;
+
+  grid-column: 3;
+  grid-row: 1 / 3;
+
+  color: var(--setlist-pink);
+
+  font-size: 20px;
+  font-style: normal;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.setlist-mode-button:hover > i,
+.setlist-mode-button.active > i {
+  transform: translateX(6px);
+}
+
+
+/* ========================================
+   モードパネル
+======================================== */
+
+.setlist-mode-panel {
+  padding-top:
+    clamp(30px, 5vw, 70px);
+}
+
+.setlist-mode-panel[hidden] {
+  display: none !important;
+}
+
+.setlist-mode-panel.active {
+  display: block;
+
+  animation:
+    setlistModeIn 0.45s ease;
+}
+
+@keyframes setlistModeIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* ========================================
+   LIVE ARCHIVE
+======================================== */
+
+.live-archive-section {
+  padding:
+    clamp(50px, 7vw, 95px) 0 0;
+
+  scroll-margin-top: 90px;
+}
+
+.live-archive-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+.live-archive-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(52px, 7vw, 92px);
+
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -0.065em;
+}
+
+.live-archive-status {
+  display: grid;
+  justify-items: end;
+  gap: 7px;
+
+  padding-bottom: 7px;
+}
+
+.live-archive-status span {
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.live-archive-status strong {
+  color: var(--setlist-pink);
+
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.live-archive-introduction {
+  max-width: 720px;
+  margin: 0 0 35px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 14px;
+  line-height: 2;
+}
+
+
+/* ========================================
+   ライブ検索
+======================================== */
+
+.live-search-panel {
+  display: grid;
+  grid-template-columns:
+    minmax(280px, 1fr)
+    auto;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+}
+
+.live-search-box {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.live-search-box > span {
+  position: absolute;
+  left: 19px;
+
+  z-index: 2;
+
+  color: var(--setlist-pink);
+
+  font-size: 20px;
+
+  pointer-events: none;
+}
+
+#liveSetlistSearch {
+  width: 100%;
+  height: 65px;
+  padding:
+    0 58px 0 53px;
+
+  color: #ffffff;
+  caret-color: var(--setlist-pink);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.17);
+
+  border-radius: 0;
+  outline: none;
+
+  background:
+    rgba(0, 0, 0, 0.32);
+
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#liveSetlistSearch::placeholder {
+  color: rgba(255, 255, 255, 0.27);
+}
+
+#liveSetlistSearch:focus {
+  border-color:
+    var(--setlist-pink);
+
+  background:
+    rgba(255, 63, 131, 0.035);
+
+  box-shadow:
+    0 0 27px
+      rgba(255, 63, 131, 0.08);
+}
+
+#clearLiveSetlistSearch {
+  position: absolute;
+  right: 9px;
+
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+
+  width: 43px;
+  height: 43px;
+  padding: 0;
+
+  color: rgba(255, 255, 255, 0.47);
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+
+  font-size: 21px;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+#clearLiveSetlistSearch:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 63, 131, 0.12);
+
+  transform: rotate(90deg);
+}
+
+#clearLiveSetlistSearch[hidden] {
+  display: none;
+}
+
+
+/* ========================================
+   国フィルター
+======================================== */
+
+.live-setlist-filter-buttons {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(90px, 1fr));
+
+  gap: 7px;
+}
+
+.live-filter-button {
+  min-height: 65px;
+  padding: 0 17px;
+
+  color: rgba(255, 255, 255, 0.53);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.14);
+
+  background:
+    rgba(255, 255, 255, 0.015);
+
+  font: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.live-filter-button:hover {
+  color: #ffffff;
+
+  border-color:
+    rgba(255, 63, 131, 0.6);
+
+  transform: translateY(-2px);
+}
+
+.live-filter-button.active {
+  color: #ffffff;
+
+  border-color: var(--setlist-pink);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--setlist-pink),
+      var(--setlist-red)
+    );
+}
+
+
+/* ========================================
+   年代フィルター
+======================================== */
+
+.live-year-buttons {
+  display: flex;
+  gap: 7px;
+
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 10px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  background:
+    rgba(255, 255, 255, 0.012);
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--setlist-pink)
+    rgba(255, 255, 255, 0.07);
+}
+
+.live-year-button {
+  flex: 1 0 100px;
+
+  min-height: 46px;
+  padding: 0 16px;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  border:
+    1px solid transparent;
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.live-year-button:hover,
+.live-year-button.active {
+  color: #ffffff;
+
+  border-color:
+    rgba(255, 63, 131, 0.5);
+
+  background:
+    rgba(255, 63, 131, 0.1);
+}
+
+
+/* ========================================
+   ライブカード一覧
+======================================== */
+
+.live-setlist-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* ========================================
+   JS生成：ライブカード
+======================================== */
+
+.live-setlist-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 330px;
+  padding:
+    clamp(25px, 4vw, 42px);
+
+  color: #ffffff;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 63, 131, 0.06),
+      rgba(255, 255, 255, 0.014)
+    );
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.live-setlist-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 3px;
+  height: 0;
+
+  background:
+    var(--setlist-pink);
+
+  box-shadow:
+    0 0 20px
+      var(--setlist-pink);
+
+  transition:
+    height 0.3s ease;
+}
+
+.live-setlist-card::after {
+  content: "";
+
+  position: absolute;
+  right: -90px;
+  bottom: -120px;
+
+  width: 280px;
+  height: 280px;
+
+  opacity: 0.35;
+
+  border:
+    1px solid rgba(255, 63, 131, 0.14);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.live-setlist-card:hover {
+  border-color:
+    rgba(255, 63, 131, 0.65);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 63, 131, 0.115),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 20px 65px
+      rgba(0, 0, 0, 0.4);
+
+  transform: translateY(-4px);
+}
+
+.live-setlist-card:hover::before {
+  height: 100%;
+}
+
+.live-card-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  margin-bottom: 34px;
+}
+
+.live-card-file-id {
+  color: var(--setlist-pink);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+}
+
+.live-card-country {
+  padding: 7px 10px;
+
+  color: rgba(255, 255, 255, 0.66);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.17);
+
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+}
+
+.live-card-tour {
+  position: relative;
+  z-index: 2;
+
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(25px, 3.3vw, 45px);
+
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.live-card-type {
+  position: relative;
+  z-index: 2;
+
+  margin: 0 0 27px;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.live-card-meta {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  margin-bottom: 27px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.11);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.11);
+}
+
+.live-card-meta > div {
+  display: grid;
+  gap: 6px;
+
+  padding: 14px 10px;
+}
+
+.live-card-meta > div + div {
+  border-left:
+    1px solid rgba(255, 255, 255, 0.09);
+}
+
+.live-card-meta span {
+  color: rgba(255, 255, 255, 0.25);
+
+  font-size: 6px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.live-card-meta strong {
+  overflow: hidden;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 8px;
+  letter-spacing: 0.05em;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.live-card-open {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 48px;
+  margin-top: auto;
+  padding: 0;
+
+  color: var(--setlist-pink);
+
+  border: 0;
+  border-top:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+
+  cursor: pointer;
+}
+
+.live-card-open > span {
+  font-size: 16px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.live-card-open:hover > span {
+  transform: translateX(6px);
+}
+
+
+/* ========================================
+   ライブ検索結果なし
+======================================== */
+
+.live-setlist-no-results {
+  display: grid;
+  justify-items: center;
+
+  padding:
+    clamp(75px, 10vw, 140px)
+    24px;
+
+  text-align: center;
+
+  border:
+    1px solid var(--setlist-border);
+
+  background:
+    rgba(255, 63, 131, 0.035);
+}
+
+.live-setlist-no-results[hidden] {
+  display: none;
+}
+
+.live-setlist-no-results
+> span {
+  margin-bottom: 18px;
+
+  color: var(--setlist-pink);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+}
+
+.live-setlist-no-results
+> strong {
+  font-size:
+    clamp(27px, 4vw, 45px);
+
+  font-weight: 900;
+}
+
+.live-setlist-no-results
+> p {
+  max-width: 470px;
+  margin: 19px 0 28px;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+
+/* ========================================
+   ライブ詳細
+======================================== */
+
+.live-setlist-viewer {
+  padding:
+    clamp(70px, 10vw, 140px) 0 0;
+
+  scroll-margin-top: 90px;
+}
+
+.live-setlist-viewer[hidden] {
+  display: none;
+}
+
+.live-setlist-viewer.is-visible {
+  display: block;
+
+  animation:
+    liveViewerIn 0.45s ease;
+}
+
+@keyframes liveViewerIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+.live-viewer-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-bottom: 32px;
+}
+
+.live-viewer-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(42px, 6vw, 80px);
+
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+#closeLiveSetlistViewer {
+  min-width: 130px;
+  min-height: 52px;
+  padding: 0 19px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.16);
+
+  background: transparent;
+
+  font: inherit;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+#closeLiveSetlistViewer:hover {
+  color: #ffffff;
+
+  border-color:
+    var(--setlist-pink);
+
+  background:
+    rgba(255, 63, 131, 0.1);
+}
+
+
+/* ========================================
+   ライブ詳細情報
+======================================== */
+
+.live-viewer-meta {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  margin-bottom: 18px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+}
+
+.live-viewer-meta > div {
+  display: grid;
+  gap: 7px;
+
+  padding: 17px 20px;
+}
+
+.live-viewer-meta > div + div {
+  border-left:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.live-viewer-meta span {
+  color: rgba(255, 255, 255, 0.28);
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.live-viewer-meta strong {
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+
+
+/* ========================================
+   ライブ詳細本体
+======================================== */
+
+.live-viewer-body {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(260px, 0.65fr);
+
+  gap: 18px;
+  align-items: start;
+}
+
+.live-viewer-file {
+  border:
+    1px solid var(--setlist-pink-border);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 63, 131, 0.055),
+      rgba(255, 255, 255, 0.012)
+    );
+}
+
+.live-viewer-file-top,
+.live-viewer-file-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 17px 21px;
+
+  color: rgba(255, 255, 255, 0.28);
+
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.live-viewer-file-top {
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+.live-viewer-file-bottom {
+  border-top:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* ========================================
+   JS生成：ライブ曲順
+======================================== */
+
+.live-viewer-song-list {
+  display: grid;
+
+  padding:
+    clamp(20px, 4vw, 38px);
+}
+
+.live-song-row {
+  display: grid;
+  grid-template-columns:
+    46px minmax(0, 1fr)
+    auto;
+
+  gap: 16px;
+  align-items: center;
+
+  min-height: 62px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.09);
+}
+
+.live-song-number {
+  color: var(--setlist-pink);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.live-song-title {
+  min-width: 0;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size:
+    clamp(14px, 1.5vw, 18px);
+
+  font-weight: 800;
+}
+
+a.live-song-title {
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease;
+}
+
+a.live-song-title:hover {
+  color: var(--setlist-pink);
+}
+
+.live-song-status {
+  padding: 6px 9px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.live-song-status.has-file {
+  color: var(--setlist-pink);
+
+  border-color:
+    rgba(255, 63, 131, 0.42);
+}
+
+.live-song-row.is-encore {
+  margin-top: 31px;
+}
+
+.live-song-row.is-encore::before {
+  content: "ENCORE";
+
+  grid-column: 1 / -1;
+
+  margin-bottom: -3px;
+
+  color: var(--setlist-pink);
+
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.19em;
+}
+
+
+/* ========================================
+   ライブ詳細サイド
+======================================== */
+
+.live-viewer-aside {
+  position: sticky;
+  top: 95px;
+
+  padding:
+    clamp(25px, 3vw, 38px);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.14);
+
+  background:
+    rgba(255, 255, 255, 0.016);
+}
+
+.live-viewer-note-label {
+  margin: 0 0 13px;
+
+  color: var(--setlist-pink);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+}
+
+#liveViewerNote {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.live-viewer-actions {
+  display: grid;
+  gap: 9px;
+
+  margin-top: 28px;
+}
+
+.live-viewer-actions
+.lab-button {
+  width: 100%;
+}
+
+
+/* ========================================
+   タブレット
+======================================== */
+
+@media (max-width: 1050px) {
+  .live-search-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .live-setlist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .live-viewer-body {
+    grid-template-columns: 1fr;
+  }
+
+  .live-viewer-aside {
+    position: static;
+  }
+}
+
+
+/* ========================================
+   スマホ
+======================================== */
+
+@media (max-width: 650px) {
+  .setlist-mode-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .setlist-mode-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .setlist-mode-button {
+    min-height: 125px;
+    padding: 23px 19px;
+  }
+
+  .setlist-mode-name {
+    font-size:
+      clamp(24px, 8vw, 34px);
+  }
+
+  .live-archive-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .live-archive-status {
+    justify-items: start;
+  }
+
+  .live-setlist-filter-buttons {
+    display: flex;
+
+    overflow-x: auto;
+  }
+
+  .live-filter-button {
+    flex: 0 0 105px;
+  }
+
+  .live-setlist-card {
+    min-height: 300px;
+    padding: 25px 20px;
+  }
+
+  .live-card-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .live-card-meta > div + div {
+    border-top:
+      1px solid rgba(255, 255, 255, 0.09);
+
+    border-left: 0;
+  }
+
+  .live-viewer-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #closeLiveSetlistViewer {
+    width: 100%;
+  }
+
+  .live-viewer-meta {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .live-viewer-meta
+  > div:nth-child(3) {
+    border-top:
+      1px solid rgba(255, 255, 255, 0.1);
+
+    border-left: 0;
+  }
+
+  .live-viewer-meta
+  > div:nth-child(4) {
+    border-top:
+      1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .live-viewer-song-list {
+    padding: 15px 13px;
+  }
+
+  .live-song-row {
+    grid-template-columns:
+      32px minmax(0, 1fr);
+
+    gap: 10px;
+  }
+
+  .live-song-status {
+    grid-column: 2;
+
+    width: fit-content;
+  }
+}
+
+/* ========================================
+   ツアー内 DAY選択
+======================================== */
+
+.live-day-selector {
+  margin-top: 26px;
+  padding-top: 22px;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+.live-day-selector-label {
+  margin: 0 0 12px;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.live-day-buttons {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(130px, 1fr)
+    );
+
+  gap: 10px;
+}
+
+.live-day-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+
+  min-height: 70px;
+  padding: 15px 16px;
+
+  color: var(--white);
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.14);
+
+  cursor: pointer;
+  text-align: left;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.live-day-button:hover {
+  color: #ffffff;
+
+  background:
+    rgba(255, 63, 131, 0.12);
+
+  border-color:
+    rgba(255, 63, 131, 0.75);
+
+  transform:
+    translateY(-2px);
+}
+
+.live-day-number {
+  color: var(--pink);
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.live-day-date {
+  color:
+    rgba(255, 255, 255, 0.6);
+
+  font-size: 10px;
+  font-weight: 700;
+}
