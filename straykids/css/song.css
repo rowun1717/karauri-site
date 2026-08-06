@@ -2781,3 +2781,135 @@ body.show-fanchant
 .line.is-hidden {
   display: none !important;
 }
+
+/* ========================================
+   歌詞ページ：スマホをPC版に近づける
+======================================== */
+
+@media (max-width: 760px) {
+
+  /* 歌詞ブロック全体 */
+  body .lyrics-console .lyric-set {
+    display: grid !important;
+    grid-template-columns: 100px minmax(0, 1fr) !important;
+
+    gap: 20px !important;
+    padding: 28px 22px !important;
+  }
+
+  /* メンバー欄 */
+  body .lyrics-console .member-column {
+    position: relative !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+
+    border-right:
+      1px solid rgba(255, 255, 255, 0.14) !important;
+  }
+
+  body .lyrics-console .member-id {
+    font-size: 10px !important;
+  }
+
+  body .lyrics-console .member-name {
+    position: static !important;
+
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.14em !important;
+
+    writing-mode: vertical-rl !important;
+    transform: none !important;
+  }
+
+  /* 歌詞本体 */
+  body .lyrics-console .lyric-data {
+    min-width: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* カナルビ */
+  body .lyrics-console .lyric-data .line.ruby {
+    margin: 0 0 6px !important;
+
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0 !important;
+
+    overflow-wrap: anywhere !important;
+  }
+
+  /* 原文 */
+  body .lyrics-console .lyric-data .line.original {
+    margin: 0 0 6px !important;
+
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    line-height: 1.55 !important;
+  }
+
+  /* 日本語訳 */
+  body .lyrics-console .lyric-data .line.translation {
+    margin: 0 0 22px !important;
+
+    font-size: 11px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* 最後の行には余計な余白を付けない */
+  body .lyrics-console .lyric-data p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* 括弧内・掛け声 */
+  body .lyrics-console .parenthetical {
+    font-size: 0.85em !important;
+    line-height: inherit !important;
+  }
+
+  /* コンソール上部 */
+  body .lyrics-console-top {
+    padding: 18px 22px !important;
+    font-size: 8px !important;
+  }
+}
+
+
+/* ========================================
+   かなり小さいスマホ
+======================================== */
+
+@media (max-width: 430px) {
+
+  body .lyrics-console .lyric-set {
+    grid-template-columns: 66px minmax(0, 1fr) !important;
+
+    gap: 14px !important;
+    padding: 24px 14px !important;
+  }
+
+  body .lyrics-console .lyric-data .line.ruby {
+    font-size: 14px !important;
+  }
+
+  body .lyrics-console .lyric-data .line.original {
+    font-size: 12px !important;
+  }
+
+  body .lyrics-console .lyric-data .line.translation {
+    font-size: 10px !important;
+  }
+
+  body .lyrics-console .member-name {
+    font-size: 8px !important;
+  }
+}
