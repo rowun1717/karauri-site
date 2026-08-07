@@ -6,6 +6,49 @@
 ======================================== */
 
 const songs = [
+
+{
+    title: "THIS & THAT",
+    album: "THIS & THAT",
+    type: "Original Song",
+    date: "2026.08.07",
+    release: "2026.08.07",
+    url: "song/THIS&THAT.html",
+    image: "images/song/THISTHAT.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+  {
+    title: "After You",
+    album: "THIS & THAT",
+    type: "Original Song",
+    date: "2026.08.07",
+    release: "2026.08.07",
+    url: "song/AfterYou.html",
+    image: "images/albums/THISTHAT.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
   {
     title: "MANIAC",
     album: "ODDINARY",
