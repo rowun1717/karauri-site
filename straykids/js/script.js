@@ -91,6 +91,50 @@ const songs = [
     ]
   },
 
+    {
+    title: "Way Out",
+    album: "THIS & THAT",
+    type: "Original Song",
+    date: "2026.08.07",
+    release: "2026.08.07",
+    url: "song/WayOut.html",
+    image: "images/albums/THISTHAT.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+
+    {
+    title: "Back Then",
+    album: "THIS & THAT",
+    type: "Original Song",
+    date: "2026.08.07",
+    release: "2026.08.07",
+    url: "song/Back Then.html",
+    image: "images/albums/THISTHAT.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+
   {
     title: "MANIAC",
     album: "ODDINARY",
