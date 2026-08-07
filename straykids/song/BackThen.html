@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>그날 (Back Then) | SKZ Lyric LAB</title>
+
+  <link
+  rel="stylesheet"
+  href="../css/song.css"
+>
+
+<link
+  rel="stylesheet"
+  href="../css/common-header.css?v=20260806-2"
+>
+
+<link
+  rel="icon"
+  type="image/png"
+  href="../images/logo.png"
+>
+
+<link
+  rel="apple-touch-icon"
+  href="../images/icon.png"
+>
+
+<link
+  rel="manifest"
+  href="manifest.json"
+>
+
+<meta name="theme-color" content="#050505">
+
+</head>
+
+<body>
+
+  <!-- ファイル起動演出 -->
+  <div id="fileLoader" class="file-loader">
+
+    <div class="file-loader-inner">
+
+      <p class="loader-code">
+        SKZ LYRIC LAB / FILE ACCESS
+      </p>
+
+      <h1 data-text="그날 (Back Then)">
+        그날 (Back Then)
+      </h1>
+
+      <p id="loaderMessage">
+        OPENING LYRIC FILE...
+      </p>
+
+      <div class="loader-bar">
+        <span id="loaderProgress"></span>
+      </div>
+
+      <p id="loaderPercent">
+        0%
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- 背景演出 -->
+  <div class="song-grid-background"></div>
+  <div class="song-scanlines"></div>
+  <div id="songPointerGlow" class="song-pointer-glow"></div>
+
+
+<!-- 共通ヘッダー -->
+<header class="site-header">
+
+  <a
+    href="../index.html"
+    class="header-logo"
+  >
+    <span class="header-logo-main">
+      SKZ
+    </span>
+
+    <span class="header-logo-sub">
+      LYRIC LAB
+    </span>
+  </a>
+
+
+  <nav
+    id="globalNav"
+    class="global-nav"
+  >
+    <a href="../index.html">
+      HOME
+    </a>
+
+    <a href="../search.html">
+      SEARCH
+    </a>
+
+    <a href="../albums.html">
+      ARCHIVE
+    </a>
+
+    <a href="#lyrics">
+      LYRICS
+    </a>
+
+    <a href="../members.html">
+      MEMBERS
+    </a>
+
+    <a href="../setlist.html">
+      SETLIST
+    </a>
+
+    <a href="../about.html">
+      ABOUT
+    </a>
+  </nav>
+
+
+  <button
+    id="menuButton"
+    class="menu-button"
+    type="button"
+    aria-label="メニューを開く"
+    aria-expanded="false"
+    aria-controls="globalNav"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+
+<!-- ヘッダーの外に置く -->
+<nav
+  id="globalNav"
+  class="global-nav"
+  aria-label="メインメニュー"
+>
+  <a href="index.html#latest">
+    <span>LATEST</span>
+  </a>
+
+  <a href="index.html#archive">
+    <span>ARCHIVE</span>
+  </a>
+
+  <a href="index.html#database">
+    <span>DATABASE</span>
+  </a>
+
+  <a href="search.html">
+    <span>SEARCH</span>
+  </a>
+
+  <a href="members.html">
+    <span>MEMBERS</span>
+  </a>
+
+  <a href="about.html">
+    <span>ABOUT</span>
+  </a>
+</nav>
+
+
+  <main>
+
+    <!-- 曲ヒーロー -->
+    <section class="song-hero">
+
+      <div class="song-hero-background">
+
+        <img
+          src="../images/albums/THISTHAT.jpg"
+          alt=""
+        >
+
+      </div>
+
+      <div class="song-hero-overlay"></div>
+
+      <div class="song-hero-content">
+
+        <div class="song-cover-panel reveal">
+
+          <div class="cover-header">
+
+            <span>
+              FILE NO. SKZ-TAT-007
+            </span>
+
+            <span class="active-status">
+              ACTIVE
+            </span>
+
+          </div>
+
+          <div class="cover-frame">
+
+            <img
+              src="../images/albums/THISTHAT.jpg"
+              alt="그날 (Back Then)"
+            >
+
+            <span class="corner top-left"></span>
+            <span class="corner top-right"></span>
+            <span class="corner bottom-left"></span>
+            <span class="corner bottom-right"></span>
+
+            <div class="cover-scan"></div>
+
+          </div>
+
+          <div class="cover-footer">
+
+            <span>
+              SUBJECT / STRAY KIDS
+            </span>
+
+            <span>
+              STATUS / VERIFIED
+            </span>
+
+          </div>
+          <section
+            class="music-player"
+            data-youtube-id="P_YrTeZt6yM">
+            <div class="youtube-player-wrap">
+              <div id="youtubePlayer"></div>
+            </div>
+
+            <div class="player-info">
+              <div>
+                <span class="player-label">NOW PLAYING</span>
+              </div>
+
+              <span id="currentTime">0:00</span>
+            </div>
+
+            <input
+              id="progressBar"
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+              aria-label="再生位置"
+            >
+
+            <div class="player-controls">
+
+              <button
+                id="rewindButton"
+                type="button"
+                aria-label="10秒戻る"
+              >
+                ↶
+              </button>
+
+              <button
+                id="playButton"
+                type="button"
+                aria-label="再生"
+              >
+                ▶
+              </button>
+
+              <button
+                id="forwardButton"
+                type="button"
+                aria-label="10秒進む"
+              >
+                ↷
+              </button>
+
+            </div>
+
+            <div class="player-bottom">
+              <span id="duration">0:00</span>
+
+              <button
+                id="muteButton"
+                type="button"
+                aria-label="ミュート"
+              >
+                🔊
+              </button>
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <div class="song-main-data reveal">
+
+          <p class="song-eyebrow">
+            LYRIC ANALYSIS FILE
+          </p>
+
+          <div class="song-tags">
+
+            <span class="song-tag">
+              Original Song
+            </span>
+
+            <span class="song-tag">
+              THIS &amp; THAT
+            </span>
+
+            <span class="song-tag karaoke">
+              JOYSOUND
+            </span>
+
+            <span class="song-tag karaoke">
+              DAM
+            </span>
+
+          </div>
+
+          <h1 class="song-title">
+            그날 (Back Then)
+          </h1>
+
+          <p class="song-subtitle">
+            Stray Kids
+          </p>
+
+          <dl class="song-data-table">
+
+            <div>
+              <dt>ALBUM</dt>
+              <dd>THIS &amp; THAT</dd>
+            </div>
+
+            <div>
+              <dt>RELEASE</dt>
+              <dd>2026.08.07</dd>
+            </div>
+
+            <div>
+              <dt>UPDATED</dt>
+              <dd>2026.08.07</dd>
+            </div>
+
+            <div>
+              <dt>LANGUAGE</dt>
+              <dd>KOREAN</dd>
+            </div>
+
+          </dl>
+
+          <div class="analysis-status">
+
+            <div>
+              <span class="analysis-dot"></span>
+
+              <p>
+                <small>KANA DATA</small>
+                <strong>COMPLETE</strong>
+              </p>
+            </div>
+
+            <div>
+              <span class="analysis-dot"></span>
+
+              <p>
+                <small>TRANSLATION</small>
+                <strong>COMPLETE</strong>
+              </p>
+            </div>
+
+            <div>
+              <span class="analysis-dot"></span>
+
+              <p>
+                <small>PART DATA</small>
+                <strong>COMPLETE</strong>
+              </p>
+            </div>
+
+          </div>
+
+          <a
+            href="#lyrics"
+            class="open-lyrics-button"
+          >
+            OPEN LYRIC DATA
+            <span>↓</span>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="song-hero-number">
+        FILE / BACK THEN
+      </div>
+
+    </section>
+
+
+    <!-- 曲情報 -->
+    <section class="song-information">
+
+      <div class="section-label reveal">
+
+        <p>
+          01 / FILE INFORMATION
+        </p>
+
+        <h2>
+          Credits
+        </h2>
+
+      </div>
+
+      <div class="credit-grid reveal">
+
+        <div>
+          <span>ARTIST</span>
+          <strong>Stray Kids</strong>
+        </div>
+
+        <div>
+          <span>ALBUM</span>
+          <strong>THIS &amp; THAT</strong>
+        </div>
+
+        <div>
+          <span>LYRICS</span>
+          <strong>
+            HAN
+          </strong>
+        </div>
+
+        <div>
+          <span>COMPOSED</span>
+          <strong>
+            HAN, Vendors (Helixx)
+          </strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- メンバーカラー -->
+    <section class="member-file-section">
+
+      <div class="section-label reveal">
+
+        <p>
+          02 / MEMBER IDENTIFICATION
+        </p>
+
+        <h2>
+          Part Colors
+        </h2>
+
+      </div>
+
+      <div class="member-filter reveal">
+
+        <button
+          class="member-filter-button active"
+          type="button"
+          data-member="all"
+        >
+          ALL
+        </button>
+
+        <button
+          class="member-filter-button chan"
+          type="button"
+          data-member="bangchan"
+        >
+          BANG CHAN
+        </button>
+
+        <button
+          class="member-filter-button leeknow"
+          type="button"
+          data-member="leeknow"
+        >
+          LEE KNOW
+        </button>
+
+        <button
+          class="member-filter-button changbin"
+          type="button"
+          data-member="changbin"
+        >
+          CHANGBIN
+        </button>
+
+        <button
+          class="member-filter-button hyunjin"
+          type="button"
+          data-member="hyunjin"
+        >
+          HYUNJIN
+        </button>
+
+        <button
+          class="member-filter-button han"
+          type="button"
+          data-member="han"
+        >
+          HAN
+        </button>
+
+        <button
+          class="member-filter-button felix"
+          type="button"
+          data-member="felix"
+        >
+          FELIX
+        </button>
+
+        <button
+          class="member-filter-button seungmin"
+          type="button"
+          data-member="seungmin"
+        >
+          SEUNGMIN
+        </button>
+
+        <button
+          class="member-filter-button in"
+          type="button"
+          data-member="in"
+        >
+          I.N
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- 歌詞 -->
+    <section
+      id="lyrics"
+      class="lyrics-section"
+    >
+
+      <div class="lyrics-header reveal">
+
+        <div>
+
+          <p>
+            03 / LYRIC DATABASE
+          </p>
+
+          <h2>
+            Lyrics
+          </h2>
+
+        </div>
+
+        <div class="lyrics-view-controls">
+
+          <button
+            class="view-button active"
+            data-view="all"
+          >
+            ALL DATA
+          </button>
+
+          <button
+            class="view-button"
+            data-view="original"
+          >
+            ORIGINAL
+          </button>
+
+          <button
+            class="view-button"
+            data-view="kana"
+          >
+            KANA
+          </button>
+
+          <button
+            class="view-button"
+            data-view="japanese"
+          >
+            JAPANESE
+          </button>
+
+          <button
+            id="fanchantToggle"
+            class="view-button fanchant-toggle"
+            type="button"
+            aria-pressed="false"
+          >
+            FANCHANT OFF
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="lyrics-console">
+
+        <div class="lyrics-console-top">
+
+          <span>
+            FILE : BACK_THEN.LYRIC
+          </span>
+
+          <span>
+            STATUS : DECODED
+          </span>
+
+        </div>
+
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">02</span><span class="member-name">LEE KNOW</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line translation">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da</p>
+            <p class="line translation">Da-da-da, da, da-da-da-da, da</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line translation">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da</p>
+            <p class="line translation">Da-da-da, da, da-da-da-da, da</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">01</span><span class="member-name">BANG CHAN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">うり がち うそっとん なる よんふぁるる とぅろのっこ</p>
+            <p class="line original">우리 같이 웃었던 날, 영화를 틀어놓고</p>
+            <p class="line translation">僕たちが一緒に笑った日 映画を流したまま</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">02</span><span class="member-name">LEE KNOW</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">(Da-da-da, da, da-da-da-da, da-da, da-da-da, da, da-da-da-da, da)</p>
+            <p class="line translation">（Da-da-da, da, da-da-da-da, da-da, da-da-da, da, da-da-da-da, da）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">01</span><span class="member-name">BANG CHAN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">そろまん ぶぁっとん なる くなる</p>
+            <p class="line original">서로만 봤던 날, 그날</p>
+            <p class="line translation">お互いだけを見つめていた日 あの日</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">02</span><span class="member-name">LEE KNOW</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">(Da-da-da, da, da-da-da-da, da-da, da-da-da, da, da-da-da-da, da)</p>
+            <p class="line translation">（Da-da-da, da, da-da-da-da, da-da, da-da-da, da, da-da-da-da, da）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">05</span><span class="member-name">HAN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">そるちき まれ くにゃん あむろん</p>
+            <p class="line original">솔직히 말해 그냥 아무런</p>
+            <p class="line translation">正直に言えば ただ何の</p>
+            <p class="line ruby">いゆ おぷち さらんえ てはよ</p>
+            <p class="line original">이유 없지 사랑에 대하여</p>
+            <p class="line translation">理由もない 愛というものに</p>
+            <p class="line ruby">おりご ちゃぐん い まめ のむちょ</p>
+            <p class="line original">어리고 작은 이 맘에 넘쳐</p>
+            <p class="line translation">幼く小さなこの心にあふれて</p>
+            <p class="line ruby">ふるろぼりん い まぬん ごん ラヴ</p>
+            <p class="line original">흘러버린 이 많은 건 love</p>
+            <p class="line translation">こぼれ落ちたこのたくさんのものは愛</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEUNGMIN -->
+        <section class="lyric-block" data-member="seungmin">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">07</span><span class="member-name">SEUNGMIN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ちゃらな ぼりん あいが どぇお が どぇお</p>
+            <p class="line original">자라나 버린 아이가 되어 (가 되어)</p>
+            <p class="line translation">大きくなった子どもになって</p>
+            <p class="line ruby">ね ぎょてそ い ぱむる ちせうぉ エオ</p>
+            <p class="line original">네 곁에서 이 밤을 지새워, eh-oh</p>
+            <p class="line translation">君のそばでこの夜を明かす</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN -->
+        <section class="lyric-block" data-member="hyunjin">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">04</span><span class="member-name">HYUNJIN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">のえ ちゃぐん みそ あね ぽんじ ありったうん い のり</p>
+            <p class="line original">너의 작은 미소 안에 번지, 아리따운 이 놀이</p>
+            <p class="line translation">君の小さな微笑みの中に広がる 美しいこの遊び</p>
+            <p class="line ruby">えそ のわ ぴょんせん っぱじょながぎ しろ ウォー オー オー</p>
+            <p class="line original">에서 너와 평생 빠져나가기 싫어, woah-oh-oh</p>
+            <p class="line translation">その中から君と一生抜け出したくない</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- I.N -->
+        <section class="lyric-block" data-member="in">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">08</span><span class="member-name">I.N</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ね ぴょんせんえ ぱぬる ねげろ</p>
+            <p class="line original">내 평생의 반을 네게로</p>
+            <p class="line translation">僕の人生の半分を君へ</p>
+            <p class="line ruby">のえ っこち みょっぺんまん ぼんっちゅむ っと しどぅろど オー</p>
+            <p class="line original">너의 꽃이 몇백만 번쯤 또 시들어도, oh</p>
+            <p class="line translation">君の花が何百万回しおれても</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">02</span><span class="member-name">LEE KNOW</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">せろうん ひゃんうる たし もぐむご</p>
+            <p class="line original">새로운 향을 다시 머금고</p>
+            <p class="line translation">新しい香りをもう一度含ませて</p>
+            <p class="line ruby">と ちゃんらなん っこちゅる ね まめ ぴうぉ じゅるけ</p>
+            <p class="line original">더 찬란한 꽃을 네 맘에 피워 줄게</p>
+            <p class="line translation">もっときらびやかな花を君の心に咲かせてあげる</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEUNGMIN -->
+        <section class="lyric-block" data-member="seungmin">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">07</span><span class="member-name">SEUNGMIN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">うり がち うそっとん なる とん なる よんふぁるる とぅろのっこ のっこ</p>
+            <p class="line original">우리 같이 웃었던 날 (던 날), 영화를 틀어놓고 (놓고)</p>
+            <p class="line translation">一緒に笑った日 映画を流したまま</p>
+            <p class="line ruby">そろまん ぶぁっとん なる とん なる くなる <span class="chant-overlap">オー イェー イェー</span></p>
+            <p class="line original">서로만 봤던 날 (던 날), 그날 <span class="chant-overlap">(Oh, yeah, yeah)</span></p>
+            <p class="line translation">お互いだけを見つめていた日 あの日</p>
+            <p class="line ruby">ぶと オー オー よっそっとん ごっ かた アー アー</p>
+            <p class="line original">부터, oh, oh, 였었던 것 같아, ah-ah</p>
+            <p class="line translation">あの時から始まっていた気がする</p>
+            <p class="line ruby">のわ しじゃけっとん く よるめ いるむん そるれみおった</p>
+            <p class="line original">너와 시작했던 그 여름의 이름은 설렘이었다</p>
+            <p class="line translation">君と始めたあの夏の名前は ときめきだった</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">01</span><span class="member-name">BANG CHAN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">オー イェー イェー</p>
+            <p class="line original">(Oh, yeah, yeah)</p>
+            <p class="line translation">（Oh, yeah, yeah）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- I.N -->
+        <section class="lyric-block" data-member="in">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">08</span><span class="member-name">I.N</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ぶと オー オー よっそっとん ごっ かた アー アー</p>
+            <p class="line original">부터, oh, oh, 였었던 것 같아, ah-ah</p>
+            <p class="line translation">あの時から始まっていた気がする</p>
+            <p class="line ruby">のわ しじゃけっとん く よるめ いるむん そるれみおった</p>
+            <p class="line original">너와 시작했던 그 여름의 이름은 설렘이었다</p>
+            <p class="line translation">君と始めたあの夏の名前は ときめきだった</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section class="lyric-block" data-member="felix">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">06</span><span class="member-name">FELIX</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ウィア ザ ナイト イェー ウィア ザ ライト イェー</p>
+            <p class="line original">We're the night, yeah, we're the light, yeah</p>
+            <p class="line translation">僕たちは夜で 僕たちは光</p>
+            <p class="line ruby">ウィア ソー ブライト ベイブ ウィア ザ スカイ</p>
+            <p class="line original">We're so bright, babe, we're the sky</p>
+            <p class="line translation">僕たちはこんなにも輝く 空そのもの</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">05</span><span class="member-name">HAN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">うりが まんどぅろ ねん い ぱだえ エメラルド</p>
+            <p class="line original">우리가 만들어 낸 이 바다의 emerald</p>
+            <p class="line translation">僕たちが作り出したこの海のエメラルド</p>
+            <p class="line ruby">シャイン ソー ブライト のわ な</p>
+            <p class="line original">Shine so bright, 너와 나</p>
+            <p class="line translation">まぶしく輝く 君と僕</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- I.N -->
+        <section class="lyric-block" data-member="in">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">08</span><span class="member-name">I.N</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">はにょるめ っとぅごうん い ぱらみ ぱらみ</p>
+            <p class="line original">한여름의 뜨거운 이 바람이 (바람이)</p>
+            <p class="line translation">真夏の熱いこの風が</p>
+            <p class="line ruby">もれあり ぷと もめ ちんどぅぎ</p>
+            <p class="line original">모래알이 붙어 몸에 진득이</p>
+            <p class="line translation">砂粒が体にべったりとつく</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">05</span><span class="member-name">HAN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">そぬる ちゃぷこ ウォーキング ぱだ すよんへ ジャンピング</p>
+            <p class="line original">손을 잡고 walking, 바다 수영해 jumping</p>
+            <p class="line translation">手をつないで歩き 海で泳いで飛び込む</p>
+            <p class="line ruby">ウィズ ユー アイ フィール ライク くるむ はん ちょむ がち フィール フリー</p>
+            <p class="line original">With you, I feel like 구름 한 점 같이 feel free</p>
+            <p class="line translation">君といると 雲ひとつのように自由を感じる</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN + I.N -->
+        <section class="lyric-block chemistry" data-member="hyonra">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">04 + 08</span><span class="member-name">HYUNJIN + I.N</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ね ぴょんせんえ ぱぬる ねげろ</p>
+            <p class="line original">내 평생의 반을 네게로</p>
+            <p class="line translation">僕の人生の半分を君へ</p>
+            <p class="line ruby">のえ っこち みょっぺんまん ぼんっちゅむ っと しどぅろど オー</p>
+            <p class="line original">너의 꽃이 몇백만 번쯤 또 시들어도, oh</p>
+            <p class="line translation">君の花が何百万回しおれても</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN -->
+        <section class="lyric-block" data-member="hyunjin">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">04</span><span class="member-name">HYUNJIN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">せろうん ひゃんうる たし もぐむご</p>
+            <p class="line original">새로운 향을 다시 머금고</p>
+            <p class="line translation">新しい香りをもう一度含ませて</p>
+            <p class="line ruby">と ちゃんらなん っこちゅる ね まめ ぴうぉ じゅるけ イェー</p>
+            <p class="line original">더 찬란한 꽃을 네 맘에 피워 줄게 (Yeah)</p>
+            <p class="line translation">もっときらびやかな花を君の心に咲かせてあげる</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">05</span><span class="member-name">HAN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">うり がち うそっとん なる とん なる よんふぁるる とぅろのっこ のっこ</p>
+            <p class="line original">우리 같이 웃었던 날 (던 날), 영화를 틀어놓고 (놓고)</p>
+            <p class="line translation">一緒に笑った日 映画を流したまま</p>
+            <p class="line ruby">そろまん ぶぁっとん なる とん なる くなる</p>
+            <p class="line original">서로만 봤던 날 (던 날), 그날</p>
+            <p class="line translation">お互いだけを見つめていた日 あの日</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">02</span><span class="member-name">LEE KNOW</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">オー イェー イェー</p>
+            <p class="line original">(Oh, yeah-yeah)</p>
+            <p class="line translation">（Oh, yeah-yeah）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEUNGMIN -->
+        <section class="lyric-block" data-member="seungmin">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">07</span><span class="member-name">SEUNGMIN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ぶと オー オー よっそっとん ごっ かた アー アー</p>
+            <p class="line original">부터, oh, oh, 였었던 것 같아, ah-ah</p>
+            <p class="line translation">あの時から始まっていた気がする</p>
+            <p class="line ruby">のわ しじゃけっとん く よるめ いるむん そるれみおった</p>
+            <p class="line original">너와 시작했던 그 여름의 이름은 설렘이었다</p>
+            <p class="line translation">君と始めたあの夏の名前は ときめきだった</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHANGBIN -->
+        <section class="lyric-block" data-member="changbin">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">03</span><span class="member-name">CHANGBIN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ウィア ザ ナイト イェー ウィア ザ ライト イェー</p>
+            <p class="line original">We're the night, yeah, we're the light, yeah</p>
+            <p class="line translation">僕たちは夜で 僕たちは光</p>
+            <p class="line ruby">ウィア ソー ブライト ベイブ ウィア ザ スカイ</p>
+            <p class="line original">We're so bright, babe, we're the sky</p>
+            <p class="line translation">僕たちはこんなにも輝く 空そのもの</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">02</span><span class="member-name">LEE KNOW</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">うりが まんどぅろ ねん い ぱだえ エメラルド</p>
+            <p class="line original">우리가 만들어 낸 이 바다의 emerald</p>
+            <p class="line translation">僕たちが作り出したこの海のエメラルド</p>
+            <p class="line ruby">シャイン ソー ブライト のわ な</p>
+            <p class="line original">Shine so bright, 너와 나</p>
+            <p class="line translation">まぶしく輝く 君と僕</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section class="lyric-block" data-member="felix">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">06</span><span class="member-name">FELIX</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">うり がち うそっとん なる よんふぁるる とぅろのっこ のっこ</p>
+            <p class="line original">우리 같이 웃었던 날, 영화를 틀어놓고 (놓고)</p>
+            <p class="line translation">一緒に笑った日 映画を流したまま</p>
+            <p class="line ruby">そろまん ぶぁっとん なる とん なる くなる</p>
+            <p class="line original">서로만 봤던 날 (던 날), 그날</p>
+            <p class="line translation">お互いだけを見つめていた日 あの日</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">01</span><span class="member-name">BANG CHAN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">オー イェー イェー</p>
+            <p class="line original">(Oh, yeah-yeah)</p>
+            <p class="line translation">（Oh, yeah-yeah）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN -->
+        <section class="lyric-block" data-member="hyunjin">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">04</span><span class="member-name">HYUNJIN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ぶと オー オー よっそっとん ごっ かた アー アー</p>
+            <p class="line original">부터, oh, oh, 였었던 것 같아, ah-ah</p>
+            <p class="line translation">あの時から始まっていた気がする</p>
+            <p class="line ruby">のわ しじゃけっとん く よるめ いるむん そるれみおった <span class="chant-overlap">うりが まんどぅん くなる</span></p>
+            <p class="line original">너와 시작했던 그 여름의 이름은 설렘이었다 <span class="chant-overlap">(우리가 만든 그날)</span></p>
+            <p class="line translation">君と始めたあの夏の名前は ときめきだった（僕たちが作ったあの日）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section class="lyric-block" data-member="felix">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">06</span><span class="member-name">FELIX</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line translation">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da</p>
+            <p class="line translation">Da-da-da, da, da-da-da-da, da</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line translation">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ <span class="chant-overlap">うりが まんどぅん くなる ウー</span></p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da <span class="chant-overlap">(우리가 만든 그날, ooh)</span></p>
+            <p class="line translation">Da-da-da（僕たちが作ったあの日）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEUNGMIN -->
+        <section class="lyric-block" data-member="seungmin">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">07</span><span class="member-name">SEUNGMIN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line translation">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da</p>
+            <p class="line translation">Da-da-da, da, da-da-da-da, da</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line translation">Da-da-da, da, da-da-da-da, da-da</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ <span class="chant-overlap">ウー ウー</span></p>
+            <p class="line original">Da-da-da, da, da-da-da-da, da <span class="chant-overlap">(Ooh, ooh)</span></p>
+            <p class="line translation">Da-da-da（Ooh, ooh）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN -->
+        <section class="lyric-block" data-member="hyunjin">
+          <div class="lyric-set">
+            <div class="member-column"><span class="member-id">04</span><span class="member-name">HYUNJIN</span></div>
+            <div class="lyric-data">
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">(Da-da-da, da, da-da-da-da, da-da)</p>
+            <p class="line translation">（Da-da-da, da, da-da-da-da, da-da）</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">(Da-da-da, da, da-da-da-da, da)</p>
+            <p class="line translation">（Da-da-da, da, da-da-da-da, da）</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">(Da-da-da, da, da-da-da-da, da-da)</p>
+            <p class="line translation">（Da-da-da, da, da-da-da-da, da-da）</p>
+            <p class="line ruby">ダ ダ ダ ダ ダ ダ ダ ダ ダ</p>
+            <p class="line original">(Da-da-da, da, da-da-da-da, da)</p>
+            <p class="line translation">（Da-da-da, da, da-da-da-da, da）</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="lyrics-console-bottom">
+
+          <span>
+            END OF FILE
+          </span>
+
+          <span>
+            DATA VERIFIED
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <footer class="song-footer">
+
+    <div>
+      <strong>
+        SKZ LYRIC LAB
+      </strong>
+
+      <p>
+        Stray Kids unofficial lyrics fan site.
+      </p>
+    </div>
+
+    <span class="footer-online">
+      DATABASE ONLINE
+    </span>
+
+  </footer>
+
+
+  <button
+    id="songPageTop"
+    class="song-page-top"
+    type="button"
+    aria-label="ページ上部へ戻る"
+  >
+    ↑
+  </button>
+
+
+  <script src="../js/song.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="../js/youtube-player.js"></script>
+
+</body>
+</html>
