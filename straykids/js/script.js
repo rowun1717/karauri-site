@@ -119,7 +119,7 @@ const songs = [
     type: "Original Song",
     date: "2026.08.07",
     release: "2026.08.07",
-    url: "song/Back Then.html",
+    url: "song/BackThen.html",
     image: "images/albums/THISTHAT.jpg",
     category: "latest",
     members: [
