@@ -50,6 +50,48 @@ const songs = [
   },
 
   {
+    title: "FARMING",
+    album: "THIS & THAT",
+    type: "Original Song",
+    date: "2026.08.07",
+    release: "2026.08.07",
+    url: "song/FARMING.html",
+    image: "images/albums/THISTHAT.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+  {
+    title: "I DO",
+    album: "THIS & THAT",
+    type: "Original Song",
+    date: "2026.08.07",
+    release: "2026.08.07",
+    url: "song/IDO.html",
+    image: "images/albums/THISTHAT.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+  {
     title: "MANIAC",
     album: "ODDINARY",
     type: "Original Song",
