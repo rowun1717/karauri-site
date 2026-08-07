@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>I DO | SKZ Lyric LAB</title>
+
+  <link
+  rel="stylesheet"
+  href="../css/song.css"
+>
+
+<link
+  rel="stylesheet"
+  href="../css/common-header.css?v=20260806-2"
+>
+
+<link
+  rel="icon"
+  type="image/png"
+  href="../images/logo.png"
+>
+
+<link
+  rel="apple-touch-icon"
+  href="../images/icon.png"
+>
+
+<link
+  rel="manifest"
+  href="manifest.json"
+>
+
+<meta name="theme-color" content="#050505">
+
+</head>
+
+<body>
+
+  <!-- ファイル起動演出 -->
+  <div id="fileLoader" class="file-loader">
+
+    <div class="file-loader-inner">
+
+      <p class="loader-code">
+        SKZ LYRIC LAB / FILE ACCESS
+      </p>
+
+      <h1 data-text="I DO">
+        I DO
+      </h1>
+
+      <p id="loaderMessage">
+        OPENING LYRIC FILE...
+      </p>
+
+      <div class="loader-bar">
+        <span id="loaderProgress"></span>
+      </div>
+
+      <p id="loaderPercent">
+        0%
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- 背景演出 -->
+  <div class="song-grid-background"></div>
+  <div class="song-scanlines"></div>
+  <div id="songPointerGlow" class="song-pointer-glow"></div>
+
+
+<!-- 共通ヘッダー -->
+<header class="site-header">
+
+  <a
+    href="../index.html"
+    class="header-logo"
+  >
+    <span class="header-logo-main">
+      SKZ
+    </span>
+
+    <span class="header-logo-sub">
+      LYRIC LAB
+    </span>
+  </a>
+
+
+  <nav
+    id="globalNav"
+    class="global-nav"
+  >
+    <a href="../index.html">
+      HOME
+    </a>
+
+    <a href="../search.html">
+      SEARCH
+    </a>
+
+    <a href="../albums.html">
+      ARCHIVE
+    </a>
+
+    <a href="#lyrics">
+      LYRICS
+    </a>
+
+    <a href="../members.html">
+      MEMBERS
+    </a>
+
+    <a href="../setlist.html">
+      SETLIST
+    </a>
+
+    <a href="../about.html">
+      ABOUT
+    </a>
+  </nav>
+
+
+  <button
+    id="menuButton"
+    class="menu-button"
+    type="button"
+    aria-label="メニューを開く"
+    aria-expanded="false"
+    aria-controls="globalNav"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+
+<!-- ヘッダーの外に置く -->
+<nav
+  id="globalNav"
+  class="global-nav"
+  aria-label="メインメニュー"
+>
+  <a href="index.html#latest">
+    <span>LATEST</span>
+  </a>
+
+  <a href="index.html#archive">
+    <span>ARCHIVE</span>
+  </a>
+
+  <a href="index.html#database">
+    <span>DATABASE</span>
+  </a>
+
+  <a href="search.html">
+    <span>SEARCH</span>
+  </a>
+
+  <a href="members.html">
+    <span>MEMBERS</span>
+  </a>
+
+  <a href="about.html">
+    <span>ABOUT</span>
+  </a>
+</nav>
+
+
+  <main>
+
+    <!-- 曲ヒーロー -->
+    <section class="song-hero">
+
+      <div class="song-hero-background">
+
+        <img
+          src="../images/albums/THISTHAT.jpg"
+          alt=""
+        >
+
+      </div>
+
+      <div class="song-hero-overlay"></div>
+
+      <div class="song-hero-content">
+
+        <div class="song-cover-panel reveal">
+
+          <div class="cover-header">
+
+            <span>
+              FILE NO. SKZ-TAT-005
+            </span>
+
+            <span class="active-status">
+              ACTIVE
+            </span>
+
+          </div>
+
+          <div class="cover-frame">
+
+            <img
+              src="../images/albums/THISTHAT.jpg"
+              alt="I DO"
+            >
+
+            <span class="corner top-left"></span>
+            <span class="corner top-right"></span>
+            <span class="corner bottom-left"></span>
+            <span class="corner bottom-right"></span>
+
+            <div class="cover-scan"></div>
+
+          </div>
+
+          <div class="cover-footer">
+
+            <span>
+              SUBJECT / STRAY KIDS
+            </span>
+
+            <span>
+              STATUS / VERIFIED
+            </span>
+
+          </div>
+          <section
+            class="music-player"
+            data-youtube-id="lLdOcFxU3tI">
+            <div class="youtube-player-wrap">
+              <div id="youtubePlayer"></div>
+            </div>
+
+            <div class="player-info">
+              <div>
+                <span class="player-label">NOW PLAYING</span>
+              </div>
+
+              <span id="currentTime">0:00</span>
+            </div>
+
+            <input
+              id="progressBar"
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+              aria-label="再生位置"
+            >
+
+            <div class="player-controls">
+
+              <button
+                id="rewindButton"
+                type="button"
+                aria-label="10秒戻る"
+              >
+                ↶
+              </button>
+
+              <button
+                id="playButton"
+                type="button"
+                aria-label="再生"
+              >
+                ▶
+              </button>
+
+              <button
+                id="forwardButton"
+                type="button"
+                aria-label="10秒進む"
+              >
+                ↷
+              </button>
+
+            </div>
+
+            <div class="player-bottom">
+              <span id="duration">0:00</span>
+
+              <button
+                id="muteButton"
+                type="button"
+                aria-label="ミュート"
+              >
+                🔊
+              </button>
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <div class="song-main-data reveal">
+
+          <p class="song-eyebrow">
+            LYRIC ANALYSIS FILE
+          </p>
+
+          <div class="song-tags">
+
+            <span class="song-tag">
+              Original Song
+            </span>
+
+            <span class="song-tag">
+              THIS &amp; THAT
+            </span>
+
+            <span class="song-tag karaoke">
+              JOYSOUND
+            </span>
+
+            <span class="song-tag karaoke">
+              DAM
+            </span>
+
+          </div>
+
+          <h1 class="song-title">
+            I DO
+          </h1>
+
+          <p class="song-subtitle">
+            Stray Kids
+          </p>
+
+          <dl class="song-data-table">
+
+            <div>
+              <dt>ALBUM</dt>
+              <dd>THIS &amp; THAT</dd>
+            </div>
+
+            <div>
+              <dt>RELEASE</dt>
+              <dd>2026.08.07</dd>
+            </div>
+
+            <div>
+              <dt>UPDATED</dt>
+              <dd>2026.08.07</dd>
+            </div>
+
+            <div>
+              <dt>LANGUAGE</dt>
+              <dd>KOREAN</dd>
+            </div>
+
+          </dl>
+
+          <div class="analysis-status">
+
+            <div>
+              <span class="analysis-dot"></span>
+
+              <p>
+                <small>KANA DATA</small>
+                <strong>COMPLETE</strong>
+              </p>
+            </div>
+
+            <div>
+              <span class="analysis-dot"></span>
+
+              <p>
+                <small>TRANSLATION</small>
+                <strong>COMPLETE</strong>
+              </p>
+            </div>
+
+            <div>
+              <span class="analysis-dot"></span>
+
+              <p>
+                <small>PART DATA</small>
+                <strong>COMPLETE</strong>
+              </p>
+            </div>
+
+          </div>
+
+          <a
+            href="#lyrics"
+            class="open-lyrics-button"
+          >
+            OPEN LYRIC DATA
+            <span>↓</span>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="song-hero-number">
+        FILE / I DO
+      </div>
+
+    </section>
+
+
+    <!-- 曲情報 -->
+    <section class="song-information">
+
+      <div class="section-label reveal">
+
+        <p>
+          01 / FILE INFORMATION
+        </p>
+
+        <h2>
+          Credits
+        </h2>
+
+      </div>
+
+      <div class="credit-grid reveal">
+
+        <div>
+          <span>ARTIST</span>
+          <strong>Stray Kids</strong>
+        </div>
+
+        <div>
+          <span>ALBUM</span>
+          <strong>THIS &amp; THAT</strong>
+        </div>
+
+        <div>
+          <span>LYRICS</span>
+          <strong>
+            Changbin
+          </strong>
+        </div>
+
+        <div>
+          <span>COMPOSED</span>
+          <strong>
+            Changbin, RESTART, 채강해
+          </strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- メンバーカラー -->
+    <section class="member-file-section">
+
+      <div class="section-label reveal">
+
+        <p>
+          02 / MEMBER IDENTIFICATION
+        </p>
+
+        <h2>
+          Part Colors
+        </h2>
+
+      </div>
+
+      <div class="member-filter reveal">
+
+        <button
+          class="member-filter-button active"
+          type="button"
+          data-member="all"
+        >
+          ALL
+        </button>
+
+        <button
+          class="member-filter-button chan"
+          type="button"
+          data-member="bangchan"
+        >
+          BANG CHAN
+        </button>
+
+        <button
+          class="member-filter-button leeknow"
+          type="button"
+          data-member="leeknow"
+        >
+          LEE KNOW
+        </button>
+
+        <button
+          class="member-filter-button changbin"
+          type="button"
+          data-member="changbin"
+        >
+          CHANGBIN
+        </button>
+
+        <button
+          class="member-filter-button hyunjin"
+          type="button"
+          data-member="hyunjin"
+        >
+          HYUNJIN
+        </button>
+
+        <button
+          class="member-filter-button han"
+          type="button"
+          data-member="han"
+        >
+          HAN
+        </button>
+
+        <button
+          class="member-filter-button felix"
+          type="button"
+          data-member="felix"
+        >
+          FELIX
+        </button>
+
+        <button
+          class="member-filter-button seungmin"
+          type="button"
+          data-member="seungmin"
+        >
+          SEUNGMIN
+        </button>
+
+        <button
+          class="member-filter-button in"
+          type="button"
+          data-member="in"
+        >
+          I.N
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- 歌詞 -->
+    <section
+      id="lyrics"
+      class="lyrics-section"
+    >
+
+      <div class="lyrics-header reveal">
+
+        <div>
+
+          <p>
+            03 / LYRIC DATABASE
+          </p>
+
+          <h2>
+            Lyrics
+          </h2>
+
+        </div>
+
+        <div class="lyrics-view-controls">
+
+          <button
+            class="view-button active"
+            data-view="all"
+          >
+            ALL DATA
+          </button>
+
+          <button
+            class="view-button"
+            data-view="original"
+          >
+            ORIGINAL
+          </button>
+
+          <button
+            class="view-button"
+            data-view="kana"
+          >
+            KANA
+          </button>
+
+          <button
+            class="view-button"
+            data-view="japanese"
+          >
+            JAPANESE
+          </button>
+
+          <button
+            id="fanchantToggle"
+            class="view-button fanchant-toggle"
+            type="button"
+            aria-pressed="false"
+          >
+            FANCHANT OFF
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="lyrics-console">
+
+        <div class="lyrics-console-top">
+
+          <span>
+            FILE : I_DO.LYRIC
+          </span>
+
+          <span>
+            STATUS : DECODED
+          </span>
+
+        </div>
+
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">アイ ドゥ フィール ザ セイム ペイン アズ ユー</p>
+            <p class="line original">I do feel the same pain as you</p>
+            <p class="line translation">僕も君と同じ痛みを感じている</p>
+            <p class="line ruby">エヴリ スカー エヴリ ウーンド</p>
+            <p class="line original">Every scar, every wound</p>
+            <p class="line translation">すべての傷痕も すべての傷も</p>
+            <p class="line ruby">アイ ドゥ イーヴン ウェン ユー フィール アローン</p>
+            <p class="line original">I do even when you feel alone</p>
+            <p class="line translation">君がひとりぼっちだと感じる時だって 僕は感じている</p>
+            <p class="line ruby">アイル ビー ライト ヒア ネヴァー ゴーン</p>
+            <p class="line original">I'll be right here, never gone</p>
+            <p class="line translation">僕はずっとここにいる 決していなくならない</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">05</span>
+              <span class="member-name">HAN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">もどぅどぅる はなっしくん かじご いんぬん ご</p>
+            <p class="line original">모두들 하나씩은 가지고 있는 거</p>
+            <p class="line translation">誰もが一つくらい抱えているもの</p>
+            <p class="line ruby">かすむそく きぴ ぱきょ っぱじじ あんぬん ご</p>
+            <p class="line original">가슴속 깊이 박혀 빠지지 않는 거</p>
+            <p class="line translation">胸の奥深くに刺さって抜けないもの</p>
+            <p class="line ruby">まる もったご ほんじゃ すむぎご いっち</p>
+            <p class="line original">말 못 하고 혼자 숨기고 있지</p>
+            <p class="line translation">口に出せず ひとりで隠している</p>
+            <p class="line ruby">あむろっち あぬん ちょかみょんそど</p>
+            <p class="line original">아무렇지 않은 척하면서도</p>
+            <p class="line translation">何でもないふりをしながらも</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHANGBIN -->
+        <section class="lyric-block" data-member="changbin">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">CHANGBIN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">ちうりょ へど かるすろく ぽんじょ</p>
+            <p class="line original">지우려 해도 갈수록 번져</p>
+            <p class="line translation">消そうとしても ますます広がっていく</p>
+            <p class="line ruby">うっこ いっそど そぐん むんどぅろじょ</p>
+            <p class="line original">웃고 있어도 속은 문드러져</p>
+            <p class="line translation">笑っていても 心の中は崩れていく</p>
+            <p class="line ruby">ユー ソート ユー ハド トゥ ホールド イット オン ユア オウン</p>
+            <p class="line original">You thought you had to hold it on your own</p>
+            <p class="line translation">ひとりで抱えなきゃいけないと思っていたんだろう</p>
+            <p class="line ruby">バット アイ フィール イット トゥー</p>
+            <p class="line original">But I feel it too</p>
+            <p class="line translation">でも僕もその痛みを感じている</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEUNGMIN -->
+        <section class="lyric-block" data-member="seungmin">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">07</span>
+              <span class="member-name">SEUNGMIN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">アイ ドゥ フィール ザ セイム ペイン アズ ユー</p>
+            <p class="line original">I do feel the same pain as you</p>
+            <p class="line translation">僕も君と同じ痛みを感じている</p>
+            <p class="line ruby">エヴリ スカー エヴリ ウーンド</p>
+            <p class="line original">Every scar, every wound</p>
+            <p class="line translation">すべての傷痕も すべての傷も</p>
+            <p class="line ruby">アイ ドゥ イーヴン ウェン ユー フィール アローン</p>
+            <p class="line original">I do even when you feel alone</p>
+            <p class="line translation">君がひとりぼっちだと感じる時だって 僕は感じている</p>
+            <p class="line ruby">アイル ビー ライト ヒア ネヴァー ゴーン</p>
+            <p class="line original">I'll be right here, never gone</p>
+            <p class="line translation">僕はずっとここにいる 決していなくならない</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">02</span>
+              <span class="member-name">LEE KNOW</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">ユー ドント ハフ トゥ キャリー ザット オール アローン</p>
+            <p class="line original">You don't have to carry that all alone</p>
+            <p class="line translation">全部をひとりで背負わなくていい</p>
+            <p class="line ruby">アイ フィール エヴリシング ユー ドゥ</p>
+            <p class="line original">I feel everything you do</p>
+            <p class="line translation">君が感じているすべてを 僕も感じている</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- I.N -->
+        <section class="lyric-block" data-member="in">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">08</span>
+              <span class="member-name">I.N</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">アイ ドゥ フィール ザ セイム ペイン アズ ユー</p>
+            <p class="line original">I do feel the same pain as you</p>
+            <p class="line translation">僕も君と同じ痛みを感じている</p>
+            <p class="line ruby">エヴリ スカー エヴリ ウーンド</p>
+            <p class="line original">Every scar, every wound</p>
+            <p class="line translation">すべての傷痕も すべての傷も</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section class="lyric-block" data-member="felix">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">ライク ア サンドキャッスル イン ザ ライジング タイド</p>
+            <p class="line original">Like a sandcastle in the rising tide</p>
+            <p class="line translation">満ちてくる潮の中の砂の城みたいに</p>
+            <p class="line ruby">オール ザ ドリームズ ウィー トライド ソー ハード トゥ ハイド</p>
+            <p class="line original">All the dreams we tried so hard to hide</p>
+            <p class="line translation">必死に隠そうとしてきたすべての夢も</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX + CHANGBIN -->
+        <section class="lyric-block chemistry" data-member="felixchangbin">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">06 + 03</span>
+              <span class="member-name">FELIX + CHANGBIN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">むのじん ごっ かた ぼよど さらじる ごっ かた ぼよど</p>
+            <p class="line original">무너진 것 같아 보여도, 사라질 것 같아 보여도</p>
+            <p class="line translation">崩れてしまったように見えても 消えてしまいそうに見えても</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section class="lyric-block" data-member="felix">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">ウィア ゴナ ファインド ア ウェイ トゥ ライズ <span class="chant-overlap">オールライト</span></p>
+            <p class="line original">We're gonna find a way to rise <span class="chant-overlap">(Alright)</span></p>
+            <p class="line translation">僕たちはもう一度立ち上がる道を見つける（大丈夫）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN + CHANGBIN -->
+        <section class="lyric-block chemistry" data-member="hyunjinchangbin">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">04 + 03</span>
+              <span class="member-name">HYUNJIN + CHANGBIN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">サムタイムズ ザ ナイト フィールズ ウェイ トゥー ロング</p>
+            <p class="line original">Sometimes, the night feels way too long</p>
+            <p class="line translation">時には夜があまりにも長く感じる</p>
+            <p class="line ruby">っくち あん ぼいる どぅたん トンネル</p>
+            <p class="line original">끝이 안 보일 듯한 tunnel</p>
+            <p class="line translation">終わりが見えないようなトンネル</p>
+            <p class="line ruby">ぽてょ おん しがんどぅれ てはん ぽさん</p>
+            <p class="line original">버텨 온 시간들에 대한 보상</p>
+            <p class="line translation">耐えてきた時間への報い</p>
+            <p class="line ruby">ちぐむ い すんがん きん ぱみ っくんな</p>
+            <p class="line original">지금 이 순간 긴 밤이 끝나</p>
+            <p class="line translation">今この瞬間 長い夜が終わる</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN -->
+        <section class="lyric-block" data-member="hyunjin">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">04</span>
+              <span class="member-name">HYUNJIN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">ぽてょ おん しがんどぅれ てはん ぽさん</p>
+            <p class="line original">버텨 온 시간들에 대한 보상</p>
+            <p class="line translation">耐えてきた時間への報い</p>
+            <p class="line ruby">ちぐむ い すんがん きん ぱみ っくんな</p>
+            <p class="line original">지금 이 순간 긴 밤이 끝나</p>
+            <p class="line translation">今この瞬間 長い夜が終わる</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- I.N -->
+        <section class="lyric-block" data-member="in">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">08</span>
+              <span class="member-name">I.N</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">アイ ドゥ フィール ザ セイム ペイン アズ ユー</p>
+            <p class="line original">I do feel the same pain as you</p>
+            <p class="line translation">僕も君と同じ痛みを感じている</p>
+            <p class="line ruby">エヴリ スカー エヴリ ウーンド</p>
+            <p class="line original">Every scar, every wound</p>
+            <p class="line translation">すべての傷痕も すべての傷も</p>
+            <p class="line ruby">アイ ドゥ イーヴン ウェン ユー フィール アローン</p>
+            <p class="line original">I do even when you feel alone</p>
+            <p class="line translation">君がひとりぼっちだと感じる時だって 僕は感じている</p>
+            <p class="line ruby">アイル ビー ライト ヒア ネヴァー ゴーン</p>
+            <p class="line original">I'll be right here, never gone</p>
+            <p class="line translation">僕はずっとここにいる 決していなくならない</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEUNGMIN -->
+        <section class="lyric-block" data-member="seungmin">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">07</span>
+              <span class="member-name">SEUNGMIN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">ユー ドント ハフ トゥ キャリー ザット オール アローン</p>
+            <p class="line original">You don't have to carry that all alone</p>
+            <p class="line translation">全部をひとりで背負わなくていい</p>
+            <p class="line ruby">アイ フィール エヴリシング ユー ドゥ</p>
+            <p class="line original">I feel everything you do</p>
+            <p class="line translation">君が感じているすべてを 僕も感じている</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">02</span>
+              <span class="member-name">LEE KNOW</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">アイ ドゥ フィール ザ セイム ペイン アズ ユー</p>
+            <p class="line original">I do feel the same pain as you</p>
+            <p class="line translation">僕も君と同じ痛みを感じている</p>
+            <p class="line ruby">エヴリ スカー エヴリ ウーンド</p>
+            <p class="line original">Every scar, every wound</p>
+            <p class="line translation">すべての傷痕も すべての傷も</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ALL -->
+        <section class="lyric-block" data-member="all">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">ALL</span>
+              <span class="member-name">ALL</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">ヘイ</p>
+            <p class="line original">Hey</p>
+            <p class="line translation">Hey</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHANGBIN -->
+        <section class="lyric-block" data-member="changbin">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">CHANGBIN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">イェー</p>
+            <p class="line original">yeah</p>
+            <p class="line translation">Yeah</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ALL -->
+        <section class="lyric-block" data-member="all">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">ALL</span>
+              <span class="member-name">ALL</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">ヘイ</p>
+            <p class="line original">Hey</p>
+            <p class="line translation">Hey</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN -->
+        <section class="lyric-block" data-member="hyunjin">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">04</span>
+              <span class="member-name">HYUNJIN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">イェー <span class="chant-overlap">アウ</span></p>
+            <p class="line original">yeah <span class="chant-overlap">(Ow)</span></p>
+            <p class="line translation">Yeah（Ow）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ALL -->
+        <section class="lyric-block" data-member="all">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">ALL</span>
+              <span class="member-name">ALL</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">アイ ドゥ フィール ザ セイム ペイン アズ ユー</p>
+            <p class="line original">I do feel the same pain as you</p>
+            <p class="line translation">僕も君と同じ痛みを感じている</p>
+            <p class="line ruby">エヴリ スカー エヴリ ウーンド</p>
+            <p class="line original">Every scar, every wound</p>
+            <p class="line translation">すべての傷痕も すべての傷も</p>
+            <p class="line ruby">アイ ドゥ イーヴン ウェン ユー フィール アローン</p>
+            <p class="line original">I do even when you feel alone</p>
+            <p class="line translation">君がひとりぼっちだと感じる時だって 僕は感じている</p>
+            <p class="line ruby">アイル ビー ライト ヒア ネヴァー ゴーン</p>
+            <p class="line original">I'll be right here, never gone</p>
+            <p class="line translation">僕はずっとここにいる 決していなくならない</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHANGBIN -->
+        <section class="lyric-block" data-member="changbin">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">CHANGBIN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">ユー ドント ハフ トゥ キャリー ザット オール アローン</p>
+            <p class="line original">You don't have to carry that all alone</p>
+            <p class="line translation">全部をひとりで背負わなくていい</p>
+            <p class="line ruby">アイ フィール エヴリシング ユー ドゥ</p>
+            <p class="line original">I feel everything you do</p>
+            <p class="line translation">君が感じているすべてを 僕も感じている</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- I.N -->
+        <section class="lyric-block" data-member="in">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">08</span>
+              <span class="member-name">I.N</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">アイ ドゥ フィール ザ セイム ペイン アズ ユー</p>
+            <p class="line original">I do feel the same pain as you</p>
+            <p class="line translation">僕も君と同じ痛みを感じている</p>
+            <p class="line ruby">エヴリ スカー エヴリ ウーンド</p>
+            <p class="line original">Every scar, every wound</p>
+            <p class="line translation">すべての傷痕も すべての傷も</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section class="lyric-block" data-member="felix">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">アイ ドゥ アイ ドゥ アイ キャン フィール イット トゥー <span class="chant-overlap">アイ フィール イット トゥー</span></p>
+            <p class="line original">I do, I do, I can feel it too <span class="chant-overlap">(I feel it too)</span></p>
+            <p class="line translation">僕も感じる 僕にも分かる（僕も感じている）</p>
+            <p class="line ruby">アイ ドゥ アイ ドゥ イェー イッツ ミー アンド ユー <span class="chant-overlap">イッツ ミー アンド ユー</span></p>
+            <p class="line original">I do, I do, yeah, it's me and you <span class="chant-overlap">(It's me and you)</span></p>
+            <p class="line translation">そう 僕と君なんだ（僕と君なんだ）</p>
+            <p class="line ruby">アイ ドゥ アイ ドゥ アイム イン イット ウィズ ユー <span class="chant-overlap">ちょ っくっかじ ウィル オールウェイズ ビー トゥゲザー</span></p>
+            <p class="line original">I do, I do, I'm in it with you <span class="chant-overlap">(저 끝까지 we'll always be together)</span></p>
+            <p class="line translation">僕も君と一緒に向き合う（あの果てまで ずっと一緒にいよう）</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN -->
+        <section class="lyric-block" data-member="hyunjin">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">04</span>
+              <span class="member-name">HYUNJIN</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">アイ ドゥ アイ ドゥ アイ キャン フィール イット トゥー ウォー</p>
+            <p class="line original">I do, I do, I can feel it too (Woah)</p>
+            <p class="line translation">僕も感じる 僕にも分かる（Woah）</p>
+            <p class="line ruby">アイ ドゥ アイ ドゥ イェー イッツ ミー アンド ユー ウォー</p>
+            <p class="line original">I do, I do, yeah, it's me and you (Woah)</p>
+            <p class="line translation">そう 僕と君なんだ（Woah）</p>
+            <p class="line ruby">アイ ドゥ アイ ドゥ アイム イン イット ウィズ ユー</p>
+            <p class="line original">I do, I do, I'm in it with you</p>
+            <p class="line translation">僕も君と一緒に向き合う</p>
+            <p class="line ruby">アイル ビー ライト ヒア ウィズ ユー</p>
+            <p class="line original">I'll be right here with you</p>
+            <p class="line translation">僕はここで君と一緒にいる</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set">
+            <div class="member-column">
+              <span class="member-id">02</span>
+              <span class="member-name">LEE KNOW</span>
+            </div>
+            <div class="lyric-data">
+            <p class="line ruby">アイル ビー ライト ヒア ウィズ ユー</p>
+            <p class="line original">I'll be right here with you</p>
+            <p class="line translation">僕はここで君と一緒にいる</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="lyrics-console-bottom">
+
+          <span>
+            END OF FILE
+          </span>
+
+          <span>
+            DATA VERIFIED
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <footer class="song-footer">
+
+    <div>
+      <strong>
+        SKZ LYRIC LAB
+      </strong>
+
+      <p>
+        Stray Kids unofficial lyrics fan site.
+      </p>
+    </div>
+
+    <span class="footer-online">
+      DATABASE ONLINE
+    </span>
+
+  </footer>
+
+
+  <button
+    id="songPageTop"
+    class="song-page-top"
+    type="button"
+    aria-label="ページ上部へ戻る"
+  >
+    ↑
+  </button>
+
+
+  <script src="../js/song.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="../js/youtube-player.js"></script>
+
+</body>
+</html>
