@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Holiday | SKZ Lyric LAB</title>
+
+  <link
+  rel="stylesheet"
+  href="../css/song.css"
+>
+
+<link
+  rel="stylesheet"
+  href="../css/common-header.css?v=20260806-2"
+>
+
+<link
+  rel="icon"
+  type="image/png"
+  href="../images/logo.png"
+>
+
+<link
+  rel="apple-touch-icon"
+  href="../images/icon.png"
+>
+
+<link
+  rel="manifest"
+  href="manifest.json"
+>
+
+<meta name="theme-color" content="#050505">
+
+</head>
+
+<body>
+
+  <!-- ファイル起動演出 -->
+  <div id="fileLoader" class="file-loader">
+
+    <div class="file-loader-inner">
+
+      <p class="loader-code">
+        SKZ LYRIC LAB / FILE ACCESS
+      </p>
+
+      <h1 data-text="STAY">
+        STAY
+      </h1>
+
+      <p id="loaderMessage">
+        OPENING LYRIC FILE...
+      </p>
+
+      <div class="loader-bar">
+        <span id="loaderProgress"></span>
+      </div>
+
+      <p id="loaderPercent">
+        0%
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- 背景演出 -->
+  <div class="song-grid-background"></div>
+  <div class="song-scanlines"></div>
+  <div id="songPointerGlow" class="song-pointer-glow"></div>
+
+
+<!-- 共通ヘッダー -->
+<header class="site-header">
+
+  <a
+    href="../index.html"
+    class="header-logo"
+  >
+    <span class="header-logo-main">
+      SKZ
+    </span>
+
+    <span class="header-logo-sub">
+      LYRIC LAB
+    </span>
+  </a>
+
+
+  <nav
+    id="globalNav"
+    class="global-nav"
+  >
+    <a href="../index.html">
+      HOME
+    </a>
+
+    <a href="../search.html">
+      SEARCH
+    </a>
+
+    <a href="../albums.html">
+      ARCHIVE
+    </a>
+
+    <a href="#lyrics">
+      LYRICS
+    </a>
+
+    <a href="../members.html">
+      MEMBERS
+    </a>
+
+    <a href="../setlist.html">
+      SETLIST
+    </a>
+
+    <a href="../about.html">
+      ABOUT
+    </a>
+  </nav>
+
+
+  <button
+    id="menuButton"
+    class="menu-button"
+    type="button"
+    aria-label="メニューを開く"
+    aria-expanded="false"
+    aria-controls="globalNav"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+
+  <main>
+
+    <!-- 曲ヒーロー -->
+    <section class="song-hero">
+
+      <div class="song-hero-background">
+
+        <img
+          src="../images/albums/album-Do It.jpg"
+          alt=""
+        >
+
+      </div>
+
+      <div class="song-hero-overlay"></div>
+
+      <div class="song-hero-content">
+
+        <div class="song-cover-panel reveal">
+
+          <div class="cover-header">
+
+            <span>
+              FILE NO. SKZ-DOIT-002
+            </span>
+
+            <span class="active-status">
+              ACTIVE
+            </span>
+
+          </div>
+
+          <div class="cover-frame">
+
+            <img
+              src="../images/albums/album-Do It.jpg"
+              alt="Holiday"
+            >
+
+            <span class="corner top-left"></span>
+            <span class="corner top-right"></span>
+            <span class="corner bottom-left"></span>
+            <span class="corner bottom-right"></span>
+
+            <div class="cover-scan"></div>
+
+          </div>
+
+          <div class="cover-footer">
+
+            <span>
+              SUBJECT / STRAY KIDS
+            </span>
+
+            <span>
+              STATUS / VERIFIED
+            </span>
+
+          </div>
+          <section
+            class="music-player"
+            data-youtube-id="n90Le0TrOrs">
+            <div class="youtube-player-wrap">
+              <div id="youtubePlayer"></div>
+            </div>
+
+            <div class="player-info">
+              <div>
+                <span class="player-label">NOW PLAYING</span>
+              </div>
+
+              <span id="currentTime">0:00</span>
+            </div>
+
+            <input
+              id="progressBar"
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+              aria-label="再生位置"
+            >
+
+            <div class="player-controls">
+
+              <button
+                id="rewindButton"
+                type="button"
+                aria-label="10秒戻る"
+              >
+                ↶
+              </button>
+
+              <button
+                id="playButton"
+                type="button"
+                aria-label="再生"
+              >
+                ▶
+              </button>
+
+              <button
+                id="forwardButton"
+                type="button"
+                aria-label="10秒進む"
+              >
+                ↷
+              </button>
+
+            </div>
+
+            <div class="player-bottom">
+              <span id="duration">0:00</span>
+
+              <button
+                id="muteButton"
+                type="button"
+                aria-label="ミュート"
+              >
+                🔊
+              </button>
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <div class="song-main-data reveal">
+
+          <p class="song-eyebrow">
+            LYRIC ANALYSIS FILE
+          </p>
+
+          <div class="song-tags">
+
+            <span class="song-tag">
+              Original Song
+            </span>
+
+            <span class="song-tag">
+              Do It
+            </span>
+
+          </div>
+
+
+          <h1 class="song-title">
+            Holiday
+          </h1>
+
+          <p class="song-subtitle">
+            Stray Kids
+          </p>
+
+
+          <!-- 基本情報＋Credits -->
+          <dl class="song-data-table">
+
+            <div>
+              <dt>ALBUM</dt>
+              <dd>Do It</dd>
+            </div>
+
+            <div>
+              <dt>RELEASE</dt>
+              <dd>2025.11.21</dd>
+            </div>
+
+            <div>
+              <dt>UPDATED</dt>
+              <dd>2026.08.08</dd>
+            </div>
+
+            <div>
+              <dt>LANGUAGE</dt>
+              <dd>KOREAN</dd>
+            </div>
+
+            <!-- Credits情報 -->
+            <div>
+              <dt>LYRICS</dt>
+              <dd>
+              BANGCHAN, HAN(3RACHA)</dd>
+            </div>
+
+            <div>
+              <dt>COMPOSED</dt>
+              <dd>
+                BANGCHAN, HAN(3RACHA), VERSACHOI
+              </dd>
+            </div>
+
+          </dl>
+
+        </div>
+
+
+        <div class="song-hero-number">
+          FILE / Holiday
+        </div>
+
+        </section>
+
+
+    <!-- メンバーカラー -->
+    <section class="member-file-section">
+
+      <div class="section-label reveal">
+
+        <p>
+          02 / MEMBER IDENTIFICATION
+        </p>
+
+        <h2>
+          Part Colors
+        </h2>
+
+      </div>
+
+      <div class="member-filter reveal">
+
+        <button
+          class="member-filter-button active"
+          type="button"
+          data-member="all"
+        >
+          ALL
+        </button>
+
+        <button
+          class="member-filter-button chan"
+          type="button"
+          data-member="bangchan"
+        >
+          BANG CHAN
+        </button>
+
+        <button
+          class="member-filter-button leeknow"
+          type="button"
+          data-member="leeknow"
+        >
+          LEE KNOW
+        </button>
+
+        <button
+          class="member-filter-button changbin"
+          type="button"
+          data-member="changbin"
+        >
+          CHANGBIN
+        </button>
+
+        <button
+          class="member-filter-button hyunjin"
+          type="button"
+          data-member="hyunjin"
+        >
+          HYUNJIN
+        </button>
+
+        <button
+          class="member-filter-button han"
+          type="button"
+          data-member="han"
+        >
+          HAN
+        </button>
+
+        <button
+          class="member-filter-button felix"
+          type="button"
+          data-member="felix"
+        >
+          FELIX
+        </button>
+
+        <button
+          class="member-filter-button seungmin"
+          type="button"
+          data-member="seungmin"
+        >
+          SEUNGMIN
+        </button>
+
+        <button
+          class="member-filter-button in"
+          type="button"
+          data-member="in"
+        >
+          I.N
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- 歌詞 -->
+    <section
+      id="lyrics"
+      class="lyrics-section"
+    >
+
+      <div class="lyrics-header reveal">
+
+        <div>
+
+          <p>
+            03 / LYRIC DATABASE
+          </p>
+
+          <h2>
+            Lyrics
+          </h2>
+
+        </div>
+
+        <div class="lyrics-view-controls">
+
+          <button
+            class="view-button active"
+            data-view="all"
+          >
+            ALL DATA
+          </button>
+
+          <button
+            class="view-button"
+            data-view="original"
+          >
+            ORIGINAL
+          </button>
+
+          <button
+            class="view-button"
+            data-view="kana"
+          >
+            KANA
+          </button>
+
+          <button
+            class="view-button"
+            data-view="japanese"
+          >
+            JAPANESE
+          </button>
+
+          <button
+            id="fanchantToggle"
+            class="view-button fanchant-toggle"
+            type="button"
+            aria-pressed="false"
+          >
+            FANCHANT OFF
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="lyrics-console">
+
+        <div class="lyrics-console-top">
+
+          <span>
+            FILE : HOLIDAY.LYRIC
+          </span>
+
+          <span>
+            STATUS : DECODED
+          </span>
+
+        </div>
+
+
+        <!-- BANG CHAN -->
+        <section
+          class="lyric-block"
+          data-member="bangchan"
+        >
+          <div class="lyric-set" data-time="13">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              アイ キャント リメンバー ウェン アイ ハド マイ オウン フリー タイム
+            </p>
+            <p class="line original">
+              I can't remember when I had my own free time
+            </p>
+            <p class="line translation">
+              自分だけの自由な時間があったのが いつだったか思い出せない
+            </p>
+            <p class="line ruby">
+              フリー タイム オー オー オー
+            </p>
+            <p class="line original">
+              (Free time; Oh-oh, oh)
+            </p>
+            <p class="line translation">
+              （自由な時間 Oh-oh, oh）
+            </p>
+            <p class="line ruby">
+              トゥー ビジー ドゥーイング ディス アンド ザット オー ハウ タイム フライズ
+            </p>
+            <p class="line original">
+              Too busy doing this and that, oh, how time flies
+            </p>
+            <p class="line translation">
+              あれこれ忙しくしていたら ああ 時間が過ぎるのは本当に早い
+            </p>
+            <p class="line ruby">
+              フライズ
+            </p>
+            <p class="line original">
+              (Flies)
+            </p>
+            <p class="line translation">
+              （早い）
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN -->
+        <section
+          class="lyric-block"
+          data-member="hyunjin"
+        >
+          <div class="lyric-set" data-time="24.4">
+            <div class="member-column">
+              <span class="member-id">04</span>
+              <span class="member-name">HYUNJIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              キャン アイ イーヴン ドゥー モア ウェン ウィル アイ フォール
+            </p>
+            <p class="line original">
+              Can I even do more? When will I fall?
+            </p>
+            <p class="line translation">
+              まだもっと頑張れるのかな？
+              それとも いつか倒れてしまうのかな？
+            </p>
+            <p class="line ruby">
+              フラッディッド バイ マイ オウン クエスチョンズ
+            </p>
+            <p class="line original">
+              Flooded by my own questions,
+            </p>
+            <p class="line translation">
+              自分自身の問いに飲み込まれて
+            </p>
+            <p class="line ruby">
+              ワッツ イット オール フォー
+            </p>
+            <p class="line original">
+              what's it all for?
+            </p>
+            <p class="line translation">
+              これは一体何のためなんだろう？
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEUNGMIN -->
+        <section
+          class="lyric-block"
+          data-member="seungmin"
+        >
+          <div class="lyric-set" data-time="31.3">
+            <div class="member-column">
+              <span class="member-id">07</span>
+              <span class="member-name">SEUNGMIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              フー アム アイ キディング テイク ミー アウトドアーズ
+            </p>
+            <p class="line original">
+              Who am I kidding? Take me outdoors
+            </p>
+            <p class="line translation">
+              誰をごまかそうとしてるんだ？
+              外へ連れ出してよ
+            </p>
+            <p class="line ruby">
+              エス オー エス ジェスチャー ワッツ イット オール フォー
+            </p>
+            <p class="line original">
+              S-O-S gesture, what's it all for?
+            </p>
+            <p class="line translation">
+              SOSのサインを送りながら
+              これは一体何のためなんだろう？
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEE KNOW -->
+        <section
+          class="lyric-block"
+          data-member="leeknow"
+        >
+          <div class="lyric-set" data-time="38">
+            <div class="member-column">
+              <span class="member-id">02</span>
+              <span class="member-name">LEE KNOW</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              アイ ジャスト ワナ フィール ザ サン ブリング ミー トゥ ライフ
+            </p>
+            <p class="line original">
+              I just wanna feel the sun bring me to life
+            </p>
+            <p class="line translation">
+              太陽のぬくもりを感じて 生きている実感を取り戻したい
+            </p>
+            <p class="line ruby">
+              アイ ジャスト ワナ シー ミー ラン アンダー ザ ライト
+            </p>
+            <p class="line original">
+              I just wanna see me run under the light
+            </p>
+            <p class="line translation">
+              光の下を駆ける自分を見つめたい
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section
+          class="lyric-block"
+          data-member="felix"
+        >
+          <div class="lyric-set" data-time="50">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              ウィズアウト ア ソート イン マイ ヘッド アイマ テイク ア ディープ ブレス
+            </p>
+            <p class="line original">
+              Without a thought in my head, I'ma take a deep breath
+            </p>
+            <p class="line translation">
+              何も考えずに 深く息を吸い込もう
+            </p>
+            <p class="line ruby">
+              ジャスト フィル アップ マイ チェスト アイ ドント ウォント エニー ストレス
+            </p>
+            <p class="line original">
+              Just fill up my chest, I don't want any stress
+            </p>
+            <p class="line translation">
+              胸いっぱいに息を満たして
+              もう何のストレスも抱えたくない
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- I.N -->
+        <section
+          class="lyric-block"
+          data-member="in"
+        >
+          <div class="lyric-set" data-time="56.9">
+            <div class="member-column">
+              <span class="member-id">08</span>
+              <span class="member-name">I.N</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              アイ ジャスト ワナ ビー ザット バード フライング ソー ハイ
+            </p>
+            <p class="line original">
+              I just wanna be that bird flying so high
+            </p>
+            <p class="line translation">
+              あんなふうに高く空を飛ぶ鳥になりたい
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BANG CHAN -->
+        <section
+          class="lyric-block"
+          data-member="bangchan"
+        >
+          <div class="lyric-set" data-time="63">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              フム イェー アイム シック アンド タイアード アズ アイマ ニード ア ホリデー
+            </p>
+            <p class="line original">
+              Hm, yeah, I'm sick and tired as I'ma need a holiday
+            </p>
+            <p class="line translation">
+              うん もう心も体も疲れ切った
+              休みが必要なんだ
+            </p>
+            <p class="line ruby">
+              ニード ア ホリデー ニード ア ホリデー
+            </p>
+            <p class="line original">
+              Need a holiday, need a holiday
+            </p>
+            <p class="line translation">
+              休みが必要なんだ
+              本当に休みが必要なんだ
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN -->
+        <section
+          class="lyric-block"
+          data-member="hyunjin"
+        >
+          <div class="lyric-set" data-time="70.5">
+            <div class="member-column">
+              <span class="member-id">04</span>
+              <span class="member-name">HYUNJIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              アイヴ ビーン ワーキング ハード ノー キャップ イェー ジャスト レット ミー テイク ア ブレイク
+            </p>
+            <p class="line original">
+              I've been working hard, no cap, yeah, just let me take a break
+            </p>
+            <p class="line translation">
+              本当にずっと頑張ってきたんだ だから少しだけ休ませて
+            </p>
+            <p class="line ruby">
+              レット ミー テイク ア ブレイク レット ミー テイク ア ブレイク
+            </p>
+            <p class="line original">
+              Let me take a break, let me take a break
+            </p>
+            <p class="line translation">
+              少し休ませて 少し休ませて
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section
+          class="lyric-block"
+          data-member="felix"
+        >
+          <div class="lyric-set" data-time="76.8">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              オー アイ キャント ゴー オン アイム ジャスト スタック
+            </p>
+            <p class="line original">
+              Oh, I can't go on, I'm just stuck
+            </p>
+            <p class="line translation">
+              ああ もうこのままじゃ進めない
+              ただ立ち止まったままなんだ
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHANGBIN -->
+        <section
+          class="lyric-block"
+          data-member="changbin"
+        >
+          <div class="lyric-set" data-time="80.6">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">CHANGBIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              ニード ア ホリデー ニ ニード ア ホリデー
+            </p>
+            <p class="line original">
+              Need a holiday, ne-need a holiday
+            </p>
+            <p class="line translation">
+              休みが必要なんだ
+              やっぱり休みが必要なんだ
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section
+          class="lyric-block"
+          data-member="felix"
+        >
+          <div class="lyric-set" data-time="83.2">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              オー アイ キャント ムーヴ オン アイム ソー ロスト
+            </p>
+            <p class="line original">
+              Oh, I can't move on, I'm so lost
+            </p>
+            <p class="line translation">
+              ああ もう前へ進めない
+              どこへ向かえばいいのか分からない
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHANGBIN -->
+        <section
+          class="lyric-block"
+          data-member="changbin"
+        >
+          <div class="lyric-set" data-time="86.8">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">CHANGBIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              レット ミー テイク ア ブレイク レ レ レット ミー テイク ア ブレイク
+            </p>
+            <p class="line original">
+              Let me take a break, le-le-let me take a break
+            </p>
+            <p class="line translation">
+              少し休ませて
+              やっと少し休ませて
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HAN -->
+        <section
+          class="lyric-block"
+          data-member="han"
+        >
+          <div class="lyric-set" data-time="90">
+            <div class="member-column">
+              <span class="member-id">05</span>
+              <span class="member-name">HAN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              ベター ベター デイ おげっち
+            </p>
+
+            <p class="line original">
+              Better, better day 오겠지
+            </p>
+
+            <p class="line translation">
+              きっともっと良い日が来るだろう
+            </p>
+
+            <p class="line ruby">
+              ちぇもってろ うむじぎょっとん きぶんどぅる うぉんさんてろ
+            </p>
+
+            <p class="line original">
+              제멋대로 움직였던 기분들 원상태로
+            </p>
+
+            <p class="line translation">
+              勝手に揺れ動いていた気持ちは元通りに
+            </p>
+
+            <p class="line ruby">
+              ちぐぬん とぅんぐんで ねいるん っぴょじょく もそりえ ねが たあ とじょ
+            </p>
+
+            <p class="line original">
+              지구는 둥근데 내일은 뾰족 모서리에 내가 닿아 터져
+            </p>
+
+            <p class="line translation">
+              地球は丸いのに 明日は尖っていて その角に僕が触れて弾ける
+            </p>
+            <p class="line ruby">
+              マイ フレンド イッツ ビーン ソー ハード
+            </p>
+            <p class="line original">
+              My friend, it's been so hard
+            </p>
+            <p class="line translation">
+              友よ 本当に大変だったよね
+            </p>
+            <p class="line ruby">
+              ルック ワット ウィーヴ ダン イッツ ソー ブライト イッツ タイム
+            </p>
+            <p class="line original">
+              Look what we've done, it's so bright, it's time
+            </p>
+            <p class="line translation">
+              見てよ 僕たちが成し遂げたものを
+              とても輝いている さあ始める時だ
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHANGBIN -->
+        <section
+          class="lyric-block"
+          data-member="changbin"
+        >
+          <div class="lyric-set" data-time="101.4">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">CHANGBIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              うりん へや へ くぬる みっ へもっ かるご ネップ
+            </p>
+            <p class="line original">
+              우린 해야 해 그늘 밑 해먹 깔고 nap,
+            </p>
+            <p class="line translation">
+              木陰にハンモックを吊って昼寝して
+              細切れの時間さえ 一分一秒まで満喫しよう
+            </p>
+            <p class="line ruby">
+              ちゃるげ っちょげじん しがん ぶん だにろ フレックス
+            </p>
+            <p class="line original">
+              잘게 쪼개진 시간 분 단위로 flex
+            </p>
+            <p class="line translation">
+              俺たちは休まなきゃいけない
+            </p>
+            <p class="line ruby">
+              ちごぱっこ てしね ちゅごぱど さらんぐぁ ぴょんふぁ
+            </p>
+            <p class="line original">
+              치고받고 대신에 주고받어 사랑과 평화
+            </p>
+            <p class="line translation">
+              殴り合う代わりに
+              愛と平和を分かち合おう
+            </p>
+            <p class="line ruby">
+              ワン ラブ ウィー ニード サム レスト
+            </p>
+            <p class="line original">
+              one love, we need some rest
+            </p>
+            <p class="line translation">
+              今の俺たちには少し休息が必要なんだ
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HAN -->
+        <section
+          class="lyric-block"
+          data-member="han"
+        >
+          <div class="lyric-set" data-time="109.9">
+            <div class="member-column">
+              <span class="member-id">05</span>
+              <span class="member-name">HAN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              いるぬんだみょん いるぬん でろ たし ちぇうぉ
+            </p>
+            <p class="line original">
+              잃는다면 잃는 대로 다시 채워
+            </p>
+            <p class="line translation">
+              失ったなら 失ったぶんだけ また満たせばいい
+            </p>
+            <p class="line ruby">
+              ウィー ドント ケア アット オール レット アス テイク ア ブレイク
+            </p>
+            <p class="line original">
+              We don't care at all, let us take a break
+            </p>
+            <p class="line translation">
+              そんなことは気にしない
+              少し休もう
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- I.N -->
+        <section
+          class="lyric-block"
+          data-member="in"
+        >
+          <div class="lyric-set" data-time="115.3">
+            <div class="member-column">
+              <span class="member-id">08</span>
+              <span class="member-name">I.N</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              アイ ジャスト ワナ フィール ザ サン ブリング ミー トゥ ライフ
+            </p>
+            <p class="line original">
+              I just wanna feel the sun bring me to life
+            </p>
+            <p class="line translation">
+              太陽のぬくもりを感じて 生きている実感を取り戻したい
+            </p>
+            <p class="line ruby">
+              アイ ジャスト ワナ シー ミー ラン アンダー ザ ライト
+            </p>
+            <p class="line original">
+              I just wanna see me run under the light
+            </p>
+            <p class="line translation">
+              光の下を駆ける自分を見つめたい
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHANGBIN -->
+        <section
+          class="lyric-block"
+          data-member="changbin"
+        >
+          <div class="lyric-set" data-time="126.8">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">CHANGBIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              ウィズアウト ア ソート イン マイ ヘッド アイマ テイク ア ディープ ブレス
+            </p>
+            <p class="line original">
+              Without a thought in my head, I'ma take a deep breath
+            </p>
+            <p class="line translation">
+              何も考えずに 深く息を吸い込もう
+            </p>
+            <p class="line ruby">
+              ジャスト フィル アップ マイ チェスト アイ ドント ウォント エニー ストレス
+            </p>
+            <p class="line original">
+              Just fill up my chest, I don't want any stress
+            </p>
+            <p class="line translation">
+              胸いっぱいに息を満たして
+              もう何のストレスも抱えたくない
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BANG CHAN -->
+        <section
+          class="lyric-block"
+          data-member="bangchan"
+        >
+          <div class="lyric-set" data-time="133.7">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              アイ ジャスト ワナ ビー ザット バード フライング ソー ハイ
+            </p>
+            <p class="line original">
+              I just wanna be that bird flying so high
+            </p>
+            <p class="line translation">
+              あんなふうに高く空を飛ぶ鳥になりたい
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEUNGMIN -->
+        <section
+          class="lyric-block"
+          data-member="seungmin"
+        >
+          <div class="lyric-set" data-time="139.2">
+            <div class="member-column">
+              <span class="member-id">07</span>
+              <span class="member-name">SEUNGMIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              フム イェー アイム シック アンド タイアード アズ アイマ ニード ア ホリデー
+            </p>
+            <p class="line original">
+              Hm, yeah, I'm sick and tired as I'ma need a holiday
+            </p>
+            <p class="line translation">
+              うん もう心も体も疲れ切った
+              休みが必要なんだ
+            </p>
+            <p class="line ruby">
+              ニード ア ホリデー ニード ア ホリデー
+            </p>
+            <p class="line original">
+              Need a holiday, need a holiday
+            </p>
+            <p class="line translation">
+              休みが必要なんだ
+              本当に休みが必要なんだ
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- I.N -->
+        <section
+          class="lyric-block"
+          data-member="in"
+        >
+          <div class="lyric-set" data-time="147.2">
+            <div class="member-column">
+              <span class="member-id">08</span>
+              <span class="member-name">I.N</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              アイヴ ビーン ワーキング ハード ノー キャップ イェー ジャスト レット ミー テイク ア ブレイク
+            </p>
+            <p class="line original">
+              I've been working hard, no cap, yeah, just let me take a break
+            </p>
+            <p class="line translation">
+              本当にずっと頑張ってきたんだ
+              だから少しだけ休ませて
+            </p>
+            <p class="line ruby">
+              レット ミー テイク ア ブレイク レット ミー テイク ア ブレイク
+            </p>
+            <p class="line original">
+              Let me take a break, let me take a break
+            </p>
+            <p class="line translation">
+              少し休ませて
+              少し休ませて
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section
+          class="lyric-block"
+          data-member="felix"
+        >
+          <div class="lyric-set" data-time="153.6">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              オー アイ キャント ゴー オン アイム ジャスト スタック
+            </p>
+            <p class="line original">
+              Oh, I can't go on, I'm just stuck
+            </p>
+            <p class="line translation">
+              ああ もうこのままじゃ進めない
+              ただ立ち止まったままなんだ
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEUNGMIN -->
+        <section
+          class="lyric-block"
+          data-member="seungmin"
+        >
+          <div class="lyric-set" data-time="157.2">
+            <div class="member-column">
+              <span class="member-id">07</span>
+              <span class="member-name">SEUNGMIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              ニード ア ホリデー ニ ニード ア ホリデー
+            </p>
+            <p class="line original">
+              Need a holiday, ne-need a holiday
+            </p>
+            <p class="line translation">
+              休みが必要なんだ
+              やっぱり休みが必要なんだ
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FELIX -->
+        <section
+          class="lyric-block"
+          data-member="felix"
+        >
+          <div class="lyric-set" data-time="160">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              オー アイ キャント ムーヴ オン アイム ソー ロスト
+            </p>
+            <p class="line original">
+              Oh, I can't move on, I'm so lost
+            </p>
+            <p class="line translation">
+              ああ もう前へ進めない
+              どこへ向かえばいいのか分からない
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEUNGMIN -->
+        <section
+          class="lyric-block"
+          data-member="seungmin"
+        >
+          <div class="lyric-set" data-time="163.6">
+            <div class="member-column">
+              <span class="member-id">07</span>
+              <span class="member-name">SEUNGMIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              レット ミー テイク ア ブレイク レ レ レット ミー テイク ア ブレイク
+            </p>
+            <p class="line original">
+              Let me take a break, le-le-let me take a break
+            </p>
+            <p class="line translation">
+              少し休ませて
+              やっと少し休ませて
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEE KNOW -->
+        <section
+          class="lyric-block"
+          data-member="leeknow"
+        >
+          <div class="lyric-set" data-time="167.2">
+            <div class="member-column">
+              <span class="member-id">02</span>
+              <span class="member-name">LEE KNOW</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              ウェン アイム ゴーン ドント イーヴン トライ トゥ ファインド ミー
+            </p>
+            <p class="line original">
+              When I'm gone, don't even try to find me
+            </p>
+            <p class="line translation">
+              僕がいなくなっても
+              探そうとしなくていい
+            </p>
+            <p class="line ruby">
+              レット ミー ビー コーズ アイヴ ビーン アット イット フォー ソー ロング
+            </p>
+            <p class="line original">
+              Let me be, 'cause I've been at it for so long
+            </p>
+            <p class="line translation">
+              そっとしておいて
+              ずっと頑張り続けてきたんだから
+            </p>
+            <p class="line ruby">
+              ウェン アイム レディ アイル ビー バック ドント ウォーリー
+            </p>
+            <p class="line original">
+              When I'm ready, I'll be back, don't worry
+            </p>
+            <p class="line translation">
+              準備ができたら戻ってくるから
+              心配しないで
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HYUNJIN -->
+        <section
+          class="lyric-block"
+          data-member="hyunjin"
+        >
+          <div class="lyric-set" data-time="176.5">
+            <div class="member-column">
+              <span class="member-id">04</span>
+              <span class="member-name">HYUNJIN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              レット ミー テイク ア ブレイク レ レ レット ミー テイク ア ブレイク
+            </p>
+            <p class="line original">
+              Let me take a break, le-le-let me take a break
+            </p>
+            <p class="line translation">
+              少し休ませて
+              やっと少し休ませて
+            </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BANG CHAN -->
+        <section
+          class="lyric-block"
+          data-member="bangchan"
+        >
+          <div class="lyric-set" data-time="184">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+
+            <div class="lyric-data">
+            <p class="line ruby">
+              レ レ レット ミー テイク ア ブレイク
+            </p>
+            <p class="line original">
+              Le-le-let me take a break
+            </p>
+            <p class="line translation">
+              やっと少し休ませて
+            </p>
+            </div>
+          </div>
+        </section>
+
+
+        <div class="lyrics-console-bottom">
+
+          <span>
+            END OF FILE
+          </span>
+
+          <span>
+            DATA VERIFIED
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <footer class="song-footer">
+
+    <div>
+      <strong>
+        SKZ LYRIC LAB
+      </strong>
+
+      <p>
+        Stray Kids unofficial lyrics fan site.
+      </p>
+    </div>
+
+    <span class="footer-online">
+      DATABASE ONLINE
+    </span>
+
+  </footer>
+
+
+  <button
+    id="songPageTop"
+    class="song-page-top"
+    type="button"
+    aria-label="ページ上部へ戻る"
+  >
+    ↑
+  </button>
+
+
+  <script src="../js/song.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="../js/youtube-player.js"></script>
+
+</body>
+</html>
