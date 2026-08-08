@@ -1,0 +1,1367 @@
+/* ========================================
+   SKZ Lyric LAB 共通ヘッダー
+======================================== */
+
+:root {
+  --header-height: 82px;
+  --header-mobile-height: 70px;
+
+  --header-black: #050505;
+  --header-white: #f5f5f5;
+  --header-gray: #b8b8c0;
+  --header-pink: #ff3f83;
+
+  --header-border:
+    rgba(255, 255, 255, 0.13);
+}
+
+
+/* ========================================
+   ヘッダー本体
+======================================== */
+
+.site-header {
+  position: fixed !important;
+
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+
+  z-index: 30000 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  width: 100% !important;
+  height: var(--header-height) !important;
+
+  margin: 0 !important;
+  padding: 0 5vw !important;
+
+  color: var(--header-white) !important;
+
+  background:
+    rgba(5, 5, 5, 0.94) !important;
+
+  border: 0 !important;
+  border-bottom:
+    1px solid var(--header-border) !important;
+
+  box-shadow:
+    0 12px 40px
+    rgba(0, 0, 0, 0.32) !important;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  overflow: visible !important;
+}
+
+
+/* ========================================
+   ロゴ
+======================================== */
+
+.site-header .header-logo {
+  position: relative !important;
+  z-index: 30003 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+
+  flex: 0 0 auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: var(--header-white) !important;
+
+  text-decoration: none !important;
+}
+
+
+.site-header .header-logo-main {
+  display: inline-block !important;
+
+  color: var(--header-pink) !important;
+
+  font-size: 24px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.06em !important;
+}
+
+
+.site-header .header-logo-sub {
+  display: inline-block !important;
+
+  padding-left: 11px !important;
+
+  color: var(--header-white) !important;
+
+  border-left:
+    1px solid rgba(
+      255,
+      255,
+      255,
+      0.28
+    ) !important;
+
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.2em !important;
+}
+
+
+/* ========================================
+   PCメニュー
+======================================== */
+
+.site-header #globalNav {
+  position: static !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 30px !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  border: 0 !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  pointer-events: auto !important;
+
+  transform: none !important;
+}
+
+
+.site-header #globalNav > a {
+  position: relative !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+
+  width: auto !important;
+  min-height: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: var(--header-gray) !important;
+  background: transparent !important;
+
+  border: 0 !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  transform: none !important;
+
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.14em !important;
+
+  text-decoration: none !important;
+  text-indent: 0 !important;
+  white-space: nowrap !important;
+}
+
+
+.site-header #globalNav > a::before {
+  content: none !important;
+  display: none !important;
+}
+
+
+.site-header #globalNav > a::after {
+  content: "" !important;
+
+  position: absolute !important;
+
+  right: 0 !important;
+  bottom: -10px !important;
+  left: 0 !important;
+
+  display: block !important;
+
+  width: 100% !important;
+  height: 2px !important;
+
+  background: var(--header-pink) !important;
+
+  opacity: 1 !important;
+
+  transform: scaleX(0) !important;
+  transform-origin: right !important;
+
+  transition:
+    transform 0.25s ease !important;
+}
+
+
+.site-header #globalNav > a:hover {
+  color: #ffffff !important;
+}
+
+
+.site-header #globalNav > a:hover::after,
+.site-header #globalNav > a.is-current::after {
+  transform: scaleX(1) !important;
+  transform-origin: left !important;
+}
+
+
+.site-header #globalNav > a.is-current {
+  color: var(--header-pink) !important;
+}
+
+
+/* ========================================
+   ハンバーガーボタン
+======================================== */
+
+.site-header #menuButton {
+  position: relative !important;
+  z-index: 30003 !important;
+
+  display: none !important;
+  place-items: center !important;
+
+  flex: 0 0 50px !important;
+
+  width: 50px !important;
+  height: 50px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border:
+    1px solid var(--header-border) !important;
+  border-radius: 50% !important;
+
+  color: #ffffff !important;
+  background: #151518 !important;
+
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  touch-action: manipulation;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+
+.site-header #menuButton > span {
+  position: absolute !important;
+  left: 50% !important;
+
+  display: block !important;
+
+  width: 22px !important;
+  height: 1px !important;
+
+  margin: 0 !important;
+
+  background: #ffffff !important;
+
+  transform: translateX(-50%) !important;
+
+  transition:
+    top 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease !important;
+}
+
+
+.site-header #menuButton > span:nth-child(1) {
+  top: 17px !important;
+}
+
+.site-header #menuButton > span:nth-child(2) {
+  top: 24px !important;
+}
+
+.site-header #menuButton > span:nth-child(3) {
+  top: 31px !important;
+}
+
+
+/* ========================================
+   スマホメニュー
+======================================== */
+
+@media screen and (max-width: 900px) {
+
+  .site-header {
+    height:
+      var(--header-mobile-height) !important;
+
+    padding: 0 18px !important;
+
+    /*
+      fixedメニューがヘッダー内に
+     閉じ込められるのを防ぐ
+    */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+
+  .site-header #menuButton {
+    display: grid !important;
+  }
+
+
+  /*
+    全画面メニュー
+  */
+  .site-header #globalNav {
+    position: fixed !important;
+
+    top:
+      var(--header-mobile-height) !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    z-index: 30001 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+
+    width: 100vw !important;
+    height:
+      calc(
+        100dvh -
+        var(--header-mobile-height)
+      ) !important;
+
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 22px 24px 45px !important;
+
+    color: var(--header-white) !important;
+
+    background: #050505 !important;
+    background-image:
+      radial-gradient(
+        circle at 100% 0%,
+        rgba(255, 63, 131, 0.17),
+        transparent 45%
+      ) !important;
+
+    border: 0 !important;
+    border-top:
+      1px solid rgba(
+        255,
+        63,
+        131,
+        0.32
+      ) !important;
+
+    box-shadow:
+      0 30px 80px
+      rgba(0, 0, 0, 0.8) !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    visibility: hidden !important;
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+
+    transform: translateX(100%) !important;
+
+    transition:
+      visibility 0.35s ease,
+      opacity 0.28s ease,
+      transform 0.35s ease !important;
+
+    isolation: isolate !important;
+  }
+
+
+  .site-header #globalNav.is-open {
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    pointer-events: auto !important;
+
+    transform: translateX(0) !important;
+  }
+
+
+  /*
+    スマホのメニュー項目
+  */
+  .site-header #globalNav > a {
+    position: relative !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    flex: 0 0 auto !important;
+
+    width: 100% !important;
+    min-height: 65px !important;
+
+    margin: 0 !important;
+    padding: 0 14px !important;
+
+    color:
+      rgba(
+        255,
+        255,
+        255,
+        0.86
+      ) !important;
+
+    background:
+      rgba(
+        255,
+        255,
+        255,
+        0.025
+      ) !important;
+
+    border: 0 !important;
+    border-bottom:
+      1px solid rgba(
+        255,
+        255,
+        255,
+        0.14
+      ) !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    transform: none !important;
+
+    font-size: 14px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    letter-spacing: 0.16em !important;
+
+    text-decoration: none !important;
+    text-indent: 0 !important;
+    white-space: nowrap !important;
+  }
+
+
+  .site-header
+  #globalNav
+  > a:first-child {
+    border-top:
+      1px solid rgba(
+        255,
+        255,
+        255,
+        0.14
+      ) !important;
+  }
+
+
+  .site-header #globalNav > a::before {
+    content: none !important;
+    display: none !important;
+  }
+
+
+  /*
+    PC版の下線をスマホでは矢印に変更
+  */
+  .site-header #globalNav > a::after {
+    content: "→" !important;
+
+    position: static !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    display: inline-block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    color:
+      var(--header-pink) !important;
+
+    background: transparent !important;
+
+    opacity: 1 !important;
+
+    transform: none !important;
+
+    font-size: 16px !important;
+    line-height: 1 !important;
+  }
+
+
+  .site-header
+  #globalNav
+  > a:active {
+    color: #ffffff !important;
+
+    background:
+      rgba(
+        255,
+        63,
+        131,
+        0.13
+      ) !important;
+  }
+
+
+  .site-header
+  #globalNav
+  > a.is-current {
+    color:
+      var(--header-pink) !important;
+  }
+
+
+  /*
+    ×アイコン
+  */
+  .site-header
+  #menuButton.is-active
+  > span:nth-child(1) {
+    top: 24px !important;
+
+    transform:
+      translateX(-50%)
+      rotate(45deg) !important;
+  }
+
+
+  .site-header
+  #menuButton.is-active
+  > span:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+
+  .site-header
+  #menuButton.is-active
+  > span:nth-child(3) {
+    top: 24px !important;
+
+    transform:
+      translateX(-50%)
+      rotate(-45deg) !important;
+  }
+
+
+  body.menu-open {
+    overflow: hidden !important;
+  }
+}
+
+
+/* ========================================
+   小さいスマホ
+======================================== */
+
+@media screen and (max-width: 430px) {
+
+  .site-header .header-logo-sub {
+    display: none !important;
+  }
+
+
+  .site-header #globalNav {
+    padding:
+      18px 18px 40px !important;
+  }
+
+
+  .site-header #globalNav > a {
+    min-height: 61px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* ========================================
+   全ページ共通・スマホ表示修正
+======================================== */
+
+/*
+  ページ全体が画面より横へ
+  広がるのを防止する
+*/
+
+html {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body,
+main,
+header,
+nav,
+footer,
+section,
+article,
+div {
+  min-width: 0;
+}
+
+main,
+header,
+footer,
+section {
+  max-width: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+
+/* 大きな背景文字による横幅拡張を防止 */
+
+.hero::before,
+.song-hero-number,
+.closing-marquee,
+.about-background-text,
+.search-background-text,
+.member-background-text,
+.album-background-text,
+.setlist-background-text {
+  max-width: 100vw;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   ローディング画面共通
+======================================== */
+
+.loading-screen,
+.file-loader,
+.search-loader,
+.member-loader,
+.members-loader,
+.album-loader,
+.archive-loader,
+.setlist-loader {
+  position: fixed !important;
+  inset: 0 !important;
+
+  z-index: 99999 !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  width: 100vw !important;
+  max-width: 100vw !important;
+
+  height: 100vh !important;
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+
+  margin: 0 !important;
+  padding: 20px !important;
+
+  overflow: hidden !important;
+  overscroll-behavior: none;
+
+  background: #050505;
+}
+
+
+/*
+  ローディング画面の中身
+*/
+
+.loading-inner,
+.file-loader-inner,
+.search-loader-inner,
+.member-loader-inner,
+.members-loader-inner,
+.album-loader-inner,
+.archive-loader-inner,
+.setlist-loader-inner {
+  width: min(
+    500px,
+    calc(100vw - 40px)
+  ) !important;
+
+  max-width: calc(100vw - 40px) !important;
+  min-width: 0 !important;
+
+  margin: 0 auto !important;
+
+  text-align: center !important;
+
+  overflow: hidden !important;
+}
+
+
+/*
+  ローディング画面の大文字
+*/
+
+.loading-screen h1,
+.file-loader h1,
+.search-loader h1,
+.member-loader h1,
+.members-loader h1,
+.album-loader h1,
+.archive-loader h1,
+.setlist-loader h1 {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin:
+    18px auto 24px !important;
+
+  padding: 0 4px !important;
+
+  font-size:
+    clamp(
+      52px,
+      16vw,
+      100px
+    ) !important;
+
+  line-height: 0.92 !important;
+  letter-spacing: -0.07em !important;
+
+  text-align: center !important;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+
+/*
+  短いSKZロゴは少しだけ大きくする
+*/
+
+.loading-screen
+.loading-logo {
+  font-size:
+    clamp(
+      76px,
+      26vw,
+      115px
+    ) !important;
+
+  white-space: nowrap !important;
+}
+
+
+/*
+  ローディングコード
+*/
+
+.loading-code,
+.loader-code,
+.search-loader-code,
+.member-loader-code,
+.album-loader-code,
+.archive-loader-code,
+.setlist-loader-code {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin: 0 auto 18px !important;
+
+  font-size: 9px !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.18em !important;
+
+  text-align: center !important;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+
+/*
+  ローディングメッセージ
+*/
+
+.loading-message,
+.file-loader p,
+.search-loader-message,
+.member-loader-message,
+.album-loader-message,
+.archive-loader-message,
+.setlist-loader-message {
+  max-width: 100% !important;
+
+  font-size: 10px !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.12em !important;
+
+  text-align: center !important;
+
+  white-space: normal !important;
+}
+
+
+/*
+  ローディングバー
+*/
+
+.loading-bar,
+.loader-bar,
+.search-loader-bar,
+.member-loader-bar,
+.album-loader-bar,
+.archive-loader-bar,
+.setlist-loader-bar {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+
+/* ========================================
+   スマホ
+======================================== */
+
+@media screen and (max-width: 760px) {
+
+  /*
+    固定幅が残っていても
+    スマホ幅以上にならないようにする
+  */
+
+  .hero,
+  .song-hero,
+  .about-hero,
+  .search-hero,
+  .members-hero,
+  .albums-hero,
+  .setlist-hero {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+
+  .hero-content,
+  .hero-visual,
+  .song-hero-content,
+  .song-main-data,
+  .song-cover-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+
+  /*
+    大きいタイトルを画面内へ収める
+  */
+
+  .hero-title-small,
+  .hero-title-main {
+    max-width: 100% !important;
+
+    font-size:
+      clamp(
+        58px,
+        18vw,
+        88px
+      ) !important;
+
+    white-space: normal !important;
+  }
+
+
+  /*
+    セクション共通
+  */
+
+  .section,
+  .song-information,
+  .member-file-section,
+  .lyrics-section {
+    width:
+      min(
+        100% - 32px,
+        1180px
+      ) !important;
+
+    max-width:
+      calc(100% - 32px) !important;
+
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+
+  /*
+    横スクロールを許可するものは
+    ページではなく要素内だけで動かす
+  */
+
+  .album-rail,
+  .member-filter,
+  .lyrics-view-controls {
+    max-width: 100% !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+/* ========================================
+   小さいスマホ
+======================================== */
+
+@media screen and (max-width: 430px) {
+
+  .loading-screen h1,
+  .file-loader h1,
+  .search-loader h1,
+  .member-loader h1,
+  .members-loader h1,
+  .album-loader h1,
+  .archive-loader h1,
+  .setlist-loader h1 {
+    font-size:
+      clamp(
+        44px,
+        15vw,
+        68px
+      ) !important;
+  }
+
+
+  .loading-screen
+  .loading-logo {
+    font-size:
+      clamp(
+        72px,
+        25vw,
+        102px
+      ) !important;
+  }
+
+
+  .loading-inner,
+  .file-loader-inner,
+  .search-loader-inner,
+  .member-loader-inner,
+  .members-loader-inner,
+  .album-loader-inner,
+  .archive-loader-inner,
+  .setlist-loader-inner {
+    width:
+      calc(100vw - 32px) !important;
+
+    max-width:
+      calc(100vw - 32px) !important;
+  }
+}
+
+/* ========================================
+   全ページ共通 ローディング画面修正
+======================================== */
+
+.loading-screen,
+.file-loader,
+.search-loader,
+.member-loader,
+.members-loader,
+.album-loader,
+.archive-loader,
+.setlist-loader {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+
+  display: grid !important;
+  place-items: center !important;
+
+  width: 100% !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+
+  overflow: hidden !important;
+  background: #050505;
+}
+
+
+/* ローディング内容全体 */
+.loading-inner,
+.file-loader-inner,
+.search-loader-inner,
+.member-loader-inner,
+.members-loader-inner,
+.album-loader-inner,
+.archive-loader-inner,
+.setlist-loader-inner {
+  position: relative !important;
+  inset: auto !important;
+
+  display: block !important;
+
+  width: min(500px, calc(100% - 40px)) !important;
+  max-width: 500px !important;
+
+  margin: 0 auto !important;
+
+  text-align: center !important;
+
+  transform: none !important;
+}
+
+
+/* ========================================
+   ローディングの大きな文字
+======================================== */
+
+.loading-logo,
+.file-loader h1,
+.search-loader h1,
+.member-loader h1,
+.members-loader h1,
+.album-loader h1,
+.archive-loader h1,
+.setlist-loader h1 {
+  position: relative !important;
+
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  inset: auto !important;
+
+  display: inline-block !important;
+
+  width: auto !important;
+  max-width: calc(100vw - 40px) !important;
+
+  margin: 24px auto 30px !important;
+
+  font-size: clamp(48px, 11vw, 90px) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.07em !important;
+  text-align: center !important;
+
+  white-space: nowrap !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+
+  transform: none !important;
+}
+
+
+/* グリッチ用に重なっている文字 */
+.loading-logo::before,
+.loading-logo::after,
+.file-loader h1::before,
+.file-loader h1::after,
+.search-loader h1::before,
+.search-loader h1::after,
+.member-loader h1::before,
+.member-loader h1::after,
+.members-loader h1::before,
+.members-loader h1::after,
+.album-loader h1::before,
+.album-loader h1::after,
+.archive-loader h1::before,
+.archive-loader h1::after,
+.setlist-loader h1::before,
+.setlist-loader h1::after {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  max-width: none !important;
+
+  white-space: nowrap !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+
+  text-align: center !important;
+}
+
+
+/* バー */
+.loading-bar,
+.file-loader .loader-bar,
+.search-loader .loader-bar,
+.member-loader .loader-bar,
+.members-loader .loader-bar,
+.album-loader .loader-bar,
+.archive-loader .loader-bar,
+.setlist-loader .loader-bar {
+  width: 100% !important;
+  max-width: 500px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+
+/* 説明文字 */
+.loading-code,
+.loading-message,
+.loading-percent,
+.loader-code,
+.file-loader p,
+.search-loader p,
+.member-loader p,
+.members-loader p,
+.album-loader p,
+.archive-loader p,
+.setlist-loader p {
+  max-width: 100% !important;
+  text-align: center !important;
+}
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 600px) {
+
+  .loading-inner,
+  .file-loader-inner,
+  .search-loader-inner,
+  .member-loader-inner,
+  .members-loader-inner,
+  .album-loader-inner,
+  .archive-loader-inner,
+  .setlist-loader-inner {
+    width: calc(100% - 36px) !important;
+  }
+
+  .loading-logo,
+  .file-loader h1,
+  .search-loader h1,
+  .member-loader h1,
+  .members-loader h1,
+  .album-loader h1,
+  .archive-loader h1,
+  .setlist-loader h1 {
+    /*
+      SEARCH・ARCHIVE・MEMBERSなどが
+      画面内へ収まるサイズ
+    */
+    font-size: clamp(44px, 12vw, 64px) !important;
+    letter-spacing: -0.08em !important;
+  }
+
+  .loading-code,
+  .loader-code {
+    font-size: 9px !important;
+    letter-spacing: 0.16em !important;
+  }
+
+  .loading-message,
+  .file-loader p,
+  .search-loader p,
+  .member-loader p,
+  .members-loader p,
+  .album-loader p,
+  .archive-loader p,
+  .setlist-loader p {
+    font-size: 10px;
+  }
+}
+
+/* ========================================
+   アルバム詳細ページ：横幅暴走防止
+======================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+
+/* ========================================
+   アルバム詳細：スマホメニュー
+======================================== */
+
+@media screen and (max-width: 900px) {
+
+  body .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  body .site-header .global-nav {
+    position: fixed !important;
+
+    top: 70px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    z-index: 9999 !important;
+
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: calc(100dvh - 70px) !important;
+
+    margin: 0 !important;
+    padding: 22px 26px !important;
+
+    background: rgba(5, 5, 5, 0.98) !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+
+    transform: translateX(100%) !important;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.25s ease,
+      visibility 0.3s ease !important;
+  }
+
+  body .site-header .global-nav.is-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    transform: translateX(0) !important;
+  }
+
+  body.menu-open {
+    overflow: hidden !important;
+  }
+}
+
+/* ========================================
+   アルバム詳細：スマホローディング
+======================================== */
+
+@media screen and (max-width: 900px) {
+
+  body .file-loader,
+  body .album-file-loader,
+  body .album-detail-loader {
+    position: fixed !important;
+    inset: 0 !important;
+
+    display: grid !important;
+    place-items: center !important;
+
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100dvh !important;
+
+    overflow: hidden !important;
+  }
+
+  body .file-loader-inner,
+  body .album-file-loader-inner,
+  body .album-detail-loader-inner {
+    position: relative !important;
+    inset: auto !important;
+
+    width: calc(100% - 40px) !important;
+    max-width: 500px !important;
+
+    margin: 0 auto !important;
+    text-align: center !important;
+
+    transform: none !important;
+  }
+
+  body .file-loader h1,
+  body .album-file-loader h1,
+  body .album-detail-loader h1 {
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 22px auto 28px !important;
+
+    font-size: clamp(36px, 10vw, 64px) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.07em !important;
+
+    white-space: nowrap !important;
+    text-align: center !important;
+
+    transform: none !important;
+  }
+}

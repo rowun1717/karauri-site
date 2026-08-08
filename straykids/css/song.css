@@ -1,0 +1,3674 @@
+/* ========================================
+   基本設定
+======================================== */
+
+:root {
+  --black: #050505;
+  --black-soft: #0c0c0f;
+  --panel: #141417;
+  --panel-light: #1d1d22;
+
+  --white: #f7f7f7;
+  --gray: #a5a5ae;
+  --gray-dark: #62626b;
+
+  --pink: #ff3f83;
+  --pink-light: #ff7eac;
+  --red: #d50032;
+  --deep-red: #33000f;
+
+  --border: rgba(255, 255, 255, 0.14);
+  --pink-border: rgba(255, 63, 131, 0.48);
+
+  --bangchan: #b5b9ce;
+  --leeknow: #00f7ff;
+  --changbin: #e51cff;
+  --hyunjin: #ff0055;
+  --han: #9f6fbd;
+  --felix: #ffee00;
+  --seungmin: #00ffb3;
+  --in: #ffa7b8;
+
+  --all-members:
+    linear-gradient(
+      90deg,
+      #d0d2dc 0%,
+      #70cdd2 14%,
+      #c86bc9 28%,
+      #d86483 42%,
+      #a47caf 56%,
+      #d5c870 70%,
+      #69bea0 84%,
+      #d99aaa 100%
+    );
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+
+  color: var(--white);
+
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(91, 0, 30, 0.28),
+      transparent 34%
+    ),
+    var(--black);
+
+  font-family:
+    Arial,
+    "Helvetica Neue",
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+body.jjam {
+  --accent: #ff2f76;
+  --accent2: #7b2cff;
+}
+
+
+body.menu-open {
+  overflow: hidden;
+}
+
+
+a {
+  color: inherit;
+}
+
+
+button,
+input {
+  font: inherit;
+}
+
+
+button {
+  color: inherit;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+::selection {
+  color: #fff;
+  background: var(--pink);
+}
+
+
+/* ========================================
+   背景
+======================================== */
+
+.song-grid-background {
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+
+  opacity: 0.14;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 65px 65px;
+}
+
+
+.song-scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  opacity: 0.035;
+  pointer-events: none;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 3px,
+      rgba(255, 255, 255, 0.13) 4px
+    );
+}
+
+
+.song-pointer-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.15;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 63, 131, 0.55),
+      transparent 70%
+    );
+
+  transform: translate(-50%, -50%);
+}
+
+
+/* ========================================
+   ローディング画面
+======================================== */
+
+.file-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: grid;
+  place-items: center;
+
+  background: #050505;
+
+  transition:
+    opacity 0.65s ease,
+    visibility 0.65s ease;
+}
+
+
+.file-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.file-loader-inner {
+  width: min(520px, calc(100% - 40px));
+  text-align: center;
+}
+
+
+.loader-code {
+  color: var(--pink);
+  font-size: 11px;
+  letter-spacing: 0.26em;
+}
+
+
+.file-loader h1 {
+  position: relative;
+
+  margin: 25px 0;
+
+  font-size: clamp(65px, 16vw, 150px);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+
+  overflow-wrap: anywhere;
+}
+
+
+.file-loader h1::before,
+.file-loader h1::after {
+  content: attr(data-text);
+
+  position: absolute;
+  inset: 0;
+}
+
+
+.file-loader h1::before {
+  color: var(--pink);
+
+  clip-path:
+    inset(15% 0 60% 0);
+
+  transform:
+    translateX(5px);
+
+  animation:
+    fileGlitchOne 0.7s
+    infinite alternate;
+}
+
+
+.file-loader h1::after {
+  color: var(--red);
+
+  clip-path:
+    inset(68% 0 8% 0);
+
+  transform:
+    translateX(-5px);
+
+  animation:
+    fileGlitchTwo 0.8s
+    infinite alternate;
+}
+
+
+#loaderMessage {
+  color: #b7b7bf;
+  font-size: 12px;
+  letter-spacing: 0.17em;
+}
+
+
+.loader-bar {
+  width: 100%;
+  height: 4px;
+  margin-top: 22px;
+
+  overflow: hidden;
+
+  background: #29292e;
+}
+
+
+.loader-bar span {
+  display: block;
+
+  width: 0;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--red),
+      var(--pink)
+    );
+
+  transition:
+    width 0.13s linear;
+}
+
+
+#loaderPercent {
+  color: var(--pink);
+  font-family: monospace;
+}
+
+
+/* ========================================
+   曲ヒーロー
+======================================== */
+
+.song-hero {
+  position: relative;
+
+  min-height: 100vh;
+  padding: 110px 6vw 65px;
+
+  overflow: hidden;
+}
+
+
+.song-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+}
+
+
+.song-hero-background img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    blur(8px)
+    brightness(0.23)
+    saturate(0.65);
+
+  transform: scale(1.08);
+}
+
+
+.song-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.95),
+      rgba(27, 0, 10, 0.73),
+      rgba(0, 0, 0, 0.78)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.28),
+      #050505 96%
+    );
+}
+
+
+/* ========================================
+   ジャケット＋曲情報の配置
+======================================== */
+
+.song-hero-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(320px, 420px)
+    minmax(0, 1fr);
+
+  align-items: start;
+  gap: clamp(35px, 6vw, 80px);
+
+  width:
+    min(1180px, calc(100% - 48px));
+
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   左側のジャケットカード
+======================================== */
+
+.song-cover-panel {
+  width: 100%;
+  max-width: 420px;
+  min-height: 0;
+
+  margin: 0;
+  padding: 17px;
+
+  border:
+    1px solid var(--pink-border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 63, 131, 0.13),
+      rgba(255, 255, 255, 0.03)
+    );
+
+  box-shadow:
+    0 30px 90px
+    rgba(0, 0, 0, 0.5);
+}
+
+
+.cover-header,
+.cover-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  color: #85858e;
+
+  font-size: 9px;
+  letter-spacing: 0.14em;
+}
+
+
+.cover-header {
+  padding:
+    0 3px 13px;
+}
+
+
+.cover-footer {
+  padding:
+    14px 3px 0;
+}
+
+
+.active-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--pink);
+}
+
+
+.active-status::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--pink);
+
+  box-shadow:
+    0 0 10px var(--pink);
+}
+
+
+.cover-frame {
+  position: relative;
+
+  aspect-ratio: 1;
+  overflow: hidden;
+
+  background: #111;
+}
+
+
+.cover-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+.cover-frame::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 63, 131, 0.1),
+      transparent 52%,
+      rgba(213, 0, 50, 0.14)
+    );
+}
+
+
+.corner {
+  position: absolute;
+  z-index: 3;
+
+  width: 24px;
+  height: 24px;
+}
+
+
+.top-left {
+  top: 10px;
+  left: 10px;
+
+  border-top:
+    2px solid var(--pink);
+
+  border-left:
+    2px solid var(--pink);
+}
+
+
+.top-right {
+  top: 10px;
+  right: 10px;
+
+  border-top:
+    2px solid var(--pink);
+
+  border-right:
+    2px solid var(--pink);
+}
+
+
+.bottom-left {
+  bottom: 10px;
+  left: 10px;
+
+  border-bottom:
+    2px solid var(--pink);
+
+  border-left:
+    2px solid var(--pink);
+}
+
+
+.bottom-right {
+  right: 10px;
+  bottom: 10px;
+
+  border-right:
+    2px solid var(--pink);
+
+  border-bottom:
+    2px solid var(--pink);
+}
+
+
+.cover-scan {
+  position: absolute;
+
+  top: -20%;
+  right: 0;
+  left: 0;
+  z-index: 2;
+
+  height: 18%;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(255, 63, 131, 0.45),
+      transparent
+    );
+
+  animation:
+    coverScan 4s linear infinite;
+}
+
+
+/* ========================================
+   音源プレイヤー
+======================================== */
+
+.music-player {
+  width: 100%;
+
+  margin: 50px auto 0;
+  padding: 28px 30px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 63, 131, 0.12),
+      rgba(255, 255, 255, 0.035)
+    );
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.45);
+}
+
+
+.player-info,
+.player-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+.player-label {
+  color: var(--pink);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--pink) 0%,
+      var(--pink)
+      var(--progress, 0%),
+      #303036
+      var(--progress, 0%),
+      #303036 100%
+    );
+
+  cursor: pointer;
+}
+
+
+.progress-bar::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: 2px solid #fff;
+  border-radius: 50%;
+
+  background: var(--pink);
+
+  box-shadow:
+    0 0 12px
+    rgba(255, 63, 131, 0.9);
+}
+
+
+.progress-bar::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid #fff;
+  border-radius: 50%;
+
+  background: var(--pink);
+}
+
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+
+
+.player-controls button,
+.player-bottom button {
+  display: grid;
+  place-items: center;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  appearance: none;
+
+  color: #fff;
+  background: transparent;
+
+  border: 0;
+  outline: 0;
+
+  font: inherit;
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+.player-controls button:hover,
+.player-bottom button:hover {
+  color: var(--pink);
+
+  text-shadow:
+    0 0 12px
+    rgba(255, 45, 120, 0.8);
+}
+
+
+.player-bottom {
+  margin-top: 20px;
+
+  color: var(--gray);
+  font-size: 12px;
+}
+
+
+/* YouTube本体を画面外へ置く */
+.youtube-player-wrap {
+  position: fixed;
+
+  top: -9999px;
+  left: -9999px;
+
+  width: 320px;
+  height: 180px;
+
+  opacity: 0.01;
+  pointer-events: none;
+}
+
+
+/* ========================================
+   右側の曲情報
+======================================== */
+
+.song-main-data {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  margin: 0;
+  padding-top: 25px;
+}
+
+
+.song-eyebrow {
+  margin: 0 0 22px;
+
+  color: var(--pink);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+
+.song-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+
+.song-tag {
+  padding: 7px 12px;
+
+  color: var(--pink-light);
+  background:
+    rgba(255, 63, 131, 0.08);
+
+  border:
+    1px solid var(--pink-border);
+
+  border-radius: 999px;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+
+.song-tag.karaoke {
+  color: #fff;
+  background: var(--red);
+  border-color: var(--red);
+}
+
+
+.song-main-data .song-title {
+  margin: 22px 0 8px;
+
+  font-size:
+    clamp(32px, 4vw, 48px);
+
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+
+  overflow-wrap: anywhere;
+}
+
+
+.song-subtitle {
+  margin: 0 0 30px;
+
+  color: #adadb6;
+
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+
+/* ========================================
+   基本情報＋Credits
+======================================== */
+
+.song-data-table {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  margin: 0;
+  padding: 22px 0;
+
+  border-top:
+    1px solid var(--border);
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+
+.song-data-table div {
+  min-width: 0;
+  padding: 12px 20px 12px 0;
+}
+
+
+.song-data-table dt {
+  margin-bottom: 7px;
+
+  color: var(--gray-dark);
+
+  font-size: 8px;
+  letter-spacing: 0.17em;
+}
+
+
+.song-data-table dd {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.45;
+
+  overflow-wrap: anywhere;
+}
+
+
+.song-hero-number {
+  position: absolute;
+
+  right: 4vw;
+  bottom: 30px;
+
+  color:
+    rgba(255, 255, 255, 0.18);
+
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+
+/* ========================================
+   アニメーション
+======================================== */
+
+@keyframes fileGlitchOne {
+  from {
+    transform: translateX(5px);
+  }
+
+  to {
+    transform: translateX(-4px);
+  }
+}
+
+
+@keyframes fileGlitchTwo {
+  from {
+    transform: translateX(-5px);
+  }
+
+  to {
+    transform: translateX(3px);
+  }
+}
+
+
+@keyframes coverScan {
+  from {
+    top: -20%;
+  }
+
+  to {
+    top: 110%;
+  }
+}
+
+/* ========================================
+   共通セクション
+======================================== */
+
+.member-file-section,
+.lyrics-section,
+.song-navigation {
+  width:
+    min(1180px, calc(100% - 48px));
+
+  margin: 0 auto;
+}
+
+
+.section-label p,
+.lyrics-header p {
+  margin: 0;
+
+  color: var(--pink);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+
+.section-label h2,
+.lyrics-header h2 {
+  margin: 7px 0 0;
+
+  font-size:
+    clamp(45px, 7vw, 72px);
+
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+
+/* ========================================
+   Part Colors
+======================================== */
+
+.member-file-section {
+  min-height: 0;
+
+  padding:
+    35px 5vw 18px;
+
+  text-align: center;
+}
+
+
+.member-file-section .section-label {
+  width: 100%;
+
+  margin:
+    0 0 28px;
+
+  text-align: center;
+}
+
+
+.member-file-section .member-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  width: min(900px, 100%);
+
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+.member-filter-button {
+  min-height: 43px;
+  padding: 0 16px;
+
+  color: #fff;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 999px;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+
+.member-filter-button:hover,
+.member-filter-button.active {
+  color: #050505;
+
+  background: #fff;
+  border-color: #fff;
+
+  transform: translateY(-3px);
+}
+
+
+/* バンチャン */
+.member-filter-button.chan:hover {
+  color: #050505;
+
+  background: var(--bangchan);
+  border-color: var(--bangchan);
+}
+
+
+/* リノ */
+.member-filter-button.leeknow:hover {
+  color: #050505;
+
+  background: var(--leeknow);
+  border-color: var(--leeknow);
+}
+
+
+/* チャンビン */
+.member-filter-button.changbin:hover {
+  color: #fff;
+
+  background: var(--changbin);
+  border-color: var(--changbin);
+}
+
+
+/* ヒョンジン */
+.member-filter-button.hyunjin:hover {
+  color: #fff;
+
+  background: var(--hyunjin);
+  border-color: var(--hyunjin);
+}
+
+
+/* ハン */
+.member-filter-button.han:hover {
+  color: #fff;
+
+  background: var(--han);
+  border-color: var(--han);
+}
+
+
+/* フィリックス */
+.member-filter-button.felix:hover {
+  color: #050505;
+
+  background: var(--felix);
+  border-color: var(--felix);
+}
+
+
+/* スンミン */
+.member-filter-button.seungmin:hover {
+  color: #050505;
+
+  background: var(--seungmin);
+  border-color: var(--seungmin);
+}
+
+
+/* アイエン */
+.member-filter-button.in:hover {
+  color: #050505;
+
+  background: var(--in);
+  border-color: var(--in);
+}
+
+
+/* ========================================
+   Lyricsセクション
+======================================== */
+
+.lyrics-section {
+  min-height: 0;
+
+  margin-top: 0;
+  padding:
+    22px 0 110px;
+}
+
+
+.lyrics-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin:
+    0 0 35px;
+}
+
+
+.lyrics-view-controls {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.view-button {
+  min-height: 42px;
+  padding: 0 14px;
+
+  color: #fff;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  border:
+    1px solid var(--border);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease;
+}
+
+
+.view-button:hover,
+.view-button.active {
+  background: var(--pink);
+  border-color: var(--pink);
+}
+
+
+/* ========================================
+   歌詞コンソール
+======================================== */
+
+.lyrics-console {
+  overflow: hidden;
+
+  border:
+    1px solid var(--pink-border);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(63, 0, 20, 0.28),
+      rgba(18, 18, 21, 0.96)
+    );
+
+  box-shadow:
+    0 35px 100px
+    rgba(0, 0, 0, 0.46);
+}
+
+
+.lyrics-console-top,
+.lyrics-console-bottom {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding:
+    16px 22px;
+
+  color: var(--gray-dark);
+
+  background:
+    rgba(0, 0, 0, 0.34);
+
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+
+.lyrics-console-top {
+  border-bottom:
+    1px solid var(--border);
+}
+
+
+.lyrics-console-bottom {
+  border-top:
+    1px solid var(--border);
+}
+
+
+/* ========================================
+   歌詞ブロック
+======================================== */
+
+.lyric-block {
+  --member-color: #fff;
+
+  position: relative;
+
+  width: 100%;
+
+  border-bottom:
+    1px solid var(--border);
+
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease,
+    background 0.28s ease;
+}
+
+
+.lyric-block:last-of-type {
+  border-bottom: 0;
+}
+
+
+.lyric-block::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 3px;
+
+  background:
+    var(--member-color);
+
+  box-shadow:
+    0 0 15px
+    var(--member-color);
+}
+
+
+.lyric-block.is-hidden {
+  display: none;
+}
+
+
+.lyric-block.is-dimmed {
+  opacity: 0.2;
+}
+
+
+.lyric-block:hover {
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(
+        in srgb,
+        var(--member-color) 8%,
+        transparent
+      ),
+      transparent 40%
+    );
+}
+
+
+/* ========================================
+   メンバーカラー
+======================================== */
+
+.lyric-block[data-member="bangchan"] {
+  --member-color:
+    var(--bangchan);
+}
+
+
+.lyric-block[data-member="leeknow"] {
+  --member-color:
+    var(--leeknow);
+}
+
+
+.lyric-block[data-member="changbin"] {
+  --member-color:
+    var(--changbin);
+}
+
+
+.lyric-block[data-member="hyunjin"] {
+  --member-color:
+    var(--hyunjin);
+}
+
+
+.lyric-block[data-member="han"] {
+  --member-color:
+    var(--han);
+}
+
+
+.lyric-block[data-member="felix"] {
+  --member-color:
+    var(--felix);
+}
+
+
+.lyric-block[data-member="seungmin"] {
+  --member-color:
+    var(--seungmin);
+}
+
+
+.lyric-block[data-member="in"] {
+  --member-color:
+    var(--in);
+}
+
+
+/* ========================================
+   クリックできる歌詞セット
+======================================== */
+
+.lyric-set {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    110px minmax(0, 1fr);
+
+  gap: 32px;
+
+  width: 100%;
+  min-width: 0;
+
+  padding:
+    28px 58px 28px 24px;
+
+  border-left:
+    3px solid transparent;
+
+  cursor: pointer;
+
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
+}
+
+
+.lyric-set:hover {
+  border-left-color:
+    var(--member-color);
+
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(
+        in srgb,
+        var(--member-color) 11%,
+        transparent
+      ),
+      transparent 48%
+    );
+
+  transform:
+    translateX(4px);
+}
+
+
+.lyric-set::after {
+  content: "▶";
+
+  position: absolute;
+
+  top: 28px;
+  right: 22px;
+
+  color: var(--member-color);
+  font-size: 12px;
+
+  opacity: 0;
+
+  transform:
+    translateX(-5px);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+
+.lyric-set:hover::after {
+  opacity: 1;
+
+  transform:
+    translateX(0);
+}
+
+
+.lyric-set.is-playing {
+  border-left-color:
+    var(--member-color);
+
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(
+        in srgb,
+        var(--member-color) 16%,
+        transparent
+      ),
+      transparent 55%
+    );
+
+  box-shadow:
+    inset 0 0 34px
+    color-mix(
+      in srgb,
+      var(--member-color) 8%,
+      transparent
+    );
+}
+
+
+.lyric-set.is-playing::after {
+  content: "♪";
+
+  opacity: 1;
+  transform: none;
+}
+
+
+.lyric-set.is-playing .line.ruby {
+  text-shadow:
+    0 0 14px
+    color-mix(
+      in srgb,
+      var(--member-color) 50%,
+      transparent
+    );
+}
+
+
+/* ========================================
+   左側のメンバー欄
+======================================== */
+
+.lyric-set .member-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-width: 0;
+  min-height: 190px;
+
+  padding:
+    0 22px 0 0;
+
+  border-right:
+    1px solid var(--border);
+
+  background: transparent;
+}
+
+
+.lyric-set .member-id {
+  display: block;
+
+  margin:
+    0 0 30px;
+
+  color: var(--member-color);
+
+  font-family: monospace;
+  font-size: 11px;
+}
+
+
+.lyric-set .member-name {
+  display: block;
+
+  margin: 0;
+
+  color: var(--member-color);
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+
+/* ========================================
+   歌詞本文
+======================================== */
+
+.lyric-set .lyric-data {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 0;
+}
+
+
+.lyric-set .line {
+  display: block;
+
+  width: 100%;
+  max-width: none;
+
+  margin-right: 0;
+  margin-left: 0;
+
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+
+.lyric-set .line.ruby {
+  margin:
+    0 0 8px;
+
+  color: var(--member-color);
+
+  font-size:
+    clamp(17px, 1.8vw, 21px);
+
+  font-weight: 800;
+  line-height: 1.65;
+  letter-spacing: 0.03em;
+}
+
+
+.lyric-set .line.original {
+  margin:
+    0 0 8px;
+
+  color: #f7f7f7;
+
+  font-size:
+    clamp(15px, 1.5vw, 18px);
+
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+
+.lyric-set .line.translation {
+  margin:
+    0 0 28px;
+
+  color:
+    rgba(255, 255, 255, 0.58);
+
+  font-size:
+    clamp(13px, 1.2vw, 15px);
+
+  line-height: 1.7;
+}
+
+
+.lyric-set
+.line.translation:last-child {
+  margin-bottom: 0;
+}
+
+
+.line.is-hidden {
+  display: none !important;
+}
+
+/* ========================================
+   ALL MEMBERS
+   8人グラデーション
+======================================== */
+
+.lyric-block[
+  data-member="all-members"
+] {
+  position: relative;
+
+  border-left: 0;
+}
+
+
+/* 左端の縦線 */
+.lyric-block[
+  data-member="all-members"
+]::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 3px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #d0d2dc 0%,
+      #70cdd2 14%,
+      #c86bc9 28%,
+      #d86483 42%,
+      #a47caf 56%,
+      #d5c870 70%,
+      #69bea0 84%,
+      #d99aaa 100%
+    );
+
+  box-shadow: none;
+}
+
+
+/* ALLのカナルビ */
+.lyric-block[
+  data-member="all-members"
+]
+.line.ruby {
+  color: transparent;
+
+  background-image:
+    var(--all-members);
+
+  background-repeat:
+    no-repeat;
+
+  background-size:
+    100% 100%;
+
+  background-clip:
+    text;
+
+  -webkit-background-clip:
+    text;
+
+  -webkit-text-fill-color:
+    transparent;
+}
+
+
+/* ALLのメンバー名 */
+.lyric-block[
+  data-member="all-members"
+]
+.member-name {
+  color: transparent;
+
+  background-image:
+    var(--all-members);
+
+  background-clip:
+    text;
+
+  -webkit-background-clip:
+    text;
+
+  -webkit-text-fill-color:
+    transparent;
+}
+
+
+/* ALLの番号 */
+.lyric-block[
+  data-member="all-members"
+]
+.member-id {
+  color: #fff;
+}
+
+
+/* ========================================
+   ケミ共通デザイン
+======================================== */
+
+.lyric-block.chemistry {
+  --member-color:
+    var(--chem-color-2);
+}
+
+
+/* 左端の発光ライン */
+.lyric-block.chemistry::before {
+  background:
+    linear-gradient(
+      180deg,
+      var(--chem-color-1),
+      var(--chem-color-2)
+    );
+
+  box-shadow:
+    0 0 14px
+    var(--chem-color-1),
+    0 0 22px
+    var(--chem-color-2);
+}
+
+
+/* メンバー番号 */
+.lyric-block.chemistry
+.member-id {
+  color: transparent;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--chem-color-1),
+      var(--chem-color-2)
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+
+/* メンバー名 */
+.lyric-block.chemistry
+.member-name {
+  color: transparent;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--chem-color-1),
+      var(--chem-color-2)
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+
+/* カナルビ */
+.lyric-block.chemistry
+.line.ruby {
+  color: transparent;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--chem-color-1) 0%,
+      var(--chem-color-1) 35%,
+      var(--chem-color-2) 65%,
+      var(--chem-color-2) 100%
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+
+/* ケミブロックのホバー */
+.lyric-block.chemistry:hover {
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(
+        in srgb,
+        var(--chem-color-1) 8%,
+        transparent
+      ),
+      color-mix(
+        in srgb,
+        var(--chem-color-2) 8%,
+        transparent
+      ),
+      transparent 55%
+    );
+}
+
+
+/* ========================================
+   バンチャンとのケミ
+======================================== */
+
+/* バンチャン＋リノ */
+.lyric-block[
+  data-member="hyonra"
+] {
+  --chem-color-1:
+    var(--bangchan);
+
+  --chem-color-2:
+    var(--leeknow);
+}
+
+
+/* バンチャン＋チャンビン */
+.lyric-block[
+  data-member="binbangz"
+] {
+  --chem-color-1:
+    var(--bangchan);
+
+  --chem-color-2:
+    var(--changbin);
+}
+
+
+/* バンチャン＋ヒョンジン */
+.lyric-block[
+  data-member="bekaking"
+] {
+  --chem-color-1:
+    var(--bangchan);
+
+  --chem-color-2:
+    var(--hyunjin);
+}
+
+
+/* バンチャン＋ハン */
+.lyric-block[
+  data-member="chanihani"
+] {
+  --chem-color-1:
+    var(--bangchan);
+
+  --chem-color-2:
+    var(--han);
+}
+
+
+/* バンチャン＋フィリックス */
+.lyric-block[
+  data-member="hojuz"
+] {
+  --chem-color-1:
+    var(--bangchan);
+
+  --chem-color-2:
+    var(--felix);
+}
+
+
+/* バンチャン＋スンミン */
+.lyric-block[
+  data-member="cheongdamz"
+] {
+  --chem-color-1:
+    var(--bangchan);
+
+  --chem-color-2:
+    var(--seungmin);
+}
+
+
+/* バンチャン＋アイエン */
+.lyric-block[
+  data-member="parentz"
+] {
+  --chem-color-1:
+    var(--bangchan);
+
+  --chem-color-2:
+    var(--in);
+}
+
+
+/* ========================================
+   リノとのケミ
+======================================== */
+
+/* リノ＋チャンビン */
+.lyric-block[
+  data-member="bunnyracha"
+] {
+  --chem-color-1:
+    var(--leeknow);
+
+  --chem-color-2:
+    var(--changbin);
+}
+
+
+/* リノ＋ヒョンジン */
+.lyric-block[
+  data-member="airfryer"
+] {
+  --chem-color-1:
+    var(--leeknow);
+
+  --chem-color-2:
+    var(--hyunjin);
+}
+
+
+/* リノ＋ハン */
+.lyric-block[
+  data-member="miso"
+] {
+  --chem-color-1:
+    var(--leeknow);
+
+  --chem-color-2:
+    var(--han);
+}
+
+
+/* リノ＋フィリックス */
+.lyric-block[
+  data-member="nyanracha"
+] {
+  --chem-color-1:
+    var(--leeknow);
+
+  --chem-color-2:
+    var(--felix);
+}
+
+
+/* リノ＋スンミン */
+.lyric-block[
+  data-member="divorcez"
+] {
+  --chem-color-1:
+    var(--leeknow);
+
+  --chem-color-2:
+    var(--seungmin);
+}
+
+
+/* リノ＋アイエン */
+.lyric-block[
+  data-member="arirang"
+] {
+  --chem-color-1:
+    var(--leeknow);
+
+  --chem-color-2:
+    var(--in);
+}
+
+
+/* ========================================
+   チャンビンとのケミ
+======================================== */
+
+/* チャンビン＋ヒョンジン */
+.lyric-block[
+  data-member="jinibini"
+] {
+  --chem-color-1:
+    var(--changbin);
+
+  --chem-color-2:
+    var(--hyunjin);
+}
+
+
+/* チャンビン＋ハン */
+.lyric-block[
+  data-member="dduriracha"
+] {
+  --chem-color-1:
+    var(--changbin);
+
+  --chem-color-2:
+    var(--han);
+}
+
+
+/* チャンビン＋フィリックス */
+.lyric-block[
+  data-member="chanlix"
+] {
+  --chem-color-1:
+    var(--changbin);
+
+  --chem-color-2:
+    var(--felix);
+}
+
+
+/* チャンビン＋スンミン */
+.lyric-block[
+  data-member="kkuremonz"
+] {
+  --chem-color-1:
+    var(--changbin);
+
+  --chem-color-2:
+    var(--seungmin);
+}
+
+
+/* チャンビン＋アイエン */
+.lyric-block[
+  data-member="punklez"
+] {
+  --chem-color-1:
+    var(--changbin);
+
+  --chem-color-2:
+    var(--in);
+}
+
+
+/* ========================================
+   ヒョンジンとのケミ
+======================================== */
+
+/* ヒョンジン＋ハン */
+.lyric-block[
+  data-member="jinsung"
+] {
+  --chem-color-1:
+    var(--hyunjin);
+
+  --chem-color-2:
+    var(--han);
+}
+
+
+/* ヒョンジン＋フィリックス */
+.lyric-block[
+  data-member="hyunlix"
+] {
+  --chem-color-1:
+    var(--hyunjin);
+
+  --chem-color-2:
+    var(--felix);
+}
+
+
+/* ヒョンジン＋スンミン */
+.lyric-block[
+  data-member="seungjini"
+] {
+  --chem-color-1:
+    var(--hyunjin);
+
+  --chem-color-2:
+    var(--seungmin);
+}
+
+
+/* ヒョンジン＋アイエン */
+.lyric-block[
+  data-member="sokonyez"
+] {
+  --chem-color-1:
+    var(--hyunjin);
+
+  --chem-color-2:
+    var(--in);
+}
+
+
+/* ========================================
+   ハンとのケミ
+======================================== */
+
+/* ハン＋フィリックス */
+.lyric-block[
+  data-member="hanipiri"
+] {
+  --chem-color-1:
+    var(--han);
+
+  --chem-color-2:
+    var(--felix);
+}
+
+
+/* ハン＋スンミン */
+.lyric-block[
+  data-member="margarinz"
+] {
+  --chem-color-1:
+    var(--han);
+
+  --chem-color-2:
+    var(--seungmin);
+}
+
+
+/* ハン＋アイエン */
+.lyric-block[
+  data-member="poppoz"
+] {
+  --chem-color-1:
+    var(--han);
+
+  --chem-color-2:
+    var(--in);
+}
+
+
+/* ========================================
+   フィリックスとのケミ
+======================================== */
+
+/* フィリックス＋スンミン */
+.lyric-block[
+  data-member="dennyangz"
+] {
+  --chem-color-1:
+    var(--felix);
+
+  --chem-color-2:
+    var(--seungmin);
+}
+
+
+/* フィリックス＋アイエン */
+.lyric-block[
+  data-member="pochakz"
+] {
+  --chem-color-1:
+    var(--felix);
+
+  --chem-color-2:
+    var(--in);
+}
+
+
+/* ========================================
+   スンミン＋アイエン
+======================================== */
+
+.lyric-block[
+  data-member="maknaez"
+] {
+  --chem-color-1:
+    var(--seungmin);
+
+  --chem-color-2:
+    var(--in);
+}
+
+/* ========================================
+   括弧部分
+======================================== */
+
+.parenthetical {
+  display: inline;
+
+  margin-left: 0.12em;
+
+  font-size: 0.76em;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+
+/* ========================================
+   歌詞と重なる掛け声
+======================================== */
+
+/*
+  FANCHANT OFFでも表示する。
+  音源の歌詞として存在する部分。
+*/
+.chant-overlap {
+  display: inline !important;
+
+  margin-left: 0.12em;
+  padding: 0;
+
+  color: inherit;
+  background: transparent;
+
+  border: 0;
+  border-radius: 0;
+
+  box-shadow: none;
+
+  font-weight: inherit;
+}
+
+
+/*
+  FANCHANT ONの場合は
+  ピンク＋下線に変更。
+*/
+body.show-fanchant
+.chant-overlap {
+  display: inline !important;
+
+  margin-left: 0.12em;
+  padding: 0;
+
+  color: #ff8fba;
+  background: transparent;
+
+  border: 0;
+
+  border-bottom:
+    2px solid var(--pink);
+
+  border-radius: 0;
+
+  box-shadow: none;
+
+  font-size: 0.82em;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   独立した掛け声
+======================================== */
+
+/*
+  通常は非表示。
+*/
+.chant-separate {
+  display: none !important;
+}
+
+
+/*
+  FANCHANT ONの場合だけ表示。
+*/
+body.show-fanchant
+.chant-separate {
+  display: flex !important;
+
+  align-items: center;
+  gap: 9px;
+
+  width: fit-content;
+
+  margin:
+    14px 0 22px;
+
+  padding:
+    7px 12px;
+
+  color: #ff8fba;
+
+  background:
+    rgba(255, 63, 131, 0.08);
+
+  border: 0;
+
+  border-left:
+    3px solid var(--pink);
+
+  font-size:
+    clamp(15px, 1.5vw, 18px);
+
+  font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+
+body.show-fanchant
+.chant-separate::before {
+  content: "CHANT";
+
+  color: var(--pink);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+
+/* ========================================
+   同じ行に入る独立掛け声
+======================================== */
+
+.chant-inline {
+  display: none !important;
+}
+
+
+body.show-fanchant
+.chant-inline {
+  display: inline !important;
+
+  margin-inline: 0.08em;
+  padding: 0;
+
+  color: #ff8fba;
+  background: transparent;
+
+  border: 0;
+
+  border-bottom:
+    2px solid var(--pink);
+
+  font-size: 0.82em;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   ALLパート＋重なる掛け声
+======================================== */
+
+/*
+  FANCHANT OFFの場合。
+
+  掛け声として非表示にせず、
+  ALLパートとして8人カラーで表示。
+*/
+body:not(.show-fanchant)
+.all-members-part.chant-overlap {
+  display: inline !important;
+
+  margin-left: 0.12em;
+  padding: 0 !important;
+
+  color: transparent !important;
+
+  background-color:
+    transparent !important;
+
+  background-image:
+    var(--all-members) !important;
+
+  background-repeat:
+    no-repeat !important;
+
+  background-size:
+    100% 100% !important;
+
+  background-clip:
+    text !important;
+
+  -webkit-background-clip:
+    text !important;
+
+  -webkit-text-fill-color:
+    transparent !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+
+  font-weight: 800;
+}
+
+
+/*
+  FANCHANT ONの場合。
+
+  ALLグラデーションを解除して、
+  通常の掛け声と同じ表示にする。
+*/
+body.show-fanchant
+.all-members-part.chant-overlap {
+  display: inline !important;
+
+  margin-left: 0.12em;
+  padding: 0 !important;
+
+  color: #ff8fba !important;
+
+  background:
+    transparent !important;
+
+  background-image:
+    none !important;
+
+  background-clip:
+    initial !important;
+
+  -webkit-background-clip:
+    initial !important;
+
+  -webkit-text-fill-color:
+    #ff8fba !important;
+
+  border: 0 !important;
+
+  border-bottom:
+    2px solid var(--pink) !important;
+
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+
+  font-size: 0.82em;
+  font-weight: 900;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   特定メンバーの重なるパート
+======================================== */
+
+/*
+  使用例
+
+  <span
+    class="parenthetical member-part chant-overlap"
+    data-member="felix"
+  >
+    （Woah）
+  </span>
+*/
+
+.member-part[
+  data-member="bangchan"
+] {
+  color: var(--bangchan);
+}
+
+
+.member-part[
+  data-member="leeknow"
+] {
+  color: var(--leeknow);
+}
+
+
+.member-part[
+  data-member="changbin"
+] {
+  color: var(--changbin);
+}
+
+
+.member-part[
+  data-member="hyunjin"
+] {
+  color: var(--hyunjin);
+}
+
+
+.member-part[
+  data-member="han"
+] {
+  color: var(--han);
+}
+
+
+.member-part[
+  data-member="felix"
+] {
+  color: var(--felix);
+}
+
+
+.member-part[
+  data-member="seungmin"
+] {
+  color: var(--seungmin);
+}
+
+
+.member-part[
+  data-member="in"
+] {
+  color: var(--in);
+}
+
+
+/* FANCHANT ONでは全員ピンク */
+body.show-fanchant
+.member-part.chant-overlap {
+  color: #ff8fba;
+}
+
+
+/* ========================================
+   バックボーカル
+======================================== */
+
+/*
+  左側に表示する
+  バックボーカル担当者名。
+*/
+
+.backing-member-name {
+  display: block;
+
+  margin-top: 12px;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+
+  writing-mode: vertical-rl;
+
+  opacity: 0.8;
+}
+
+
+/* ========================================
+   バック担当者名のメンバーカラー
+======================================== */
+
+.backing-member-name[
+  data-member="bangchan"
+] {
+  color: var(--bangchan);
+}
+
+
+.backing-member-name[
+  data-member="leeknow"
+] {
+  color: var(--leeknow);
+}
+
+
+.backing-member-name[
+  data-member="changbin"
+] {
+  color: var(--changbin);
+}
+
+
+.backing-member-name[
+  data-member="hyunjin"
+] {
+  color: var(--hyunjin);
+}
+
+
+.backing-member-name[
+  data-member="han"
+] {
+  color: var(--han);
+}
+
+
+.backing-member-name[
+  data-member="felix"
+] {
+  color: var(--felix);
+}
+
+
+.backing-member-name[
+  data-member="seungmin"
+] {
+  color: var(--seungmin);
+}
+
+
+.backing-member-name[
+  data-member="in"
+] {
+  color: var(--in);
+}
+
+
+.backing-member-name[
+  data-member="all-members"
+] {
+  color: #fff;
+}
+
+
+/* ========================================
+   バックボーカルの色変数
+======================================== */
+
+.backing-vocal[
+  data-member="bangchan"
+] {
+  --backing-color:
+    var(--bangchan);
+}
+
+
+.backing-vocal[
+  data-member="leeknow"
+] {
+  --backing-color:
+    var(--leeknow);
+}
+
+
+.backing-vocal[
+  data-member="changbin"
+] {
+  --backing-color:
+    var(--changbin);
+}
+
+
+.backing-vocal[
+  data-member="hyunjin"
+] {
+  --backing-color:
+    var(--hyunjin);
+}
+
+
+.backing-vocal[
+  data-member="han"
+] {
+  --backing-color:
+    var(--han);
+}
+
+
+.backing-vocal[
+  data-member="felix"
+] {
+  --backing-color:
+    var(--felix);
+}
+
+
+.backing-vocal[
+  data-member="seungmin"
+] {
+  --backing-color:
+    var(--seungmin);
+}
+
+
+.backing-vocal[
+  data-member="in"
+] {
+  --backing-color:
+    var(--in);
+}
+
+
+.backing-vocal[
+  data-member="all-members"
+] {
+  --backing-color: #fff;
+}
+
+
+/* ========================================
+   バックボーカル本体
+======================================== */
+
+.backing-vocal {
+  --backing-color: #fff;
+
+  position: relative;
+
+  margin-top: 24px;
+
+  padding:
+    18px 20px;
+
+  border-left:
+    2px solid var(--backing-color);
+
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(
+        in srgb,
+        var(--backing-color) 12%,
+        transparent
+      ),
+      transparent 85%
+    );
+}
+
+
+/* BACKING / メンバー名 */
+.backing-vocal
+.backing-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--backing-color);
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+
+/* バックボーカルのカナルビ */
+.backing-vocal
+.line.ruby {
+  color: var(--backing-color);
+}
+
+
+/* バックボーカルの原文 */
+.backing-vocal
+.line.original {
+  color:
+    rgba(255, 255, 255, 0.78);
+
+  font-size: 0.9em;
+}
+
+
+/* バックボーカルの日本語訳 */
+.backing-vocal
+.line.translation {
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 0.82em;
+}
+
+/* ========================================
+   前後の曲へ移動
+======================================== */
+
+.song-navigation {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  padding:
+    25px 0 120px;
+}
+
+
+.song-navigation-card {
+  position: relative;
+
+  min-height: 190px;
+
+  padding: 32px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.01)
+    );
+
+  border:
+    1px solid var(--border);
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.song-navigation-card
++ .song-navigation-card {
+  border-left: 0;
+}
+
+
+.song-navigation-card:hover {
+  background:
+    rgba(255, 63, 131, 0.08);
+
+  border-color:
+    var(--pink-border);
+}
+
+
+.song-navigation-card span {
+  color: var(--pink);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+
+.song-navigation-card h3 {
+  margin:
+    35px 0 8px;
+
+  font-size: 27px;
+}
+
+
+.song-navigation-card p {
+  margin: 0;
+
+  color: var(--gray);
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   フッター
+======================================== */
+
+.song-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding:
+    42px 5vw;
+
+  background: #050505;
+
+  border-top:
+    1px solid var(--border);
+}
+
+
+.song-footer strong {
+  font-size: 17px;
+  letter-spacing: 0.06em;
+}
+
+
+.song-footer p {
+  margin:
+    8px 0 0;
+
+  color: var(--gray-dark);
+
+  font-size: 11px;
+}
+
+
+.footer-online {
+  color: var(--pink);
+
+  font-size: 9px;
+  letter-spacing: 0.14em;
+}
+
+
+/* ========================================
+   ページトップボタン
+======================================== */
+
+.song-page-top {
+  position: fixed;
+
+  right: 22px;
+  bottom: 22px;
+  z-index: 50;
+
+  display: grid;
+  place-items: center;
+
+  width: 52px;
+  height: 52px;
+
+  color: #fff;
+
+  background:
+    rgba(213, 0, 50, 0.84);
+
+  border:
+    1px solid var(--pink-border);
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translateY(15px);
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.song-page-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateY(0);
+}
+
+
+/* ========================================
+   表示アニメーション
+======================================== */
+
+.reveal {
+  opacity: 0;
+
+  transform:
+    translateY(42px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+
+.reveal.is-visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* ========================================
+   タブレット
+======================================== */
+
+@media (
+  min-width: 761px
+)
+and (
+  max-width: 1100px
+) {
+
+  .song-hero {
+    min-height: auto;
+
+    padding:
+      105px 4vw 60px;
+  }
+
+
+  .song-hero-content {
+    grid-template-columns:
+      minmax(280px, 38%)
+      minmax(0, 1fr);
+
+    gap: 30px;
+
+    width: 100%;
+  }
+
+
+  .song-cover-panel {
+    max-width: 380px;
+  }
+
+
+  .song-main-data {
+    padding-top: 10px;
+  }
+
+
+  .song-main-data
+  .song-title {
+    font-size:
+      clamp(30px, 4.5vw, 44px);
+  }
+
+
+  .song-data-table {
+    padding:
+      18px 0;
+  }
+
+
+  .member-file-section {
+    padding:
+      30px 4vw 15px;
+  }
+
+
+  .lyrics-section {
+    padding-top: 20px;
+  }
+
+}
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 760px) {
+
+  /* ローディング画面 */
+  .file-loader-inner {
+    width:
+      min(320px, calc(100% - 40px));
+  }
+
+
+  .loader-code {
+    font-size: 7px;
+    letter-spacing: 0.17em;
+  }
+
+
+  .file-loader h1 {
+    margin:
+      18px 0;
+
+    font-size:
+      clamp(35px, 11vw, 54px);
+
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+
+  #loaderMessage {
+    font-size: 8px;
+    letter-spacing: 0.11em;
+  }
+
+
+  #loaderPercent {
+    font-size: 10px;
+  }
+
+
+  /* 曲ヒーロー */
+  .song-hero {
+    min-height: auto;
+
+    padding:
+      95px 10px 40px;
+  }
+
+
+  /*
+    スマホでも縦並びにせず、
+    左にジャケット＋再生バー、
+    右に曲情報を配置。
+  */
+  .song-hero-content {
+    grid-template-columns:
+      minmax(0, 44%)
+      minmax(0, 56%);
+
+    align-items: start;
+
+    gap: 12px;
+
+    width: 100%;
+    max-width: none;
+
+    margin: 0 auto;
+  }
+
+
+  /* 左側のカード */
+  .song-cover-panel {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+
+    margin: 0;
+    padding: 8px;
+  }
+
+
+  .cover-header,
+  .cover-footer {
+    gap: 5px;
+
+    font-size: 5px;
+    letter-spacing: 0.06em;
+  }
+
+
+  .cover-header {
+    padding:
+      0 1px 7px;
+  }
+
+
+  .cover-footer {
+    padding:
+      7px 1px 0;
+  }
+
+
+  .active-status {
+    gap: 4px;
+  }
+
+
+  .active-status::before {
+    width: 4px;
+    height: 4px;
+  }
+
+
+  .corner {
+    width: 12px;
+    height: 12px;
+  }
+
+
+  .top-left {
+    top: 5px;
+    left: 5px;
+  }
+
+
+  .top-right {
+    top: 5px;
+    right: 5px;
+  }
+
+
+  .bottom-left {
+    bottom: 5px;
+    left: 5px;
+  }
+
+
+  .bottom-right {
+    right: 5px;
+    bottom: 5px;
+  }
+
+
+  /* スマホのプレイヤー */
+  .music-player {
+    width: 100%;
+    min-width: 0;
+
+    margin:
+      14px 0 0;
+
+    padding:
+      10px 8px;
+
+    border-radius: 14px;
+
+    box-shadow:
+      0 15px 35px
+      rgba(0, 0, 0, 0.35);
+  }
+
+
+  .player-info {
+    gap: 5px;
+
+    font-size: 8px;
+  }
+
+
+  .player-label {
+    font-size: 6px;
+    letter-spacing: 0.1em;
+  }
+
+
+  .progress-bar {
+    height: 3px;
+  }
+
+
+  .progress-bar::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+  }
+
+
+  .progress-bar::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+  }
+
+
+  .player-controls {
+    gap: 8px;
+  }
+
+
+  .player-controls button,
+  .player-bottom button {
+    width: 28px;
+    height: 28px;
+
+    padding: 0;
+
+    font-size: 12px;
+  }
+
+
+  .player-bottom {
+    margin-top: 8px;
+
+    font-size: 7px;
+  }
+
+
+  /* 右側の曲情報 */
+  .song-main-data {
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding:
+      5px 0 0;
+  }
+
+
+  .song-eyebrow {
+    margin-bottom: 10px;
+
+    font-size: 6px;
+    letter-spacing: 0.13em;
+  }
+
+
+  .song-tags {
+    gap: 4px;
+  }
+
+
+  .song-tag {
+    padding:
+      5px 6px;
+
+    font-size: 5px;
+
+    white-space: nowrap;
+  }
+
+
+  .song-main-data
+  .song-title {
+    margin:
+      14px 0 5px;
+
+    font-size:
+      clamp(19px, 6.5vw, 28px);
+
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+
+  .song-subtitle {
+    margin-bottom: 16px;
+
+    font-size: 10px;
+  }
+
+
+  .song-data-table {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    padding:
+      10px 0;
+  }
+
+
+  .song-data-table div {
+    min-width: 0;
+
+    padding:
+      10px 5px;
+  }
+
+
+  .song-data-table dt {
+    margin-bottom: 5px;
+
+    font-size: 5px;
+    letter-spacing: 0.1em;
+  }
+
+
+  .song-data-table dd {
+    font-size: 7px;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  .song-hero-number {
+    display: none;
+  }
+
+
+  /* Part Colors */
+  .member-file-section,
+  .lyrics-section,
+  .song-navigation {
+    width:
+      min(100% - 30px, 1180px);
+  }
+
+
+  .member-file-section {
+    padding:
+      30px 0 15px;
+  }
+
+
+  .member-file-section
+  .section-label {
+    margin-bottom: 20px;
+  }
+
+
+  .section-label p,
+  .lyrics-header p {
+    font-size: 8px;
+  }
+
+
+  .section-label h2,
+  .lyrics-header h2 {
+    font-size:
+      clamp(34px, 11vw, 48px);
+  }
+
+
+  .member-file-section
+  .member-filter {
+    gap: 7px;
+  }
+
+
+  .member-filter-button {
+    min-height: 36px;
+
+    padding:
+      0 11px;
+
+    font-size: 7px;
+  }
+
+
+  /* Lyricsヘッダー */
+  .lyrics-section {
+    padding:
+      18px 0 80px;
+  }
+
+
+  .lyrics-header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+  }
+
+
+  .lyrics-view-controls {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    width: 100%;
+  }
+
+
+  .view-button {
+    width: 100%;
+    min-height: 42px;
+
+    padding:
+      0 8px;
+
+    font-size: 7px;
+  }
+
+
+  /* 歌詞コンソール */
+  .lyrics-console-top,
+  .lyrics-console-bottom {
+    padding:
+      13px 14px;
+
+    font-size: 7px;
+  }
+
+
+  .lyric-set {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    padding:
+      22px 16px;
+  }
+
+
+  .lyric-set::after {
+    top: 20px;
+    right: 14px;
+  }
+
+
+  /* メンバー欄を横向きにする */
+  .lyric-set
+  .member-column {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    min-height: 0;
+
+    padding:
+      0 0 12px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid var(--border);
+  }
+
+
+  .lyric-set
+  .member-id {
+    margin: 0;
+
+    font-size: 8px;
+  }
+
+
+  .lyric-set
+  .member-name {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+
+    writing-mode: initial;
+    text-orientation: initial;
+  }
+
+
+  .backing-member-name {
+    margin: 0 0 0 auto;
+
+    font-size: 7px;
+
+    writing-mode: initial;
+  }
+
+
+  /* スマホの歌詞文字 */
+  .lyric-set
+  .line.ruby {
+    margin-bottom: 5px;
+
+    font-size: 13px;
+    line-height: 1.55;
+    letter-spacing: 0;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  .lyric-set
+  .line.original {
+    margin-bottom: 5px;
+
+    font-size: 11px;
+    line-height: 1.55;
+    letter-spacing: 0;
+  }
+
+
+  .lyric-set
+  .line.translation {
+    margin-bottom: 19px;
+
+    font-size: 10px;
+    line-height: 1.65;
+    letter-spacing: 0;
+  }
+
+
+  .parenthetical {
+    font-size: 0.8em;
+  }
+
+
+  .backing-vocal {
+    margin-top: 18px;
+
+    padding:
+      14px 15px;
+  }
+
+
+  /* 曲移動 */
+  .song-navigation {
+    grid-template-columns: 1fr;
+
+    padding-bottom: 80px;
+  }
+
+
+  .song-navigation-card {
+    min-height: 150px;
+
+    padding: 24px;
+  }
+
+
+  .song-navigation-card
+  + .song-navigation-card {
+    border-top: 0;
+    border-left:
+      1px solid var(--border);
+  }
+
+
+  /* フッター */
+  .song-footer {
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding:
+      35px 20px;
+  }
+
+
+  .song-pointer-glow {
+    display: none;
+  }
+
+}
+
+
+/* ========================================
+   小さいスマートフォン
+======================================== */
+
+@media (max-width: 430px) {
+
+  .member-file-section
+  .member-filter {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .member-filter-button {
+    width: 100%;
+  }
+
+
+  .lyrics-console-top,
+  .lyrics-console-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+
+  .lyric-set {
+    padding:
+      20px 12px;
+  }
+
+
+  .lyric-set
+  .line.ruby {
+    font-size: 12px;
+  }
+
+
+  .lyric-set
+  .line.original {
+    font-size: 10.5px;
+  }
+
+
+  .lyric-set
+  .line.translation {
+    font-size: 9.5px;
+  }
+
+
+  .song-page-top {
+    right: 14px;
+    bottom: 14px;
+
+    width: 46px;
+    height: 46px;
+  }
+
+}
+
+
+/* ========================================
+   動きを減らす設定
+======================================== */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior:
+      auto !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}
