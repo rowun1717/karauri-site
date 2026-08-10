@@ -172,7 +172,7 @@ const setlistSongs = [
     album: "Endless Sun",
     release: "2026.03.13",
     image:
-      "images/song/Endless Sun.jpg",
+      "images/song/Endless sun.jpg",
     url:
       "song/Endless Sun.html",
     karaoke: [
