@@ -27,7 +27,7 @@ const songs = [
     type: "Original Song",
     release: "2026.08.07",
     image: "images/song/THISTHAT.jpg",
-    url: "songs/THIS&THAT.html",
+    url: "song/THIS&THAT.html",
     category: "group",
     members: [
       "bangchan",
@@ -46,7 +46,7 @@ const songs = [
     type: "Original Song",
     release: "2026.08.07",
     image: "images/albums/THISTHAT.jpg",
-    url: "songs/AfterYou.html",
+    url: "song/AfterYou.html",
     category: "group",
     members: [
       "bangchan",
@@ -65,7 +65,7 @@ const songs = [
     type: "Original Song",
     release: "2026.08.07",
     image: "images/albums/THISTHAT.jpg",
-    url: "songs/FARMING.html",
+    url: "song/FARMING.html",
     category: "group",
     members: [
       "bangchan",
@@ -84,7 +84,7 @@ const songs = [
     type: "Original Song",
     release: "2026.08.07",
     image: "images/albums/THISTHAT.jpg",
-    url: "songs/IDO.html",
+    url: "song/IDO.html",
     category: "group",
     members: [
       "bangchan",
@@ -103,7 +103,7 @@ const songs = [
     type: "Original Song",
     release: "2026.08.07",
     image: "images/albums/THISTHAT.jpg",
-    url: "songs/WayOut.html",
+    url: "song/WayOut.html",
     category: "group",
     members: [
       "bangchan",
@@ -122,7 +122,7 @@ const songs = [
     type: "Original Song",
     release: "2026.08.07",
     image: "images/albums/THISTHAT.jpg",
-    url: "songs/Back Then.html",
+    url: "song/Back Then.html",
     category: "group",
     members: [
       "bangchan",
@@ -141,7 +141,7 @@ const songs = [
     type: "Original Song",
     release: "2026.03.13",
     image: "images/song/Endless Sun.jpg",
-    url: "songs/Endless Sun.html",
+    url: "song/Endless Sun.html",
     karaoke: [
       "JOYSOUND",
       "DAM"
