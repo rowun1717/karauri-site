@@ -18,6 +18,121 @@
 */
 
 const setlistSongs = [
+    {
+    title: "THIS & THAT",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/song/THISTHAT.jpg",
+    url: "song/THIS&THAT.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
+    title: "After You",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/albums/THISTHAT.jpg",
+    url: "song/AfterYou.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
+    title: "FARMING",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/albums/THISTHAT.jpg",
+    url: "song/FARMING.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
+    title: "I DO",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/albums/THISTHAT.jpg",
+    url: "song/IDO.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
+    title: "Way Out",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/albums/THISTHAT.jpg",
+    url: "song/WayOut.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
+    title: "Back Then",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/albums/THISTHAT.jpg",
+    url: "song/BackThen.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+
   {
     id: "run-it",
     title: "RUN IT",
@@ -26,7 +141,7 @@ const setlistSongs = [
     image:
       "images/song/RUN IT.jpg",
     url:
-      "songs/RUN IT.html",
+      "song/RUN IT.html",
     karaoke: [
       "JOYSOUND"
     ],
@@ -40,7 +155,7 @@ const setlistSongs = [
     album: "STAY",
     release: "2026.07.09",
     image:
-      "images/albums/STAY.jpg",
+      "image/albums/STAY.jpg",
     url:
       "songs/STAY.html",
     karaoke: [
@@ -59,7 +174,7 @@ const setlistSongs = [
     image:
       "images/song/Endless Sun.jpg",
     url:
-      "songs/Endless Sun.html",
+      "song/Endless Sun.html",
     karaoke: [
       "JOYSOUND",
       "DAM"
@@ -76,7 +191,7 @@ const setlistSongs = [
     image:
       "images/albums/back to life.jpg",
     url:
-      "songs/back to life.html",
+      "song/back to life.html",
     karaoke: [
       "JOYSOUND"
     ],
@@ -92,7 +207,7 @@ const setlistSongs = [
     image:
       "images/song/Do It.jpg",
     url:
-      "songs/Do It.html",
+      "song/Do It.html",
     karaoke: [
       "JOYSOUND"
     ],
@@ -108,7 +223,7 @@ const setlistSongs = [
     image:
       "images/song/DIVINE.jpg",
     url:
-      "songs/DIVINE.html",
+      "song/DIVINE.html",
     karaoke: [],
     category: "group",
     duration: 195
@@ -122,7 +237,7 @@ const setlistSongs = [
     image:
       "images/albums/album-Do It.jpg",
     url:
-      "songs/Holiday.html",
+      "song/Holiday.html",
     karaoke: [],
     category: "group",
     duration: 203
@@ -136,7 +251,7 @@ const setlistSongs = [
     image:
       "images/song/JJAM.jpg",
     url:
-      "songs/JJAM.html",
+      "song/JJAM.html",
     karaoke: [
       "JOYSOUND",
       "DAM"
@@ -153,7 +268,7 @@ const setlistSongs = [
     image:
       "images/song/I Like It.jpg",
     url:
-      "songs/I Like It.html",
+      "song/I Like It.html",
     karaoke: [
       "JOYSOUND",
       "DAM"
@@ -170,7 +285,7 @@ const setlistSongs = [
     image:
       "images/song/CASE143.jpg",
     url:
-      "songs/CASE 143.html",
+      "song/CASE 143.html",
     karaoke: [
       "JOYSOUND",
       "DAM"
@@ -187,7 +302,7 @@ const setlistSongs = [
     image:
       "images/song/MANIAC.jpg",
     url:
-      "songs/MANIAC.html",
+      "song/MANIAC.html",
     karaoke: [
       "JOYSOUND",
       "DAM"
@@ -3583,85 +3698,106 @@ function renderLiveViewerSongs(live) {
 
   let encoreStarted = false;
 
-  live.songs.forEach(
-    (liveSong, index) => {
-      const registeredSong =
-        findRegisteredSong(
-          liveSong.title
-        );
-
-      const row =
-        document.createElement(
-          "div"
-        );
-
-      row.className =
-        "live-song-row";
-
-      if (
-        liveSong.type === "encore" &&
-        !encoreStarted
-      ) {
-        row.classList.add(
-          "is-encore"
-        );
-
-        encoreStarted = true;
-      }
-
-      const titleElement =
-        registeredSong
-          ? `
-            <a
-              class="live-song-title"
-              href="${escapeHtml(
-                registeredSong.url
-              )}"
-            >
-              ${escapeHtml(
-                liveSong.title
-              )}
-            </a>
-          `
-          : `
-            <span class="live-song-title">
-              ${escapeHtml(
-                liveSong.title
-              )}
-            </span>
-          `;
-
-      row.innerHTML = `
-        <span class="live-song-number">
-          ${String(index + 1)
-            .padStart(2, "0")}
-        </span>
-
-        ${titleElement}
-
-        <span class="
-          live-song-status
-          ${
-            registeredSong
-              ? "has-file"
-              : ""
-          }
-        ">
-          ${
-            registeredSong
-              ? "LYRIC FILE"
-              : "NOT FOUND"
-          }
-        </span>
-      `;
-
-      liveViewerSongList.appendChild(
-        row
+  live.songs.forEach((liveSong, index) => {
+    const registeredSong =
+      findRegisteredSong(
+        liveSong.title
       );
+
+    const row =
+      document.createElement("div");
+
+    row.className =
+      "live-song-row";
+
+
+    if (
+      liveSong.type === "encore" &&
+      !encoreStarted
+    ) {
+      row.classList.add(
+        "is-encore"
+      );
+
+      encoreStarted = true;
     }
-  );
+
+
+    const titleElement =
+      registeredSong
+        ? `
+          <a
+            class="live-song-title"
+            href="${escapeHtml(
+              registeredSong.url
+            )}"
+          >
+            ${escapeHtml(
+              liveSong.title
+            )}
+          </a>
+        `
+        : `
+          <span class="live-song-title">
+            ${escapeHtml(
+              liveSong.title
+            )}
+          </span>
+        `;
+
+
+    const statusElement =
+      registeredSong
+        ? `
+          <a
+            class="live-song-status has-file"
+            href="${escapeHtml(
+              registeredSong.url
+            )}"
+          >
+            LYRIC FILE
+          </a>
+        `
+        : `
+          <span class="live-song-status">
+            NOT FOUND
+          </span>
+        `;
+
+
+    row.innerHTML = `
+      <span class="live-song-number">
+        ${String(index + 1)
+          .padStart(2, "0")}
+      </span>
+
+      ${titleElement}
+
+      ${statusElement}
+    `;
+
+    liveViewerSongList.appendChild(
+      row
+    );
+  });
 }
 
+
+/* ========================================
+   登録曲を曲名から探す
+======================================== */
+
+function findRegisteredSong(title) {
+  const normalizedTitle =
+    normalizeText(title);
+
+  return setlistSongs.find((song) => {
+    return (
+      normalizeText(song.title) ===
+      normalizedTitle
+    );
+  });
+}
 
 /* ========================================
    登録曲を曲名から探す
