@@ -22,6 +22,120 @@
 
 const songs = [
   {
+    title: "THIS & THAT",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/song/THISTHAT.jpg",
+    url: "songs/THIS&THAT.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
+    title: "After You",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/albums/THISTHAT.jpg",
+    url: "songs/AfterYou.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
+    title: "FARMING",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/albums/THISTHAT.jpg",
+    url: "songs/FARMING.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
+    title: "I DO",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/albums/THISTHAT.jpg",
+    url: "songs/IDO.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
+    title: "Way Out",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/albums/THISTHAT.jpg",
+    url: "songs/WayOut.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
+    title: "Back Then",
+    album: "THIS & THAT",
+    type: "Original Song",
+    release: "2026.08.07",
+    image: "images/albums/THISTHAT.jpg",
+    url: "songs/Back Then.html",
+    category: "group",
+    members: [
+      "bangchan",
+      "leeknow",
+      "changbin",
+      "hyunjin",
+      "han",
+      "felix",
+      "seungmin",
+      "in"
+    ]
+  },
+  {
     title: "Endless Sun",
     album: "Endless Sun",
     type: "Original Song",
