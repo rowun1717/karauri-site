@@ -394,6 +394,29 @@ const songs = [
     ]
   },
 
+  {
+    title: "District 9",
+    album: "I am NOT",
+    album: "SKZ2020",
+    type: "Original Song",
+    date: "2018.03.26",
+    release: "2023.06.02",
+    url: "song/District9.html",
+    image: "images/albums/SKZ2020.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
 
 /* ========================================
   {
