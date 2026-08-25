@@ -196,6 +196,10 @@ img {
   display: grid;
   place-items: center;
 
+  width: 100%;
+  height: 100dvh;
+
+  overflow: hidden;
   background: #050505;
 
   transition:
@@ -207,34 +211,67 @@ img {
 .file-loader.is-hidden {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
+
+/* ロード画面の中身 */
 
 .file-loader-inner {
-  width: min(520px, calc(100% - 40px));
+  width: min(
+    850px,
+    calc(100vw - 48px)
+  );
+
+  margin-inline: auto;
   text-align: center;
+
+  overflow: visible;
+  box-sizing: border-box;
 }
 
-
 .loader-code {
+  margin: 0 0 42px;
+
   color: var(--pink);
   font-size: 11px;
   letter-spacing: 0.26em;
 }
 
 
+/* 曲名 */
+
 .file-loader h1 {
   position: relative;
+  display: block;
 
-  margin: 25px 0;
+  width: 100%;
+  max-width: 100%;
 
-  font-size: clamp(65px, 16vw, 150px);
-  line-height: 0.9;
-  letter-spacing: -0.08em;
+  margin: 0 auto 34px;
 
-  overflow-wrap: anywhere;
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      42px,
+      10vw,
+      105px
+    ) !important;
+
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.065em;
+
+  text-align: center;
+  white-space: nowrap;
+
+  overflow: visible;
+  box-sizing: border-box;
 }
 
+
+/* グリッチ文字 */
 
 .file-loader h1::before,
 .file-loader h1::after {
@@ -242,6 +279,16 @@ img {
 
   position: absolute;
   inset: 0;
+
+  display: block;
+
+  width: 100%;
+
+  text-align: center;
+  white-space: nowrap;
+
+  overflow: visible;
+  pointer-events: none;
 }
 
 
@@ -275,20 +322,26 @@ img {
 }
 
 
+/* メッセージ */
+
 #loaderMessage {
+  margin: 0;
+
   color: #b7b7bf;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.17em;
 }
 
 
+/* 進捗バー */
+
 .loader-bar {
   width: 100%;
   height: 4px;
-  margin-top: 22px;
+
+  margin-top: 25px;
 
   overflow: hidden;
-
   background: #29292e;
 }
 
@@ -312,11 +365,66 @@ img {
 
 
 #loaderPercent {
+  margin: 13px 0 0;
+
   color: var(--pink);
   font-family: monospace;
+  font-size: 11px;
 }
 
 
+/* ========================================
+   スマホ
+======================================== */
+
+@media screen and (max-width: 600px) {
+
+  .file-loader-inner {
+    width:
+      calc(100vw - 36px);
+  }
+
+
+  .loader-code {
+    margin-bottom: 34px;
+
+    font-size: 8px;
+    letter-spacing: 0.19em;
+  }
+
+
+  .file-loader h1 {
+    /*
+      画面幅に応じて縮小。
+      長い曲名でも見切れにくい。
+    */
+    font-size:
+      clamp(
+        29px,
+        9.3vw,
+        50px
+      ) !important;
+
+    margin-bottom: 28px;
+    letter-spacing: -0.07em;
+  }
+
+
+  #loaderMessage {
+    font-size: 8px;
+    letter-spacing: 0.14em;
+  }
+
+
+  .loader-bar {
+    margin-top: 22px;
+  }
+
+
+  #loaderPercent {
+    font-size: 9px;
+  }
+}
 /* ========================================
    曲ヒーロー
 ======================================== */
@@ -2441,6 +2549,43 @@ body.show-fanchant
   white-space: nowrap;
 }
 
+/* 非公式の掛け声 */
+.unofficial-chant {
+  color: #4da6ff !important;
+  font-weight: 900;
+
+  /* 既存のピンク線を消す */
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+
+  /* 青い下線だけ表示 */
+  text-decoration-line: underline !important;
+  text-decoration-color: #4da6ff !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 5px;
+
+  text-shadow:
+    0 0 8px
+    rgba(77, 166, 255, 0.4);
+}
+
+/* 疑似要素でピンク線が作られている場合 */
+.unofficial-chant::before,
+.unofficial-chant::after {
+  display: none !important;
+}
+
+
+/* ========================================
+   掛け声OFF
+======================================== */
+
+/* 非公式の掛け声だけ非表示 */
+body:not(.show-fanchant)
+.unofficial-chant {
+  display: none !important;
+}
 
 /* ========================================
    特定メンバーの重なるパート
