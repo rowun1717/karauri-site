@@ -338,8 +338,21 @@ const setlistSongs = [
 
   },
 
+  {
+    id: "District 9",
+    title: "District 9",
+    album: "I am NOT",
+    album: "SKZ2020",
+    release: "2018.03.26",
+    url: "song/District9.html",
+    image: "images/albums/SKZ2020.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 240
 
-];
+  },
+
+];  
 
 
 /* ========================================
