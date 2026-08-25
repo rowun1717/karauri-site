@@ -348,6 +348,53 @@ const songs = [
       "ハン"
     ]
   },
+
+  {
+    title: "Hall of fame",
+    album: "5-STAR",
+    type: "Original Song",
+    date: "2026.06.29",
+    release: "2023.06.02",
+    url: "song/Hall of fame.html",
+    image: "images/albums/5-STAR.jpg",
+    karaoke: ["JOYSOUND"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+    {
+    title: "Hellevator",
+    album: "Mixtape",
+    album: "SKZ2020",
+    type: "Original Song",
+    date: "2018.01.12",
+    release: "2023.06.02",
+    url: "song/HELLEVATOR.html",
+    image: "images/song/HELLEVATOR.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+
 /* ========================================
   {
     title: "CASE 143",
@@ -495,8 +542,8 @@ const albums = [
     title: "★★★★★ (5-STAR)",
     year: "2023",
     image: "images/albums/5-STAR.jpg",
-    url: "",
-    available: false
+    url: "albums/5-STAR.html",
+    available: true
   },
 
   {
