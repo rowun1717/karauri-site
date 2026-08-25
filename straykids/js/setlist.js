@@ -155,7 +155,7 @@ const setlistSongs = [
     album: "STAY",
     release: "2026.07.09",
     image:
-      "image/albums/STAY.jpg",
+      "images/albums/STAY.jpg",
     url:
       "songs/STAY.html",
     karaoke: [
@@ -309,7 +309,36 @@ const setlistSongs = [
     ],
     category: "group",
     duration: 182
-  }
+  },
+
+    {
+    id: "hall-of-fame",
+    title: "Hall of fame",
+    album: "5-STAR",
+    release: "2023.06.02",
+    url: "song/Hall of fame.html",
+    image: "images/albums/5-STAR.jpg",
+    karaoke: ["JOYSOUND"],
+    category: "group",
+    duration: 172
+
+  },
+
+  {
+    id: "Hellevator",
+    title: "Hellevator",
+    album: "Mixtape",
+    album: "SKZ2020",
+    release: "2018.01.12",
+    url: "song/HELLEVATOR.html",
+    image: "images/song/HELLEVATOR.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 240
+
+  },
+
+
 ];
 
 
@@ -2145,7 +2174,7 @@ const liveSetlists = [
         type: "main"
       },
       {
-        title: "HELLAVATOR",
+        title: "Hellevator",
         type: "main"
       },
       {
