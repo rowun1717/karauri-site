@@ -425,7 +425,7 @@ const songs = [
     date: "2018.08.26",
     release: "2019.06.19",
     url: "song/SideEffects.html",
-    image: "images/albums/Clé2Yellow Wood.jpg",
+    image: "images/albums/Clé2YellowWood.jpg",
     category: "latest",
     members: [
       "Bang Chan",
