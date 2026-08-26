@@ -358,7 +358,7 @@ const setlistSongs = [
     album: "Clé 2 : Yellow Wood",
     release: "2019.06.19",
     url: "song/SideEffects.html",
-    image: "images/albums/Clé2Yellow Wood.jpg",
+    image: "images/albums/Clé2YellowWood.jpg",
     karaoke: ["JOYSOUND","DAM"],
     category: "group",
     duration: 213
