@@ -348,7 +348,20 @@ const setlistSongs = [
     image: "images/albums/SKZ2020.jpg",
     karaoke: ["JOYSOUND","DAM"],
     category: "group",
-    duration: 240
+    duration: 213
+
+  },
+
+  {
+    id: "Side Effects",
+    title: "Side Effects",
+    album: "Clé 2 : Yellow Wood",
+    release: "2019.06.19",
+    url: "song/SideEffects.html",
+    image: "images/albums/Clé2Yellow Wood.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 213
 
   },
 
