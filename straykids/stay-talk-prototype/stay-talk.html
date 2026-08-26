@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STAY TALK | SKZ LYRIC LAB</title>
+  <link rel="stylesheet" href="stay-talk.css">
+</head>
+<body>
+  <div class="paper-noise" aria-hidden="true"></div>
+
+  <header class="talk-header">
+    <a class="brand" href="../index.html" aria-label="SKZ LYRIC LAB トップへ">
+      <span>SKZ LYRIC LAB</span>
+    </a>
+    <p class="talk-title">STAY TALK</p>
+    <div class="system-status"><i></i>SYSTEM ONLINE</div>
+  </header>
+
+  <main class="talk-shell">
+    <aside class="channel-panel torn-panel" aria-label="チャンネル一覧">
+      <section class="terminal-card">
+        <small>TERMINAL ID.</small>
+        <strong>SKZ-LAB-0801</strong>
+        <p>USER : <button id="profileButton" class="text-button" type="button">URI</button></p>
+        <p>ACCESS LEVEL / STAY</p>
+      </section>
+
+      <h2>CHANNEL ARCHIVE</h2>
+      <nav id="channelList" class="channel-list"></nav>
+
+      <section class="archive-card" aria-label="アーカイブ情報">
+        <h3>LAB ARCHIVE DB</h3>
+        <p>● LYRIC_ARCHIVE　▷ LYR-0001</p>
+        <p>● RECORDING_LOG　▷ LOG-0432</p>
+        <p>● STAGE_FILE　　 ▷ STG-0388</p>
+        <p>● FAN_PROJECT　　▷ PRJ-0267</p>
+      </section>
+    </aside>
+
+    <section class="chat-panel" aria-labelledby="currentChannelTitle">
+      <div class="channel-heading">
+        <div>
+          <small id="currentChannelCode">CH-001</small>
+          <h1 id="currentChannelTitle">GENERAL</h1>
+        </div>
+        <span>REAL-TIME FEED ●</span>
+      </div>
+
+      <aside class="pinned-notice">
+        <strong>PINNED</strong>
+        <p>ここはSTAYだけの交流チャンネルです。個人情報を書かず、お互いを尊重して楽しみましょう。</p>
+      </aside>
+
+      <div id="replyPreview" class="reply-preview" hidden>
+        <span id="replyText"></span>
+        <button id="cancelReply" type="button" aria-label="返信を取り消す">×</button>
+      </div>
+
+      <div id="messageList" class="message-list" aria-live="polite"></div>
+
+      <form id="messageForm" class="composer">
+        <label class="sr-only" for="messageInput">メッセージ</label>
+        <textarea id="messageInput" maxlength="240" rows="2" placeholder="MESSAGE TO STAY..." required></textarea>
+        <span id="characterCount" class="character-count">0 / 240</span>
+        <button type="submit" class="send-button">SEND</button>
+      </form>
+    </section>
+
+    <aside class="online-panel torn-panel" aria-label="オンラインメンバー">
+      <h2>ONLINE STAY / <span id="onlineCount">128</span></h2>
+      <div id="onlineList" class="online-list"></div>
+      <p class="safety-label">ALL ACCESS / PUBLIC CHANNEL</p>
+    </aside>
+  </main>
+
+  <dialog id="profileDialog" class="profile-dialog">
+    <form id="profileForm" method="dialog">
+      <div class="dialog-heading">
+        <h2>STAY PROFILE</h2>
+        <button class="dialog-close" value="cancel" aria-label="閉じる">×</button>
+      </div>
+
+      <label for="displayName">NICKNAME</label>
+      <input id="displayName" name="displayName" maxlength="18" required>
+
+      <label for="memberSelect">BIAS</label>
+      <select id="memberSelect" name="member"></select>
+
+      <button class="save-profile" value="default">SAVE PROFILE</button>
+    </form>
+  </dialog>
+
+<script
+  type="module"
+  src="stay-talk.js"
+></script>
+</body>
+</html>
