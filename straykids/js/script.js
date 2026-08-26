@@ -353,7 +353,7 @@ const songs = [
     title: "Hall of fame",
     album: "5-STAR",
     type: "Original Song",
-    date: "2026.06.29",
+    date: "2026.08.25",
     release: "2023.06.02",
     url: "song/Hall of fame.html",
     image: "images/albums/5-STAR.jpg",
@@ -376,8 +376,8 @@ const songs = [
     album: "Mixtape",
     album: "SKZ2020",
     type: "Original Song",
-    date: "2018.01.12",
-    release: "2023.06.02",
+    date: "2026.08.25",
+    release: "2018.01.12",
     url: "song/HELLEVATOR.html",
     image: "images/song/HELLEVATOR.jpg",
     karaoke: ["JOYSOUND","DAM"],
@@ -399,7 +399,7 @@ const songs = [
     album: "I am NOT",
     album: "SKZ2020",
     type: "Original Song",
-    date: "2018.03.26",
+    date: "2018.08.26",
     release: "2023.06.02",
     url: "song/District9.html",
     image: "images/albums/SKZ2020.jpg",
@@ -416,6 +416,30 @@ const songs = [
       "I.N"
     ]
   },
+
+    {
+    id: "Side Effects",
+    title: "Side Effects",
+    album: "Clé 2 : Yellow Wood",
+    type: "Original Song",
+    date: "2018.08.26",
+    release: "2019.06.19",
+    url: "song/SideEffects.html",
+    image: "images/albums/Clé2Yellow Wood.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
 
 
 /* ========================================
@@ -652,7 +676,7 @@ const albums = [
   {
     title: "Clé 2 : Yellow Wood",
     year: "2019",
-    image: "images/albums/Cle 2 Yellow Wood.jpg",
+    image: "images/albums/Clé2Yellow Wood.jpg",
     url: "",
     available: false
   },
