@@ -254,9 +254,9 @@ img {
 
   font-size:
     clamp(
-      42px,
-      10vw,
-      105px
+      34px,
+      7vw,
+      68px
     ) !important;
 
   font-weight: 900;
@@ -269,7 +269,6 @@ img {
   overflow: visible;
   box-sizing: border-box;
 }
-
 
 /* グリッチ文字 */
 
@@ -425,6 +424,8 @@ img {
     font-size: 9px;
   }
 }
+
+
 /* ========================================
    曲ヒーロー
 ======================================== */
@@ -3816,4 +3817,92 @@ and (
       0.01ms !important;
   }
 
+}
+
+/* ========================================
+   ロード画面・スマホ最終修正
+======================================== */
+
+@media screen and (max-width: 760px) {
+
+  #fileLoader .file-loader-inner {
+    width:
+      calc(100vw - 40px) !important;
+
+    max-width:
+      520px !important;
+  }
+
+
+  #fileLoader h1 {
+    width: 100% !important;
+
+    font-size:
+      clamp(
+        28px,
+        8.5vw,
+        44px
+      ) !important;
+
+    white-space: nowrap;
+    overflow: visible !important;
+  }
+}
+
+
+/* ========================================
+   ロード画面・見切れ最終修正
+======================================== */
+
+#fileLoader .file-loader-inner {
+  width: min(
+    850px,
+    calc(100vw - 48px)
+  ) !important;
+
+  max-width: none !important;
+  overflow: visible !important;
+}
+
+
+#fileLoader h1 {
+  width: 100% !important;
+  max-width: none !important;
+
+  font-size:
+    clamp(
+      32px,
+      6.5vw,
+      72px
+    ) !important;
+
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+
+#fileLoader h1::before,
+#fileLoader h1::after {
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+
+/* スマホ */
+@media screen and (max-width: 600px) {
+
+  #fileLoader .file-loader-inner {
+    width:
+      calc(100vw - 36px) !important;
+  }
+
+  #fileLoader h1 {
+    font-size:
+      clamp(
+        25px,
+        8.5vw,
+        44px
+      ) !important;
+  }
 }
