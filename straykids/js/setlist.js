@@ -339,7 +339,7 @@ const setlistSongs = [
   },
 
   {
-    id: "District 9",
+    id: "District-9",
     title: "District 9",
     album: "I am NOT",
     album: "SKZ2020",
@@ -353,7 +353,7 @@ const setlistSongs = [
   },
 
   {
-    id: "Side Effects",
+    id: "Side-Effects",
     title: "Side Effects",
     album: "Clé 2 : Yellow Wood",
     release: "2019.06.19",
@@ -364,6 +364,47 @@ const setlistSongs = [
     duration: 213
 
   },
+
+    {
+    id: "DoubleKnot",
+    title: "Double Knot",
+    album: "Clé : LEVANTER",
+    release: "2019.12.11",
+    url: "song/Double Knot.html",
+    image: "images/albums/Double Knot.jpg",
+    karaoke: [],
+    category: "group",
+    duration: 213
+
+  },
+
+  {
+    id: "BackDoor",
+    title: "Back Door",
+    album: "IN LIFE",
+    release: "2020.09.14",
+    url: "song/BackDoor.html",
+    image: "images/albums/IN LIFE.jpg",
+    karaoke: [],
+    category: "group",
+    duration: 189
+
+  },
+
+    {
+    id: "God'sMenu",
+    title: "God's Menu",
+    album: "GO LIVE",
+    release: "2020.06.17",
+    url: "song/God'sMenu.html",
+    image: "images/song/God's Menu.jpg",
+    karaoke: [],
+    category: "group",
+    duration: 189
+
+  },
+
+
 
 ];  
 
