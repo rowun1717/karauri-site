@@ -1,230 +1,138 @@
 "use strict";
 
-let player = null;
-let playerReady = false;
+/* =========================================================
+   YouTube player
+   - data-youtube-id: ORIGINAL / KANA / ALL で使う原曲
+   - data-japanese-youtube-id: JAPANESE で使う日本語版
+   - 日本語版IDが空なら従来どおり原曲のまま
+   - 音源切替時は現在秒数・再生/停止・ミュート状態を維持
+   - lyric-set の data-time クリックでその秒数へ移動
+   - 日本語版だけ秒数が違う曲は data-time-japanese を任意指定可能
+========================================================= */
+
+const musicPlayer = document.querySelector(".music-player");
+const playButton = document.getElementById("playButton");
+const rewindButton = document.getElementById("rewindButton");
+const forwardButton = document.getElementById("forwardButton");
+const muteButton = document.getElementById("muteButton");
+const progressBar = document.getElementById("progressBar");
+const currentTimeLabel = document.getElementById("currentTime");
+const durationLabel = document.getElementById("duration");
+const lyricSets = document.querySelectorAll(".lyric-set[data-time]");
+
+let youtubePlayer = null;
 let progressTimer = null;
+let activeSource = "original";
+let pendingSwitch = null;
+
+const originalVideoId =
+  musicPlayer?.dataset.youtubeId?.trim() || "";
+
+const japaneseVideoId =
+  musicPlayer?.dataset.japaneseYoutubeId?.trim() || "";
 
 
-/* =========================
-   HTML要素の取得
-========================= */
-
-const musicPlayer =
-  document.querySelector(".music-player");
-
-const videoId =
-  musicPlayer?.dataset.youtubeId;
-
-const playButton =
-  document.getElementById("playButton");
-
-const rewindButton =
-  document.getElementById("rewindButton");
-
-const forwardButton =
-  document.getElementById("forwardButton");
-
-const muteButton =
-  document.getElementById("muteButton");
-
-const progressBar =
-  document.getElementById("progressBar");
-
-const currentTimeDisplay =
-  document.getElementById("currentTime");
-
-const durationDisplay =
-  document.getElementById("duration");
-
-const lyricSets =
-  document.querySelectorAll(".lyric-set");
-
-
-/* =========================
-   YouTubeプレイヤー作成
-========================= */
-
-function createYouTubePlayer() {
-  /*
-    すでに作成済みなら
-    二重作成しない
-  */
-  if (player) {
-    return;
+function formatTime(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) {
+    return "0:00";
   }
 
-  if (!videoId) {
-    console.error(
-      "data-youtube-idが設定されていません"
-    );
+  const total = Math.floor(seconds);
+  const minutes = Math.floor(total / 60);
+  const secs = total % 60;
 
-    return;
-  }
-
-  const youtubePlayerElement =
-    document.getElementById(
-      "youtubePlayer"
-    );
-
-  if (!youtubePlayerElement) {
-    console.error(
-      "#youtubePlayerが見つかりません"
-    );
-
-    return;
-  }
-
-  /*
-    YouTube APIがまだ準備前なら
-    ここでは作成しない
-  */
-  if (
-    !window.YT ||
-    typeof window.YT.Player !==
-      "function"
-  ) {
-    return;
-  }
-
-  player =
-    new window.YT.Player(
-      "youtubePlayer",
-      {
-        width: "100%",
-        height: "315",
-
-        videoId,
-
-        playerVars: {
-          controls: 1,
-          playsinline: 1,
-          rel: 0
-        },
-
-        events: {
-          onReady:
-            handlePlayerReady,
-
-          onStateChange:
-            handlePlayerStateChange,
-
-          onError:
-            handlePlayerError
-        }
-      }
-    );
+  return `${minutes}:${String(secs).padStart(2, "0")}`;
 }
 
 
-/*
-  YouTube APIが後から
-  読み込まれた場合
-*/
-window.onYouTubeIframeAPIReady =
-  function () {
-    createYouTubePlayer();
-  };
-
-
-/*
-  更新時など、YouTube APIが先に
-  読み込まれていた場合にも対応
-*/
-function initializeYouTubePlayer() {
-  if (
-    window.YT &&
-    typeof window.YT.Player ===
-      "function"
-  ) {
-    createYouTubePlayer();
-    return;
-  }
-
-  let checkCount = 0;
-
-  const apiCheckTimer =
-    window.setInterval(() => {
-      checkCount += 1;
-
-      if (
-        window.YT &&
-        typeof window.YT.Player ===
-          "function"
-      ) {
-        window.clearInterval(
-          apiCheckTimer
-        );
-
-        createYouTubePlayer();
-        return;
-      }
-
-      /*
-        10秒で確認を終了
-      */
-      if (checkCount >= 100) {
-        window.clearInterval(
-          apiCheckTimer
-        );
-
-        console.error(
-          "YouTube APIを読み込めませんでした"
-        );
-      }
-    }, 100);
-}
-
-
-if (
-  document.readyState === "loading"
-) {
-  document.addEventListener(
-    "DOMContentLoaded",
-    initializeYouTubePlayer
+function playerReady() {
+  return Boolean(
+    youtubePlayer &&
+    typeof youtubePlayer.getCurrentTime === "function"
   );
-} else {
-  initializeYouTubePlayer();
 }
 
-/* =========================
-   プレイヤー準備完了
-========================= */
 
-function handlePlayerReady() {
-  playerReady = true;
+function getSafeDuration() {
+  if (!playerReady()) return 0;
 
-  console.log(
-    "YouTubeプレイヤー準備完了"
+  const duration =
+    Number(youtubePlayer.getDuration());
+
+  return Number.isFinite(duration)
+    ? duration
+    : 0;
+}
+
+
+function updateProgress() {
+  if (!playerReady()) return;
+
+  const current =
+    Number(
+      youtubePlayer.getCurrentTime()
+    ) || 0;
+
+  const duration =
+    getSafeDuration();
+
+  const percent =
+    duration > 0
+      ? (current / duration) * 100
+      : 0;
+
+  if (progressBar) {
+    progressBar.value =
+      String(percent);
+
+    progressBar.style.setProperty(
+      "--progress",
+      `${Math.max(
+        0,
+        Math.min(100, percent)
+      )}%`
+    );
+  }
+
+  if (currentTimeLabel) {
+    currentTimeLabel.textContent =
+      formatTime(current);
+  }
+
+  if (durationLabel) {
+    durationLabel.textContent =
+      formatTime(duration);
+  }
+
+  updatePlayingLyric(current);
+}
+
+
+function startProgressTimer() {
+  window.clearInterval(
+    progressTimer
   );
-
-  setupLyricClick();
 
   progressTimer =
     window.setInterval(
-      updatePlayerDisplay,
-      200
+      updateProgress,
+      250
     );
-
-  updatePlayerDisplay();
 }
 
 
-/* =========================
-   再生状態の変化
-========================= */
-
-function handlePlayerStateChange(event) {
-  if (!playButton) {
+function setPlayButtonState(state) {
+  if (!playButton || !window.YT) {
     return;
   }
 
   const isPlaying =
-    event.data ===
+    state ===
     YT.PlayerState.PLAYING;
 
   playButton.textContent =
     isPlaying
-      ? "Ⅱ"
+      ? "❚❚"
       : "▶";
 
   playButton.setAttribute(
@@ -236,40 +144,337 @@ function handlePlayerStateChange(event) {
 }
 
 
-/* =========================
-   YouTubeエラー
-========================= */
+function updatePlayingLyric(
+  currentTime
+) {
+  let currentSet = null;
 
-function handlePlayerError(event) {
-  console.error(
-    "YouTubeプレイヤーエラー:",
-    event.data
-  );
+  lyricSets.forEach((set) => {
+
+    const time =
+      getLyricTime(set);
+
+    if (
+      Number.isFinite(time) &&
+      time <= currentTime + 0.2
+    ) {
+      currentSet = set;
+    }
+
+  });
+
+  lyricSets.forEach((set) => {
+
+    set.classList.toggle(
+      "is-playing",
+      set === currentSet
+    );
+
+  });
+}
+
+
+function getLyricTime(set) {
+  const useJapanese =
+    activeSource === "japanese";
+
+  const raw =
+    useJapanese &&
+    set.dataset.timeJapanese
+      ? set.dataset.timeJapanese
+      : set.dataset.time;
+
+  const value =
+    Number(raw);
+
+  return Number.isFinite(value)
+    ? value
+    : NaN;
 }
 
 
 /* =========================
-   再生・一時停止
+   原曲 / Japanese Ver. 切替
+========================= */
+
+function switchVideoSource(
+  targetSource
+) {
+
+  const wantsJapanese =
+    targetSource === "japanese";
+
+  const targetVideoId =
+    wantsJapanese &&
+    japaneseVideoId
+      ? japaneseVideoId
+      : originalVideoId;
+
+  /*
+    Japanese Ver.のIDが設定されていない場合は
+    ORIGINAL扱いに戻す。
+  */
+  const resolvedSource =
+    wantsJapanese &&
+    japaneseVideoId
+      ? "japanese"
+      : "original";
+
+  if (!targetVideoId) {
+    return;
+  }
+
+  /*
+    YouTube Playerがまだ準備できていない場合は
+    あとで切り替える。
+  */
+  if (!playerReady()) {
+    pendingSwitch =
+      resolvedSource;
+
+    return;
+  }
+
+  /*
+    すでに同じ音源なら何もしない
+  */
+  if (
+    activeSource ===
+    resolvedSource
+  ) {
+    return;
+  }
+
+  /*
+    現在位置を保存
+  */
+  const currentTime =
+    Number(
+      youtubePlayer.getCurrentTime()
+    ) || 0;
+
+  /*
+    再生状態を保存
+  */
+  const state =
+    youtubePlayer.getPlayerState();
+
+  const wasPlaying =
+    window.YT &&
+    state ===
+      YT.PlayerState.PLAYING;
+
+  /*
+    ミュート状態を保存
+  */
+  const wasMuted =
+    youtubePlayer.isMuted();
+
+  activeSource =
+    resolvedSource;
+
+  const playerOptions = {
+    videoId:
+      targetVideoId,
+
+    startSeconds:
+      Math.max(
+        0,
+        currentTime
+      )
+  };
+
+  /*
+    再生中だった場合
+    → 新しい音源もそのまま再生
+
+    停止中だった場合
+    → 同じ秒数で待機
+  */
+  if (wasPlaying) {
+
+    youtubePlayer.loadVideoById(
+      playerOptions
+    );
+
+  } else {
+
+    youtubePlayer.cueVideoById(
+      playerOptions
+    );
+
+  }
+
+  /*
+    ミュート状態も維持
+  */
+  if (wasMuted) {
+    youtubePlayer.mute();
+  }
+}
+
+
+/* =========================
+   song.js の表示切替と同期
+========================= */
+
+document.addEventListener(
+  "lyricsviewchange",
+  (event) => {
+
+    const view =
+      event.detail?.view;
+
+    /*
+      JAPANESE
+      → Japanese Ver.
+
+      ALL / ORIGINAL / KANA
+      → 原曲
+    */
+    switchVideoSource(
+      view === "japanese"
+        ? "japanese"
+        : "original"
+    );
+
+  }
+);
+
+
+/* =========================
+   YouTube Player生成
+========================= */
+
+function createYouTubePlayer() {
+
+  if (
+    youtubePlayer ||
+    !musicPlayer ||
+    !originalVideoId
+  ) {
+    return;
+  }
+
+  if (
+    !window.YT ||
+    typeof YT.Player !==
+      "function"
+  ) {
+    return;
+  }
+
+  youtubePlayer =
+    new YT.Player(
+      "youtubePlayer",
+      {
+
+        videoId:
+          originalVideoId,
+
+        playerVars: {
+          autoplay: 0,
+          controls: 0,
+          rel: 0,
+          playsinline: 1
+        },
+
+        events: {
+
+          onReady: () => {
+
+            startProgressTimer();
+            updateProgress();
+
+            /*
+              ページ読み込み直後に
+              JAPANESEが選択されていた場合など
+            */
+            if (pendingSwitch) {
+
+              const source =
+                pendingSwitch;
+
+              pendingSwitch =
+                null;
+
+              switchVideoSource(
+                source
+              );
+
+            }
+
+          },
+
+          onStateChange:
+            (event) => {
+
+              setPlayButtonState(
+                event.data
+              );
+
+              updateProgress();
+
+            }
+
+        }
+
+      }
+    );
+}
+
+
+/* =========================
+   YouTube IFrame API
+========================= */
+
+window.onYouTubeIframeAPIReady =
+  createYouTubePlayer;
+
+
+/*
+  APIが先に読み込み済みでも
+  初期化できるようにする
+*/
+if (
+  window.YT &&
+  typeof YT.Player ===
+    "function"
+) {
+  createYouTubePlayer();
+}
+
+
+/* =========================
+   再生 / 一時停止
 ========================= */
 
 playButton?.addEventListener(
   "click",
-  function () {
-    if (!isPlayerAvailable()) {
+  () => {
+
+    if (!playerReady()) {
       return;
     }
 
     const state =
-      player.getPlayerState();
+      youtubePlayer.getPlayerState();
 
-    if (
+    const isPlaying =
+      window.YT &&
       state ===
-      YT.PlayerState.PLAYING
-    ) {
-      player.pauseVideo();
+        YT.PlayerState.PLAYING;
+
+    if (isPlaying) {
+
+      youtubePlayer.pauseVideo();
+
     } else {
-      player.playVideo();
+
+      youtubePlayer.playVideo();
+
     }
+
   }
 );
 
@@ -280,24 +485,30 @@ playButton?.addEventListener(
 
 rewindButton?.addEventListener(
   "click",
-  function () {
-    if (!isPlayerAvailable()) {
+  () => {
+
+    if (!playerReady()) {
       return;
     }
 
-    const currentTime =
-      player.getCurrentTime() || 0;
-
-    const targetTime =
+    const target =
       Math.max(
         0,
-        currentTime - 10
+        (
+          Number(
+            youtubePlayer
+              .getCurrentTime()
+          ) || 0
+        ) - 10
       );
 
-    player.seekTo(
-      targetTime,
+    youtubePlayer.seekTo(
+      target,
       true
     );
+
+    updateProgress();
+
   }
 );
 
@@ -308,27 +519,36 @@ rewindButton?.addEventListener(
 
 forwardButton?.addEventListener(
   "click",
-  function () {
-    if (!isPlayerAvailable()) {
+  () => {
+
+    if (!playerReady()) {
       return;
     }
 
-    const currentTime =
-      player.getCurrentTime() || 0;
-
     const duration =
-      player.getDuration() || 0;
+      getSafeDuration();
 
-    const targetTime =
-      Math.min(
-        duration,
-        currentTime + 10
-      );
+    const current =
+      Number(
+        youtubePlayer
+          .getCurrentTime()
+      ) || 0;
 
-    player.seekTo(
-      targetTime,
+    const target =
+      duration > 0
+        ? Math.min(
+            duration,
+            current + 10
+          )
+        : current + 10;
+
+    youtubePlayer.seekTo(
+      target,
       true
     );
+
+    updateProgress();
+
   }
 );
 
@@ -339,13 +559,17 @@ forwardButton?.addEventListener(
 
 muteButton?.addEventListener(
   "click",
-  function () {
-    if (!isPlayerAvailable()) {
+  () => {
+
+    if (!playerReady()) {
       return;
     }
 
-    if (player.isMuted()) {
-      player.unMute();
+    if (
+      youtubePlayer.isMuted()
+    ) {
+
+      youtubePlayer.unMute();
 
       muteButton.textContent =
         "🔊";
@@ -354,8 +578,10 @@ muteButton?.addEventListener(
         "aria-label",
         "ミュート"
       );
+
     } else {
-      player.mute();
+
+      youtubePlayer.mute();
 
       muteButton.textContent =
         "🔇";
@@ -364,24 +590,27 @@ muteButton?.addEventListener(
         "aria-label",
         "ミュート解除"
       );
+
     }
+
   }
 );
 
 
 /* =========================
-   再生バー操作
+   シークバー
 ========================= */
 
 progressBar?.addEventListener(
   "input",
-  function () {
-    if (!isPlayerAvailable()) {
+  () => {
+
+    if (!playerReady()) {
       return;
     }
 
     const duration =
-      player.getDuration() || 0;
+      getSafeDuration();
 
     if (duration <= 0) {
       return;
@@ -390,21 +619,19 @@ progressBar?.addEventListener(
     const percent =
       Number(
         progressBar.value
-      );
+      ) || 0;
 
-    const targetTime =
+    const target =
       duration *
       (percent / 100);
 
-    player.seekTo(
-      targetTime,
+    youtubePlayer.seekTo(
+      target,
       true
     );
 
-    progressBar.style.setProperty(
-      "--progress",
-      `${percent}%`
-    );
+    updateProgress();
+
   }
 );
 
@@ -413,162 +640,42 @@ progressBar?.addEventListener(
    歌詞クリック
 ========================= */
 
-function setupLyricClick() {
-  lyricSets.forEach(
-    function (lyricSet) {
-      lyricSet.addEventListener(
-        "click",
-        function () {
-          if (!isPlayerAvailable()) {
-            return;
-          }
+lyricSets.forEach(
+  (set) => {
 
-          const time =
-            Number(
-              lyricSet.dataset.time
-            );
+    set.addEventListener(
+      "click",
+      () => {
 
-          if (!Number.isFinite(time)) {
-            console.warn(
-              "data-timeが正しくありません",
-              lyricSet
-            );
-
-            return;
-          }
-
-          console.log(
-            "歌詞クリック:",
-            time
-          );
-
-          player.seekTo(
-            time,
-            true
-          );
-
-          player.playVideo();
+        if (!playerReady()) {
+          return;
         }
-      );
-    }
-  );
-}
 
+        /*
+          ORIGINALなら data-time
+          JAPANESEなら data-time-japanese
+          があればそちらを使用
+        */
+        const target =
+          getLyricTime(set);
 
-/* =========================
-   時間・バーの更新
-========================= */
+        if (
+          !Number.isFinite(target)
+        ) {
+          return;
+        }
 
-function updatePlayerDisplay() {
-  if (!isPlayerAvailable(false)) {
-    return;
-  }
+        youtubePlayer.seekTo(
+          target,
+          true
+        );
 
-  const currentTime =
-    player.getCurrentTime() || 0;
+        youtubePlayer.playVideo();
 
-  const duration =
-    player.getDuration() || 0;
+        updateProgress();
 
-  if (currentTimeDisplay) {
-    currentTimeDisplay.textContent =
-      formatTime(currentTime);
-  }
-
-  if (durationDisplay) {
-    durationDisplay.textContent =
-      formatTime(duration);
-  }
-
-  if (
-    progressBar &&
-    duration > 0
-  ) {
-    const percent =
-      (
-        currentTime /
-        duration
-      ) * 100;
-
-    progressBar.value =
-      String(percent);
-
-    progressBar.style.setProperty(
-      "--progress",
-      `${percent}%`
-    );
-  }
-}
-
-
-/* =========================
-   プレイヤー使用可能確認
-========================= */
-
-function isPlayerAvailable(
-  showWarning = true
-) {
-  const available =
-    playerReady &&
-    player &&
-    typeof player.getPlayerState ===
-      "function";
-
-  if (
-    !available &&
-    showWarning
-  ) {
-    console.warn(
-      "プレイヤーがまだ準備できていません"
-    );
-  }
-
-  return available;
-}
-
-
-/* =========================
-   秒数を0:00形式に変換
-========================= */
-
-function formatTime(seconds) {
-  if (!Number.isFinite(seconds)) {
-    return "0:00";
-  }
-
-  const safeSeconds =
-    Math.max(
-      0,
-      seconds
+      }
     );
 
-  const minutes =
-    Math.floor(
-      safeSeconds / 60
-    );
-
-  const remainingSeconds =
-    Math.floor(
-      safeSeconds % 60
-    );
-
-  return `${minutes}:${String(
-    remainingSeconds
-  ).padStart(2, "0")}`;
-}
-
-
-/* =========================
-   ページを閉じる時に停止
-========================= */
-
-window.addEventListener(
-  "beforeunload",
-  function () {
-    if (progressTimer) {
-      window.clearInterval(
-        progressTimer
-      );
-    }
   }
 );
