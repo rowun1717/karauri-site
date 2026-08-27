@@ -3906,3 +3906,55 @@ and (
       ) !important;
   }
 }
+
+/* ========================================
+   歌詞表示モード：単独表示は文字を大きく
+   song.js が body に lyrics-view-* を付与する
+======================================== */
+
+/* PC / tablet */
+body.lyrics-view-kana .lyric-set .line.ruby {
+  font-size: clamp(21px, 2.25vw, 28px);
+  line-height: 1.75;
+}
+
+body.lyrics-view-original .lyric-set .line.original {
+  font-size: clamp(19px, 2vw, 25px);
+  line-height: 1.75;
+}
+
+body.lyrics-view-japanese .lyric-set .line.translation {
+  font-size: clamp(18px, 1.9vw, 24px);
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* 単独表示では行間の余白も少し広げる */
+body.lyrics-view-kana .lyric-set .line.ruby,
+body.lyrics-view-original .lyric-set .line.original,
+body.lyrics-view-japanese .lyric-set .line.translation {
+  margin-bottom: 18px;
+}
+
+body.lyrics-view-kana .lyric-set .line.ruby:last-child,
+body.lyrics-view-original .lyric-set .line.original:last-child,
+body.lyrics-view-japanese .lyric-set .line.translation:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  body.lyrics-view-kana .lyric-set .line.ruby {
+    font-size: clamp(17px, 5vw, 21px);
+    line-height: 1.7;
+  }
+
+  body.lyrics-view-original .lyric-set .line.original {
+    font-size: clamp(16px, 4.6vw, 20px);
+    line-height: 1.7;
+  }
+
+  body.lyrics-view-japanese .lyric-set .line.translation {
+    font-size: clamp(15px, 4.4vw, 19px);
+    line-height: 1.8;
+  }
+}
