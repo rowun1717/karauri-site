@@ -399,8 +399,8 @@ const songs = [
     album: "I am NOT",
     album: "SKZ2020",
     type: "Original Song",
-    date: "2018.08.26",
-    release: "2023.06.02",
+    date: "2026.08.24",
+    release: "2018.08.26",
     url: "song/District9.html",
     image: "images/albums/SKZ2020.jpg",
     karaoke: ["JOYSOUND","DAM"],
@@ -422,7 +422,7 @@ const songs = [
     title: "Side Effects",
     album: "Clé 2 : Yellow Wood",
     type: "Original Song",
-    date: "2018.08.26",
+    date: "2026.08.25",
     release: "2019.06.19",
     url: "song/SideEffects.html",
     image: "images/albums/YellowWood.jpg",
@@ -439,6 +439,77 @@ const songs = [
     ]
 
   },
+
+  {
+    id: "DoubleKnot",
+    title: "Double Knot",
+    album: "Clé : LEVANTER",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2019.12.11",
+    url: "song/Double Knot.html",
+    image: "images/albums/Double Knot.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
+  {
+    id: "BackDoor",
+    title: "Back Door",
+    album: "IN LIFE",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2020.09.14",
+    url: "song/BackDoor.html",
+    image: "images/song/Back Door.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
+    {
+    id: "God'sMenu",
+    title: "God's Menu",
+    album: "GO LIVE",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2020.06.17",
+    url: "song/God'sMenu.html",
+    image: "images/song/God's Menu.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
+
 
 
 
