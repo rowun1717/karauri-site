@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   back to life | SKZ Lyric LAB
+  </title>
+  <link href="../css/song.css" rel="stylesheet"/>
+  <link href="../css/common-header.css?v=20260806-2" rel="stylesheet"/>
+  <link href="../images/logo.png" rel="icon" type="image/png"/>
+  <link href="../images/icon.png" rel="apple-touch-icon"/>
+  <link href="manifest.json" rel="manifest"/>
+  <meta content="#050505" name="theme-color"/>
+ </head>
+ <body>
+  <!-- ファイル起動演出 -->
+  <div class="file-loader" id="fileLoader">
+   <div class="file-loader-inner">
+    <p class="loader-code">
+     SKZ LYRIC LAB / FILE ACCESS
+    </p>
+    <h1 data-text="back to life">
+     back to life
+    </h1>
+    <p id="loaderMessage">
+     OPENING LYRIC FILE...
+    </p>
+    <div class="loader-bar">
+     <span id="loaderProgress">
+     </span>
+    </div>
+    <p id="loaderPercent">
+     0%
+    </p>
+   </div>
+  </div>
+  <!-- 背景演出 -->
+  <div class="song-grid-background">
+  </div>
+  <div class="song-scanlines">
+  </div>
+  <div class="song-pointer-glow" id="songPointerGlow">
+  </div>
+  <!-- 共通ヘッダー -->
+  <header class="site-header">
+   <a class="header-logo" href="../index.html">
+    <span class="header-logo-main">
+     SKZ
+    </span>
+    <span class="header-logo-sub">
+     LYRIC LAB
+    </span>
+   </a>
+   <nav class="global-nav" id="globalNav">
+    <a href="../index.html">
+     HOME
+    </a>
+    <a href="../search.html">
+     SEARCH
+    </a>
+    <a href="../albums.html">
+     ARCHIVE
+    </a>
+    <a href="#lyrics">
+     LYRICS
+    </a>
+    <a href="../members.html">
+     MEMBERS
+    </a>
+    <a href="../setlist.html">
+     SETLIST
+    </a>
+    <a href="../about.html">
+     ABOUT
+    </a>
+   </nav>
+   <button aria-controls="globalNav" aria-expanded="false" aria-label="メニューを開く" class="menu-button" id="menuButton" type="button">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </button>
+  </header>
+  <main>
+   <!-- 曲ヒーロー -->
+   <section class="song-hero">
+    <div class="song-hero-background">
+     <img alt="" src="../images/albums/back to life.jpg"/>
+    </div>
+    <div class="song-hero-overlay">
+    </div>
+    <div class="song-hero-content">
+     <div class="song-cover-panel reveal">
+      <div class="cover-header">
+       <span>
+        FILE NO. SKZ-LYR-000
+       </span>
+       <span class="active-status">
+        ACTIVE
+       </span>
+      </div>
+      <div class="cover-frame">
+       <img alt="back to life" src="../images/albums/back to life.jpg"/>
+       <span class="corner top-left">
+       </span>
+       <span class="corner top-right">
+       </span>
+       <span class="corner bottom-left">
+       </span>
+       <span class="corner bottom-right">
+       </span>
+       <div class="cover-scan">
+       </div>
+      </div>
+      <div class="cover-footer">
+       <span>
+        SUBJECT / STRAY KIDS
+       </span>
+       <span>
+        STATUS / VERIFIED
+       </span>
+      </div>
+      <section class="music-player" data-japanese-youtube-id="" data-youtube-id="FdzPyppixOw">
+       <!-- Japanese Ver.がある曲だけ、上の data-japanese-youtube-id にYouTube動画IDを入れる -->
+       <div class="youtube-player-wrap">
+        <div id="youtubePlayer">
+        </div>
+       </div>
+       <div class="player-info">
+        <div>
+         <span class="player-label">
+          NOW PLAYING
+         </span>
+        </div>
+        <span id="currentTime">
+         0:00
+        </span>
+       </div>
+       <input aria-label="再生位置" class="progress-bar" id="progressBar" max="100" min="0" step="0.1" type="range" value="0"/>
+       <div class="player-controls">
+        <button aria-label="10秒戻る" id="rewindButton" type="button">
+         ↶
+        </button>
+        <button aria-label="再生" id="playButton" type="button">
+         ▶
+        </button>
+        <button aria-label="10秒進む" id="forwardButton" type="button">
+         ↷
+        </button>
+       </div>
+       <div class="player-bottom">
+        <span id="duration">
+         0:00
+        </span>
+        <button aria-label="ミュート" id="muteButton" type="button">
+         🔊
+        </button>
+       </div>
+      </section>
+     </div>
+     <div class="song-main-data reveal">
+      <p class="song-eyebrow">
+       LYRIC ANALYSIS FILE
+      </p>
+      <div class="song-tags">
+       <span class="song-tag">
+        Original Song
+       </span>
+       <span class="song-tag">
+        back to life
+       </span>
+      </div>
+      <h1 class="song-title">
+       back to life
+      </h1>
+      <p class="song-subtitle">
+       Stray Kids
+      </p>
+      <!-- 基本情報＋Credits -->
+      <dl class="song-data-table">
+       <div>
+        <dt>
+         ALBUM
+        </dt>
+        <dd>
+         back to life
+        </dd>
+       </div>
+       <div>
+        <dt>
+         RELEASE
+        </dt>
+        <dd>
+         2026.06.11
+        </dd>
+       </div>
+       <div>
+        <dt>
+         UPDATED
+        </dt>
+        <dd>
+         2026.06.29
+        </dd>
+       </div>
+       <div>
+        <dt>
+         LANGUAGE
+        </dt>
+        <dd>
+         ENGLISH
+        </dd>
+       </div>
+       <!-- Credits情報 -->
+       <div>
+        <dt>
+         LYRICS
+        </dt>
+        <dd>
+         HAN、ELVYN
+        </dd>
+       </div>
+       <div>
+        <dt>
+         COMPOSED
+        </dt>
+        <dd>
+         HAN、Helixx (VENDORS)
+        </dd>
+       </div>
+      </dl>
+     </div>
+     <div class="song-hero-number">
+      FILE / back to life
+     </div>
+    </div>
+   </section>
+   <!-- メンバーカラー -->
+   <section class="member-file-section">
+    <div class="section-label reveal">
+     <p>
+      02 / MEMBER IDENTIFICATION
+     </p>
+     <h2>
+      Part Colors
+     </h2>
+    </div>
+    <div class="member-filter reveal">
+     <button class="member-filter-button active" data-member="all" type="button">
+      ALL
+     </button>
+     <button class="member-filter-button chan" data-member="bangchan" type="button">
+      BANG CHAN
+     </button>
+     <button class="member-filter-button leeknow" data-member="leeknow" type="button">
+      LEE KNOW
+     </button>
+     <button class="member-filter-button changbin" data-member="changbin" type="button">
+      CHANGBIN
+     </button>
+     <button class="member-filter-button hyunjin" data-member="hyunjin" type="button">
+      HYUNJIN
+     </button>
+     <button class="member-filter-button han" data-member="han" type="button">
+      HAN
+     </button>
+     <button class="member-filter-button felix" data-member="felix" type="button">
+      FELIX
+     </button>
+     <button class="member-filter-button seungmin" data-member="seungmin" type="button">
+      SEUNGMIN
+     </button>
+     <button class="member-filter-button in" data-member="in" type="button">
+      I.N
+     </button>
+    </div>
+   </section>
+   <!-- 歌詞 -->
+   <section class="lyrics-section" id="lyrics">
+    <div class="lyrics-header reveal">
+     <div>
+      <p>
+       03 / LYRIC DATABASE
+      </p>
+      <h2>
+       Lyrics
+      </h2>
+     </div>
+     <div class="lyrics-view-controls">
+      <button class="view-button active" data-view="all">
+       ALL DATA
+      </button>
+      <button class="view-button" data-view="original">
+       ORIGINAL
+      </button>
+      <button class="view-button" data-view="kana">
+       KANA
+      </button>
+      <button class="view-button" data-view="japanese">
+       JAPANESE
+      </button>
+      <button aria-pressed="false" class="view-button fanchant-toggle" id="fanchantToggle" type="button">
+       FANCHANT OFF
+      </button>
+     </div>
+    </div>
+    <div class="lyrics-console">
+     <div class="lyrics-console-top">
+      <span>
+       FILE : back_to_life.LYRIC
+      </span>
+      <span>
+       STATUS : DECODED
+      </span>
+     </div>
+
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="26">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイ スティル ドント ノウ ホワイ アイ シュッド リヴ ア ライ
+        </p>
+        <p class="line original">
+         I still don't know why I should live a lie
+        </p>
+        <p class="line translation">
+         どうして嘘をついたまま生きなきゃいけないのか 今でもわからない
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="32">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ノット アフレイド ノット アフレイド
+        </p>
+        <p class="line original">
+         (Not afraid, not afraid)
+        </p>
+        <p class="line translation">
+         （怖くない 怖くない）
+        </p>
+
+        <p class="line ruby">
+         オブ ルージング エヴリシング アイ ハヴ
+        </p>
+        <p class="line original">
+         (of losing everything I have)
+        </p>
+        <p class="line translation">
+         （持っているものをすべて失うことなんて）
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="36.7">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アム アイ ロング オア ライト ユール ノウ イット イン タイム
+        </p>
+        <p class="line original">
+         Am I wrong or right? You'll know it in time
+        </p>
+        <p class="line translation">
+         僕が間違っているのか正しいのか それはいずれわかるだろう
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="42">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイ ドント ニード ヘルプ アイ ドント ニード ヘルプ
+        </p>
+        <p class="line original">
+         (I don't need help, I don't need help)
+        </p>
+        <p class="line translation">
+         （助けなんていらない 助けなんていらない）
+        </p>
+
+        <p class="line ruby">
+         コーズ アイ キャン ハンドル エニシング
+        </p>
+        <p class="line original">
+         ('cause I can handle anything)
+        </p>
+        <p class="line translation">
+         （だって何だって自分で乗り越えられるから）
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="46.5">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ライズ ティル ウィー エンド ディス ファイト
+        </p>
+        <p class="line original">
+         Rise 'til we end this fight
+        </p>
+        <p class="line translation">
+         この戦いが終わるまで 立ち上がり続ける
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="50">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ウィア リーヴィング ノー ルーム フォー リグレット
+        </p>
+        <p class="line original">
+         We're leaving no room for regret,
+        </p>
+        <p class="line translation">
+         後悔する余地なんて残さない
+        </p>
+
+        <p class="line ruby">
+         カット ザ フェイク ジャスト スティック トゥ ザ トゥルース
+        </p>
+        <p class="line original">
+         cut the fake, just stick to the truth
+        </p>
+        <p class="line translation">
+         偽りを捨てて ただ真実を貫く
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="56.6">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイ キープ マイ ヘッド アップ ハイ
+        </p>
+        <p class="line original">
+         I keep my head up high
+        </p>
+        <p class="line translation">
+         僕は胸を張って進む
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="60">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         スルー オール ディス ペイン アイム レッティング イット アウト
+        </p>
+        <p class="line original">
+         Through all this pain I'm letting it out
+        </p>
+        <p class="line translation">
+         この痛みをすべて吐き出しながら進んでいく
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="65.5">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイム エイミング ハイ トゥ フィール アライヴ
+        </p>
+        <p class="line original">
+         I'm aiming high to feel alive
+        </p>
+        <p class="line translation">
+         「生きている」と感じるために もっと高みを目指す
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="68.5">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ナッシングズ ゴナ ドラッグ ミー ダウン
+        </p>
+        <p class="line original">
+         Nothing's gonna drag me down
+        </p>
+        <p class="line translation">
+         何ものも僕を引きずり下ろせない
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="70.5">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         エヴリ スカー イズ プルーフ アイ トライド
+        </p>
+        <p class="line original">
+         Every scar is proof I tried
+        </p>
+        <p class="line translation">
+         この傷はすべて 本気で挑み続けた証だ
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="73.5">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ユール ネヴァー シー ミー コート オフ ガード
+        </p>
+        <p class="line original">
+         You'll never see me caught off guard
+        </p>
+        <p class="line translation">
+         不意を突かれて崩れる僕なんて 二度と見せない
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="75.8">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ゼイ セイ ギヴ イット アップ テル エム ノット イナフ
+        </p>
+        <p class="line original">
+         They say, "Give it up," tell 'em, "Not enough"
+        </p>
+        <p class="line translation">
+         「もう諦めろ」と言われても 「まだ足りない」と言い返す
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="78.7">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         カウント マイ ロセズ ザ ホール ナイト
+        </p>
+        <p class="line original">
+         Count my losses the whole night
+        </p>
+        <p class="line translation">
+         夜通し失ったものを数えながら
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="81">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イェー ユー ノウ アイ ドント ケア ハウ メニー タイムズ アイ フォール
+        </p>
+        <p class="line original">
+         Yeah, you know I don't care how many times I fall
+        </p>
+        <p class="line translation">
+         そうさ 何度倒れようと気にしない
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="85">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         コーズ アイル カム バック トゥ ライフ
+        </p>
+        <p class="line original">
+         'Cause I'll come back to life
+        </p>
+        <p class="line translation">
+         だって僕は何度でも蘇るから
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="106.3">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イン ザ サンライト イン ザ ムーンライト
+        </p>
+        <p class="line original">
+         In the sunlight, in the moonlight
+        </p>
+        <p class="line translation">
+         太陽の下でも 月明かりの中でも
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="109">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイ ワズ アウト オブ サイト ディド ユー ノウ
+        </p>
+        <p class="line original">
+         I was out of sight, did you know?
+        </p>
+        <p class="line translation">
+         僕はずっと見えない場所にいたんだ 知ってた？
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="111.3">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         シームズ ライク ゼイ リアリー ウォント ミー トゥ ビー アローン
+        </p>
+        <p class="line original">
+         Seems like they really want me to be alone
+        </p>
+        <p class="line translation">
+         みんな僕をひとりにしたがっているみたいだ
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="116">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         エヴリ ストーリー ディファレント エンディングズ
+        </p>
+        <p class="line original">
+         Every story, different endings
+        </p>
+        <p class="line translation">
+         物語にはそれぞれ違う結末がある
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="119">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         レッツ シー イット ウィズ アワ オウン アイズ
+        </p>
+        <p class="line original">
+         Let's see it with our own eyes
+        </p>
+        <p class="line translation">
+         だったら自分たちの目で確かめよう
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="121.6">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ウォーキング ストレート イントゥ ザ フューチャー
+        </p>
+        <p class="line original">
+         Walking straight into the future
+        </p>
+        <p class="line translation">
+         未来へ真っすぐ進んでいく
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="123.8">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイ ウォント ルック バック アット ザ パスト
+        </p>
+        <p class="line original">
+         I won't look back at the past
+        </p>
+        <p class="line translation">
+         もう過去は振り返らない
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="127">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         オー ハイド ディス フィア ディープ インサイド
+        </p>
+        <p class="line original">
+         Oh, hide this fear deep inside
+        </p>
+        <p class="line translation">
+         ああ この恐怖は心の奥深くにしまい込んで
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="130">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         フー アイ ユースト トゥ ビー アイル フォーゲット
+        </p>
+        <p class="line original">
+         Who I used to be, I'll forget,
+        </p>
+        <p class="line translation">
+         昔の自分は忘れて
+        </p>
+
+        <p class="line ruby">
+         テイク ア ブレス ビカム サムワン ニュー
+        </p>
+        <p class="line original">
+         take a breath, become someone new
+        </p>
+        <p class="line translation">
+         深呼吸をして 新しい自分になる
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="137">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイ キープ マイ ヘッド アップ ハイ
+        </p>
+        <p class="line original">
+         I keep my head up high
+        </p>
+        <p class="line translation">
+         僕は胸を張って進む
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="141">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         スルー オール ディス ペイン アイム レッティング イット アウト
+        </p>
+        <p class="line original">
+         Through all this pain I'm letting it out
+        </p>
+        <p class="line translation">
+         この痛みをすべてさらけ出しながら進んでいく
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="146">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイム エイミング ハイ トゥ フィール アライヴ
+        </p>
+        <p class="line original">
+         I'm aiming high to feel alive
+        </p>
+        <p class="line translation">
+         生きている実感を求めて もっと高くへ
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="149.5">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ナッシングズ ゴナ ドラッグ ミー ダウン
+        </p>
+        <p class="line original">
+         Nothing's gonna drag me down
+        </p>
+        <p class="line translation">
+         誰にも僕は沈められない
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="152">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         エヴリ スカー イズ プルーフ アイ トライド
+        </p>
+        <p class="line original">
+         Every scar is proof I tried
+        </p>
+        <p class="line translation">
+         傷跡は 挑み続けた証
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="154.2">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ユール ネヴァー シー ミー コート オフ ガード
+        </p>
+        <p class="line original">
+         You'll never see me caught off guard
+        </p>
+        <p class="line translation">
+         不意を突かれて倒れることはない
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="156.7">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ゼイ セイ ギヴ イット アップ テル エム ノット イナフ
+        </p>
+        <p class="line original">
+         They say, "Give it up," tell 'em, "Not enough"
+        </p>
+        <p class="line translation">
+         「もうやめろ」と言われても 「まだ終わってない」と言い返す
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="159.5">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         カウント マイ ロセズ ザ ホール ナイト
+        </p>
+        <p class="line original">
+         Count my losses the whole night
+        </p>
+        <p class="line translation">
+         失ったものを数えながら夜を越えて
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="162">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イェー ユー ノウ アイ ドント ケア ハウ メニー タイムズ アイ フォール
+        </p>
+        <p class="line original">
+         Yeah, you know I don't care how many times I fall
+        </p>
+        <p class="line translation">
+         そう 何度倒れても構わない
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="166">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         コーズ アイル カム バック トゥ ライフ
+        </p>
+        <p class="line original">
+         'Cause I'll come back to life
+        </p>
+        <p class="line translation">
+         また立ち上がるから
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="177">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         マイ マインズ ルーシッド ダン ビーイング フーリッシュ
+        </p>
+        <p class="line original">
+         My mind's lucid, done being foolish
+        </p>
+        <p class="line translation">
+         頭はもう冴え渡っている もう愚かな自分とは決別だ
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="179.8">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ファイナリー アイム ナウ ブレイキング フリー
+        </p>
+        <p class="line original">
+         Finally, I'm now breaking free
+        </p>
+        <p class="line translation">
+         ついに今 この束縛から解き放たれる
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="182">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         レイシング トゥ ザ プレイス ザット メイクス アス フー ウィー アー イェー
+        </p>
+        <p class="line original">
+         Racing to the place that makes us who we are, yeah
+        </p>
+        <p class="line translation">
+         俺たちらしさを形づくる場所へ駆け抜けていく Yeah
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="192.8">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ヘイ
+        </p>
+        <p class="line original">
+         Hey
+        </p>
+        <p class="line translation">
+         ねえ
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="197">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ゼイ セイ ギヴ イット アップ テル エム ノット イナフ
+        </p>
+        <p class="line original">
+         They say, "Give it up," tell 'em, "Not enough"
+        </p>
+        <p class="line translation">
+         「諦めろ」と言われても 「まだ足りない」と言い返す
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="200">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         カウント マイ ロセズ ザ ホール ナイト
+        </p>
+        <p class="line original">
+         Count my losses the whole night
+        </p>
+        <p class="line translation">
+         夜通し失ったものを数えても
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="202">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イェー ユー ノウ アイ ドント ケア ハウ メニー タイムズ アイ フォール
+        </p>
+        <p class="line original">
+         Yeah, you know I don't care how many times I fall
+        </p>
+        <p class="line translation">
+         そう 何度倒れても気にしない
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="206.5">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         コーズ アイル カム バック トゥ ライフ
+        </p>
+        <p class="line original">
+         'Cause I'll come back to life
+        </p>
+        <p class="line translation">
+         また立ち上がるから
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="208">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ラ ラ ラ ラ ラ ラ ラ
+        </p>
+        <p class="line original">
+         La-la-la-la-la, la-la
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="212">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ラ ラ ラ ラ ラ ラ
+        </p>
+        <p class="line original">
+         La-la, la-la-la
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="212">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ラ ラ ラ ラ ラ ラ ラ ラ ラ ラ ラ
+        </p>
+        <p class="line original">
+         La-la, la, la-la, la-la-la, la-la
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="215">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ラ ラ ラ ラ ラ ラ
+        </p>
+        <p class="line original">
+         La-la, la-la-la
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="217">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ゼイ セイ ギヴ イット アップ テル エム ノット イナフ
+        </p>
+        <p class="line original">
+         They say, "Give it up," tell 'em, "Not enough"
+        </p>
+        <p class="line translation">
+         「もう終わりだ」と言われても 「まだだ」と言い返す
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="220">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         カウント マイ ロセズ ザ ホール ナイト
+        </p>
+        <p class="line original">
+         Count my losses the whole night
+        </p>
+        <p class="line translation">
+         失ったものを抱えたまま夜を越えて
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="222">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イェー ユー ノウ アイ ドント ケア ハウ メニー タイムズ アイ フォール
+        </p>
+        <p class="line original">
+         Yeah, you know I don't care how many times I fall
+        </p>
+        <p class="line translation">
+         何度倒れても僕は進む
+        </p>
+       </div>
+      </div>
+      <div class="lyric-set" data-time="226">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         カム レッツ ゴー バック トゥ ライフ
+        </p>
+        <p class="line original">
+         Come let's go back to life
+        </p>
+        <p class="line translation">
+         さあ もう一度生きる場所へ戻ろう
+        </p>
+       </div>
+      </div>
+     </section>
+    </div>
+   </section>
+  </main>
+  <footer class="song-footer">
+   <div>
+    <strong>
+     SKZ LYRIC LAB
+    </strong>
+    <p>
+     Stray Kids unofficial lyrics fan site.
+    </p>
+   </div>
+   <span class="footer-online">
+    DATABASE ONLINE
+   </span>
+  </footer>
+  <button aria-label="ページ上部へ戻る" class="song-page-top" id="songPageTop" type="button">
+   ↑
+  </button>
+  <script src="../js/song.js">
+  </script>
+  <script src="https://www.youtube.com/iframe_api">
+  </script>
+  <script src="../js/youtube-player.js">
+  </script>
+ </body>
+</html>
