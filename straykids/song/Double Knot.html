@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title> Double Knot | SKZ Lyric LAB</title>
+
+  <link
+  rel="stylesheet"
+  href="../css/song.css"
+>
+
+<link
+  rel="stylesheet"
+  href="../css/common-header.css?v=20260806-2"
+>
+
+<link
+  rel="icon"
+  type="image/png"
+  href="../images/logo.png"
+>
+
+<link
+  rel="apple-touch-icon"
+  href="../images/icon.png"
+>
+
+<link
+  rel="manifest"
+  href="manifest.json"
+>
+
+<meta name="theme-color" content="#050505">
+
+</head>
+
+<body>
+
+  <!-- ファイル起動演出 -->
+  <div id="fileLoader" class="file-loader">
+
+    <div class="file-loader-inner">
+
+      <p class="loader-code">
+        SKZ LYRIC LAB / FILE ACCESS
+      </p>
+
+      <h1 data-text="Double Knot">
+        Double Knot
+      </h1>
+
+      <p id="loaderMessage">
+        OPENING LYRIC FILE...
+      </p>
+
+      <div class="loader-bar">
+        <span id="loaderProgress"></span>
+      </div>
+
+      <p id="loaderPercent">
+        0%
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- 背景演出 -->
+  <div class="song-grid-background"></div>
+  <div class="song-scanlines"></div>
+  <div id="songPointerGlow" class="song-pointer-glow"></div>
+
+
+<!-- 共通ヘッダー -->
+<header class="site-header">
+
+  <a
+    href="../index.html"
+    class="header-logo"
+  >
+    <span class="header-logo-main">
+      SKZ
+    </span>
+
+    <span class="header-logo-sub">
+      LYRIC LAB
+    </span>
+  </a>
+
+
+  <nav
+    id="globalNav"
+    class="global-nav"
+  >
+    <a href="../index.html">
+      HOME
+    </a>
+
+    <a href="../search.html">
+      SEARCH
+    </a>
+
+    <a href="../albums.html">
+      ARCHIVE
+    </a>
+
+    <a href="#lyrics">
+      LYRICS
+    </a>
+
+    <a href="../members.html">
+      MEMBERS
+    </a>
+
+    <a href="../setlist.html">
+      SETLIST
+    </a>
+
+    <a href="../about.html">
+      ABOUT
+    </a>
+  </nav>
+
+
+  <button
+    id="menuButton"
+    class="menu-button"
+    type="button"
+    aria-label="メニューを開く"
+    aria-expanded="false"
+    aria-controls="globalNav"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+</header>
+
+
+  <main>
+
+    <!-- 曲ヒーロー -->
+    <section class="song-hero">
+
+      <div class="song-hero-background">
+
+        <img
+          src="../images/albums/Double Knot.jpg"
+          alt=""
+        >
+
+      </div>
+
+      <div class="song-hero-overlay"></div>
+
+      <div class="song-hero-content">
+
+        <div class="song-cover-panel reveal">
+
+          <div class="cover-header">
+
+            <span>
+              FILE NO. SKZ-TAT-007
+            </span>
+
+            <span class="active-status">
+              ACTIVE
+            </span>
+
+          </div>
+
+          <div class="cover-frame">
+
+            <img
+              src="../images/albums/Double Knot.jpg"
+              alt="Double Knot"
+            >
+
+            <span class="corner top-left"></span>
+            <span class="corner top-right"></span>
+            <span class="corner bottom-left"></span>
+            <span class="corner bottom-right"></span>
+
+            <div class="cover-scan"></div>
+
+          </div>
+
+          <div class="cover-footer">
+
+            <span>
+              SUBJECT / STRAY KIDS
+            </span>
+
+            <span>
+              STATUS / VERIFIED
+            </span>
+
+          </div>
+          <section
+            class="music-player"
+            data-youtube-id="WLd4dtfhbrM">
+            <div class="youtube-player-wrap">
+              <div id="youtubePlayer"></div>
+            </div>
+
+            <div class="player-info">
+              <div>
+                <span class="player-label">NOW PLAYING</span>
+              </div>
+
+              <span id="currentTime">0:00</span>
+            </div>
+
+            <input
+              id="progressBar"
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+              aria-label="再生位置"
+            >
+
+            <div class="player-controls">
+
+              <button
+                id="rewindButton"
+                type="button"
+                aria-label="10秒戻る"
+              >
+                ↶
+              </button>
+
+              <button
+                id="playButton"
+                type="button"
+                aria-label="再生"
+              >
+                ▶
+              </button>
+
+              <button
+                id="forwardButton"
+                type="button"
+                aria-label="10秒進む"
+              >
+                ↷
+              </button>
+
+            </div>
+
+            <div class="player-bottom">
+              <span id="duration">0:00</span>
+
+              <button
+                id="muteButton"
+                type="button"
+                aria-label="ミュート"
+              >
+                🔊
+              </button>
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <div class="song-main-data reveal">
+
+          <p class="song-eyebrow">
+            LYRIC ANALYSIS FILE
+          </p>
+
+          <div class="song-tags">
+
+            <span class="song-tag">
+              Original Song
+            </span>
+
+            <span class="song-tag">
+              Clé : LEVANTER
+            </span>
+            <span class="song-tag">
+              SKZ2020
+            </span>
+
+          </div>
+
+
+          <h1 class="song-title">
+            Double Knot
+          </h1>
+
+          <p class="song-subtitle">
+            Stray Kids
+          </p>
+
+
+          <!-- 基本情報＋Credits -->
+          <dl class="song-data-table">
+
+            <div>
+              <dt>ALBUM</dt>
+              <dd>Clé : LEVANTER</dd>
+            </div>
+
+            <div>
+              <dt>RELEASE</dt>
+              <dd>2019.12.11</dd>
+            </div>
+
+            <div>
+              <dt>UPDATED</dt>
+              <dd>2026.08.26</dd>
+            </div>
+
+            <div>
+              <dt>LANGUAGE</dt>
+              <dd>KOREAN</dd>
+            </div>
+
+            <!-- Credits情報 -->
+            <div>
+              <dt>LYRICS</dt>
+              <dd>
+              3RACHA, Nick Furlong, DallasK</dd>
+            </div>
+
+            <div>
+              <dt>COMPOSED</dt>
+              <dd>
+                3RACHA, Nick Furlong, DallasK
+              </dd>
+            </div>
+
+          </dl>
+
+        </div>
+
+
+        <div class="song-hero-number">
+          FILE / Double Knot
+        </div>
+
+        </section>
+
+          <!-- メンバーカラー -->
+          <section class="member-file-section">
+
+            <div class="section-label reveal">
+
+              <p>
+                02 / MEMBER IDENTIFICATION
+              </p>
+
+              <h2>
+                Part Colors
+              </h2>
+
+            </div>
+
+            <div class="member-filter reveal">
+
+              <button
+                class="member-filter-button active"
+                type="button"
+                data-member="all"
+              >
+                ALL
+              </button>
+
+              <button
+                class="member-filter-button chan"
+                type="button"
+                data-member="bangchan"
+              >
+                BANG CHAN
+              </button>
+
+              <button
+                class="member-filter-button leeknow"
+                type="button"
+                data-member="leeknow"
+              >
+                LEE KNOW
+              </button>
+
+              <button
+                class="member-filter-button changbin"
+                type="button"
+                data-member="changbin"
+              >
+                CHANGBIN
+              </button>
+
+              <button
+                class="member-filter-button hyunjin"
+                type="button"
+                data-member="hyunjin"
+              >
+                HYUNJIN
+              </button>
+
+              <button
+                class="member-filter-button han"
+                type="button"
+                data-member="han"
+              >
+                HAN
+              </button>
+
+              <button
+                class="member-filter-button felix"
+                type="button"
+                data-member="felix"
+              >
+                FELIX
+              </button>
+
+              <button
+                class="member-filter-button seungmin"
+                type="button"
+                data-member="seungmin"
+              >
+                SEUNGMIN
+              </button>
+
+              <button
+                class="member-filter-button in"
+                type="button"
+                data-member="in"
+              >
+                I.N
+              </button>
+
+            </div>
+
+          </section>
+
+
+    <!-- 歌詞 -->
+    <section
+      id="lyrics"
+      class="lyrics-section"
+    >
+
+      <div class="lyrics-header reveal">
+
+        <div>
+
+          <p>
+            03 / LYRIC DATABASE
+          </p>
+
+          <h2>
+            Lyrics
+          </h2>
+
+        </div>
+
+        <div class="lyrics-view-controls">
+
+          <button
+            class="view-button active"
+            data-view="all"
+          >
+            ALL DATA
+          </button>
+
+          <button
+            class="view-button"
+            data-view="original"
+          >
+            ORIGINAL
+          </button>
+
+          <button
+            class="view-button"
+            data-view="kana"
+          >
+            KANA
+          </button>
+
+          <button
+            class="view-button"
+            data-view="japanese"
+          >
+            JAPANESE
+          </button>
+
+          <button
+            id="fanchantToggle"
+            class="view-button fanchant-toggle"
+            type="button"
+            aria-pressed="false"
+          >
+            FANCHANT OFF
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="lyrics-console">
+
+        <div class="lyrics-console-top">
+
+          <span>
+            FILE : Double_Knot.LYRIC
+          </span>
+
+          <span>
+            STATUS : DECODED
+          </span>
+
+        </div>
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set" data-time="12">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">HAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-inline">(ス・トゥ・レ・イ・キ・ジュ)</span>
+            <span class="chant-inline">(どぶる なっ)</span></p>
+              <p class="line ruby">おじろぷけ でぃおんきん もりそげ ごみん <span class="chant-overlap">とろ</span></p>
+              <p class="line original">어지럽게 뒤엉킨 머릿속의 고민 <span class="chant-overlap">털어</span></p>
+              <p class="line translation">入り乱れた頭の中の悩みをぶちまける</p>
+
+              <p class="line ruby">おでぃろ がるか はぬん じるむん いじぇん さんぐぁ<span class="chant-overlap">のぷそ</span></p>
+              <p class="line original">어디로 갈까 하는 질문 이젠 상관<span class="chant-overlap">없어</span></p>
+              <p class="line translation">どこに行こうかなんて質問はもう関係ない</p>
+
+              <p class="line ruby">ばるぎり たぬん でろ おっとん ごしどぅん なん ランニン</p>
+              <p class="line original">발길이 닿는 대로 어떤 곳이든 난 Runnin’</p>
+              <p class="line translation">気の向くままにどんな場所でも俺は Runnin'</p>
+
+              <p class="line ruby">ぬすねじん しんばる くぬる たし むっこ ムーヴィン</p>
+              <p class="line original">느슨해진 신발 끈을 다시 묶어 Movin’</p>
+              <p class="line translation">緩んだ靴紐をもう一度結んで Movin'</p>
+
+              <p class="line ruby">ナウ アイム フリー <span class="chant-overlap">ゲット アップ</span></p>
+              <p class="line original">Now I’m free! <span class="chant-overlap">Get up</span></p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set" data-time="27.8">
+            <div class="member-column">
+              <span class="member-id">02</span>
+              <span class="member-name">LEE KNOW</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">おでぃどぅん なぬん がる す いっそ</p>
+              <p class="line original">어디든 나는 갈 수 있어</p>
+              <p class="line translation">俺はどこへでも行ける</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set" data-time="29.5">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">HAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">フリー <span class="chant-overlap">ゲット アップ</span></p>
+              <p class="line original">Free! <span class="chant-overlap">Get up</span></p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set" data-time="31">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">がる ぎるる がじ もどぅん びきょ</p>
+              <p class="line original">갈 길을 가지 뭐든 비켜</p>
+              <p class="line translation">行きたい方へ行くだけだ 邪魔するものは何でも退かす</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set" data-time="32.8">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">HAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">フリー <span class="chant-overlap">ゲット アウト</span></p>
+              <p class="line original">Free! <span class="chant-overlap">Get out</span></p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- FELIX -->
+        <section class="lyric-block" data-member="felix">
+          <div class="lyric-set" data-time="34.5">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">おでぃろ がどぅん しんぎょん た こ</p>
+              <p class="line original">어디로 가든 신경 다 꺼</p>
+              <p class="line translation">どこに行こうとまったく気なんて遣わない</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- SEUNGMIN -->
+        <section class="lyric-block" data-member="seungmin">
+          <div class="lyric-set" data-time="36.3">
+            <div class="member-column">
+              <span class="member-id">07</span>
+              <span class="member-name">SEUNGMIN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-overlap">だ だだだ だだ だ だ だ</span></p>
+              <p class="line original"><span class="chant-overlap">다 다다다 다다 다 다 다</span></p>
+              <p class="line translation">全部</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- CHANGBIN -->
+        <section class="lyric-block" data-member="changbin">
+          <div class="lyric-set" data-time="39.4">
+            <div class="member-column">
+              <span class="member-id">04</span>
+              <span class="member-name">CHANGBIN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">うんくりょっとん じゃせるる ぴょ</p>
+              <p class="line original">웅크렸던 자세를 펴</p>
+              <p class="line translation">丸めていた背中を伸ばす</p>
+
+              <p class="line ruby">おでぃどぅん ごろ よゆるる ぬっきょ</p>
+              <p class="line original">어디든 걸어 여유를 느껴</p>
+              <p class="line translation">どこを歩いても余裕が溢れ出る</p>
+
+              <p class="line ruby">ふるたんむる ぼむぼく ぎるど ぴっかぽんちょかん ぎるろ</p>
+              <p class="line original">흙탕물 범벅 길도 삐까뻔쩍한 길로</p>
+              <p class="line translation">泥だらけの道も輝き出す</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- HYUNJIN -->
+        <section class="lyric-block" data-member="hyunjin">
+          <div class="lyric-set" data-time="46">
+            <div class="member-column">
+              <span class="member-id">05</span>
+              <span class="member-name">HYUNJIN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">どぅらまてぃかん てぃかみょん てぃかご ちょかみょん ちょかぬん</p>
+              <p class="line original">드라마틱한 틱하면 틱하고 척하면 척하는</p>
+              <p class="line translation">ドラマチックならチックで そんな振りなら振りをする</p>
+
+              <p class="line ruby">ぎょるまるる まんどぅぬん がむどく いんせん みょんじゃく ソー</p>
+              <p class="line original">결말을 만드는 감독 인생 명작 So</p>
+              <p class="line translation">結末を作る監督 最高傑作 So</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ALL -->
+        <section class="lyric-block" data-member="all-members">
+          <div class="lyric-set" data-time="51">
+            <div class="member-column">
+              <span class="member-id">00</span>
+              <span class="member-name">ALL</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-overlap">くぁく くぁく くんじるぎげ</span></p>
+              <p class="line original"><span class="chant-overlap">꽉 꽉 끈질기게</span></p>
+              <p class="line translation">しっかり粘り強く</p>
+
+              <p class="line ruby">と くぁく むっこ ダブル ノット</p>
+              <p class="line original">더 꽉 묶어 Double knot</p>
+              <p class="line translation">もっときつく結び直して Double knot</p>
+
+              <p class="line ruby"><span class="chant-inline">ストレイ キッズ</span></p>
+              <p class="line original"><span class="chant-inline">Stray Kids!</span></p>
+
+
+              <p class="line ruby">と くぁく むっこ ダブル ノット</p>
+              <p class="line original">더 꽉 묶어 Double knot</p>
+              <p class="line translation">もっときつく結び直して Double Knot</p>
+
+              <p class="line ruby"><span class="chant-overlap">ストレイ キッズ</span></p>
+              <p class="line original"><span class="chant-overlap">Stray Kids!</span></p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- SEUNGMIN -->
+        <section class="lyric-block" data-member="seungmin">
+          <div class="lyric-set" data-time="66.8">
+            <div class="member-column">
+              <span class="member-id">07</span>
+              <span class="member-name">SEUNGMIN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">おでぃろどぅん が なん <span class="chant-overlap">ゴー ゴー</span></p>
+              <p class="line original">어디로든 가 난 <span class="chant-overlap">Go go</span></p>
+              <p class="line translation">どこへでも行く 俺は Go go</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set" data-time="70.5">
+            <div class="member-column">
+              <span class="member-id">02</span>
+              <span class="member-name">LEE KNOW</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">ね まむでろ ごるら <span class="chant-overlap">ゴー ゴー</span></p>
+              <p class="line original">내 맘대로 골라 <span class="chant-overlap">Go go</span></p>
+              <p class="line translation">俺の好きなものだけを選ぶ Go go</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set" data-time="74">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">HAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">おでぃろどぅん が なん <span class="chant-overlap">ゴー ゴー</span></p>
+              <p class="line original">어디로든 가 난 <span class="chant-overlap">Go go</span></p>
+              <p class="line translation">どこへでも行く 俺は Go go</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- I.N -->
+        <section class="lyric-block" data-member="in">
+          <div class="lyric-set" data-time="77">
+            <div class="member-column">
+              <span class="member-id">08</span>
+              <span class="member-name">I.N</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">かご しぷん でろ</p>
+              <p class="line original">가고 싶은 대로</p>
+              <p class="line translation">行きたい所へ</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set" data-time="78.5">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-overlap">だ だだだ だだ だ だ</span></p>
+              <p class="line original"><span class="chant-overlap">다 다다다 다다 다 다</span></p>
+              <p class="line translation">全部</p>
+            </div>
+          </div>
+
+              <p class="line ruby"><span class="chant-inline">(ス・トゥ・レ・イ・キ・ジュ)</span>
+              <span class="chant-inline">(どぶる なっ)</span></p>
+
+
+        </section>
+
+
+        <!-- FELIX -->
+        <section class="lyric-block" data-member="felix">
+          <div class="lyric-set" data-time="85">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">ぬんぐむ おむぬん ダイス あぷどぅぃ おむぬん コイン</p>
+              <p class="line original">눈금 없는 Dice 앞뒤 없는 Coin</p>
+              <p class="line translation">数字のないDice 裏も表もないCoin</p>
+
+              <p class="line ruby">おっとん みょに ぼいんでど さんがのぷそ なぬん</p>
+              <p class="line original">어떤 면이 보인대도 상관없어 나는</p>
+              <p class="line translation">どの面が見えたとしても関係ない 俺には</p>
+
+              <p class="line ruby">ばんひゃん おむぬん なちむばぬる ぼみょ ゴーイング</p>
+              <p class="line original">방향 없는 나침반을 보며 Going</p>
+              <p class="line translation">矢印のない方位磁石を見ながら Going</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- CHANGBIN -->
+        <section class="lyric-block" data-member="changbin">
+          <div class="lyric-set" data-time="91.8">
+            <div class="member-column">
+              <span class="member-id">04</span>
+              <span class="member-name">CHANGBIN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-overlap">まぬん ごる おっち もたどらど</span></p>
+              <p class="line original"><span class="chant-overlap">많은 걸 얻지 못하더라도</span></p>
+              <p class="line translation">たくさんの物を得ただろ 上手くいかなくたって</p>
+
+              <p class="line ruby"><span class="chant-overlap">けんちゃな べく じゅんえ はならど</span></p>
+              <p class="line original"><span class="chant-overlap">괜찮아 백 중에 하나라도</span></p>
+              <p class="line translation">大丈夫 100の内の1つしか出来てなくても</p>
+
+              <p class="line ruby">ぺっちえだ よくしむぶりょ もどぅん せぐる ちればっちゃ</p>
+              <p class="line original">백지에다 욕심부려 모든 색을 칠해봤자</p>
+              <p class="line translation">白紙に欲張って全ての色を塗ってみろ</p>
+
+              <p class="line ruby">こむんせんまん なま</p>
+              <p class="line original">검은색만 남아</p>
+              <p class="line translation">黒色だけは残して</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set" data-time="97.5">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">ナウ アイム フリー <span class="chant-overlap">ゲット アップ</span></p>
+              <p class="line original">Now I’m free! <span class="chant-overlap">Get up</span></p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set" data-time="99.6">
+            <div class="member-column">
+              <span class="member-id">02</span>
+              <span class="member-name">LEE KNOW</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">おでぃどぅん なぬん がる す いっそ</p>
+              <p class="line original">어디든 나는 갈 수 있어</p>
+              <p class="line translation">俺はどこへでも行ける</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set" data-time="101.5">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">フリー <span class="chant-overlap">ゲット アップ</span></p>
+              <p class="line original">Free! <span class="chant-overlap">Get up</span></p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- FELIX -->
+        <section class="lyric-block" data-member="felix">
+          <div class="lyric-set" data-time="103">
+            <div class="member-column">
+              <span class="member-id">06</span>
+              <span class="member-name">FELIX</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">がる ぎるる がじ もどぅん びきょ</p>
+              <p class="line original">갈 길을 가지 뭐든 비켜</p>
+              <p class="line translation">行きたい方へ行くだけだ 邪魔するものは何でも退かす</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set" data-time="104.8">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">フリー <span class="chant-overlap">ゲット アップ</span></p>
+              <p class="line original">Free! <span class="chant-overlap">Get up</span></p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- I.N -->
+        <section class="lyric-block" data-member="in">
+          <div class="lyric-set" data-time="106.3">
+            <div class="member-column">
+              <span class="member-id">08</span>
+              <span class="member-name">I.N</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">おでぃろ がどぅん しんぎょん た こ</p>
+              <p class="line original">어디로 가든 신경 다 꺼</p>
+              <p class="line translation">どこに行こうとまったく気なんて遣わない</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- SEUNGMIN -->
+        <section class="lyric-block" data-member="seungmin">
+          <div class="lyric-set" data-time="108">
+            <div class="member-column">
+              <span class="member-id">07</span>
+              <span class="member-name">SEUNGMIN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-overlap">だ だだだ だだ だ だ だ</span></p>
+              <p class="line original"><span class="chant-overlap">다 다다다 다다 다 다 다</span></p>
+              <p class="line translation">全部</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- HYUNJIN -->
+        <section class="lyric-block" data-member="hyunjin">
+          <div class="lyric-set" data-time="111.2">
+            <div class="member-column">
+              <span class="member-id">05</span>
+              <span class="member-name">HYUNJIN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">はん ごんまぬる ぱらぼご わっとん ね しやぬん</p>
+              <p class="line original">한 곳만을 바라보고 왔던 내 시야는</p>
+              <p class="line translation">1つの場所だけを見つめてきた俺の視野は</p>
+
+              <p class="line ruby">のろぼじご まぬん ぎるろ ぬぬる どるりょ</p>
+              <p class="line original">넓어지고 많은 길로 눈을 돌려</p>
+              <p class="line translation">広がってたくさんの道へと目を逸らす</p>
+
+              <p class="line ruby">よろ がるれぎるろ</p>
+              <p class="line original">여러 갈래길로</p>
+              <p class="line translation">他の道へと</p>
+
+              <p class="line ruby">なのじん いごする ぼみょ こじん どんごん</p>
+              <p class="line original">나눠진 이곳을 보며 커진 동공</p>
+              <p class="line translation">別れたこの場所を見て広がる瞳孔</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set" data-time="117.8">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">HAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-overlap">ゴー ブレイク オール ザ ブレイク オール ザ ルールズ</span></p>
+              <p class="line original"><span class="chant-overlap">Go! Break all the, break all the rules</span></p>
+
+              <p class="line ruby">ばり まく たぬん でろ すみ とく くっかじ ちゃおるら</p>
+              <p class="line original">발이 막 닿는 대로 숨이 턱 끝까지 차올라</p>
+              <p class="line translation">足が向く方へ 息が上がってくる</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ALL -->
+        <section class="lyric-block" data-member="all-members">
+          <div class="lyric-set" data-time="122.7">
+            <div class="member-column">
+              <span class="member-id">00</span>
+              <span class="member-name">ALL</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-overlap">くぁく くぁく くんじるぎげ </span></p>
+              <p class="line original"><span class="chant-overlap">꽉 꽉 끈질기게 </span></p>
+              <p class="line translation">しっかり粘り強く</p>
+
+              <p class="line ruby">と くぁく むっこ ダブル ノット</p>
+              <p class="line original">더 꽉 묶어 Double knot</p>
+              <p class="line translation">もっときつく結び直して Double Knot</p>
+
+              <p class="line ruby"><span class="chant-inline">ストレイ キッズ</span></p>
+              <p class="line original"><span class="chant-inline">Stray Kids!</span></p>
+
+              <p class="line ruby">と くぁく むっこ ダブル ノット</p>
+              <p class="line original">더 꽉 묶어 Double knot</p>
+              <p class="line translation">もっときつく結び直して Double Knot</p>
+
+              <p class="line ruby"><span class="chant-overlap">ストレイ キッズ</span></p>
+              <p class="line original"><span class="chant-overlap">Stray Kids!</span></p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- SEUNGMIN -->
+        <section class="lyric-block" data-member="seungmin">
+          <div class="lyric-set" data-time="139">
+            <div class="member-column">
+              <span class="member-id">07</span>
+              <span class="member-name">SEUNGMIN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">おでぃろどぅん が なん <span class="chant-overlap">ゴー ゴー</span></p>
+              <p class="line original">어디로든 가 난 <span class="chant-overlap">Go go</span></p>
+              <p class="line translation">どこへでも行く 俺は Go go</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- LEE KNOW -->
+        <section class="lyric-block" data-member="leeknow">
+          <div class="lyric-set" data-time="142.5">
+            <div class="member-column">
+              <span class="member-id">02</span>
+              <span class="member-name">LEE KNOW</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">ね まむでろ ごるら <span class="chant-overlap">ゴー ゴー</span></p>
+              <p class="line original">내 맘대로 골라 <span class="chant-overlap">Go go</span></p>
+              <p class="line translation">俺の好きなものだけを選ぶ Go go</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set" data-time="145.5">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">HAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">おでぃろどぅん が なん <span class="chant-overlap">ゴー ゴー</span></p>
+              <p class="line original">어디로든 가 난 <span class="chant-overlap">Go go</span></p>
+              <p class="line translation">どこへでも行く 俺は Go go</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- I.N -->
+        <section class="lyric-block" data-member="in">
+          <div class="lyric-set" data-time="149">
+            <div class="member-column">
+              <span class="member-id">08</span>
+              <span class="member-name">I.N</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">かご しぷん でろ</p>
+              <p class="line original">가고 싶은 대로</p>
+              <p class="line translation">行きたい所へ</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- BANG CHAN -->
+        <section class="lyric-block" data-member="bangchan">
+          <div class="lyric-set" data-time="150.5">
+            <div class="member-column">
+              <span class="member-id">01</span>
+              <span class="member-name">BANG CHAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-overlap">だ だだだ だだ だ だ</span></p>
+              <p class="line original"><span class="chant-overlap">다 다다다 다다 다 다</span></p>
+              <p class="line translation">全部</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- CHANGBIN -->
+        <section class="lyric-block" data-member="changbin">
+          <div class="lyric-set" data-time="154">
+            <div class="member-column">
+              <span class="member-id">04</span>
+              <span class="member-name">CHANGBIN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">もむちゅどぅん まるどぅん <span class="chant-overlap">エイ エイ</span></p>
+              <p class="line original">멈추든 말든 <span class="chant-overlap">Ey ey</span></p>
+              <p class="line translation">止まろうが 動き続けようが Ey ey</p>
+
+              <p class="line ruby">ウェアエヴァー アイ ゴー <span class="chant-overlap">エイ エイ</span></p>
+              <p class="line original">Wherever I go, <span class="chant-overlap">Ey ey</span></p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set" data-time="157">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">HAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby">もる はどぅん まるどぅん もどぅ だ ね まむでろ</p>
+              <p class="line original">뭘 하든 말든 모두 다 내 맘대로</p>
+              <p class="line translation">何をしても 何もしなくても 全部俺の思い通りに</p>
+
+              <p class="line ruby"><span class="chant-inline">ス・トゥ・レ・イ・キ・ジュ</span>
+              <span class="chant-overlap">ダブル ノット</span> </p>
+              <p class="line original"><span class="chant-overlap">Double knot</span> </p>
+
+              <p class="line ruby"><span class="chant-inline">ス・トゥ・レ・イ・キ・ジュ</span>
+              <span class="chant-overlap">ダブル ノット</span> </p>
+              <p class="line original"><span class="chant-overlap">Double knot</span> </p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ALL -->
+        <section class="lyric-block" data-member="all-members">
+          <div class="lyric-set" data-time="177.4">
+            <div class="member-column">
+              <span class="member-id">00</span>
+              <span class="member-name">ALL</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-overlap">が</span> が <span class="chant-overlap">が</span> が <span class="chant-overlap">が が</span></p>
+              <p class="line original"><span class="chant-overlap">가!</span> 가! <span class="chant-overlap">가!</span> 가! <span class="chant-overlap">가! 가!</span></p>
+              <p class="line translation">行け！</p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- HAN -->
+        <section class="lyric-block" data-member="han">
+          <div class="lyric-set" data-time="185.5">
+            <div class="member-column">
+              <span class="member-id">03</span>
+              <span class="member-name">HAN</span>
+            </div>
+
+            <div class="lyric-data">
+              <p class="line ruby"><span class="chant-overlap">ダブル ノット</span></p>
+              <p class="line original"><span class="chant-overlap">Double knot</span></p>
+              <p class="line original"><span class="chant-overlap">Double knot</span></p>
+            </div>
+          </div>
+        </section>
+    </section>
+
+
+  </main>
+
+
+  <footer class="song-footer">
+
+    <div>
+      <strong>
+        SKZ LYRIC LAB
+      </strong>
+
+      <p>
+        Stray Kids unofficial lyrics fan site.
+      </p>
+    </div>
+
+    <span class="footer-online">
+      DATABASE ONLINE
+    </span>
+
+  </footer>
+
+
+  <button
+    id="songPageTop"
+    class="song-page-top"
+    type="button"
+    aria-label="ページ上部へ戻る"
+  >
+    ↑
+  </button>
+
+
+  <script src="../js/song.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="../js/youtube-player.js"></script>
+
+</body>
+</html>
