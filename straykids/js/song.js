@@ -6,16 +6,24 @@
 ========================= */
 
 const fileLoader =
-  document.getElementById("fileLoader");
+  document.getElementById(
+    "fileLoader"
+  );
 
 const loaderProgress =
-  document.getElementById("loaderProgress");
+  document.getElementById(
+    "loaderProgress"
+  );
 
 const loaderPercent =
-  document.getElementById("loaderPercent");
+  document.getElementById(
+    "loaderPercent"
+  );
 
 const loaderMessage =
-  document.getElementById("loaderMessage");
+  document.getElementById(
+    "loaderMessage"
+  );
 
 const songMenuButton =
   document.getElementById(
@@ -26,7 +34,7 @@ const songNav =
   document.getElementById(
     "globalNav"
   );
-  
+
 const memberFilterButtons =
   document.querySelectorAll(
     ".member-filter-button"
@@ -40,6 +48,11 @@ const lyricBlocks =
 const viewButtons =
   document.querySelectorAll(
     ".view-button"
+  );
+
+const fanchantToggle =
+  document.getElementById(
+    "fanchantToggle"
   );
 
 const lines =
@@ -56,7 +69,6 @@ const songPageTop =
   document.getElementById(
     "songPageTop"
   );
-
 
 /* =========================
    ファイル起動演出
@@ -253,6 +265,33 @@ const viewClassMap = {
   translation: "translation"
 };
 
+
+/* 表示モードをbodyへ反映。
+   CSSの文字サイズ変更と音源切替イベントに使う。 */
+function applyLyricsViewMode(selectedView) {
+  const normalizedView =
+    selectedView === "ruby" ? "kana" :
+    selectedView === "translation" ? "japanese" :
+    selectedView;
+
+  document.body.classList.remove(
+    "lyrics-view-all",
+    "lyrics-view-original",
+    "lyrics-view-kana",
+    "lyrics-view-japanese"
+  );
+
+  document.body.classList.add(
+    `lyrics-view-${normalizedView}`
+  );
+
+  document.dispatchEvent(
+    new CustomEvent("lyricsviewchange", {
+      detail: { view: normalizedView }
+    })
+  );
+}
+
 viewButtons.forEach((button) => {
 
   button.addEventListener(
@@ -294,6 +333,8 @@ viewButtons.forEach((button) => {
         "active"
       );
 
+      applyLyricsViewMode(selectedView);
+
       lines.forEach((line) => {
 
         if (targetClass === "all") {
@@ -320,6 +361,7 @@ viewButtons.forEach((button) => {
   );
 
 });
+
 
 /* =========================
    掛け声表示切り替え
@@ -461,6 +503,7 @@ songPageTop.addEventListener(
 ========================= */
 
 function initSongPage() {
+  applyLyricsViewMode("all");
   runFileLoader();
   activateReveal();
 }
