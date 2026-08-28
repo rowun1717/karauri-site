@@ -1,0 +1,824 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CHK CHK BOOM | SKZ Lyric LAB</title>
+    <link href="../css/song.css" rel="stylesheet" />
+    <link href="../css/common-header.css?v=20260806-2" rel="stylesheet" />
+    <link href="../images/logo.png" rel="icon" type="image/png" />
+    <link href="../images/icon.png" rel="apple-touch-icon" />
+    <link href="manifest.json" rel="manifest" />
+    <meta content="#050505" name="theme-color" />
+  </head>
+  <body>
+    <!-- ファイル起動演出 -->
+    <div class="file-loader" id="fileLoader">
+      <div class="file-loader-inner">
+        <p class="loader-code">SKZ LYRIC LAB / FILE ACCESS</p>
+        <h1 data-text="CHK CHK BOOM">CHK CHK BOOM</h1>
+        <p id="loaderMessage">OPENING LYRIC FILE...</p>
+        <div class="loader-bar">
+          <span id="loaderProgress"></span>
+        </div>
+        <p id="loaderPercent">0%</p>
+      </div>
+    </div>
+    <!-- 背景演出 -->
+    <div class="song-grid-background"></div>
+    <div class="song-scanlines"></div>
+    <div class="song-pointer-glow" id="songPointerGlow"></div>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+      <a class="header-logo" href="../index.html">
+        <span class="header-logo-main">SKZ</span>
+        <span class="header-logo-sub">LYRIC LAB</span>
+      </a>
+      <nav class="global-nav" id="globalNav">
+        <a href="../index.html">HOME</a>
+        <a href="../search.html">SEARCH</a>
+        <a href="../albums.html">ARCHIVE</a>
+        <a href="#lyrics">LYRICS</a>
+        <a href="../members.html">MEMBERS</a>
+        <a href="../setlist.html">SETLIST</a>
+        <a href="../about.html">ABOUT</a>
+      </nav>
+      <button
+        aria-controls="globalNav"
+        aria-expanded="false"
+        aria-label="メニューを開く"
+        class="menu-button"
+        id="menuButton"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+    <main>
+      <!-- 曲ヒーロー -->
+      <section class="song-hero">
+        <div class="song-hero-background">
+          <img alt="CHK CHK BOOM" src="../images/albums/ATE.jpg" />
+        </div>
+        <div class="song-hero-overlay"></div>
+        <div class="song-hero-content">
+          <div class="song-cover-panel reveal">
+            <div class="cover-header">
+              <span>FILE NO. CHK CHK BOOM</span>
+              <span class="active-status">ACTIVE</span>
+            </div>
+            <div class="cover-frame">
+              <img alt="CHK CHK BOOM" src="../images/albums/ATE.jpg" />
+              <span class="corner top-left"></span>
+              <span class="corner top-right"></span>
+              <span class="corner bottom-left"></span>
+              <span class="corner bottom-right"></span>
+              <div class="cover-scan"></div>
+            </div>
+            <div class="cover-footer">
+              <span>SUBJECT / STRAY KIDS</span>
+              <span>STATUS / VERIFIED</span>
+            </div>
+            <section
+              class="music-player"
+              data-youtube-id="D0GaZFwNdlU"
+              data-japanese-youtube-id="cLVMsml_eh0"
+            >
+              <!-- Japanese Ver.がある曲だけ、上の data-japanese-youtube-id にYouTube動画IDを入れる -->
+              <div class="youtube-player-wrap">
+                <div id="youtubePlayerOriginal"></div>
+                <div id="youtubePlayerJapanese"></div>
+              </div>
+              <div class="player-info">
+                <div>
+                  <span class="player-label">NOW PLAYING</span>
+                </div>
+                <span id="currentTime">0:00</span>
+              </div>
+              <input
+                aria-label="再生位置"
+                class="progress-bar"
+                id="progressBar"
+                max="100"
+                min="0"
+                step="0.1"
+                type="range"
+                value="0"
+              />
+              <div class="player-controls">
+                <button aria-label="10秒戻る" id="rewindButton" type="button">
+                  ↶
+                </button>
+                <button aria-label="再生" id="playButton" type="button">
+                  ▶
+                </button>
+                <button aria-label="10秒進む" id="forwardButton" type="button">
+                  ↷
+                </button>
+              </div>
+              <div class="player-bottom">
+                <span id="duration">0:00</span>
+                <button aria-label="ミュート" id="muteButton" type="button">
+                  🔊
+                </button>
+              </div>
+            </section>
+          </div>
+          <div class="song-main-data reveal">
+            <p class="song-eyebrow">LYRIC ANALYSIS FILE</p>
+            <div class="song-tags">
+              <span class="song-tag">Original / Japanese Ver.</span>
+              <span class="song-tag">ATE</span>
+            </div>
+            <h1 class="song-title">CHK CHK BOOM</h1>
+            <p class="song-subtitle">Stray Kids</p>
+            <!-- 基本情報＋Credits -->
+            <dl class="song-data-table">
+              <div>
+                <dt>ALBUM</dt>
+                <dd>ATE</dd>
+              </div>
+              <div>
+                <dt>RELEASE</dt>
+                <dd>2024.07.19</dd>
+              </div>
+              <div>
+                <dt>UPDATED</dt>
+                <dd>2026.08.28</dd>
+              </div>
+              <div>
+                <dt>LANGUAGE</dt>
+                <dd>KOREAN / ENGLISH</dd>
+              </div>
+              <!-- Credits情報 -->
+              <div>
+                <dt>LYRICS</dt>
+                <dd>3RACHA</dd>
+              </div>
+              <div>
+                <dt>COMPOSED</dt>
+                <dd>3RACHA, DallasK, Ronnie Icon, BB Elliot</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="song-hero-number">FILE / CHK CHK BOOM</div>
+        </div>
+      </section>
+      <!-- メンバーカラー -->
+      <section class="member-file-section">
+        <div class="section-label reveal">
+          <p>02 / MEMBER IDENTIFICATION</p>
+          <h2>Part Colors</h2>
+        </div>
+        <div class="member-filter reveal">
+          <button
+            class="member-filter-button active"
+            data-member="all"
+            type="button"
+          >
+            ALL
+          </button>
+          <button
+            class="member-filter-button chan"
+            data-member="bangchan"
+            type="button"
+          >
+            BANG CHAN
+          </button>
+          <button
+            class="member-filter-button leeknow"
+            data-member="leeknow"
+            type="button"
+          >
+            LEE KNOW
+          </button>
+          <button
+            class="member-filter-button changbin"
+            data-member="changbin"
+            type="button"
+          >
+            CHANGBIN
+          </button>
+          <button
+            class="member-filter-button hyunjin"
+            data-member="hyunjin"
+            type="button"
+          >
+            HYUNJIN
+          </button>
+          <button
+            class="member-filter-button han"
+            data-member="han"
+            type="button"
+          >
+            HAN
+          </button>
+          <button
+            class="member-filter-button felix"
+            data-member="felix"
+            type="button"
+          >
+            FELIX
+          </button>
+          <button
+            class="member-filter-button seungmin"
+            data-member="seungmin"
+            type="button"
+          >
+            SEUNGMIN
+          </button>
+          <button
+            class="member-filter-button in"
+            data-member="in"
+            type="button"
+          >
+            I.N
+          </button>
+        </div>
+      </section>
+      <!-- 歌詞 -->
+      <section class="lyrics-section" id="lyrics">
+        <div class="lyrics-header reveal">
+          <div>
+            <p>03 / LYRIC DATABASE</p>
+            <h2>Lyrics</h2>
+          </div>
+          <div class="lyrics-view-controls">
+            <button class="view-button active" data-view="all" type="button">
+              ALL DATA
+            </button>
+            <button class="view-button" data-view="original" type="button">
+              ORIGINAL
+            </button>
+            <button class="view-button" data-view="kana" type="button">
+              KANA
+            </button>
+            <button class="view-button" data-view="japanese" type="button">
+              JAPANESE
+            </button>
+            <button
+              aria-pressed="false"
+              class="view-button fanchant-toggle"
+              id="fanchantToggle"
+              type="button"
+            >
+              FANCHANT OFF
+            </button>
+          </div>
+        </div>
+        <div class="lyrics-console">
+          <div class="lyrics-console-top">
+            <span>FILE : CHK CHK BOOM.LYRIC</span>
+            <span>STATUS : DECODED</span>
+          </div>
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="6">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ブーム ブーム チェク チェク ブーム</p>
+                <p class="line original">Boom Boom Chk Chk Boom</p>
+                <p class="line translation">Boom Boom Chk Chk Boom</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="9">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ちょんじゅんあん ふくっせげ ちょ ちょむど
+                </p>
+                <p class="line original">정중앙 흑색의 저 점도</p>
+                <p class="line translation">ど真ん中狙う black dot</p>
+
+                <p class="line ruby">まっちゅぉ ね ちぇっぱるん けうぇくっと</p>
+                <p class="line original">맞춰 내 재빠른 계획도</p>
+                <p class="line translation">当てる 素早い計画と</p>
+
+                <p class="line ruby">ほじょむ おぷっし わんびょかん ぱんど</p>
+                <p class="line original">허점 없이 완벽한 판도</p>
+                <p class="line translation">隙ない 完璧な turnも</p>
+
+                <p class="line ruby">
+                  うぃえそ ちゅむちゅぉ ね プランてろ キープ ゴーイング
+                </p>
+                <p class="line original">위에서 춤춰 내 plan대로 keep going</p>
+                <p class="line translation">
+                  Dance on, 頂上でプラン通り keep going
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="18">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  シック オブ ディス ライフ、イッツ レギュラー
+                </p>
+                <p class="line original">Sick of this life, it’s regular</p>
+                <p class="line translation">Sick of this life, it’s regular</p>
+
+                <p class="line ruby">すんにるる のむ くぁしけっち ぺぶるろ</p>
+                <p class="line original">승리를 너무 과식했지 배불러</p>
+                <p class="line translation">
+                  レコード業界 フルになった俺は irregular
+                </p>
+
+                <p class="line ruby">
+                  さんちぇくっと はる きょむ ほりってぃ め とぅるろ
+                </p>
+                <p class="line original">산책도 할 겸 허리띠 매 둘러</p>
+                <p class="line translation">ベルト緩めて get fabulous</p>
+
+                <p class="line ruby">
+                  うりん うじゅろ なもじ ちょんぶ ニール、アイム ストロング
+                </p>
+                <p class="line original">
+                  우린 우주로 나머지 전부 kneel, I’m strong
+                </p>
+                <p class="line translation">
+                  飛ぶ宇宙へ 残り皆 kneel, I'm strong
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="27">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">イェー イェー イェー イェー</p>
+                <p class="line original">Yeah yeah yeah yeah</p>
+                <p class="line translation">Yeah yeah yeah yeah</p>
+
+                <p class="line ruby">
+                  あん とぅぇぬん こっ おぷっし アイ ドゥー イット
+                </p>
+                <p class="line original">안 되는 것 없이 I do it</p>
+                <p class="line translation">不可能はない I do it</p>
+
+                <p class="line ruby">
+                  ジャスト プル アウト マイ トリガー アイ ガット ザット
+                </p>
+                <p class="line original">Just pull out my trigger I got that</p>
+                <p class="line translation">
+                  Just pull out my trigger I got that
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="32">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  アイマ ポップ ポップ ポップ テイク ア ショット イェー
+                </p>
+                <p class="line original">I’mma pop pop pop take a shot yeah</p>
+                <p class="line translation">
+                  I’mma pop pop pop take a shot yeah
+                </p>
+
+                <p class="line ruby">
+                  シュート ダウン マイ ゴールズ ワン バイ ワン、アイ スナイプ
+                  ゼム
+                </p>
+                <p class="line original">
+                  Shoot down my goals one by one, I snipe them
+                </p>
+                <p class="line translation">
+                  Shoot down my goals one by one, I snipe them
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="38">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  フィリング アップ マイ トラック イェー ユー ウォント ザット
+                  ライド
+                </p>
+                <p class="line original">
+                  Filling up my truck yeah you want that ride
+                </p>
+                <p class="line translation">
+                  Filling up my truck yeah you want that ride
+                </p>
+
+                <p class="line ruby">（ブーム）</p>
+                <p class="line original">(Boom)</p>
+                <p class="line translation">(Boom)</p>
+
+                <p class="line ruby">
+                  ヒット ユー ライク ア トラック アイマ メイク ユー フライ
+                </p>
+                <p class="line original">
+                  Hit you like a truck I’mma make you fly
+                </p>
+                <p class="line translation">
+                  Hit you like a truck I’mma make you fly
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="47">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+
+                <p class="line ruby">
+                  バモス、アイ ノウ ザット ユー ウォント イット
+                </p>
+                <p class="line original">Vamos, I know that you want it</p>
+                <p class="line translation">Vamos, I know that you want it</p>
+
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+
+                <p class="line ruby">
+                  ロボス、ウィー キャノット ストップ ハンティング
+                </p>
+                <p class="line original">Lobos, we cannot stop hunting</p>
+                <p class="line translation">Lobos, we cannot stop hunting</p>
+
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+
+                <p class="line ruby">ラタタタ アイマ メイク イット</p>
+                <p class="line original">Ratatata I’mma make it</p>
+                <p class="line translation">Ratatata I’mma make it</p>
+
+                <p class="line ruby">ブーム ブーム チェク チェク ブーム</p>
+                <p class="line original">Boom Boom Chk Chk Boom</p>
+                <p class="line translation">Boom Boom Chk Chk Boom</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="56">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+
+                <p class="line ruby">
+                  バモス、アイ ノウ ザット ユー ウォント イット
+                </p>
+                <p class="line original">Vamos, I know that you want it</p>
+                <p class="line translation">Vamos, I know that you want it</p>
+
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+
+                <p class="line ruby">ケイオス、ウィ ソー カタストロフィック</p>
+                <p class="line original">Chaos, we so catastrophic</p>
+                <p class="line translation">Chaos, we so catastrophic</p>
+
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+
+                <p class="line ruby">ラタタタ アイマ メイク イット</p>
+                <p class="line original">Ratatata I’mma make it</p>
+                <p class="line translation">Ratatata I’mma make it</p>
+
+                <p class="line ruby">ブーム ブーム チェク チェク ブーム</p>
+                <p class="line original">Boom Boom Chk Chk Boom</p>
+                <p class="line translation">Boom Boom Chk Chk Boom</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="66">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">くるりせ ぱぐぇ ちゃちぇが と くるりせ</p>
+                <p class="line original">클리셰 파괴 자체가 더 클리셰</p>
+                <p class="line translation">クリシェ破壊自体が クリシェ</p>
+
+                <p class="line ruby">なえ てあん きょね ちょんぶ ゆじえ</p>
+                <p class="line original">나에 대한 견해 전부 유지해</p>
+                <p class="line translation">大胆に受け取る feedback</p>
+
+                <p class="line ruby">
+                  ぱっくぃん こん おぷっそ アイム ノット ア チェインジド マン
+                </p>
+                <p class="line original">바뀐 건 없어 I’m not a changed man</p>
+                <p class="line translation">変わらない I’m not a changed man</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="72">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ね へんぼぬん よじょに くだうむ レベルえまん ていぺ
+                </p>
+                <p class="line original">
+                  내 행보는 여전히 그다음 level에만 대입해
+                </p>
+                <p class="line translation">俺のステップは 次の levelに連携</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="75">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">もくぴょちえ はん ぱるっしく</p>
+                <p class="line original">목표치에 한 발씩</p>
+                <p class="line translation">目標値にアプローチ</p>
+
+                <p class="line ruby">はんばるち と ただらっち</p>
+                <p class="line original">한발치 더 다다랐지</p>
+                <p class="line translation">当たる peak 逆アヴァランチ</p>
+
+                <p class="line ruby">
+                  アイム ジ オーナー オブ マイ ゴール ちゅいん ちゃる まんなん
+                  ぽく
+                </p>
+                <p class="line original">
+                  I’m the owner of my goal 주인 잘 만난 복
+                </p>
+                <p class="line translation">
+                  I'm the owner of my goal, ついてる my life
+                </p>
+
+                <p class="line ruby">
+                  アイ メイク イット ライト よんじょむ ちょじゅん クリア
+                </p>
+                <p class="line original">I make it right 영점 조준 clear</p>
+                <p class="line translation">
+                  I make it right, ゼロイン now, clear
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="84">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ちょんじょぐる け ぽりじ なえ トリガー、ファイア（ファイア）
+                </p>
+                <p class="line original">
+                  정적을 깨 버리지 나의 trigger, fire (fire)
+                </p>
+                <p class="line translation">
+                  静寂を破るのさ Trigger, fire (fire)
+                </p>
+
+                <p class="line ruby">
+                  ちょ くっかじ くぁにょぐる と うぃろ おるりょ
+                </p>
+                <p class="line original">저 끝까지 과녁을 더 위로 올려</p>
+                <p class="line translation">あの先 的を Put it up higher</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="92">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">マイ アミーゴ</p>
+                <p class="line original">My amigo</p>
+                <p class="line translation">My amigo</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="94">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  フィリング アップ マイ トラック イェー ユー ウォント ザット
+                  ライド
+                </p>
+                <p class="line original">
+                  Filling up my truck yeah you want that ride
+                </p>
+                <p class="line translation">
+                  Filling up my truck yeah you want that ride
+                </p>
+
+                <p class="line ruby">（ブーム）</p>
+                <p class="line original">(Boom)</p>
+                <p class="line translation">(Boom)</p>
+
+                <p class="line ruby">
+                  ヒット ユー ライク ア トラック アイマ メイク ユー フライ
+                </p>
+                <p class="line original">
+                  Hit you like a truck I’mma make you fly
+                </p>
+                <p class="line translation">
+                  Hit you like a truck I’mma make you fly
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="103">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+                <p class="line ruby">
+                  バモス、アイ ノウ ザット ユー ウォント イット
+                </p>
+                <p class="line original">Vamos, I know that you want it</p>
+                <p class="line translation">Vamos, I know that you want it</p>
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+                <p class="line ruby">
+                  ロボス、ウィー キャノット ストップ ハンティング
+                </p>
+                <p class="line original">Lobos, we cannot stop hunting</p>
+                <p class="line translation">Lobos, we cannot stop hunting</p>
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+                <p class="line ruby">ラタタタ アイマ メイク イット</p>
+                <p class="line original">Ratatata I’mma make it</p>
+                <p class="line translation">Ratatata I’mma make it</p>
+                <p class="line ruby">ブーム ブーム チェク チェク ブーム</p>
+                <p class="line original">Boom Boom Chk Chk Boom</p>
+                <p class="line translation">Boom Boom Chk Chk Boom</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="113">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+                <p class="line ruby">
+                  バモス、アイ ノウ ザット ユー ウォント イット
+                </p>
+                <p class="line original">Vamos, I know that you want it</p>
+                <p class="line translation">Vamos, I know that you want it</p>
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+                <p class="line ruby">ケイオス、ウィ ソー カタストロフィック</p>
+                <p class="line original">Chaos, we so catastrophic</p>
+                <p class="line translation">Chaos, we so catastrophic</p>
+                <p class="line ruby">ブーム</p>
+                <p class="line original">Boom</p>
+                <p class="line translation">Boom</p>
+                <p class="line ruby">ラタタタ アイマ メイク イット</p>
+                <p class="line original">Ratatata I’mma make it</p>
+                <p class="line translation">Ratatata I’mma make it</p>
+                <p class="line ruby">ブーム ブーム チェク チェク ブーム</p>
+                <p class="line original">Boom Boom Chk Chk Boom</p>
+                <p class="line translation">Boom Boom Chk Chk Boom</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="all-members">
+            <div class="lyric-set" data-time="122">
+              <div class="member-column">
+                <span class="member-id">00</span>
+                <span class="member-name">ALL</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">きぴ と ぱごどぅろ</p>
+                <p class="line original">깊이 더 파고들어</p>
+                <p class="line translation">一気に駆け出す</p>
+
+                <p class="line ruby">マイ ブレット ゴーズ たんたんたん</p>
+                <p class="line original">My bullet goes 탕탕탕</p>
+                <p class="line translation">My bullet goes タンタンタン</p>
+
+                <p class="line ruby">いごん ラ ヴィダ ロカ</p>
+                <p class="line original">이건 La Vida Loca</p>
+                <p class="line translation">This is La Vida Loca</p>
+
+                <p class="line ruby">
+                  いごん、グッド ショット ショット ショット
+                </p>
+                <p class="line original">이건, good shot shot shot</p>
+                <p class="line translation">見ろ good shot, shot, shot</p>
+
+                <p class="line ruby">きぴ と ぱごどぅろ</p>
+                <p class="line original">깊이 더 파고들어</p>
+                <p class="line translation">一気に駆け出す</p>
+
+                <p class="line ruby">マイ ブレット ゴーズ たんたんたん</p>
+                <p class="line original">My bullet goes 탕탕탕</p>
+                <p class="line translation">My bullet goes タンタンタン</p>
+
+                <p class="line ruby">いごん ラ ヴィダ ロカ</p>
+                <p class="line original">이건 La Vida Loca</p>
+                <p class="line translation">This is La Vida Loca</p>
+
+                <p class="line ruby">ブーム ブーム チェク チェク ブーム</p>
+                <p class="line original">Boom Boom Chk Chk Boom</p>
+                <p class="line translation">Boom Boom Chk Chk Boom</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="song-footer">
+      <div>
+        <strong>SKZ LYRIC LAB</strong>
+        <p>Stray Kids unofficial lyrics fan site.</p>
+      </div>
+      <span class="footer-online">DATABASE ONLINE</span>
+    </footer>
+    <button
+      aria-label="ページ上部へ戻る"
+      class="song-page-top"
+      id="songPageTop"
+      type="button"
+    >
+      ↑
+    </button>
+    <script src="../js/song.js"></script>
+    <script src="../js/youtube-player.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
+</html>

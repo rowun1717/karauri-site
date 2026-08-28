@@ -1,0 +1,1157 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CREED | SKZ Lyric LAB</title>
+    <link href="../css/song.css" rel="stylesheet" />
+    <link href="../css/common-header.css?v=20260806-2" rel="stylesheet" />
+    <link href="../images/logo.png" rel="icon" type="image/png" />
+    <link href="../images/icon.png" rel="apple-touch-icon" />
+    <link href="manifest.json" rel="manifest" />
+    <meta content="#050505" name="theme-color" />
+  </head>
+  <body>
+    <!-- ファイル起動演出 -->
+    <div class="file-loader" id="fileLoader">
+      <div class="file-loader-inner">
+        <p class="loader-code">SKZ LYRIC LAB / FILE ACCESS</p>
+        <h1 data-text="CREED">CREED</h1>
+        <p id="loaderMessage">OPENING LYRIC FILE...</p>
+        <div class="loader-bar">
+          <span id="loaderProgress"></span>
+        </div>
+        <p id="loaderPercent">0%</p>
+      </div>
+    </div>
+    <!-- 背景演出 -->
+    <div class="song-grid-background"></div>
+    <div class="song-scanlines"></div>
+    <div class="song-pointer-glow" id="songPointerGlow"></div>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+      <a class="header-logo" href="../index.html">
+        <span class="header-logo-main"> SKZ </span>
+        <span class="header-logo-sub"> LYRIC LAB </span>
+      </a>
+      <nav class="global-nav" id="globalNav">
+        <a href="../index.html"> HOME </a>
+        <a href="../search.html"> SEARCH </a>
+        <a href="../albums.html"> ARCHIVE </a>
+        <a href="#lyrics"> LYRICS </a>
+        <a href="../members.html"> MEMBERS </a>
+        <a href="../setlist.html"> SETLIST </a>
+        <a href="../about.html"> ABOUT </a>
+      </nav>
+      <button
+        aria-controls="globalNav"
+        aria-expanded="false"
+        aria-label="メニューを開く"
+        class="menu-button"
+        id="menuButton"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+    <main>
+      <!-- 曲ヒーロー -->
+      <section class="song-hero">
+        <div class="song-hero-background">
+          <img alt="CREED" src="../images/albums/KARMA.png" />
+        </div>
+        <div class="song-hero-overlay"></div>
+        <div class="song-hero-content">
+          <div class="song-cover-panel reveal">
+            <div class="cover-header">
+              <span>FILE NO. CREED</span>
+              <span class="active-status"> ACTIVE </span>
+            </div>
+            <div class="cover-frame">
+              <img alt="CREED" src="../images/albums/KARMA.png" />
+              <span class="corner top-left"></span>
+              <span class="corner top-right"></span>
+              <span class="corner bottom-left"></span>
+              <span class="corner bottom-right"></span>
+              <div class="cover-scan"></div>
+            </div>
+            <div class="cover-footer">
+              <span> SUBJECT / STRAY KIDS </span>
+              <span> STATUS / VERIFIED </span>
+            </div>
+            <section
+              class="music-player"
+              data-youtube-id="iNqJqozTa0g"
+              data-japanese-youtube-id=""
+            >
+              <!-- Japanese Ver.がある曲だけ、上の data-japanese-youtube-id にYouTube動画IDを入れる -->
+              <div class="youtube-player-wrap">
+                <div id="youtubePlayer"></div>
+              </div>
+              <div class="player-info">
+                <div>
+                  <span class="player-label">NOW PLAYING</span>
+                </div>
+                <span id="currentTime">0:00</span>
+              </div>
+              <input
+                aria-label="再生位置"
+                class="progress-bar"
+                id="progressBar"
+                max="100"
+                min="0"
+                step="0.1"
+                type="range"
+                value="0"
+              />
+              <div class="player-controls">
+                <button aria-label="10秒戻る" id="rewindButton" type="button">
+                  ↶
+                </button>
+                <button aria-label="再生" id="playButton" type="button">
+                  ▶
+                </button>
+                <button aria-label="10秒進む" id="forwardButton" type="button">
+                  ↷
+                </button>
+              </div>
+              <div class="player-bottom">
+                <span id="duration">0:00</span>
+                <button aria-label="ミュート" id="muteButton" type="button">
+                  🔊
+                </button>
+              </div>
+            </section>
+          </div>
+          <div class="song-main-data reveal">
+            <p class="song-eyebrow">LYRIC ANALYSIS FILE</p>
+            <div class="song-tags">
+              <span class="song-tag">Original Song</span>
+              <span class="song-tag">KARMA</span>
+            </div>
+            <h1 class="song-title">CREED</h1>
+            <p class="song-subtitle">Stray Kids</p>
+            <!-- 基本情報＋Credits -->
+            <dl class="song-data-table">
+              <div>
+                <dt>ALBUM</dt>
+                <dd>KARMA</dd>
+              </div>
+              <div>
+                <dt>RELEASE</dt>
+                <dd>2025.08.26</dd>
+              </div>
+              <div>
+                <dt>UPDATED</dt>
+                <dd>2026.08.28</dd>
+              </div>
+              <div>
+                <dt>LANGUAGE</dt>
+                <dd>KOREAN / ENGLISH</dd>
+              </div>
+              <!-- Credits情報 -->
+              <div>
+                <dt>LYRICS</dt>
+                <dd>3RACHA</dd>
+              </div>
+              <div>
+                <dt>COMPOSED</dt>
+                <dd>3RACHA,Millionboy</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="song-hero-number">FILE / CREED</div>
+        </div>
+      </section>
+      <!-- メンバーカラー -->
+      <section class="member-file-section">
+        <div class="section-label reveal">
+          <p>02 / MEMBER IDENTIFICATION</p>
+          <h2>Part Colors</h2>
+        </div>
+        <div class="member-filter reveal">
+          <button
+            class="member-filter-button active"
+            data-member="all"
+            type="button"
+          >
+            ALL
+          </button>
+          <button
+            class="member-filter-button chan"
+            data-member="bangchan"
+            type="button"
+          >
+            BANG CHAN
+          </button>
+          <button
+            class="member-filter-button leeknow"
+            data-member="leeknow"
+            type="button"
+          >
+            LEE KNOW
+          </button>
+          <button
+            class="member-filter-button changbin"
+            data-member="changbin"
+            type="button"
+          >
+            CHANGBIN
+          </button>
+          <button
+            class="member-filter-button hyunjin"
+            data-member="hyunjin"
+            type="button"
+          >
+            HYUNJIN
+          </button>
+          <button
+            class="member-filter-button han"
+            data-member="han"
+            type="button"
+          >
+            HAN
+          </button>
+          <button
+            class="member-filter-button felix"
+            data-member="felix"
+            type="button"
+          >
+            FELIX
+          </button>
+          <button
+            class="member-filter-button seungmin"
+            data-member="seungmin"
+            type="button"
+          >
+            SEUNGMIN
+          </button>
+          <button
+            class="member-filter-button in"
+            data-member="in"
+            type="button"
+          >
+            I.N
+          </button>
+        </div>
+      </section>
+      <!-- 歌詞 -->
+      <section class="lyrics-section" id="lyrics">
+        <div class="lyrics-header reveal">
+          <div>
+            <p>03 / LYRIC DATABASE</p>
+            <h2>Lyrics</h2>
+          </div>
+          <div class="lyrics-view-controls">
+            <button class="view-button active" data-view="all" type="button">
+              ALL DATA
+            </button>
+            <button class="view-button" data-view="original" type="button">
+              ORIGINAL
+            </button>
+            <button class="view-button" data-view="kana" type="button">
+              KANA
+            </button>
+            <button class="view-button" data-view="japanese" type="button">
+              JAPANESE
+            </button>
+            <button
+              aria-pressed="false"
+              class="view-button fanchant-toggle"
+              id="fanchantToggle"
+              type="button"
+            >
+              FANCHANT OFF
+            </button>
+          </div>
+        </div>
+        <div class="lyrics-console">
+          <div class="lyrics-console-top">
+            <span>FILE : CREED.LYRIC</span>
+            <span> STATUS : DECODED </span>
+          </div>
+          <!-- FELIX -->
+
+          <!-- HAN -->
+
+          <!-- HYUNJIN -->
+
+          <!-- SEUNGMIN -->
+
+          <!-- BANG CHAN -->
+
+          <!-- FELIX -->
+
+          <!-- HYUNJIN -->
+
+          <!-- FELIX -->
+
+          <!-- LEE KNOW -->
+
+          <!-- HYUNJIN -->
+
+          <!-- CHANGBIN -->
+
+          <!-- HAN -->
+
+          <!-- SEUNGMIN -->
+
+          <!-- I.N -->
+
+          <!-- HAN -->
+
+          <!-- FELIX -->
+
+          <!-- HAN -->
+
+          <!-- CHANGBIN -->
+
+          <!-- HYUNJIN -->
+
+          <!-- FELIX -->
+
+          <!-- BANG CHAN -->
+
+          <!-- I.N -->
+
+          <!-- SEUNGMIN -->
+
+          <!-- BANG CHAN -->
+
+          <!-- FELIX -->
+
+          <!-- ALL -->
+
+          <!-- LEE KNOW -->
+
+          <!-- HAN -->
+
+          <!-- ALL -->
+
+          <!-- BANG CHAN -->
+
+          <!-- I.N -->
+
+          <!-- BANG CHAN -->
+
+          <!-- LEE KNOW -->
+
+          <!-- ALL -->
+
+          <!-- FELIX -->
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="8">
+              <div class="member-column">
+                <span class="member-id">01</span
+                ><span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">スカー</p>
+                <p class="line original">Skrr</p>
+                <p class="line translation">Skrr</p>
+              </div>
+            </div>
+          </section>
+          <section
+            class="lyric-block has-backing-vocal"
+            data-backing-member="bangchan"
+            data-member="seungmin"
+          >
+            <div class="lyric-set" data-time="11">
+              <div class="member-column">
+                <span class="member-id">07 + 01</span>
+                <span class="member-name">SEUNGMIN</span>
+                <span class="backing-member-name">BACKING / BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <!-- Seungminのメイン歌詞 -->
+                <p class="line ruby">アイ ギヴ ライフ トゥ マイ ワーズ</p>
+                <p class="line original">I give life to my words</p>
+                <p class="line translation">自分の言葉に命を吹き込む</p>
+                <!-- Bang Chanのバックボーカル -->
+                <div class="backing-vocal" data-member="bangchan">
+                  <span class="backing-label">BACKING / BANG CHAN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- Seungminのメイン歌詞 -->
+                <p class="line ruby">アイ リーチ ハイツ フロム ザ ダート</p>
+                <p class="line original">I reach heights from the dirt</p>
+                <p class="line translation">泥の底から高みへ到達する</p>
+                <!-- Bang Chanのバックボーカル -->
+                <div class="backing-vocal" data-member="bangchan">
+                  <span class="backing-label">BACKING / BANG CHAN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- Seungminのメイン歌詞 -->
+                <p class="line ruby">
+                  ユー ノウ アイ バイト ザ ウェイ アイ バーク
+                </p>
+                <p class="line original">You know I bite the way I bark</p>
+                <p class="line translation">
+                  吠えるだけじゃなく、その言葉どおりに噛みつく
+                </p>
+                <!-- Bang Chanのバックボーカル -->
+                <div class="backing-vocal" data-member="bangchan">
+                  <span class="backing-label">BACKING / BANG CHAN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="21">
+              <div class="member-column">
+                <span class="member-id">01</span
+                ><span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ドゥーイング ワット アイ セイ、ドゥーイング ワット アイ セイ
+                </p>
+                <p class="line original">Doing what I say, doing what I say</p>
+                <p class="line translation">
+                  言ったことをやる、言ったことをそのまま実行する
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="23">
+              <div class="member-column">
+                <span class="member-id">06</span
+                ><span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  イッツ ソー イージー トゥ メイク アス ベター、ウィ ガット ザ
+                  ライト タイミング
+                </p>
+                <p class="line original">
+                  It's so easy to make us better, we got the right timing
+                </p>
+                <p class="line translation">
+                  俺たちをもっと良くするなんて簡単だ、タイミングも完璧
+                </p>
+                <p class="line ruby">
+                  たん いるちょえ なんびど おぷち タイム イズ ダイアモンズ
+                </p>
+                <p class="line original">
+                  단 일초의 낭비도 없지 time is diamonds
+                </p>
+                <p class="line translation">
+                  たった一秒も無駄にしない、時間はダイヤモンド
+                </p>
+                <p class="line ruby">
+                  ディス スラップス、うりぬん ふるむる ちっかめ たご
+                  おるらがじ、プレイン
+                </p>
+                <p class="line original">
+                  This slaps, 우리는 흐름을 직감해 타고 올라가지, plane
+                </p>
+                <p class="line translation">
+                  これは最高だ、俺たちは流れを直感して乗りこなし、飛行機のように上昇する
+                </p>
+                <p class="line ruby">
+                  ノー アーギュメンツ、（っとぅ っとぅ っとぅ）とぅばかん
+                  うまぐろ へじょっち プルーヴド イット、アイ セッド
+                </p>
+                <p class="line original">
+                  No arguments, (뚜뚜뚜) 투박한 음악으로 해줬지 proved it, I
+                  said
+                </p>
+                <p class="line translation">
+                  異論はない、荒削りな音楽でやってみせた、証明しただろ
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="35">
+              <div class="member-column">
+                <span class="member-id">03</span
+                ><span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ワン デイ、ウィル ビカム ザ ワンズ ザット ゼイ ワナ ビー
+                  ライク
+                </p>
+                <p class="line original">
+                  One day, we'll become the ones that they wanna be like
+                </p>
+                <p class="line translation">
+                  いつか俺たちは、誰もが憧れる存在になる
+                </p>
+                <p class="line ruby">
+                  ブリング イット バック、もどぅが ほんじょれ ちゃじ きが
+                  ひゅでぽんちょろむ、イェー
+                </p>
+                <p class="line original">
+                  Bring it back, 모두가 혼절해 차지 기가 휴대폰처럼, yeah
+                </p>
+                <p class="line translation">
+                  取り戻せ、みんなが気絶するほどエネルギーを携帯電話みたいに充電する
+                </p>
+                <p class="line ruby">
+                  はんぼん と へ とぅんばぬる かじょわ うじゅそん ぴへんぎ あん
+                  まじゃ いじぇん
+                </p>
+                <p class="line original">
+                  한번 더 해 등반을 가져와 우주선 비행기 안 맞아 이젠
+                </p>
+                <p class="line translation">
+                  もう一度登り続ける、今の俺たちには飛行機じゃ足りない、宇宙船を持ってこい
+                </p>
+                <p class="line ruby">
+                  ちょぎな へ、くぇんちゃぬん どぅてぼぁっちゃ もどぅ てぃえそん
+                  ったみな っぺ
+                </p>
+                <p class="line original">
+                  척이나 해, 괜찮은 듯 해봤자 모두 뒤에선 땀이나 빼
+                </p>
+                <p class="line translation">
+                  格好だけつけて平気なふりをしても、みんな裏では汗を流している
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="48">
+              <div class="member-column">
+                <span class="member-id">05</span
+                ><span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  オー ロード、ウィア フォローイング アワ クリード トゥ メイク
+                  アス リット、ハ
+                </p>
+                <p class="line original">
+                  Oh, lord, we're following our creed to make us lit, huh
+                </p>
+                <p class="line translation">
+                  神よ、俺たちは自分たちを輝かせるため信念に従う
+                </p>
+                <p class="line ruby">
+                  アイ エイント トリッピン、もぷする ちゃんえむれん
+                  パルクール、スライド、ジャンプ
+                </p>
+                <p class="line original">
+                  I ain't trippin', 몹쓸 장애물엔 parkour, slide, jump
+                </p>
+                <p class="line translation">
+                  動揺なんてしない、忌々しい障害物ならパルクールで滑って飛び越える
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block chemistry" data-member="maknaez">
+            <div class="lyric-set" data-time="54">
+              <div class="member-column">
+                <span class="member-id">07 + 08</span
+                ><span class="member-name">SEUNGMIN &amp; I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  クリア ユア マインド、い きせるる もら レヴィテイト
+                </p>
+                <p class="line original">
+                  Clear your mind, 이 기세를 몰아 levitate
+                </p>
+                <p class="line translation">
+                  雑念を捨て、この勢いに乗って浮かび上がれ
+                </p>
+                <p class="line ruby">
+                  ちょるて かじ あな っぱるん きる、コーズ ウィ メイク アワ
+                  オウン ロード、ハ
+                </p>
+                <p class="line original">
+                  절대 가지 않아 빠른 길, 'cause we make our own road, huh
+                </p>
+                <p class="line translation">
+                  決して近道は選ばない、自分たちの道は自分たちで作るから
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="60">
+              <div class="member-column">
+                <span class="member-id">08</span
+                ><span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ウィア オールウェイズ ザ セイム、ノー チェンジ、かとぅん
+                  せんがぎ よくし、ハ
+                </p>
+                <p class="line original">
+                  We're always the same, no change, 같은 생각이 역시, huh
+                </p>
+                <p class="line translation">
+                  俺たちはいつだって変わらない、やっぱり考えることも同じ
+                </p>
+                <p class="line ruby">
+                  しぷこ っぱるん ごん あくまが まんどぅん ひゃんぎろうん っこっ
+                </p>
+                <p class="line original">
+                  쉽고 빠른 건 악마가 만든 향기로운 꽃
+                </p>
+                <p class="line translation">
+                  簡単で速いものは、悪魔が作った香り高い花
+                </p>
+                <p class="line ruby">
+                  はどん でろ はじ みんぬん くでろ ちくちん
+                </p>
+                <p class="line original">하던 대로 하지 믿는 그대로 직진</p>
+                <p class="line translation">
+                  今までどおり、信じるまま真っすぐ進む
+                </p>
+                <p class="line ruby">
+                  ウィ ジャスト（フー、フー、フー、フー）ちぇご そんにょく
+                  スピード アップ
+                </p>
+                <p class="line original">
+                  We just (Hoo, hoo, hoo, hoo) 최고 속력 speed up
+                </p>
+                <p class="line translation">俺たちはただ最高速度まで加速する</p>
+              </div>
+            </div>
+          </section>
+          <section
+            class="lyric-block has-backing-vocal"
+            data-backing-member="seungmin"
+            data-member="hyunjin"
+          >
+            <div class="lyric-set" data-time="71">
+              <div class="member-column">
+                <span class="member-id">05 + 07</span>
+                <span class="member-name">HYUNJIN</span>
+                <span class="backing-member-name">BACKING / SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <!-- Hyunjinのメイン歌詞 -->
+                <p class="line ruby">アイ ギヴ ライフ トゥ マイ ワーズ</p>
+                <p class="line original">I give life to my words</p>
+                <p class="line translation">自分の言葉に命を吹き込む</p>
+                <!-- Seungminのバックボーカル -->
+                <div class="backing-vocal" data-member="seungmin">
+                  <span class="backing-label">BACKING / SEUNGMIN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- Hyunjinのメイン歌詞 -->
+                <p class="line ruby">アイ リーチ ハイツ フロム ザ ダート</p>
+                <p class="line original">I reach heights from the dirt</p>
+                <p class="line translation">泥の底から高みへ到達する</p>
+                <!-- Seungminのバックボーカル -->
+                <div class="backing-vocal" data-member="seungmin">
+                  <span class="backing-label">BACKING / SEUNGMIN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- Hyunjinのメイン歌詞 -->
+                <p class="line ruby">
+                  ユー ノウ アイ バイト ザ ウェイ アイ バーク
+                </p>
+                <p class="line original">You know I bite the way I bark</p>
+                <p class="line translation">
+                  吠えるだけじゃなく、その言葉どおりに噛みつく
+                </p>
+                <!-- Seungminのバックボーカル -->
+                <div class="backing-vocal" data-member="seungmin">
+                  <span class="backing-label">BACKING / SEUNGMIN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- Hyunjinのメイン歌詞 -->
+                <p class="line ruby">
+                  マイ クリード ウィル ネヴァー フォール アパート
+                </p>
+                <p class="line original">My creed will never fall apart</p>
+                <p class="line translation">俺の信念は決して崩れない</p>
+                <!-- Seungminのバックボーカル -->
+                <div class="backing-vocal" data-member="seungmin">
+                  <span class="backing-label">BACKING / SEUNGMIN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="lyric-block has-backing-vocal"
+            data-backing-member="han"
+            data-member="leeknow"
+          >
+            <div class="lyric-set" data-time="83">
+              <div class="member-column">
+                <span class="member-id">02 + 03</span>
+                <span class="member-name">LEE KNOW</span>
+                <span class="backing-member-name">BACKING / HAN</span>
+              </div>
+              <div class="lyric-data">
+                <!-- Lee Knowのメイン歌詞 -->
+                <p class="line ruby">アイ ギヴ ライフ トゥ マイ ワーズ</p>
+                <p class="line original">I give life to my words</p>
+                <p class="line translation">自分の言葉に命を吹き込む</p>
+                <!-- HANのバックボーカル -->
+                <div class="backing-vocal" data-member="han">
+                  <span class="backing-label">BACKING / HAN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- Lee Knowのメイン歌詞 -->
+                <p class="line ruby">アイ リーチ ハイツ フロム ザ ダート</p>
+                <p class="line original">I reach heights from the dirt</p>
+                <p class="line translation">泥の底から高みへ到達する</p>
+                <!-- HANのバックボーカル -->
+                <div class="backing-vocal" data-member="han">
+                  <span class="backing-label">BACKING / HAN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- Lee Knowのメイン歌詞 -->
+                <p class="line ruby">
+                  ユー ノウ アイ バイト ザ ウェイ アイ バーク
+                </p>
+                <p class="line original">You know I bite the way I bark</p>
+                <p class="line translation">
+                  吠えるだけじゃなく、その言葉どおりに噛みつく
+                </p>
+                <!-- HANのバックボーカル -->
+                <div class="backing-vocal" data-member="han">
+                  <span class="backing-label">BACKING / HAN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="93">
+              <div class="member-column">
+                <span class="member-id">03</span
+                ><span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ドゥーイング ワット アイ セイ、ドゥーイング ワット アイ セイ
+                </p>
+                <p class="line original">Doing what I say, doing what I say</p>
+                <p class="line translation">
+                  言ったことをやる、言ったことをそのまま実行する
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="97">
+              <div class="member-column">
+                <span class="member-id">05</span
+                ><span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  こじし とぅろな もどぅん ちょく、いんぬん くでろ ぼよじぬん
+                  こっ
+                </p>
+                <p class="line original">
+                  거짓이 드러나 모든 척, 있는 그대로 보여지는 컷
+                </p>
+                <p class="line translation">
+                  あらゆる偽りが露わになり、ありのままが映し出されるカット
+                </p>
+                <p class="line ruby">
+                  すすろ ぱぼりる むどむぐぁ とっ、っぽなん ちぇみわ
+                  ちゃぐっぽだん ちんじょんそん
+                </p>
+                <p class="line original">
+                  스스로 파버릴 무덤과 덫, 뻔한 재미와 자극보단 진정성
+                </p>
+                <p class="line translation">
+                  自分で掘ってしまう墓と罠、ありきたりな面白さや刺激よりも本物らしさ
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="103">
+              <div class="member-column">
+                <span class="member-id">06</span
+                ><span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ちょぐん でろ ぼよじゅぬん ごっ、ねべとぅん でろ ぼよじゅぬん
+                  ごっ
+                </p>
+                <p class="line original">
+                  적은 대로 보여주는 것, 내뱉은 대로 보여주는 것
+                </p>
+                <p class="line translation">
+                  書いたとおりに見せること、口にしたとおりに見せること
+                </p>
+                <p class="line ruby">
+                  ほぷん っとるどぅっ ほせ かどぅく とぅるん ほじゅもにぬん
+                  っちっきん じ おれじょん
+                </p>
+                <p class="line original">
+                  허풍 떨듯 허세 가득 들은 호주머니는 찢긴 지 오래전
+                </p>
+                <p class="line translation">
+                  大ぼらを吹くように虚勢でいっぱいだったポケットは、とっくの昔に破れている
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="109">
+              <div class="member-column">
+                <span class="member-id">04</span
+                ><span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  もしん のみ とぇぎ うぃへ みちん どぅし かりじ あんこ
+                  っとぅいおどぅろっそ
+                </p>
+                <p class="line original">
+                  멋진 놈이 되기 위해 미친 듯이 가리지 않고 뛰어들었어
+                </p>
+                <p class="line translation">
+                  格好いい奴になるため、狂ったように何も選ばず飛び込んだ
+                </p>
+                <p class="line ruby">
+                  ひょんしれ びょぎ のぷた はんどぅる ね ぽぶぬん むるぷ
+                  はんぼん あん っくろっそ
+                </p>
+                <p class="line original">
+                  현실의 벽이 높다 한들 내 포부는 무릎 한번 안 꿇었어
+                </p>
+                <p class="line translation">
+                  現実の壁がどれほど高くても、俺の抱負は一度も膝をつかなかった
+                </p>
+                <p class="line ruby">
+                  すおぷし っそ ねりょがる おぷちょくどぅれ いんく めまる いる
+                  おむぬん ぺんちょく
+                </p>
+                <p class="line original">
+                  수없이 써 내려갈 업적들에 잉크 메마를 일 없는 펜촉
+                </p>
+                <p class="line translation">
+                  数え切れないほど書き記す業績、インクが乾くことのないペン先
+                </p>
+                <p class="line ruby">
+                  ちょぐぱる ぴりょ おむぬん マイ ペース、おぬるど なるる と
+                  じぇちょく
+                </p>
+                <p class="line original">
+                  조급할 필요 없는 my pace, 오늘도 나를 더 재촉
+                </p>
+                <p class="line translation">
+                  焦る必要のない自分のペース、それでも今日も自分をさらに駆り立てる
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="121">
+              <div class="member-column">
+                <span class="member-id">02</span
+                ><span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  アイ キープ マイ クリード イン マイ ハート
+                </p>
+                <p class="line original">I keep my creed in my heart</p>
+                <p class="line translation">自分の信念を胸に抱いている</p>
+                <p class="line ruby">
+                  コーズ ホールディング オン トゥ イット ウォント ワーク アット
+                  オール、イェー
+                </p>
+                <p class="line original">
+                  'Cause holding on to it won't work at all, yeah
+                </p>
+                <p class="line translation">
+                  ただしがみついているだけじゃ、何も上手くいかない
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="128">
+              <div class="member-column">
+                <span class="member-id">07</span
+                ><span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  アイル メイク シュア アイ ゲット ワット アイ ウォント
+                </p>
+                <p class="line original">I'll make sure I get what I want</p>
+                <p class="line translation">欲しいものは必ず手に入れる</p>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="130">
+              <div class="member-column">
+                <span class="member-id">05</span
+                ><span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  マイ クリード、イット キープス ミー
+                  ブリージング、ア、ア、イェー
+                </p>
+                <p class="line original">
+                  My creed, it keeps me breathing, uh, uh, yeah
+                </p>
+                <p class="line translation">俺の信念が、俺を生かし続けている</p>
+              </div>
+            </div>
+          </section>
+          <section
+            class="lyric-block has-backing-vocal"
+            data-backing-member="in"
+            data-member="bangchan"
+          >
+            <div class="lyric-set" data-time="133">
+              <div class="member-column">
+                <span class="member-id">01 + 08</span>
+                <span class="member-name">BANG CHAN</span>
+                <span class="backing-member-name">BACKING / I.N</span>
+              </div>
+              <div class="lyric-data">
+                <!-- BANGCHANのメイン歌詞 -->
+                <p class="line ruby">アイ ギヴ ライフ トゥ マイ ワーズ</p>
+                <p class="line original">I give life to my words</p>
+                <p class="line translation">自分の言葉に命を吹き込む</p>
+                <!-- I.Nのバックボーカル -->
+                <div class="backing-vocal" data-member="in">
+                  <span class="backing-label">BACKING / I.N</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- BANGCHANのメイン歌詞 -->
+                <p class="line ruby">アイ リーチ ハイツ フロム ザ ダート</p>
+                <p class="line original">I reach heights from the dirt</p>
+                <p class="line translation">泥の底から高みへ到達する</p>
+                <!-- I.Nのバックボーカル -->
+                <div class="backing-vocal" data-member="in">
+                  <span class="backing-label">BACKING / I.N</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- BANGCHANのメイン歌詞 -->
+                <p class="line ruby">
+                  ユー ノウ アイ バイト ザ ウェイ アイ バーク
+                </p>
+                <p class="line original">You know I bite the way I bark</p>
+                <p class="line translation">
+                  吠えるだけじゃなく、その言葉どおりに噛みつく
+                </p>
+                <!-- I.Nのバックボーカル -->
+                <div class="backing-vocal" data-member="in">
+                  <span class="backing-label">BACKING / I.N</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- BANGCHANのメイン歌詞 -->
+                <p class="line ruby">
+                  マイ クリード ウィル ネヴァー フォール アパート
+                </p>
+                <p class="line original">My creed will never fall apart</p>
+                <p class="line translation">俺の信念は決して崩れない</p>
+                <!-- I.Nのバックボーカル -->
+                <div class="backing-vocal" data-member="in">
+                  <span class="backing-label">BACKING / I.N</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="lyric-block has-backing-vocal"
+            data-backing-member="changbin"
+            data-member="leeknow"
+          >
+            <div class="lyric-set" data-time="145">
+              <div class="member-column">
+                <span class="member-id">02 + 04</span>
+                <span class="member-name">LEE KNOW</span>
+                <span class="backing-member-name">BACKING / CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <!-- Lee Knowのメイン歌詞 -->
+                <p class="line ruby">アイ ギヴ ライフ トゥ マイ ワーズ</p>
+                <p class="line original">I give life to my words</p>
+                <p class="line translation">自分の言葉に命を吹き込む</p>
+                <!-- Changbinのバックボーカル -->
+                <div class="backing-vocal" data-member="changbin">
+                  <span class="backing-label">BACKING / CHANGBIN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- Lee Knowのメイン歌詞 -->
+                <p class="line ruby">アイ リーチ ハイツ フロム ザ ダート</p>
+                <p class="line original">I reach heights from the dirt</p>
+                <p class="line translation">泥の底から高みへ到達する</p>
+                <!-- Changbinのバックボーカル -->
+                <div class="backing-vocal" data-member="changbin">
+                  <span class="backing-label">BACKING / CHANGBIN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+                <!-- Lee Knowのメイン歌詞 -->
+                <p class="line ruby">
+                  ユー ノウ アイ バイト ザ ウェイ アイ バーク
+                </p>
+                <p class="line original">You know I bite the way I bark</p>
+                <p class="line translation">
+                  吠えるだけじゃなく、その言葉どおりに噛みつく
+                </p>
+                <!-- Changbinのバックボーカル -->
+                <div class="backing-vocal" data-member="changbin">
+                  <span class="backing-label">BACKING / CHANGBIN</span>
+                  <p class="line ruby">
+                    （イェー アイム ドゥーイング ワット アイ セイ）
+                  </p>
+                  <p class="line original">(Yeah, I'm doing what I say)</p>
+                  <p class="line translation">
+                    （そう、言ったことをそのまま実行する）
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="154">
+              <div class="member-column">
+                <span class="member-id">04</span
+                ><span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ドゥーイング ワット アイ セイ、ドゥーイング ワット アイ セイ
+                </p>
+                <p class="line original">Doing what I say, doing what I say</p>
+                <p class="line translation">
+                  言ったことをやる、言ったことをそのまま実行する
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="song-footer">
+      <div>
+        <strong> SKZ LYRIC LAB </strong>
+        <p>Stray Kids unofficial lyrics fan site.</p>
+      </div>
+      <span class="footer-online"> DATABASE ONLINE </span>
+    </footer>
+    <button
+      aria-label="ページ上部へ戻る"
+      class="song-page-top"
+      id="songPageTop"
+      type="button"
+    >
+      ↑
+    </button>
+    <script src="../js/song.js"></script>
+    <script src="../js/youtube-player.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
+</html>
