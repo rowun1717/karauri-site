@@ -433,7 +433,6 @@ const setlistSongs = [
     id: "CHK-CHK-BOOM",
     title: "CHK CHK BOOM",
     album: "ATE",
-    date: "2026.08.26",
     release: "2024.07.19",
     url: "song/CHK-CHK-BOOM.html",
     image: "images/song/CHK-CHK-BOOM.jpg",
@@ -442,6 +441,42 @@ const setlistSongs = [
     duration: 189
   },
 
+  {
+    id: "Thunderous",
+    title: "Thunderous",
+    album: "NOEASY",
+    release: "2021.08.23",
+    url: "song/Thunderous.html",
+    image: "images/song/Thunderous.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 178
+  },
+
+    {
+    id: "InMyHead",
+    title: "In My Head",
+    album: "KARMA",
+    release: "2025.08.22",
+    url: "song/InMyHead.html",
+    image: "images/albums/KARMA.png",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 149
+
+  },
+
+  {
+    id: "BLINDSPOT",
+    title: "BLIND SPOT",
+    album: "樂-STAR",
+    release: "2023.11.10",
+    url: "song/BLINDSPOT.html",
+    image: "images/song/BLINDSPOT.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 149
+  },
 
 
 ];  
