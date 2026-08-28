@@ -229,7 +229,7 @@ const songs = [
     type: "Original Song",
     date: "2026.07.10",
     release: "2025.11.21",
-    url: "song/Do It.html",
+    url: "song/DoIt.html",
     image: "images/song/Do It.jpg",
     karaoke: ["JOYSOUND"],
     category: "latest",
@@ -339,7 +339,7 @@ const songs = [
     type: "Solo Song",
     date: "2026.06.29",
     release: "2026.06.11",
-    url: "song/back to life.html",
+    url: "song/backtolife.html",
     image: "images/albums/back to life.jpg",
     karaoke: ["JOYSOUND"],
     category: "unit",
@@ -450,6 +450,7 @@ const songs = [
     url: "song/Double Knot.html",
     image: "images/albums/Double Knot.jpg",
     category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
     members: [
       "Bang Chan",
       "Lee Know",
@@ -473,6 +474,7 @@ const songs = [
     url: "song/BackDoor.html",
     image: "images/song/Back Door.jpg",
     category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
     members: [
       "Bang Chan",
       "Lee Know",
@@ -496,6 +498,7 @@ const songs = [
     url: "song/God'sMenu.html",
     image: "images/song/God's Menu.jpg",
     category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
     members: [
       "Bang Chan",
       "Lee Know",
@@ -509,7 +512,77 @@ const songs = [
 
   },
 
+  {
+    id: "CREED",
+    title: "CREED",
+    album: "KARMA",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2025.08.22",
+    url: "song/CREED.html",
+    image: "images/albums/KARMA.png",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
 
+  },
+
+  {
+    id: "SLASH",
+    title: "SLASH",
+    album: "SLASH",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2024.07.23",
+    url: "song/SLASH.html",
+    image: "images/song/SLASH.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
+  {
+    id: "CHK-CHK-BOOM",
+    title: "CHK CHK BOOM",
+    album: "ATE",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2024.07.19",
+    url: "song/CHK-CHK-BOOM.html",
+    image: "images/song/CHK-CHK-BOOM.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
 
 
 
