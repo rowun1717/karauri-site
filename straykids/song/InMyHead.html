@@ -1,0 +1,908 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>IN MY HEAD | SKZ Lyric LAB</title>
+    <link href="../css/song.css" rel="stylesheet" />
+    <link href="../css/common-header.css?v=20260806-2" rel="stylesheet" />
+    <link href="../images/logo.png" rel="icon" type="image/png" />
+    <link href="../images/icon.png" rel="apple-touch-icon" />
+    <link href="../manifest.json" rel="manifest" />
+    <meta content="#050505" name="theme-color" />
+  </head>
+  <body>
+    <!-- ファイル起動演出 -->
+    <div class="file-loader" id="fileLoader">
+      <div class="file-loader-inner">
+        <p class="loader-code">SKZ LYRIC LAB / FILE ACCESS</p>
+        <h1 data-text="IN MY HEAD">IN MY HEAD</h1>
+        <p id="loaderMessage">OPENING LYRIC FILE...</p>
+        <div class="loader-bar">
+          <span id="loaderProgress"></span>
+        </div>
+        <p id="loaderPercent">0%</p>
+      </div>
+    </div>
+    <!-- 背景演出 -->
+    <div class="song-grid-background"></div>
+    <div class="song-scanlines"></div>
+    <div class="song-pointer-glow" id="songPointerGlow"></div>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+      <a class="header-logo" href="../index.html">
+        <span class="header-logo-main">SKZ</span>
+        <span class="header-logo-sub">LYRIC LAB</span>
+      </a>
+      <nav class="global-nav" id="globalNav">
+        <a href="../index.html">HOME</a>
+        <a href="../search.html">SEARCH</a>
+        <a href="../albums.html">ARCHIVE</a>
+        <a href="#lyrics">LYRICS</a>
+        <a href="../members.html">MEMBERS</a>
+        <a href="../setlist.html">SETLIST</a>
+        <a href="../about.html">ABOUT</a>
+      </nav>
+      <button
+        aria-controls="globalNav"
+        aria-expanded="false"
+        aria-label="メニューを開く"
+        class="menu-button"
+        id="menuButton"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+    <main>
+      <!-- 曲ヒーロー -->
+      <section class="song-hero">
+        <div class="song-hero-background">
+          <img alt="IN MY HEAD" src="../images/albums/KARMA.png" />
+        </div>
+        <div class="song-hero-overlay"></div>
+        <div class="song-hero-content">
+          <div class="song-cover-panel reveal">
+            <div class="cover-header">
+              <span>FILE NO. IN MY HEAD</span>
+              <span class="active-status">ACTIVE</span>
+            </div>
+            <div class="cover-frame">
+              <img alt="IN MY HEAD" src="../images/albums/KARMA.png" />
+              <span class="corner top-left"></span>
+              <span class="corner top-right"></span>
+              <span class="corner bottom-left"></span>
+              <span class="corner bottom-right"></span>
+              <div class="cover-scan"></div>
+            </div>
+            <div class="cover-footer">
+              <span>SUBJECT / STRAY KIDS</span>
+              <span>STATUS / VERIFIED</span>
+            </div>
+            <section
+              class="music-player"
+              data-youtube-id="1Kd0wK-xDRg"
+              data-japanese-youtube-id=""
+            >
+              <div class="youtube-player-wrap">
+                <div id="youtubePlayer"></div>
+              </div>
+              <div class="player-info">
+                <div>
+                  <span class="player-label">NOW PLAYING</span>
+                </div>
+                <span id="currentTime">0:00</span>
+              </div>
+              <input
+                aria-label="再生位置"
+                class="progress-bar"
+                id="progressBar"
+                max="100"
+                min="0"
+                step="0.1"
+                type="range"
+                value="0"
+              />
+              <div class="player-controls">
+                <button aria-label="10秒戻る" id="rewindButton" type="button">
+                  ↶
+                </button>
+                <button aria-label="再生" id="playButton" type="button">
+                  ▶
+                </button>
+                <button aria-label="10秒進む" id="forwardButton" type="button">
+                  ↷
+                </button>
+              </div>
+              <div class="player-bottom">
+                <span id="duration">0:00</span>
+                <button aria-label="ミュート" id="muteButton" type="button">
+                  🔊
+                </button>
+              </div>
+            </section>
+          </div>
+          <div class="song-main-data reveal">
+            <p class="song-eyebrow">LYRIC ANALYSIS FILE</p>
+            <div class="song-tags">
+              <span class="song-tag">Original Song</span>
+              <span class="song-tag">KARMA</span>
+            </div>
+            <h1 class="song-title">IN MY HEAD</h1>
+            <p class="song-subtitle">Stray Kids</p>
+            <!-- 基本情報＋Credits -->
+            <dl class="song-data-table">
+              <div>
+                <dt>ALBUM</dt>
+                <dd>KARMA</dd>
+              </div>
+              <div>
+                <dt>RELEASE</dt>
+                <dd>2025.08.22</dd>
+              </div>
+              <div>
+                <dt>UPDATED</dt>
+                <dd>2026.08.28</dd>
+              </div>
+              <div>
+                <dt>LANGUAGE</dt>
+                <dd>KOREAN / ENGLISH</dd>
+              </div>
+              <!-- Credits情報 -->
+              <div>
+                <dt>LYRICS</dt>
+                <dd>BANG CHAN, CHANGBIN</dd>
+              </div>
+              <div>
+                <dt>COMPOSED</dt>
+                <dd>BANG CHAN, CHANGBIN, JUN2</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="song-hero-number">FILE / IN MY HEAD</div>
+        </div>
+      </section>
+      <!-- メンバーカラー -->
+      <section class="member-file-section">
+        <div class="section-label reveal">
+          <p>02 / MEMBER IDENTIFICATION</p>
+          <h2>Part Colors</h2>
+        </div>
+        <div class="member-filter reveal">
+          <button
+            class="member-filter-button active"
+            data-member="all"
+            type="button"
+          >
+            ALL
+          </button>
+          <button
+            class="member-filter-button chan"
+            data-member="bangchan"
+            type="button"
+          >
+            BANG CHAN
+          </button>
+          <button
+            class="member-filter-button leeknow"
+            data-member="leeknow"
+            type="button"
+          >
+            LEE KNOW
+          </button>
+          <button
+            class="member-filter-button changbin"
+            data-member="changbin"
+            type="button"
+          >
+            CHANGBIN
+          </button>
+          <button
+            class="member-filter-button hyunjin"
+            data-member="hyunjin"
+            type="button"
+          >
+            HYUNJIN
+          </button>
+          <button
+            class="member-filter-button han"
+            data-member="han"
+            type="button"
+          >
+            HAN
+          </button>
+          <button
+            class="member-filter-button felix"
+            data-member="felix"
+            type="button"
+          >
+            FELIX
+          </button>
+          <button
+            class="member-filter-button seungmin"
+            data-member="seungmin"
+            type="button"
+          >
+            SEUNGMIN
+          </button>
+          <button
+            class="member-filter-button in"
+            data-member="in"
+            type="button"
+          >
+            I.N
+          </button>
+        </div>
+      </section>
+      <!-- 歌詞 -->
+      <section class="lyrics-section" id="lyrics">
+        <div class="lyrics-header reveal">
+          <div>
+            <p>03 / LYRIC DATABASE</p>
+            <h2>Lyrics</h2>
+          </div>
+          <div class="lyrics-view-controls">
+            <button class="view-button active" data-view="all" type="button">
+              ALL DATA
+            </button>
+            <button class="view-button" data-view="original" type="button">
+              ORIGINAL
+            </button>
+            <button class="view-button" data-view="kana" type="button">
+              KANA
+            </button>
+            <button class="view-button" data-view="japanese" type="button">
+              JAPANESE
+            </button>
+            <button
+              aria-pressed="false"
+              class="view-button fanchant-toggle"
+              id="fanchantToggle"
+              type="button"
+            >
+              FANCHANT OFF
+            </button>
+          </div>
+        </div>
+        <div class="lyrics-console">
+          <div class="lyrics-console-top">
+            <span>FILE : IN MY HEAD.LYRIC</span>
+            <span>STATUS : DECODED</span>
+          </div>
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="11">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ヘイ、ユー、ライイング イン ユア ベッド</p>
+                <p class="line original">Hey, you, lying in your bed</p>
+                <p class="line translation">ねえ、君、ベッドに横たわって</p>
+
+                <p class="line ruby">
+                  ステアリング アット ザ シーリング、イェ、アイ ソート ザット
+                  ユー ワー デッド
+                </p>
+                <p class="line original">
+                  Staring at the ceiling, yeah, I thought that you were dead
+                </p>
+                <p class="line translation">
+                  天井を見つめてるね。まるで死んでしまったかのように
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="16">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ワッツ ゴーイング オン イン ユア ヘッド？
+                </p>
+                <p class="line original">What’s going on in your head?</p>
+                <p class="line translation">
+                  君の頭の中では何が起きてるんだろう？
+                </p>
+
+                <p class="line ruby">イェ</p>
+                <p class="line original">Yeah</p>
+                <p class="line translation">うん</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="21">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  トゥデイ、ユー シンク ゼアル ビー ア チェンジ
+                </p>
+                <p class="line original">
+                  Today, you think there’ll be a change
+                </p>
+                <p class="line translation">今日こそ変わると思った？</p>
+
+                <p class="line ruby">
+                  ソーリー、バット ノー マター ワット、イッツ ゴナ ビー ザ
+                  セイム
+                </p>
+                <p class="line original">
+                  Sorry, but no matter what, it’s gonna be the same
+                </p>
+                <p class="line translation">
+                  ごめん、でも結局何をしても同じだよ
+                </p>
+
+                <p class="line ruby">
+                  アイ カインダ フィール バッド、ユー オーケー？
+                </p>
+                <p class="line original">I kinda feel bad, you okay?</p>
+                <p class="line translation">
+                  なんだか悪い気がするけど、大丈夫？
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="30">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  オー、アイヴ ダン エブリシング、アイヴ ダン イット オール
+                </p>
+                <p class="line original">
+                  Oh, I’ve done everything, I’ve done it all
+                </p>
+                <p class="line translation">ああ、もう全部やり尽くした</p>
+
+                <p class="line ruby">
+                  さらんえ たっとぅったむど ぬっきょぼぁっち
+                </p>
+                <p class="line original">사랑의 따뜻함도 느껴봤지</p>
+                <p class="line translation">愛の温もりも感じたよ</p>
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="lyric-block has-backing-vocal"
+            data-member="leeknow"
+            data-backing-member="in"
+          >
+            <div class="lyric-set" data-time="37">
+              <div class="member-column">
+                <span class="member-id">02 + 08</span>
+                <span class="member-name">LEE KNOW</span>
+                <span class="backing-member-name">BACKING / I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  バット アイム ゴーン、ホエア イズ マイ マインド ヘディド
+                  フォー？
+                </p>
+                <p class="line original">
+                  But I’m gone, where is my mind headed for?
+                </p>
+                <p class="line translation">
+                  でも僕はもう、頭の中はどこへ向かってるんだろう
+                </p>
+
+                <p class="line ruby">とぅとんい しめ なん</p>
+                <p class="line original">두통이 심해 난</p>
+                <p class="line translation">ひどい頭痛がするんだ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="41">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイム メスド アップ イン マイ ヘッド</p>
+                <p class="line original">I’m messed up in my head</p>
+                <p class="line translation">頭の中がめちゃくちゃだ</p>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+
+                <p class="line ruby">むぉっかとぅん いるさんえ</p>
+                <p class="line original">뭣같은 일상에</p>
+                <p class="line translation">くだらない毎日の中で</p>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="51">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ホエン ウィル イット エヴァー チェンジ？
+                </p>
+                <p class="line original">When will it ever change?</p>
+                <p class="line translation">いつになったら変わるんだろう？</p>
+
+                <p class="line ruby">とでちぇ うぇ いろぬんじ もるげっそ</p>
+                <p class="line original">도대체 왜 이러는지 모르겠어</p>
+                <p class="line translation">
+                  どうしてこんなふうになっちゃうんだろう
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="57">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイム メスド アップ イン マイ ヘッド</p>
+                <p class="line original">I’m messed up in my head</p>
+                <p class="line translation">頭の中がめちゃくちゃだ</p>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="62">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイム メスド アップ イン マイ</p>
+                <p class="line original">I’m messed up in my</p>
+                <p class="line translation">頭の中がめちゃくちゃだ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="65">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">きょう ふるりょぼねん しがな</p>
+                <p class="line original">겨우 흘려보낸 시간아</p>
+                <p class="line translation">やっと過ぎ去った時間よ</p>
+
+                <p class="line ruby">
+                  なるる ちゃっち まらじょ、ゲット オフ ミー
+                </p>
+                <p class="line original">나를 찾지 말아줘, get off me</p>
+                <p class="line translation">僕を探さないで、離してくれ</p>
+
+                <p class="line ruby">いぇご おむぬん い タイム ボム</p>
+                <p class="line original">예고 없는 이 time bomb</p>
+                <p class="line translation">予告なしに爆発するタイムボム</p>
+
+                <p class="line ruby">ぬが もるり とんじょじょ、くぇろうに？</p>
+                <p class="line original">누가 멀리 던져줘, 괴로우니?</p>
+                <p class="line translation">誰か遠くに投げてよ、つらいんだ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="75">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ぽんぽん しど てど おぷし とじょ</p>
+                <p class="line original">펑펑 시도 때도 없이 터져</p>
+                <p class="line translation">いつでも突然、破裂する</p>
+
+                <p class="line ruby">
+                  そくさぎどん ちゃぷせんがくどぅれ そりが こじょ
+                </p>
+                <p class="line original">속삭이던 잡생각들의 소리가 커져</p>
+                <p class="line translation">
+                  ささやいていた雑念の声が大きくなる
+                </p>
+
+                <p class="line ruby">
+                  ぱるごるむん うぃむぬん まじのそね ごるちょ
+                </p>
+                <p class="line original">발걸음은 의문의 마지노선에 걸쳐</p>
+                <p class="line translation">
+                  一歩踏み出す前に疑問の境界線に立ち止まる
+                </p>
+
+                <p class="line ruby">
+                  アイム ストップト ビフォー テイキング ア ステップ フォワード
+                </p>
+                <p class="line original">
+                  I’m stopped before taking a step forward
+                </p>
+                <p class="line translation">踏み出す前で止まってしまう</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="85">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  もみらど ひむどぅるみょん ちょむ どるはるか ぼぁ
+                </p>
+                <p class="line original">몸이라도 힘들면 좀 덜할까 봐</p>
+                <p class="line translation">
+                  体が疲れていれば少しは楽になるかな
+                </p>
+
+                <p class="line ruby">くぇに と きょかげ ぶでぃちょんな ぼぁ</p>
+                <p class="line original">괜히 더 격하게 부딪쳤나 봐</p>
+                <p class="line translation">
+                  無駄に激しくぶつかっちゃったみたい
+                </p>
+
+                <p class="line ruby">もりっそげ ちゅんしむん あん ちゃびご</p>
+                <p class="line original">머릿속의 중심은 안 잡히고</p>
+                <p class="line translation">頭の中の中心は定まらず</p>
+
+                <p class="line ruby">
+                  うぃてろぷけ ふんどぅるりょ、ホエン ウィル ディス エンド？
+                </p>
+                <p class="line original">
+                  위태롭게 흔들려, when will this end?
+                </p>
+                <p class="line translation">
+                  不安定に揺れてる、これいつ終わるんだろう？
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="96">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  オー、アイヴ ダン エブリシング、アイヴ ダン イット オール
+                </p>
+                <p class="line original">
+                  Oh, I’ve done everything, I’ve done it all
+                </p>
+                <p class="line translation">ああ、もう全部やり尽くした</p>
+
+                <p class="line ruby">
+                  さらんえ たっとぅったむど ぬっきょぼぁっち（ぼぁっち？）
+                </p>
+                <p class="line original">사랑의 따뜻함도 느껴봤지 (봤지?)</p>
+                <p class="line translation">愛の温もりも感じたよ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="101">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  バット アイム ゴーン、ホエア イズ マイ マインド ヘディド
+                  フォー？
+                </p>
+                <p class="line original">
+                  But I’m gone, where is my mind headed for?
+                </p>
+                <p class="line translation">
+                  でも僕はもう、頭の中はどこへ向かってるんだろう
+                </p>
+
+                <p class="line ruby">とぅとんい しめ なん</p>
+                <p class="line original">두통이 심해 난</p>
+                <p class="line translation">ひどい頭痛がするんだ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="105">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイム メスド アップ イン マイ ヘッド</p>
+                <p class="line original">I’m messed up in my head</p>
+                <p class="line translation">頭の中がめちゃくちゃだ</p>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+
+                <p class="line ruby">むぉっかとぅん いるさんえ</p>
+                <p class="line original">뭣같은 일상에</p>
+                <p class="line translation">くだらない毎日の中で</p>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="115">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ホエン ウィル イット エヴァー チェンジ？
+                </p>
+                <p class="line original">When will it ever change?</p>
+                <p class="line translation">いつになったら変わるんだろう？</p>
+
+                <p class="line ruby">とでちぇ うぇ いろぬんじ もるげっそ</p>
+                <p class="line original">도대체 왜 이러는지 모르겠어</p>
+                <p class="line translation">
+                  どうしてこんなふうになっちゃうんだろう
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="121">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイム メスド アップ イン マイ ヘッド</p>
+                <p class="line original">I’m messed up in my head</p>
+                <p class="line translation">頭の中がめちゃくちゃだ</p>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="125.8">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">（エヴリバディ）</p>
+                <p class="line original">(Everybody)</p>
+                <p class="line translation">（みんなで）</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="all-members">
+            <div class="lyric-set" data-time="127">
+              <div class="member-column">
+                <span class="member-id">00</span>
+                <span class="member-name">ALL</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイム メスド アップ イン マイ ヘッド</p>
+                <p class="line original">I’m messed up in my head</p>
+                <p class="line translation">頭の中がめちゃくちゃだ</p>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+
+                <p class="line ruby">むぉっかとぅん いるさんえ</p>
+                <p class="line original">뭣같은 일상에</p>
+                <p class="line translation">くだらない毎日の中で</p>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+
+                <p class="line ruby">アイム メスド アップ イン マイ ヘッド</p>
+                <p class="line original">I’m messed up in my head</p>
+                <p class="line translation">頭の中がめちゃくちゃだ</p>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+
+                <p class="line ruby">むぉっかとぅん いるさんえ</p>
+                <p class="line original">뭣같은 일상에</p>
+                <p class="line translation">くだらない毎日の中で</p>
+
+                <p class="line ruby">アーイェ、アーイェ（ウー；レッツ ゴー）</p>
+                <p class="line original">Ah-yeah, ah-yeah (Woo; Let’s go)</p>
+                <p class="line translation">ああ、ああ（ウー；行こう）</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="146.8">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">（ウー；レッツ ゴー）</p>
+                <p class="line original">(Woo; Let’s go)</p>
+                <p class="line translation">（ウー；行こう）</p>
+              </div>
+            </div>
+          </section>
+          <section
+            class="lyric-block has-backing-vocal"
+            data-member="all-members"
+            data-backing-member="seungmin"
+          >
+            <div class="lyric-set" data-time="148">
+              <div class="member-column">
+                <span class="member-id">00 + 07</span>
+                <span class="member-name">ALL</span>
+                <span class="backing-member-name">BACKING / SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイム メスド アップ イン マイ ヘッド</p>
+                <p class="line original">I’m messed up in my head</p>
+                <p class="line translation">頭の中がめちゃくちゃだ</p>
+
+                <div class="backing-vocal" data-member="seungmin">
+                  <span class="backing-label">BACKING / SEUNGMIN</span>
+                  <p class="line ruby">
+                    （アイム メスド アップ イン マイ ヘッド）
+                  </p>
+                  <p class="line original">(I’m messed up in my head)</p>
+                  <p class="line translation">（頭の中がめちゃくちゃだ）</p>
+                </div>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+
+                <p class="line ruby">むぉっかとぅん いるさんえ</p>
+                <p class="line original">뭣같은 일상에</p>
+                <p class="line translation">くだらない毎日の中で</p>
+
+                <div class="backing-vocal" data-member="seungmin">
+                  <span class="backing-label">BACKING / SEUNGMIN</span>
+                  <p class="line ruby">
+                    （アイ ノウ アイム メスド アップ イン マイ ヘッド）
+                  </p>
+                  <p class="line original">(I know I’m messed up in my head)</p>
+                  <p class="line translation">
+                    （わかってる、頭の中がめちゃくちゃだって）
+                  </p>
+                </div>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+
+                <div class="backing-vocal" data-member="seungmin">
+                  <span class="backing-label">BACKING / SEUNGMIN</span>
+                  <p class="line ruby">（イェ）</p>
+                  <p class="line original">(Yeah)</p>
+                  <p class="line translation">（うん）</p>
+                </div>
+
+                <p class="line ruby">
+                  ホエン ウィル イット エヴァー チェンジ？
+                </p>
+                <p class="line original">When will it ever change?</p>
+                <p class="line translation">いつになったら変わるんだろう？</p>
+
+                <p class="line ruby">とでちぇ うぇ いろぬんじ もるげっそ</p>
+                <p class="line original">도대체 왜 이러는지 모르겠어</p>
+                <p class="line translation">
+                  どうしてこんなふうになっちゃうんだろう
+                </p>
+
+                <div class="backing-vocal" data-member="seungmin">
+                  <span class="backing-label">BACKING / SEUNGMIN</span>
+                  <p class="line ruby">（ウォー、ウォー、ウォー）</p>
+                  <p class="line original">(Woah, woah, woah)</p>
+                  <p class="line translation">（ウォー、ウォー、ウォー）</p>
+                </div>
+
+                <p class="line ruby">アイム メスド アップ イン マイ ヘッド</p>
+                <p class="line original">I’m messed up in my head</p>
+                <p class="line translation">頭の中がめちゃくちゃだ</p>
+
+                <div class="backing-vocal" data-member="seungmin">
+                  <span class="backing-label">BACKING / SEUNGMIN</span>
+                  <p class="line ruby">（ヘイ、ヘイ、ヘイ）</p>
+                  <p class="line original">(Hey, hey, hey)</p>
+                  <p class="line translation">（ヘイ、ヘイ、ヘイ）</p>
+                </div>
+
+                <p class="line ruby">アーイェ、アーイェ</p>
+                <p class="line original">Ah-yeah, ah-yeah</p>
+                <p class="line translation">ああ、ああ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="149">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイム メスド アップ イン マイ ヘッド</p>
+                <p class="line original">I’m messed up in my head</p>
+                <p class="line translation">頭の中がめちゃくちゃだ</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="song-footer">
+      <div>
+        <strong>SKZ LYRIC LAB</strong>
+        <p>Stray Kids unofficial lyrics fan site.</p>
+      </div>
+      <span class="footer-online">DATABASE ONLINE</span>
+    </footer>
+    <button
+      aria-label="ページ上部へ戻る"
+      class="song-page-top"
+      id="songPageTop"
+      type="button"
+    >
+      ↑
+    </button>
+    <script src="../js/song.js"></script>
+    <script src="../js/youtube-player.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
+</html>
