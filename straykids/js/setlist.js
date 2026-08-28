@@ -372,7 +372,7 @@ const setlistSongs = [
     release: "2019.12.11",
     url: "song/Double Knot.html",
     image: "images/albums/Double Knot.jpg",
-    karaoke: [],
+    karaoke: ["JOYSOUND","DAM"],
     category: "group",
     duration: 213
 
@@ -385,7 +385,7 @@ const setlistSongs = [
     release: "2020.09.14",
     url: "song/BackDoor.html",
     image: "images/albums/IN LIFE.jpg",
-    karaoke: [],
+    karaoke: ["JOYSOUND","DAM"],
     category: "group",
     duration: 189
 
@@ -398,10 +398,48 @@ const setlistSongs = [
     release: "2020.06.17",
     url: "song/God'sMenu.html",
     image: "images/song/God's Menu.jpg",
-    karaoke: [],
+    karaoke: ["JOYSOUND","DAM"],
     category: "group",
     duration: 189
 
+  },
+
+  {
+    id: "CREED",
+    title: "CREED",
+    album: "KARMA",
+    release: "2025.08.22",
+    url: "song/CREED.html",
+    image: "images/albums/KARMA.png",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 189
+
+  },
+
+  {
+    id: "SLASH",
+    title: "SLASH",
+    album: "SLASH",
+    release: "2024.07.23",
+    url: "song/SLASH.html",
+    image: "images/song/SLASH.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 189
+  },
+
+  {
+    id: "CHK-CHK-BOOM",
+    title: "CHK CHK BOOM",
+    album: "ATE",
+    date: "2026.08.26",
+    release: "2024.07.19",
+    url: "song/CHK-CHK-BOOM.html",
+    image: "images/song/CHK-CHK-BOOM.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 189
   },
 
 
