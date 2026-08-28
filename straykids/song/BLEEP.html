@@ -1,0 +1,1141 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BLEEP | SKZ Lyric LAB</title>
+    <link href="../css/song.css" rel="stylesheet" />
+    <link href="../css/common-header.css?v=20260806-2" rel="stylesheet" />
+    <link href="../images/logo.png" rel="icon" type="image/png" />
+    <link href="../images/icon.png" rel="apple-touch-icon" />
+    <link href="../manifest.json" rel="manifest" />
+    <meta content="#050505" name="theme-color" />
+  </head>
+  <body>
+    <!-- ファイル起動演出 -->
+    <div class="file-loader" id="fileLoader">
+      <div class="file-loader-inner">
+        <p class="loader-code">SKZ LYRIC LAB / FILE ACCESS</p>
+        <h1 data-text="BLEEP">BLEEP</h1>
+        <p id="loaderMessage">OPENING LYRIC FILE...</p>
+        <div class="loader-bar">
+          <span id="loaderProgress"></span>
+        </div>
+        <p id="loaderPercent">0%</p>
+      </div>
+    </div>
+    <!-- 背景演出 -->
+    <div class="song-grid-background"></div>
+    <div class="song-scanlines"></div>
+    <div class="song-pointer-glow" id="songPointerGlow"></div>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+      <a class="header-logo" href="../index.html">
+        <span class="header-logo-main">SKZ</span>
+        <span class="header-logo-sub">LYRIC LAB</span>
+      </a>
+      <nav class="global-nav" id="globalNav">
+        <a href="../index.html">HOME</a>
+        <a href="../search.html">SEARCH</a>
+        <a href="../albums.html">ARCHIVE</a>
+        <a href="#lyrics">LYRICS</a>
+        <a href="../members.html">MEMBERS</a>
+        <a href="../setlist.html">SETLIST</a>
+        <a href="../about.html">ABOUT</a>
+      </nav>
+      <button
+        aria-controls="globalNav"
+        aria-expanded="false"
+        aria-label="メニューを開く"
+        class="menu-button"
+        id="menuButton"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+    <main>
+      <!-- 曲ヒーロー -->
+      <section class="song-hero">
+        <div class="song-hero-background">
+          <img alt="BLEEP" src="../images/albums/KARMA.png" />
+        </div>
+        <div class="song-hero-overlay"></div>
+        <div class="song-hero-content">
+          <div class="song-cover-panel reveal">
+            <div class="cover-header">
+              <span>FILE NO. BLEEP</span>
+              <span class="active-status">ACTIVE</span>
+            </div>
+            <div class="cover-frame">
+              <img alt="BLEEP" src="../images/albums/KARMA.png" />
+              <span class="corner top-left"></span>
+              <span class="corner top-right"></span>
+              <span class="corner bottom-left"></span>
+              <span class="corner bottom-right"></span>
+              <div class="cover-scan"></div>
+            </div>
+            <div class="cover-footer">
+              <span>SUBJECT / STRAY KIDS</span>
+              <span>STATUS / VERIFIED</span>
+            </div>
+            <section
+              class="music-player"
+              data-youtube-id="omImxqHIDVo"
+              data-japanese-youtube-id=""
+            >
+              <div class="youtube-player-wrap">
+                <div id="youtubePlayer"></div>
+              </div>
+              <div class="player-info">
+                <div>
+                  <span class="player-label">NOW PLAYING</span>
+                </div>
+                <span id="currentTime">0:00</span>
+              </div>
+              <input
+                aria-label="再生位置"
+                class="progress-bar"
+                id="progressBar"
+                max="100"
+                min="0"
+                step="0.1"
+                type="range"
+                value="0"
+              />
+              <div class="player-controls">
+                <button aria-label="10秒戻る" id="rewindButton" type="button">
+                  ↶
+                </button>
+                <button aria-label="再生" id="playButton" type="button">
+                  ▶
+                </button>
+                <button aria-label="10秒進む" id="forwardButton" type="button">
+                  ↷
+                </button>
+              </div>
+              <div class="player-bottom">
+                <span id="duration">0:00</span>
+                <button aria-label="ミュート" id="muteButton" type="button">
+                  🔊
+                </button>
+              </div>
+            </section>
+          </div>
+          <div class="song-main-data reveal">
+            <p class="song-eyebrow">LYRIC ANALYSIS FILE</p>
+            <div class="song-tags">
+              <span class="song-tag">Original Song</span>
+              <span class="song-tag">KARMA</span>
+            </div>
+            <h1 class="song-title">BLEEP</h1>
+            <p class="song-subtitle">Stray Kids</p>
+            <!-- 基本情報＋Credits -->
+            <dl class="song-data-table">
+              <div>
+                <dt>ALBUM</dt>
+                <dd>KARMA</dd>
+              </div>
+              <div>
+                <dt>RELEASE</dt>
+                <dd>2025.08.22</dd>
+              </div>
+              <div>
+                <dt>UPDATED</dt>
+                <dd>2026.08.26</dd>
+              </div>
+              <div>
+                <dt>LANGUAGE</dt>
+                <dd>KOREAN / ENGLISH</dd>
+              </div>
+              <!-- Credits情報 -->
+              <div>
+                <dt>LYRICS</dt>
+                <dd>BANG CHAN, CHANGBIN, HAN</dd>
+              </div>
+              <div>
+                <dt>COMPOSED</dt>
+                <dd>BANG CHAN, CHANGBIN, HAN, VERSACHOI</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="song-hero-number">FILE / BLEEP</div>
+        </div>
+      </section>
+      <!-- メンバーカラー -->
+      <section class="member-file-section">
+        <div class="section-label reveal">
+          <p>02 / MEMBER IDENTIFICATION</p>
+          <h2>Part Colors</h2>
+        </div>
+        <div class="member-filter reveal">
+          <button
+            class="member-filter-button active"
+            data-member="all"
+            type="button"
+          >
+            ALL
+          </button>
+          <button
+            class="member-filter-button chan"
+            data-member="bangchan"
+            type="button"
+          >
+            BANG CHAN
+          </button>
+          <button
+            class="member-filter-button leeknow"
+            data-member="leeknow"
+            type="button"
+          >
+            LEE KNOW
+          </button>
+          <button
+            class="member-filter-button changbin"
+            data-member="changbin"
+            type="button"
+          >
+            CHANGBIN
+          </button>
+          <button
+            class="member-filter-button hyunjin"
+            data-member="hyunjin"
+            type="button"
+          >
+            HYUNJIN
+          </button>
+          <button
+            class="member-filter-button han"
+            data-member="han"
+            type="button"
+          >
+            HAN
+          </button>
+          <button
+            class="member-filter-button felix"
+            data-member="felix"
+            type="button"
+          >
+            FELIX
+          </button>
+          <button
+            class="member-filter-button seungmin"
+            data-member="seungmin"
+            type="button"
+          >
+            SEUNGMIN
+          </button>
+          <button
+            class="member-filter-button in"
+            data-member="in"
+            type="button"
+          >
+            I.N
+          </button>
+        </div>
+      </section>
+      <!-- 歌詞 -->
+      <section class="lyrics-section" id="lyrics">
+        <div class="lyrics-header reveal">
+          <div>
+            <p>03 / LYRIC DATABASE</p>
+            <h2>Lyrics</h2>
+          </div>
+          <div class="lyrics-view-controls">
+            <button class="view-button active" data-view="all" type="button">
+              ALL DATA
+            </button>
+            <button class="view-button" data-view="original" type="button">
+              ORIGINAL
+            </button>
+            <button class="view-button" data-view="kana" type="button">
+              KANA
+            </button>
+            <button class="view-button" data-view="japanese" type="button">
+              JAPANESE
+            </button>
+            <button
+              aria-pressed="false"
+              class="view-button fanchant-toggle"
+              id="fanchantToggle"
+              type="button"
+            >
+              FANCHANT OFF
+            </button>
+          </div>
+        </div>
+        <div class="lyrics-console">
+          <div class="lyrics-console-top">
+            <span>FILE : BLEEP.LYRIC</span>
+            <span>STATUS : DECODED</span>
+          </div>
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="8">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">（ワット ザ—）</p>
+                <p class="line original">(What the—)</p>
+                <p class="line translation">（何だよ—）</p>
+
+                <p class="line ruby">
+                  （ハ）アイ ワズ ボーン トゥ テイク オフ（フー）
+                </p>
+                <p class="line original">(Ha) I was born to take off (Hoo)</p>
+                <p class="line translation">
+                  （ハ）僕は飛び立つために生まれた（フー）
+                </p>
+
+                <p class="line ruby">
+                  ユー ノウ マイ ライフ イズ タイド アップ（フー）
+                </p>
+                <p class="line original">You know my life is tied up (Hoo)</p>
+                <p class="line translation">
+                  僕の人生が縛られているのを知ってるだろ（フー）
+                </p>
+
+                <p class="line ruby">と きるげ ぽどがる こくそん</p>
+                <p class="line original">더 길게 뻗어갈 곡선</p>
+                <p class="line translation">さらに長く伸びていく曲線</p>
+
+                <p class="line ruby">
+                  ぶでぃちょ おどねん ビューティフル ペイン、イェ
+                </p>
+                <p class="line original">부딪혀 얻어낸 beautiful pain, yeah</p>
+                <p class="line translation">
+                  ぶつかって手に入れた美しい痛み、yeah
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="20">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  わそ てしん とぅろぼみょん いるちょ まね くん
+                </p>
+                <p class="line original">와서 대신 들어보면 일초 만에 쿵</p>
+                <p class="line translation">
+                  来て代わりに持ってみれば 一秒でズシン
+                </p>
+
+                <p class="line ruby">
+                  おっけえ とぅるりん ちむ とんいわ ちゃぶしめ むげ
+                </p>
+                <p class="line original">어깨에 들린 짐 덩이와 자부심의 무게</p>
+                <p class="line translation">肩に載った荷物と自負心の重さ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="25">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  いろん もすべ こぶがみ ぬっきょじんだみょん、ウム
+                </p>
+                <p class="line original">이런 모습에 거부감이 느껴진다면, hm</p>
+                <p class="line translation">こんな姿に拒否感を覚えるなら、hm</p>
+
+                <p class="line ruby">
+                  おっとん いえ のりょげ くろん かむじょんいらみょん むんじぇ
+                </p>
+                <p class="line original">
+                  어떤 이의 노력에 그런 감정이라면 문제
+                </p>
+                <p class="line translation">
+                  誰かの努力にそんな感情を抱くなら問題だ
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="30">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  プット ジ エンバーズ アウト ライク ア ファイアトラック
+                </p>
+                <p class="line original">Put the embers out like a firetruck</p>
+                <p class="line translation">消防車のように残り火を消して</p>
+
+                <p class="line ruby">
+                  アッシズ テイスティング ライク スウィート ファッジ
+                </p>
+                <p class="line original">Ashes tasting like sweet fudge</p>
+                <p class="line translation">灰は甘いファッジのような味</p>
+
+                <p class="line ruby">
+                  センサー アウト ザ ファイア コーズ ウィ ドント ギヴ ア
+                </p>
+                <p class="line original">
+                  Censor out the fire 'cause we don't give a
+                </p>
+                <p class="line translation">
+                  炎を規制音で消せ 僕らは気にしないから
+                </p>
+
+                <p class="line ruby">
+                  オール ウィ ドゥ イズ ハヴ ファン（ハヴ ファン）
+                </p>
+                <p class="line original">All we do is have fun (Have fun)</p>
+                <p class="line translation">僕らはただ楽しむだけ（楽しもう）</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="40">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ダズント マター ワット ゼイ セイ、アイム ドリヴン
+                </p>
+                <p class="line original">
+                  Doesn't matter what they say, I'm driven
+                </p>
+                <p class="line translation">
+                  何を言われても関係ない 僕は突き進む
+                </p>
+
+                <p class="line ruby">
+                  フィルター アウト ゼア ウェイズ アンド リッスン
+                </p>
+                <p class="line original">Filter out their ways and listen</p>
+                <p class="line translation">奴らのやり方を遮断して耳を澄ませ</p>
+
+                <p class="line ruby">
+                  ミュージック トゥ マイ イヤーズ、ユア サイレンス
+                </p>
+                <p class="line original">Music to my ears, your silence</p>
+                <p class="line translation">君の沈黙は僕の耳には音楽だ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="47">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイ キャント ヒア ユー</p>
+                <p class="line original">I can't hear you</p>
+                <p class="line translation">君の声なんて聞こえない</p>
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="lyric-block has-backing-vocal"
+            data-member="felix"
+            data-backing-member="hyunjin"
+          >
+            <div class="lyric-set" data-time="50">
+              <div class="member-column">
+                <span class="member-id">06 + 04</span>
+                <span class="member-name">FELIX</span>
+                <span class="backing-member-name">BACKING / HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">フェイル</p>
+                <p class="line original">Fail</p>
+                <p class="line translation">失敗</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">フレイル</p>
+                <p class="line original">frail</p>
+                <p class="line translation">弱い</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">レイジー</p>
+                <p class="line original">Lazy</p>
+                <p class="line translation">怠惰</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">ヘイジー</p>
+                <p class="line original">hazy</p>
+                <p class="line translation">曖昧</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">ルーマーズ</p>
+                <p class="line original">Rumors</p>
+                <p class="line translation">噂</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">ブーマーズ</p>
+                <p class="line original">boomers</p>
+                <p class="line translation">時代遅れな奴ら</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="58">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ヤダ、ヤダ、ノイズ キャンセレーション</p>
+                <p class="line original">Yada, yada, noise cancellation</p>
+                <p class="line translation">
+                  あれこれ言ってもノイズキャンセリング
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="lyric-block has-backing-vocal"
+            data-member="bangchan"
+            data-backing-member="changbin"
+          >
+            <div class="lyric-set" data-time="60">
+              <div class="member-column">
+                <span class="member-id">01 + 03</span>
+                <span class="member-name">BANG CHAN</span>
+                <span class="backing-member-name">BACKING / CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">フェイル</p>
+                <p class="line original">Fail</p>
+                <p class="line translation">失敗</p>
+                <div class="backing-vocal" data-member="changbin">
+                  <span class="backing-label">BACKING / CHANGBIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">ベイル</p>
+                <p class="line original">bail</p>
+                <p class="line translation">逃げ出す</p>
+                <div class="backing-vocal" data-member="changbin">
+                  <span class="backing-label">BACKING / CHANGBIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">シャット アップ</p>
+                <p class="line original">Shut up</p>
+                <p class="line translation">黙れ</p>
+                <div class="backing-vocal" data-member="changbin">
+                  <span class="backing-label">BACKING / CHANGBIN</span>
+                  <p class="line ruby">（ぴちょり；ワット ザ—）</p>
+                  <p class="line original">(삐처리; What the—)</p>
+                  <p class="line translation">（ピー音；何だよ—）</p>
+                </div>
+
+                <p class="line ruby">クライシス</p>
+                <p class="line original">Crisis</p>
+                <p class="line translation">危機</p>
+                <div class="backing-vocal" data-member="changbin">
+                  <span class="backing-label">BACKING / CHANGBIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">ハードシップ</p>
+                <p class="line original">hardship</p>
+                <p class="line translation">苦難</p>
+                <div class="backing-vocal" data-member="changbin">
+                  <span class="backing-label">BACKING / CHANGBIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="67">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ヤダ、ヤダ、ノイズ キャンセレーション</p>
+                <p class="line original">Yada, yada, noise cancellation</p>
+                <p class="line translation">
+                  あれこれ言ってもノイズキャンセリング
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="72">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  そんぐぴ まんどぅろねん かちゃ プライズ こりおえそ ぴちょり
+                </p>
+                <p class="line original">
+                  성급히 만들어낸 가짜 prize 커리어에서 삐처리
+                </p>
+                <p class="line translation">
+                  急いで作り上げた偽物のprize キャリアではピー音
+                </p>
+
+                <p class="line ruby">
+                  マイ パッション、マイ アクション そんごんえ フィーチャリング
+                </p>
+                <p class="line original">
+                  My passion, my action 성공에 featuring
+                </p>
+                <p class="line translation">僕の情熱と行動 成功にfeaturing</p>
+
+                <p class="line ruby">
+                  そんちゅぃがむん こじょ クレッシェンド いろな きじょぎ
+                </p>
+                <p class="line original">
+                  성취감은 커져 crescendo 일어나 기적이
+                </p>
+                <p class="line translation">
+                  達成感は大きくなりcrescendo 奇跡が起きる
+                </p>
+
+                <p class="line ruby">
+                  ぽぎわぬん ぶりょぱうむ ピッチ（ウム、ウム、ウム）しろぷち
+                </p>
+                <p class="line original">
+                  포기와는 불협화음 pitch (Mm, mm, mm) 실없지
+                </p>
+                <p class="line translation">
+                  諦めとは不協和音のpitch（Mm, mm, mm）くだらない
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="85">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ぴち もったる さじょんいらん ぴんげ ちちむ
+                </p>
+                <p class="line original">피치 못할 사정이란 핑계 지침</p>
+                <p class="line translation">
+                  やむを得ない事情という言い訳にはうんざり
+                </p>
+
+                <p class="line ruby">
+                  ちゃぎ はむりふぁ ちゃみな ちゃらご へ ちちむ
+                </p>
+                <p class="line original">자기 합리화 잠이나 자라고 해 취침</p>
+                <p class="line translation">
+                  自己正当化するくらいなら寝ろと言って就寝
+                </p>
+
+                <p class="line ruby">
+                  ぶろおぬん ぬっばらむる よりじょり ぴへ たにょ
+                </p>
+                <p class="line original">
+                  불어오는 늦바람을 요리조리 피해 다녀
+                </p>
+                <p class="line translation">
+                  吹いてくる遅い風をあちこち避けて回る
+                </p>
+
+                <p class="line ruby">
+                  ちゅおじぬん きふぇらみょん もじょり た ピッチ
+                </p>
+                <p class="line original">주어지는 기회라면 모조리 다 pitch</p>
+                <p class="line translation">
+                  与えられる機会なら全部まとめてpitch
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="94">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ドント ケア、ちゃぷそり た しんぎょん すみょん、ゼアズ ノー
+                  ウェイ
+                </p>
+                <p class="line original">
+                  Don't care, 잡소리 다 신경 쓰면, there's no way
+                </p>
+                <p class="line translation">
+                  気にしない 雑音を全部気にしていたら道はない
+                </p>
+
+                <p class="line ruby">
+                  さってじるぐぁ ぴょんがじる サンキュー、と よけ
+                </p>
+                <p class="line original">삿대질과 평가질 thank you, 더 욕해</p>
+                <p class="line translation">
+                  指差しと評価をありがとう もっと悪口を言え
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="100">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ね すみょんうん ぬろな いげ ね すんみょんいらご
+                </p>
+                <p class="line original">내 수명은 늘어나 이게 내 숙명이라고</p>
+                <p class="line translation">
+                  僕の寿命は延びていく これが僕の宿命だと
+                </p>
+
+                <p class="line ruby">ぱだどぅりん じぬん いみ おれ</p>
+                <p class="line original">받아들인 지는 이미 오래</p>
+                <p class="line translation">受け入れてからもう長い</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="105">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  プット ジ エンバーズ アウト ライク ア ファイアトラック
+                </p>
+                <p class="line original">Put the embers out like a firetruck</p>
+                <p class="line translation">消防車のように残り火を消して</p>
+
+                <p class="line ruby">
+                  アッシズ テイスティング ライク スウィート ファッジ
+                </p>
+                <p class="line original">Ashes tasting like sweet fudge</p>
+                <p class="line translation">灰は甘いファッジのような味</p>
+
+                <p class="line ruby">
+                  センサー アウト ザ ファイア コーズ ウィ ドント ギヴ ア
+                </p>
+                <p class="line original">
+                  Censor out the fire 'cause we don't give a
+                </p>
+                <p class="line translation">
+                  炎を規制音で消せ 僕らは気にしないから
+                </p>
+
+                <p class="line ruby">
+                  オール ウィ ドゥ イズ ハヴ ファン（ハヴ ファン）
+                </p>
+                <p class="line original">All we do is have fun (Have fun)</p>
+                <p class="line translation">僕らはただ楽しむだけ（楽しもう）</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="114">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ダズント マター ワット ゼイ セイ、アイム ドリヴン
+                </p>
+                <p class="line original">
+                  Doesn't matter what they say, I'm driven
+                </p>
+                <p class="line translation">
+                  何を言われても関係ない 僕は突き進む
+                </p>
+
+                <p class="line ruby">
+                  フィルター アウト ゼア ウェイズ アンド リッスン
+                </p>
+                <p class="line original">Filter out their ways and listen</p>
+                <p class="line translation">奴らのやり方を遮断して耳を澄ませ</p>
+
+                <p class="line ruby">
+                  ミュージック トゥ マイ イヤーズ、ユア サイレンス
+                </p>
+                <p class="line original">Music to my ears, your silence</p>
+                <p class="line translation">君の沈黙は僕の耳には音楽だ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="122">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイ キャント ヒア ユー</p>
+                <p class="line original">I can't hear you</p>
+                <p class="line translation">君の声なんて聞こえない</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="124">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ぬぐんが なむぎん ごっとぅる ちゃんばん ちょり
+                </p>
+                <p class="line original">누군가 남긴 것들 잔반 처리</p>
+                <p class="line translation">誰かが残したものを残飯処理</p>
+
+                <p class="line ruby">くったん ご ぴりょ おぷそ のな まに</p>
+                <p class="line original">그딴 거 필요 없어 너나 많이</p>
+                <p class="line translation">
+                  そんなものはいらない 君がたくさんどうぞ
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="129">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">（のな まに）</p>
+                <p class="line original">(너나 많이)</p>
+                <p class="line translation">（君がたくさんどうぞ）</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="130">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  おっちょご ちょっちょごぬん ちんじょり（ウム）なじ
+                </p>
+                <p class="line original">어쩌고 저쩌고는 진저리 (Mm) 나지</p>
+                <p class="line translation">
+                  ああだこうだにはうんざり（Mm）する
+                </p>
+
+                <p class="line ruby">くり まぬん まるん ちょんぶ ぴちょり</p>
+                <p class="line original">그리 많은 말은 전부 삐처리</p>
+                <p class="line translation">そんなに多い言葉は全部ピー音</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="134">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  わるがわるぶ た ブロック、むぐむ カム ショウ ユア
+                  フェイス、マン
+                </p>
+                <p class="line original">
+                  왈가왈부 다 block, 묵음 come show your face, man
+                </p>
+                <p class="line translation">
+                  あれこれ言うのは全部block 無音にして顔を見せろ、man
+                </p>
+
+                <p class="line ruby">
+                  たんたなげ さっとん トップ フロム ザ ベイスメント
+                </p>
+                <p class="line original">탄탄하게 쌓던 top from the basement</p>
+                <p class="line translation">地下から着実に積み上げた頂点</p>
+
+                <p class="line ruby">
+                  アイル ファインド ユー アンド キル ユー ライク ザ
+                  ムーヴィー、テイクン
+                </p>
+                <p class="line original">
+                  I'll find you and kill you like the movie, Taken
+                </p>
+                <p class="line translation">
+                  映画『Taken』のように君を見つけて仕留める
+                </p>
+
+                <p class="line ruby">テル エム</p>
+                <p class="line original">Tell 'em</p>
+                <p class="line translation">奴らに言え</p>
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="lyric-block has-backing-vocal"
+            data-member="felix"
+            data-backing-member="bangchan"
+          >
+            <div class="lyric-set" data-time="144">
+              <div class="member-column">
+                <span class="member-id">06 + 01</span>
+                <span class="member-name">FELIX</span>
+                <span class="backing-member-name">BACKING / BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">フェイル</p>
+                <p class="line original">Fail</p>
+                <p class="line translation">失敗</p>
+                <div class="backing-vocal" data-member="bangchan">
+                  <span class="backing-label">BACKING / BANG CHAN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">フレイル</p>
+                <p class="line original">frail</p>
+                <p class="line translation">弱い</p>
+                <div class="backing-vocal" data-member="bangchan">
+                  <span class="backing-label">BACKING / BANG CHAN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">レイジー</p>
+                <p class="line original">Lazy</p>
+                <p class="line translation">怠惰</p>
+                <div class="backing-vocal" data-member="bangchan">
+                  <span class="backing-label">BACKING / BANG CHAN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">ヘイジー</p>
+                <p class="line original">hazy</p>
+                <p class="line translation">曖昧</p>
+                <div class="backing-vocal" data-member="bangchan">
+                  <span class="backing-label">BACKING / BANG CHAN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">ルーマーズ</p>
+                <p class="line original">Rumors</p>
+                <p class="line translation">噂</p>
+                <div class="backing-vocal" data-member="bangchan">
+                  <span class="backing-label">BACKING / BANG CHAN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">ブーマーズ</p>
+                <p class="line original">boomers</p>
+                <p class="line translation">時代遅れな奴ら</p>
+                <div class="backing-vocal" data-member="bangchan">
+                  <span class="backing-label">BACKING / BANG CHAN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="152">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ヤダ、ヤダ、ノイズ キャンセレーション</p>
+                <p class="line original">Yada, yada, noise cancellation</p>
+                <p class="line translation">
+                  あれこれ言ってもノイズキャンセリング
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="lyric-block has-backing-vocal"
+            data-member="han"
+            data-backing-member="hyunjin"
+          >
+            <div class="lyric-set" data-time="154">
+              <div class="member-column">
+                <span class="member-id">05 + 04</span>
+                <span class="member-name">HAN</span>
+                <span class="backing-member-name">BACKING / HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">フェイル</p>
+                <p class="line original">Fail</p>
+                <p class="line translation">失敗</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">ベイル</p>
+                <p class="line original">bail</p>
+                <p class="line translation">逃げ出す</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">シャット アップ</p>
+                <p class="line original">Shut up</p>
+                <p class="line translation">黙れ</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり；ワット ザ—）</p>
+                  <p class="line original">(삐처리; What the—)</p>
+                  <p class="line translation">（ピー音；何だよ—）</p>
+                </div>
+
+                <p class="line ruby">クライシス</p>
+                <p class="line original">Crisis</p>
+                <p class="line translation">危機</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+
+                <p class="line ruby">ハードシップ</p>
+                <p class="line original">hardship</p>
+                <p class="line translation">苦難</p>
+                <div class="backing-vocal" data-member="hyunjin">
+                  <span class="backing-label">BACKING / HYUNJIN</span>
+                  <p class="line ruby">（ぴちょり）</p>
+                  <p class="line original">(삐처리)</p>
+                  <p class="line translation">（ピー音）</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="161">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ヤダ、ヤダ、ノイズ—</p>
+                <p class="line original">Yada, yada, noise—</p>
+                <p class="line translation">あれこれ言ってもノイズ—</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="song-footer">
+      <div>
+        <strong>SKZ LYRIC LAB</strong>
+        <p>Stray Kids unofficial lyrics fan site.</p>
+      </div>
+      <span class="footer-online">DATABASE ONLINE</span>
+    </footer>
+    <button
+      aria-label="ページ上部へ戻る"
+      class="song-page-top"
+      id="songPageTop"
+      type="button"
+    >
+      ↑
+    </button>
+    <script src="../js/song.js"></script>
+    <script src="../js/youtube-player.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
+</html>
