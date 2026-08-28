@@ -585,6 +585,79 @@ const songs = [
   },
 
 
+    {
+    id: "Thunderous",
+    title: "Thunderous",
+    album: "NOEASY",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2021.08.23",
+    url: "song/Thunderous.html",
+    image: "images/song/Thunderous.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+  {
+    id: "InMyHead",
+    title: "In My Head",
+    album: "KARMA",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2025.08.22",
+    url: "song/InMyHead.html",
+    image: "images/albums/KARMA.png",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
+  {
+    id: "BLINDSPOT",
+    title: "BLIND SPOT",
+    album: "樂-STAR",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2023.11.10",
+    url: "song/BLINDSPOT.html",
+    image: "images/song/BLINDSPOT.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
+
 
 /* ========================================
   {
