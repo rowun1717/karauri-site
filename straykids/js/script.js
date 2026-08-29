@@ -658,6 +658,56 @@ const songs = [
   },
 
 
+  {
+    id: "BLEEP",
+    title: "BLEEP",
+    album: "KARMA",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2025.08.22",
+    url: "song/BLEEP.html",
+    image: "images/albums/KARMA.png",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
+
+   {
+    id: "LALALALA",
+    title: "LALALALA（樂）",
+    album: "樂-STAR",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2023.11.10",
+    url: "song/LALALALA.html",
+    image: "images/song/LALALALA.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
+
 
 /* ========================================
   {
