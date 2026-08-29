@@ -580,7 +580,7 @@ const setlistSongs = [
     album: "Clé 1 : MIROH",
     date: "2026.08.29",
     url: "song/MIROH.html",
-    image: "images/albums/Clé 1 : MIROH.jpg",
+    image: "images/albums/Cle 1 MIROH.jpg",
     karaoke: ["JOYSOUND","DAM"],
     category: "group",
     duration: 161
