@@ -1,0 +1,1208 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Social Path (feat. LiSA) | SKZ Lyric LAB</title>
+    <link href="../css/song.css" rel="stylesheet" />
+    <link href="../css/common-header.css?v=20260806-2" rel="stylesheet" />
+    <link href="../images/logo.png" rel="icon" type="image/png" />
+    <link href="../images/icon.png" rel="apple-touch-icon" />
+    <link href="../manifest.json" rel="manifest" />
+    <meta content="#050505" name="theme-color" />
+  </head>
+  <body>
+    <!-- ファイル起動演出 -->
+    <div class="file-loader" id="fileLoader">
+      <div class="file-loader-inner">
+        <p class="loader-code">SKZ LYRIC LAB / FILE ACCESS</p>
+        <h1 data-text="Social Path (feat. LiSA)">Social Path (feat. LiSA)</h1>
+        <p id="loaderMessage">OPENING LYRIC FILE...</p>
+        <div class="loader-bar">
+          <span id="loaderProgress"></span>
+        </div>
+        <p id="loaderPercent">0%</p>
+      </div>
+    </div>
+    <!-- 背景演出 -->
+    <div class="song-grid-background"></div>
+    <div class="song-scanlines"></div>
+    <div class="song-pointer-glow" id="songPointerGlow"></div>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+      <a class="header-logo" href="../index.html">
+        <span class="header-logo-main">SKZ</span>
+        <span class="header-logo-sub">LYRIC LAB</span>
+      </a>
+      <nav class="global-nav" id="globalNav">
+        <a href="../index.html">HOME</a>
+        <a href="../search.html">SEARCH</a>
+        <a href="../albums.html">ARCHIVE</a>
+        <a href="#lyrics">LYRICS</a>
+        <a href="../members.html">MEMBERS</a>
+        <a href="../setlist.html">SETLIST</a>
+        <a href="../about.html">ABOUT</a>
+      </nav>
+      <button
+        aria-controls="globalNav"
+        aria-expanded="false"
+        aria-label="メニューを開く"
+        class="menu-button"
+        id="menuButton"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+    <main>
+      <!-- 曲ヒーロー -->
+      <section class="song-hero">
+        <div class="song-hero-background">
+          <img
+            alt="Social Path (feat. LiSA)"
+            src="../images/albums/Social-Path.jpg"
+          />
+        </div>
+        <div class="song-hero-overlay"></div>
+        <div class="song-hero-content">
+          <div class="song-cover-panel reveal">
+            <div class="cover-header">
+              <span>FILE NO. Social Path (feat. LiSA)</span>
+              <span class="active-status">ACTIVE</span>
+            </div>
+            <div class="cover-frame">
+              <img
+                alt="Social Path (feat. LiSA)"
+                src="../images/albums/Social-Path.jpg"
+              />
+              <span class="corner top-left"></span>
+              <span class="corner top-right"></span>
+              <span class="corner bottom-left"></span>
+              <span class="corner bottom-right"></span>
+              <div class="cover-scan"></div>
+            </div>
+            <div class="cover-footer">
+              <span>SUBJECT / STRAY KIDS</span>
+              <span>STATUS / VERIFIED</span>
+            </div>
+            <section
+              class="music-player"
+              data-youtube-id="Y6JlCKtqa0g"
+              data-japanese-youtube-id="7kt2EpL4tC8"
+              data-main-source="japanese"
+            >
+              <div class="youtube-player-wrap">
+                <div id="youtubePlayerOriginal"></div>
+                <div id="youtubePlayerJapanese"></div>
+              </div>
+              <div class="player-info">
+                <div>
+                  <span class="player-label">NOW PLAYING</span>
+                </div>
+                <span id="currentTime">0:00</span>
+              </div>
+              <input
+                aria-label="再生位置"
+                class="progress-bar"
+                id="progressBar"
+                max="100"
+                min="0"
+                step="0.1"
+                type="range"
+                value="0"
+              />
+              <div class="player-controls">
+                <button aria-label="10秒戻る" id="rewindButton" type="button">
+                  ↶
+                </button>
+                <button aria-label="再生" id="playButton" type="button">
+                  ▶
+                </button>
+                <button aria-label="10秒進む" id="forwardButton" type="button">
+                  ↷
+                </button>
+              </div>
+              <div class="player-bottom">
+                <span id="duration">0:00</span>
+                <button aria-label="ミュート" id="muteButton" type="button">
+                  🔊
+                </button>
+              </div>
+            </section>
+          </div>
+          <div class="song-main-data reveal">
+            <p class="song-eyebrow">LYRIC ANALYSIS FILE</p>
+            <div class="song-tags">
+              <span class="song-tag">Original Song</span>
+              <span class="song-tag">
+                Social Path / Super Bowl -Japanese ver.-
+              </span>
+            </div>
+            <h1 class="song-title">Social Path (feat. LiSA)</h1>
+            <p class="song-subtitle">Stray Kids</p>
+            <!-- 基本情報＋Credits -->
+            <dl class="song-data-table">
+              <div>
+                <dt>ALBUM</dt>
+                <dd>Social Path / Super Bowl -Japanese ver.-</dd>
+              </div>
+              <div>
+                <dt>RELEASE</dt>
+                <dd>2023.09.06</dd>
+              </div>
+              <div>
+                <dt>UPDATED</dt>
+                <dd>2026.08.26</dd>
+              </div>
+              <div>
+                <dt>LANGUAGE</dt>
+                <dd>KOREAN / ENGLISH</dd>
+              </div>
+              <!-- Credits情報 -->
+              <div>
+                <dt>LYRICS</dt>
+                <dd>BANG CHAN, CHANGBIN, HAN, YOHEI</dd>
+              </div>
+              <div>
+                <dt>COMPOSED</dt>
+                <dd>BANG CHAN, CHANGBIN, HAN, VERSACHOI</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="song-hero-number">FILE / Social Path (feat. LiSA)</div>
+        </div>
+      </section>
+      <!-- メンバーカラー -->
+      <section class="member-file-section">
+        <div class="section-label reveal">
+          <p>02 / MEMBER IDENTIFICATION</p>
+          <h2>Part Colors</h2>
+        </div>
+        <div class="member-filter reveal">
+          <button
+            class="member-filter-button active"
+            data-member="all"
+            type="button"
+          >
+            ALL
+          </button>
+          <button
+            class="member-filter-button chan"
+            data-member="bangchan"
+            type="button"
+          >
+            BANG CHAN
+          </button>
+          <button
+            class="member-filter-button leeknow"
+            data-member="leeknow"
+            type="button"
+          >
+            LEE KNOW
+          </button>
+          <button
+            class="member-filter-button changbin"
+            data-member="changbin"
+            type="button"
+          >
+            CHANGBIN
+          </button>
+          <button
+            class="member-filter-button hyunjin"
+            data-member="hyunjin"
+            type="button"
+          >
+            HYUNJIN
+          </button>
+          <button
+            class="member-filter-button han"
+            data-member="han"
+            type="button"
+          >
+            HAN
+          </button>
+          <button
+            class="member-filter-button felix"
+            data-member="felix"
+            type="button"
+          >
+            FELIX
+          </button>
+          <button
+            class="member-filter-button seungmin"
+            data-member="seungmin"
+            type="button"
+          >
+            SEUNGMIN
+          </button>
+          <button
+            class="member-filter-button in"
+            data-member="in"
+            type="button"
+          >
+            I.N
+          </button>
+        </div>
+      </section>
+      <!-- 歌詞 -->
+      <section class="lyrics-section" id="lyrics">
+        <div class="lyrics-header reveal">
+          <div>
+            <p>03 / LYRIC DATABASE</p>
+            <h2>Lyrics</h2>
+          </div>
+          <div class="lyrics-view-controls">
+            <button class="view-button active" data-view="all" type="button">
+              ALL DATA
+            </button>
+            <button class="view-button" data-view="original" type="button">
+              ORIGINAL
+            </button>
+            <button class="view-button" data-view="kana" type="button">
+              KANA
+            </button>
+            <button class="view-button" data-view="japanese" type="button">
+              JAPANESE
+            </button>
+            <button
+              aria-pressed="false"
+              class="view-button fanchant-toggle"
+              id="fanchantToggle"
+              type="button"
+            >
+              FANCHANT OFF
+            </button>
+          </div>
+        </div>
+        <div class="lyrics-console">
+          <div class="lyrics-console-top">
+            <span>FILE : SOCIAL-PATH.LYRIC</span>
+            <span>STATUS : DECODED</span>
+          </div>
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="1" data-time-japanese="1">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ゲイヴ アップ
+                  <span class="chant-inline">ゲイヴ アップ</span>
+                  マイ ユース
+                  <span class="chant-inline">マイ ユース</span>
+                </p>
+                <p class="line original">
+                  Gave up
+                  <span class="chant-inline">Gave up</span>
+                  my youth
+                  <span class="chant-inline">my youth</span>
+                </p>
+                <p class="line translation">
+                  Gave up
+                  <span class="chant-inline">Gave up</span>
+                  my youth
+                  <span class="chant-inline">my youth</span>
+                </p>
+
+                <p class="line ruby">
+                  フォー マイ
+                  <span class="chant-inline">フォー マイ</span>
+                  フューチャー
+                  <span class="chant-inline">フューチャー</span>
+                </p>
+                <p class="line original">
+                  For my
+                  <span class="chant-inline">For my</span>
+                  future
+                  <span class="chant-inline">future</span>
+                </p>
+                <p class="line translation">
+                  For my
+                  <span class="chant-inline">For my</span>
+                  future
+                  <span class="chant-inline">future</span>
+                </p>
+
+                <p class="line ruby">
+                  アイ ジャスト
+                  <span class="chant-inline">アイ ジャスト</span>
+                  ウォント トゥ
+                  <span class="chant-inline">ウォント トゥ</span>
+                </p>
+                <p class="line original">
+                  I just
+                  <span class="chant-inline">I just</span>
+                  want to
+                  <span class="chant-inline">want to</span>
+                </p>
+                <p class="line translation">
+                  I just
+                  <span class="chant-inline">I just</span>
+                  want to
+                  <span class="chant-inline">want to</span>
+                </p>
+
+                <p class="line ruby">
+                  ライズ アップ
+                  <span class="chant-inline">ライズ アップ</span>
+                  ストロンガー
+                  <span class="chant-inline">ストロンガー</span>
+                </p>
+                <p class="line original">
+                  Rise up
+                  <span class="chant-inline">Rise up</span>
+                  stronger
+                  <span class="chant-inline">stronger</span>
+                </p>
+                <p class="line translation">
+                  Rise up
+                  <span class="chant-inline">Rise up</span>
+                  stronger
+                  <span class="chant-inline">stronger</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="11" data-time-japanese="11">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ホエア アム アイ ライト ナウ？
+                  <span class="chant-overlap">（ナウ ナウ ナウ ナウ）</span>
+                </p>
+                <p class="line original">
+                  Where am I right now?
+                  <span class="chant-overlap">(Now Now Now Now)</span>
+                </p>
+                <p class="line translation">
+                  Where am I right now?
+                  <span class="chant-overlap">(Now Now Now Now)</span>
+                </p>
+
+                <p class="line ruby">
+                  くち おぷとん きん ぱむ
+                  <span class="chant-overlap">
+                    （ナイト ナイト ナイト ナイト）
+                  </span>
+                </p>
+                <p class="line original">
+                  끝이 없던 긴 밤
+                  <span class="chant-overlap">(Night Night Night Night)</span>
+                </p>
+                <p class="line translation">終わらない Night</p>
+
+                <p class="line ruby">なり ぱるが おんだ たうみ たがおんだ</p>
+                <p class="line original">날이 밝아 온다 다음이 다가온다</p>
+                <p class="line translation">
+                  日が昇れ
+                  <span class="chant-overlap">ば</span>
+                  明日が来る
+                  <span class="chant-overlap">さ</span>
+                </p>
+
+                <p class="line ruby">アイ ウォント ミス イット</p>
+                <p class="line original">I won't miss it</p>
+                <p class="line translation">I won't miss it</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="all-members">
+            <div class="lyric-set" data-time="21" data-time-japanese="21">
+              <div class="member-column">
+                <span class="member-id">00</span>
+                <span class="member-name">ALL</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  <span class="chant-overlap">（ナウ オア ネヴァー）</span>
+                </p>
+                <p class="line original">
+                  <span class="chant-overlap">(Now or Never)</span>
+                </p>
+                <p class="line translation">
+                  <span class="chant-overlap">(Now or Never)</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="23" data-time-japanese="23">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  まぬん こる ぽぎへっち たどぅる まらぬん ちょんちゅにらみょん
+                </p>
+                <p class="line original">
+                  많은 걸 포기했지 다들 말하는 청춘이라면
+                </p>
+                <p class="line translation">諦めてた みんなが言う青春は</p>
+
+                <p class="line ruby">すまぬん ゆほぐる ちゃま ねっち</p>
+                <p class="line original">수많은 유혹을 참아 냈지</p>
+                <p class="line translation">たくさん誘惑耐え抜いた</p>
+
+                <p class="line ruby">なる まんまなげ ぶぁったみょん</p>
+                <p class="line original">날 만만하게 봤다면</p>
+                <p class="line translation">甘く見てたなら</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="28" data-time-japanese="28">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ユア ロング</p>
+                <p class="line original">You're wrong</p>
+                <p class="line translation">You're wrong</p>
+
+                <p class="line ruby">よんぐぁんろえ ぐぁんそく</p>
+                <p class="line original">용광로의 광석</p>
+                <p class="line translation">溶鉱炉 Crystal</p>
+
+                <p class="line ruby">と たんだねじぬん くむそく</p>
+                <p class="line original">더 단단해지는 금속</p>
+                <p class="line translation">強くなってく金属</p>
+
+                <p class="line ruby">なん と きょんごはげ くっこんはげ</p>
+                <p class="line original">난 더 견고하게 굳건하게</p>
+                <p class="line translation">固さを増し 強固だね</p>
+
+                <p class="line ruby">
+                  たしん おぷする すんがね くちゅる ひゃんへ
+                </p>
+                <p class="line original">다신 없을 순간의 끝을 향해</p>
+                <p class="line translation">二度ない瞬間へ向かってんね</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="34" data-time-japanese="34">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイ ノウ イッツ ゴナ ビー ロンリー</p>
+                <p class="line original">I know it's gonna be lonely</p>
+                <p class="line translation">I know it's gonna be lonely</p>
+
+                <p class="line ruby">
+                  コーズ エヴリワン キープス ターニング ミー ダウン
+                </p>
+                <p class="line original">
+                  Cause everyone keeps turning me down
+                </p>
+                <p class="line translation">
+                  Cause everyone keeps turning me down
+                </p>
+
+                <p class="line ruby">カウントレス ニュー サラウンディングス</p>
+                <p class="line original">Countless new surroundings</p>
+                <p class="line translation">Countless new surroundings</p>
+
+                <p class="line ruby">
+                  コールド アイズ キープ ルッキング ミー ダウン
+                </p>
+                <p class="line original">Cold eyes keep looking me down</p>
+                <p class="line translation">Cold eyes keep looking me down</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="46" data-time-japanese="46">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  アイム スティル イン ザ クラウド、エイリアン オブ ザ タウン
+                  <span class="chant-inline">（ヘイ！ヘイ！ヘイ！）</span>
+                </p>
+                <p class="line original">
+                  I'm still in the crowd, alien of the town
+                  <span class="chant-inline">(Hey! Hey! Hey!)</span>
+                </p>
+                <p class="line translation">
+                  I'm still in the crowd, alien of the town
+                  <span class="chant-inline">(Hey! Hey! Hey!)</span>
+                </p>
+
+                <p class="line ruby">
+                  イェ ゼイ ウォント ミー トゥ ギヴ アップ ライト ナウ
+                  <span class="chant-inline">（ヘイ！ヘイ！ヘイ！）</span>
+                </p>
+                <p class="line original">
+                  Yeah they want me to give up right now
+                  <span class="chant-inline">(Hey! Hey! Hey!)</span>
+                </p>
+                <p class="line translation">
+                  Yeah they want me to give up right now
+                  <span class="chant-inline">(Hey! Hey! Hey!)</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="51" data-time-japanese="51">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ゼア メイキング ミー ラフ イッツ ソー ラウド
+                  <span class="chant-inline">（ヘイ！ヘイ！ヘイ！）</span>
+                </p>
+                <p class="line original">
+                  They're making me laugh it's so loud
+                  <span class="chant-inline">(Hey! Hey! Hey!)</span>
+                </p>
+                <p class="line translation">
+                  They're making me laugh it's so loud
+                  <span class="chant-inline">(Hey! Hey! Hey!)</span>
+                </p>
+
+                <p class="line ruby">
+                  ウェイキング ザ デーモン ザッツ ハイディング インサイド
+                  <span class="chant-inline">（ヘイ！ヘイ！ヘイ！）</span>
+                </p>
+                <p class="line original">
+                  Waking the demon that's hiding inside
+                  <span class="chant-inline">(Hey! Hey! Hey!)</span>
+                </p>
+                <p class="line translation">
+                  Waking the demon that's hiding inside
+                  <span class="chant-inline">(Hey! Hey! Hey!)</span>
+                </p>
+
+                <p class="line ruby">
+                  <span class="chant-inline">（ワン ツー スリー フォー）</span>
+                </p>
+                <p class="line original">
+                  <span class="chant-inline">(one two three four)</span>
+                </p>
+                <p class="line translation">
+                  <span class="chant-inline">(one two three four)</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="56" data-time-japanese="56">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ユー オンリー ゲット トゥ リヴ ワン ライフ アイ ノウ アイム
+                  レディ
+                </p>
+                <p class="line original">
+                  You only get to live one life I know I'm ready
+                </p>
+                <p class="line translation">
+                  You only get to live one life I know I'm ready
+                </p>
+
+                <p class="line ruby">
+                  テイク ザット チャンス ノー マター ワット ゼイ テル ミー
+                </p>
+                <p class="line original">
+                  Take that chance no matter what they tell me
+                </p>
+                <p class="line translation">
+                  Take that chance no matter what they tell me
+                </p>
+
+                <p class="line ruby">
+                  アイ キャノット エクスプレイン ディス フィーリング
+                </p>
+                <p class="line original">I can not explain this feeling</p>
+                <p class="line translation">I can not explain this feeling</p>
+
+                <p class="line ruby">
+                  イェ ディス パス ワズ メント トゥ ビー マイ ドリーム
+                </p>
+                <p class="line original">
+                  Yeah this path was meant to be my dream
+                </p>
+                <p class="line translation">
+                  Yeah this path was meant to be my dream
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="lisa">
+            <div class="lyric-set" data-time="68" data-time-japanese="68">
+              <div class="member-column">
+                <span class="member-id">09</span>
+                <span class="member-name">LiSA</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ルック バック、ジ アッシズ プルーヴ マイ
+                </p>
+                <p class="line original">Look back, the ashes prove my</p>
+                <p class="line translation">Look back, the ashes prove my</p>
+
+                <p class="line ruby">
+                  パッション オールウェイズ バーンズ エターナリー
+                </p>
+                <p class="line original">Passion always burns eternally</p>
+                <p class="line translation">Passion always burns eternally</p>
+
+                <p class="line ruby">
+                  ノー リグレッツ、アイ ラヴ ディス フィーリング
+                </p>
+                <p class="line original">No regrets, I love this feeling</p>
+                <p class="line translation">No regrets, I love this feeling</p>
+
+                <p class="line ruby">
+                  ダウン オン ディス ロード、コール イット ザ
+                  <span class="chant-overlap">ソーシャル パス</span>
+                </p>
+                <p class="line original">
+                  Down on this road, call it the
+                  <span class="chant-overlap">Social Path</span>
+                </p>
+                <p class="line translation">
+                  Down on this road, call it the
+                  <span class="chant-overlap">Social Path</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="80" data-time-japanese="80">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  アイム トッシング ターニング イン マイ ベッド
+                </p>
+                <p class="line original">I'm tossing turning in my bed</p>
+                <p class="line translation">I'm tossing turning in my bed</p>
+
+                <p class="line ruby">
+                  ゼム ヴォイシズ イン マイ ヘッド アゲイン
+                </p>
+                <p class="line original">Them voices in my head again</p>
+                <p class="line translation">Them voices in my head again</p>
+
+                <p class="line ruby">アイ ガタ シェイク エム オフ ナウ</p>
+                <p class="line original">I gotta shake em off now</p>
+                <p class="line translation">I gotta shake em off now</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="all-members">
+            <div class="lyric-set" data-time="87" data-time-japanese="87">
+              <div class="member-column">
+                <span class="member-id">00</span>
+                <span class="member-name">ALL</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  <span class="chant-overlap">（ナウ オア ネヴァー）</span>
+                </p>
+                <p class="line original">
+                  <span class="chant-overlap">(Now or Never)</span>
+                </p>
+                <p class="line translation">
+                  <span class="chant-overlap">(Now or Never)</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="90" data-time-japanese="90">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ネヴァー ニュー</p>
+                <p class="line original">Never knew</p>
+                <p class="line translation">Never knew</p>
+
+                <p class="line ruby">
+                  アイド シー ソー メニー ピープル カム アンド ゴー
+                </p>
+                <p class="line original">I'd see so many people come and go</p>
+                <p class="line translation">
+                  I'd see so many people come and go
+                </p>
+
+                <p class="line ruby">
+                  アイ シー ザ ミラー、イッツ オンリー ミー
+                </p>
+                <p class="line original">I see the mirror, it's only me</p>
+                <p class="line translation">I see the mirror, it's only me</p>
+
+                <p class="line ruby">
+                  イーヴル ソーツ テイキング オーヴァー、アイマ レット イット
+                  ゴー
+                </p>
+                <p class="line original">
+                  Evil thoughts taking over, Imma let it go
+                </p>
+                <p class="line translation">
+                  Evil thoughts taking over, Imma let it go
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="99" data-time-japanese="99">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  アイ ファイト マイセルフ、イッツ オンリー ミー
+                </p>
+                <p class="line original">I fight myself, it's only me</p>
+                <p class="line translation">I fight myself, it's only me</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="102" data-time-japanese="102">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイ ノウ イッツ ゴン ビー ロンリー</p>
+                <p class="line original">I know it's gon be lonely</p>
+                <p class="line translation">I know it's gon be lonely</p>
+
+                <p class="line ruby">
+                  コーズ エヴリワン キープス ターニング ミー ダウン
+                </p>
+                <p class="line original">
+                  Cause everyone keeps turning me down
+                </p>
+                <p class="line translation">
+                  Cause everyone keeps turning me down
+                </p>
+
+                <p class="line ruby">カウントレス ニュー サラウンディングス</p>
+                <p class="line original">Countless new surroundings</p>
+                <p class="line translation">Countless new surroundings</p>
+
+                <p class="line ruby">
+                  コールド アイズ キープ ルッキング ミー ダウン
+                </p>
+                <p class="line original">Cold eyes keep looking me down</p>
+                <p class="line translation">Cold eyes keep looking me down</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="113" data-time-japanese="113">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  アイム スティル イン ザ クラウド、エイリアン オブ ザ タウン
+                </p>
+                <p class="line original">
+                  I'm still in the crowd, alien of the town
+                </p>
+                <p class="line translation">
+                  I'm still in the crowd, alien of the town
+                </p>
+
+                <p class="line ruby">
+                  イェ ゼイ ウォント ミー トゥ ギヴ アップ ライト ナウ
+                </p>
+                <p class="line original">
+                  Yeah they want me to give up right now
+                </p>
+                <p class="line translation">
+                  Yeah they want me to give up right now
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="118" data-time-japanese="118">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ゼア メイキング ミー ラフ イッツ ソー ラウド
+                </p>
+                <p class="line original">
+                  They're making me laugh it's so loud
+                </p>
+                <p class="line translation">
+                  They're making me laugh it's so loud
+                </p>
+
+                <p class="line ruby">
+                  ウェイキング ザ デーモン ザッツ ハイディング インサイド
+                  <span class="chant-inline">（ワン ツー スリー フォー）</span>
+                </p>
+                <p class="line original">
+                  Waking the demon that's hiding inside
+                  <span class="chant-inline">(one two three four)</span>
+                </p>
+                <p class="line translation">
+                  Waking the demon that's hiding inside
+                  <span class="chant-inline">(one two three four)</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="123" data-time-japanese="123">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ユー オンリー ゲット トゥ リヴ ワン ライフ アイ ノウ アイム
+                  レディ
+                </p>
+                <p class="line original">
+                  You only get to live one life I know I'm ready
+                </p>
+                <p class="line translation">
+                  You only get to live one life I know I'm ready
+                </p>
+
+                <p class="line ruby">
+                  テイク ザット チャンス ノー マター ワット ゼイ テル ミー
+                  <span class="chant-inline">（ヘイ！ヘイ！ヘイ！ヘイ！）</span>
+                </p>
+                <p class="line original">
+                  Take that chance no matter what they tell me
+                  <span class="chant-inline">(Hey! Hey! Hey! Hey!)</span>
+                </p>
+                <p class="line translation">
+                  Take that chance no matter what they tell me
+                  <span class="chant-inline">(Hey! Hey! Hey! Hey!)</span>
+                </p>
+
+                <p class="line ruby">
+                  アイ キャノット エクスプレイン ディス フィーリング
+                  <span class="chant-inline">（ヘイ！ヘイ！ヘイ！ヘイ！）</span>
+                </p>
+                <p class="line original">
+                  I can not explain this feeling
+                  <span class="chant-inline">(Hey! Hey! Hey! Hey!)</span>
+                </p>
+                <p class="line translation">
+                  I can not explain this feeling
+                  <span class="chant-inline">(Hey! Hey! Hey! Hey!)</span>
+                </p>
+
+                <p class="line ruby">
+                  イェ ディス パス ワズ メント トゥ ビー マイ ドリーム
+                  <span class="chant-inline">（ヘイ！ヘイ！ヘイ！ヘイ！）</span>
+                </p>
+                <p class="line original">
+                  Yeah this path was meant to be my dream
+                  <span class="chant-inline">(Hey! Hey! Hey! Hey!)</span>
+                </p>
+                <p class="line translation">
+                  Yeah this path was meant to be my dream
+                  <span class="chant-inline">(Hey! Hey! Hey! Hey!)</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="lisa">
+            <div class="lyric-set" data-time="135" data-time-japanese="135">
+              <div class="member-column">
+                <span class="member-id">09</span>
+                <span class="member-name">LiSA</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ルック バック、ジ アッシズ プルーヴ マイ
+                </p>
+                <p class="line original">Look back, the ashes prove my</p>
+                <p class="line translation">Look back, the ashes prove my</p>
+
+                <p class="line ruby">
+                  パッション オールウェイズ バーンズ エターナリー
+                </p>
+                <p class="line original">Passion always burns eternally</p>
+                <p class="line translation">Passion always burns eternally</p>
+
+                <p class="line ruby">
+                  ノー リグレッツ、アイ ラヴ ディス フィーリング
+                </p>
+                <p class="line original">No regrets, I love this feeling</p>
+                <p class="line translation">No regrets, I love this feeling</p>
+
+                <p class="line ruby">
+                  ダウン オン ディス ロード、コール イット ザ
+                  <span class="unofficial-chant">ソーシャル パス</span>
+                </p>
+                <p class="line original">
+                  Down on this road, call it the
+                  <span class="unofficial-chant">Social Path</span>
+                </p>
+                <p class="line translation">
+                  Down on this road, call it the
+                  <span class="unofficial-chant">Social Path</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="147" data-time-japanese="147">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ノー ウェイ バック トゥ ザ パスト</p>
+                <p class="line original">No way back to the past</p>
+                <p class="line translation">No way back to the past</p>
+
+                <p class="line ruby">アイル ステップ アヘッド</p>
+                <p class="line original">I'll step ahead</p>
+                <p class="line translation">I'll step ahead</p>
+
+                <p class="line ruby">ゴー ライト イン フロント オブ ミー</p>
+                <p class="line original">Go right in front of me</p>
+                <p class="line translation">Go right in front of me</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="157" data-time-japanese="157">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ちっきん ちょんさじぬる たし ぷちょ なる みろねど
+                </p>
+                <p class="line original">찢긴 청사진을 다시 붙여 날 밀어내도</p>
+                <p class="line translation">破れた地図繋ぎ 押し出されても</p>
+
+                <p class="line ruby">
+                  うぉるれ くれっとん でろ ちょ うぃるる たるりご
+                </p>
+                <p class="line original">원래 그랬던 대로 저 위를 달리고</p>
+                <p class="line translation">昔みたいに 上を走る</p>
+
+                <p class="line ruby">なる そ いんぬん ごせ めんもむろ まっそ</p>
+                <p class="line original">날 서 있는 곳에 맨몸으로 맞서</p>
+                <p class="line translation">険しい場所 一人で</p>
+
+                <p class="line ruby">ぱみ と わど アイ ウィル ライズ アップ</p>
+                <p class="line original">밤이 또 와도 I will rise up</p>
+                <p class="line translation">夜と向き合い I will rise up</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="all-members">
+            <div class="lyric-set" data-time="168" data-time-japanese="168">
+              <div class="member-column">
+                <span class="member-id">00</span>
+                <span class="member-name">ALL</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  ゲイヴ アップ
+                  <span class="chant-inline">ゲイヴ アップ</span>
+                  マイ ユース
+                  <span class="chant-inline">マイ ユース</span>
+                </p>
+                <p class="line original">
+                  Gave up
+                  <span class="chant-inline">Gave up</span>
+                  my youth
+                  <span class="chant-inline">my youth</span>
+                </p>
+                <p class="line translation">
+                  Gave up
+                  <span class="chant-inline">Gave up</span>
+                  my youth
+                  <span class="chant-inline">my youth</span>
+                </p>
+
+                <p class="line ruby">
+                  フォー マイ
+                  <span class="chant-inline">フォー マイ</span>
+                  フューチャー
+                  <span class="chant-inline">フューチャー</span>
+                </p>
+                <p class="line original">
+                  For my
+                  <span class="chant-inline">For my</span>
+                  future
+                  <span class="chant-inline">future</span>
+                </p>
+                <p class="line translation">
+                  For my
+                  <span class="chant-inline">For my</span>
+                  future
+                  <span class="chant-inline">future</span>
+                </p>
+
+                <p class="line ruby">
+                  アイ ジャスト
+                  <span class="chant-inline">アイ ジャスト</span>
+                  ウォント トゥ
+                  <span class="chant-inline">ウォント トゥ</span>
+                </p>
+                <p class="line original">
+                  I just
+                  <span class="chant-inline">I just</span>
+                  want to
+                  <span class="chant-inline">want to</span>
+                </p>
+                <p class="line translation">
+                  I just
+                  <span class="chant-inline">I just</span>
+                  want to
+                  <span class="chant-inline">want to</span>
+                </p>
+
+                <p class="line ruby">
+                  ライズ アップ
+                  <span class="chant-inline">ライズ アップ</span>
+                  ストロンガー
+                  <span class="chant-inline">ストロンガー</span>
+                </p>
+                <p class="line original">
+                  Rise up
+                  <span class="chant-inline">Rise up</span>
+                  stronger
+                  <span class="chant-inline">stronger</span>
+                </p>
+                <p class="line translation">
+                  Rise up
+                  <span class="chant-inline">Rise up</span>
+                  stronger
+                  <span class="chant-inline">stronger</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="lisa">
+            <div class="lyric-set" data-time="179" data-time-japanese="179">
+              <div class="member-column">
+                <span class="member-id">09</span>
+                <span class="member-name">LiSA</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">
+                  アイム ゴナ ルック バック、ジ アッシズ プルーヴ マイ
+                </p>
+                <p class="line original">
+                  I'm gonna look back, the ashes prove my
+                </p>
+                <p class="line translation">
+                  I'm gonna look back, the ashes prove my
+                </p>
+
+                <p class="line ruby">
+                  パッション オールウェイズ バーンズ エターナリー
+                </p>
+                <p class="line original">Passion always burns eternally</p>
+                <p class="line translation">Passion always burns eternally</p>
+
+                <p class="line ruby">
+                  ノー リグレッツ、アイ ラヴ ディス フィーリング
+                </p>
+                <p class="line original">No regrets, I love this feeling</p>
+                <p class="line translation">No regrets, I love this feeling</p>
+
+                <p class="line ruby">ダウン オン ディス ロード</p>
+                <p class="line original">Down on this road</p>
+                <p class="line translation">Down on this road</p>
+
+                <p class="line ruby">
+                  コール イット ザ
+                  <span class="unofficial-chant">ソーシャル パス</span>
+                </p>
+                <p class="line original">
+                  Call it the
+                  <span class="unofficial-chant">Social Path</span>
+                </p>
+                <p class="line translation">
+                  Call it the
+                  <span class="unofficial-chant">Social Path</span>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="song-footer">
+      <div>
+        <strong>SKZ LYRIC LAB</strong>
+        <p>Stray Kids unofficial lyrics fan site.</p>
+      </div>
+      <span class="footer-online">DATABASE ONLINE</span>
+    </footer>
+    <button
+      aria-label="ページ上部へ戻る"
+      class="song-page-top"
+      id="songPageTop"
+      type="button"
+    >
+      ↑
+    </button>
+    <script src="../js/song.js"></script>
+    <script src="../js/youtube-player-japanese-main.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
+</html>
