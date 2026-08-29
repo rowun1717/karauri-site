@@ -755,6 +755,56 @@ const songs = [
 
   },
 
+    {
+    id: "Social-Path",
+    title: "Social Path",
+    album: "Social Path",
+    album: "ROCK-STAR",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2025.08.22",
+    url: "song/Social-Path.html",
+    image: "images/albums/Social-Path.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N",
+      "LISA"
+    ]
+
+  },
+
+    {
+    id: "Stray-Kids",
+    title: "Stray Kids",
+    album: "ATE",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2024.07.19",
+    url: "song/Stray-Kids.html",
+    image: "images/albums/ATE.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N",
+    ]
+
+  },
+
 
 
 /* ========================================
