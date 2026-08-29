@@ -707,6 +707,54 @@ const songs = [
 
   },
 
+    {
+    id: "S-Class",
+    title: "S-Class",
+    album: "5-STAR",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2023.06.02",
+    url: "song/S-Class.html",
+    image: "images/song/S-Class.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
+  {
+    id: "CEREMONY",
+    title: "CEREMONY",
+    album: "KARMA",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2025.08.22",
+    url: "song/CEREMONY.html",
+    image: "images/song/CEREMONY.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+
+  },
+
 
 
 /* ========================================
