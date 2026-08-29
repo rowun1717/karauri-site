@@ -501,20 +501,40 @@ const setlistSongs = [
     release: "2023.11.10",
     url: "song/LALALALA.html",
     image: "images/song/LALALALA.jpg",
-    category: "latest",
     karaoke: ["JOYSOUND","DAM"],
-    members: [
-      "Bang Chan",
-      "Lee Know",
-      "Changbin",
-      "Hyunjin",
-      "HAN",
-      "Felix",
-      "Seungmin",
-      "I.N"
-    ]
-
+    category: "group",
+    duration: 161
   },
+
+  {
+    id: "CEREMONY",
+    title: "CEREMONY",
+    album: "KARMA",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2025.08.22",
+    url: "song/CEREMONY.html",
+    image: "images/song/CEREMONY.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 161
+  },
+
+  {
+    id: "S-Class",
+    title: "S-Class",
+    album: "5-STAR",
+    type: "Original Song",
+    date: "2026.08.26",
+    release: "2023.06.02",
+    url: "song/S-Class.html",
+    image: "images/song/S-Class.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 161
+  },
+
+
 
 
 
