@@ -28,6 +28,8 @@
   --felix: #ffee00;
   --seungmin: #00ffb3;
   --in: #ffa7b8;
+  
+  --lisa: #ff0033;
 
   --all-members:
     linear-gradient(
@@ -2825,12 +2827,93 @@ body.show-fanchant
 }
 
 
+/* ========================================
+   ALL MEMBERSのバックボーカル
+======================================== */
+
 .backing-vocal[
   data-member="all-members"
 ] {
-  --backing-color: #fff;
+  --backing-color: #ffffff;
+
+  border-left: 0;
 }
 
+
+/* ALLの縦線を8人グラデーションにする */
+
+.backing-vocal[
+  data-member="all-members"
+]::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 3px;
+
+  background-image:
+    var(--all-members);
+}
+
+
+/* BACKING / ALLラベル */
+
+.backing-vocal[
+  data-member="all-members"
+]
+.backing-label {
+  color: transparent;
+
+  background-image:
+    var(--all-members);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color:
+    transparent;
+}
+
+
+/* ALLのカナルビ */
+
+.backing-vocal[
+  data-member="all-members"
+]
+.line.ruby {
+  color: transparent;
+
+  background-image:
+    var(--all-members);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color:
+    transparent;
+}
+
+
+/* 左側のBACKING / ALL */
+
+.lyric-block[
+  data-backing-member="all-members"
+]
+.backing-member-name {
+  color: transparent;
+
+  background-image:
+    var(--all-members);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color:
+    transparent;
+}
 
 /* ========================================
    バックボーカル本体
