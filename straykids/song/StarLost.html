@@ -1,0 +1,920 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>STAR LOST | SKZ Lyric LAB</title>
+    <link href="../css/song.css" rel="stylesheet" />
+    <link href="../css/common-header.css?v=20260806-2" rel="stylesheet" />
+    <link href="../images/logo.png" rel="icon" type="image/png" />
+    <link href="../images/icon.png" rel="apple-touch-icon" />
+    <link href="../manifest.json" rel="manifest" />
+    <meta content="#050505" name="theme-color" />
+  </head>
+  <body>
+    <!-- ファイル起動演出 -->
+    <div class="file-loader" id="fileLoader">
+      <div class="file-loader-inner">
+        <p class="loader-code">SKZ LYRIC LAB / FILE ACCESS</p>
+        <h1 data-text="Star Lost">Star Lost</h1>
+        <p id="loaderMessage">OPENING LYRIC FILE...</p>
+        <div class="loader-bar">
+          <span id="loaderProgress"></span>
+        </div>
+        <p id="loaderPercent">0%</p>
+      </div>
+    </div>
+    <!-- 背景演出 -->
+    <div class="song-grid-background"></div>
+    <div class="song-scanlines"></div>
+    <div class="song-pointer-glow" id="songPointerGlow"></div>
+    <!-- 共通ヘッダー -->
+    <header class="site-header">
+      <a class="header-logo" href="../index.html">
+        <span class="header-logo-main">SKZ</span>
+        <span class="header-logo-sub">LYRIC LAB</span>
+      </a>
+      <nav class="global-nav" id="globalNav">
+        <a href="../index.html">HOME</a>
+        <a href="../search.html">SEARCH</a>
+        <a href="../albums.html">ARCHIVE</a>
+        <a href="#lyrics">LYRICS</a>
+        <a href="../members.html">MEMBERS</a>
+        <a href="../setlist.html">SETLIST</a>
+        <a href="../about.html">ABOUT</a>
+      </nav>
+      <button
+        aria-controls="globalNav"
+        aria-expanded="false"
+        aria-label="メニューを開く"
+        class="menu-button"
+        id="menuButton"
+        type="button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+    <main>
+      <!-- 曲ヒーロー -->
+      <section class="song-hero">
+        <div class="song-hero-background">
+          <img alt="STAR LOST" src="../images/albums/NOEASY.jpg" />
+        </div>
+        <div class="song-hero-overlay"></div>
+        <div class="song-hero-content">
+          <div class="song-cover-panel reveal">
+            <div class="cover-header">
+              <span>FILE NO. Star Lost</span>
+              <span class="active-status">ACTIVE</span>
+            </div>
+            <div class="cover-frame">
+              <img alt="Star Lost" src="../images/albums/NOEASY.jpg" />
+              <span class="corner top-left"></span>
+              <span class="corner top-right"></span>
+              <span class="corner bottom-left"></span>
+              <span class="corner bottom-right"></span>
+              <div class="cover-scan"></div>
+            </div>
+            <div class="cover-footer">
+              <span>SUBJECT / STRAY KIDS</span>
+              <span>STATUS / VERIFIED</span>
+            </div>
+
+            <!-- YouTubeプレイヤー -->
+            <section
+            class="music-player"
+            data-youtube-id="5BF7cTsGFcE"
+            data-japanese-youtube-id=""
+            >              
+                <div class="youtube-player-wrap">
+                <div id="youtubePlayer"></div>
+              </div>
+              <div class="player-info">
+                <div>
+                  <span class="player-label">NOW PLAYING</span>
+                </div>
+                <span id="currentTime">0:00</span>
+              </div>
+              <input
+                aria-label="再生位置"
+                class="progress-bar"
+                id="progressBar"
+                max="100"
+                min="0"
+                step="0.1"
+                type="range"
+                value="0"
+              />
+              <div class="player-controls">
+                <button aria-label="10秒戻る" id="rewindButton" type="button">
+                  ↶
+                </button>
+                <button aria-label="再生" id="playButton" type="button">
+                  ▶
+                </button>
+                <button aria-label="10秒進む" id="forwardButton" type="button">
+                  ↷
+                </button>
+              </div>
+              <div class="player-bottom">
+                <span id="duration">0:00</span>
+                <button aria-label="ミュート" id="muteButton" type="button">
+                  🔊
+                </button>
+              </div>
+            </section>
+          </div>
+          <div class="song-main-data reveal">
+            <p class="song-eyebrow">LYRIC ANALYSIS FILE</p>
+            <div class="song-tags">
+              <span class="song-tag">Original Song</span>
+              <span class="song-tag">NOEASY</span>
+            </div>
+            <h1 class="song-title">Star Lost</h1>
+            <p class="song-subtitle">Stray Kids</p>
+            <!-- 基本情報＋Credits -->
+            <dl class="song-data-table">
+              <div>
+                <dt>ALBUM</dt>
+                <dd>NOEASY</dd>
+              </div>
+              <div>
+                <dt>RELEASE</dt>
+                <dd>2021.08.23</dd>
+              </div>
+              <div>
+                <dt>UPDATED</dt>
+                <dd>2026.08.28</dd>
+              </div>
+              <div>
+                <dt>LANGUAGE</dt>
+                <dd>KOREAN / ENGLISH</dd>
+              </div>
+              <!-- Credits情報 -->
+              <div>
+                <dt>LYRICS</dt>
+                <dd>—</dd>
+              </div>
+              <div>
+                <dt>COMPOSED</dt>
+                <dd>—</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="song-hero-number">FILE / STAR LOST</div>
+        </div>
+      </section>
+      <!-- メンバーカラー -->
+      <section class="member-file-section">
+        <div class="section-label reveal">
+          <p>02 / MEMBER IDENTIFICATION</p>
+          <h2>Part Colors</h2>
+        </div>
+        <div class="member-filter reveal">
+          <button
+            class="member-filter-button active"
+            data-member="all"
+            type="button"
+          >
+            ALL
+          </button>
+          <button
+            class="member-filter-button chan"
+            data-member="bangchan"
+            type="button"
+          >
+            BANG CHAN
+          </button>
+          <button
+            class="member-filter-button leeknow"
+            data-member="leeknow"
+            type="button"
+          >
+            LEE KNOW
+          </button>
+          <button
+            class="member-filter-button changbin"
+            data-member="changbin"
+            type="button"
+          >
+            CHANGBIN
+          </button>
+          <button
+            class="member-filter-button hyunjin"
+            data-member="hyunjin"
+            type="button"
+          >
+            HYUNJIN
+          </button>
+          <button
+            class="member-filter-button han"
+            data-member="han"
+            type="button"
+          >
+            HAN
+          </button>
+          <button
+            class="member-filter-button felix"
+            data-member="felix"
+            type="button"
+          >
+            FELIX
+          </button>
+          <button
+            class="member-filter-button seungmin"
+            data-member="seungmin"
+            type="button"
+          >
+            SEUNGMIN
+          </button>
+          <button
+            class="member-filter-button in"
+            data-member="in"
+            type="button"
+          >
+            I.N
+          </button>
+        </div>
+      </section>
+      <!-- 歌詞 -->
+      <section class="lyrics-section" id="lyrics">
+        <div class="lyrics-header reveal">
+          <div>
+            <p>03 / LYRIC DATABASE</p>
+            <h2>Lyrics</h2>
+          </div>
+          <div class="lyrics-view-controls">
+            <button class="view-button active" data-view="all" type="button">
+              ALL DATA
+            </button>
+            <button class="view-button" data-view="original" type="button">
+              ORIGINAL
+            </button>
+            <button class="view-button" data-view="kana" type="button">
+              KANA
+            </button>
+            <button class="view-button" data-view="japanese" type="button">
+              JAPANESE
+            </button>
+            <button
+              aria-pressed="false"
+              class="view-button fanchant-toggle"
+              id="fanchantToggle"
+              type="button"
+            >
+              FANCHANT OFF
+            </button>
+          </div>
+        </div>
+        <div class="lyrics-console">
+          <div class="lyrics-console-top">
+            <span>FILE : STAR LOST.LYRIC</span>
+            <span>STATUS : DECODED</span>
+          </div>
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="13">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">おどぅうぉじょ がぬん デイ バイ デイ</p>
+                <p class="line original">어두워져 가는 day by day</p>
+                <p class="line translation">日ごとに暗くなっていく</p>
+
+                <p class="line ruby">よくしむじょちゃ いろぼりん なえげ</p>
+                <p class="line original">욕심조차 잃어버린 나에게</p>
+                <p class="line translation">欲さえ失ってしまった僕に</p>
+
+                <p class="line ruby">ほんじゃ なむぎょじん どぅったん</p>
+                <p class="line original">혼자 남겨진 듯한</p>
+                <p class="line translation">ひとり残されたような</p>
+
+                <p class="line ruby">まうみ なる ちぼさむきんだ</p>
+                <p class="line original">마음이 날 집어삼킨다</p>
+                <p class="line translation">その感覚が僕をのみ込んでいく</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="28">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">あむ いるど おぷそっとん ごっちょろむ</p>
+                <p class="line original">아무 일도 없었던 것처럼</p>
+                <p class="line translation">何事もなかったかのように</p>
+
+                <p class="line ruby">とむどまげ さら ぼぁど</p>
+                <p class="line original">덤덤하게 살아 봐도</p>
+                <p class="line translation">平然と生きてみても</p>
+
+                <p class="line ruby">なん とぅりょうぉじょ が</p>
+                <p class="line original">난 두려워져 가</p>
+                <p class="line translation">僕はだんだん怖くなっていく</p>
+
+                <p class="line ruby">ほるろ なむぎょじょ ぼりるか</p>
+                <p class="line original">홀로 남겨져 버릴까</p>
+                <p class="line translation">ひとり残されてしまうのではないかと</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="43">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ゼイ セイ、“ユー ベター ビー アローン、イット ハーツ”</p>
+                <p class="line original">They say, “You better be alone, it hurts”</p>
+                <p class="line translation">みんなは言う「ひとりでいる方がいい、傷つくだけだから」と</p>
+
+                <p class="line ruby">にが おむぬん いごっせそん</p>
+                <p class="line original">네가 없는 이곳에선</p>
+                <p class="line translation">君がいないこの場所では</p>
+
+                <p class="line ruby">ほごんえ なるりぬん ちるむん</p>
+                <p class="line original">허공에 날리는 질문</p>
+                <p class="line translation">宙を舞っていく疑問</p>
+
+                <p class="line ruby">とろぷけ ほじょなん きぶん</p>
+                <p class="line original">더럽게 허전한 기분</p>
+                <p class="line translation">ひどく虚しくて物足りない気分</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="52">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">おんじぇんが い こんほはみ ちぇうぉじぎる ぱれ</p>
+                <p class="line original">언젠간 이 공허함이 채워지길 바래</p>
+                <p class="line translation">いつかこの虚しさが満たされることを願ってる</p>
+
+                <p class="line ruby">おでぃんじまん まれ くむばん かるけ</p>
+                <p class="line original">어딘지만 말해 금방 갈게</p>
+                <p class="line translation">どこにいるのかだけ教えて、すぐに行くから</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="miso">
+            <div class="lyric-set" data-time="56">
+              <div class="member-column">
+                <span class="member-id">02 + 05</span>
+                <span class="member-name">LEE KNOW × HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">せんがくぼだ もるじ あぬる こや</p>
+                <p class="line original">생각보다 멀지 않을 거야</p>
+                <p class="line translation">思っているほど遠くはないはずだよ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="58">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ぱむはぬる そげ のるる さんさんうる へ</p>
+                <p class="line original">밤하늘 속에 너를 상상을 해</p>
+                <p class="line translation">夜空の中にいる君を想像する</p>
+
+                <p class="line ruby">のん おでぃそんが なる うぃろへ</p>
+                <p class="line original">넌 어디선가 날 위로해</p>
+                <p class="line translation">君はどこかで僕を慰めてくれる</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="66">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ドント マター たんじゃん もどぅん ごる いろど</p>
+                <p class="line original">Don’t matter 당장 모든 걸 잃어도</p>
+                <p class="line translation">構わない、今すべてを失ったとしても</p>
+
+                <p class="line ruby">に せんがぐる はみょ ぽてぃょ</p>
+                <p class="line original">네 생각을 하며 버텨</p>
+                <p class="line translation">君のことを考えながら耐えるんだ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="71">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">おでぃらど かるけ</p>
+                <p class="line original">어디라도 갈게</p>
+                <p class="line translation">どこへでも行くよ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="74">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">おぬるど</p>
+                <p class="line original">오늘도</p>
+                <p class="line translation">今日も</p>
+
+                <p class="line ruby">トリッピン、アイム トリッピン、アイム トリッピン</p>
+                <p class="line original">Trippin’ I’m trippin’ I’m trippin’</p>
+                <p class="line translation">さまよい続ける、僕は迷い続けている</p>
+
+                <p class="line ruby">のらん ぴちゅる ちゃじゃ</p>
+                <p class="line original">너란 빛을 찾아</p>
+                <p class="line translation">君という光を求めて</p>
+
+                <p class="line ruby">こうる そげ ぴちん なん まち</p>
+                <p class="line original">거울 속에 비친 난 마치</p>
+                <p class="line translation">鏡の中に映った僕はまるで</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="81">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">きるる いるん ごっちょろむ スタック イン ザ ダーク</p>
+                <p class="line original">길을 잃은 것처럼 stuck in the dark</p>
+                <p class="line translation">道に迷ったように、暗闇から抜け出せない</p>
+
+                <p class="line ruby">きぷん あんげ そげ へめんだ</p>
+                <p class="line original">깊은 안개 속에 헤맨다</p>
+                <p class="line translation">深い霧の中をさまよう</p>
+
+                <p class="line ruby">アイム スター ロスト</p>
+                <p class="line original">I’m star lost</p>
+                <p class="line translation">僕は星を見失っている</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="89">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">っくむそげそど にが くりうぉ ちゃっく なん のる ちゃっけ どぅぇ</p>
+                <p class="line original">꿈속에서도 네가 그리워 자꾸 난 널 찾게 돼</p>
+                <p class="line translation">夢の中でも君が恋しくて、何度も君を探してしまう</p>
+
+                <p class="line ruby">きるる へめだが たし ちゃじゃわ っと かっとぅん ちゃりえ</p>
+                <p class="line original">길을 헤매다가 다시 찾아와 또 같은 자리에</p>
+                <p class="line translation">道に迷った末、また同じ場所へ戻ってくる</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="97">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">わった がった リセット ぬぬる とぅみょん プレイバック</p>
+                <p class="line original">왔다 갔다 reset 눈을 뜨면 play back</p>
+                <p class="line translation">行ったり来たりしてリセット、目を覚ませばまた再生される</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="101">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">おじろうぉ クレイジー とぅりょうぉど キープ プレイング</p>
+                <p class="line original">어지러워 crazy 두려워도 keep playing</p>
+                <p class="line translation">目が回りそうでおかしくなる、怖くても進み続ける</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="104">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">っくぁく ちゃば ふんどぅるりぬん ね まむ</p>
+                <p class="line original">꽉 잡아 흔들리는 내 맘</p>
+                <p class="line translation">揺れ動く僕の心を強くつかんで</p>
+
+                <p class="line ruby">もむちゅる すが おぷそ キャント ストップ</p>
+                <p class="line original">멈출 수가 없어 can’t stop</p>
+                <p class="line translation">止めることができない</p>
+
+                <p class="line ruby">に せんがげ ちゃっく もんってりじ</p>
+                <p class="line original">네 생각에 자꾸 멍때리지</p>
+                <p class="line translation">君のことを考えて何度もぼんやりしてしまう</p>
+
+                <p class="line ruby">ちぐ はん ぱくぃるる っぺんっぺに</p>
+                <p class="line original">지구 한 바퀴를 뺑뺑이</p>
+                <p class="line translation">地球を一周するようにぐるぐる回り続ける</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="112">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">にが おでぃえ いっとぅん</p>
+                <p class="line original">네가 어디에 있든</p>
+                <p class="line translation">君がどこにいたとしても</p>
+
+                <p class="line ruby">ちゃじゃねる こらん みどぅむ</p>
+                <p class="line original">찾아낼 거란 믿음</p>
+                <p class="line translation">必ず見つけ出せるという確信</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="poppoz">
+            <div class="lyric-set" data-time="116">
+              <div class="member-column">
+                <span class="member-id">05 + 08</span>
+                <span class="member-name">HAN × I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">とぅぃどらぼじ あぬる こや</p>
+                <p class="line original">뒤돌아보지 않을 거야</p>
+                <p class="line translation">もう振り返らないよ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="118">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ぱむはぬる そげ のるる さんさんうる へ</p>
+                <p class="line original">밤하늘 속에 너를 상상을 해</p>
+                <p class="line translation">夜空の中にいる君を想像する</p>
+
+                <p class="line ruby">のん おでぃそんが なる うぃろへ</p>
+                <p class="line original">넌 어디선가 날 위로해</p>
+                <p class="line translation">君はどこかで僕を慰めてくれる</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="leeknow">
+            <div class="lyric-set" data-time="126">
+              <div class="member-column">
+                <span class="member-id">02</span>
+                <span class="member-name">LEE KNOW</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ドント マター たんじゃん もどぅん ごる いろど</p>
+                <p class="line original">Don’t matter 당장 모든 걸 잃어도</p>
+                <p class="line translation">構わない、今すべてを失ったとしても</p>
+
+                <p class="line ruby">に せんがぐる はみょ ぽてぃょ</p>
+                <p class="line original">네 생각을 하며 버텨</p>
+                <p class="line translation">君のことを考えながら耐えるんだ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="130">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">おでぃらど かるけ</p>
+                <p class="line original">어디라도 갈게</p>
+                <p class="line translation">どこへでも行くよ</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="134">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">おぬるど</p>
+                <p class="line original">오늘도</p>
+                <p class="line translation">今日も</p>
+
+                <p class="line ruby">トリッピン、アイム トリッピン、アイム トリッピン</p>
+                <p class="line original">Trippin’ I’m trippin’ I’m trippin’</p>
+                <p class="line translation">さまよい続ける、僕は迷い続けている</p>
+
+                <p class="line ruby">のらん ぴちゅる ちゃじゃ</p>
+                <p class="line original">너란 빛을 찾아</p>
+                <p class="line translation">君という光を求めて</p>
+
+                <p class="line ruby">こうる そげ ぴちん なん まち</p>
+                <p class="line original">거울 속에 비친 난 마치</p>
+                <p class="line translation">鏡の中に映った僕はまるで</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="141">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">きるる いるん ごっちょろむ スタック イン ザ ダーク</p>
+                <p class="line original">길을 잃은 것처럼 stuck in the dark</p>
+                <p class="line translation">道に迷ったように、暗闇から抜け出せない</p>
+
+                <p class="line ruby">きぷん あんげ そげ へめんだ</p>
+                <p class="line original">깊은 안개 속에 헤맨다</p>
+                <p class="line translation">深い霧の中をさまよう</p>
+
+                <p class="line ruby">アイム スター ロスト</p>
+                <p class="line original">I’m star lost</p>
+                <p class="line translation">僕は星を見失っている</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="150">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">オー オー オー オー</p>
+                <p class="line original">Oh oh oh oh</p>
+                <p class="line translation">オー オー オー オー</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="153">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">（オー エ オー エ）</p>
+                <p class="line original">(Oh eh oh eh)</p>
+                <p class="line translation">（オー エ オー エ）</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="in">
+            <div class="lyric-set" data-time="154">
+              <div class="member-column">
+                <span class="member-id">08</span>
+                <span class="member-name">I.N</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">オー オー オー オー</p>
+                <p class="line original">Oh oh oh oh</p>
+                <p class="line translation">オー オー オー オー</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="157">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">（オー エ オー エ）</p>
+                <p class="line original">(Oh eh oh eh)</p>
+                <p class="line translation">（オー エ オー エ）</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="hyunjin">
+            <div class="lyric-set" data-time="157">
+              <div class="member-column">
+                <span class="member-id">04</span>
+                <span class="member-name">HYUNJIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ね もどぅん かむがく ちょんへじん ぱんひゃん のる ったらが オール アウト</p>
+                <p class="line original">내 모든 감각 정해진 방향 널 따라가 all out</p>
+                <p class="line translation">僕のすべての感覚が示す方向へ、全力で君を追いかける</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="han">
+            <div class="lyric-set" data-time="162">
+              <div class="member-column">
+                <span class="member-id">05</span>
+                <span class="member-name">HAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">コーズ トラスト ミー、アイル ビー ウィズ ユー スター ロスト</p>
+                <p class="line original">’Cause trust me, I’ll be with you, star lost</p>
+                <p class="line translation">だから僕を信じて、星を見失っても君と一緒にいる</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="seungmin">
+            <div class="lyric-set" data-time="165">
+              <div class="member-column">
+                <span class="member-id">07</span>
+                <span class="member-name">SEUNGMIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">おぬるど</p>
+                <p class="line original">오늘도</p>
+                <p class="line translation">今日も</p>
+
+                <p class="line ruby">トリッピン、アイム トリッピン、アイム トリッピン</p>
+                <p class="line original">Trippin’ I’m trippin’ I’m trippin’</p>
+                <p class="line translation">さまよい続ける、僕は迷い続けている</p>
+
+                <p class="line ruby">のらん ぴちゅる ちゃじゃ</p>
+                <p class="line original">너란 빛을 찾아</p>
+                <p class="line translation">君という光を求めて</p>
+
+                <p class="line ruby">こうる そげ ぴちん なん まち</p>
+                <p class="line original">거울 속에 비친 난 마치</p>
+                <p class="line translation">鏡の中に映った僕はまるで</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="172">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">きるる いるん ごっちょろむ スタック イン ザ ダーク</p>
+                <p class="line original">길을 잃은 것처럼 stuck in the dark</p>
+                <p class="line translation">道に迷ったように、暗闇から抜け出せない</p>
+
+                <p class="line ruby">きぷん あんげ そげ へめんだ</p>
+                <p class="line original">깊은 안개 속에 헤맨다</p>
+                <p class="line translation">深い霧の中をさまよう</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="felix">
+            <div class="lyric-set" data-time="180">
+              <div class="member-column">
+                <span class="member-id">06</span>
+                <span class="member-name">FELIX</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ユー ガット ミー フィーリング スター ロスト</p>
+                <p class="line original">You got me feeling star lost</p>
+                <p class="line translation">君のせいで星を見失ったような気分になる</p>
+
+                <p class="line ruby">スター ロスト（フー フー）</p>
+                <p class="line original">Star lost (hoo hoo)</p>
+                <p class="line translation">星を見失って（フー フー）</p>
+
+                <p class="line ruby">イェ、アイル ビー スター ロスト、スター ロスト（フー フー）</p>
+                <p class="line original">Yeah I’ll be star lost, star lost (hoo hoo)</p>
+                <p class="line translation">僕は星を見失ったまま、さまよい続ける</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="changbin">
+            <div class="lyric-set" data-time="188">
+              <div class="member-column">
+                <span class="member-id">03</span>
+                <span class="member-name">CHANGBIN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">フィーリング スター ロスト、スター ロスト（フー フー）</p>
+                <p class="line original">Feeling star lost, star lost (hoo hoo)</p>
+                <p class="line translation">星を見失ったような気分で、さまよっている</p>
+
+                <p class="line ruby">イェ、アイル ビー スター ロスト、スター ロスト</p>
+                <p class="line original">Yeah I’ll be star lost, star lost</p>
+                <p class="line translation">僕は星を見失ったまま、さまよい続ける</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="all-members">
+            <div class="lyric-set" data-time="195">
+              <div class="member-column">
+                <span class="member-id">00</span>
+                <span class="member-name">ALL</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">ユー ガット ミー フィーリング スター ロスト</p>
+                <p class="line original">You got me feeling star lost</p>
+                <p class="line translation">君のせいで星を見失ったような気分になる</p>
+
+                <p class="line ruby">スター ロスト（フー フー）</p>
+                <p class="line original">Star lost (hoo hoo)</p>
+                <p class="line translation">星を見失って（フー フー）</p>
+
+                <p class="line ruby">イェ、アイル ビー スター ロスト、スター ロスト（フー フー）</p>
+                <p class="line original">Yeah I’ll be star lost, star lost (hoo hoo)</p>
+                <p class="line translation">僕は星を見失ったまま、さまよい続ける</p>
+
+                <p class="line ruby">フィーリング スター ロスト、スター ロスト（フー フー）</p>
+                <p class="line original">Feeling star lost, star lost (hoo hoo)</p>
+                <p class="line translation">星を見失ったような気分で、さまよっている</p>
+
+                <p class="line ruby">イェ、アイル ビー スター ロスト、スター ロスト</p>
+                <p class="line original">Yeah I’ll be star lost, star lost</p>
+                <p class="line translation">僕は星を見失ったまま、さまよい続ける</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="lyric-block" data-member="bangchan">
+            <div class="lyric-set" data-time="210">
+              <div class="member-column">
+                <span class="member-id">01</span>
+                <span class="member-name">BANG CHAN</span>
+              </div>
+              <div class="lyric-data">
+                <p class="line ruby">アイム スター ロスト</p>
+                <p class="line original">I’m star lost</p>
+                <p class="line translation">僕は星を見失っている</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="song-footer">
+      <div>
+        <strong>SKZ LYRIC LAB</strong>
+        <p>Stray Kids unofficial lyrics fan site.</p>
+      </div>
+      <span class="footer-online">DATABASE ONLINE</span>
+    </footer>
+    <button
+      aria-label="ページ上部へ戻る"
+      class="song-page-top"
+      id="songPageTop"
+      type="button"
+    >
+      ↑
+    </button>
+    <script src="../js/song.js"></script>
+    <script src="../js/youtube-player.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
+</html>
