@@ -393,7 +393,7 @@ const setlistSongs = [
 
     {
     id: "God'sMenu",
-    title: "God’s Menu",
+    title: "God's Menu",
     album: "GO LIVE",
     release: "2020.06.17",
     url: "song/God'sMenu.html",
@@ -581,6 +581,33 @@ const setlistSongs = [
     date: "2026.08.29",
     url: "song/MIROH.html",
     image: "images/albums/Cle 1 MIROH.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 161
+  },
+
+  {
+    id: "Phoenix",
+    title: "Phoenix",
+    album: "KARMA",
+    type: "Original Song",
+    date: "2026.08.29",
+    url: "song/Phoenix.html",
+    image: "images/albums/KARMA.png",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "group",
+    duration: 161
+  },
+
+  {
+    id: "StarLost",
+    title: "Star Lost",
+    album: "NOEASY",
+    type: "Original Song",
+    date: "2026.09.06",
+    url: "song/StarLost.html",
+    image: "images/albums/NOEASY.jpg",
+    image: "images/albums/KARMA.jpg",
     karaoke: ["JOYSOUND","DAM"],
     category: "group",
     duration: 161
@@ -2450,7 +2477,7 @@ const liveSetlists = [
         type: "main"
       },
       {
-        title: "God’s Menu",
+        title: "God's Menu",
         type: "vcr"
       },
       {
@@ -2583,7 +2610,7 @@ const liveSetlists = [
             type: "main"
         },
         {
-            title: "HELLAVATOR",
+            title: "Hellevator",
             type: "main"
         },
         {
@@ -2744,7 +2771,7 @@ const liveSetlists = [
             type: "main"
         },
         {
-            title: "HELLAVATOR",
+            title: "Hellevator",
             type: "main"
         },
         {
@@ -2905,7 +2932,7 @@ const liveSetlists = [
             type: "main"
         },
         {
-            title: "HELLAVATOR",
+            title: "Hellevator",
             type: "main"
         },
         {
@@ -3066,7 +3093,7 @@ const liveSetlists = [
             type: "main"
         },
         {
-            title: "HELLAVATOR",
+            title: "Hellevator",
             type: "main"
         },
         {
@@ -3193,7 +3220,7 @@ const liveSetlists = [
     },
 
  {
-    id: "runit-tokyo-day5",
+    id: "runit-tokyo-day1",
 
     tourId: "tokyou-runit",
 
@@ -3227,9 +3254,320 @@ const liveSetlists = [
         "MUFGスタジアム公演1日目のセットリストです。",
 
         songs: [
-        
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          type: "main"
+          },
+          {
+          title: "THIS & THAT",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "remix",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "FATE",
+            type: "encore"
+        },
+        {
+            title: "After You",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "TOPLINE",
+            type: "encore"
+        },
+        {
+            title: "Star Lost",
+            type: "encore"
+        },
         ]
     },
+
+     {
+    id: "runit-tokyo-day2",
+
+    tourId: "tokyou-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 2",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.08.30",
+
+    year: 2026,
+
+    venue:
+        "MUFGスタジアム",
+
+    city:
+        "TOKYO",
+
+    country:
+        "japan",
+
+    countryLabel:
+        "JAPAN",
+
+    note:
+        "MUFGスタジアム公演2日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          type: "main"
+          },
+          {
+          title: "THIS & THAT",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "remix",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "宿命",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "Side Effects",
+            version: "Remix.",
+            type: "encore"
+        },
+        {
+            title: "Haven",
+            type: "encore"
+        },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Boxer",
+            type: "encore"
+        },
+        ]
+    },
+
 
 ];
 
@@ -3628,21 +3966,20 @@ function renderLiveSetlists(liveList) {
 
   liveSetlistGrid.innerHTML = "";
 
-
   /*
-    同じtourIdの公演をグループ化
+    同じツアー名の公演を1枚にまとめる
+    tourIdが場所ごとに違っていてもOK
   */
   const tourGroups = new Map();
 
   liveList.forEach((live) => {
     const groupId =
-      live.tourId || live.id;
+      live.tour ||
+      live.tourId ||
+      live.id;
 
     if (!tourGroups.has(groupId)) {
-      tourGroups.set(
-        groupId,
-        []
-      );
+      tourGroups.set(groupId, []);
     }
 
     tourGroups
@@ -3650,19 +3987,13 @@ function renderLiveSetlists(liveList) {
       .push(live);
   });
 
-
-  /*
-    Mapを配列へ変換
-  */
   const groupedTours =
     Array.from(
       tourGroups.values()
     );
 
-
   /*
-    カウントは公演数ではなく
-    ツアー数を表示
+    カード数
   */
   if (liveSetlistCount) {
     liveSetlistCount.textContent =
@@ -3670,21 +4001,22 @@ function renderLiveSetlists(liveList) {
         .padStart(2, "0")} FILES`;
   }
 
-
+  /*
+    検索結果なし
+  */
   if (liveSetlistNoResults) {
     liveSetlistNoResults.hidden =
       groupedTours.length !== 0;
   }
 
-
   /*
-    1ツアーにつき1カード
+    ツアーカード作成
   */
   groupedTours.forEach(
     (tourDates, index) => {
 
       /*
-        DAY 1 → DAY 2 → DAY 3の順
+        公演を日付順に並べる
       */
       tourDates.sort((a, b) => {
         return String(a.date)
@@ -3692,7 +4024,6 @@ function renderLiveSetlists(liveList) {
             String(b.date)
           );
       });
-
 
       const firstLive =
         tourDates[0];
@@ -3702,9 +4033,8 @@ function renderLiveSetlists(liveList) {
           tourDates.length - 1
         ];
 
-
       /*
-        日付表示
+        ツアー全体の日付
       */
       const dateText =
         firstLive.date ===
@@ -3712,59 +4042,201 @@ function renderLiveSetlists(liveList) {
           ? firstLive.date
           : `${firstLive.date} — ${lastLive.date}`;
 
-
       /*
-        会場名
+        ツアー全体の会場
       */
       const venues = [
         ...new Set(
-          tourDates.map(
-            (live) => live.venue
-          )
+          tourDates
+            .map((live) => {
+              return live.venue;
+            })
+            .filter(Boolean)
         )
       ];
 
       const venueText =
         venues.join(" / ");
 
+      /*
+        国名
+      */
+      const countries = [
+        ...new Set(
+          tourDates
+            .map((live) => {
+              return (
+                live.countryLabel ||
+                live.country
+              );
+            })
+            .filter(Boolean)
+        )
+      ];
+
+      const countryText =
+        countries.length === 1
+          ? countries[0]
+          : "WORLD TOUR";
 
       /*
-        DAYボタン
+        同じツアー内を
+        都市・会場ごとにまとめる
       */
-      const dayButtons =
-        tourDates.map(
-          (live, dayIndex) => {
+      const locationGroups =
+        new Map();
 
-            const dayLabel =
-              live.day ||
-              `DAY ${dayIndex + 1}`;
+      tourDates.forEach((live) => {
+        const locationId = [
+          live.country ||
+            live.countryLabel ||
+            "",
+          live.city || "",
+          live.venue || ""
+        ].join("::");
+
+        if (
+          !locationGroups.has(
+            locationId
+          )
+        ) {
+          locationGroups.set(
+            locationId,
+            []
+          );
+        }
+
+        locationGroups
+          .get(locationId)
+          .push(live);
+      });
+
+      /*
+        場所ごとのボタンを作る
+      */
+      const locationSections =
+        Array.from(
+          locationGroups.values()
+        )
+          .map((locationDates) => {
+
+            /*
+              場所内も日付順
+            */
+            locationDates.sort(
+              (a, b) => {
+                return String(a.date)
+                  .localeCompare(
+                    String(b.date)
+                  );
+              }
+            );
+
+            const firstLocationLive =
+              locationDates[0];
+
+            const lastLocationLive =
+              locationDates[
+                locationDates.length - 1
+              ];
+
+            /*
+              SEOUL / KSPO DOME
+              TOKYO / MUFGスタジアム
+            */
+            const locationName = [
+              firstLocationLive.city,
+              firstLocationLive.venue
+            ]
+              .filter(Boolean)
+              .join(" / ");
+
+            /*
+              場所ごとの日付
+            */
+            const locationDateText =
+              firstLocationLive.date ===
+              lastLocationLive.date
+                ? firstLocationLive.date
+                : `${firstLocationLive.date} — ${lastLocationLive.date}`;
+
+            /*
+              DAYボタン
+            */
+            const performanceButtons =
+              locationDates
+                .map(
+                  (live, dayIndex) => {
+                    const dayLabel =
+                      live.day ||
+                      `DAY ${dayIndex + 1}`;
+
+                    return `
+                      <button
+                        class="live-day-button"
+                        type="button"
+                        data-open-live="${escapeHtml(
+                          live.id
+                        )}"
+                      >
+                        <span
+                          class="live-day-number"
+                        >
+                          ${escapeHtml(
+                            dayLabel
+                          )}
+                        </span>
+
+                        <span
+                          class="live-day-date"
+                        >
+                          ${escapeHtml(
+                            live.date
+                          )}
+                        </span>
+                      </button>
+                    `;
+                  }
+                )
+                .join("");
 
             return `
-              <button
-                class="live-day-button"
-                type="button"
-                data-open-live="${escapeHtml(
-                  live.id
-                )}"
+              <section
+                class="live-location-group"
               >
-                <span class="live-day-number">
-                  ${escapeHtml(
-                    dayLabel
-                  )}
-                </span>
+                <div
+                  class="live-location-header"
+                >
+                  <p
+                    class="live-location-name"
+                  >
+                    ${escapeHtml(
+                      locationName
+                    )}
+                  </p>
 
-                <span class="live-day-date">
-                  ${escapeHtml(
-                    live.date
-                  )}
-                </span>
-              </button>
+                  <span
+                    class="live-location-date"
+                  >
+                    ${escapeHtml(
+                      locationDateText
+                    )}
+                  </span>
+                </div>
+
+                <div
+                  class="live-day-buttons"
+                >
+                  ${performanceButtons}
+                </div>
+              </section>
             `;
-          }
-        )
-        .join("");
+          })
+          .join("");
 
-
+      /*
+        ツアーカード本体
+      */
       const card =
         document.createElement(
           "article"
@@ -3773,23 +4245,25 @@ function renderLiveSetlists(liveList) {
       card.className =
         "live-setlist-card live-tour-card";
 
-
       card.innerHTML = `
         <div class="live-card-top">
 
-          <span class="live-card-file-id">
+          <span
+            class="live-card-file-id"
+          >
             LIVE-${String(index + 1)
               .padStart(3, "0")}
           </span>
 
-          <span class="live-card-country">
+          <span
+            class="live-card-country"
+          >
             ${escapeHtml(
-              firstLive.countryLabel
+              countryText
             )}
           </span>
 
         </div>
-
 
         <h3 class="live-card-tour">
           ${escapeHtml(
@@ -3797,13 +4271,12 @@ function renderLiveSetlists(liveList) {
           )}
         </h3>
 
-
         <p class="live-card-type">
           ${String(
             tourDates.length
-          ).padStart(2, "0")} SHOWS ARCHIVED
+          ).padStart(2, "0")}
+          SHOWS ARCHIVED
         </p>
-
 
         <div class="live-card-meta">
 
@@ -3839,24 +4312,25 @@ function renderLiveSetlists(liveList) {
 
         </div>
 
-
         <div class="live-day-selector">
 
-          <p class="live-day-selector-label">
+          <p
+            class="live-day-selector-label"
+          >
             SELECT PERFORMANCE
           </p>
 
-          <div class="live-day-buttons">
-            ${dayButtons}
+          <div
+            class="live-location-groups"
+          >
+            ${locationSections}
           </div>
 
         </div>
       `;
 
-
-      liveSetlistGrid.appendChild(
-        card
-      );
+      liveSetlistGrid
+        .appendChild(card);
     }
   );
 }
@@ -4000,28 +4474,39 @@ function renderLiveViewerSongs(live) {
     }
 
 
-    const titleElement =
-      registeredSong
-        ? `
-          <a
-            class="live-song-title"
-            href="${escapeHtml(
-              registeredSong.url
-            )}"
-          >
-            ${escapeHtml(
-              liveSong.title
-            )}
-          </a>
-        `
-        : `
-          <span class="live-song-title">
-            ${escapeHtml(
-              liveSong.title
-            )}
-          </span>
-        `;
+    const versionTag = liveSong.version
+  ? `
+    <span class="live-song-version">
+      ${escapeHtml(liveSong.version)}
+    </span>
+  `
+  : "";
 
+  const titleElement =
+    registeredSong
+      ? `
+        <a
+          class="live-song-title"
+          href="${escapeHtml(
+            registeredSong.url
+          )}"
+        >
+          <span>
+            ${escapeHtml(liveSong.title)}
+          </span>
+
+          ${versionTag}
+        </a>
+      `
+      : `
+        <span class="live-song-title">
+          <span>
+            ${escapeHtml(liveSong.title)}
+          </span>
+
+          ${versionTag}
+        </span>
+      `;
 
     const statusElement =
       registeredSong
