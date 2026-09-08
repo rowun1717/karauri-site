@@ -853,6 +853,55 @@ const songs = [
 
   },
 
+  {
+    id: "Phoenix",
+    title: "Phoenix",
+    album: "KARMA",
+    type: "Original Song",
+    date: "2026.09.06",
+    release: "2025.08.22",
+    url: "song/Phoenix.html",
+    image: "images/albums/KARMA.png",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N",
+    ]
+
+  },
+
+
+    {
+    id: "StarLost",
+    title: "Star Lost",
+    album: "NOEASY",
+    type: "Original Song",
+    date: "2026.09.06",
+    release: "2021.08.23",
+    url: "song/StarLost.html",
+    image: "images/albums/NOEASY.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N",
+    ]
+
+  },
+
 
 
 /* ========================================
