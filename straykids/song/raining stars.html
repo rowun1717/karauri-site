@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   유성우 (Raining Stars) | HAN | SKZ Lyric LAB
+  </title>
+  <link href="../css/song.css" rel="stylesheet"/>
+  <link href="../css/common-header.css?v=20260806-2" rel="stylesheet"/>
+  <link href="../images/logo.png" rel="icon" type="image/png"/>
+  <link href="../images/icon.png" rel="apple-touch-icon"/>
+  <link href="manifest.json" rel="manifest"/>
+  <meta content="#050505" name="theme-color"/>
+ </head>
+ <body>
+  <!-- ファイル起動演出 -->
+  <div class="file-loader" id="fileLoader">
+   <div class="file-loader-inner">
+    <p class="loader-code">
+     SKZ LYRIC LAB / FILE ACCESS
+    </p>
+    <h1 data-text="Raining Stars">
+     Raining Stars
+    </h1>
+    <p id="loaderMessage">
+     OPENING LYRIC FILE...
+    </p>
+    <div class="loader-bar">
+     <span id="loaderProgress">
+     </span>
+    </div>
+    <p id="loaderPercent">
+     0%
+    </p>
+   </div>
+  </div>
+  <!-- 背景演出 -->
+  <div class="song-grid-background">
+  </div>
+  <div class="song-scanlines">
+  </div>
+  <div class="song-pointer-glow" id="songPointerGlow">
+  </div>
+  <!-- 共通ヘッダー -->
+  <header class="site-header">
+   <a class="header-logo" href="../index.html">
+    <span class="header-logo-main">
+     SKZ
+    </span>
+    <span class="header-logo-sub">
+     LYRIC LAB
+    </span>
+   </a>
+   <nav class="global-nav" id="globalNav">
+    <a href="../index.html">
+     HOME
+    </a>
+    <a href="../search.html">
+     SEARCH
+    </a>
+    <a href="../albums.html">
+     ARCHIVE
+    </a>
+    <a href="#lyrics">
+     LYRICS
+    </a>
+    <a href="../members.html">
+     MEMBERS
+    </a>
+    <a href="../setlist.html">
+     SETLIST
+    </a>
+    <a href="../about.html">
+     ABOUT
+    </a>
+   </nav>
+   <button aria-controls="globalNav" aria-expanded="false" aria-label="メニューを開く" class="menu-button" id="menuButton" type="button">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </button>
+  </header>
+  <main>
+   <!-- 曲ヒーロー -->
+   <section class="song-hero">
+    <div class="song-hero-background">
+     <img alt="Raining Stars" src="../images/song/raining_stars.jpg"/>
+    </div>
+    <div class="song-hero-overlay">
+    </div>
+    <div class="song-hero-content">
+     <div class="song-cover-panel reveal">
+      <div class="cover-header">
+       <span>
+        FILE NO. Raining Stars
+       </span>
+       <span class="active-status">
+        ACTIVE
+       </span>
+      </div>
+      <div class="cover-frame">
+       <img alt="Raining Stars" src="../images/song/raining_stars.jpg"/>
+       <span class="corner top-left">
+       </span>
+       <span class="corner top-right">
+       </span>
+       <span class="corner bottom-left">
+       </span>
+       <span class="corner bottom-right">
+       </span>
+       <div class="cover-scan">
+       </div>
+      </div>
+      <div class="cover-footer">
+       <span>
+        SUBJECT / STRAY KIDS
+       </span>
+       <span>
+        STATUS / VERIFIED
+       </span>
+      </div>
+      <section class="music-player" data-japanese-youtube-id="" data-youtube-id="">
+       <!-- Japanese Ver.がある曲だけ、上の data-japanese-youtube-id にYouTube動画IDを入れる -->
+       <div class="youtube-player-wrap">
+        <div id="youtubePlayer">
+        </div>
+       </div>
+       <div class="player-info">
+        <div>
+         <span class="player-label">
+          NOW PLAYING
+         </span>
+        </div>
+        <span id="currentTime">
+         0:00
+        </span>
+       </div>
+       <input aria-label="再生位置" class="progress-bar" id="progressBar" max="100" min="0" step="0.1" type="range" value="0"/>
+       <div class="player-controls">
+        <button aria-label="10秒戻る" id="rewindButton" type="button">
+         ↶
+        </button>
+        <button aria-label="再生" id="playButton" type="button">
+         ▶
+        </button>
+        <button aria-label="10秒進む" id="forwardButton" type="button">
+         ↷
+        </button>
+       </div>
+       <div class="player-bottom">
+        <span id="duration">
+         0:00
+        </span>
+        <button aria-label="ミュート" id="muteButton" type="button">
+         🔊
+        </button>
+       </div>
+      </section>
+     </div>
+     <div class="song-main-data reveal">
+      <p class="song-eyebrow">
+       LYRIC ANALYSIS FILE
+      </p>
+      <div class="song-tags">
+       <span class="song-tag">
+        Original Song
+       </span>
+       <span class="song-tag">
+        SKZ-REPLAY 2026 Pt.1
+       </span>
+      </div>
+      <h1 class="song-title">
+       Raining Stars
+      </h1>
+      <p class="song-subtitle">
+       HAN
+      </p>
+      <!-- 基本情報＋Credits -->
+      <dl class="song-data-table">
+       <div>
+        <dt>
+         ALBUM
+        </dt>
+        <dd>
+         SKZ-REPLAY 2026 Pt.1
+        </dd>
+       </div>
+       <div>
+        <dt>
+         RELEASE
+        </dt>
+        <dd>
+         2025.12.27
+        </dd>
+       </div>
+       <div>
+        <dt>
+         UPDATED
+        </dt>
+        <dd>
+         2026.08.28
+        </dd>
+       </div>
+       <div>
+        <dt>
+         LANGUAGE
+        </dt>
+        <dd>
+         KOREAN / ENGLISH
+        </dd>
+       </div>
+       <!-- Credits情報 -->
+       <div>
+        <dt>
+         LYRICS
+        </dt>
+        <dd>
+         HAN (3RACHA)、(Vendors)Helixx
+        </dd>
+       </div>
+       <div>
+        <dt>
+         COMPOSED
+        </dt>
+        <dd>
+         HAN (3RACHA)、(Vendors)Helixx
+        </dd>
+       </div>
+      </dl>
+     </div>
+     <div class="song-hero-number">
+      FILE / 유성우
+     </div>
+    </div>
+   </section>
+   <!-- メンバーカラー -->
+   <section class="member-file-section">
+    <div class="section-label reveal">
+     <p>
+      02 / MEMBER IDENTIFICATION
+     </p>
+     <h2>
+      Part Colors
+     </h2>
+    </div>
+    <div class="member-filter reveal">
+     <button class="member-filter-button active" data-member="all" type="button">
+      ALL
+     </button>
+     <button class="member-filter-button han" data-member="han" type="button">
+      HAN
+     </button>
+    </div>
+   </section>
+   <!-- 歌詞 -->
+   <section class="lyrics-section" id="lyrics">
+    <div class="lyrics-header reveal">
+     <div>
+      <p>
+       03 / LYRIC DATABASE
+      </p>
+      <h2>
+       Lyrics
+      </h2>
+     </div>
+     <div class="lyrics-view-controls">
+      <button class="view-button active" data-view="all" type="button">
+       ALL DATA
+      </button>
+      <button class="view-button" data-view="original" type="button">
+       ORIGINAL
+      </button>
+      <button class="view-button" data-view="kana" type="button">
+       KANA
+      </button>
+      <button class="view-button" data-view="japanese" type="button">
+       JAPANESE
+      </button>
+      <button aria-pressed="false" class="view-button fanchant-toggle" id="fanchantToggle" type="button">
+       FANCHANT OFF
+      </button>
+     </div>
+    </div>
+    <div class="lyrics-console">
+     <div class="lyrics-console-top">
+      <span>
+       FILE : 유성우.LYRIC
+      </span>
+      <span>
+       STATUS : DECODED
+      </span>
+     </div>
+     <!-- INTRO -->
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イェー
+        </p>
+        <p class="line original">
+         Yeah
+        </p>
+        <p class="line translation">
+         そうさ
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         レイニング オール デイ レイニング オール デイ ライク スターズ アハ
+        </p>
+        <p class="line original">
+         Raining all day, raining all day like stars, uh-huh
+        </p>
+        <p class="line translation">
+         一日中、星のように降り注ぐ
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イェー レイニング オール デイ レイニング オール デイ ライク スターズ
+        </p>
+        <p class="line original">
+         Yeah, raining all day, raining all day like stars
+        </p>
+        <p class="line translation">
+         そう、一日中、星のように降り注ぐ
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイ ジャスト ウォント トゥ ショウ ユー アイ ジャスト ウォント トゥ ビー ウィズ ユー
+        </p>
+        <p class="line original">
+         I just want to show you, I just want to be with you
+        </p>
+        <p class="line translation">
+         君に見せたい、君と一緒にいたい
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イェー イェー イェー
+        </p>
+        <p class="line original">
+         Yeah, yeah, yeah
+        </p>
+        <p class="line translation">
+         イェー、イェー、イェー
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- VERSE 1 -->
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         あまど はん だる じょんっちゅみんが
+        </p>
+        <p class="line original">
+         아마도 한 달 전쯤인가
+        </p>
+        <p class="line translation">
+         たぶん一か月ほど前だったかな
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         うすす っとろじぬん びょるどぅり ちゅむちゅどん くなる
+        </p>
+        <p class="line original">
+         우수수 떨어지는 별들이 춤추던 그날
+        </p>
+        <p class="line translation">
+         星たちがぱらぱらと降って踊っていたあの日
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         むすひ まぬん せんがく じゅん ちぇいる もんじょ どぅん ご のわ
+        </p>
+        <p class="line original">
+         무수히 많은 생각 중 제일 먼저 든 거 너와
+        </p>
+        <p class="line translation">
+         数えきれない思いの中で真っ先に浮かんだのは
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         はむっけ いったみょん ちゃむ へんぼかげった
+        </p>
+        <p class="line original">
+         함께 있다면 참 행복하겠다
+        </p>
+        <p class="line translation">
+         君と一緒にいられたら幸せだろうなってこと
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ね かじゃん くん かむじょんうる たむだんはぬん のわ ふんなる
+        </p>
+        <p class="line original">
+         내 가장 큰 감정을 담당하는 너와 훗날
+        </p>
+        <p class="line translation">
+         僕のいちばん大きな感情を占める君といつの日か
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         よんうぉぬる まらご なのる す いったみょん ちょけった
+        </p>
+        <p class="line original">
+         영원을 말하고 나눌 수 있다면 좋겠다
+        </p>
+        <p class="line translation">
+         永遠を語り合えたらいいな
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ぷるっすく ちゃじゃおん そんむるる もん なのん あしうむる たまそ
+        </p>
+        <p class="line original">
+         불쑥 찾아온 선물을 못 나눈 아쉬움을 담아서
+        </p>
+        <p class="line translation">
+         突然届いた贈り物を分け合えなかった寂しさを込めて
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ぽねぬん い のれぬん ね まうみや ぱだ
+        </p>
+        <p class="line original">
+         보내는 이 노래는 내 마음이야 받아
+        </p>
+        <p class="line translation">
+         贈るこの歌は僕の気持ちだよ、受け取って
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- PRE-CHORUS -->
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ちゅうん きょうるぱむ ね まめ おんどぬん っとぅごうん よるむぐぁ がた（ウー ウー）
+        </p>
+        <p class="line original">
+         추운 겨울밤 내 맘의 온도는 뜨거운 여름과 같아 (Ooh, ooh)
+        </p>
+        <p class="line translation">
+         寒い冬の夜、僕の心の温度は暑い夏のよう
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くるむ てぃろ さらじぬん びょるる ぽに あしぷこ するぷん まむまん（オー ベイブ）
+        </p>
+        <p class="line original">
+         구름 뒤로 사라지는 별을 보니 아쉽고 슬픈 맘만 (Oh, babe)
+        </p>
+        <p class="line translation">
+         雲の向こうへ消える星を見ると切なさと悲しさだけが残る
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くぴ うぃろ とぅるりん かめらえ っちきょっとん ごん あんげわ っかむっかめっとん
+        </p>
+        <p class="line original">
+         급히 위로 들린 카메라에 찍혔던 건 안개와 깜깜했던
+        </p>
+        <p class="line translation">
+         慌てて空に向けたカメラに写ったのは霧と真っ暗な
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ひょんぴょのぷとん さじんっぷにじまん ほくし のぬん い まむる あるっか（アー イェー）
+        </p>
+        <p class="line original">
+         형편없던 사진뿐이지만 혹시 너는 이 맘을 알까? (Ah, yeah)
+        </p>
+        <p class="line translation">
+         ひどい写真だけだけど、君はこの気持ちに気づくだろうか
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- CHORUS -->
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         レイニング スターズ ぽごぷん ぱむ ねげ ちゅご しぷとん なる
+        </p>
+        <p class="line original">
+         Raining stars, 보고픈 밤, 네게 주고 싶던 날
+        </p>
+        <p class="line translation">
+         星が降る、君に会いたい夜、君に贈りたかった日
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         はんっこっ かどぅき たむこ しぽっとん スカイ（オー ベイビー）
+        </p>
+        <p class="line original">
+         한껏 가득히 담고 싶었던 sky (Oh, baby)
+        </p>
+        <p class="line translation">
+         目いっぱい詰め込んでおきたかった空
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         レイニング スターズ おっとはん なる ぽだ と あるむだぷとん なる
+        </p>
+        <p class="line original">
+         Raining stars, 어떠한 날, 보다 더 아름답던 날
+        </p>
+        <p class="line translation">
+         星が降る、どんな日よりも美しかった日
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ぴょるどぅる ぴおなん はぬる あれ のわ な イェー
+        </p>
+        <p class="line original">
+         별들 피어난 하늘 아래 너와 나, yeah
+        </p>
+        <p class="line translation">
+         星が咲いた空の下、君と僕
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- VERSE 2 -->
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イェー むるっくろみ なるる ぽみょん ぷっくろみ どぇ（ブルル）
+        </p>
+        <p class="line original">
+         Yeah, 물끄러미 나를 보면 부끄럼이 돼 (Brr)
+        </p>
+        <p class="line translation">
+         君がじっと僕を見ると恥ずかしくなる
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         っすくすろぷち こげ とるりょ ちれじん ぽる レッド（ハッ）
+        </p>
+        <p class="line original">
+         쑥스럽지 고개 돌려 칠해진 볼 red (Huh)
+        </p>
+        <p class="line translation">
+         照れくさくて顔をそむける、赤く染まった頬
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ちょ はぬれそ っそだじん ゆそんどぅる
+        </p>
+        <p class="line original">
+         저 하늘에서 쏟아진 유성들
+        </p>
+        <p class="line translation">
+         あの空から降り注いだ流星たち
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ね まむる ぴょひょなじゃみょん ちょむ と くん どぅっ うんそくっちゅむ（しゅん しゅん しゅん）
+        </p>
+        <p class="line original">
+         내 맘을 표현하자면 좀 더 큰 듯 운석쯤 (슝, 슝, 슝)
+        </p>
+        <p class="line translation">
+         僕の気持ちを表すなら、もっと大きな隕石くらいかな
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         みょっ くぁんにょぬる たるりょ ねげろ おん どぅたん い まみ
+        </p>
+        <p class="line original">
+         몇 광년을 달려 네게로 온 듯한 이 맘이
+        </p>
+        <p class="line translation">
+         何光年も駆け抜けて君のもとに来たようなこの気持ちは
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         こじっ はな あん ぽてご ちんしみごどぅん たり
+        </p>
+        <p class="line original">
+         거짓 하나 안 보태고 진심이거든 달리
+        </p>
+        <p class="line translation">
+         嘘を一つも交えない本心なんだ
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ぴょひょなる ぱんぼび おでぃ おぷするっか へっとに
+        </p>
+        <p class="line original">
+         표현할 방법이 어디 없을까 했더니
+        </p>
+        <p class="line translation">
+         伝える方法はないかなって思っていたら
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ちょ うぃえそ ねりょ じょんなば ぴょる そなぎる な てしん
+        </p>
+        <p class="line original">
+         저 위에서 내려 줬나봐 별 소나길 나 대신
+        </p>
+        <p class="line translation">
+         あの空が僕の代わりに星の夕立を降らせてくれたみたい
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- PRE-CHORUS -->
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ちゅうん きょうるぱむ ね まめ おんどぬん っとぅごうん よるむぐぁ がた（ウー ウー）
+        </p>
+        <p class="line original">
+         추운 겨울밤 내 맘의 온도는 뜨거운 여름과 같아 (Ooh, ooh)
+        </p>
+        <p class="line translation">
+         寒い冬の夜、僕の心の温度は暑い夏のよう
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くるむ てぃろ さらじぬん びょるる ぽに あしぷこ するぷん まむまん（オー ベイブ）
+        </p>
+        <p class="line original">
+         구름 뒤로 사라지는 별을 보니 아쉽고 슬픈 맘만 (Oh, babe)
+        </p>
+        <p class="line translation">
+         雲の向こうへ消える星を見ると切なさと悲しさだけが残る
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くぴ うぃろ とぅるりん かめらえ っちきょっとん ごん あんげわ っかむっかめっとん（オー オー）
+        </p>
+        <p class="line original">
+         급히 위로 들린 카메라에 찍혔던 건 안개와 깜깜했던 (Oh, oh)
+        </p>
+        <p class="line translation">
+         慌てて空に向けたカメラに写ったのは霧と真っ暗な景色
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ひょんぴょのぷとん さじんっぷにじまん ほくし のぬん い まむる あるっか（マイ ベイブ）
+        </p>
+        <p class="line original">
+         형편없던 사진뿐이지만 혹시 너는 이 맘을 알까? (My babe)
+        </p>
+        <p class="line translation">
+         ひどい写真だけだけど、君はこの気持ちに気づくだろうか
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- CHORUS -->
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         レイニング スターズ ぽごぷん ぱむ ねげ ちゅご しぷとん なる
+        </p>
+        <p class="line original">
+         Raining stars, 보고픈 밤, 네게 주고 싶던 날
+        </p>
+        <p class="line translation">
+         星が降る、君に会いたい夜、君に贈りたかった日
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         はんっこっ かどぅき たむこ しぽっとん スカイ（オー ベイビー）
+        </p>
+        <p class="line original">
+         한껏 가득히 담고 싶었던 sky (Oh, baby)
+        </p>
+        <p class="line translation">
+         目いっぱい詰め込んでおきたかった空
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         レイニング スターズ おっとはん なる ぽだ と あるむだぷとん なる
+        </p>
+        <p class="line original">
+         Raining stars, 어떠한 날, 보다 더 아름답던 날
+        </p>
+        <p class="line translation">
+         星が降る、どんな日よりも美しかった日
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ぴょるどぅる ぴおなん はぬる あれ のわ な イェー（ヘイ）
+        </p>
+        <p class="line original">
+         별들 피어난 하늘 아래 너와 나, yeah (Hey)
+        </p>
+        <p class="line translation">
+         星が咲いた空の下、君と僕
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BRIDGE -->
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ワット ア パーフェクト ナイト エイヨー
+        </p>
+        <p class="line original">
+         What a perfect night, a-yo
+        </p>
+        <p class="line translation">
+         なんて完璧な夜なんだ
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         のど なわ がとぅん ぱむる ぽるっか エイヨー
+        </p>
+        <p class="line original">
+         너도 나와 같은 밤을 볼까? A-yo
+        </p>
+        <p class="line translation">
+         君も僕と同じ夜を見ているかな
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ね もり うぃろ っそだじん ゆそうぬん あま さしる
+        </p>
+        <p class="line original">
+         내 머리 위로 쏟아진 유성우는 아마 사실
+        </p>
+        <p class="line translation">
+         僕の頭上に降り注いだ流星雨は、きっと本当は
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ねげ ちゅご しぷとん ね まうみん ごや イェー
+        </p>
+        <p class="line original">
+         네게 주고 싶던 내 마음인 거야, yeah
+        </p>
+        <p class="line translation">
+         君に贈りたかった僕の気持ちなんだ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- CHORUS -->
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         レイニング スターズ ぽごぷん ぱむ ねげ ちゅご しぷとん なる（ウー）
+        </p>
+        <p class="line original">
+         Raining stars, 보고픈 밤, 네게 주고 싶던 날 (Ooh)
+        </p>
+        <p class="line translation">
+         星が降る、君に会いたい夜、君に贈りたかった日
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         はんっこっ かどぅき たむこ しぽっとん スカイ（マイ ベイビー）
+        </p>
+        <p class="line original">
+         한껏 가득히 담고 싶었던 sky (My baby)
+        </p>
+        <p class="line translation">
+         目いっぱい詰め込んでおきたかった空
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         レイニング スターズ おっとはん なる ぽだ と あるむだぷとん なる
+        </p>
+        <p class="line original">
+         Raining stars, 어떠한 날, 보다 더 아름답던 날
+        </p>
+        <p class="line translation">
+         星が降る、どんな日よりも美しかった日
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="han">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         03
+        </span>
+        <span class="member-name">
+         HAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ぴょるどぅる ぴおなん はぬる あれ のわ な イェー
+        </p>
+        <p class="line original">
+         별들 피어난 하늘 아래 너와 나, yeah
+        </p>
+        <p class="line translation">
+         星が咲いた空の下、君と僕
+        </p>
+       </div>
+      </div>
+     </section>
+    </div>
+   </section>
+  </main>
+  <footer class="song-footer">
+   <div>
+    <strong>
+     SKZ LYRIC LAB
+    </strong>
+    <p>
+     Stray Kids unofficial lyrics fan site.
+    </p>
+   </div>
+   <span class="footer-online">
+    DATABASE ONLINE
+   </span>
+  </footer>
+  <button aria-label="ページ上部へ戻る" class="song-page-top" id="songPageTop" type="button">
+   ↑
+  </button>
+  <script src="../js/song.js">
+  </script>
+  <script src="../js/youtube-player.js">
+  </script>
+  <script src="https://www.youtube.com/iframe_api">
+  </script>
+ </body>
+</html>

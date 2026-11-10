@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Roman Empire | SKZ Lyric LAB
+  </title>
+  <link href="../css/song.css" rel="stylesheet"/>
+  <link href="../css/common-header.css?v=20260806-2" rel="stylesheet"/>
+  <link href="../images/logo.png" rel="icon" type="image/png"/>
+  <link href="../images/icon.png" rel="apple-touch-icon"/>
+  <link href="manifest.json" rel="manifest"/>
+  <meta content="#050505" name="theme-color"/>
+ </head>
+ <body>
+  <!-- ファイル起動演出 -->
+  <div class="file-loader" id="fileLoader">
+   <div class="file-loader-inner">
+    <p class="loader-code">
+     SKZ LYRIC LAB / FILE ACCESS
+    </p>
+    <h1 data-text="ROMAN EMPIRE">
+     ROMAN EMPIRE
+    </h1>
+    <p id="loaderMessage">
+     OPENING LYRIC FILE...
+    </p>
+    <div class="loader-bar">
+     <span id="loaderProgress">
+     </span>
+    </div>
+    <p id="loaderPercent">
+     0%
+    </p>
+   </div>
+  </div>
+  <!-- 背景演出 -->
+  <div class="song-grid-background">
+  </div>
+  <div class="song-scanlines">
+  </div>
+  <div class="song-pointer-glow" id="songPointerGlow">
+  </div>
+  <!-- 共通ヘッダー -->
+  <header class="site-header">
+   <a class="header-logo" href="../index.html">
+    <span class="header-logo-main">
+     SKZ
+    </span>
+    <span class="header-logo-sub">
+     LYRIC LAB
+    </span>
+   </a>
+   <nav class="global-nav" id="globalNav">
+    <a href="../index.html">
+     HOME
+    </a>
+    <a href="../search.html">
+     SEARCH
+    </a>
+    <a href="../albums.html">
+     ARCHIVE
+    </a>
+    <a href="#lyrics">
+     LYRICS
+    </a>
+    <a href="../members.html">
+     MEMBERS
+    </a>
+    <a href="../setlist.html">
+     SETLIST
+    </a>
+    <a href="../about.html">
+     ABOUT
+    </a>
+   </nav>
+   <button aria-controls="globalNav" aria-expanded="false" aria-label="メニューを開く" class="menu-button" id="menuButton" type="button">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </button>
+  </header>
+  <main>
+   <!-- 曲ヒーロー -->
+   <section class="song-hero">
+    <div class="song-hero-background">
+     <img alt="Roman Empire" src="../images/song/Roman_Empire.jpg"/>
+    </div>
+    <div class="song-hero-overlay">
+    </div>
+    <div class="song-hero-content">
+     <div class="song-cover-panel reveal">
+      <div class="cover-header">
+       <span>
+        FILE NO. ROMAN EMPIRE
+       </span>
+       <span class="active-status">
+        ACTIVE
+       </span>
+      </div>
+      <div class="cover-frame">
+       <img alt="Roman Empire" src="../images/song/Roman_Empire.jpg"/>
+       <span class="corner top-left">
+       </span>
+       <span class="corner top-right">
+       </span>
+       <span class="corner bottom-left">
+       </span>
+       <span class="corner bottom-right">
+       </span>
+       <div class="cover-scan">
+       </div>
+      </div>
+      <div class="cover-footer">
+       <span>
+        SUBJECT / STRAY KIDS
+       </span>
+       <span>
+        STATUS / VERIFIED
+       </span>
+      </div>
+      <section class="music-player" data-japanese-youtube-id="" data-youtube-id="">
+       <!-- Japanese Ver.がある曲だけ、上の data-japanese-youtube-id にYouTube動画IDを入れる -->
+       <div class="youtube-player-wrap">
+        <div id="youtubePlayer">
+        </div>
+       </div>
+       <div class="player-info">
+        <div>
+         <span class="player-label">
+          NOW PLAYING
+         </span>
+        </div>
+        <span id="currentTime">
+         0:00
+        </span>
+       </div>
+       <input aria-label="再生位置" class="progress-bar" id="progressBar" max="100" min="0" step="0.1" type="range" value="0"/>
+       <div class="player-controls">
+        <button aria-label="10秒戻る" id="rewindButton" type="button">
+         ↶
+        </button>
+        <button aria-label="再生" id="playButton" type="button">
+         ▶
+        </button>
+        <button aria-label="10秒進む" id="forwardButton" type="button">
+         ↷
+        </button>
+       </div>
+       <div class="player-bottom">
+        <span id="duration">
+         0:00
+        </span>
+        <button aria-label="ミュート" id="muteButton" type="button">
+         🔊
+        </button>
+       </div>
+      </section>
+     </div>
+     <div class="song-main-data reveal">
+      <p class="song-eyebrow">
+       LYRIC ANALYSIS FILE
+      </p>
+      <div class="song-tags">
+       <span class="song-tag">
+        Original Song
+       </span>
+       <span class="song-tag">
+        SKZ-REPLAY 2026 Pt.1
+       </span>
+      </div>
+      <h1 class="song-title">
+       Roman Empire
+      </h1>
+      <p class="song-subtitle">
+       Bang Chan
+      </p>
+      <!-- 基本情報＋Credits -->
+      <dl class="song-data-table">
+       <div>
+        <dt>
+         ALBUM
+        </dt>
+        <dd>
+         SKZ-REPLAY 2026 Pt.1
+        </dd>
+       </div>
+       <div>    
+        <dt>
+         RELEASE
+        </dt>
+        <dd>
+         2025.11.03
+        </dd>
+       </div>
+       <div>
+        <dt>
+         UPDATED
+        </dt>
+        <dd>
+         2026.11.09
+        </dd>
+       </div>
+       <div>
+        <dt>
+         LANGUAGE
+        </dt>
+        <dd>
+         ENGLISH / ITALIAN
+        </dd>
+       </div>
+       <!-- Credits情報 -->
+       <div>
+        <dt>
+         LYRICS
+        </dt>
+        <dd>
+         Bang Chan (3RACHA)
+        </dd>
+       </div>
+       <div>
+        <dt>
+         COMPOSED
+        </dt>
+        <dd>
+         Bang Chan (3RACHA),taalthechoi
+        </dd>
+       </div>
+      </dl>
+     </div>
+     <div class="song-hero-number">
+      FILE / ROMAN EMPIRE
+     </div>
+    </div>
+   </section>
+   <!-- メンバーカラー -->
+   <section class="member-file-section">
+    <div class="section-label reveal">
+     <p>
+      02 / MEMBER IDENTIFICATION
+     </p>
+     <h2>
+      Part Colors
+     </h2>
+    </div>
+    <div class="member-filter reveal">
+     <button class="member-filter-button active" data-member="all" type="button">
+      ALL
+     </button>
+     <button class="member-filter-button chan" data-member="bangchan" type="button">
+      BANG CHAN
+     </button>
+    </div>
+   </section>
+   <!-- 歌詞 -->
+   <section class="lyrics-section" id="lyrics">
+    <div class="lyrics-header reveal">
+     <div>
+      <p>
+       03 / LYRIC DATABASE
+      </p>
+      <h2>
+       Lyrics
+      </h2>
+     </div>
+     <div class="lyrics-view-controls">
+      <button class="view-button active" data-view="all" type="button">
+       ALL DATA
+      </button>
+      <button class="view-button" data-view="original" type="button">
+       ORIGINAL
+      </button>
+      <button class="view-button" data-view="kana" type="button">
+       KANA
+      </button>
+      <button class="view-button" data-view="japanese" type="button">
+       JAPANESE
+      </button>
+      <button aria-pressed="false" class="view-button fanchant-toggle" id="fanchantToggle" type="button">
+       FANCHANT OFF
+      </button>
+     </div>
+    </div>
+    <div class="lyrics-console">
+     <div class="lyrics-console-top">
+      <span>
+       FILE : ROMAN EMPIRE.LYRIC
+      </span>
+      <span>
+       STATUS : DECODED
+      </span>
+     </div>
+     <!-- BANG CHAN / PART 01 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイヴ ビーン ウェイティング ソー ロング キャン ユー ヒア ミー
+        </p>
+        <p class="line original">
+         I've been waiting so long, can you hear me?
+        </p>
+        <p class="line translation">
+         長い間待っていた、聞こえているの？
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 02 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イェー（ターター ナ ナナナ シー シー）
+        </p>
+        <p class="line original">
+         Yeah (Ta-ta, na, na-na-na; Sì, sì)
+        </p>
+        <p class="line translation">
+         イェー（ターター、ナ、ナナナ。はい、はい）
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 03 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ンー（シー シー）エイ エイ（シー シー）
+        </p>
+        <p class="line original">
+         Mm (Sì, sì), ayy, ayy (Sì, sì)
+        </p>
+        <p class="line translation">
+         ンー（はい、はい）、エイ、エイ（はい、はい）
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 04 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         マイ ローマン エンパイア ユア マイ ローマン エンパイア
+        </p>
+        <p class="line original">
+         My Roman Empire, you're my Roman Empire
+        </p>
+        <p class="line translation">
+         僕のローマ帝国、君は僕のローマ帝国だ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 05 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         チャオ ベッラ ユー シャイン ブライター ザン ザ スターズ ソー ステラー
+        </p>
+        <p class="line original">
+         Ciao bella, you shine brighter than the stars, so stellar
+        </p>
+        <p class="line translation">
+         チャオ・ベッラ（こんにちは、美しい人）、君は星よりも輝いている
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 06 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アー アー ザット レザー アイ スウェア イット ルックス ベター ウェン ウィー アー トゥゲザー
+        </p>
+        <p class="line original">
+         Ah, ah, that leather, I swear it looks better when we are together
+        </p>
+        <p class="line translation">
+         あのレザー、僕たちが一緒にいるときの方がもっと似合うと誓うよ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 07 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アー アー アイル ファイト フォー ヤ ユー メイク ミー ワナ ビー ユア ベスト グラディエーター イェー
+        </p>
+        <p class="line original">
+         Ah, ah, I'll fight for ya, you make me wanna be your best gladiator, yeah
+        </p>
+        <p class="line translation">
+         君のために戦う。君は僕を最高の剣闘士にしてくれる
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 08 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         マイ ローマン エンパイア ユア マイ ローマン エンパイア
+        </p>
+        <p class="line original">
+         My Roman Empire, you're my Roman Empire
+        </p>
+        <p class="line translation">
+         僕のローマ帝国、君は僕のローマ帝国だ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 09 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ガール ユア ルッキング ソー ファイン（ユー ユー ユー）
+        </p>
+        <p class="line original">
+         Girl, you're looking so fine (You, you, you)
+        </p>
+        <p class="line translation">
+         君はとても魅力的だ（君、君、君）
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 10 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イェー ユア ワン オブ ア カインド（オー マイ）
+        </p>
+        <p class="line original">
+         Yeah, you're one of a kind (Oh, my)
+        </p>
+        <p class="line translation">
+         君は唯一無二の存在だ（オー、マイ）
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 11 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ガール ユア ルッキング ソー ファイン
+        </p>
+        <p class="line original">
+         Girl, you're looking so fine
+        </p>
+        <p class="line translation">
+         君はとても魅力的だ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 12 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイ ガット ザット マット ブラック ピュアブレッド スタリオン レット ミー テイク ユー フォー ア ライド イン ローマ
+        </p>
+        <p class="line original">
+         I got that matte black pure-bred stallion, let me take you for a ride in Roma
+        </p>
+        <p class="line translation">
+         つや消しの黒い純血種の種馬がいる。ローマで君を乗せて走ろう
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 13 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ハンドレッド イヤーズ エイント イナフ ウェン アイム ヒア ウィズ ユー
+        </p>
+        <p class="line original">
+         Hundred years ain't enough when I'm here with you
+        </p>
+        <p class="line translation">
+         君と一緒なら百年でも足りない
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 14 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ユー アピアード アウト オブ ノーウェア ライク ピーカブー
+        </p>
+        <p class="line original">
+         You appeared out of nowhere like peekaboo
+        </p>
+        <p class="line translation">
+         君はかくれんぼみたいに突然現れた
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 15 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ガット ミー フィーリング ソー ショックト ウェン アイ ピーク アット ユー
+        </p>
+        <p class="line original">
+         Got me feeling so shocked when I peek at you
+        </p>
+        <p class="line translation">
+         君をちらっと見た瞬間、衝撃を受けた
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 16 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         マイ ローマン エンパイア ユア マイ ローマン エンパイア
+        </p>
+        <p class="line original">
+         My Roman Empire, you're my Roman Empire
+        </p>
+        <p class="line translation">
+         僕のローマ帝国、君は僕のローマ帝国だ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 17 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイム ジャスト ウェイ トゥー オブセスト ウィズ ザ ウェイ ザット ユー ダンス マイ ベイビー
+        </p>
+        <p class="line original">
+         I'm just way too obsessed with the way that you dance, my baby
+        </p>
+        <p class="line translation">
+         君の踊り方に夢中なんだ、ベイビー
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 18 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ジャスト レット ザット ボディ ムーヴ
+        </p>
+        <p class="line original">
+         Just let that body move
+        </p>
+        <p class="line translation">
+         ただその身体を動かして
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 19 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ガール ザ ウェイ ザット ユー ドレス ガット マイ ヘッド イン ア メス
+        </p>
+        <p class="line original">
+         Girl, the way that you dress got my head in a mess
+        </p>
+        <p class="line translation">
+         君の着こなしに頭がいっぱいだ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 20 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         オー ア ハンドレッド デイズ（シー シー）ア ハンドレッド ウィークス（シー シー）
+        </p>
+        <p class="line original">
+         Oh, a hundred days (Sì, sì), a hundred weeks (Sì, sì)
+        </p>
+        <p class="line translation">
+         百日、百週間（はい、はい）
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 21 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ア ハンドレッド マンス ハンドレッド イヤーズ アイル ラヴ ユー ライク ジ エターナル シティ
+        </p>
+        <p class="line original">
+         A hundred months, hundred years, I'll love you like the Eternal City
+        </p>
+        <p class="line translation">
+         百か月、百年、永遠の都ローマのように君を愛し続ける
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 22 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ユア ザ エフ トゥ マイ エフ イェス
+        </p>
+        <p class="line original">
+         You're the F to my F, yes
+        </p>
+        <p class="line translation">
+         君は僕のFに対するFだ、そうさ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 23 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ウォント エヴァー エイジ フォー フォレヴ（シー シー）
+        </p>
+        <p class="line original">
+         Won't ever age fore-forev— (Sì, sì)
+        </p>
+        <p class="line translation">
+         永遠に年を取らない（はい、はい）
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 24 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         イッツ オンリー ユー アンド アイ トゥナイト
+        </p>
+        <p class="line original">
+         It's only you and I tonight
+        </p>
+        <p class="line translation">
+         今夜は君と僕だけ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 25 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイル テイク ユー トゥ ア プレイス ザッツ アウト オブ サーイト
+        </p>
+        <p class="line original">
+         I'll take you to a place that's out of si-ight
+        </p>
+        <p class="line translation">
+         人目につかない場所へ君を連れていく
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 26 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ジャスト ホールド オン トゥ マイ ハンズ アイル ビー ユア ナイト
+        </p>
+        <p class="line original">
+         Just hold on to my hands, I'll be your knight
+        </p>
+        <p class="line translation">
+         僕の手を握って。君の騎士になるよ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 27 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイ ガット ザット マット ブラック ピュアブレッド スタリオン レット ミー テイク ユー フォー ア ライド イン ローマ
+        </p>
+        <p class="line original">
+         I got that matte black pure-bred stallion, let me take you for a ride in Roma
+        </p>
+        <p class="line translation">
+         つや消しの黒い純血種の種馬がいる。ローマで君を乗せて走ろう
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 28 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ハンドレッド イヤーズ エイント イナフ ウェン アイム ヒア ウィズ ユー
+        </p>
+        <p class="line original">
+         Hundred years ain't enough when I'm here with you
+        </p>
+        <p class="line translation">
+         君と一緒なら百年でも足りない
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 29 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ユー アピアード アウト オブ ノーウェア ライク ピーカブー
+        </p>
+        <p class="line original">
+         You appeared out of nowhere like peekaboo
+        </p>
+        <p class="line translation">
+         君はかくれんぼみたいに突然現れた
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 30 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ガット ミー フィーリング ソー ショックト ウェン アイ ピーク アット ユー（ウー ウォー）
+        </p>
+        <p class="line original">
+         Got me feeling so shocked when I peek at you (Ooh, woah)
+        </p>
+        <p class="line translation">
+         君をちらっと見た瞬間、衝撃を受けた（ウー、ウォー）
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 31 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         マイ ローマン エンパイア ユア マイ ローマン エンパイア
+        </p>
+        <p class="line original">
+         My Roman Empire, you're my Roman Empire
+        </p>
+        <p class="line translation">
+         僕のローマ帝国、君は僕のローマ帝国だ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 32 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         アイム ジャスト ウェイ トゥー オブセスト ウィズ ザ ウェイ ザット ユー ダンス マイ ベイビー
+        </p>
+        <p class="line original">
+         I'm just way too obsessed with the way that you dance, my baby
+        </p>
+        <p class="line translation">
+         君の踊り方に夢中なんだ、ベイビー
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 33 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ジャスト レット ザット ボディ ムーヴ
+        </p>
+        <p class="line original">
+         Just let that body move
+        </p>
+        <p class="line translation">
+         ただその身体を動かして
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 34 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ガール ザ ウェイ ザット ユー ドレス ガット マイ ヘッド イン ア メス
+        </p>
+        <p class="line original">
+         Girl, the way that you dress got my head in a mess
+        </p>
+        <p class="line translation">
+         君の着こなしに頭がいっぱいだ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 35 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         マイ ローマン エンパイア ユア マイ ローマン エンパイア
+        </p>
+        <p class="line original">
+         My Roman Empire, you're my Roman Empire
+        </p>
+        <p class="line translation">
+         僕のローマ帝国、君は僕のローマ帝国だ
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 36 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         （シー シー）
+        </p>
+        <p class="line original">
+         (Sì, sì)
+        </p>
+        <p class="line translation">
+         （はい、はい）
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 37 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         （ユア マイ ローマン エンパイア）
+        </p>
+        <p class="line original">
+         (You're my Roman Empire)
+        </p>
+        <p class="line translation">
+         （君は僕のローマ帝国だ）
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- BANG CHAN / PART 38 -->
+     <section class="lyric-block" data-member="bangchan">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         01
+        </span>
+        <span class="member-name">
+         BANG CHAN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         （シー シー）
+        </p>
+        <p class="line original">
+         (Sì, sì)
+        </p>
+        <p class="line translation">
+         （はい、はい）
+        </p>
+       </div>
+      </div>
+     </section>
+    </div>
+   </section>
+  </main>
+  <footer class="song-footer">
+   <div>
+    <strong>
+     SKZ LYRIC LAB
+    </strong>
+    <p>
+     Stray Kids unofficial lyrics fan site.
+    </p>
+   </div>
+   <span class="footer-online">
+    DATABASE ONLINE
+   </span>
+  </footer>
+  <button aria-label="ページ上部へ戻る" class="song-page-top" id="songPageTop" type="button">
+   ↑
+  </button>
+  <script src="../js/song.js">
+  </script>
+  <script src="../js/youtube-player.js">
+  </script>
+  <script src="https://www.youtube.com/iframe_api">
+  </script>
+ </body>
+</html>

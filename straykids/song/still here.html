@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Still Here | SKZ Lyric LAB
+  </title>
+  <link href="../css/song.css" rel="stylesheet"/>
+  <link href="../css/common-header.css?v=20260806-2" rel="stylesheet"/>
+  <link href="../images/logo.png" rel="icon" type="image/png"/>
+  <link href="../images/icon.png" rel="apple-touch-icon"/>
+  <link href="manifest.json" rel="manifest"/>
+  <meta content="#050505" name="theme-color"/>
+ </head>
+ <body>
+  <!-- ファイル起動演出 -->
+  <div class="file-loader" id="fileLoader">
+   <div class="file-loader-inner">
+    <p class="loader-code">
+     SKZ LYRIC LAB / FILE ACCESS
+    </p>
+    <h1 data-text="Still Here">
+     Still Here
+    </h1>
+    <p id="loaderMessage">
+     OPENING LYRIC FILE...
+    </p>
+    <div class="loader-bar">
+     <span id="loaderProgress">
+     </span>
+    </div>
+    <p id="loaderPercent">
+     0%
+    </p>
+   </div>
+  </div>
+  <!-- 背景演出 -->
+  <div class="song-grid-background">
+  </div>
+  <div class="song-scanlines">
+  </div>
+  <div class="song-pointer-glow" id="songPointerGlow">
+  </div>
+  <!-- 共通ヘッダー -->
+  <header class="site-header">
+   <a class="header-logo" href="../index.html">
+    <span class="header-logo-main">
+     SKZ
+    </span>
+    <span class="header-logo-sub">
+     LYRIC LAB
+    </span>
+   </a>
+   <nav class="global-nav" id="globalNav">
+    <a href="../index.html">
+     HOME
+    </a>
+    <a href="../search.html">
+     SEARCH
+    </a>
+    <a href="../albums.html">
+     ARCHIVE
+    </a>
+    <a href="#lyrics">
+     LYRICS
+    </a>
+    <a href="../members.html">
+     MEMBERS
+    </a>
+    <a href="../setlist.html">
+     SETLIST
+    </a>
+    <a href="../about.html">
+     ABOUT
+    </a>
+   </nav>
+   <button aria-controls="globalNav" aria-expanded="false" aria-label="メニューを開く" class="menu-button" id="menuButton" type="button">
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </button>
+  </header>
+  <main>
+   <!-- 曲ヒーロー -->
+   <section class="song-hero">
+    <div class="song-hero-background">
+     <img alt="Still Here" src="../images/song/Still_Here.jpg"/>
+    </div>
+    <div class="song-hero-overlay">
+    </div>
+    <div class="song-hero-content">
+     <div class="song-cover-panel reveal">
+      <div class="cover-header">
+       <span>
+        FILE NO. Still Here
+       </span>
+       <span class="active-status">
+        ACTIVE
+       </span>
+      </div>
+      <div class="cover-frame">
+       <img alt="Still Here" src="../images/song/Still_Here.jpg"/>
+       <span class="corner top-left">
+       </span>
+       <span class="corner top-right">
+       </span>
+       <span class="corner bottom-left">
+       </span>
+       <span class="corner bottom-right">
+       </span>
+       <div class="cover-scan">
+       </div>
+      </div>
+      <div class="cover-footer">
+       <span>
+        SUBJECT / STRAY KIDS
+       </span>
+       <span>
+        STATUS / VERIFIED
+       </span>
+      </div>
+      <section class="music-player" data-japanese-youtube-id="" data-youtube-id="">
+       <!-- Japanese Ver.がある曲だけ、上の data-japanese-youtube-id にYouTube動画IDを入れる -->
+       <div class="youtube-player-wrap">
+        <div id="youtubePlayer">
+        </div>
+       </div>
+       <div class="player-info">
+        <div>
+         <span class="player-label">
+          NOW PLAYING
+         </span>
+        </div>
+        <span id="currentTime">
+         0:00
+        </span>
+       </div>
+       <input aria-label="再生位置" class="progress-bar" id="progressBar" max="100" min="0" step="0.1" type="range" value="0"/>
+       <div class="player-controls">
+        <button aria-label="10秒戻る" id="rewindButton" type="button">
+         ↶
+        </button>
+        <button aria-label="再生" id="playButton" type="button">
+         ▶
+        </button>
+        <button aria-label="10秒進む" id="forwardButton" type="button">
+         ↷
+        </button>
+       </div>
+       <div class="player-bottom">
+        <span id="duration">
+         0:00
+        </span>
+        <button aria-label="ミュート" id="muteButton" type="button">
+         🔊
+        </button>
+       </div>
+      </section>
+     </div>
+     <div class="song-main-data reveal">
+      <p class="song-eyebrow">
+       LYRIC ANALYSIS FILE
+      </p>
+      <div class="song-tags">
+       <span class="song-tag">
+        Original Song
+       </span>
+       <span class="song-tag">
+        SKZ-REPLAY 2026 Pt.1
+       </span>
+      </div>
+      <h1 class="song-title">
+       Still Here
+      </h1>
+      <p class="song-subtitle">
+       SEUNGMIN
+      </p>
+      <!-- 基本情報＋Credits -->
+      <dl class="song-data-table">
+       <div>
+        <dt>
+         ALBUM
+        </dt>
+        <dd>
+         SKZ-REPLAY 2026 Pt.1
+        </dd>
+       </div>
+       <div>
+        <dt>
+         RELEASE
+        </dt>
+        <dd>
+         2026.01.28
+        </dd>
+       </div>
+       <div>
+        <dt>
+         UPDATED
+        </dt>
+        <dd>
+         2026.08.28
+        </dd>
+       </div>
+       <div>
+        <dt>
+         LANGUAGE
+        </dt>
+        <dd>
+         KOREAN / ENGLISH
+        </dd>
+       </div>
+       <!-- Credits情報 -->
+       <div>
+        <dt>
+         LYRICS
+        </dt>
+        <dd>
+         Changbin (3RACHA)
+        </dd>
+       </div>
+       <div>
+        <dt>
+         COMPOSED
+        </dt>
+        <dd>
+         Changbin (3RACHA)、Millionboy、Nickko Young
+        </dd>
+       </div>
+      </dl>
+     </div>
+     <div class="song-hero-number">
+      FILE / Still Here
+     </div>
+    </div>
+   </section>
+   <!-- メンバーカラー -->
+   <section class="member-file-section">
+    <div class="section-label reveal">
+     <p>
+      02 / MEMBER IDENTIFICATION
+     </p>
+     <h2>
+      Part Colors
+     </h2>
+    </div>
+    <div class="member-filter reveal">
+     <button class="member-filter-button active" data-member="all" type="button">
+      ALL
+     </button>
+    </div>
+   </section>
+   <!-- 歌詞 -->
+   <section class="lyrics-section" id="lyrics">
+    <div class="lyrics-header reveal">
+     <div>
+      <p>
+       03 / LYRIC DATABASE
+      </p>
+      <h2>
+       Lyrics
+      </h2>
+     </div>
+     <div class="lyrics-view-controls">
+      <button class="view-button active" data-view="all" type="button">
+       ALL DATA
+      </button>
+      <button class="view-button" data-view="original" type="button">
+       ORIGINAL
+      </button>
+      <button class="view-button" data-view="kana" type="button">
+       KANA
+      </button>
+      <button class="view-button" data-view="japanese" type="button">
+       JAPANESE
+      </button>
+      <button aria-pressed="false" class="view-button fanchant-toggle" id="fanchantToggle" type="button">
+       FANCHANT OFF
+      </button>
+     </div>
+    </div>
+    <div class="lyrics-console">
+     <div class="lyrics-console-top">
+      <span>
+       FILE : 제자리걸음.LYRIC
+      </span>
+      <span>
+       STATUS : DECODED
+      </span>
+     </div>
+     <!-- VERSE -->
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         はん ごるむ と ねでぃでょぼみょん どぇる こっ がたそ
+        </p>
+        <p class="line original">
+         한 걸음 더 내디뎌보면 될 것 같아서
+        </p>
+        <p class="line translation">
+         もう一歩踏み出せばいい気がして
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ほっこるむまん みょっ ぼんっちぇいんじ
+        </p>
+        <p class="line original">
+         헛걸음만 몇 번째인지
+        </p>
+        <p class="line translation">
+         無駄足を踏んだのは何度目だろう
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ちゃま とぅご おる す おむぬん ごっぷにらそ
+        </p>
+        <p class="line original">
+         차마 두고 올 수 없는 것뿐이라서
+        </p>
+        <p class="line translation">
+         どうしても置いてこられないものだから
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         うりえ しじゃっくぁ っくて く おんじょりえそ めむどら
+        </p>
+        <p class="line original">
+         우리의 시작과 끝에 그 언저리에서 맴돌아
+        </p>
+        <p class="line translation">
+         僕たちの始まりと終わり、その辺りをさまよっている
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- PRE-CHORUS -->
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         のる いるぬん ごっくぁ いんぬん ごっ ちゅん むぉ はな はる す おぷそ
+        </p>
+        <p class="line original">
+         널 잃는 것과 잊는 것 중 뭐 하나 할 수 없어
+        </p>
+        <p class="line translation">
+         君を失うことも忘れることも、どちらもできない
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         すおぷし まぬん きるる へめいだ なん っと きるる いろ
+        </p>
+        <p class="line original">
+         수없이 많은 길을 헤매이다 난 또 길을 잃어
+        </p>
+        <p class="line translation">
+         数え切れない道をさまよって、僕はまた迷子になる
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くって くって くでろ よじょに もむちょいった
+        </p>
+        <p class="line original">
+         그때, 그때 그대로 여전히 멈춰있다
+        </p>
+        <p class="line translation">
+         あの時、あの時のまま、今も立ち止まっている
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- CHORUS -->
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ちょんちょ おぷし こった ぼみょん
+        </p>
+        <p class="line original">
+         정처 없이 걷다 보면
+        </p>
+        <p class="line translation">
+         あてもなく歩いていれば
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くぇんちゃなじる ちゅる あらっそ
+        </p>
+        <p class="line original">
+         괜찮아질 줄 알았어
+        </p>
+        <p class="line translation">
+         大丈夫になれると思っていた
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ちぇじゃりごるむまん ぱんぼけ
+        </p>
+        <p class="line original">
+         제자리걸음만 반복해
+        </p>
+        <p class="line translation">
+         同じ場所で足踏みを繰り返すだけ
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         のえ ふんじょくどぅる く そげ かちょ
+        </p>
+        <p class="line original">
+         너의 흔적들 그 속에 갇혀
+        </p>
+        <p class="line translation">
+         君の痕跡、その中に閉じ込められて
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         はん ごるむど ぽそなじ もたご
+        </p>
+        <p class="line original">
+         한 걸음도 벗어나지 못하고
+        </p>
+        <p class="line translation">
+         一歩も抜け出せずに
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         たし のえげ とらが
+        </p>
+        <p class="line original">
+         다시 너에게 돌아가
+        </p>
+        <p class="line translation">
+         また君のもとへ戻っていく
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くって くって くでろ
+        </p>
+        <p class="line original">
+         그때, 그때 그대로
+        </p>
+        <p class="line translation">
+         あの時、あの時のまま
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- PRE-CHORUS -->
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         のる っとなぼねん く いふろ むぉ はな はる す おぷそ
+        </p>
+        <p class="line original">
+         널 떠나보낸 그 이후로 뭐 하나 할 수 없어
+        </p>
+        <p class="line translation">
+         君を見送ってから、何ひとつできない
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         すおぷし まぬん きるる へめいだ なん もどぅん ごる いろ
+        </p>
+        <p class="line original">
+         수없이 많은 길을 헤매이다 난 모든 걸 잃어
+        </p>
+        <p class="line translation">
+         数え切れない道をさまよって、僕はすべてを失う
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くって くって くでろ よじょに もむちょいった
+        </p>
+        <p class="line original">
+         그때, 그때 그대로 여전히 멈춰있다
+        </p>
+        <p class="line translation">
+         あの時、あの時のまま、今も立ち止まっている
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- CHORUS -->
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ちょんちょ おぷし こった ぼみょん
+        </p>
+        <p class="line original">
+         정처 없이 걷다 보면
+        </p>
+        <p class="line translation">
+         あてもなく歩いていれば
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くぇんちゃなじる ちゅる あらっそ
+        </p>
+        <p class="line original">
+         괜찮아질 줄 알았어
+        </p>
+        <p class="line translation">
+         大丈夫になれると思っていた
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ちぇじゃりごるむまん ぱんぼけ
+        </p>
+        <p class="line original">
+         제자리걸음만 반복해
+        </p>
+        <p class="line translation">
+         同じ場所で足踏みを繰り返すだけ
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         のえ ふんじょくどぅる く そげ かちょ
+        </p>
+        <p class="line original">
+         너의 흔적들 그 속에 갇혀
+        </p>
+        <p class="line translation">
+         君の痕跡、その中に閉じ込められて
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         はん ごるむど ぽそなじ もたご
+        </p>
+        <p class="line original">
+         한 걸음도 벗어나지 못하고
+        </p>
+        <p class="line translation">
+         一歩も抜け出せずに
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         たし のえげ とらが
+        </p>
+        <p class="line original">
+         다시 너에게 돌아가
+        </p>
+        <p class="line translation">
+         また君のもとへ戻っていく
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くって くって くでろ
+        </p>
+        <p class="line original">
+         그때, 그때 그대로
+        </p>
+        <p class="line translation">
+         あの時、あの時のまま
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- POST-CHORUS -->
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ウォー っとながん くごせ もむちょいっそ
+        </p>
+        <p class="line original">
+         Woah, 떠나간 그곳에 멈춰있어
+        </p>
+        <p class="line translation">
+         君が去ったあの場所で立ち止まっている
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ウォー ウォー すおぷし ちぇじゃりごるむまん
+        </p>
+        <p class="line original">
+         Woah, woah, 수없이 제자리걸음만
+        </p>
+        <p class="line translation">
+         何度も何度も、足踏みばかり
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ウォー
+        </p>
+        <p class="line original">
+         Woah
+        </p>
+        <p class="line translation">
+         ウォー
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         ちぇじゃりごるむまん ウォー
+        </p>
+        <p class="line original">
+         제자리걸음만, woah
+        </p>
+        <p class="line translation">
+         足踏みばかり、ウォー
+        </p>
+       </div>
+      </div>
+     </section>
+     <!-- OUTRO -->
+     <section class="lyric-block" data-member="seungmin">
+      <div class="lyric-set" data-time="">
+       <div class="member-column">
+        <span class="member-id">
+         07
+        </span>
+        <span class="member-name">
+         SEUNGMIN
+        </span>
+       </div>
+       <div class="lyric-data">
+        <p class="line ruby">
+         くって くって くでろ
+        </p>
+        <p class="line original">
+         그때, 그때 그대로
+        </p>
+        <p class="line translation">
+         あの時、あの時のまま
+        </p>
+       </div>
+      </div>
+     </section>
+    </div>
+   </section>
+  </main>
+  <footer class="song-footer">
+   <div>
+    <strong>
+     SKZ LYRIC LAB
+    </strong>
+    <p>
+     Stray Kids unofficial lyrics fan site.
+    </p>
+   </div>
+   <span class="footer-online">
+    DATABASE ONLINE
+   </span>
+  </footer>
+  <button aria-label="ページ上部へ戻る" class="song-page-top" id="songPageTop" type="button">
+   ↑
+  </button>
+  <script src="../js/song.js">
+  </script>
+  <script src="../js/youtube-player.js">
+  </script>
+  <script src="https://www.youtube.com/iframe_api">
+  </script>
+ </body>
+</html>
