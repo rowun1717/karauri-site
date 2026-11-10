@@ -3568,6 +3568,1194 @@ const liveSetlists = [
         ]
     },
 
+     {
+    id: "runit-nagoya-day1",
+
+    tourId: "nagoya-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 1",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.09.05",
+
+    year: 2026,
+
+    venue:
+        "バンテリンドーム ナゴヤ",
+
+    city:
+        "NAGOYA",
+
+    country:
+        "japan",
+
+    countryLabel:
+        "JAPAN",
+
+    note:
+        "バンテリンドーム ナゴヤ公演1日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          type: "main"
+          },
+          {
+          title: "THIS & THAT",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "remix",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "FATE",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "ALL IN",
+            type: "encore"
+        },
+        {
+            title: "FAM",
+            type: "encore"
+        },
+        ]
+    },
+
+     {
+    id: "runit-nagoya-day2",
+
+    tourId: "nagoya-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 2",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.09.06",
+
+    year: 2026,
+
+    venue:
+        "バンテリンドーム ナゴヤ",
+
+    city:
+        "NAGOYA",
+
+    country:
+        "japan",
+
+    countryLabel:
+        "JAPAN",
+
+    note:
+        "バンテリンドーム ナゴヤ公演2日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          type: "main"
+          },
+          {
+          title: "THIS & THAT",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "remix",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "宿命",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "Side Effects",
+            version: "Remix",
+            type: "encore"
+        },
+        {
+            title: "Haven",
+            type: "encore"
+        },
+        ]
+    },
+
+         {
+    id: "runit-osaka-day1",
+
+    tourId: "osaka-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 1",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.09.19",
+
+    year: 2026,
+
+    venue:
+        "京セラドーム大阪",
+
+    city:
+        "OSAKA",
+
+    country:
+        "japan",
+
+    countryLabel:
+        "JAPAN",
+
+    note:
+        "京セラドーム大阪 公演1日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          type: "main"
+          },
+          {
+          title: "THIS & THAT",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "remix",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "FATE",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "My Pace",
+            type: "encore"
+        },
+        {
+            title: "FAM",
+            type: "encore"
+        },
+        ]
+    },
+
+     {
+    id: "runit-osaka-day2",
+
+    tourId: "osaka-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 2",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.09.20",
+
+    year: 2026,
+
+    venue:
+        "京セラドーム大阪",
+
+    city:
+        "OSAKA",
+
+    country:
+        "japan",
+
+    countryLabel:
+        "JAPAN",
+
+    note:
+        "京セラドーム大阪 公演2日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          type: "main"
+          },
+          {
+          title: "THIS & THAT",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "remix",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "宿命",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "Side Effects",
+            type: "encore"
+        },
+        {
+            title: "Star Lost",
+            type: "encore"
+        },
+        {
+            title: "Haven",
+            type: "encore"
+        },
+
+        ]
+    },
+
+        {
+    id: "runit-mexico-day1",
+
+    tourId: "mexico-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 1",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.9.25",
+
+    year: 2026,
+
+    venue:
+        "Estadio GNP Seguros",
+
+    city:
+        "MEXICO",
+
+    country:
+        "mexico",
+
+    countryLabel:
+        "MEXICO",
+
+    note:
+        "Estadio GNP Seguros 公演1日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          version: "Extended outro",
+          type: "main"
+          },
+          {
+          title: "THIS & THAT",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "FATE",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "Charmer",
+            type: "encore"
+        },
+        {
+            title: "FAM",
+            type: "encore"
+        },
+        ]
+    },
+
+        {
+    id: "runit-mexico-day2",
+
+    tourId: "mexico-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 2",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.9.26",
+
+    year: 2026,
+
+    venue:
+        "Estadio GNP Seguros",
+
+    city:
+        "MEXICO",
+
+    country:
+        "mexico",
+
+    countryLabel:
+        "MEXICO",
+
+    note:
+        "Estadio GNP Seguros 公演2日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          version: "Extended outro",
+          type: "main"
+          },
+          {
+          title: "THIS & THAT",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "FATE",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "Charmer",
+            type: "encore"
+        },
+        {
+            title: "FAM",
+            type: "encore"
+        },
+        ]
+    },
+
+
+         {
+    id: "runit-fukuoka-day1",
+
+    tourId: "fukuoka-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 1",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.10.24",
+
+    year: 2026,
+
+    venue:
+        "みずほPayPayドーム福岡",
+
+    city:
+        "FUKUOKA",
+
+    country:
+        "japan",
+
+    countryLabel:
+        "JAPAN",
+
+    note:
+        "みずほPayPayドーム福岡 公演1日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          version: "Extended outro",
+          type: "main"
+          },
+          {
+          title: "THIS & THAT",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "FATE",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "Charmer",
+            type: "encore"
+        },
+        {
+            title: "FAM",
+            type: "encore"
+        },
+        ]
+    },
 
 ];
 
