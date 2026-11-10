@@ -911,7 +911,7 @@ const songs = [
     date: "2026.11.10",
     release: "2026.11.25",
     url: "song/SUIATSU.html",
-    image: "images/albums/SUIATSU.jpg",
+    image: "images/song/SUIATYU.jpg",
     category: "latest",
     members: [
       "Bang Chan",
