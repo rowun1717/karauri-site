@@ -21,6 +21,21 @@
 */
 
 const albums = [
+    {
+    title: "SUIATSU",
+    year: 2026,
+    release: "2026.11.25",
+    type: "Original Album",
+    image:
+      "images/albums/SUIATSU.jpg",
+    url:
+      "albums/SUIATSU.html",
+      available: true,
+    registeredTracks: 1,
+    totalTracks: 7
+  },
+
+
   {
     title: "THIS & THAT",
     year: 2026,
@@ -31,7 +46,7 @@ const albums = [
     url:
       "albums/THISTHAT.html",
       available: true,
-    registeredTracks: 0,
+    registeredTracks: 8,
     totalTracks: 8
   },
 
@@ -46,7 +61,7 @@ const albums = [
   url: "albums/SKZ-REPLAY1.html",
   available: false,
 
-  registeredTracks: 0,
+  registeredTracks: 15,
   totalTracks: 17
   },
 
@@ -113,8 +128,9 @@ const albums = [
     image:
       "images/albums/album-Do It.jpg",
      /* ページ未作成 */
-  url: "",
-  available: false,
+  url:
+      "albums/Do It.html",
+      available: true,
     registeredTracks: 3,
     totalTracks: 5
   },
@@ -127,8 +143,9 @@ const albums = [
     image:
       "images/albums/KARMA.png",
      /* ページ未作成 */
-  url: "",
-  available: false,
+  url:
+      "albums/KARMA.html",
+      available: true,
     registeredTracks: 0,
     totalTracks: 11
   },
