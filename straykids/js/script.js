@@ -903,8 +903,174 @@ const songs = [
   },
 
 
+    {
+    id: "SUIATSU",
+    title: "SUIATSU",
+    album: "SUIATSU",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.11.25",
+    url: "song/SUIATSU.html",
+    image: "images/albums/SUIATSU.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+    {
+    id: "Battle Ground",
+    title: "Battle Ground",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2023.02.22",
+    url: "song/Battle Ground.html",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+    {
+    id: "Roman Empire",
+    title: "Roman Empire",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2025.11.03",
+    url: "song/Roman_Empire.html",
+    image: "images/song/Roman_Empire.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+          ]
+  },
+
+  {
+    id: "LOVER",
+    title: "LOVER",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.03.20",
+    url: "song/LOVER.html",
+    image: "images/song/LOVER.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Hyunjin"
+    ]
+  },
+
+  {
+    id: "Raining Stars",
+    title: "Raining Stars",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2025.12.27",
+    url: "song/raining stars.html",
+    image: "images/song/raining_stars.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "HAN"
+    ]
+  },
+
+  {
+    id: "The Little Things",
+    title: "The Little Things",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.03.07",
+    url: "song/The_Little_Things.html",
+    image: "images/song/The Little Things.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "I.N",
+          ]
+  },
+
+  {
+    id: "Goodbye",
+    title: "Goodbye",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2025.07.06",
+    url: "song/Goodbye.html",
+    image: "images/song/Goodbye.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Seungmin"
+    ]
+  },
+
+  {
+    id: "Still Here",
+    title: "Still Here",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.01.28",
+    url: "song/still here.html",
+    image: "images/song/Still_Here.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Seungmin"
+    ]
+  },
+
+
+
+
 
 /* ========================================
+  {
+    title: "",
+    album: "MAXIDENT",
+    type: "Original Song",
+    date: "2026.06.12",
+    release: "2022.10.07",
+    url: "song/CASE143.html",
+    image: "images/song/CASE143.jpg",
+    karaoke: ["JOYSOUND", "DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  }
+
   {
     title: "CASE 143",
     album: "MAXIDENT",
@@ -935,6 +1101,14 @@ const songs = [
 ======================================== */
 
 const albums = [
+  {
+    title: "SUIATSU",
+    year: "2026",
+    image: "images/albums/SUIATSU.jpg",
+    url: "albums/SUIATSU.html",
+    available: true
+  },
+
   {
     title: "THIS & THAT",
     year: "2026",
