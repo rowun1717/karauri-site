@@ -1192,7 +1192,7 @@ const albums = [
   {
     title: "合 (HOP)",
     year: "2024",
-    image: "images/albums/合 (HOP).jpg",
+    image: "images/albums/HOP.jpg",
     url: "",
     available: false
   },
