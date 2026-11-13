@@ -1,8 +1,0 @@
-/* LYRICRACHA public lyrics: no audio player, no seek interactions. */
-.song-cover-panel {align-self:center;}
-.lyric-set {cursor:default!important;}
-.lyric-set:hover {transform:none!important;}
-.lyric-set::after,.lyric-set:hover::after {display:none!important;}
-.lyric-set.is-playing {animation:none!important;}
-.lyric-set.is-playing::after {display:none!important;}
-@media (max-width:760px){.song-cover-panel{margin-bottom:0!important;}}
