@@ -9,7 +9,7 @@ async function stored(){const c=await caches.open(META);const r=await c.match(ur
 async function refresh(){
  if(!('caches'in window)||!('serviceWorker'in navigator)){status('このブラウザは必要なオフライン機能に対応していません。');return;}
  try{
- const res=await fetch(url('offline-index.json'),{cache:'no-store'});if(!res.ok)throw Error('データ一覧の取得に失敗');inventory=await res.json();
+ const res=await fetch(url('offline-index.json')+'?revision=20261113b',{cache:'reload'});if(!res.ok)throw Error('データ一覧の取得に失敗');inventory=await res.json();
  const old=await stored();const oldFiles=old?.files||{};const cache=await caches.open(CACHE);
  changes=[];for(const [path,info] of Object.entries(inventory.files)){
    if(oldFiles[path]?.hash!==info.hash || !(await cache.match(url(path))))changes.push(path);
@@ -33,7 +33,7 @@ btn.addEventListener('click',async()=>{
    // Verify content hash before applying, to avoid mixing site releases.
    const buf=await response.clone().arrayBuffer();const digest=await crypto.subtle.digest('SHA-256',buf);
    const hex=Array.from(new Uint8Array(digest),x=>x.toString(16).padStart(2,'0')).join('');
-   if(hex!==inventory.files[path].hash)throw Error('公開データが更新されています。ページを再読み込みしてやり直してください: '+path);
+   if(hex!==inventory.files[path].hash)throw Error('公開ファイルと保存リストが不一致: '+path+'（取得 '+buf.byteLength+'B / 一覧 '+inventory.files[path].size+'B）。GitHub上の両方を更新してください。');
    await staging.put(url(path),response);el('progress').value=Math.round((i+1)/changes.length*100);
    status(`ダウンロード中… ${i+1} / ${changes.length} ファイル`);
   }
@@ -41,7 +41,7 @@ btn.addEventListener('click',async()=>{
   for(const path of removed)await cache.delete(url(path));
   const m=await caches.open(META);await m.put(url('offline-index.json'),new Response(JSON.stringify(inventory),{headers:{'Content-Type':'application/json'}}));
   await caches.delete(stage);status('保存完了！機内モードで動作を確認してみてね。');
- }catch(e){status('更新を完了できませんでした：'+e.message+'\n通信を確認して再試行してください。');await caches.delete(stage);}
+ }catch(e){status('更新を完了できませんでした：'+e.message+'\n通信と公開ファイルを確認してください。');await caches.delete(stage);}
  finally{busy=false;const failure=el('status').textContent.startsWith('更新を完了できませんでした')?el('status').textContent:null;await refresh();if(failure)status(failure);}
 });
 del.addEventListener('click',async()=>{if(busy||!confirm('保存したオフラインデータを削除しますか？'))return;busy=true;await caches.delete(CACHE);await caches.delete(META);busy=false;el('progress').value=0;await refresh();});
