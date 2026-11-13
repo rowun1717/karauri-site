@@ -184,7 +184,7 @@ const albums = [
     release: "2024.12.13",
     type: "SKZHOP HIPTAPE",
     image:
-      "images/albums/合 (HOP).jpg",
+      "images/albums/HOP.jpg",
      /* ページ未作成 */
   url: "",
   available: false,
