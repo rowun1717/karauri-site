@@ -514,9 +514,84 @@ function initSongPage() {
   applyLyricsViewMode("all");
   runFileLoader();
   activateReveal();
+  initFloatingLyricControls();
 }
 
 document.addEventListener(
   "DOMContentLoaded",
   initSongPage
 );
+
+/* Floating lyric controls: reuse the existing controls as the single source of truth. */
+function initFloatingLyricControls() {
+  const originalButtons = Array.from(document.querySelectorAll('.view-button[data-view]'));
+  if (!originalButtons.length || document.getElementById('floatingLyricControls')) return;
+
+  const wrapper = document.createElement('div');
+  wrapper.id = 'floatingLyricControls';
+  wrapper.className = 'floating-lyric-controls';
+  wrapper.innerHTML = `
+    <div class="floating-lyric-panel" id="floatingLyricPanel" hidden>
+      <div class="floating-lyric-title">LYRIC CONTROL</div>
+      <div class="floating-lyric-modes" role="group" aria-label="歌詞表示の切り替え">
+        <button type="button" data-floating-view="all">ALL DATA</button>
+        <button type="button" data-floating-view="original">ORIGINAL</button>
+        <button type="button" data-floating-view="kana">KANA</button>
+        <button type="button" data-floating-view="japanese">JAPANESE</button>
+      </div>
+      <button type="button" class="floating-lyric-fanchant" id="floatingFanchant" aria-pressed="false">FANCHANT OFF</button>
+    </div>
+    <button type="button" class="floating-lyric-trigger" id="floatingLyricTrigger" aria-label="歌詞切り替えメニューを開く" aria-expanded="false" aria-controls="floatingLyricPanel">☷</button>`;
+  document.body.appendChild(wrapper);
+  const trigger = wrapper.querySelector('#floatingLyricTrigger');
+  const panel = wrapper.querySelector('#floatingLyricPanel');
+  const floatModes = Array.from(wrapper.querySelectorAll('[data-floating-view]'));
+  const floatChant = wrapper.querySelector('#floatingFanchant');
+  const sourceChant = document.getElementById('fanchantToggle');
+  if (!sourceChant) floatChant.hidden = true;
+
+  function sync() {
+    const active = originalButtons.find(button => button.classList.contains('active'));
+    const selected = active?.dataset.view || 'all';
+    floatModes.forEach(button => {
+      const chosen = button.dataset.floatingView === selected;
+      button.classList.toggle('active', chosen);
+      button.setAttribute('aria-pressed', String(chosen));
+    });
+    const chantEnabled = document.body.classList.contains('show-fanchant');
+    floatChant.classList.toggle('active', chantEnabled);
+    floatChant.setAttribute('aria-pressed', String(chantEnabled));
+    floatChant.textContent = chantEnabled ? 'FANCHANT ON' : 'FANCHANT OFF';
+  }
+  function closePanel() {
+    panel.hidden = true;
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-label', '歌詞切り替えメニューを開く');
+    trigger.textContent = '☷';
+  }
+  trigger.addEventListener('click', () => {
+    const shouldOpen = panel.hidden;
+    panel.hidden = !shouldOpen;
+    trigger.setAttribute('aria-expanded', String(shouldOpen));
+    trigger.setAttribute('aria-label', shouldOpen ? '歌詞切り替えメニューを閉じる' : '歌詞切り替えメニューを開く');
+    trigger.textContent = shouldOpen ? '×' : '☷';
+    sync();
+  });
+  floatModes.forEach(button => button.addEventListener('click', () => {
+    const original = originalButtons.find(item => item.dataset.view === button.dataset.floatingView);
+    if (original) original.click();
+    sync();
+    closePanel();
+  }));
+  floatChant.addEventListener('click', () => {
+    sourceChant?.click();
+    sync();
+  });
+  originalButtons.forEach(button => button.addEventListener('click', sync));
+  sourceChant?.addEventListener('click', sync);
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closePanel(); });
+  document.addEventListener('click', event => {
+    if (!panel.hidden && !wrapper.contains(event.target)) closePanel();
+  });
+  sync();
+}
