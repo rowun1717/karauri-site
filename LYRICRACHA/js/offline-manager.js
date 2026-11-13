@@ -28,8 +28,8 @@ btn.addEventListener('click',async()=>{
  try{
   const staging=await caches.open(stage);for(const req of await staging.keys())await staging.delete(req);
   for(let i=0;i<changes.length;i++){
-   const path=changes[i],response=await fetch(url(path),{cache:'no-store'});
-   if(!response.ok||response.type==='opaque')throw Error('取得失敗: '+path);
+   const path=changes[i];let response;try{response=await fetch(url(path),{cache:'no-store'});}catch(err){throw Error('通信失敗: '+path+' ('+err.message+')');}
+   if(!response.ok||response.type==='opaque')throw Error('取得失敗 ('+response.status+'): '+path);
    // Verify content hash before applying, to avoid mixing site releases.
    const buf=await response.clone().arrayBuffer();const digest=await crypto.subtle.digest('SHA-256',buf);
    const hex=Array.from(new Uint8Array(digest),x=>x.toString(16).padStart(2,'0')).join('');
