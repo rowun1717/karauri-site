@@ -1020,7 +1020,7 @@ const songs = [
     date: "2026.11.10",
     release: "2025.07.06",
     url: "song/Goodbye.html",
-    image: "images/song/Goodbye.jpg",
+    image: "images/song/GOODBYE.jpg",
    karaoke: ["JOYSOUND","DAM"],
     category: "latest",
     members: [
