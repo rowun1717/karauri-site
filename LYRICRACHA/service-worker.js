@@ -1,5 +1,5 @@
 const OFFLINE = 'lyricracha-offline-v1';
-const SHELL = 'lyricracha-shell-v2';
+const SHELL = 'lyricracha-shell-v3';
 const ROOT = new URL('./', self.registration.scope);
 self.addEventListener('install', event => { event.waitUntil(caches.open(SHELL).then(c => c.addAll([new URL('index.html',ROOT),new URL('offline.html',ROOT)]))); self.skipWaiting(); });
 self.addEventListener('activate', event => { event.waitUntil(self.clients.claim()); });
