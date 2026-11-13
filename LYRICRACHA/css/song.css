@@ -4135,5 +4135,5 @@ body.lyrics-view-japanese .lyric-set .line.translation:last-child {
   body.lyrics-view-japanese .lyric-set .line.translation { margin-bottom: 16px; }
 }
 @media (min-width: 601px) {
-  .floating-lyric-controls { display: none; }
+  .floating-lyric-controls { right: 22px; bottom: 92px; }
 }
