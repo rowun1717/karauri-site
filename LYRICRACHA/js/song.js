@@ -517,10 +517,11 @@ function initSongPage() {
   initFloatingLyricControls();
 }
 
-document.addEventListener(
-  "DOMContentLoaded",
-  initSongPage
-);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSongPage, { once: true });
+} else {
+  initSongPage();
+}
 
 /* Floating lyric controls: reuse the existing controls as the single source of truth. */
 function initFloatingLyricControls() {
