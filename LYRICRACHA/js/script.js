@@ -1044,6 +1044,114 @@ const songs = [
     ]
   },
 
+    {
+    id: "Into the Current",
+    title: "Into the Current",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.05.02",
+    url: "song/Into_the_Current.html",
+    image: "images/song/Into_the_Current.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Seungmin"
+    ]
+  },
+      {
+    id: "MIC & BRUSH",
+    title: "MIC & BRUSH",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.05.02",
+    url: "song/MIC_&_BRUSH.html",
+    image: "images/song/MIC_BRUSH.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "HYUNJIN"
+    ]
+  },
+
+      {
+    id: "PERFUME",
+    title: "PERFUME",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.05.02",
+    url: "song/PERFUME.html",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Seungmin"
+    ]
+  },
+
+        {
+    id: "BABY",
+    title: "BABY",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.08.01",
+    url: "song/BABY.html",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "BANG CHAN"
+    ]
+  },
+      {
+    id: "Don’t Say",
+    title: "Don’t Say",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.08.01",
+    url: "song/Dont_Say.html",
+    image: "images/song/Don't_Say.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "HAN"
+    ]
+  },
+      {
+    id: "My Name",
+    title: "My Name",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.08.01",
+    url: "song/My_Name.html",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "CHANGBIN"
+    ]
+  },
+
+        {
+    id: "REV IT UP",
+    title: "REV IT UP",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.08.01",
+    url: "song/REV_IT_UP.html",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "FELIX"
+    ]
+  },
 
 
 
