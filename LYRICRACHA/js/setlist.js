@@ -4261,7 +4261,7 @@ const liveSetlists = [
         "LIVE",
 
     date:
-        "2026.9.25",
+        "2026.09.25",
 
     year: 2026,
 
@@ -4431,7 +4431,7 @@ const liveSetlists = [
         "LIVE",
 
     date:
-        "2026.9.26",
+        "2026.09.26",
 
     year: 2026,
 
@@ -4757,7 +4757,525 @@ const liveSetlists = [
         ]
     },
 
-];
+             {
+    id: "runit-tokyo2-day1",
+
+    tourId: "tokyo2-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 1",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.11.06",
+
+    year: 2026,
+
+    venue:
+        "東京ドーム",
+
+    city:
+        "TOKYO",
+
+    country:
+        "japan",
+
+    countryLabel:
+        "JAPAN",
+
+    note:
+        "東京ドーム 公演1日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "Lonely Night",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          type: "main"
+          },
+          {
+          title: "SUIATSU",
+          version: "Band ver.",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "FATE",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "TOPLINE",
+            type: "encore"
+        },
+        {
+            title: "I Like It",
+            type: "encore"
+        },
+        ]
+    },
+
+   {
+    id: "runit-tokyo2-day2",
+
+    tourId: "tokyo2-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 2",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.11.07",
+
+    year: 2026,
+
+    venue:
+        "東京ドーム",
+
+    city:
+        "TOKYO",
+
+    country:
+        "japan",
+
+    countryLabel:
+        "JAPAN",
+
+    note:
+        "東京ドーム 公演2日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "Lonely Night",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          type: "main"
+          },
+          {
+          title: "SUIATSU",
+          version: "Band ver.",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "FATE",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "Charmer",
+            type: "W encore"
+        },
+        {
+            title: "Chk Chk Boom",
+            version: "Festival ver.",
+            type: "W encore"
+        },
+        ]
+    },
+
+    {
+    id: "runit-tokyo2-day3",
+
+    tourId: "tokyo2-runit",
+
+    tour:
+        "Stray Kids World Tour 〈RUN IT〉",
+
+    day:
+        "DAY 3",
+
+    type:
+        "LIVE",
+
+    date:
+        "2026.11.08",
+
+    year: 2026,
+
+    venue:
+        "東京ドーム",
+
+    city:
+        "TOKYO",
+
+    country:
+        "japan",
+
+    countryLabel:
+        "JAPAN",
+
+    note:
+        "東京ドーム 公演3日目のセットリストです。",
+
+        songs: [
+          {
+          title: "Hall of Fame",
+          type: "main"
+          },
+          {
+          title: "Hellevator",
+          type: "main"
+          },
+          {
+          title: "District 9",
+          type: "main"
+          },
+          {
+          title: "Miroh + Levanter + I am You Medley",
+          type: "main"
+          },
+          {
+          title: "Side Effects",
+          type: "main"
+          },
+          {
+          title: "Double Knot",
+          type: "main"
+          },
+          {
+          title: "Back Door",
+          type: "main"
+          },
+          {
+          title: "MANIAC",
+          type: "main"
+          },
+          {
+          title: "God's Menu",
+          type: "main"
+          },
+          {
+          title: "CREED",
+          type: "main"
+          },
+          {
+          title: "SLASH",
+          type: "main"
+          },
+          {
+          title: "DIVINE",
+          type: "main"
+          },
+          {
+          title: "Thunderous",
+          type: "main"
+          },
+          {
+          title: "just a little",
+          type: "main"
+          },
+          {
+          title: "Lonely Night",
+          type: "main"
+          },
+          {
+          title: "I Do",
+          type: "main"
+          },
+          {
+          title: "Blind Spot",
+          type: "main"
+          },
+          {
+          title: "SUIATSU",
+          version: "Band ver.",
+          type: "main"
+          },
+          {
+          title: "Do It",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "LALALALA",
+          version: "Festival ver.",
+          type: "main"
+          },
+          {
+          title: "CEREMONY",
+          version: "Hip Hip ver.",
+          type: "main"
+          },
+          {
+          title: "Chk Chk Boom",
+          version: "Japanese ver.",
+          type: "main"
+          },
+          {
+          title: "S-Class",
+          type: "main"
+          },
+        {
+            title: "RUN IT",
+            type: "encore"
+        },
+        {
+            title: "Stray Kids",
+            type: "encore"
+        },
+        {
+            title: "Phoenix",
+            type: "encore"
+        },
+        {
+            title: "CASE 143",
+            version: "Japanese ver.",
+            type: "encore"
+        },
+        {
+            title: "FATE",
+            type: "encore"
+        },
+        {
+            title: "Social Path",
+            type: "encore"
+        },
+        {
+            title: "MIROH",
+            type: "encore"
+        },
+        {
+            title: "Christmas EveL",
+            version: "Festival ver.",
+            type: "W encore"
+        },
+        {
+            title: "FAM",
+            type: "W encore"
+        },
+        ]
+    },
+
+]
 
 
 /* ========================================
@@ -5306,6 +5824,11 @@ function renderLiveSetlists(liveList) {
         Array.from(
           locationGroups.values()
         )
+          .sort((first, second) =>
+            String(first[0]?.date || "").localeCompare(
+              String(second[0]?.date || "")
+            )
+          )
           .map((locationDates) => {
 
             /*
