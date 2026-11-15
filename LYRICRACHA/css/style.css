@@ -2816,3 +2816,32 @@ body{background:#031527;color:#eaf8ff;isolation:isolate}
     font-size: clamp(28px, 8vw, 48px);
   }
 }
+
+/* Mobile hero: compact edition label and fully visible site name. */
+@media screen and (max-width: 760px) {
+  .hero .hero-content .hero-title {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+  .hero .hero-content .hero-title > .hero-title-small {
+    display: block;
+    font-size: clamp(11px, 2.7vw, 15px) !important;
+    letter-spacing: .10em !important;
+    line-height: 1.55 !important;
+    white-space: normal;
+    margin-bottom: clamp(8px, 2vw, 14px);
+  }
+  .hero .hero-content .hero-title > .hero-title-main {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(18px, 5.5vw, 42px) !important;
+    letter-spacing: -.06em !important;
+    line-height: 1.18 !important;
+    white-space: nowrap;
+    overflow-wrap: normal !important;
+    -webkit-text-stroke: 1px #67d7f8;
+  }
+}
