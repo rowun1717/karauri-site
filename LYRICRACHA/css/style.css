@@ -2912,3 +2912,50 @@ body{background:#031527;color:#eaf8ff;isolation:isolate}
   .hero-status { display: flex; gap: 12px 18px; }
   .hero-image-frame { aspect-ratio: 5 / 4; }
 }
+
+/* LYRICRACHA mobile layout v2: append AFTER previous mobile patch.
+   Desktop and SUIATSU ocean/bubble/glitch animations are unchanged. */
+@media screen and (max-width: 760px) {
+  /* Compact the opening screen and its large SUIATSU visual */
+  .hero { gap: 14px; padding-top: 88px; padding-bottom: 34px; }
+  .hero-description { margin-top: 16px; }
+  .hero-status { margin: 16px 0; }
+  .hero-visual { width: min(76%, 300px); max-width: 300px; margin: 14px auto 0; }
+  .hero-file { width: 100%; padding: 9px; }
+  .hero-image-frame { aspect-ratio: 4 / 5; }
+  .hero-file-top { font-size: 8px; padding-bottom: 8px; }
+  .hero-file-bottom { padding-top: 8px; }
+
+  /* Four control-panel shortcuts become a 2 x 2 grid */
+  .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .quick-card { min-width: 0; min-height: 142px; padding: 14px 12px 24px; }
+  .quick-code { font-size: 8px; }
+  .quick-icon { margin: 17px 0 10px; font-size: 24px; }
+  .quick-card h3 { font-size: clamp(15px, 4vw, 19px); overflow-wrap: anywhere; }
+  .quick-card p { font-size: 10px; line-height: 1.5; margin-top: 7px; overflow-wrap: anywhere; }
+  .quick-arrow { right: 10px; bottom: 9px; font-size: 16px; }
+
+  /* Latest file: reduce poster dominance, keep readable metadata */
+  .latest-card { min-height: 0; }
+  .latest-image-area { height: clamp(190px, 53vw, 280px); min-height: 0; max-height: none; }
+  .latest-image-area img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+  .latest-content { padding: 20px 16px; }
+  .latest-content h3 { font-size: clamp(29px, 8vw, 42px); margin: 15px 0; }
+  .file-data { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 15px 0; }
+  .file-data div { min-width: 0; }
+  .analysis-list { gap: 9px 12px; margin: 16px 0; }
+  .latest-index span:first-child { font-size: 26px; }
+
+  /* Less empty space between sections */
+  .section { padding-top: 45px; padding-bottom: 45px; }
+  .latest-section { padding-top: 45px; }
+  .quick-section { padding-top: 28px; }
+  .section-heading { margin-bottom: 18px; gap: 12px; }
+  .album-rail { gap: 12px; }
+  .album-card { flex-basis: min(43vw, 200px); }
+}
+@media screen and (max-width: 430px) {
+  .hero-visual { width: min(76%, 280px); }
+  .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quick-card { min-height: 136px; }
+}
