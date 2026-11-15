@@ -4147,3 +4147,75 @@ body.lyrics-view-japanese .lyric-set .line.translation:last-child {
   .lyric-set { padding:18px 12px!important; }
   .lyric-set .line { overflow-wrap:anywhere; }
 }
+
+/* =====================================================
+   Language-aware lyrics: last in cascade, after mobile overrides
+   ALL: Japanese-main tracks prioritize actual Japanese lines.
+   Solo views: selected layer always becomes large.
+===================================================== */
+body[data-lyrics-primary="japanese"].lyrics-view-all .lyric-set .line.translation:not(.is-untranslated) {
+  font-size: clamp(21px, 2.4vw, 29px) !important;
+  font-weight: 850; color: #fff !important; line-height: 1.65 !important;
+  margin-bottom: 24px;
+}
+body[data-lyrics-primary="japanese"].lyrics-view-all .lyric-set .line.original {
+  font-size: clamp(13px, 1.25vw, 16px) !important;
+  font-weight: 600; color: rgba(255,255,255,.65);
+}
+body[data-lyrics-primary="japanese"].lyrics-view-all .lyric-set .line.ruby {
+  font-size: clamp(12px, 1.15vw, 15px) !important;
+  font-weight: 650; line-height: 1.6 !important;
+}
+/* Korean pronunciation is not a Japanese-version ruby: don't mix it into ALL.
+   It is still available via the KANA button. */
+body[data-lyrics-primary="japanese"].lyrics-view-all .lyric-set.has-korean-original .line.ruby {
+  display: none !important;
+}
+/* English duplicates in the translation field are placeholders, not Japanese. */
+body[data-lyrics-primary="japanese"].lyrics-view-all .lyric-set .line.translation.is-untranslated {
+  display: none !important;
+}
+body[data-lyrics-primary="japanese"].lyrics-view-all .lyric-set.has-no-japanese .line.original {
+  font-size: clamp(18px, 1.9vw, 23px) !important;
+  font-weight: 750; color: #fff;
+}
+body.lyrics-view-japanese .lyric-set .line.translation,
+body.lyrics-view-original .lyric-set .line.original,
+body.lyrics-view-kana .lyric-set .line.ruby {
+  font-size: clamp(22px, 2.35vw, 29px) !important;
+  line-height: 1.7 !important;
+  font-weight: 800;
+}
+body.lyrics-view-japanese .lyric-set .line.translation { color: #fff !important; }
+@media(max-width:600px) {
+  body[data-lyrics-primary="japanese"].lyrics-view-all .lyric-set .line.translation:not(.is-untranslated) { font-size: 21px !important; }
+  body[data-lyrics-primary="japanese"].lyrics-view-all .lyric-set .line.original { font-size: 13px !important; }
+  body[data-lyrics-primary="japanese"].lyrics-view-all .lyric-set .line.ruby { font-size: 12px !important; }
+  body[data-lyrics-primary="japanese"].lyrics-view-all .lyric-set.has-no-japanese .line.original { font-size: 18px !important; }
+  body.lyrics-view-japanese .lyric-set .line.translation,
+  body.lyrics-view-original .lyric-set .line.original,
+  body.lyrics-view-kana .lyric-set .line.ruby { font-size: 22px !important; }
+}
+
+
+/* ===== Shared track hero typography: compact across all songs ===== */
+.song-hero .song-main-data .song-title {
+  font-size: clamp(27px, 3.4vw, 42px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.035em !important;
+  overflow-wrap: anywhere;
+}
+.song-hero .song-main-data .song-eyebrow { font-size: 10px !important; }
+.song-hero .song-main-data .song-subtitle { font-size: 13px !important; }
+.song-hero .song-main-data .song-data-table dt { font-size: 9px !important; }
+.song-hero .song-main-data .song-data-table dd { font-size: 11px !important; line-height: 1.5 !important; }
+@media (max-width: 600px) {
+  .song-hero .song-main-data .song-title {
+    font-size: clamp(24px, 6vw, 32px) !important;
+    line-height: 1.13 !important;
+  }
+  .song-hero .song-main-data .song-eyebrow { font-size: 8px !important; }
+  .song-hero .song-main-data .song-subtitle { font-size: 10px !important; }
+  .song-hero .song-main-data .song-data-table dt { font-size: 8px !important; }
+  .song-hero .song-main-data .song-data-table dd { font-size: 9px !important; }
+}
