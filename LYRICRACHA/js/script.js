@@ -1051,8 +1051,8 @@ const songs = [
     type: "Original Song",
     date: "2026.11.10",
     release: "2026.05.02",
-    url: "song/Into_the_Current.html",
-    image: "images/song/Into_the_Current.jpg",
+    url: "song/into_the_Current.html",
+    image: "images/song/Into_The_Current.jpg",
    karaoke: ["JOYSOUND","DAM"],
     category: "latest",
     members: [
