@@ -2959,3 +2959,69 @@ body{background:#031527;color:#eaf8ff;isolation:isolate}
   .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .quick-card { min-height: 136px; }
 }
+
+
+/* LYRICRACHA: hero split layout on ALL devices.
+   Append at the end of css/style.css, AFTER previous mobile patches.
+   Only hero layout/spacing is changed. Ocean, bubbles, scan beam and glitch remain intact.
+   Keep the existing HTML: .hero-content is left, .hero-visual is right. */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  align-items: center;
+}
+.hero > .hero-content,
+.hero > .hero-visual { min-width: 0; }
+.hero > .hero-visual { width: 100%; max-width: 100%; margin: 0; }
+.hero > .hero-visual > .hero-file { width: 100%; max-width: 530px; margin-inline: auto; }
+
+@media screen and (max-width: 1050px) {
+  .hero { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(14px, 3vw, 32px); }
+  .hero > .hero-visual { width: 100%; max-width: 100%; margin: 0; }
+}
+@media screen and (max-width: 760px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+    gap: clamp(8px, 2.4vw, 18px);
+    min-height: 0;
+    padding: 86px clamp(10px, 3vw, 20px) 34px;
+    align-items: center;
+  }
+  .hero > .hero-content { width: 100%; max-width: 100%; min-width: 0; }
+  .hero > .hero-visual { width: 100%; max-width: 100%; min-width: 0; margin: 0; }
+  .hero > .hero-visual > .hero-file { width: 100%; max-width: 100%; padding: clamp(4px, 1vw, 9px); margin: 0; }
+  .hero .eyebrow { font-size: clamp(7px, 1.4vw, 10px); letter-spacing: .05em; gap: 6px; margin-bottom: 9px; }
+  .hero .eyebrow::before { width: 12px; flex-shrink: 0; }
+  .hero .hero-content .hero-title > .hero-title-small {
+    font-size: clamp(9px, 1.8vw, 13px) !important;
+    letter-spacing: .025em !important;
+    line-height: 1.4 !important;
+    margin-bottom: 5px;
+  }
+  .hero .hero-content .hero-title > .hero-title-main {
+    font-size: clamp(11px, 3.1vw, 24px) !important;
+    letter-spacing: -.07em !important;
+    line-height: 1.2 !important;
+    white-space: nowrap;
+  }
+  .hero .hero-description { font-size: clamp(10px, 1.8vw, 13px); line-height: 1.55; margin-top: 12px; overflow-wrap: anywhere; }
+  .hero .hero-status { gap: 6px 10px; margin: 12px 0; }
+  .hero .status-label { font-size: clamp(7px, 1.2vw, 9px); }
+  .hero .hero-status strong { font-size: clamp(9px, 1.7vw, 12px); }
+  .hero .hero-buttons { display: grid; gap: 7px; }
+  .hero .hero-buttons .lab-button { min-height: 36px; padding: 8px 9px; font-size: clamp(9px, 1.5vw, 11px); gap: 5px; }
+  .hero .hero-guide-link { font-size: clamp(8px, 1.3vw, 10px); margin-top: 10px; line-height: 1.5; }
+  .hero .hero-file-top, .hero .hero-file-bottom { font-size: clamp(6px, 1vw, 9px); }
+  .hero .hero-file-top { padding-bottom: 5px; }
+  .hero .hero-file-bottom { padding-top: 5px; gap: 4px; }
+  .hero .hero-file-bottom div span { font-size: clamp(6px, 1vw, 9px); }
+  .hero .hero-file-bottom div strong { font-size: clamp(7px, 1.1vw, 10px); }
+  .hero .hero-image-frame { aspect-ratio: 3 / 4; }
+  .hero .frame-corner { width: 10px; height: 10px; }
+}
+@media screen and (max-width: 390px) {
+  .hero { grid-template-columns: minmax(0, 1.14fr) minmax(0, .86fr); gap: 7px; padding-inline: 9px; }
+  .hero .hero-content .hero-title > .hero-title-main { font-size: clamp(10px, 3vw, 13px) !important; }
+  .hero .hero-content .hero-title > .hero-title-small { font-size: 9px !important; }
+  .hero .hero-status { gap: 5px 8px; }
+}
