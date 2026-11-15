@@ -2845,3 +2845,70 @@ body{background:#031527;color:#eaf8ff;isolation:isolate}
     -webkit-text-stroke: 1px #67d7f8;
   }
 }
+
+
+
+/* LYRICRACHA / SUIATSU: mobile layout compactness
+   Paste at the VERY END of css/style.css.
+   Ocean background, bubbles, scan beam, glitch animations remain unchanged. */
+@media screen and (max-width: 760px) {
+  .site-header { height: 60px; padding-inline: 16px; }
+  .header-logo-main { font-size: 21px; }
+  .header-logo-sub { font-size: 9px; }
+  .menu-button { width: 42px; height: 42px; }
+  .global-nav { inset: 60px 0 0; }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    min-height: 0;
+    padding: 94px 20px 48px;
+  }
+  .hero-content, .hero-visual { width: 100%; min-width: 0; max-width: 100%; }
+  .hero .eyebrow { margin-bottom: 16px; font-size: clamp(8px, 2vw, 10px); letter-spacing: .15em; }
+  .hero .eyebrow::before { width: 25px; }
+  .hero .hero-content .hero-title > .hero-title-small {
+    font-size: clamp(11px, 2.8vw, 15px) !important;
+    margin-bottom: 8px;
+  }
+  .hero .hero-content .hero-title > .hero-title-main {
+    font-size: clamp(23px, 6.2vw, 42px) !important;
+    letter-spacing: -.065em !important;
+    white-space: nowrap;
+  }
+  .hero-description { margin-top: 22px; font-size: clamp(12px, 3.2vw, 14px); line-height: 1.65; }
+  .hero-status { display: flex; flex-wrap: wrap; gap: 14px 20px; margin: 22px 0; }
+  .hero-status div { min-width: 0; }
+  .status-label { margin-bottom: 5px; font-size: 9px; }
+  .hero-status strong { font-size: 12px; }
+  .hero-buttons { display: grid; gap: 9px; }
+  .hero-buttons .lab-button { width: 100%; min-height: 46px; padding: 10px 16px; font-size: 11px; }
+  .hero-guide-link { margin-top: 12px; }
+
+  .hero-visual { margin: 8px auto 0; }
+  .hero-file { width: min(100%, 390px); padding: 12px; margin-inline: auto; transform: none; }
+  .hero-file-top { padding: 0 2px 10px; font-size: 8px; }
+  .hero-file-bottom { padding: 11px 2px 0; }
+  .hero-image-frame { aspect-ratio: 5 / 4; }
+  .frame-corner { width: 18px; height: 18px; }
+
+  .section { padding-block: 65px; }
+  .section-heading { margin-bottom: 24px; }
+  .section-heading h2 { font-size: clamp(26px, 7vw, 42px); }
+  .latest-section { padding-top: 65px; }
+  .latest-image-area { min-height: 250px; max-height: 340px; }
+  .latest-content { padding: 26px 20px; }
+  .latest-content h3 { font-size: clamp(32px, 9vw, 50px); }
+  .quick-section { padding-top: 45px; }
+  .quick-card { min-height: 155px; padding: 18px; }
+  .quick-icon { margin: 20px 0 12px; font-size: 28px; }
+  .quick-card h3 { font-size: 20px; }
+  .database-controls { gap: 12px; margin-bottom: 24px; }
+  .database-search { height: 48px; padding-inline: 14px; }
+  .filter-button { height: 44px; }
+}
+@media screen and (max-width: 430px) {
+  .hero { padding-inline: 16px; }
+  .hero-status { display: flex; gap: 12px 18px; }
+  .hero-image-frame { aspect-ratio: 5 / 4; }
+}
