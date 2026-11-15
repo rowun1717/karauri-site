@@ -16,6 +16,7 @@
   <title>LYRICRACHA | SUIATSU EDITION</title>
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/start-screen.css?v=1">
   <link
   rel="stylesheet"
   href="css/common-header.css?v=20260806-1"
@@ -46,33 +47,20 @@
 
 <body>
 
-  <!-- 起動画面 -->
-  <div id="loadingScreen" class="loading-screen">
-    <div class="loading-inner">
-
-      <p class="loading-code">
-        SYSTEM / LYRICRACHA / SUIATSU
-      </p>
-
-      <h1 class="loading-logo" data-text="LR">
-        LR
-      </h1>
-
-      <p id="loadingMessage" class="loading-message">
-        DIVING INTO THE DEEP...
-      </p>
-
-      <div class="loading-bar">
-        <span id="loadingProgress"></span>
-      </div>
-
-      <p id="loadingPercent" class="loading-percent">
-        0%
-      </p>
-
+  <!-- PWA専用タイトル画面（30分以上離れた再起動時のみ） -->
+  <div id="lrStartScreen" class="lr-start" hidden aria-label="LYRICRACHA スタート画面">
+    <div class="lr-start__noise" aria-hidden="true"></div>
+    <div class="lr-start__content">
+      <p class="lr-start__top">STRAY KIDS / UNOFFICIAL LYRICS ARCHIVE</p>
+      <h1 class="lr-start__title" data-text="LYRICRACHA">LYRICRACHA</h1>
+      <p class="lr-start__edition">SUIATSU EDITION</p>
+      <button id="lrStartButton" class="lr-start__button" type="button">PRESS START <span aria-hidden="true">▶</span></button>
+      <p class="lr-start__footer">UNOFFICIAL FAN PROJECT / STEP OUT</p>
+    </div>
+    <div class="lr-start__impact" aria-hidden="true">
+      <img src="images/logos/skz-logo.png" alt="" class="lr-start__skz-logo">
     </div>
   </div>
-
 
   <!-- SUIATSU: scroll-reactive ocean and bubbles -->
   <div class="ocean-depth" aria-hidden="true"></div>
@@ -638,6 +626,7 @@
     ↑
   </button>
 
+  <script src="js/start-screen.js?v=1" defer></script>
   <script
     src="js/script.js?v=suiatsu-scroll-3"
   ></script>
