@@ -1462,18 +1462,6 @@ const albums = [
    DOM取得
 ======================================== */
 
-const loadingScreen =
-  document.getElementById("loadingScreen");
-
-const loadingProgress =
-  document.getElementById("loadingProgress");
-
-const loadingPercent =
-  document.getElementById("loadingPercent");
-
-const loadingMessage =
-  document.getElementById("loadingMessage");
-
 const menuButton =
   document.getElementById("menuButton");
 
@@ -1510,72 +1498,6 @@ const pageTop =
 /* ========================================
    起動画面
 ======================================== */
-
-function runLoadingScreen() {
-  if (
-    !loadingScreen ||
-    !loadingProgress ||
-    !loadingPercent ||
-    !loadingMessage
-  ) {
-    return;
-  }
-
-  let progress = 0;
-
-  const messages = [
-    "ACCESSING LYRIC DATABASE...",
-    "LOADING SONG FILES...",
-    "VERIFYING PART DATA...",
-    "ACCESS GRANTED."
-  ];
-
-  const timer =
-    window.setInterval(() => {
-      progress +=
-        Math.floor(
-          Math.random() * 12
-        ) + 4;
-
-      if (progress > 100) {
-        progress = 100;
-      }
-
-      loadingProgress.style.width =
-        `${progress}%`;
-
-      loadingPercent.textContent =
-        `${progress}%`;
-
-      if (progress < 35) {
-        loadingMessage.textContent =
-          messages[0];
-
-      } else if (progress < 65) {
-        loadingMessage.textContent =
-          messages[1];
-
-      } else if (progress < 95) {
-        loadingMessage.textContent =
-          messages[2];
-
-      } else {
-        loadingMessage.textContent =
-          messages[3];
-      }
-
-      if (progress === 100) {
-        window.clearInterval(timer);
-
-        window.setTimeout(() => {
-          loadingScreen.classList.add(
-            "is-hidden"
-          );
-        }, 450);
-      }
-    }, 95);
-}
-
 
 /* ========================================
    メニュー
@@ -2630,8 +2552,6 @@ pageTop?.addEventListener(
 ======================================== */
 
 function init() {
-  runLoadingScreen();
-
   setupMenu();
 
   updateStatistics();
