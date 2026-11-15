@@ -4280,3 +4280,27 @@ body[data-lyrics-primary="japanese"].lyrics-view-kana .lyric-set .line.ruby {fon
   body[data-lyrics-primary="japanese"].lyrics-view-original .lyric-set .line.original,
   body[data-lyrics-primary="japanese"].lyrics-view-kana .lyric-set .line.ruby {font-size:18px!important;}
 }
+
+
+/* JP-only track hero sizing. */
+/* ===== Shared track hero typography: compact across all songs ===== */
+.song-hero .song-main-data .song-title {
+  font-size: clamp(27px, 3.4vw, 42px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.035em !important;
+  overflow-wrap: anywhere;
+}
+.song-hero .song-main-data .song-eyebrow { font-size: 10px !important; }
+.song-hero .song-main-data .song-subtitle { font-size: 13px !important; }
+.song-hero .song-main-data .song-data-table dt { font-size: 9px !important; }
+.song-hero .song-main-data .song-data-table dd { font-size: 11px !important; line-height: 1.5 !important; }
+@media (max-width: 600px) {
+  .song-hero .song-main-data .song-title {
+    font-size: clamp(24px, 6vw, 32px) !important;
+    line-height: 1.13 !important;
+  }
+  .song-hero .song-main-data .song-eyebrow { font-size: 8px !important; }
+  .song-hero .song-main-data .song-subtitle { font-size: 10px !important; }
+  .song-hero .song-main-data .song-data-table dt { font-size: 8px !important; }
+  .song-hero .song-main-data .song-data-table dd { font-size: 9px !important; }
+}
