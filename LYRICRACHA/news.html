@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>NEWS | LYRIRACHA</title>
+    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common-header.css?v=unified-1">
+</head>
+<body>
+    <header class="site-header">
+  <a class="header-logo" href="index.html">
+    <span class="header-logo-main">LYRIC</span>
+    <span class="header-logo-sub">RACHA</span>
+  </a>
+  <nav class="global-nav" id="globalNav" aria-label="メインメニュー">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="news.html" class="is-current">NEWS</a>
+    <a href="index.html#database">LYRICS</a>
+    <a href="albums.html">ALBUMS</a>
+    <a href="setlist.html">SETLIST</a>
+    <a href="search.html">SEARCH</a>
+    <a href="members.html">MEMBERS</a>
+  </nav>
+  <button class="menu-button" id="menuButton" type="button" aria-controls="globalNav" aria-expanded="false" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+    <main class="news-page">
+        <p class="news-preview__eyebrow">STRAY KIDS / LYRIRACHA · TRANSMISSION LOG</p>
+        <h1 class="news-glitch" data-text="NEWS">NEWS</h1>
+        <p class="news-page__intro">楽曲追加・サイト更新・お知らせの記録。</p>
+        <div id="allNewsList" class="news-log"></div>
+
+        <section class="news-schedule">
+        <div class="news-schedule-heading">
+            <p class="news-schedule-label">UPCOMING TRANSMISSIONS</p>
+            <h2 class="news-glitch" data-text="SCHEDULE">SCHEDULE</h2>
+            <p>LYRIRACHAの更新予定・実装予定を確認できます。</p>
+        </div>
+
+        <div class="news-countdown">
+            <span>NEXT UPDATE / COUNTDOWN</span>
+            <strong id="nextUpdateCountdown">-- DAYS</strong>
+            <p id="nextUpdateTitle">次回更新予定を確認中...</p>
+        </div>
+
+        <div class="news-calendar">
+            <div class="news-calendar-header">
+            <button id="calendarPrev" type="button" aria-label="前の月">←</button>
+            <h3 id="calendarMonth"></h3>
+            <button id="calendarNext" type="button" aria-label="次の月">→</button>
+            </div>
+            <div id="calendarGrid" class="news-calendar-grid"></div>
+        </div>
+
+        
+            <section class="news-schedule-details">
+            <div class="news-schedule-details-heading">
+                <p>MONTHLY TRANSMISSION LOG</p>
+                <h3>SCHEDULE DETAILS</h3>
+                <span>月間更新予定</span>
+            </div>
+
+            <div id="calendarEventList" class="news-calendar-events"></div>
+            </section>
+
+        </section>
+
+            </main>
+            <script src="js/news-data.js" defer></script>
+            <script src="js/news.js" defer></script>
+            <script src="js/news-schedule.js" defer></script>
+  <script src="js/common-navigation.js?v=unified-1"></script>
+</body>
+</html>
