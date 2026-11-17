@@ -3464,3 +3464,43 @@ button.calendar-day.has-event:focus-visible {
     transition: none;
   }
 }
+
+
+
+/* NEWS：スマホ表示の整理 */
+@media (max-width: 600px) {
+  .news-log-item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    padding: 18px 12px;
+  }
+
+  .news-log-item time {
+    font-size: 11px;
+  }
+
+  .news-log-category {
+    font-size: 11px;
+  }
+
+  .news-log-item strong {
+    flex-basis: auto;
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .news-log-new {
+    order: 0;
+    font-size: 9px;
+  }
+
+  .news-log-item p {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+}
