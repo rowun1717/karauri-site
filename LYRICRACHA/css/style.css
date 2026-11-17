@@ -3504,3 +3504,27 @@ button.calendar-day.has-event:focus-visible {
     line-height: 1.7;
   }
 }
+
+
+/* ホームNEWS：文字の読みやすさを改善 */
+#homeNewsList {
+  position: relative;
+  isolation: isolate;
+  background: rgba(2, 13, 25, 0.88);
+}
+
+#homeNewsList .news-log-item {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  #homeNewsList .news-log-item {
+    padding: 15px 12px;
+    gap: 6px 10px;
+  }
+
+  #homeNewsList .news-log-item p {
+    line-height: 1.6;
+  }
+}
