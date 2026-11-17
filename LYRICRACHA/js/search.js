@@ -394,7 +394,7 @@ const songs = [
     type: "Original Song",
     release: "2026.03.13",
     image: "images/song/Endless Sun.jpg",
-    url: "song/Endless Sun.html",
+    url: "song/Endless_Sun.html",
     karaoke: [
       "JOYSOUND",
       "DAM"
