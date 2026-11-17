@@ -3025,3 +3025,442 @@ body{background:#031527;color:#eaf8ff;isolation:isolate}
   .hero .hero-content .hero-title > .hero-title-small { font-size: 9px !important; }
   .hero .hero-status { gap: 5px 8px; }
 }
+
+
+/* NEWS: restrained glitch + readable system log */
+.news-preview { max-width:1180px; width:calc(100% - 48px); margin:0 auto; padding:55px 0 45px; }
+.news-preview__top { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:22px; }
+.news-preview__eyebrow { color:#91abc2; font-size:10px; font-weight:800; letter-spacing:.16em; }
+.news-glitch { position:relative; isolation:isolate; display:inline-block; margin:0; font-size:clamp(40px,7vw,76px); font-weight:900; line-height:1; letter-spacing:-.06em; }
+.news-glitch::before,.news-glitch::after { content:attr(data-text); position:absolute; inset:0; pointer-events:none; opacity:0; }
+.news-glitch::before { color:#ff3f83; animation:newsGlitchRed 9s infinite steps(1,end); }
+.news-glitch::after { color:#77d5ed; animation:newsGlitchBlue 9s infinite steps(1,end); }
+@keyframes newsGlitchRed { 0%,92%,94%,100%{opacity:0;transform:none;clip-path:none} 92.3%{opacity:.65;transform:translate(2px,-1px);clip-path:inset(22% 0 59% 0)} 93%{opacity:.45;transform:translate(-1px,1px);clip-path:inset(65% 0 18% 0)} }
+@keyframes newsGlitchBlue { 0%,92%,94%,100%{opacity:0;transform:none;clip-path:none} 92.5%{opacity:.55;transform:translate(-2px,1px);clip-path:inset(51% 0 36% 0)} 93.2%{opacity:.4;transform:translate(1px,-1px);clip-path:inset(12% 0 78% 0)} }
+.news-preview__all { color:#ff7aaa; font-size:11px; font-weight:800; letter-spacing:.1em; text-decoration:none; white-space:nowrap; }
+.news-log { border-top:1px solid rgba(130,181,210,.32); background:linear-gradient(110deg,rgba(8,35,57,.34),rgba(10,10,15,.5)); }
+.news-log__item { display:grid; grid-template-columns:110px 95px minmax(0,1fr) auto; align-items:center; gap:14px; padding:19px 16px; border-bottom:1px solid rgba(255,255,255,.11); }
+.news-log__date { color:#9ca9b9; font:11px monospace; }
+.news-log__category { color:#ff7aaa; font:700 11px monospace; }
+.news-log__title { font-size:14px; font-weight:700; overflow-wrap:anywhere; }
+.news-log__new { color:#ff7aaa; font:800 10px monospace; border:1px solid rgba(255,63,131,.55); padding:3px 6px; }
+.news-log__detail { grid-column:3/-1; margin:0; color:#b7bdc9; font-size:12px; line-height:1.8; }
+.news-page { max-width:1000px; width:calc(100% - 48px); margin:0 auto; padding:145px 0 90px; min-height:80vh; }
+.news-page__intro { color:#aeb6c6; font-size:14px; line-height:1.8; margin:18px 0 40px; }
+@media(max-width:650px) { .news-preview { padding:32px 0; } .news-preview__top { align-items:center; } .news-preview__eyebrow { font-size:8px; letter-spacing:.07em; } .news-preview__all { font-size:9px; } .news-log__item { grid-template-columns:1fr auto; gap:7px 10px; padding:14px 12px; } .news-log__date { grid-column:1; } .news-log__category { grid-column:2; text-align:right; } .news-log__title { grid-column:1; font-size:13px; } .news-log__new { grid-column:2; justify-self:end; } .news-log__detail { grid-column:1/-1; } }
+@media(prefers-reduced-motion:reduce) { .news-glitch::before,.news-glitch::after { animation:none!important; } }
+
+
+
+/* NEWS LOG：表示調整 */
+.news-log-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(130, 190, 220, 0.18);
+}
+
+.news-log-item time {
+  color: #89a9bd;
+  font-size: 12px;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.news-log-category {
+  color: #ff7aaa;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.news-log-item strong {
+  color: #f3f7fc;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.news-log-new {
+  padding: 3px 6px;
+  border: 1px solid rgba(255, 100, 140, 0.55);
+  color: #ff7aaa;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.news-log-item p {
+  flex-basis: 100%;
+  margin: 0;
+  color: #a5b7c8;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.news-log-item:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .news-log-item {
+    gap: 6px 10px;
+    padding: 17px 0;
+  }
+
+  .news-log-item strong {
+    flex-basis: 100%;
+  }
+}
+
+
+/* ========================================
+   NEWS / SUBTLE GLITCH
+======================================== */
+
+.news-glitch {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+}
+
+/* 色ズレ用の文字 */
+.news-glitch::before,
+.news-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* 青いノイズ */
+.news-glitch::before {
+  color: #75dfff;
+  clip-path: inset(28% 0 55% 0);
+  animation: newsGlitchBlue 4s infinite steps(1);
+}
+
+/* 赤いノイズ */
+.news-glitch::after {
+  color: #ff477b;
+  clip-path: inset(65% 0 18% 0);
+  animation: newsGlitchRed 4s infinite steps(1);
+}
+
+@keyframes newsGlitchBlue {
+  0%, 91%, 94%, 100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  92% {
+    opacity: 0.7;
+    transform: translateX(-3px);
+  }
+
+  93% {
+    opacity: 0.5;
+    transform: translateX(2px);
+  }
+}
+
+@keyframes newsGlitchRed {
+  0%, 92%, 95%, 100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  93% {
+    opacity: 0.65;
+    transform: translateX(3px);
+  }
+
+  94% {
+    opacity: 0.45;
+    transform: translateX(-2px);
+  }
+}
+
+/* ニュースタイトルはホバー時だけ軽く乱す */
+.news-log-item strong {
+  transition: text-shadow 0.12s ease;
+}
+
+.news-log-item:hover strong {
+  text-shadow:
+    -1px 0 rgba(117, 223, 255, 0.65),
+    1px 0 rgba(255, 71, 123, 0.65);
+}
+
+/* 動きを減らす設定への対応 */
+@media (prefers-reduced-motion: reduce) {
+  .news-glitch::before,
+  .news-glitch::after {
+    animation: none;
+  }
+}
+
+
+
+/* NEWS SCHEDULE */
+.news-schedule {
+  max-width: 1100px;
+  margin: 90px auto 110px;
+  padding: 0 18px;
+}
+
+.news-schedule-label {
+  color: #7dc9e8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+
+.news-schedule-heading h2 {
+  margin: 10px 0 20px;
+  font-size: clamp(38px, 7vw, 72px);
+  font-weight: 900;
+  letter-spacing: -.06em;
+}
+
+.news-schedule-heading > p:last-child {
+  color: #9cb4c7;
+  font-size: 13px;
+}
+
+.news-countdown {
+  margin: 36px 0;
+  padding: 30px;
+  border: 1px solid rgba(125, 201, 232, .3);
+  background: linear-gradient(130deg, #092a43, #061321);
+}
+
+.news-countdown span {
+  display: block;
+  color: #7dc9e8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.news-countdown strong {
+  display: block;
+  margin: 14px 0;
+  color: #fff;
+  font-size: clamp(36px, 8vw, 76px);
+  line-height: 1;
+}
+
+.news-countdown p {
+  margin: 0;
+  color: #a9c3d3;
+  font-size: 13px;
+}
+
+.news-calendar {
+  padding: 24px;
+  border: 1px solid rgba(125, 201, 232, .2);
+  background: rgba(3, 17, 30, .75);
+}
+
+.news-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.news-calendar-header h3 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: .08em;
+}
+
+.news-calendar-header button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #31546a;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.news-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.calendar-weekday {
+  padding: 8px 0;
+  color: #7dc9e8;
+  text-align: center;
+  font-size: 10px;
+}
+
+.calendar-day,
+.calendar-empty {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  min-height: 65px;
+  padding: 9px;
+  border: 1px solid rgba(125, 201, 232, .1);
+  font-size: 12px;
+}
+
+.calendar-day.is-today {
+  border-color: #7dc9e8;
+}
+
+.calendar-day.has-event {
+  color: #ff7aaa;
+  background: rgba(255, 63, 131, .12);
+  border-color: rgba(255, 63, 131, .4);
+}
+
+.calendar-day.has-event::after {
+  content: "●";
+  margin-left: 5px;
+  font-size: 8px;
+}
+
+.news-calendar-events {
+  margin-top: 22px;
+}
+
+.calendar-event-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(125, 201, 232, .15);
+  font-size: 12px;
+}
+
+.calendar-event-item time {
+  color: #8ab5d1;
+  font-family: monospace;
+}
+
+.calendar-event-item span {
+  color: #ff7aaa;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .news-calendar {
+    padding: 10px;
+  }
+
+  .news-calendar-grid {
+    gap: 3px;
+  }
+
+  .calendar-day,
+  .calendar-empty {
+    min-height: 43px;
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  .calendar-event-item {
+    gap: 7px;
+  }
+}
+
+
+
+/* 月間更新予定の見出し */
+.news-schedule-details {
+  margin-top: 36px;
+}
+
+.news-schedule-details-heading {
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(125, 201, 232, 0.25);
+}
+
+.news-schedule-details-heading p {
+  margin: 0 0 8px;
+  color: #7dc9e8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.news-schedule-details-heading h3 {
+  margin: 0 0 8px;
+  color: #f5f8ff;
+  font-size: clamp(24px, 4vw, 34px);
+  letter-spacing: -0.04em;
+}
+
+.news-schedule-details-heading span {
+  color: #91aabd;
+  font-size: 12px;
+}
+
+/* 見出しと予定一覧の間隔 */
+.news-calendar-events {
+  margin-top: 12px;
+}
+
+
+/* カレンダー：クリックできる予定日 */
+button.calendar-day.has-event {
+  width: 100%;
+  font: inherit;
+  text-align: right;
+  cursor: pointer;
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+button.calendar-day.has-event:hover,
+button.calendar-day.has-event:focus-visible {
+  background: rgba(255, 63, 131, .2);
+  border-color: #ff7aaa;
+  outline: none;
+}
+
+/* 選択中の日付 */
+.calendar-day.is-selected {
+  border-color: #ff7aaa;
+  background: rgba(255, 63, 131, .24);
+  box-shadow: inset 0 0 18px rgba(255, 63, 131, .15);
+}
+
+/* 選択中の予定 */
+.calendar-event-item {
+  transition:
+    background .25s ease,
+    border-color .25s ease,
+    padding .25s ease;
+}
+
+.calendar-event-item.is-selected {
+  padding-left: 16px;
+  border-left: 3px solid #ff7aaa;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 63, 131, .16),
+    transparent 85%
+  );
+}
+
+.calendar-event-item.is-selected strong {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 122, 170, .4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calendar-event-item {
+    transition: none;
+  }
+}
