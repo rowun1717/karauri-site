@@ -16,7 +16,7 @@
       elapsed < 7 * 24 * 60 * 60 * 1000;
   };
 
-  const createNewsItem = (item) => {
+  const createNewsItem = (item, isHome = false) => {
     const article = document.createElement("article");
     article.className = "news-log-item";
 
@@ -40,9 +40,14 @@
       article.append(badge);
     }
 
-    if (item.body) {
+    const bodyText = isHome
+      ? (item.summary || item.body)
+      : item.body;
+
+    if (bodyText) {
       const body = document.createElement("p");
-      body.textContent = item.body;
+      body.className = "news-log-body";
+      body.textContent = bodyText;
       article.append(body);
     }
 
@@ -54,13 +59,13 @@
 
   if (home) {
     sortedNews.slice(0, 3).forEach((item) => {
-      home.append(createNewsItem(item));
+      home.append(createNewsItem(item, true));
     });
   }
 
   if (all) {
     sortedNews.forEach((item) => {
-      all.append(createNewsItem(item));
+      all.append(createNewsItem(item, false));
     });
   }
 })();
