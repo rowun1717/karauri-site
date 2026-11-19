@@ -15,6 +15,20 @@
 <meta content="#050505" name="theme-color"/>
 <link href="css/editorial-permanent.css?v=3" rel="stylesheet"/><link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#050505">
+
+  <!-- スマホ：ロード画面のタイトルを縮小 -->
+  <style>
+    @media (max-width: 600px) {
+      .loading-screen .loading-inner .loading-logo,
+      .loading-screen .loading-inner .loading-logo::before,
+      .loading-screen .loading-inner .loading-logo::after {
+        font-size: clamp(24px, 7vw, 36px) !important;
+        line-height: 1.15 !important;
+        letter-spacing: 0.01em !important;
+        max-width: 94vw;
+      }
+    }
+  </style>
 </head>
 <body class="about-page">
 <!-- 起動画面 -->
