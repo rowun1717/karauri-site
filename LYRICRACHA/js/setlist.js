@@ -19,6 +19,257 @@
 
 const setlistSongs = [
     {
+    id: "suiatsu",
+    title: "SUIATSU",
+    album: "SUIATSU",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.11.25",
+    url: "song/SUIATSU.html",
+    image: "images/albums/SUIATSU.jpg",
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+    {
+    id: "battle-ground",
+    title: "Battle Ground",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2023.02.22",
+    url: "song/Battle Ground.html",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+    category: "latest",
+    karaoke: ["JOYSOUND","DAM"],
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+    {
+    id: "roman-empire",
+    title: "Roman Empire",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2025.11.03",
+    url: "song/Roman_Empire.html",
+    image: "images/song/Roman_Empire.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Bang Chan",
+          ]
+  },
+
+  {
+    id: "lover",
+    title: "LOVER",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.03.20",
+    url: "song/LOVER.html",
+    image: "images/song/LOVER.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Hyunjin"
+    ]
+  },
+
+  {
+    id: "raining-stars",
+    title: "Raining Stars",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2025.12.27",
+    url: "song/raining stars.html",
+    image: "images/song/raining_stars.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "HAN"
+    ]
+  },
+
+  {
+    id: "the-little-things",
+    title: "The Little Things",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.03.07",
+    url: "song/The_Little_Things.html",
+    image: "images/song/The Little Things.jpg",
+    karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "I.N",
+          ]
+  },
+
+  {
+    id: "goodbye",
+    title: "Goodbye",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2025.07.06",
+    url: "song/Goodbye.html",
+    image: "images/song/GOODBYE.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Seungmin"
+    ]
+  },
+
+  {
+    id: "still-here",
+    title: "Still Here",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.01.28",
+    url: "song/still here.html",
+    image: "images/song/Still_Here.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Seungmin"
+    ]
+  },
+
+    {
+    id: "into-the-current",
+    title: "Into the Current",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.05.02",
+    url: "song/into_the_Current.html",
+    image: "images/song/Into_The_Current.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Seungmin"
+    ]
+  },
+      {
+    id: "mic-brush",
+    title: "MIC & BRUSH",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.05.02",
+    url: "song/MIC_&_BRUSH.html",
+    image: "images/song/MIC_BRUSH.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "HYUNJIN"
+    ]
+  },
+
+      {
+    id: "perfume",
+    title: "PERFUME",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.05.02",
+    url: "song/PERFUME.html",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "Seungmin"
+    ]
+  },
+
+        {
+    id: "baby",
+    title: "BABY",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.08.01",
+    url: "song/BABY.html",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "BANG CHAN"
+    ]
+  },
+      {
+    id: "dont-say",
+    title: "Don’t Say",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.08.01",
+    url: "song/Dont_Say.html",
+    image: "images/song/Don't_Say.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "HAN"
+    ]
+  },
+      {
+    id: "my-name",
+    title: "My Name",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.08.01",
+    url: "song/My_Name.html",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "CHANGBIN"
+    ]
+  },
+
+  {
+    id: "rev-it-up",
+    title: "REV IT UP",
+    album: "SKZ-REPLAY 2026 Pt.1",
+    type: "Original Song",
+    date: "2026.11.10",
+    release: "2026.08.01",
+    url: "song/REV_IT_UP.html",
+    image: "images/albums/SKZ-REPLAY1.jpg",
+   karaoke: ["JOYSOUND","DAM"],
+    category: "latest",
+    members: [
+      "FELIX"
+    ]
+  },
+
+    {
+      id: "this-that",
     title: "THIS & THAT",
     album: "THIS & THAT",
     type: "Original Song",
@@ -38,6 +289,7 @@ const setlistSongs = [
     ]
   },
   {
+    id: "after-you",
     title: "After You",
     album: "THIS & THAT",
     type: "Original Song",
@@ -57,6 +309,7 @@ const setlistSongs = [
     ]
   },
   {
+    id: "farming",
     title: "FARMING",
     album: "THIS & THAT",
     type: "Original Song",
@@ -76,6 +329,7 @@ const setlistSongs = [
     ]
   },
   {
+    id: "i-do",
     title: "I DO",
     album: "THIS & THAT",
     type: "Original Song",
@@ -95,6 +349,7 @@ const setlistSongs = [
     ]
   },
   {
+    id: "way-out",
     title: "Way Out",
     album: "THIS & THAT",
     type: "Original Song",
@@ -102,18 +357,9 @@ const setlistSongs = [
     image: "images/albums/THISTHAT.jpg",
     url: "song/WayOut.html",
     category: "group",
-    members: [
-      "bangchan",
-      "leeknow",
-      "changbin",
-      "hyunjin",
-      "han",
-      "felix",
-      "seungmin",
-      "in"
-    ]
   },
   {
+    id: "back-then",
     title: "Back Then",
     album: "THIS & THAT",
     type: "Original Song",
@@ -121,16 +367,6 @@ const setlistSongs = [
     image: "images/albums/THISTHAT.jpg",
     url: "song/BackThen.html",
     category: "group",
-    members: [
-      "bangchan",
-      "leeknow",
-      "changbin",
-      "hyunjin",
-      "han",
-      "felix",
-      "seungmin",
-      "in"
-    ]
   },
 
   {
@@ -242,6 +478,18 @@ const setlistSongs = [
     category: "group",
     duration: 203
   },
+
+    {
+      id: "photobook",
+    title: "Photobook",
+    album: "Do It",
+    date: "2026.07.10",
+    url: "song/Photobook.html",
+    image: "images/albums/album-Do It.jpg",
+    karaoke: [],
+    category: "group",
+  },
+
 
   {
     id: "jjam",
@@ -607,7 +855,6 @@ const setlistSongs = [
     date: "2026.09.06",
     url: "song/StarLost.html",
     image: "images/albums/NOEASY.jpg",
-    image: "images/albums/KARMA.jpg",
     karaoke: ["JOYSOUND","DAM"],
     category: "group",
     duration: 161
@@ -615,6 +862,55 @@ const setlistSongs = [
 
 
 ];  
+
+/* ========================================
+   アルバム順に並べ替え
+======================================== */
+
+const albumOrder = [
+  "SUIATSU",
+  "SKZ-REPLAY 2026 Pt.1",
+  "THIS & THAT",
+  "STAY",
+  "back to life",
+  "RUN IT",
+  "Endless Sun",
+  "Do It",
+  "KARMA",
+  "SLASH",
+  "ATE",
+  "樂-STAR",
+  "5-STAR",
+  "MAXIDENT",
+  "ODDINARY",
+  "NOEASY",
+  "IN LIFE",
+  "GO LIVE",
+  "Clé : LEVANTER",
+  "Clé 2 : Yellow Wood",
+  "Clé 1 : MIROH",
+  "Social Path",
+  "ROCK-STAR",
+  "Mixtape",
+  "SKZ2020",
+  "I am NOT"
+];
+
+// 同じアルバムの曲をまとめる
+setlistSongs.sort((a, b) => {
+  const indexA = albumOrder.indexOf(a.album);
+  const indexB = albumOrder.indexOf(b.album);
+
+  const orderA = indexA === -1
+    ? albumOrder.length
+    : indexA;
+
+  const orderB = indexB === -1
+    ? albumOrder.length
+    : indexB;
+
+  return orderA - orderB;
+});
 
 
 /* ========================================
