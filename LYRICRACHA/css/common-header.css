@@ -1718,3 +1718,25 @@ iframe {
   .album-subtitle { font-size:13px!important; }
   .album-description { font-size:12px!important; line-height:1.75!important; }
 }
+
+
+/* スマホ版：ロード画面の文字サイズ調整 */
+@media (max-width: 600px) {
+  .loading-screen h1,
+  .file-loader h1,
+  .search-loader h1,
+  .member-loader h1,
+  .members-loader h1,
+  .album-loader h1,
+  .archive-loader h1,
+  .setlist-loader h1 {
+    font-size: clamp(24px, 8vw, 38px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  /* ホームのロードロゴ */
+.loading-screen .loading-logo {
+  font-size: clamp(32px, 10vw, 44px) !important;
+}
+}

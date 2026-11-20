@@ -290,6 +290,29 @@ const songs = [
   },
 
   {
+    title: "Photobook",
+    album: "Do It",
+    type: "Original Song",
+    date: "2026.07.10",
+    release: "2025.11.21",
+    url: "song/Photobook.html",
+    image: "images/albums/album-Do It.jpg",
+    karaoke: [],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
+
+  {
     title: "I Like It",
     album: "ATE",
     type: "Original Song",
@@ -1269,8 +1292,8 @@ const albums = [
     title: "Do It",
     year: "2025",
     image: "images/albums/album-Do It.jpg",
-    url: "",
-    available: false
+    url: "albums/Do It.html",
+    available: true
   },
 
   {

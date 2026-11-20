@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>
+   I.N Solo Songs | LYRICRACHA
+  </title>
+<meta content="#08080a" name="theme-color"/>
+<link href="../images/logo.png" rel="icon"/>
+<link href="../css/member-solo.css" rel="stylesheet"/>
+</head>
+<body style="--accent:#FFA7B8">
+<header class="site-header">
+<a class="logo" href="../index.html">
+    LYRIC
+    <span>
+     RACHA
+    </span>
+</a>
+<nav class="nav">
+<a href="../index.html">
+     HOME
+    </a>
+<a href="../about.html">
+     ABOUT
+    </a>
+<a href="../news.html">
+     NEWS
+    </a>
+<a href="../index.html#database">
+     LYRICS
+    </a>
+<a href="../albums.html">
+     ALBUMS
+    </a>
+<a href="../setlist.html">
+     SETLIST
+    </a>
+<a href="../search.html">
+     SEARCH
+    </a>
+<a class="current" href="../members.html">
+     MEMBERS
+    </a>
+</nav>
+</header>
+<main>
+<p class="eyebrow">
+    02 / SUBJECT FILES / 08 / SOLO ARCHIVE
+   </p>
+<section class="hero">
+<div class="portrait">
+<img alt="I.N" src="../images/member/I.N.jpg"/>
+</div>
+<div>
+<p class="eyebrow">
+      STRAY KIDS / MEMBER FILE 08
+     </p>
+<h1 class="title">
+      I.N
+     </h1>
+<p class="kr">
+      아이엔
+     </p>
+<div class="detail">
+<div>
+<small>
+        PART ID
+       </small>
+<strong>
+        in
+       </strong>
+</div>
+<div>
+<small>
+        PART COLOR
+       </small>
+<strong>
+<span class="dot">
+</span>
+        #FFA7B8
+       </strong>
+</div>
+<div>
+<small>
+        ARCHIVED SOLO TRACKS
+       </small>
+<strong>01 FILES</strong>
+</div>
+</div>
+</div>
+</section>
+<section data-track-section="solo">
+<div class="section-head">
+<div>
+<p class="eyebrow">SOLO SONG DATABASE</p>
+<h2>
+       Solo Tracks
+      </h2>
+</div>
+<span class="count">01 FILES</span>
+</div>
+<div class="songs">
+<a class="song" href="../song/The_Little_Things.html">
+<span class="song-cover">
+<img alt="The Little Things ジャケット" loading="lazy" onerror='this.style.display="none"' src="../images/solo/The Little Things.jpg"/>
+<span aria-hidden="true" class="cover-fallback">
+        ♪
+       </span>
+</span>
+<span class="song-info">
+<small>SOLO TRACK / 01</small>
+<strong>
+        The Little Things
+       </strong>
+<span class="arrow">
+        VIEW LYRICS →
+       </span>
+</span>
+</a>
+</div>
+</section><section class="track-section" data-track-section="unit"><div class="section-head"><div><p class="eyebrow">UNIT SONG DATABASE</p><h2>Unit Tracks</h2></div><span class="count">00 FILES</span></div><div class="songs"><div class="empty">NO UNIT TRACKS REGISTERED YET<br/><small>楽曲登録後にこちらへ追加されます。</small></div></div></section><section class="track-section" data-track-section="ost"><div class="section-head"><div><p class="eyebrow">OST SONG DATABASE</p><h2>OST Tracks</h2></div><span class="count">00 FILES</span></div><div class="songs"><div class="empty">NO OST TRACKS REGISTERED YET<br/><small>楽曲登録後にこちらへ追加されます。</small></div></div></section>
+<a class="back" href="../members.html#in">
+    ← BACK TO MEMBERS
+   </a>
+</main>
+<footer>
+   LYRICRACHA / UNOFFICIAL FAN PROJECT
+  </footer>
+<script>document.querySelectorAll('[data-track-section]').forEach(section => {
+  const count = section.querySelectorAll('a.song').length;
+  const label = section.querySelector('.count');
+  if (label) label.textContent = String(count).padStart(2, '0') + ' FILES';
+  const empty = section.querySelector('.empty');
+  if (empty) empty.hidden = count > 0;
+});
+const soloCount = document.querySelector('[data-track-section="solo"]')?.querySelectorAll('a.song').length ?? 0;
+const heroCount = [...document.querySelectorAll('.detail > div')].find(item => item.querySelector('small')?.textContent.includes('ARCHIVED SOLO TRACKS'))?.querySelector('strong');
+if (heroCount) heroCount.textContent = String(soloCount).padStart(2, '0') + ' FILES';</script></body>
+</html>

@@ -637,7 +637,29 @@ const songs = [
       "seungmin",
       "in"
     ]
-  }
+  },
+
+    {
+    title: "Photobook",
+    album: "Do It",
+    type: "Original Song",
+    date: "2026.07.10",
+    url: "song/Photobook.html",
+    image: "images/albums/album-Do It.jpg",
+    karaoke: [],
+    category: "latest",
+    members: [
+      "Bang Chan",
+      "Lee Know",
+      "Changbin",
+      "Hyunjin",
+      "HAN",
+      "Felix",
+      "Seungmin",
+      "I.N"
+    ]
+  },
+
 ];
 
 
