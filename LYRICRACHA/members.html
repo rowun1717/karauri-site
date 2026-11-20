@@ -13,13 +13,11 @@
 <link href="css/common-header.css?v=unified-1" rel="stylesheet"/>
 <link href="images/logo.png" rel="icon" type="image/png"/>
 <link href="images/icon.png" rel="apple-touch-icon"/>
-
 <meta content="#050505" name="theme-color"/>
-<link href="css/editorial-permanent.css?v=3" rel="stylesheet"/><link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#050505">
-
-  <!-- スマホ：ロード画面のタイトルを縮小 -->
-  <style>
+<link href="../css/editorial-permanent.css?v=3" rel="stylesheet"/><link href="manifest.json" rel="manifest"/>
+<meta content="#050505" name="theme-color"/>
+<!-- スマホ：ロード画面のタイトルを縮小 -->
+<style>
     @media (max-width: 600px) {
       .loading-screen .loading-inner .loading-logo,
       .loading-screen .loading-inner .loading-logo::before,
@@ -65,23 +63,23 @@
        ヘッダー
   ====================================== -->
 <header class="site-header">
-  <a class="header-logo" href="index.html">
-    <span class="header-logo-main">LYRIC</span>
-    <span class="header-logo-sub">RACHA</span>
-  </a>
-  <nav class="global-nav" id="globalNav" aria-label="メインメニュー">
-    <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a href="news.html">NEWS</a>
-    <a href="index.html#database">LYRICS</a>
-    <a href="albums.html">ALBUMS</a>
-    <a href="setlist.html">SETLIST</a>
-    <a href="search.html">SEARCH</a>
-    <a href="members.html" class="is-current">MEMBERS</a>
-  </nav>
-  <button class="menu-button" id="menuButton" type="button" aria-controls="globalNav" aria-expanded="false" aria-label="メニューを開く">
-    <span></span><span></span><span></span>
-  </button>
+<a class="header-logo" href="index.html">
+<span class="header-logo-main">LYRIC</span>
+<span class="header-logo-sub">RACHA</span>
+</a>
+<nav aria-label="メインメニュー" class="global-nav" id="globalNav">
+<a href="index.html">HOME</a>
+<a href="about.html">ABOUT</a>
+<a href="news.html">NEWS</a>
+<a href="index.html#database">LYRICS</a>
+<a href="albums.html">ALBUMS</a>
+<a href="setlist.html">SETLIST</a>
+<a href="search.html">SEARCH</a>
+<a class="is-current" href="members.html">MEMBERS</a>
+</nav>
+<button aria-controls="globalNav" aria-expanded="false" aria-label="メニューを開く" class="menu-button" id="menuButton" type="button">
+<span></span><span></span><span></span>
+</button>
 </header>
 <!-- =====================================
        メイン
@@ -247,10 +245,7 @@
                 </strong>
 </div>
 </div>
-<a class="member-search-link" href="search.html?keyword=BANG%20CHAN">
-              SEARCH MEMBER SONGS
-              <span>→</span>
-</a>
+<a class="member-search-link" href="members/member-bangchan.html">VIEW SOLO SONGS <span>→</span></a>
 </div>
 </article>
 <!-- LEE KNOW -->
@@ -297,10 +292,7 @@
                 </strong>
 </div>
 </div>
-<a class="member-search-link" href="search.html?keyword=LEE%20KNOW">
-              SEARCH MEMBER SONGS
-              <span>→</span>
-</a>
+<a class="member-search-link" href="members/member-leeknow.html">VIEW SOLO SONGS <span>→</span></a>
 </div>
 </article>
 <!-- CHANGBIN -->
@@ -347,10 +339,7 @@
                 </strong>
 </div>
 </div>
-<a class="member-search-link" href="search.html?keyword=CHANGBIN">
-              SEARCH MEMBER SONGS
-              <span>→</span>
-</a>
+<a class="member-search-link" href="members/member-changbin.html">VIEW SOLO SONGS <span>→</span></a>
 </div>
 </article>
 <!-- HYUNJIN -->
@@ -397,10 +386,7 @@
                 </strong>
 </div>
 </div>
-<a class="member-search-link" href="search.html?keyword=HYUNJIN">
-              SEARCH MEMBER SONGS
-              <span>→</span>
-</a>
+<a class="member-search-link" href="members/member-hyunjin.html">VIEW SOLO SONGS <span>→</span></a>
 </div>
 </article>
 <!-- HAN -->
@@ -447,10 +433,7 @@
                 </strong>
 </div>
 </div>
-<a class="member-search-link" href="search.html?keyword=HAN">
-              SEARCH MEMBER SONGS
-              <span>→</span>
-</a>
+<a class="member-search-link" href="members/member-han.html">VIEW SOLO SONGS <span>→</span></a>
 </div>
 </article>
 <!-- FELIX -->
@@ -497,10 +480,7 @@
                 </strong>
 </div>
 </div>
-<a class="member-search-link" href="search.html?keyword=FELIX">
-              SEARCH MEMBER SONGS
-              <span>→</span>
-</a>
+<a class="member-search-link" href="members/member-felix.html">VIEW SOLO SONGS <span>→</span></a>
 </div>
 </article>
 <!-- SEUNGMIN -->
@@ -547,10 +527,7 @@
                 </strong>
 </div>
 </div>
-<a class="member-search-link" href="search.html?keyword=SEUNGMIN">
-              SEARCH MEMBER SONGS
-              <span>→</span>
-</a>
+<a class="member-search-link" href="members/member-seungmin.html">VIEW SOLO SONGS <span>→</span></a>
 </div>
 </article>
 <!-- I.N -->
@@ -597,10 +574,7 @@
                 </strong>
 </div>
 </div>
-<a class="member-search-link" href="search.html?keyword=I.N">
-              SEARCH MEMBER SONGS
-              <span>→</span>
-</a>
+<a class="member-search-link" href="members/member-in.html">VIEW SOLO SONGS <span>→</span></a>
 </div>
 </article>
 </div>
@@ -756,7 +730,7 @@
     ↑
   </button>
 <script src="js/members.js"></script>
-<script src="js/offline-register.js" defer></script>
-  <script src="js/common-navigation.js?v=unified-1"></script>
+<script defer="" src="js/offline-register.js"></script>
+<script src="js/common-navigation.js?v=unified-1"></script>
 </body>
 </html>
