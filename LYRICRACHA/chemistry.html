@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08080a">
+  <title>Chemistry Database | LYRICRACHA</title>
+  <link rel="icon" href="images/logo.png">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #08080a; color: #f7f7fa; font-family: Arial, "Noto Sans JP", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .site-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 21px 3%; border-bottom: 1px solid #333; }
+    .logo { font-size: 23px; font-style: italic; font-weight: 1000; white-space: nowrap; }
+    .logo span { color: #ff0055; }
+    .nav { display: flex; flex-wrap: wrap; gap: 20px; }
+    .nav a { color: #aaa; font-size: 11px; font-weight: 900; letter-spacing: 1px; }
+    .nav a:hover, .nav .current { color: #ff0055; }
+    main { max-width: 1140px; margin: auto; padding: 64px 26px 100px; }
+    .eyebrow { color: #c0b6cf; font-size: 10px; font-weight: 900; letter-spacing: .17em; }
+    .intro { padding-bottom: 38px; border-bottom: 1px solid #444; }
+    h1 { font-size: clamp(36px, 6vw, 76px); line-height: 1.05; margin: 14px 0 16px; letter-spacing: -.04em; }
+    .intro p { color: #b4b4c0; line-height: 1.9; font-size: 14px; max-width: 690px; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 34px 0 22px; }
+    .toolbar strong { font-size: 12px; letter-spacing: .12em; }
+    .toolbar input { background: #131319; border: 1px solid #494950; color: white; border-radius: 4px; padding: 12px 14px; width: min(330px, 100%); font: inherit; font-size: 13px; }
+    .toolbar input:focus { outline: 1px solid #ff0055; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+    .chem-card[hidden] { display: none; }
+    .chem-card { min-width: 0; background: linear-gradient(140deg, #141419, color-mix(in srgb, var(--partner) 12%, #121217)); border: 1px solid #393940; }
+    .photo { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #17171c; }
+    .photo img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 1; }
+    .fallback { position: absolute; inset: 0; display: grid; place-items: center; color: #888; font-size: 11px; }
+    .card-content { padding: 23px; }
+    .card-content h2 { font-size: clamp(21px, 2.5vw, 28px); margin: 10px 0; overflow-wrap: anywhere; }
+    .partners { font-size: 11px; font-weight: 900; line-height: 1.8; }
+    .partners span { color: #9b9ba8; }
+    .partners a { color: var(--partner); text-decoration: underline; text-underline-offset: 3px; }
+    .brief { margin: 19px 0; font-size: 14px; line-height: 1.85; color: #d2d2dc; }
+    .view { display: inline-block; padding: 12px 0 5px; border-bottom: 1px solid var(--partner); color: var(--partner); font-size: 11px; font-weight: 900; letter-spacing: .07em; }
+    .section-head { margin: 76px 0 22px; border-bottom: 1px solid #444; padding-bottom: 16px; }
+    .section-head h2 { font-size: clamp(27px, 4vw, 42px); margin: 8px 0; }
+    .detail { border: 1px solid #373740; margin-bottom: 12px; background: linear-gradient(110deg, #111115, color-mix(in srgb, var(--partner) 6%, #111115)); scroll-margin-top: 18px; }
+    .detail summary { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 21px; cursor: pointer; list-style: none; }
+    .detail summary::-webkit-details-marker { display: none; }
+    .detail-num { color: var(--partner); font-size: 10px; font-weight: 900; letter-spacing: .1em; }
+    .detail summary strong { font-size: 19px; }
+    .detail-partner { font-size: 10px; color: #aaaab5; font-weight: 800; }
+    .detail-plus { margin-left: auto; color: var(--partner); font-size: 24px; }
+    .detail[open] .detail-plus { transform: rotate(45deg); }
+    .detail-body { padding: 4px 24px 27px; border-top: 1px solid #333; }
+    .detail-body h3 { font-size: 11px; letter-spacing: .1em; color: var(--partner); margin: 26px 0 9px; }
+    .detail-body p { font-size: 14px; line-height: 1.95; }
+    .detail-lead { color: #e5e5ec; }
+    .draft { color: #9999a6; }
+    .note { color: #92929e; font-size: 12px; line-height: 1.8; margin-top: 25px; }
+    footer { border-top: 1px solid #333; text-align: center; color: #888; font-size: 11px; padding: 34px; letter-spacing: 1px; }
+    @media (max-width: 700px) { .site-header { align-items: flex-start; flex-direction: column; } .nav { gap: 12px; } main { padding: 35px 16px 70px; } .grid { grid-template-columns: 1fr; gap: 14px; } .toolbar { align-items: stretch; flex-direction: column; } .toolbar input { width: 100%; } .card-content { padding: 19px; } .detail summary { padding: 16px; } .detail-body { padding: 4px 17px 22px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">LYRIC<span>RACHA</span></a>
+    <nav class="nav" aria-label="メインナビゲーション">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="news.html">NEWS</a>
+      <a href="index.html#database">LYRICS</a>
+      <a href="albums.html">ALBUMS</a>
+      <a href="setlist.html">SETLIST</a>
+      <a href="search.html">SEARCH</a>
+      <a href="members.html">MEMBERS</a>
+      <a class="current" href="chemistry.html">CHEMISTRY</a>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <span class="eyebrow">STRAY KIDS / RELATIONSHIP ARCHIVE</span>
+      <h1>Chemistry Database</h1>
+      <p>メンバー同士のケミを記録する非公式ファンデータベース。名前の由来や関係性、エピソードを少しずつまとめていきます。</p>
+    </section>
+    <section aria-label="ケミ一覧">
+      <div class="toolbar"><strong id="result-count">07 CHEMISTRY FILES / BANG CHAN</strong><input id="chem-search" type="search" placeholder="ケミ名・メンバー名で検索" aria-label="ケミを検索"></div>
+      <div class="grid" id="chem-grid">
+<article class="chem-card" style="--partner:#00f7ff" id="chem-01" data-name="ヒョンラ LEEKNOW BANG CHAN">
+  <div class="photo"><img src="images/chemistry/hyonra.jpg" alt="バンチャンとリノ" loading="lazy" onerror="this.hidden=true"><span class="fallback">PHOTO / COMING SOON</span></div>
+  <div class="card-content"><span class="eyebrow">CHEMISTRY / 01</span><h2>ヒョンラ</h2>
+  <p class="partners">BANG CHAN <span>×</span> <a href="members/leeknow.html">LEEKNOW ↗</a></p>
+  <p class="brief">年上組ならではの信頼感と、ふと見せる甘えん坊な一面。</p>
+  <a class="view" href="#detail-01">VIEW CHEMISTRY FILE ↗</a></div></article>
+<article class="chem-card" style="--partner:#e51cff" id="chem-02" data-name="ビンバンズ CHANGBIN BANG CHAN">
+  <div class="photo"><img src="images/chemistry/binbanz.jpg" alt="バンチャンとチャンビン" loading="lazy" onerror="this.hidden=true"><span class="fallback">PHOTO / COMING SOON</span></div>
+  <div class="card-content"><span class="eyebrow">CHEMISTRY / 02</span><h2>ビンバンズ</h2>
+  <p class="partners">BANG CHAN <span>×</span> <a href="members/changbin.html">CHANGBIN ↗</a></p>
+  <p class="brief">3RACHAの制作仲間。長年の信頼と熱いやり取りが魅力。</p>
+  <a class="view" href="#detail-02">VIEW CHEMISTRY FILE ↗</a></div></article>
+<article class="chem-card" style="--partner:#ff0055" id="chem-03" data-name="ベカ王 HYUNJIN BANG CHAN">
+  <div class="photo"><img src="images/chemistry/beka.jpg" alt="バンチャンとヒョンジン" loading="lazy" onerror="this.hidden=true"><span class="fallback">PHOTO / COMING SOON</span></div>
+  <div class="card-content"><span class="eyebrow">CHEMISTRY / 03</span><h2>ベカ王</h2>
+  <p class="partners">BANG CHAN <span>×</span> <a href="members/hyunjin.html">HYUNJIN ↗</a></p>
+  <p class="brief">愛犬の名前から生まれたケミ名。ステージでも息の合う2人。</p>
+  <a class="view" href="#detail-03">VIEW CHEMISTRY FILE ↗</a></div></article>
+<article class="chem-card" style="--partner:#7F5391" id="chem-04" data-name="チャニハ二 HAN BANG CHAN">
+  <div class="photo"><img src="images/chemistry/chanihani.jpg" alt="バンチャンとハン" loading="lazy" onerror="this.hidden=true"><span class="fallback">PHOTO / COMING SOON</span></div>
+  <div class="card-content"><span class="eyebrow">CHEMISTRY / 04</span><h2>チャニハ二</h2>
+  <p class="partners">BANG CHAN <span>×</span> <a href="members/han.html">HAN ↗</a></p>
+  <p class="brief">お互いを支え合う、愛情深いチャニハニ。</p>
+  <a class="view" href="#detail-04">VIEW CHEMISTRY FILE ↗</a></div></article>
+<article class="chem-card" style="--partner:#FFEE00" id="chem-05" data-name="ホジュズ FELIX BANG CHAN">
+  <div class="photo"><img src="images/chemistry/hojuz.jpg" alt="バンチャンとフィリックス" loading="lazy" onerror="this.hidden=true"><span class="fallback">PHOTO / COMING SOON</span></div>
+  <div class="card-content"><span class="eyebrow">CHEMISTRY / 05</span><h2>ホジュズ</h2>
+  <p class="partners">BANG CHAN <span>×</span> <a href="members/felix.html">FELIX ↗</a></p>
+  <p class="brief">オーストラリア出身の2人。共通の背景が育む絆。</p>
+  <a class="view" href="#detail-05">VIEW CHEMISTRY FILE ↗</a></div></article>
+<article class="chem-card" style="--partner:#00ffb3" id="chem-06" data-name="チョンダムズ SEUNGMIN BANG CHAN">
+  <div class="photo"><img src="images/chemistry/tyondamz.jpg" alt="バンチャンとスンミン" loading="lazy" onerror="this.hidden=true"><span class="fallback">PHOTO / COMING SOON</span></div>
+  <div class="card-content"><span class="eyebrow">CHEMISTRY / 06</span><h2>チョンダムズ</h2>
+  <p class="partners">BANG CHAN <span>×</span> <a href="members/seungmin.html">SEUNGMIN ↗</a></p>
+  <p class="brief">学校にまつわる共通点を持つ、親しみやすいコンビ。</p>
+  <a class="view" href="#detail-06">VIEW CHEMISTRY FILE ↗</a></div></article>
+<article class="chem-card" style="--partner:#ffa7b8" id="chem-07" data-name="親子ズ I.N BANG CHAN">
+  <div class="photo"><img src="images/chemistry/oyakoz.jpg" alt="バンチャンとアイエン" loading="lazy" onerror="this.hidden=true"><span class="fallback">PHOTO / COMING SOON</span></div>
+  <div class="card-content"><span class="eyebrow">CHEMISTRY / 07</span><h2>親子ズ</h2>
+  <p class="partners">BANG CHAN <span>×</span> <a href="members/in.html">I.N ↗</a></p>
+  <p class="brief">最年長と末っ子。親子のような温かいやり取りが魅力。</p>
+  <a class="view" href="#detail-07">VIEW CHEMISTRY FILE ↗</a></div></article>
+      </div>
+      <p class="note" id="no-results" hidden>該当するケミはありません。</p>
+    </section>
+    <section aria-label="ケミ詳細">
+      <div class="section-head"><span class="eyebrow">EXPANDED ARCHIVE</span><h2>Chemistry File Details</h2></div>
+<details class="detail" id="detail-01" style="--partner:#00f7ff"><summary><span class="detail-num">FILE / 01</span><strong>ヒョンラ</strong><span class="detail-partner">BANG CHAN × LEEKNOW</span><span class="detail-plus">＋</span></summary><div class="detail-body"><p class="detail-lead">年上組ならではの信頼感と、ふと見せる甘えん坊な一面。</p><h3>NAME ORIGIN / 名前の由来</h3><p class="draft">由来の詳しい説明を追加予定</p><h3>CHEMISTRY / 関係性・エピソード</h3><p class="draft">エピソードを追加予定</p><h3>REFERENCES / 出典・関連コンテンツ</h3><p class="draft">公式コンテンツや確認済みの出典を追加予定</p></div></details>
+<details class="detail" id="detail-02" style="--partner:#e51cff"><summary><span class="detail-num">FILE / 02</span><strong>ビンバンズ</strong><span class="detail-partner">BANG CHAN × CHANGBIN</span><span class="detail-plus">＋</span></summary><div class="detail-body"><p class="detail-lead">3RACHAの制作仲間。長年の信頼と熱いやり取りが魅力。</p><h3>NAME ORIGIN / 名前の由来</h3><p class="draft">由来の詳しい説明を追加予定</p><h3>CHEMISTRY / 関係性・エピソード</h3><p class="draft">エピソードを追加予定</p><h3>REFERENCES / 出典・関連コンテンツ</h3><p class="draft">公式コンテンツや確認済みの出典を追加予定</p></div></details>
+<details class="detail" id="detail-03" style="--partner:#ff0055"><summary><span class="detail-num">FILE / 03</span><strong>ベカ王</strong><span class="detail-partner">BANG CHAN × HYUNJIN</span><span class="detail-plus">＋</span></summary><div class="detail-body"><p class="detail-lead">愛犬の名前から生まれたケミ名。ステージでも息の合う2人。</p><h3>NAME ORIGIN / 名前の由来</h3><p class="draft">由来の詳しい説明を追加予定</p><h3>CHEMISTRY / 関係性・エピソード</h3><p class="draft">エピソードを追加予定</p><h3>REFERENCES / 出典・関連コンテンツ</h3><p class="draft">公式コンテンツや確認済みの出典を追加予定</p></div></details>
+<details class="detail" id="detail-04" style="--partner:#7F5391"><summary><span class="detail-num">FILE / 04</span><strong>チャニハ二</strong><span class="detail-partner">BANG CHAN × HAN</span><span class="detail-plus">＋</span></summary><div class="detail-body"><p class="detail-lead">お互いを支え合う、愛情深いチャニハニ。</p><h3>NAME ORIGIN / 名前の由来</h3><p class="draft">由来の詳しい説明を追加予定</p><h3>CHEMISTRY / 関係性・エピソード</h3><p class="draft">エピソードを追加予定</p><h3>REFERENCES / 出典・関連コンテンツ</h3><p class="draft">公式コンテンツや確認済みの出典を追加予定</p></div></details>
+<details class="detail" id="detail-05" style="--partner:#FFEE00"><summary><span class="detail-num">FILE / 05</span><strong>ホジュズ</strong><span class="detail-partner">BANG CHAN × FELIX</span><span class="detail-plus">＋</span></summary><div class="detail-body"><p class="detail-lead">オーストラリア出身の2人。共通の背景が育む絆。</p><h3>NAME ORIGIN / 名前の由来</h3><p class="draft">由来の詳しい説明を追加予定</p><h3>CHEMISTRY / 関係性・エピソード</h3><p class="draft">エピソードを追加予定</p><h3>REFERENCES / 出典・関連コンテンツ</h3><p class="draft">公式コンテンツや確認済みの出典を追加予定</p></div></details>
+<details class="detail" id="detail-06" style="--partner:#00ffb3"><summary><span class="detail-num">FILE / 06</span><strong>チョンダムズ</strong><span class="detail-partner">BANG CHAN × SEUNGMIN</span><span class="detail-plus">＋</span></summary><div class="detail-body"><p class="detail-lead">学校にまつわる共通点を持つ、親しみやすいコンビ。</p><h3>NAME ORIGIN / 名前の由来</h3><p class="draft">由来の詳しい説明を追加予定</p><h3>CHEMISTRY / 関係性・エピソード</h3><p class="draft">エピソードを追加予定</p><h3>REFERENCES / 出典・関連コンテンツ</h3><p class="draft">公式コンテンツや確認済みの出典を追加予定</p></div></details>
+<details class="detail" id="detail-07" style="--partner:#ffa7b8"><summary><span class="detail-num">FILE / 07</span><strong>親子ズ</strong><span class="detail-partner">BANG CHAN × I.N</span><span class="detail-plus">＋</span></summary><div class="detail-body"><p class="detail-lead">最年長と末っ子。親子のような温かいやり取りが魅力。</p><h3>NAME ORIGIN / 名前の由来</h3><p class="draft">由来の詳しい説明を追加予定</p><h3>CHEMISTRY / 関係性・エピソード</h3><p class="draft">エピソードを追加予定</p><h3>REFERENCES / 出典・関連コンテンツ</h3><p class="draft">公式コンテンツや確認済みの出典を追加予定</p></div></details>
+      <p class="note">※詳細文と出典は仮欄です。確認できた情報から追記してください。現在はバンチャンの7組を収録しています。</p>
+    </section>
+  </main>
+  <footer>LYRICRACHA / UNOFFICIAL FAN PROJECT</footer>
+  <script>
+    const search = document.getElementById('chem-search');
+    const cards = [...document.querySelectorAll('.chem-card')];
+    search.addEventListener('input', () => {
+      const query = search.value.trim().toLocaleLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const match = card.dataset.name.toLocaleLowerCase().includes(query);
+        card.hidden = !match;
+        if (match) visible++;
+      });
+      document.getElementById('result-count').textContent = `${String(visible).padStart(2, '0')} CHEMISTRY FILES / BANG CHAN`;
+      document.getElementById('no-results').hidden = visible !== 0;
+    });
+    document.querySelectorAll('.view').forEach(link => link.addEventListener('click', () => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.open = true;
+    }));
+  </script>
+</body>
+</html>
