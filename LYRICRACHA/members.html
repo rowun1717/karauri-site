@@ -29,6 +29,14 @@
       }
     }
   </style>
+  <style>
+    /* MEMBERS / CHEMISTRY DATABASE LINK */
+    .chemistry-database-link { margin-top: 44px; padding: clamp(24px, 4vw, 42px); border: 1px solid #42424a; background: linear-gradient(130deg, #121218, #1b1421); }
+    .chemistry-database-link h2 { margin: 10px 0 12px; font-size: clamp(26px, 4vw, 42px); color: #f7f7fa; }
+    .chemistry-database-link p:not(.section-number) { max-width: 620px; color: #b9b9c3; font-size: 14px; line-height: 1.8; }
+    .chemistry-database-link a { display: inline-flex; align-items: center; gap: 16px; margin-top: 16px; padding: 13px 17px; border: 1px solid #b5b9ce; color: #f7f7fa; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-decoration: none; transition: background .2s, border-color .2s; }
+    .chemistry-database-link a:hover, .chemistry-database-link a:focus-visible { background: #292332; border-color: #e51cff; }
+  </style>
 </head>
 <body class="members-page">
 <!-- =====================================
@@ -577,6 +585,16 @@
 <a class="member-search-link" href="members/member-in.html">VIEW SOLO SONGS <span>→</span></a>
 </div>
 </article>
+</div>
+
+<!-- ===================================
+         ケミデータベースへのリンク
+    ==================================== -->
+<div class="chemistry-database-link reveal">
+  <p class="section-number">03 / RELATIONSHIP DATABASE</p>
+  <h2>Chemistry Files</h2>
+  <p>メンバー同士のケミ名や、その由来・エピソードをまとめたデータベース。</p>
+  <a href="chemistry.html">EXPLORE CHEMISTRY FILES <span aria-hidden="true">↗</span></a>
 </div>
 </section>
 <!-- ===================================
